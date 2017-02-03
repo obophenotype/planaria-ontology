@@ -3,7 +3,7 @@
 
 # planaria-ontology
 
-This ontology is for planaria anatomy and developemtal stages. The stages are specific for the planarian species _Schmidtea mediterrea_.
+This ontology is for planaria anatomy and developmental stages. The stages are specific for the planarian species _Schmidtea mediterrea_.
 
 ## Versions
 
