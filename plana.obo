@@ -2,14 +2,14 @@
 id: PLANA:0000028
 name: Category 2 cell
 namespace: Planarian Tissue
-def: "Post-mitotic, mesenchymally located epidermal progenitors downstream of the zeta neoblasts." [ PMID:22385657 , PMID:25017721 , PMID:18786419 , PMID:26114597 , PMID:20040488 ] 
+def: "Post-mitotic, mesenchymally located epidermal progenitors downstream of the zeta neoblasts." [ PMID:18786419 , PMID:20040488 , PMID:22385657 , PMID:25017721 , PMID:26114597 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
 id: PLANA:0000035
 name: Category 3 cell
 namespace: Planarian Tissue
-def: "Post-mitotic, mesenchymally located epidermal progenitors downstream of the Category 2 cells." [ PMID:20040488 , PMID:26114597 , PMID:18786419 , PMID:26457503 ] 
+def: "Post-mitotic, mesenchymally located epidermal progenitors downstream of the Category 2 cells." [ PMID:18786419 , PMID:20040488 , PMID:26114597 , PMID:26457503 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
@@ -34,13 +34,13 @@ def: "The renal system in an anatomical system that maintains fluid balance and 
 xref: UBERON:0001008
 is_a: PLANA:0000037 ! definitive tissue
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000047 ! collecting duct
 relationship: contains PLANA:0000065 ! flame cell
-relationship: contains PLANA:0000020 ! protonephridia
-relationship: contains PLANA:0000064 ! flame bulb
 relationship: contains PLANA:0000011 ! protonephridial progenitor
 relationship: contains PLANA:0000053 ! distal tubule
+relationship: contains PLANA:0000020 ! protonephridia
+relationship: contains PLANA:0000047 ! collecting duct
 relationship: contains PLANA:0000087 ! proximal tubule
+relationship: contains PLANA:0000064 ! flame bulb
 relationship: develops_from PLANA:0000010 ! neoblast
 relationship: develops_from PLANA:0000011 ! protonephridial progenitor
 
@@ -50,11 +50,11 @@ name: anterior primary gut branch
 namespace: Planarian Tissue
 def: "The single, central gut branch of the triclad gut anterior to the definitive pharynx." [ PMID:3490491 ] 
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000093 ! tertiary gut branch
-relationship: contains PLANA:0000067 ! goblet cell
-relationship: contains PLANA:0000070 ! intestinal phagocyte
-relationship: contains PLANA:0000089 ! secondary gut branch
 relationship: contains PLANA:0000066 ! gastrodermis
+relationship: contains PLANA:0000067 ! goblet cell
+relationship: contains PLANA:0000093 ! tertiary gut branch
+relationship: contains PLANA:0000089 ! secondary gut branch
+relationship: contains PLANA:0000070 ! intestinal phagocyte
 
 [Term]
 id: PLANA:0000043
@@ -69,8 +69,8 @@ id: PLANA:0000032
 name: blastomere
 namespace: Planarian Tissue
 def: "Undifferentiated, zygote-derived cleavage progeny that give rise to temporary embryonic tissues during Stage 2, continue dividing asynchronously in the embryonic wall, and ultimately give rise to neoblasts and adult lineage progenitors beginning in Stage 5." [ PMID:28072387 ] 
-is_a: PLANA:0000109 ! embryonic tissue
 is_a: PLANA:0000111 ! planarian tissue
+is_a: PLANA:0000109 ! embryonic tissue
 relationship: develops_from PLANA:0000098 ! zygote
 
 [Term]
@@ -100,7 +100,7 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000045
 name: circular muscle fiber
 namespace: Planarian Tissue
-def: "Body wall muscle fibers arrayed around the dorsoventral axis. Upon regeneration, these are thought to be produced de novo in the blastema." [ Cebrià, F., and Romero, R. (2001). Body-wall muscle restoration dynamics are different in dorsal and ventral , PMID:26904543 ] 
+def: "Body wall muscle fibers arrayed around the dorsoventral axis. Upon regeneration, these are thought to be produced de novo in the blastema." [ PLANA_REF:0000005 , PMID:26904543 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
@@ -121,21 +121,21 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000034
 name: definitive epidermis
 namespace: Planarian Tissue
-def: "A single cell layer of post-mitotic epithelial cells containing ciliated and non-ciliated cell types." [ NOPMID: "Hyman, L.H. (1951). The invertebrates: Platyhelminthes and Rhynchocoela. The Acoelomate Bilateria. (New York, McGraw Hill)." ] 
-is_a: PLANA:0000037 ! definitive tissue
+def: "A single cell layer of post-mitotic epithelial cells containing ciliated and non-ciliated cell types." [ OCLC:16809160 ] 
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000018 ! Category 4 cell
-relationship: contains PLANA:0000106 ! ciliated epithelial cell
-relationship: contains PLANA:0000022 ! Category 5 cell
-relationship: contains PLANA:0000104 ! rhabdite
+is_a: PLANA:0000037 ! definitive tissue
 relationship: contains PLANA:0000054 ! dorsal epidermis
-relationship: contains PLANA:0000055 ! dorsal stripe
 relationship: contains PLANA:0000096 ! ventral epidermis
+relationship: contains PLANA:0000104 ! rhabdite
+relationship: contains PLANA:0000018 ! Category 4 cell
+relationship: contains PLANA:0000055 ! dorsal stripe
+relationship: contains PLANA:0000022 ! Category 5 cell
+relationship: contains PLANA:0000106 ! ciliated epithelial cell
+relationship: develops_from PLANA:0000018 ! Category 4 cell
 relationship: develops_from PLANA:0000033 ! epidermal progenitor
 relationship: develops_from PLANA:0000028 ! Category 2 cell
-relationship: develops_from PLANA:0000018 ! Category 4 cell
-relationship: develops_from PLANA:0000014 ! zeta neoblast
 relationship: develops_from PLANA:0000035 ! Category 3 cell
+relationship: develops_from PLANA:0000014 ! zeta neoblast
 
 [Term]
 id: PLANA:0000026
@@ -145,27 +145,27 @@ def: "The planarian triclad gut contains a central anterior gut branch connected
 is_a: PLANA:0000111 ! planarian tissue
 is_a: PLANA:0000037 ! definitive tissue
 relationship: contains PLANA:0000042 ! anterior primary gut branch
-relationship: contains PLANA:0000084 ! posterior primary gut branch
-relationship: contains PLANA:0000070 ! intestinal phagocyte
-relationship: contains PLANA:0000062 ! esophagus
-relationship: contains PLANA:0000089 ! secondary gut branch
 relationship: contains PLANA:0000066 ! gastrodermis
+relationship: contains PLANA:0000062 ! esophagus
 relationship: contains PLANA:0000093 ! tertiary gut branch
+relationship: contains PLANA:0000070 ! intestinal phagocyte
 relationship: contains PLANA:0000067 ! goblet cell
-relationship: develops_from PLANA:0000039 ! gamma neoblast
+relationship: contains PLANA:0000084 ! posterior primary gut branch
+relationship: contains PLANA:0000089 ! secondary gut branch
 relationship: develops_from PLANA:0000010 ! neoblast
+relationship: develops_from PLANA:0000039 ! gamma neoblast
 
 [Term]
 id: PLANA:0000016
 name: definitive pharynx
 namespace: Planarian Tissue
-def: "A plicate and protrusible organ that is the sole point of entry and exit for the Triclad gut. It contains epithelial, muscular, secretory and neuronal cell types." [ NOPMID: "Hyman, L.H. (1951). The invertebrates: Platyhelminthes and Rhynchocoela. The Acoelomate Bilateria. (New York, McGraw Hill)." ] 
+def: "A plicate and protrusible organ that is the sole point of entry and exit for the Triclad gut. It contains epithelial, muscular, secretory and neuronal cell types." [ OCLC:16809160 ] 
 is_a: PLANA:0000037 ! definitive tissue
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000100 ! epithelial cell
 relationship: contains PLANA:0000030 ! muscle organ
-relationship: contains PLANA:0000105 ! secretory cell
 relationship: contains PLANA:0000099 ! neuron
+relationship: contains PLANA:0000105 ! secretory cell
+relationship: contains PLANA:0000100 ! epithelial cell
 relationship: develops_from PLANA:0000110 ! definitive pharynx progenitor cell
 relationship: develops_from PLANA:0000010 ! neoblast
 
@@ -180,7 +180,7 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000037
 name: definitive tissue
 namespace: Planarian Tissue
-def: "Adult tissues built during organogenesis that are present in juveniles at birth." [ PMID:2888018 , PMID:28072387 ] 
+def: "Adult tissues built during organogenesis that are present in juveniles at birth." [ PMID:28072387 , PMID:2888018 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
@@ -196,21 +196,21 @@ name: digestive system
 namespace: Planarian Tissue
 def: "Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes." [ UBERON:0001007 ] 
 xref: UBERON:0001007
-is_a: PLANA:0000111 ! planarian tissue
 is_a: PLANA:0000037 ! definitive tissue
-relationship: contains PLANA:0000042 ! anterior primary gut branch
-relationship: contains PLANA:0000072 ! mouth
-relationship: contains PLANA:0000084 ! posterior primary gut branch
-relationship: contains PLANA:0000081 ! pharyngeal pouch
+is_a: PLANA:0000111 ! planarian tissue
 relationship: contains PLANA:0000062 ! esophagus
-relationship: contains PLANA:0000070 ! intestinal phagocyte
-relationship: contains PLANA:0000026 ! definitive gut
-relationship: contains PLANA:0000016 ! definitive pharynx
-relationship: contains PLANA:0000023 ! temporary embryonic pharynx
-relationship: contains PLANA:0000089 ! secondary gut branch
-relationship: contains PLANA:0000068 ! gut cavity
 relationship: contains PLANA:0000093 ! tertiary gut branch
+relationship: contains PLANA:0000026 ! definitive gut
+relationship: contains PLANA:0000070 ! intestinal phagocyte
+relationship: contains PLANA:0000072 ! mouth
+relationship: contains PLANA:0000042 ! anterior primary gut branch
+relationship: contains PLANA:0000089 ! secondary gut branch
+relationship: contains PLANA:0000016 ! definitive pharynx
+relationship: contains PLANA:0000081 ! pharyngeal pouch
 relationship: contains PLANA:0000067 ! goblet cell
+relationship: contains PLANA:0000084 ! posterior primary gut branch
+relationship: contains PLANA:0000068 ! gut cavity
+relationship: contains PLANA:0000023 ! temporary embryonic pharynx
 
 [Term]
 id: PLANA:0000050
@@ -219,18 +219,18 @@ namespace: Planarian Tissue
 def: "Any of the organs or elements that are part of the digestive system. Examples: tongue, esophagus, spleen, crop, lunge feeding organ, tooth elements." [ UBERON:0013765 ] 
 xref: UBERON:0013765
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000089 ! secondary gut branch
-relationship: contains PLANA:0000068 ! gut cavity
-relationship: contains PLANA:0000067 ! goblet cell
-relationship: contains PLANA:0000093 ! tertiary gut branch
-relationship: contains PLANA:0000023 ! temporary embryonic pharynx
 relationship: contains PLANA:0000016 ! definitive pharynx
-relationship: contains PLANA:0000081 ! pharyngeal pouch
-relationship: contains PLANA:0000062 ! esophagus
-relationship: contains PLANA:0000070 ! intestinal phagocyte
-relationship: contains PLANA:0000042 ! anterior primary gut branch
-relationship: contains PLANA:0000072 ! mouth
+relationship: contains PLANA:0000089 ! secondary gut branch
+relationship: contains PLANA:0000067 ! goblet cell
 relationship: contains PLANA:0000084 ! posterior primary gut branch
+relationship: contains PLANA:0000081 ! pharyngeal pouch
+relationship: contains PLANA:0000068 ! gut cavity
+relationship: contains PLANA:0000023 ! temporary embryonic pharynx
+relationship: contains PLANA:0000070 ! intestinal phagocyte
+relationship: contains PLANA:0000062 ! esophagus
+relationship: contains PLANA:0000093 ! tertiary gut branch
+relationship: contains PLANA:0000072 ! mouth
+relationship: contains PLANA:0000042 ! anterior primary gut branch
 
 [Term]
 id: PLANA:0000053
@@ -243,7 +243,7 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000054
 name: dorsal epidermis
 namespace: Planarian Tissue
-def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." [ NOPMID: "Hyman, L.H. (1951). The invertebrates: Platyhelminthes and Rhynchocoela. The Acoelomate Bilateria. (New York, McGraw Hill)." ] 
+def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." [ OCLC:16809160 ] 
 is_a: PLANA:0000111 ! planarian tissue
 relationship: contains PLANA:0000106 ! ciliated epithelial cell
 relationship: contains PLANA:0000055 ! dorsal stripe
@@ -262,8 +262,8 @@ name: embryonic digestive system
 namespace: Planarian Tissue
 def: "" []
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000059 ! embryonic gut cell
 relationship: contains PLANA:0000085 ! primitive gut cell
+relationship: contains PLANA:0000059 ! embryonic gut cell
 relationship: contains PLANA:0000023 ! temporary embryonic pharynx
 relationship: contains PLANA:0000068 ! gut cavity
 
@@ -272,8 +272,8 @@ id: PLANA:0000059
 name: embryonic gut cell
 namespace: Planarian Tissue
 def: "Dispersed, phagocytic gut cells that appear during Stage 4 and ultimately generate a honeycomb-like lattice surrounding the central gut cavity in Stage 5 embryos. Early embryonic gut cell specific transcripts are expressed from Stage 4-6, and are downregulated during Stage 7." [ PMID:28072387 ] 
-is_a: PLANA:0000109 ! embryonic tissue
 is_a: PLANA:0000111 ! planarian tissue
+is_a: PLANA:0000109 ! embryonic tissue
 
 [Term]
 id: PLANA:0000109
@@ -295,12 +295,12 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000033
 name: epidermal progenitor
 namespace: Planarian Tissue
-def: "Mitotically active zeta neoblasts and their post-mitotic descendants which undergo progressive differentiation and outward directed movement through the mesenchyme prior to incorporation into the epidermis, where terminal differentiation occurs." [ PMID:25017721 , PMID:26457503 , PMID:18786419 , PMID:26114597 , PMID:20040488 , PMID:22385657 ] 
+def: "Mitotically active zeta neoblasts and their post-mitotic descendants which undergo progressive differentiation and outward directed movement through the mesenchyme prior to incorporation into the epidermis, where terminal differentiation occurs." [ PMID:18786419 , PMID:20040488 , PMID:22385657 , PMID:25017721 , PMID:26114597 , PMID:26457503 ] 
 is_a: PLANA:0000111 ! planarian tissue
 relationship: contains PLANA:0000018 ! Category 4 cell
+relationship: contains PLANA:0000028 ! Category 2 cell
 relationship: contains PLANA:0000035 ! Category 3 cell
 relationship: contains PLANA:0000014 ! zeta neoblast
-relationship: contains PLANA:0000028 ! Category 2 cell
 
 [Term]
 id: PLANA:0000100
@@ -326,11 +326,11 @@ xref: UBERON:0000970
 is_a: PLANA:0000037 ! definitive tissue
 is_a: PLANA:0000111 ! planarian tissue
 relationship: contains PLANA:0000017 ! photoreceptor neuron
-relationship: contains PLANA:0000095 ! trail cell
 relationship: contains PLANA:0000075 ! optic cup
 relationship: contains PLANA:0000031 ! pigment cup
-relationship: develops_from PLANA:0000010 ! neoblast
+relationship: contains PLANA:0000095 ! trail cell
 relationship: develops_from PLANA:0000095 ! trail cell
+relationship: develops_from PLANA:0000010 ! neoblast
 
 [Term]
 id: PLANA:0000108
@@ -351,7 +351,7 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000065
 name: flame cell
 namespace: Planarian Tissue
-def: "Terminal structure of the protonephridia unit, capping the proximal tubules. Flame cells are defined by the ‘filtration weir’, which consists of closely apposed strands of cytoplasm surrounding a central cilia bundle, and by numerous microvilli between weir and cilia. Positive for acetyated tubulin." [ PMID:21828097 , PMID:26057828 , NOPMID: "Hyman, L.H. (1951). The invertebrates: Platyhelminthes and Rhynchocoela. The Acoelomate Bilateria. (New York, McGraw Hill)." ] 
+def: "Terminal structure of the protonephridia unit, capping the proximal tubules. Flame cells are defined by the ‘filtration weir’, which consists of closely apposed strands of cytoplasm surrounding a central cilia bundle, and by numerous microvilli between weir and cilia. Positive for acetyated tubulin." [ OCLC:16809160 , PMID:21828097 , PMID:26057828 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
@@ -388,7 +388,7 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000069
 name: inner longitudinal muscle fiber
 namespace: Planarian Tissue
-def: "Inner most body wall muscle fibers arrayed along the anteroposterior axis. These fibers are thicker than the outer longitudinal muscle fibers. The pattern of these muscles differs along the dorsoventral axis, with the dorsal arrangement converging at the central zone of the anterior pole. The ventral arrangement is more parallel or may diverge slightly as it approaches the ventral pole." [ PMID:26904543 , NOPMID: "Cebrià, F. (2000). Determination, Differentiation and Restitution of the Muscle Pattern During Regeneration and Cell Renewal in Freshwater Planarians. Ph.D. Thesis, University of Barcelona." ] 
+def: "Inner most body wall muscle fibers arrayed along the anteroposterior axis. These fibers are thicker than the outer longitudinal muscle fibers. The pattern of these muscles differs along the dorsoventral axis, with the dorsal arrangement converging at the central zone of the anterior pole. The ventral arrangement is more parallel or may diverge slightly as it approaches the ventral pole." [ PLANA_REF:0000003 , PMID:26904543 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
@@ -402,20 +402,20 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000071
 name: longitudinal muscle fiber
 namespace: Planarian Tissue
-def: "Body wall muscle fibers arrayed along the anteroposterior axis. Upon regeneration, these muscles are thought to be established from truncated pre-existing fibers." [ PMID:26904543 , NOPMID: "Cebrià, F., and Romero, R. (2001). Body-wall muscle restoration dynamics are different in dorsal and ventral blastemas during planarian anterior regeneration. Belg. J. Zool. 131, 5–9." ] 
+def: "Body wall muscle fibers arrayed along the anteroposterior axis. Upon regeneration, these muscles are thought to be established from truncated pre-existing fibers." [ PLANA_REF:0000005 , PMID:26904543 ] 
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000069 ! inner longitudinal muscle fiber
 relationship: contains PLANA:0000078 ! outer longitudinal muscle fiber
+relationship: contains PLANA:0000069 ! inner longitudinal muscle fiber
 
 [Term]
 id: PLANA:0000072
 name: mouth
 namespace: Planarian Tissue
-def: "The sole point of entry and exit for the Triclad planarian flatworm gut. The mouth is connected to the pharyngeal pouch to allow for exit and re-entry of the definitive pharynx on the ventral side of the animal. The mouth contains several cell types, including epithelial cells, muscle, and secretory cells." [ NOPMID: "Hyman, L.H. (1951). The invertebrates: Platyhelminthes and Rhynchocoela. The Acoelomate Bilateria. (New York, McGraw Hill)." ] 
+def: "The sole point of entry and exit for the Triclad planarian flatworm gut. The mouth is connected to the pharyngeal pouch to allow for exit and re-entry of the definitive pharynx on the ventral side of the animal. The mouth contains several cell types, including epithelial cells, muscle, and secretory cells." [ OCLC:16809160 ] 
 is_a: PLANA:0000111 ! planarian tissue
 relationship: contains PLANA:0000100 ! epithelial cell
-relationship: contains PLANA:0000101 ! muscle cell
 relationship: contains PLANA:0000105 ! secretory cell
+relationship: contains PLANA:0000101 ! muscle cell
 
 [Term]
 id: PLANA:0000101
@@ -431,19 +431,19 @@ name: muscle organ
 namespace: Planarian Tissue
 def: "Organ consisting of a tissue made up of various elongated cells that are specialized to contract and thus to produce movement and mechanical work[GO]." [ UBERON:0001630 ] 
 xref: UBERON:0001630
-is_a: PLANA:0000111 ! planarian tissue
 is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000111 ! planarian tissue
 relationship: contains PLANA:0000048 ! diagonal muscle fiber
-relationship: contains PLANA:0000061 ! enteric muscle
 relationship: contains PLANA:0000078 ! outer longitudinal muscle fiber
 relationship: contains PLANA:0000071 ! longitudinal muscle fiber
 relationship: contains PLANA:0000102 ! pharyngeal muscle
-relationship: contains PLANA:0000069 ! inner longitudinal muscle fiber
 relationship: contains PLANA:0000079 ! parenchymal musculature
-relationship: contains PLANA:0000073 ! musculature of body wall
+relationship: contains PLANA:0000061 ! enteric muscle
+relationship: contains PLANA:0000069 ! inner longitudinal muscle fiber
 relationship: contains PLANA:0000045 ! circular muscle fiber
-relationship: develops_from PLANA:0000019 ! muscle progenitor
+relationship: contains PLANA:0000073 ! musculature of body wall
 relationship: develops_from PLANA:0000010 ! neoblast
+relationship: develops_from PLANA:0000019 ! muscle progenitor
 
 [Term]
 id: PLANA:0000019
@@ -459,23 +459,23 @@ namespace: Planarian Tissue
 def: "Any collection of muscles that is part of a body wall." [ PMID:26904543 , UBERON:0004462 ] 
 xref: UBERON:0004462
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000045 ! circular muscle fiber
 relationship: contains PLANA:0000069 ! inner longitudinal muscle fiber
+relationship: contains PLANA:0000078 ! outer longitudinal muscle fiber
+relationship: contains PLANA:0000045 ! circular muscle fiber
 relationship: contains PLANA:0000048 ! diagonal muscle fiber
 relationship: contains PLANA:0000071 ! longitudinal muscle fiber
-relationship: contains PLANA:0000078 ! outer longitudinal muscle fiber
 
 [Term]
 id: PLANA:0000010
 name: neoblast
 namespace: Planarian Tissue
-def: "A heterogeneous population of pluripotent, somatic adult stem cells and lineage primed progenitors that are required for maintenance and regeneration of all cell types in planaria, including the germline." [ PMID:16311336 , PMID:21566185 , NOPMID: "Baguñà J, S.E., Auladell C (1989). Regeneration and pattern formation in planarians. III. Evidence that neoblasts are totipotent stem cells and the source of blastema cells. Development 107, 77-86." , PMID:22899852 ] 
+def: "A heterogeneous population of pluripotent, somatic adult stem cells and lineage primed progenitors that are required for maintenance and regeneration of all cell types in planaria, including the germline." [ PLANA_REF:0000004 , PMID:16311336 , PMID:21566185 , PMID:22899852 ] 
 is_a: PLANA:0000037 ! definitive tissue
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000014 ! zeta neoblast
-relationship: contains PLANA:0000039 ! gamma neoblast
-relationship: contains PLANA:0000009 ! sigma neoblast
 relationship: contains PLANA:0000046 ! clonogenic neoblast
+relationship: contains PLANA:0000014 ! zeta neoblast
+relationship: contains PLANA:0000009 ! sigma neoblast
+relationship: contains PLANA:0000039 ! gamma neoblast
 relationship: develops_from PLANA:0000032 ! blastomere
 
 [Term]
@@ -484,13 +484,13 @@ name: nervous system
 namespace: Planarian Tissue
 def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [ UBERON:0001016 ] 
 xref: UBERON:0001016
-is_a: PLANA:0000111 ! planarian tissue
 is_a: PLANA:0000037 ! definitive tissue
-relationship: contains PLANA:0000080 ! peripheral nervous system
+is_a: PLANA:0000111 ! planarian tissue
 relationship: contains PLANA:0000097 ! ventral nerve cord
-relationship: contains PLANA:0000012 ! neural progenitor
+relationship: contains PLANA:0000080 ! peripheral nervous system
 relationship: contains PLANA:0000103 ! central nervous system
 relationship: contains PLANA:0000044 ! cephalic ganglia
+relationship: contains PLANA:0000012 ! neural progenitor
 relationship: develops_from PLANA:0000010 ! neoblast
 relationship: develops_from PLANA:0000012 ! neural progenitor
 
@@ -528,14 +528,14 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000078
 name: outer longitudinal muscle fiber
 namespace: Planarian Tissue
-def: "Outer most body wall muscle fibers arrayed along the anteroposterior axis. These fibers are thinner than the inner longitudinal muscle fibers." [ PMID:26904543 , NOPMID: "Cebrià, F. (2000). Determination, Differentiation and Restitution of the Muscle Pattern During Regeneration and Cell Renewal in Freshwater Planarians. Ph.D. Thesis, University of Barcelona." ] 
+def: "Outer most body wall muscle fibers arrayed along the anteroposterior axis. These fibers are thinner than the inner longitudinal muscle fibers." [ PLANA_REF:0000003 , PMID:26904543 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
 id: PLANA:0000079
 name: parenchymal musculature
 namespace: Planarian Tissue
-def: "Dorsal-ventral muscle fibers present through the mesenchyme." [ Hyman, L.H. (1951). The invertebrates: Platyhelminthes and Rhynchocoela. The Acoelomate Bilateria. (New York, McGraw Hill). ] 
+def: "Dorsal-ventral muscle fibers present through the mesenchyme." [ OCLC:16809160 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
@@ -558,7 +558,7 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000081
 name: pharyngeal pouch
 namespace: Planarian Tissue
-def: "An epithelial structure housing the definitive pharynx, connected to the esophagus and mouth." [ NOPMID: "Hyman, L.H. (1951). The invertebrates: Platyhelminthes and Rhynchocoela. The Acoelomate Bilateria. (New York, McGraw Hill)." ] 
+def: "An epithelial structure housing the definitive pharynx, connected to the esophagus and mouth." [ OCLC:16809160 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
@@ -573,14 +573,14 @@ is_a: PLANA:0000111 ! planarian tissue
 id: PLANA:0000031
 name: pigment cup
 namespace: Planarian Tissue
-def: "Non-neuronal, pigmented cells arrayed along the proximal side of the optic cup." [ PMID:22884275 , PMID:21852957 ] 
+def: "Non-neuronal, pigmented cells arrayed along the proximal side of the optic cup." [ PMID:21852957 , PMID:22884275 ] 
 is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
 id: PLANA:0000111
 name: planarian tissue
 namespace: Planarian Tissue
-def: "A tissue found in planarians." []
+def: "A tissue found in planarians." [ PLANA_REF:0000000 ] 
 
 [Term]
 id: PLANA:0000084
@@ -589,16 +589,16 @@ namespace: Planarian Tissue
 def: "The primary gut branches of the triclad gut lateral and posterior to the pharynx and pharyngeal pouch." [ PMID:3490491 ] 
 is_a: PLANA:0000111 ! planarian tissue
 relationship: contains PLANA:0000067 ! goblet cell
-relationship: contains PLANA:0000093 ! tertiary gut branch
-relationship: contains PLANA:0000089 ! secondary gut branch
 relationship: contains PLANA:0000066 ! gastrodermis
+relationship: contains PLANA:0000089 ! secondary gut branch
 relationship: contains PLANA:0000070 ! intestinal phagocyte
+relationship: contains PLANA:0000093 ! tertiary gut branch
 
 [Term]
 id: PLANA:0000029
 name: primitive ectoderm
 namespace: Planarian Tissue
-def: "A single cell layer of extraembryonic, post-mitotic ectodermal cells bounding the embryo. The primitive ectoderm forms during Stage 2 and is thought to degenerate as the definitive epidermis forms during Stages 5-7." [ NOPMID:"Le Moigne, A. (1963). Etude du developpement embryonnaire de Polycelis nigra (Turbellarie - Triclade). Bulletin de la Societe Zoologique de France 88, 403-422." , NOPMID: "Metschnikoff, E. (1883). Die embryologie von Planaria polychroa. Zeitschrift fur wissenschaftliche Zoologie 38, 331-354." , NOPMID: "Ijima, I. (1884). Untersuchungeniiber den Bau und die Entwicklungsgeschichte der stisswasser-Dendrocoelen(Tricladen). Vol Bd. 40." , NOPMID: "Hallez, P. (1887). Embryogénie des Dendrocoeles d’eau douce, Vol 16." ] 
+def: "A single cell layer of extraembryonic, post-mitotic ectodermal cells bounding the embryo. The primitive ectoderm forms during Stage 2 and is thought to degenerate as the definitive epidermis forms during Stages 5-7." [ OCLC:20423827 , OCLC:464776945 , OCLC:82522822 , PLANA_REF:0000001 ] 
 is_a: PLANA:0000038 ! temporary embryonic tissue
 is_a: PLANA:0000111 ! planarian tissue
 relationship: contains PLANA:0000106 ! ciliated epithelial cell
@@ -609,22 +609,22 @@ id: PLANA:0000085
 name: primitive gut cell
 namespace: Planarian Tissue
 def: "Four large phagocytic cells associated with the temporary embryonic pharynx." [ PMID:28072387 ] 
-is_a: PLANA:0000111 ! planarian tissue
 is_a: PLANA:0000038 ! temporary embryonic tissue
+is_a: PLANA:0000111 ! planarian tissue
 relationship: develops_from PLANA:0000032 ! blastomere
 
 [Term]
 id: PLANA:0000020
 name: protonephridia
 namespace: Planarian Tissue
-def: "Excretory organs consisting of flame cells, proximal tubules, and distal tubules connected to a mesenchymal collecting duct." [ PMID:26057828 , PMID:21828097 , NOPMID:"Hyman, L.H. (1951). The invertebrates: Platyhelminthes and Rhynchocoela. The Acoelomate Bilateria. (New York, McGraw Hill)." ] 
+def: "Excretory organs consisting of flame cells, proximal tubules, and distal tubules connected to a mesenchymal collecting duct." [ OCLC:16809160 , PMID:21828097 , PMID:26057828 ] 
 is_a: PLANA:0000037 ! definitive tissue
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000065 ! flame cell
 relationship: contains PLANA:0000047 ! collecting duct
+relationship: contains PLANA:0000087 ! proximal tubule
+relationship: contains PLANA:0000065 ! flame cell
 relationship: contains PLANA:0000011 ! protonephridial progenitor
 relationship: contains PLANA:0000053 ! distal tubule
-relationship: contains PLANA:0000087 ! proximal tubule
 relationship: develops_from PLANA:0000011 ! protonephridial progenitor
 relationship: develops_from PLANA:0000010 ! neoblast
 
@@ -702,11 +702,11 @@ relationship: develops_from PLANA:0000032 ! blastomere
 id: PLANA:0000038
 name: temporary embryonic tissue
 namespace: Planarian Tissue
-def: "Extra-embryonic tissues that provide form and function to planarian embryos, including the primitive ectoderm, temporary embryonic pharynx and primitive gut. These tissues differentiate from blastomeres during sphere formation, and are thought to degenerate as definitive organogenesis and morphogenesis ensue." [ PMID:15599763 , NOPMID:"Hallez, P. (1887). Embryogénie des Dendrocoeles d’eau douce, Vol 16." , PMID:19197510 , NOPMID:"Le Moigne, A. (1963). Etude du developpement embryonnaire de Polycelis nigra (Turbellarie - Triclade). Bulletin de la Societe Zoologique de France 88, 403-422." , PMID:12888018 ] 
+def: "Extra-embryonic tissues that provide form and function to planarian embryos, including the primitive ectoderm, temporary embryonic pharynx and primitive gut. These tissues differentiate from blastomeres during sphere formation, and are thought to degenerate as definitive organogenesis and morphogenesis ensue." [ OCLC:20423827 , OCLC:464776945 , PMID:12888018 , PMID:15599763 , PMID:19197510 ] 
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000085 ! primitive gut cell
-relationship: contains PLANA:0000023 ! temporary embryonic pharynx
 relationship: contains PLANA:0000029 ! primitive ectoderm
+relationship: contains PLANA:0000023 ! temporary embryonic pharynx
+relationship: contains PLANA:0000085 ! primitive gut cell
 relationship: develops_from PLANA:0000032 ! blastomere
 
 [Term]
@@ -823,32 +823,32 @@ name: Schmidtea mediterranea developmental stage
 namespace: Schmidtea mediterranea Developmental Terms
 def: "A developmental stage that is specific to the planarian Schmidtea mediterranea" [ PMID:28072387 ] 
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
+relationship: contains PLANA:0000007 ! Stage 7
 relationship: contains PLANA:0000002 ! Stage 2
-relationship: contains PLANA:0000001 ! Stage 1
 relationship: contains PLANA:0000004 ! Stage 4
 relationship: contains PLANA:0000006 ! Stage 6
-relationship: contains PLANA:0000003 ! Stage 3
-relationship: contains PLANA:0000007 ! Stage 7
+relationship: contains PLANA:0000001 ! Stage 1
 relationship: contains PLANA:0000005 ! Stage 5
+relationship: contains PLANA:0000003 ! Stage 3
 
 [Term]
 id: PLANA:0000112
 name: Schmidtea mediterranea developmental term
 namespace: Schmidtea mediterranea Developmental Terms
-def: "A term  used to describe a developmental process during Schmidtea mediterranea embryogenesis." []
+def: "A term  used to describe a developmental process during Schmidtea mediterranea embryogenesis." [ PLANA_REF:0000000 ] 
 relationship: contains PLANA:0000063 ! extraembryonic structure
 relationship: contains PLANA:0000086 ! protosphere
 relationship: contains PLANA:0000056 ! ectolecithal embryo
-relationship: contains PLANA:0000060 ! embryonic wall
-relationship: contains PLANA:0000076 ! oral hemisphere
-relationship: contains PLANA:0000057 ! embryonic cleavage
-relationship: contains PLANA:0000051 ! direct development
+relationship: contains PLANA:0000040 ! Schmidtea mediterranea developmental stage
 relationship: contains PLANA:0000077 ! organogenesis
 relationship: contains PLANA:0000094 ! tissue morphogenesis
-relationship: contains PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: contains PLANA:0000091 ! sphere formation
+relationship: contains PLANA:0000076 ! oral hemisphere
 relationship: contains PLANA:0000052 ! dispersed cleavage
+relationship: contains PLANA:0000091 ! sphere formation
 relationship: contains PLANA:0000041 ! aboral hemisphere
+relationship: contains PLANA:0000051 ! direct development
+relationship: contains PLANA:0000060 ! embryonic wall
+relationship: contains PLANA:0000057 ! embryonic cleavage
 
 [Term]
 id: PLANA:0000041
@@ -869,14 +869,14 @@ is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 id: PLANA:0000052
 name: dispersed cleavage
 namespace: Schmidtea mediterranea Developmental Terms
-def: "A derived form of early embryonic cleavage present in ectolecithal embryos. Blastomeres divide asynchronously within a yolk syncytium, and division progeny do not remain in direct contact with one another." [ NOPMID:"Metschnikoff, E. (1883). Die embryologie von Planaria polychroa. Zeitschrift fur wissenschaftliche Zoologie 38, 331-354." , NOPMID"Ijima, I. (1884). Untersuchungeniiber den Bau und die Entwicklungsgeschichte der stisswasser-Dendrocoelen(Tricladen). Vol Bd. 40." , NOPMID: "Bardeen, C.R. (1902). Embryonic and regenerative development in planarians. Biol Bull 3, 262-288." , PMID:15599763 , NOPMID: "Hallez, P. (1887). Embryogénie des Dendrocoeles d’eau douce, Vol 16. 4) Ijima, I. (1884). Untersuchungeniiber den Bau und die Entwicklungsgeschichte der stisswasser-Dendrocoelen(Tricladen). Vol Bd. 40." , NOPMID:"Le Moigne, A. (1963). Etude du developpement embryonnaire de Polycelis nigra (Turbellarie - Triclade). Bulletin de la Societe Zoologique de France 88, 403-422." , PMID:19197510 ] 
+def: "A derived form of early embryonic cleavage present in ectolecithal embryos. Blastomeres divide asynchronously within a yolk syncytium, and division progeny do not remain in direct contact with one another." [ OCLC:20423827 , OCLC:42792751 , OCLC:464776945 , OCLC:82522822 , PLANA_REF:0000001 , PMID:15599763 , PMID:19197510 ] 
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 
 [Term]
 id: PLANA:0000056
 name: ectolecithal embryo
 namespace: Schmidtea mediterranea Developmental Terms
-def: "Turbellarian (freshwater flatworm) embryos that undergo a modified form of cleavage due to separation of oocyte and yolk. Yolk is not contained within oocytes, and is produced by somatic vitellogenic gland cells." [ NOPMID:"Stevens, N.M. (1904). On the germ cells and the embryology of Planaria simplicissima. Proc Acad Nat Sci Philadelphia 56, 208-220." , PMID:22074376 , PMID:27149082 ] 
+def: "Turbellarian (freshwater flatworm) embryos that undergo a modified form of cleavage due to separation of oocyte and yolk. Yolk is not contained within oocytes, and is produced by somatic vitellogenic gland cells." [ PLANA_REF:0000002 , PMID:22074376 , PMID:27149082 ] 
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 is_a: PLANA:0000111 ! planarian tissue
 
@@ -892,11 +892,11 @@ is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 id: PLANA:0000060
 name: embryonic wall
 namespace: Schmidtea mediterranea Developmental Terms
-def: "The parenchymal space between the gut cavity and the primitive ectoderm containing undifferentiated blastomeres in Stage 3-5 embryos." [ PMID:12888018 , NOPMID: "Hyman, L.H. (1951). The invertebrates: Platyhelminthes and Rhynchocoela. The Acoelomate Bilateria. (New York, McGraw Hill)." ] 
+def: "The parenchymal space between the gut cavity and the primitive ectoderm containing undifferentiated blastomeres in Stage 3-5 embryos." [ OCLC:16809160 , PMID:12888018 ] 
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 is_a: PLANA:0000111 ! planarian tissue
-relationship: contains PLANA:0000032 ! blastomere
 relationship: contains PLANA:0000107 ! yolk cell
+relationship: contains PLANA:0000032 ! blastomere
 
 [Term]
 id: PLANA:0000063
@@ -904,16 +904,16 @@ name: extraembryonic structure
 namespace: Schmidtea mediterranea Developmental Terms
 def: "A multicellular anatomical structure that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis." [ UBERON:0000478 ] 
 xref: UBERON:0000478
-is_a: PLANA:0000111 ! planarian tissue
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
+is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
 id: PLANA:0000076
 name: oral hemisphere
 namespace: Schmidtea mediterranea Developmental Terms
 def: "Stage 3-5 embryo hemisphere centered around the temporary embryonic pharynx." [ PMID:28072387 ] 
-is_a: PLANA:0000111 ! planarian tissue
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
+is_a: PLANA:0000111 ! planarian tissue
 
 [Term]
 id: PLANA:0000077
@@ -935,7 +935,7 @@ is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 id: PLANA:0000091
 name: sphere formation
 namespace: Schmidtea mediterranea Developmental Terms
-def: "Generation of a multilayered spherical embryo comprised of temporary extraembryonic tissues and undifferentiated blastomeres." [ PMID:28072387 , PMID:12888018 , NOPMID:"Hallez, P. (1887). Embryogénie des Dendrocoeles d’eau douce, Vol 16." , NOPMID:"Le Moigne, A. (1963). Etude du developpement embryonnaire de Polycelis nigra (Turbellarie - Triclade). Bulletin de la Societe Zoologique de France 88, 403-422." , PMID:15599763 ] 
+def: "Generation of a multilayered spherical embryo comprised of temporary extraembryonic tissues and undifferentiated blastomeres." [ OCLC:20423827 , OCLC:464776945 , PMID:12888018 , PMID:15599763 , PMID:28072387 ] 
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 
 [Term]
