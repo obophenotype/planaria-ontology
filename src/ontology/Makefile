@@ -1,7 +1,7 @@
 OBO=http://purl.obolibrary.org/obo
 ONT=plana
 BASE=$(OBO)/$(ONT)
-SRC=$(ONT)-edit.owl
+SRC=$(ONT)-edit.obo
 RELEASEDIR=../..
 ROBOT= robot
 OWLTOOLS= owltools
@@ -20,10 +20,10 @@ prepare_release: all
 $(ONT).owl: $(SRC)
 	$(ROBOT)  reason -i $< -r ELK relax reduce -r ELK annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 $(ONT).obo: $(ONT).owl
-	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
+	$(ROBOT) merge -i $< convert -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 
 
-IMPORTS = ro uberon
+IMPORTS = 
 IMPORTS_OWL = $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
 # Make this target to regenerate ALL
