@@ -27,5 +27,4 @@ license:
   label: CC-BY
 ---
 
-Enter a detailed description of your ontology here
 Anatomy ontology for planaria and terms specific to the developmental stages of the planarian __Schmidtea mediterranea__
