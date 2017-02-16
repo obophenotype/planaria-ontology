@@ -2,7 +2,7 @@
 authors: Stevens, N.M.
 external_accession: 
 id: PLANA_REF:0000002
-url:  [url]
+url: https://www.jstor.org/stable/i386141 
 year: 1904
 layout: goref
 ---
