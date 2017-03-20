@@ -7,7 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://purl.obolibrary.org/obo/TEMP.owl"
      versionIRI="http://purl.obolibrary.org/obo/plana/releases/2017-02-16/plana.owl">
-    <Prefix name="" IRI="http://purl.obolibrary.org/obo/TEMP.owl#"/>
+    <Prefix name="" IRI="http://purl.obolibrary.org/obo/TEMP.owl"/>
     <Prefix name="obo" IRI="http://purl.obolibrary.org/obo/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -235,9 +235,6 @@
         <NamedIndividual IRI="#Ventral"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#pigment_cup_cell"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI="obo:PLANA_0000071"/>
     </Declaration>
     <Declaration>
@@ -361,10 +358,10 @@
         <Class abbreviatedIRI="obo:PLANA_0000088"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#penis_papilla"/>
+        <NamedIndividual IRI="#Aboral_Hemisphere"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Aboral_Hemisphere"/>
+        <Class IRI="#penis_papilla"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="obo:PLANA_0000105"/>
@@ -487,10 +484,10 @@
         <Class IRI="#Parapharyngeal_Region"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="obo:PLANA_0000057"/>
+        <Class IRI="#Immaterial_Anatomical_Entity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Immaterial_Anatomical_Entity"/>
+        <Class abbreviatedIRI="obo:PLANA_0000057"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="obo:PLANA_0000069"/>
@@ -523,10 +520,10 @@
         <Class abbreviatedIRI="obo:PLANA_0000032"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#primitive_ectoderm"/>
+        <Class abbreviatedIRI="obo:PLANA_0000044"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="obo:PLANA_0000044"/>
+        <Class IRI="#primitive_ectoderm"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="obo:PLANA_0000056"/>
@@ -4733,56 +4730,6 @@
         <Class IRI="#reproductive_system_element"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <Class abbreviatedIRI="obo:PLANA_0000075"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <Class abbreviatedIRI="obo:PLANA_0000119"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
-            <Class abbreviatedIRI="obo:PLANA_0000010"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
-            <Class abbreviatedIRI="obo:PLANA_0000095"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#existence_overlaps"/>
-            <Class abbreviatedIRI="obo:PLANA_0000008"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#existence_overlaps"/>
-            <Class IRI="#Adult"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#existence_overlaps"/>
-            <Class IRI="#juvenile"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#existence_starts_at_point"/>
-            <Class abbreviatedIRI="obo:PLANA_0000007"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#primitive_ectoderm"/>
         <Class abbreviatedIRI="obo:PLANA_0000063"/>
     </SubClassOf>
@@ -5162,7 +5109,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <AbbreviatedIRI>obo:PLANA_0000010</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">PLANA:0000429</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -7969,6 +7916,11 @@
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">uberon</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#Acellular_Anatomical_Structure</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000426</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Acellular_Anatomical_Structure</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">acellular anatomical structure</Literal>
@@ -8011,7 +7963,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Anatomical_Entity_03092017</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000400</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8036,7 +7988,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Anatomical_Point</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000402</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8061,7 +8013,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Anatomical_Space</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000403</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8086,7 +8038,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Anatomical_Surface</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000408</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8106,7 +8058,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Definitive_Anatomical_Structure</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000425</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8126,7 +8078,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Definitive_Organism_Subdivision</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000417</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8166,7 +8118,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Embryonic_Organism_Subdivision</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000423</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8187,6 +8139,11 @@
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
         <IRI>#Head</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Planarian_Anatomy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#Head</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000418</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8211,7 +8168,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Immaterial_Anatomical_Entity</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000401</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8236,7 +8193,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Material_Anatomical_Entity</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000424</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8257,6 +8214,11 @@
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
         <IRI>#Multicellular_Anatomical_Structure</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Planarian_Anatomy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#Multicellular_Anatomical_Structure</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000427</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8281,7 +8243,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Neck</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000419</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8306,7 +8268,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Non_Material_Anatomical_Boundary</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000415</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8336,7 +8298,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Organism_Subdivision</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000416</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8356,7 +8318,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Parapharyngeal_Region</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBD</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000420</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8421,7 +8383,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Tail</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000421</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8441,7 +8403,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Tail_Stripe</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000422</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8461,7 +8423,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#apical_epidermis_surface</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000409</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8481,7 +8443,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#basal_epidermis_surface</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000410</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8521,7 +8483,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#cavity_of_pharynx</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000404</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8547,6 +8509,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#definitive_pharynx</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">definitive pharynx</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#epithelial_cell_component</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000430</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
@@ -8611,7 +8578,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#lumen_gut_surface</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000411</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8636,12 +8603,17 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#lumen_of_digestive_tract</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_ID TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000405</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#lumen_of_digestive_tract</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">lumen of digestive tract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#lumen_pharyngeal_epithelium_surface</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000412</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="obo:IAO_0000115"/>
@@ -8656,12 +8628,27 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#mouth_opening</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000406</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#mouth_opening</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">mouth opening</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#musculature_system</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000428</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#organ</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000431</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#outer_pharyngeal_epithelium_surface</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000413</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
@@ -8699,19 +8686,24 @@
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The space within the parapharyngeal pouch not occupied by the pharynx proper.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBOFormatVersion"/>
+        <IRI>#parapharyngeal_pouch_cavity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000407</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
         <IRI>#parapharyngeal_pouch_cavity</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Planarian_Anatomy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
-        <IRI>#parapharyngeal_pouch_cavity</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#parapharyngeal_pouch_cavity</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">parapharnygeal pouch cavity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#parapharyngeal_pouch_surface</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA:0000414</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
@@ -8727,26 +8719,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#penis_papilla</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">penis papilla</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="obo:IAO_0000115"/>
-        <IRI>#pigment_cup_cell</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
-        <IRI>#pigment_cup_cell</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Planarian_Anatomy</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
-        <IRI>#pigment_cup_cell</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#pigment_cup_cell</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">pigment cup cell</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
