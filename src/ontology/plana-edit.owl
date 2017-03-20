@@ -43,9 +43,6 @@
         <Class abbreviatedIRI="obo:PLANA_0000001"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#reproductive_system_structure"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Acellular_Anatomical_Structure"/>
     </Declaration>
     <Declaration>
@@ -235,9 +232,6 @@
         <NamedIndividual IRI="#Ventral"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#pigment_cup_cell"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI="obo:PLANA_0000071"/>
     </Declaration>
     <Declaration>
@@ -361,10 +355,10 @@
         <Class abbreviatedIRI="obo:PLANA_0000088"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#penis_papilla"/>
+        <NamedIndividual IRI="#Aboral_Hemisphere"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Aboral_Hemisphere"/>
+        <Class IRI="#penis_papilla"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="obo:PLANA_0000105"/>
@@ -487,10 +481,10 @@
         <Class IRI="#Parapharyngeal_Region"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="obo:PLANA_0000057"/>
+        <Class IRI="#Immaterial_Anatomical_Entity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Immaterial_Anatomical_Entity"/>
+        <Class abbreviatedIRI="obo:PLANA_0000057"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="obo:PLANA_0000069"/>
@@ -523,10 +517,10 @@
         <Class abbreviatedIRI="obo:PLANA_0000032"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#primitive_ectoderm"/>
+        <Class abbreviatedIRI="obo:PLANA_0000044"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="obo:PLANA_0000044"/>
+        <Class IRI="#primitive_ectoderm"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="obo:PLANA_0000056"/>
@@ -4288,7 +4282,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="obo:PLANA_0000122"/>
-        <Class IRI="#reproductive_system_structure"/>
+        <Class IRI="#reproductive_system_element"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="obo:PLANA_0000123"/>
@@ -4733,56 +4727,6 @@
         <Class IRI="#reproductive_system_element"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <Class abbreviatedIRI="obo:PLANA_0000075"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <Class abbreviatedIRI="obo:PLANA_0000119"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
-            <Class abbreviatedIRI="obo:PLANA_0000010"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
-            <Class abbreviatedIRI="obo:PLANA_0000095"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#existence_overlaps"/>
-            <Class abbreviatedIRI="obo:PLANA_0000008"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#existence_overlaps"/>
-            <Class IRI="#Adult"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#existence_overlaps"/>
-            <Class IRI="#juvenile"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#pigment_cup_cell"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#existence_starts_at_point"/>
-            <Class abbreviatedIRI="obo:PLANA_0000007"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#primitive_ectoderm"/>
         <Class abbreviatedIRI="obo:PLANA_0000063"/>
     </SubClassOf>
@@ -4796,10 +4740,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#reproductive_system_element"/>
-        <Class IRI="#reproductive_system"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#reproductive_system_structure"/>
         <Class IRI="#reproductive_system"/>
     </SubClassOf>
     <SubClassOf>
@@ -6216,7 +6156,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="obo:IAO_0000115"/>
         <AbbreviatedIRI>obo:PLANA_0000058</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A cryptic digestive system in Stage 3-6 embryos comprised of temporary embryonic cell types and organs, including the temporary embryonic pharynx and primitive gut cells. Embryonic gut cells, likely produced from blastomeres, form a phagocytic tissue layer surrounding the inner gut cavity during Stages 4-6. It is not known whether the embryonic gut is temporary embryonic tissue or a definitive tissue.</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A cryptic digestive system in Stage 3-6 embryos comprised of temporary embryonic cell types and organs, including the temporary embryonic pharynx and primitive gut cells. Embryonic gut cells, likely produced from blastomeres, form a phagocytic tissue layer surrounding the inner gut cavity during Stages 4-6. It is not known whether the embryonic gut is temporary embryonic tissue or a definitive tissue. For convenience, the embryonic gut is currently designated as an extraembryonic structure because cell type specific markers for the embryonic gut do not stain the definitive gut in hatchlings or adult animals.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
@@ -8146,7 +8086,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#Developing_Anatomical_Structure</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000209</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8496,7 +8436,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#bursa</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000201</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8550,13 +8490,28 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
+        <IRI>#embryonic_digestive_system_element</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Planarian_Anatomy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
+        <IRI>#embryonic_digestive_system_element</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000210</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#embryonic_digestive_system_element</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">embryonic digestive system element</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
         <IRI>#genital_atrium</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Planarian_Anatomy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#genital_atrium</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000202</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8571,7 +8526,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#gonopore</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000203</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8671,7 +8626,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#ovary</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000204</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8686,7 +8641,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#oviduct</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000205</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8721,7 +8676,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#penis_papilla</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000206</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8730,23 +8685,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="obo:IAO_0000115"/>
-        <IRI>#pigment_cup_cell</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+        <IRI>#primitive_ectoderm</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A single cell layer of extraembryonic, post-mitotic ectodermal cells bounding the embryo. The primitive ectoderm forms during Stage 2 and is thought to degenerate as the definitive epidermis forms during Stages 5-7.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
-        <IRI>#pigment_cup_cell</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Planarian_Anatomy</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
-        <IRI>#pigment_cup_cell</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#pigment_cup_cell</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">pigment cup cell</Literal>
+        <AnnotationProperty abbreviatedIRI="oboInOwl:hasDbXref"/>
+        <IRI>#primitive_ectoderm</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">OCLC:20423827, OCLC:464776945, OCLC:82522822, PLANA_REF:0000001</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
@@ -8756,7 +8701,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#primitive_ectoderm</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000029</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8816,7 +8761,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#reproductive_system_element</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000200</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8824,31 +8769,6 @@
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">reproductive system element</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="obo:IAO_0000115"/>
-        <IRI>#reproductive_system_structure</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Any anatomical structure that is part of the reproductive system.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="oboInOwl:hasDbXref"/>
-        <IRI>#reproductive_system_structure</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">UBERON:0005156</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
-        <IRI>#reproductive_system_structure</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Planarian_Anatomy</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
-        <IRI>#reproductive_system_structure</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA TBA</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#reproductive_system_structure</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">reproductive system structure</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasOBONamespace"/>
         <IRI>#sperm_duct</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Planarian_Anatomy</Literal>
@@ -8856,7 +8776,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#sperm_duct</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000207</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -8886,7 +8806,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:id"/>
         <IRI>#testis</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_TBA</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PLANA_0000208</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
