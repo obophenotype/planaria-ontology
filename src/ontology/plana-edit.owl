@@ -4759,7 +4759,14 @@
     <!-- http://purl.obolibrary.org/obo/PLANA_0000110 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000110">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000050"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000120"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000005"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
@@ -5771,24 +5778,6 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000007"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000008"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -5800,44 +5789,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000005"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000100"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000102"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000105"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000010"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000110"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A plicate and protrusible organ that is the sole point of entry and exit for the Triclad gut. It contains epithelial, muscular, secretory and neuronal cell types.</obo:IAO_0000115>
@@ -6093,10 +6046,35 @@
     <!-- http://purl.obolibrary.org/obo/PLANA.owl#inner_pharynx_epithelium -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharynx_epithelium">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000037"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#definitive_pharynx"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000049"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#definitive_pharynx"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Heavily ciliated epidermal cells covering the inner surface of the pharynx, facing the lumen. These are &quot;insunk&quot; epidermal cells in which the nuclei reside behind  layers of longitudinal and circumferential muscles and the epithelial cell body sends out a ciliated projection to the surface to cover the lumenal surface.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASIN:B000M4NK9M</oboInOwl:hasDbXref>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000472</oboInOwl:id>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000471</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inner pharygeal epithelium</rdfs:label>
     </owl:Class>
     
@@ -6459,10 +6437,30 @@
     <!-- http://purl.obolibrary.org/obo/PLANA.owl#outer_pharynx_epithelium -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#outer_pharynx_epithelium">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000037"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#definitive_pharynx"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000049"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#definitive_pharynx"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Heavily ciliated epidermal cells covering the outer surface of the pharynx shaft. These are &quot;insunk&quot; epidermal cells in which the nuclei reside behind the layers of longitudinal and circumferential muscles and the epithelial cell body sends out a ciliated projection to the surface to cover and encase the shaft.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASIN:B000M4NK9M</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PLANA:0000472</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">outer pharyngeal epithelium</rdfs:label>
     </owl:Class>
     
@@ -7303,9 +7301,13 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000049"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000050"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000075"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000110"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000124"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#cavity_of_pharynx"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#definitive_pharynx"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharynx_epithelium"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#outer_pharynx_epithelium"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#primordial_germ_cell"/>
     </owl:NamedIndividual>
     
@@ -7390,6 +7392,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000075"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000090"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000107"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000110"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000116"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000122"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000124"/>
@@ -7399,13 +7402,16 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#cement_gland"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#copulatory_apparatus"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#copulatory_bursa"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#definitive_pharynx"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#egg_capsule"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#female_germ_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#female_germline_stem_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gonad"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gonopore"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharynx_epithelium"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#male_germ_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#male_germline_stem_cell"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#outer_pharynx_epithelium"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#ovary"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#oviduct"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#penis_papilla"/>
