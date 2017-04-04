@@ -1784,6 +1784,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000007"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4121,6 +4127,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000007"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4146,6 +4158,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5940,6 +5958,24 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#anterior_commissure">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A bundle of nerve fibers connecting the two cephalic ganglia.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000935</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
@@ -6768,12 +6804,47 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#lateral_branches">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000025"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000044"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nerve branches that extend from the lateral side of each cephalic ganglia lobe. Each lobe has nine lateral branches which terminate in sensory organs. Evidence suggests they play a role in chemosensation.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12128224, PMID:9493832, PMID:4452894, PMID:18466009, PMID:27612384</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nerve branches that extend from the lateral side of each cephalic ganglia lobe. Each lobe has nine lateral branches which terminate in sensory organs. Evidence suggests they play a role in chemosensation.</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000461</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral branches</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#lateral_branches"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nerve branches that extend from the lateral side of each cephalic ganglia lobe. Each lobe has nine lateral branches which terminate in sensory organs. Evidence suggests they play a role in chemosensation.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12128224, PMID:9493832, PMID:4452894, PMID:18466009, PMID:27612384</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -7056,12 +7127,36 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#neuropil">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000025"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cluster of neurites that is part of a nervous system and forms a network of dendrites and axons where synapses are present and in which neuronal somata do not occur.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0002606, PMID:27612384</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0002606</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000471</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuropil</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#neuropil"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cluster of neurites that is part of a nervous system and forms a network of dendrites and axons where synapses are present and in which neuronal somata do not occur.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27612384</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -7117,18 +7212,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#optic_chiasma">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000025"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000036"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000124"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A decussation of the diencephalon where the fibers of the optic nerve cross.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000959, PMID:18466009</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000959</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000459</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">optic chiasma</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#optic_chiasma"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A decussation of the diencephalon where the fibers of the optic nerve cross.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:18466009</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -8222,7 +8318,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#transverse_commissure">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000025"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Axons that cross the midline connecting the right and left ventral nerve cords. Taken together the individual transverse commissures form a ladder-like structure running the length of the animal. They are excluded from the anterior, cephalic ganglion region.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Axons that cross the midline connecting the right and left ventral nerve cords. Taken together the individual transverse commissures form a ladder-like structure running the length of the animal. They are excluded from the anterior region containing the cephalic ganglia.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000470</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transverse commissure</rdfs:label>
@@ -8345,6 +8453,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000035"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000036"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000039"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000044"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000045"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000046"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000047"/>
@@ -8367,11 +8476,13 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000088"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000095"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000096"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000097"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000103"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000110"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000124"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#GABAergic_neuron"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#anterior_commissure"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#apical_epidermis_surface"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#basal_epidermis_surface"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#body_wall_musculature"/>
@@ -8383,12 +8494,15 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharyngeal_longitudinal_muscle_fiber"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharynx_epithelium"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharynx_nerve_plexus"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#lateral_branches"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#lumen_gut_surface"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#lumen_of_digestive_tract"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#lumen_pharyngeal_epithelium_surface"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#mouth_opening"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#musculature_of_pharynx"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#neuropil"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#octopaminergic_neuron"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#optic_chiasma"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#outer_pharyngeal_circular_muscle_fiber"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#outer_pharyngeal_longitudinal_muscle_fiber"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#outer_pharynx_epithelium"/>
@@ -8492,6 +8606,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000035"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000036"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000039"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000044"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000045"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000046"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000047"/>
@@ -8516,6 +8631,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000090"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000095"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000096"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000097"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000103"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000107"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000110"/>
@@ -8524,6 +8640,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000124"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#GABAergic_neuron"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#anterior_commissure"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#apical_epidermis_surface"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#basal_epidermis_surface"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#body_wall_musculature"/>
@@ -8544,6 +8661,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharyngeal_longitudinal_muscle_fiber"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharynx_epithelium"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharynx_nerve_plexus"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#lateral_branches"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#lumen_gut_surface"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#lumen_of_digestive_tract"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#lumen_pharyngeal_epithelium_surface"/>
@@ -8551,7 +8669,9 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#male_germline_stem_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#mouth_opening"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#musculature_of_pharynx"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#neuropil"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#octopaminergic_neuron"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#optic_chiasma"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#outer_pharyngeal_circular_muscle_fiber"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#outer_pharyngeal_longitudinal_muscle_fiber"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#outer_pharynx_epithelium"/>
