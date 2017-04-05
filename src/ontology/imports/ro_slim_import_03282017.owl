@@ -122,16 +122,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/IAO_0000426 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000426">
-        <dc:IAO_0000115>An assertion that holds between an OWL Object Property and a string or literal, where the value of the string or literal is a Common Logic sentence of collection of sentences that define the Object Property.</dc:IAO_0000115>
-        <rdfs:label xml:lang="en">first order logic expression</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002422"/>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/IAO_0000589 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000589">
@@ -149,17 +139,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0001900 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001900">
-        <dc:IAO_0000115>An assertion that holds between an OWL Object Property and a temporal interpretation that elucidates how OWL Class Axioms that use this property are to be interpreted in a temporal context.</dc:IAO_0000115>
-        <rdfs:label xml:lang="en">temporal interpretation</rdfs:label>
-        <foaf:page rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/oborel/obo-relations/wiki/ROAndTime</foaf:page>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002422"/>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/RO_0002421 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002421"/>
@@ -172,72 +151,7 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0002423 -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002423">
-        <rdfs:label xml:lang="en">logical macro assertion on an annotation property</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002421"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002560 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002560">
-        <dc:IAO_0000115>If Rel is the relational form of a process Pr, then it follow that: Rel(x,y) &lt;-&gt; exists p : Pr(p), x subject-partner-in p, y object-partner-in p</dc:IAO_0000115>
-        <rdfs:label>is asymmetric relational form of process class</rdfs:label>
-        <foaf:page rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/oborel/obo-relations/wiki/InteractionRelations</foaf:page>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002562"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002561 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002561">
-        <dc:IAO_0000115>If Rel is the relational form of a process Pr, then it follow that: Rel(x,y) &lt;-&gt; exists p : Pr(p), x partner-in p, y partner-in p</dc:IAO_0000115>
-        <rdfs:label>is symmetric relational form of process class</rdfs:label>
-        <foaf:page rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/oborel/obo-relations/wiki/InteractionRelations</foaf:page>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002562"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002562 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002562"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002575 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002575">
-        <dc:IAO_0000115>relation p is the direct form of relation q iff p is a subPropertyOf q, p does not have the Transitive characteristic, q does have the Transitive characteristic, and for all x, y: x q y -&gt; exists z1, z2, ..., zn such that x p z1 ... z2n y</dc:IAO_0000115>
-        <dc:IAO_0000116>The general property hierarchy is:
-
-  &quot;directly P&quot; SubPropertyOf &quot;P&quot;
-  Transitive(P)
-
-Where we have an annotation assertion
-
-  &quot;directly P&quot; &quot;is direct form of&quot; &quot;P&quot;</dc:IAO_0000116>
-        <dc:RO_0002423>If we have the annotation P is-direct-form-of Q, and we have inverses P&apos; and Q&apos;, then it follows that P&apos; is-direct-form-of Q&apos;</dc:RO_0002423>
-        <dc:creator>Chris Mungall</dc:creator>
-        <rdfs:label>is direct form of</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002422"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002579 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002579">
-        <dc:IAO_0000115>relation p is the indirect form of relation q iff p is a subPropertyOf q, and there exists some p&apos; such that p&apos; is the direct form of q, p&apos; o p&apos; -&gt; p, and forall x,y : x q y -&gt; either (1) x p y or (2) x p&apos; y</dc:IAO_0000115>
-        <dc:creator>Chris Mungall</dc:creator>
-        <rdfs:label>is indirect form of</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002422"/>
-    </owl:AnnotationProperty>
-    
 
 
     <!-- http://purl.obolibrary.org/obo/hasBroadSynonym -->
@@ -294,10 +208,6 @@ Where we have an annotation assertion
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/RO_0002423 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/RO_0002423"/>
-    
 
 
     <!-- http://purl.org/dc/elements/1.1/creator -->
@@ -3958,19 +3868,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0002444 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002444">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002454"/>
-        <obo:IAO_0000112>Pediculus humanus capitis parasite of human</obo:IAO_0000112>
-        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <obo:IAO_0000118>parasitizes</obo:IAO_0000118>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:RO_0002560 rdf:resource="http://purl.obolibrary.org/obo/GO_0072519"/>
-        <obo:hasExactSynonym>direct parasite of</obo:hasExactSynonym>
-        <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
-        <rdfs:label>parasite of</rdfs:label>
-    </owl:ObjectProperty>
     
 
 
