@@ -3365,24 +3365,6 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000007"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000008"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3390,12 +3372,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000005"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3422,12 +3398,6 @@
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000080</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peripheral nervous system</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000080"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A major division of the nervous system that contains nerves which connect the central nervous system (CNS) with sensory organs, other organs, muscles, blood vessels and glands.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000010</oboInOwl:hasDbXref>
-    </owl:Axiom>
     
 
 
@@ -4255,8 +4225,26 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000025"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000012"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system.</obo:IAO_0000115>
@@ -6127,7 +6115,6 @@
     
 
 
-
     <!-- http://purl.obolibrary.org/obo/PLANA.owl#basophilic_gland_cell -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#basophilic_gland_cell">
@@ -6143,6 +6130,8 @@
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">One of two distinct histochemical classes of gland cells, these are found near the ventral mesenchyme, the pharynx and in the dorsal region of the head. May also be called cyanophilic gland cells.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID: 20865784</oboInOwl:hasDbXref>
     </owl:Axiom>
+    
+
 
     <!-- http://purl.obolibrary.org/obo/PLANA.owl#body_wall_musculature -->
 
@@ -6165,7 +6154,6 @@
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000240</oboInOwl:id>
         <rdfs:label>body wall musculature</rdfs:label>
     </owl:Class>
-
     
 
 
@@ -6556,7 +6544,33 @@
     <!-- http://purl.obolibrary.org/obo/PLANA.owl#gastrodermal_plexus -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#gastrodermal_plexus">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000037"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000050"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000080"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000025"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
@@ -8050,7 +8064,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#secretory_system">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000114"/>
-
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -8063,8 +8076,6 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-
-
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anatomical system that has as its parts cells and glands devoted to the discharge of substances such as mucus.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000484</oboInOwl:id>
@@ -8109,10 +8120,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#sensory_cell">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000080"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000119"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000125"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000125"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell that performs a sensory function.</obo:IAO_0000115>
@@ -8243,8 +8262,27 @@
     <!-- http://purl.obolibrary.org/obo/PLANA.owl#subepidermal_nerve_plexus -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#subepidermal_nerve_plexus">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000037"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000080"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plexus of nerves located just between the epidermis and the body wall muscles.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plexus of nerves located just between the definitive epidermis and the body wall musculature.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000466</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subepidermal nerve plexus</rdfs:label>
@@ -8255,7 +8293,26 @@
     <!-- http://purl.obolibrary.org/obo/PLANA.owl#submuscular_nerve_plexus -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#submuscular_nerve_plexus">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000037"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000080"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plexus of nerves that innervate the body wall muscles.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000467</oboInOwl:id>
@@ -8422,6 +8479,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Axons that cross the midline connecting the right and left ventral nerve cords. Taken together the individual transverse commissures form a ladder-like structure running the length of the animal. They are excluded from the anterior region containing the cephalic ganglia.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000470</oboInOwl:id>
@@ -8564,11 +8627,13 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000075"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000078"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000079"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000080"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000087"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000088"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000095"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000096"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000097"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000103"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000110"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000124"/>
@@ -8582,6 +8647,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#cholinergic_neuron"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#definitive_pharynx"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#dopaminergic_neuron"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gastrodermal_plexus"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharyngeal_circular_muscle_fiber"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharyngeal_longitudinal_muscle_fiber"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharynx_epithelium"/>
@@ -8606,7 +8672,11 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#pharynx_nerve_plexus"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#pharynx_outer_epithelial_surface"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#primordial_germ_cell"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#sensory_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#serotonergic_necuron"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#subepidermal_nerve_plexus"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#submuscular_nerve_plexus"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#transverse_commissure"/>
     </owl:NamedIndividual>
     
 
@@ -8718,12 +8788,14 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000075"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000078"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000079"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000080"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000087"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000088"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000090"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000095"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000096"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000097"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000103"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000107"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000110"/>
@@ -8747,6 +8819,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#egg_capsule"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#female_germ_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#female_germline_stem_cell"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gastrodermal_plexus"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gonad"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gonopore"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharyngeal_circular_muscle_fiber"/>
@@ -8780,12 +8853,16 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#primordial_germ_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#reproductive_system"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#seminal_vesicle"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#sensory_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#serotonergic_necuron"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#sperm_duct"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatid"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatocyte"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatogonia"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#subepidermal_nerve_plexus"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#submuscular_nerve_plexus"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#testis"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#transverse_commissure"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#tuba"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#vitelline_gland"/>
     </owl:NamedIndividual>
