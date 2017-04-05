@@ -13,6 +13,9 @@
      xmlns:cito="http://purl.org/spar/cito/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/PLANA.owl">
         <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2017-02-16/plana.owl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/src/ontology/imports/cl_slim_import_04052017.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/plana/imports/uberon_import.owl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/src/ontology/imports/ro_slim_import_03282017.owl"/>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2</oboInOwl:hasOBOFormatVersion>
     </owl:Ontology>
     
@@ -84,18 +87,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0003000 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0003000"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/PLANA.owl#existence_ends_at_point -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#existence_ends_at_point">
@@ -163,14 +154,14 @@
 
     <!-- http://purl.obolibrary.org/obo/GO_0005575 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005575">
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005575">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000127"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The part of a cell, extracellular environment or virus in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together. Source: NIF_Subcellular:sao-1337158144, GOC:go_curators</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0005575</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000433</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular component</rdfs:label>
-    </owl:Class>
+    </rdf:Description>
     
 
 
