@@ -3086,18 +3086,30 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000122"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#female_germ_cell"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#ovary"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A female germ cell that has entered meiosis.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000023</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000074</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oocyte</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000074"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A female germ cell that has entered meiosis.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000023</oboInOwl:hasDbXref>
-    </owl:Axiom>
     
 
 
@@ -3757,12 +3769,6 @@
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000090</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sperm</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000090"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mature male germ cell that develops from a spermatid.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000019</oboInOwl:hasDbXref>
-    </owl:Axiom>
     
 
 
@@ -6177,11 +6183,16 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The passageway connecting the gonopore to the bursa (genital atrium). Part of the copulatory apparatus. During mating, sperm from a partner is deposited into the bursal canal, where it enters the oviducts.  Egg capsules pass through the bursal canal as they are laid through the gonopore.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 22074376</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000201</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bursal canal</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#bursal_canal"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The passageway connecting the gonopore to the bursa (genital atrium). Part of the copulatory apparatus. During mating, sperm from a partner is deposited into the bursal canal, where it enters the oviducts.  Egg capsules pass through the bursal canal as they are laid through the gonopore.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:22074376</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -6233,12 +6244,16 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glands surrounding the genital atrium and copulatory apparatus that are required for production of the proteinaceous egg capsule shell and stalk and for affixing a newly laid egg capsule to a substrate.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 18942102</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 27149082</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000224</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cement gland</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#cement_gland"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glands surrounding the genital atrium and copulatory apparatus that are required for production of the proteinaceous egg capsule shell and stalk and for affixing a newly laid egg capsule to a substrate.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18942102, PMID:27149082</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -6326,11 +6341,16 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accessory reproductive structures involved in copulation, egg capsule development and laying.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 22074376</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000232</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copulatory apparatus</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#copulatory_apparatus"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accessory reproductive structures involved in copulation, egg capsule development and laying.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:22074376</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -6351,7 +6371,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chamber where egg capsules are formed. One or more zygotes and yolk cells produced by the vitelline glands collect in the copulatory bursa, and cement glands participate in production of the egg capsule shell.  Nascent egg capsules exit the body by passing through the bursal canal and gonopore. The copulatory bursa is synonymous with the term genital atrium.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 22074376</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22074376</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000233</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copulatory bursa</rdfs:label>
@@ -6472,6 +6492,29 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PLANA.owl#elongating_spermatid -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#elongating_spermatid">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatid"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#round_spermatid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000238</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elongating spermatid</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PLANA.owl#embryonic_digestive_system_element -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#embryonic_digestive_system_element">
@@ -6518,17 +6561,45 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#ovary"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#ovary"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#primordial_germ_cell"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A piwi-1+, nanos+ cell residing in the ovary that self-renews and give rise to cells that differentiate into oocytes.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 19022767</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 20844018</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000223</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female germline stem cell</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#female_germline_stem_cell"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A piwi-1+, nanos+ cell residing in the ovary that self-renews and give rise to cells that differentiate into oocytes.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20844018, PMID:19022767</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -6591,6 +6662,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#genital_atrium">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#reproductive_system_element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000202</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genital atrium</rdfs:label>
@@ -6635,14 +6718,14 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#reproductive_system_element"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000122"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6677,11 +6760,16 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The genital pore, a component of the copulatory apparatus, is an opening located on the ventral side of the animal posterior to the definitive pharynx. The gonopore is the sole point of exit and entry for the reproductive system, allowing from reciprocal exchange of sperm during copulation and egg capsule laying.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 22074376</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000203</oboInOwl:id>
         <rdfs:label>gonopore</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gonopore"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The genital pore, a component of the copulatory apparatus, is an opening located on the ventral side of the animal posterior to the definitive pharynx. The gonopore is the sole point of exit and entry for the reproductive system, allowing from reciprocal exchange of sperm during copulation and egg capsule laying.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22074376</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -7063,17 +7151,45 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#testis"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#testis"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#primordial_germ_cell"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A piwi-1+, nanos+ cell residing around the testis periphery that self-renews and give rise to cells that form sperm.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 19022767</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 20844018</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000219</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male germline stem cell</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#male_germline_stem_cell"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A piwi-1+, nanos+ cell residing around the testis periphery that self-renews and give rise to cells that form sperm.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20844018, PMID:19022767</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -7495,14 +7611,14 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#organ"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000074"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -7513,32 +7629,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000074"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#female_germline_stem_cell"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#part_of"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#reproductive_system"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000010"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#primordial_germ_cell"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -7666,11 +7758,16 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rounded protuberance, connected to the seminal vesicles, responsible for transferring semen into a mating partner&apos;s bursal canal.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 22074376</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000206</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">penis papilla</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#penis_papilla"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rounded protuberance, connected to the seminal vesicles, responsible for transferring semen into a mating partner&apos;s bursal canal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:22074376</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -8036,15 +8133,37 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/PLANA.owl#reproductive_system_structure -->
+    <!-- http://purl.obolibrary.org/obo/PLANA.owl#round_spermatid -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#reproductive_system_structure">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#reproductive_system"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any anatomical structure that is part of the reproductive system.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0005156</oboInOwl:hasDbXref>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#round_spermatid">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatid"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatocyte"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000130</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reproductive system structure</rdfs:label>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000237</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">round spermatid</rdfs:label>
     </owl:Class>
     
 
@@ -8114,12 +8233,16 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glandular pouches adjoining the sperm ducts which produce seminal fluid.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 19022767</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 22074376</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000234</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seminal vesicle</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#seminal_vesicle"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glandular pouches adjoining the sperm ducts which produce seminal fluid.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22074376, PMID:19022767</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -8229,6 +8352,12 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#spermatid">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#male_germ_cell"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#testis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatocyte"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A male germ cell that develops from the haploid secondary spermatocytes. Without further division, spermatids undergo structural changes and give rise to spermatozoa.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000018</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
@@ -8408,62 +8537,20 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#organ"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000090"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#Adult"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_overlaps"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000090"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#male_germline_stem_cell"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatid"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatocyte"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#spermatogonia"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000010"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TEMP#develops_from"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#primordial_germ_cell"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#existence_starts_at_point"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#juvenile"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -8865,9 +8952,11 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#definitive_pharynx"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#dopaminergic_neuron"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#egg_capsule"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#elongating_spermatid"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#female_germ_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#female_germline_stem_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gastrodermal_plexus"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#genital_atrium"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gonad"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#gonopore"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#inner_pharyngeal_circular_muscle_fiber"/>
@@ -8900,6 +8989,8 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#pharynx_outer_epithelial_surface"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#primordial_germ_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#reproductive_system"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#reproductive_system_element"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#round_spermatid"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#seminal_vesicle"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#sensory_cell"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#serotonergic_necuron"/>
@@ -8973,22 +9064,30 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#ovary">
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000204</oboInOwl:id>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 17376870</oboInOwl:hasDbXref>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gonad containing female germline stem cells which fuel oocyte production. Two ovaries are located ventally, underneath the body wall musculature, immediately posterior to the cephalic ganglia (brain) and adjacent to the ventral nerve cords. The neoblast compartment, including piwi-1+, nanos+ primordial germ cells, fuel formation of the ovaries during juvenile development.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ovary</rdfs:label>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 19022767</oboInOwl:hasDbXref>
     </rdf:Description>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#ovary"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gonad containing female germline stem cells which fuel oocyte production. Two ovaries are located ventally, underneath the body wall musculature, immediately posterior to the cephalic ganglia (brain) and adjacent to the ventral nerve cords. The neoblast compartment, including piwi-1+, nanos+ primordial germ cells, fuel formation of the ovaries during juvenile development.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17376870, PMID:19022767</oboInOwl:hasDbXref>
+    </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PLANA.owl#testis">
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17376870</oboInOwl:hasDbXref>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gonad containing male germline stem cells which fuel sperm production. Testes are located dorsolaterally, and are excluded from the head. The neoblast compartment, including piwi-1+, nanos+ primordial germ cells, fuels formation of testes during juvenile development and regeneration.</obo:IAO_0000115>
         <rdfs:label>testis</rdfs:label>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLANA:0000208</oboInOwl:id>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 19022767</oboInOwl:hasDbXref>
     </rdf:Description>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA.owl#testis"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gonad containing male germline stem cells which fuel sperm production. Testes are located dorsolaterally, and are excluded from the head. The neoblast compartment, including piwi-1+, nanos+ primordial germ cells, fuels formation of testes during juvenile development and regeneration.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17376870, PMID:19022767</oboInOwl:hasDbXref>
+    </owl:Axiom>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
