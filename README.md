@@ -22,3 +22,6 @@ Editors of this ontology should use the edit version, [src/ontology/plana-edit.o
 ## Contact
 Please use this GitHub repository's [Issue tracker](https://github.com/obophenotype/planaria-ontology/issues) to request new terms/classes or report errors or specific concerns related to the ontology.
 
+## Acknowledgments
+
+This project was created using the [ontology starter kit](https://github.com/INCATools/ontology-starter-kit).
