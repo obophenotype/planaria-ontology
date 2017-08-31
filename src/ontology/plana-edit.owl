@@ -8498,6 +8498,20 @@ Environments include natural environments or exposures, experimentally applied c
     
 
 
+    <!-- http://purl.obolibrary.org/PLANA_0004529 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/PLANA_0004529">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000114"/>
+        <IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Connected anatomical system that forms a barrier between an animal and its environment. In vertebrates, the integumental system consists of the epidermis, dermis plus associated glands and adnexa such as hair and scales. In invertebrates, the integumental system may include cuticle.</IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Erin Davies</oboInOwl:created_by>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-08-31T19:21:09Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0002416</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label xml:lang="en">integumental system</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PLANA_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000001">
@@ -10174,7 +10188,8 @@ Environments include natural environments or exposures, experimentally applied c
     <!-- http://purl.obolibrary.org/obo/PLANA_0000034 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000034">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000114"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/PLANA_0004529"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000431"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -10197,12 +10212,6 @@ Environments include natural environments or exposures, experimentally applied c
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000014"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000429"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
