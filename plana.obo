@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2018-07-13/plana.owl
+data-version: plana/releases/2018-07-15/plana.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -3270,6 +3270,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002583 PLANA:0000214 ! existence starts at point juvenile
+relationship: RO:0003000 PLANA:0000107 ! produces yolk cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000231 xsd:string
 
 [Term]
@@ -6813,6 +6814,16 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 id: RO:0002593
 name: existence ends at point
 def: "x existence starts at point y if and only if the time point at which x starts is equivalent to the time point at which y ends." []
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Typedef]
+id: RO:0003000
+name: produces
+def: "\na produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix.\n" []
+comment: \nNote that this definition doesn't quite distinguish the output of a transformation process from a production process, which is related to the identity/granularity issue.\n
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
