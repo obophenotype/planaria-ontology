@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/obophenotype/planaria-ontology.svg?branch=master)](https://travis-ci.org/obophenotype/planaria-ontology)
 [![DOI](https://zenodo.org/badge/13996/obophenotype/planaria-ontology.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/planaria-ontology)
 
-# planaria-ontology
+# Planarian Anatomy And _Schmidtea mediterranean_ Developmental Stage Ontology
 
 This ontology is for planaria anatomy and developmental stages. The stages are specific for the planarian species _Schmidtea mediterranea_.
 
