@@ -24,7 +24,7 @@ The editors version is [plana-edit.owl](plana-edit.owl)
 
 [../../plana.owl](../../plana.owl) is the release version
 
-To edit, open the file in Protege. First make sure you have the repository cloned, see [the GitHub project](https://github.com/srobb1/planarian-anatomy-ontology) for details.
+To edit, open the file in Protege. First make sure you have the repository cloned, see [the GitHub project](https://github.com/obophenotype/planarian-ontology) for details.
 
 ## ID Ranges
 
@@ -96,8 +96,8 @@ Finally type
 
 IMMEDIATELY AFTERWARDS (do *not* make further modifications) go here:
 
- * https://github.com/srobb1/planarian-anatomy-ontology/releases
- * https://github.com/srobb1/planarian-anatomy-ontology/releases/new
+ * https://github.com/obophenotype/planarian-ontology/releases
+ * https://github.com/obophenotype/planarian-ontology/releases/new
 
 The value of the "Tag version" field MUST be
 
@@ -124,13 +124,13 @@ For questions on this contact Chris Mungall or email obo-admin AT obofoundry.org
 
 # Travis Continuous Integration System
 
-Check the build status here: [![Build Status](https://travis-ci.org/srobb1/planarian-anatomy-ontology.svg?branch=master)](https://travis-ci.org/srobb1/planarian-anatomy-ontology)
+Check the build status here: [![Build Status](https://travis-ci.org/obophenotype/planarian--ontology.svg?branch=master)](https://travis-ci.org/obophenotype/planarian-ontology)
 
 Note: if you have only just created this project you will need to authorize travis for this repo.
 
  1. Go to [https://travis-ci.org/profile/srobb1](https://travis-ci.org/profile/srobb1)
  2. click the "Sync account" button
- 3. Click the tick symbol next to planarian-anatomy-ontology
+ 3. Click the tick symbol next to planarian-ontology
 
 Travis builds should now be activated
 
