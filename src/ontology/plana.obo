@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2018-12-11/plana.owl
+data-version: plana/releases/2019-02-21/plana.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -1071,14 +1071,6 @@ created_by: janelomax
 creation_date: 2012-09-19T15:56:06Z
 
 [Term]
-id: GO:0031099
-name: regeneration
-namespace: biological_process
-def: "The regrowth of a lost or destroyed body part, such as an organ or tissue. This process may occur via renewal, repair, and/or growth alone (i.e. increase in size or mass)." [GOC:mah, GOC:pr]
-xref: Wikipedia:Regeneration_(biology)
-is_a: GO:0048856 ! anatomical structure development
-
-[Term]
 id: GO:0032501
 name: multicellular organismal process
 namespace: biological_process
@@ -1530,6 +1522,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000025 x
 id: PLANA:0000026
 name: definitive gut
 def: "The planarian triclad gut contains a central anterior gut branch connected to two posterior gut branches arranged around the definitive pharynx. Secondary gut branches extend laterally from the primary gut branches, while tertiary gut branches extend from the secondary branches. Food and waste enter and exit the definitive gut through the defintive pharynx." [PMID:21664348]
+synonym: "gut" EXACT []
 is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000049 ! part of digestive system
 relationship: RO:0001018 PLANA:0000418 ! contained in head
@@ -1601,7 +1594,6 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000029 x
 id: PLANA:0000030
 name: midline
 def: "The median line/ plane of bilateral symmetry along the anteroposterior axis." []
-synonym: "edge" BROAD []
 is_a: PLANA:0000102 ! anatomical compartment subdivision
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -1659,6 +1651,7 @@ id: PLANA:0000034
 name: definitive epidermis
 def: "A single cell layer of post-mitotic epithelial cells containing ciliated and non-ciliated cell types forming the exterior surface of the animal." [OCLC:16809160]
 comment: At present, this definition does not apply to epithelial structures other than the dorsal and ventral epidermis (i.e., the pharyngeal epithelium).
+synonym: "epidermis" EXACT []
 is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0004529 ! part of integumental system
 relationship: RO:0001018 PLANA:0000418 ! contained in head
@@ -2822,6 +2815,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000109 x
 id: PLANA:0000110
 name: definitive pharynx progenitor
 def: "foxA1+ neoblasts and their post-mitotic, differentiating daughters required for maintenance and regeneration of the definitive pharynx." [PMID:24737865, PMID:25254346]
+synonym: "pharynx progenitor" EXACT []
 is_a: PLANA:0000120 ! progenitor cell
 relationship: BFO:0000050 PLANA:0000016 ! part of definitive pharynx
 relationship: BFO:0000050 PLANA:0000429 ! part of neoblast compartment
@@ -3163,6 +3157,23 @@ relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000135 xsd:string
+
+[Term]
+id: PLANA:0000136
+name: whole organism
+def: "Anatomical structure that is an individual member of of Schmidtea mediterranea or any other flatworm of the class Turbellaria." []
+xref: UBERON:0000468
+is_a: PLANA:0000129 ! anatomical structure
+
+[Term]
+id: PLANA:0000137
+name: regeneration
+namespace: biological_process
+def: "The regrowth of a lost or destroyed body part, such as an organ or tissue. This process may occur via renewal, repair, and/or growth alone (i.e. increase in size or mass)." [GOC:mah, GOC:pr]
+synonym: "regernative development" EXACT []
+xref: GO:0031099
+xref: Wikipedia:Regeneration_(biology)
+is_a: GO:0048856 ! anatomical structure development
 
 [Term]
 id: PLANA:0000201
@@ -6660,73 +6671,6 @@ xref: ZFS:0000046
 is_a: UBERON:0000105 ! life cycle stage
 relationship: BFO:0000050 UBERON:0000068 ! part of embryo stage
 relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
-
-[Term]
-id: UBERON:0000108
-name: blastula stage
-namespace: uberon
-def: "An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." [http://en.wikipedia.org/wiki/Blastula]
-subset: efo_slim
-xref: BilaDO:0000007
-xref: BILS:0000108
-xref: EFO:0001282
-xref: HsapDv:0000006
-xref: http://en.wikipedia.org/wiki/Blastula
-xref: MmusDv:0000007
-xref: OGES:000003
-xref: OGES:000016
-xref: OGES:000021
-xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg
-xref: WBls:0000005
-xref: XAO:1000003
-xref: ZFS:0000045
-is_a: UBERON:0000105 ! life cycle stage
-relationship: BFO:0000050 UBERON:0000068 ! part of embryo stage
-relationship: preceded_by UBERON:0000107 ! cleavage stage
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png
-property_value: IAO:0000116 "consider adding a preceding stage 'morula stage' as part of cleavage" xsd:string
-
-[Term]
-id: UBERON:0000109
-name: gastrula stage
-namespace: uberon
-def: "A stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage during embryonic development of most animals. The details of gastrulation vary from species to species, but usually result in the formation of the three primary germ layers, ectoderm, mesoderm and endoderm." [GO:0007369]
-subset: efo_slim
-synonym: "blastocystis trilaminaris stage" RELATED [https://orcid.org/0000-0002-6601-2165]
-synonym: "trilaminar blastocyst stage" RELATED [https://orcid.org/0000-0002-6601-2165]
-synonym: "trilaminar blastoderm stage" RELATED [https://orcid.org/0000-0002-6601-2165]
-synonym: "trilaminar disk stage" RELATED [https://orcid.org/0000-0002-6601-2165]
-synonym: "trilaminar germ stage" RELATED [https://orcid.org/0000-0002-6601-2165]
-synonym: "trilaminar stage" RELATED [https://orcid.org/0000-0002-6601-2165]
-xref: BilaDO:0000008
-xref: BILS:0000109
-xref: EFO:0001296
-xref: FBdv:00005317
-xref: HsapDv:0000010
-xref: MmusDv:0000013
-xref: OGES:000004
-xref: OGES:000019
-xref: WBls:0000010
-xref: XAO:1000005
-xref: ZFS:0000047
-is_a: UBERON:0000105 ! life cycle stage
-relationship: BFO:0000050 UBERON:0000068 ! part of embryo stage
-relationship: preceded_by UBERON:0000108 ! blastula stage
-
-[Term]
-id: UBERON:0000110
-name: neurula stage
-namespace: uberon
-def: "Staged defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate. This will give rise to the central nervous system." [GO:0001841]
-xref: BilaDO:0000009
-xref: BILS:0000110
-xref: HsapDv:0000012
-xref: MmusDv:0000017
-xref: XAO:1000006
-is_a: UBERON:0000105 ! life cycle stage
-relationship: BFO:0000050 UBERON:0000068 ! part of embryo stage
-relationship: preceded_by UBERON:0000109 ! gastrula stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/343
 
 [Term]
 id: hyman:vesicle
