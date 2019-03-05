@@ -1,0 +1,332 @@
+format-version: 1.2
+data-version: plana/releases/2019-03-05/imports/bspo_import.owl
+ontology: plana/imports/bspo_import
+
+[Term]
+id: BSPO:0000000
+name: left side
+namespace: spatial
+def: "The side of an organism that is left of the sagittal plane." [BSPO:cjm]
+synonym: "left" EXACT []
+is_a: BSPO:0000054 ! anatomical side
+relationship: left_of BSPO:0000007 ! right side
+relationship: starts_axis BSPO:0000017 ! left-right axis
+
+[Term]
+id: BSPO:0000001
+name: upper side
+namespace: spatial
+comment: Consider merging with superior side.
+synonym: "upper" EXACT []
+is_a: BSPO:0000054 ! anatomical side
+relationship: starts_axis BSPO:0000011 ! upper-lower axis
+
+[Term]
+id: BSPO:0000002
+name: lower side
+namespace: spatial
+comment: Consider merging with inferior side.
+synonym: "lower" EXACT []
+is_a: BSPO:0000054 ! anatomical side
+relationship: finishes_axis BSPO:0000011 ! upper-lower axis
+
+[Term]
+id: BSPO:0000007
+name: right side
+namespace: spatial
+def: "The side of an organism that is right of the sagittal plane." [BSPO:cjm, BSPO:wd]
+synonym: "right" EXACT []
+is_a: BSPO:0000054 ! anatomical side
+relationship: finishes_axis BSPO:0000017 ! left-right axis
+
+[Term]
+id: BSPO:0000010
+name: anatomical axis
+namespace: spatial
+def: "A straight line through space, intersecting an anatomical entity." [BSPO:cjm]
+comment: Axis directions are defined in terms of axes.
+xref: http://upload.wikimedia.org/wikipedia/commons/3/34/Anatomical_Directions_and_Axes.JPG
+is_a: CARO:0000008 ! anatomical line
+relationship: passes_through CARO:0000000 ! anatomical entity
+
+[Term]
+id: BSPO:0000011
+name: upper-lower axis
+namespace: spatial
+def: "An anatomical axis determined by gravity." [BSPO:cjm]
+synonym: "superior-inferior axis" RELATED []
+is_a: BSPO:0000010 ! anatomical axis
+
+[Term]
+id: BSPO:0000013
+name: anterior-posterior axis
+namespace: spatial
+def: "An axis that extends through an organism from head end to opposite end of body or tail." [BSPO:cjm]
+comment: In sponges, AP is used to indicate the direction of movement [in larval stage] (as it is in other metazoans that move, e.g., the basal bilaterians). [PM]
+synonym: "A-P axis" EXACT []
+synonym: "anteroposterior axis" EXACT []
+synonym: "AP axis" EXACT []
+synonym: "cephalocaudal axis" NARROW [http://en.wikipedia.org/wiki/Anatomical_terms_of_location]
+synonym: "craniocaudal axis" NARROW vertebrate []
+synonym: "longitudinal axis" RELATED []
+synonym: "rostral/caudal" NARROW vertebrate []
+synonym: "rostrocaudal axis" NARROW vertebrate []
+is_a: BSPO:0000010 ! anatomical axis
+intersection_of: BSPO:0000010 ! anatomical axis
+intersection_of: orthogonal_to BSPO:0000018 ! transverse plane
+relationship: approximately_perpendicular_to BSPO:0000016 ! dorsal-ventral axis
+relationship: orthogonal_to BSPO:0000018 ! transverse plane
+
+[Term]
+id: BSPO:0000016
+name: dorsal-ventral axis
+namespace: spatial
+def: "An axis that is approximately perpendicular to the anterior-posterior axis and that extends through the horizontal plane of the body." [BSPO:curators]
+synonym: "anterior-posterior axis" NARROW human []
+synonym: "D-V axis" EXACT []
+synonym: "dorsoventral axis" EXACT []
+synonym: "DV axis" EXACT []
+is_a: BSPO:0000010 ! anatomical axis
+intersection_of: BSPO:0000010 ! anatomical axis
+intersection_of: orthogonal_to BSPO:0000019 ! horizontal plane
+relationship: orthogonal_to BSPO:0000019 ! horizontal plane
+
+[Term]
+id: BSPO:0000017
+name: left-right axis
+namespace: spatial
+def: "An axis that bisects an organism from left to right sides of body, through a sagittal plane." [BSPO:cjm]
+synonym: "dextro-sinister axis" EXACT []
+synonym: "L-R axis" EXACT []
+synonym: "left to right axis" EXACT []
+synonym: "LR axis" EXACT []
+synonym: "R-L axis" EXACT []
+synonym: "right to left axis" EXACT []
+synonym: "right-left axis" EXACT []
+synonym: "RL axis" EXACT []
+is_a: BSPO:0000010 ! anatomical axis
+intersection_of: BSPO:0000010 ! anatomical axis
+intersection_of: orthogonal_to BSPO:0000417 ! sagittal plane
+relationship: orthogonal_to BSPO:0000417 ! sagittal plane
+
+[Term]
+id: BSPO:0000018
+name: transverse plane
+namespace: spatial
+def: "Anatomical plane that divides body into anterior and posterior parts." [BSPO:mah]
+synonym: "axial plane" EXACT []
+synonym: "axial section" EXACT []
+synonym: "cross-section" RELATED []
+synonym: "transverse section" EXACT []
+xref: FMA:12247
+is_a: BSPO:0000400 ! anatomical plane
+
+[Term]
+id: BSPO:0000019
+name: horizontal plane
+namespace: spatial
+def: "Anatomical plane that divides bilateral body into dorsal and ventral parts." [BSPO:mah]
+synonym: "coronal section" RELATED []
+synonym: "frontal plane" EXACT []
+synonym: "frontal section" RELATED []
+synonym: "horizontal anatomical plane" EXACT [FMA:52810]
+synonym: "horizontal section" EXACT []
+xref: FMA:52810
+is_a: BSPO:0000400 ! anatomical plane
+
+[Term]
+id: BSPO:0000031
+name: upper region
+namespace: spatial
+is_a: BSPO:0000070 ! anatomical region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000001 ! upper side
+relationship: overlaps BSPO:0000001 ! upper side
+
+[Term]
+id: BSPO:0000032
+name: lower region
+namespace: spatial
+is_a: BSPO:0000070 ! anatomical region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000002 ! lower side
+relationship: overlaps BSPO:0000002 ! lower side
+
+[Term]
+id: BSPO:0000054
+name: anatomical side
+namespace: spatial
+def: "An anatomical region bounded by a plane perpendicular to an axis through the middle." [BSPO:cjm]
+xref: FBql:00005841
+is_a: BSPO:0000070 ! anatomical region
+
+[Term]
+id: BSPO:0000070
+name: anatomical region
+namespace: spatial
+def: "A 3D region in space without well-defined compartmental boundaries; for example, the dorsal region of an ectoderm." [BSPO:cjm]
+comment: to be merged into CARO
+xref: FBql:00005841
+is_a: CARO:0000003 ! anatomical structure
+
+[Term]
+id: BSPO:0000400
+name: anatomical plane
+namespace: spatial
+def: "A flat 2D plane intersecting an anatomical continuant, dividing it into two adjacent portions." [BSPO:cjm]
+comment: These anatomical sections are applicable to most bilaterally symmetrical animals, but bipedal animals such as humans have more complex usage of these terms. For example, in post-embryonic humans a coronal plane is vertical and a transverse plane is horizontal, but for embryos and quadrupeds a coronal plane is horizontal and a transverse plane is vertical.
+synonym: "anatomical cross-section" EXACT []
+synonym: "anatomical section" EXACT []
+synonym: "cross-section" RELATED []
+synonym: "plane" EXACT []
+synonym: "section" EXACT []
+xref: FMA:242982
+is_a: CARO:0000010 ! anatomical boundary
+
+[Term]
+id: BSPO:0000417
+name: sagittal plane
+namespace: spatial
+def: "Anatomical plane that divides a bilateral body into left and right parts, not necessarily of even size." [BSPO:cjm, BSPO:DOS, BSPO:mah]
+synonym: "left/right plane" EXACT []
+synonym: "median plane" EXACT []
+synonym: "sagittal section" EXACT []
+xref: FMA:11361
+is_a: BSPO:0000010 ! anatomical axis
+is_a: BSPO:0000400 ! anatomical plane
+intersection_of: BSPO:0000400 ! anatomical plane
+intersection_of: orthogonal_to BSPO:0000017 ! left-right axis
+intersection_of: parallel_to BSPO:0000013 ! anterior-posterior axis
+intersection_of: parallel_to BSPO:0000016 ! dorsal-ventral axis
+
+[Term]
+id: CARO:0000000
+name: anatomical entity
+namespace: spatial
+def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." [CARO:MAH]
+
+[Term]
+id: CARO:0000003
+name: anatomical structure
+namespace: spatial
+def: "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome." [CC:DOS]
+is_a: CARO:0000006 ! material anatomical entity
+
+[Term]
+id: CARO:0000006
+name: material anatomical entity
+namespace: spatial
+def: "An anatomical entity that has mass." [CC:DOS]
+is_a: CARO:0000000 ! anatomical entity
+
+[Term]
+id: CARO:0000007
+name: immaterial anatomical entity
+namespace: spatial
+def: "An anatomical entity that has no mass." [CC:DOS]
+is_a: CARO:0000000 ! anatomical entity
+
+[Term]
+id: CARO:0000008
+name: anatomical line
+namespace: spatial
+def: "A one dimensional, immaterial anatomical entity." [CC:DOS]
+is_a: CARO:0000007 ! immaterial anatomical entity
+
+[Term]
+id: CARO:0000010
+name: anatomical boundary
+namespace: spatial
+def: "A non-material anatomical entity of two dimensions. Anatomical boundaries are contiguous structures." [CC:DOS]
+is_a: CARO:0000007 ! immaterial anatomical entity
+
+[Typedef]
+id: approximately_perpendicular_to
+name: approximately perpendicular to
+namespace: spatial
+def: "Crosses at an angle that is 90 degrees, or close to 90 degrees. In any non-linear organism, the main axes are rarely perpendicular when taken through the organism as a whole." [BSPO:cjm]
+xref: BSPO:0000104
+domain: BSPO:0000010 ! anatomical axis
+range: BSPO:0000010 ! anatomical axis
+
+[Typedef]
+id: finishes_axis
+name: finishes axis
+namespace: spatial
+comment: A directional axis can be divided by a plane. Following Allen Interval Algebra terminology we say that the side on which the axis initiates starts the axis, with the other side finishing the axis. If s finishes axis x, and x has end point p, then x overlaps p
+xref: BSPO:0015001
+domain: BSPO:0000054 ! anatomical side
+range: BSPO:0000010 ! anatomical axis
+
+[Typedef]
+id: has_part
+name: has part
+namespace: spatial
+xref: BFO:0000051
+is_transitive: true
+
+[Typedef]
+id: left_of
+name: left of
+namespace: spatial
+def: "Closer to the left side of the organism. Example: The dorsal fin is right of the left pectoral fin, but is left of the right eye. On the type level: X left of Y <=> every instance x of X is left of some instance y of Y, and there exists some organism o such that x part of o and y part of o." [BSPO:cjm]
+xref: BSPO:0000110
+is_transitive: true
+inverse_of: right_of ! right of
+
+[Typedef]
+id: orthogonal_to
+name: orthogonal to
+namespace: spatial
+def: "crossing at right angles" [BSPO:cjm]
+xref: BSPO:0015005
+domain: BSPO:0000010 ! anatomical axis
+range: BSPO:0000400 ! anatomical plane
+
+[Typedef]
+id: overlaps
+name: overlaps
+namespace: spatial
+def: "x overlaps y iff they have some part in common." [BSPO:cjm]
+comment: "(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))" CLIF []
+xref: RO:0002131
+
+[Typedef]
+id: parallel_to
+name: parallel to
+namespace: spatial
+def: "x is parallel t y iff x and y are lines or planes which when extended indefinitely do not cross." [BSPO:curators]
+
+[Typedef]
+id: part_of
+name: part of
+namespace: spatial
+xref: BFO:0000050
+is_transitive: true
+inverse_of: has_part ! has part
+
+[Typedef]
+id: passes_through
+name: passes through
+namespace: spatial
+def: "Intersects at two points." [BSPO:cjm]
+xref: BSPO:0015006
+domain: BSPO:0000010 ! anatomical axis
+
+[Typedef]
+id: right_of
+name: right of
+namespace: spatial
+def: "Closer to the right side of the organism. Example: The dorsal fin is right of the left pectoral fin, but is left of the right eye. On the type level: X left of Y <=> every instance x of X is right of some instance y of Y, and there exists some organism o such that x part of o and y part of o." [BSPO:cjm]
+xref: BSPO:0000111
+is_transitive: true
+
+[Typedef]
+id: starts_axis
+name: starts axis
+namespace: spatial
+comment: A directional axis can be divided by a plane. Following Allen Interval Algebra terminology we say that the side on which the axis initiates starts the axis, with the other side finishing the axis. . If s starts axis x, and x has start point p, then x overlaps p
+xref: BSPO:0015007
+domain: BSPO:0000054 ! anatomical side
+range: BSPO:0000010 ! anatomical axis
+
