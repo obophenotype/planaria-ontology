@@ -22,7 +22,6 @@ name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
 relationship: BFO:0000050 BFO:0000004 ! part of independent continuant
 
 [Term]
@@ -32,33 +31,11 @@ def: "An occurrent that has temporal proper parts and for some time t, p s-depen
 is_a: BFO:0000003 ! occurrent
 
 [Term]
-id: BFO:0000017
-name: realizable entity
-def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
-is_a: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000019 ! quality
-relationship: BFO:0000050 BFO:0000017 ! part of realizable entity
-
-[Term]
-id: BFO:0000019
-name: quality
-is_a: BFO:0000020 ! specifically dependent continuant
-relationship: BFO:0000050 BFO:0000019 ! part of quality
-
-[Term]
 id: BFO:0000020
 name: specifically dependent continuant
 def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
 is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
 relationship: BFO:0000050 BFO:0000020 ! part of specifically dependent continuant
-
-[Term]
-id: BFO:0000031
-name: generically dependent continuant
-def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
-is_a: BFO:0000002 ! continuant
-relationship: BFO:0000050 BFO:0000031 ! part of generically dependent continuant
 
 [Term]
 id: BFO:0000040
@@ -76,12 +53,6 @@ is_a: BFO:0000004 ! independent continuant
 id: CARO:0000000
 name: anatomical entity
 is_a: CARO:0030000 ! biological entity
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
-
-[Term]
-id: CARO:0000003
-name: connected anatomical structure
-is_a: CARO:0000006 ! material anatomical entity
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
 
 [Term]
@@ -289,6 +260,27 @@ range: BFO:0000002 ! continuant
 holds_over_chain: BFO:0000051 RO:0000057
 
 [Typedef]
+id: RO:0001018
+name: contained in
+subset: ro-eco
+property_value: IAO:0000111 "contained in" xsd:string
+property_value: IAO:0000116 "Containment is location not involving parthood, and arises only where some immaterial continuant is involved." xsd:string
+property_value: IAO:0000116 "Containment obtains in each case between material and immaterial continuants, for instance: lung contained_in thoracic cavity; bladder contained_in pelvic cavity. Hence containment is not a transitive relation.    If c part_of c1 at t then we have also, by our definition and by the axioms of mereology applied to spatial regions, c located_in c1 at t. Thus, many examples of instance-level location relations for continuants are in fact cases of instance-level parthood. For material continuants location and parthood coincide. Containment is location not involving parthood, and arises only where some immaterial continuant is involved. To understand this relation, we first define overlap for continuants as follows:    c1 overlap c2 at t =def for some c, c part_of c1 at t and c part_of c2 at t. The containment relation on the instance level can then be defined (see definition):" xsd:string
+property_value: IAO:0000116 "Intended meaning:\ndomain: material entity\nrange: spatial region or site (immaterial continuant)\n        " xsd:string
+property_value: IAO:0000118 "contained_in" xsd:string
+property_value: RO:0001900 RO:0001901
+domain: BFO:0000040 ! material entity
+range: BFO:0000004 ! independent continuant
+inverse_of: RO:0001019 ! contains
+
+[Typedef]
+id: RO:0001019
+name: contains
+subset: ro-eco
+property_value: IAO:0000111 "contains" xsd:string
+property_value: RO:0001900 RO:0001901
+
+[Typedef]
 id: RO:0002013
 name: has regulatory component activity
 def: "A 'has regulatory component activity' B if A and B are GO molecular functions (GO_0003674), A has_component B and A is regulated by B." []
@@ -423,6 +415,21 @@ holds_over_chain: BFO:0000051 BFO:0000050 {http://purl.obolibrary.org/obo/RO_000
 holds_over_chain: BFO:0000051 RO:0002131
 is_a: RO:0002323 ! mereotopologically related to
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
+
+[Typedef]
+id: RO:0002163
+name: spatially disjoint from
+def: "A is spatially_disjoint_from B if and only if they have no parts in common" []
+subset: ro-eco
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Part-disjointness-Design-Pattern xsd:anyURI
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "There are two ways to encode this as a shortcut relation. The other possibility to use an annotation assertion between two classes, and expand this to a disjointness axiom. " xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
+property_value: IAO:0000232 "Note that it would be possible to use the relation to label the relationship between a near infinite number of structures - between the rings of saturn and my left earlobe. The intent is that this is used for parsiomoniously for disambiguation purposes - for example, between siblings in a jointly exhaustive pairwise disjointness hierarchy" xsd:string
+property_value: RO:0001900 RO:0001901
+is_a: RO:0002323 ! mereotopologically related to
+expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
 
 [Typedef]
 id: RO:0002180
@@ -563,6 +570,22 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "has agent" xsd:string
 is_a: RO:0000057 ! has participant
 is_obsolete: true
+
+[Typedef]
+id: RO:0002220
+name: adjacent to
+def: "x adjacent to y if and only if x and y share a boundary." []
+property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string {http://www.w3.org/2000/01/rdf-schema#seeAlso="issuecomment-218584934"}
+property_value: IAO:0000112 "The epidermis layer of a vertebrate is adjacent to the dermis." xsd:string
+property_value: IAO:0000112 "The plasma membrane of a cell is adjacent to the cytoplasm, and also to the cell lumen which the cytoplasm occupies." xsd:string
+property_value: IAO:0000112 "The skin of the forelimb is adjacent to the skin of the torso if these are considered anatomical subdivisions with a defined border. Otherwise a relation such as continuous_with would be used." xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This relation acts as a join point with BSPO" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: RO:0001900 RO:0001901
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_a: RO:0002163 ! spatially disjoint from
 
 [Typedef]
 id: RO:0002222
@@ -1036,6 +1059,46 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0002564 ! molecular interaction relation helper property
 
 [Typedef]
+id: RO:0002487
+name: relation between structure and stage
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, typically connecting an anatomical entity to a biological process or developmental stage." xsd:string
+domain: BFO:0000002 ! continuant
+range: BFO:0000003 ! occurrent
+
+[Typedef]
+id: RO:0002490
+name: existence overlaps
+def: "x existence overlaps y if and only if either (a) the start of x is part of y or (b) the end of x is part of y. Formally: x existence starts and ends during y iff (α(x) >= α(y) & α(x) <= ω(y)) OR (ω(x) <= ω(y) & ω(x) >= α(y))" []
+comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0002487 ! relation between structure and stage
+
+[Typedef]
+id: RO:0002496
+name: existence starts during or after
+def: "x existence starts during or after y if and only if the time point at which x starts is after or equivalent to the time point at which y starts. Formally: x existence starts during or after y iff α (x) >= α (y)." []
+comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+holds_over_chain: BFO:0000050 RO:0002496
+holds_over_chain: RO:0002258 RO:0002496
+is_a: RO:0002487 ! relation between structure and stage
+transitive_over: BFO:0000050 ! part of
+transitive_over: BFO:0000062 ! preceded by
+
+[Typedef]
+id: RO:0002497
+name: existence ends during or before
+def: "x existence ends during or before y if and only if the time point at which x ends is before or equivalent to the time point at which y ends." []
+comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+holds_over_chain: BFO:0000050 RO:0002497
+holds_over_chain: RO:0002286 RO:0002497
+is_a: RO:0002487 ! relation between structure and stage
+transitive_over: BFO:0000050 ! part of
+transitive_over: BFO:0000063 ! precedes
+
+[Typedef]
 id: RO:0002500
 name: causal agent in process
 def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
@@ -1198,6 +1261,28 @@ property_value: IAO:0000589 "directly negatively regulates (process to process)"
 property_value: RO:0004050 RO:0002578
 is_a: RO:0002212 ! negatively regulates
 is_a: RO:0002578 ! directly regulates
+
+[Typedef]
+id: RO:0003000
+name: produces
+def: "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix." []
+comment: Note that this definition doesn't quite distinguish the output of a transformation process from a production process, which is related to the identity/granularity issue.
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+inverse_of: RO:0003001 ! produced by
+
+[Typedef]
+id: RO:0003001
+name: produced by
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
 
 [Typedef]
 id: RO:0004031

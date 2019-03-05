@@ -1,6 +1,279 @@
 format-version: 1.2
 data-version: plana/releases/2019-03-05/imports/uberon_import.owl
 ontology: plana/imports/uberon_import
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000104>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n\nEquivalentClasses(ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000104>))\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>))\n)
+
+[Term]
+id: UBERON:0000000
+name: processual entity
+namespace: uberon
+def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." [span:ProcessualEntity]
+subset: upper_level
+disjoint_from: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000066
+name: fully formed stage
+namespace: uberon
+def: "The stage of development at which the animal is fully formed, including immaturity and maturity. Includes both sexually immature stage, and adult stage." [https://orcid.org/0000-0002-6601-2165]
+subset: efo_slim
+synonym: "adult stage" BROAD []
+synonym: "fully formed animal stage" EXACT []
+synonym: "juvenile-adult stage" EXACT []
+xref: BilaDO:0000004
+xref: BTO:0001043
+xref: EFO:0001272
+xref: FBdv:00005369
+xref: WBls:0000041
+xref: XtroDO:0000084
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000092 ! post-embryonic stage
+relationship: preceded_by UBERON:0000111 ! organogenesis stage
+relationship: precedes UBERON:0000071 ! death stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/566
+
+[Term]
+id: UBERON:0000068
+name: embryo stage
+namespace: uberon
+def: "A life cycle stage that starts with fertilization and ends with the fully formed embryo." [http://orcid.org/0000-0002-6601-2165]
+synonym: "embryogenesis" RELATED []
+synonym: "embryonic stage" EXACT []
+xref: BilaDO:0000002
+xref: EV:0300001
+xref: FBdv:00005289
+xref: FMA:72652
+xref: HsapDv:0000002
+xref: http://www.snomedbrowser.com/Codes/Details/296280003
+xref: MmusDv:0000002
+xref: OGES:000000
+xref: OGES:000022
+xref: WBls:0000003
+xref: WBls:0000092
+xref: WBls:0000102
+xref: XAO:1000012
+is_a: UBERON:0000105 ! life cycle stage
+disjoint_from: UBERON:0000092 ! post-embryonic stage
+relationship: precedes UBERON:0000066 ! fully formed stage
+relationship: precedes UBERON:0000092 ! post-embryonic stage
+
+[Term]
+id: UBERON:0000071
+name: death stage
+namespace: uberon
+def: "End of the life of an organism." [XAO:0000437]
+synonym: "death" RELATED []
+xref: XAO:0000437
+xref: XtroDO:0000085
+is_a: UBERON:0000105 ! life cycle stage
+relationship: ends UBERON:0000104 ! life cycle
+property_value: external_ontology_notes "ncit:Death is an outcome" xsd:string {external_ontology="ncit"}
+
+[Term]
+id: UBERON:0000092
+name: post-embryonic stage
+namespace: uberon
+def: "stage succeeding embryo, including mature structure" [https://orcid.org/0000-0002-6601-2165]
+synonym: "post-hatching stage" NARROW []
+synonym: "postembryonic" RELATED []
+synonym: "postembryonic stage" EXACT []
+xref: BilaDO:0000003
+xref: OGES:000010
+xref: OGES:000014
+xref: OGES:000024
+xref: WBls:0000022
+xref: WBls:0000093
+xref: WBls:0000103
+is_a: UBERON:0000105 ! life cycle stage
+relationship: preceded_by UBERON:0000068 ! embryo stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/344
+property_value: taxon_notes "In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)" xsd:string
+
+[Term]
+id: UBERON:0000104
+name: life cycle
+namespace: uberon
+def: "An entire span of an organism's life, commencing with the zygote stage and ending in the death of the organism." [https://orcid.org/0000-0002-6601-2165]
+subset: upper_level
+synonym: "entire life cycle" EXACT []
+synonym: "entire lifespan" EXACT []
+synonym: "life" EXACT []
+synonym: "lifespan" EXACT []
+xref: FBdv:00000000
+xref: HsapDv:0000001
+xref: MmusDv:0000001
+xref: ncithesaurus:Life
+xref: OGES:000011
+is_a: UBERON:0000000 ! processual entity
+relationship: ends_with UBERON:0000071 ! death stage
+relationship: has_part UBERON:0000105 ! life cycle stage
+relationship: starts_with UBERON:0000106 ! zygote stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/532
+
+[Term]
+id: UBERON:0000105
+name: life cycle stage
+namespace: uberon
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [https://orcid.org/0000-0002-6601-2165]
+subset: efo_slim
+subset: upper_level
+synonym: "developmental stage" NARROW []
+synonym: "stage" NARROW []
+xref: BILS:0000105
+xref: EFO:0000399
+xref: FBdv:00007012
+xref: FMA:24120
+xref: HsapDv:0000000
+xref: MmusDv:0000000
+xref: ncithesaurus:Developmental_Stage
+xref: OlatDv:0000010
+xref: PdumDv:0000090
+xref: WBls:0000002
+xref: XAO:1000000
+xref: ZFS:0000000
+xref: ZFS:0100000
+is_a: UBERON:0000000 ! processual entity
+relationship: part_of UBERON:0000104 ! life cycle
+property_value: editor_note "this class represents a proper part of the life cycle of an organism. The class 'life cycle' should not be placed here" xsd:string
+property_value: external_ontology_notes "the WBls class 'all stages' belongs here as it is the superclass of other WBls stages" xsd:string
+property_value: external_ontology_notes "we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage" xsd:string
+
+[Term]
+id: UBERON:0000106
+name: zygote stage
+namespace: uberon
+def: "A stage at which the organism is a single cell produced by means of sexual reproduction." [http://en.wikipedia.org/wiki/Zygote]
+subset: efo_slim
+synonym: "1-cell stage" EXACT []
+synonym: "fertilized egg stage" EXACT [BTO:0000854]
+synonym: "fertilized egg stage" RELATED []
+synonym: "one cell stage" EXACT []
+synonym: "one-cell stage" RELATED [VHOG:0000745]
+synonym: "zygote" RELATED [VHOG:0000745]
+synonym: "zygotum" RELATED LATIN [http://en.wikipedia.org/wiki/Zygote]
+xref: BilaDO:0000005
+xref: BILS:0000106
+xref: EFO:0001322
+xref: EHDAA:27
+xref: FBdv:00005288
+xref: http://en.wikipedia.org/wiki/Zygote
+xref: NCIT:C12601
+xref: PdumDv:0000100
+xref: VHOG:0000745
+xref: XAO:1000001
+xref: ZFS:0000001
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: starts UBERON:0000104 ! life cycle
+property_value: homology_notes "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107"}
+property_value: seeAlso EMAPA:16033
+
+[Term]
+id: UBERON:0000107
+name: cleavage stage
+namespace: uberon
+def: "The first few specialized divisions of an activated animal egg; Stage consisting of division of cells in the early embryo. The zygotes of many species undergo rapid cell cycles with no significant growth, producing a cluster of cells the same size as the original zygote. The different cells derived from cleavage are called blastomeres and form a compact mass called the morula. Cleavage ends with the formation of the blastula." [GO:0040016, http://en.wikipedia.org/wiki/Cleavage_(embryo)]
+subset: efo_slim
+xref: BilaDO:0000006
+xref: BILS:0000107
+xref: Cleavage:(embryo)
+xref: EFO:0001290
+xref: FBdv:00000054
+xref: MESH:A16.254.270
+xref: MmusDv:0000004
+xref: OGES:000015
+xref: OGES:000020
+xref: PdumDv:0000200
+xref: XAO:1000004
+xref: ZFS:0000046
+is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
+relationship: part_of UBERON:0000068 ! embryo stage
+
+[Term]
+id: UBERON:0000108
+name: blastula stage
+namespace: uberon
+def: "An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." [http://en.wikipedia.org/wiki/Blastula]
+subset: efo_slim
+xref: BilaDO:0000007
+xref: BILS:0000108
+xref: EFO:0001282
+xref: HsapDv:0000006
+xref: http://en.wikipedia.org/wiki/Blastula
+xref: MmusDv:0000007
+xref: OGES:000003
+xref: OGES:000016
+xref: OGES:000021
+xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg
+xref: WBls:0000005
+xref: XAO:1000003
+xref: ZFS:0000045
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: preceded_by UBERON:0000107 ! cleavage stage
+property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png
+property_value: editor_note "consider adding a preceding stage 'morula stage' as part of cleavage" xsd:string
+
+[Term]
+id: UBERON:0000109
+name: gastrula stage
+namespace: uberon
+def: "A stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage during embryonic development of most animals. The details of gastrulation vary from species to species, but usually result in the formation of the three primary germ layers, ectoderm, mesoderm and endoderm." [GO:0007369]
+subset: efo_slim
+synonym: "blastocystis trilaminaris stage" RELATED [https://orcid.org/0000-0002-6601-2165]
+synonym: "trilaminar blastocyst stage" RELATED [https://orcid.org/0000-0002-6601-2165]
+synonym: "trilaminar blastoderm stage" RELATED [https://orcid.org/0000-0002-6601-2165]
+synonym: "trilaminar disk stage" RELATED [https://orcid.org/0000-0002-6601-2165]
+synonym: "trilaminar germ stage" RELATED [https://orcid.org/0000-0002-6601-2165]
+synonym: "trilaminar stage" RELATED [https://orcid.org/0000-0002-6601-2165]
+xref: BilaDO:0000008
+xref: BILS:0000109
+xref: EFO:0001296
+xref: FBdv:00005317
+xref: HsapDv:0000010
+xref: MmusDv:0000013
+xref: OGES:000004
+xref: OGES:000019
+xref: WBls:0000010
+xref: XAO:1000005
+xref: ZFS:0000047
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: preceded_by UBERON:0000108 {source="BILS"} ! blastula stage
+
+[Term]
+id: UBERON:0000110
+name: neurula stage
+namespace: uberon
+def: "Staged defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate. This will give rise to the central nervous system." [GO:0001841]
+xref: BilaDO:0000009
+xref: BILS:0000110
+xref: HsapDv:0000012
+xref: MmusDv:0000017
+xref: XAO:1000006
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: preceded_by UBERON:0000109 ! gastrula stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/343
+
+[Term]
+id: UBERON:0000111
+name: organogenesis stage
+namespace: uberon
+def: "A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." [http://en.wikipedia.org/wiki/Organogenesis]
+synonym: "segmentation stage" RELATED []
+xref: BilaDO:0000010
+xref: BILS:0000111
+xref: HsapDv:0000015
+xref: http://en.wikipedia.org/wiki/Organogenesis
+xref: MmusDv:0000018
+xref: OGES:000005
+xref: OGES:000032
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: preceded_by UBERON:0000110 ! neurula stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/533
 
 [Term]
 id: UBERON:0001062
@@ -29,36 +302,25 @@ xref: XAO:0000000
 xref: ZFA:0100000
 
 [Typedef]
-id: bearer_of
-name: bearer of
+id: adjacent_to
+name: adjacent_to
 namespace: uberon
-xref: RO:0000053
-
-[Typedef]
-id: capable_of
-name: capable of
-namespace: uberon
-xref: RO:0002215
-is_a: functionally_related_to ! functionally related to
-
-[Typedef]
-id: capable_of_part_of
-name: capable of part of
-namespace: uberon
-xref: RO:0002216
-is_a: functionally_related_to ! functionally related to
-
-[Typedef]
-id: contains_process
-name: contains process
-namespace: uberon
-xref: BFO:0000067
+def: "x adjacent_to y iff: x and y share a boundary" []
+xref: RO:0002220
+is_symmetric: true
 
 [Typedef]
 id: curator_notes
 name: curator notes
 namespace: uberon
 xref: IAO:0000232
+is_metadata_tag: true
+
+[Typedef]
+id: dc-contributor
+name: contributor
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/contributor
 is_metadata_tag: true
 
 [Typedef]
@@ -69,11 +331,26 @@ xref: http://purl.org/dc/elements/1.1/creator
 is_metadata_tag: true
 
 [Typedef]
+id: dc-description
+name: description
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/description
+is_metadata_tag: true
+
+[Typedef]
 id: dc-source
 name: derived from resource
 namespace: uberon
 xref: http://purl.org/dc/elements/1.1/source
 is_metadata_tag: true
+
+[Typedef]
+id: deep_to
+name: deep_to
+namespace: uberon
+def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000107
+is_transitive: true
 
 [Typedef]
 id: developmentally_contributes_to
@@ -82,12 +359,6 @@ namespace: uberon
 xref: RO:0002255
 holds_over_chain: develops_into part_of
 is_a: has_potential_to_developmentally_contribute_to ! has potential to developmentally contribute to
-
-[Typedef]
-id: developmentally_preceded_by
-name: developmentally preceded by
-namespace: uberon
-xref: RO:0002258
 
 [Typedef]
 id: develops_from
@@ -115,10 +386,63 @@ xref: IAO:0000116
 is_metadata_tag: true
 
 [Typedef]
+id: ends
+name: ends
+namespace: uberon
+def: "Relation between occurrents, shares an end boundary with." [Allen:starts, https://orcid.org/0000-0002-6601-2165, ZFS:finishes]
+synonym: "finishes" EXACT []
+xref: RO:0002229
+is_a: part_of ! part of
+
+[Typedef]
+id: ends_with
+name: ends with
+namespace: uberon
+xref: RO:0002230
+is_transitive: true
+is_a: has_part ! has part
+
+[Typedef]
 id: example_of_usage
 name: example of usage
 namespace: uberon
 xref: IAO:0000112
+is_metadata_tag: true
+
+[Typedef]
+id: existence_ends_during_or_before
+name: existence ends during or before
+namespace: uberon
+xref: RO:0002497
+holds_over_chain: part_of existence_ends_during_or_before
+transitive_over: part_of ! part of
+transitive_over: precedes ! precedes
+
+[Typedef]
+id: existence_starts_during_or_after
+name: existence starts during or after
+namespace: uberon
+xref: RO:0002496
+holds_over_chain: part_of existence_starts_during_or_after
+transitive_over: part_of ! part of
+transitive_over: preceded_by ! preceded_by
+
+[Typedef]
+id: external_definition
+name: external_definition
+namespace: uberon
+def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000001
+is_metadata_tag: true
+
+[Typedef]
+id: external_ontology_notes
+name: external_ontology_notes
+namespace: uberon
+def: "Notes on how similar or equivalent classes are represented in other ontologies." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000012
+property_value: editor_note "This annotation property may be replaced with an annotation property from an external ontology such as IAO" xsd:string
 is_metadata_tag: true
 
 [Typedef]
@@ -127,19 +451,6 @@ name: page
 namespace: uberon
 xref: http://xmlns.com/foaf/0.1/page
 is_metadata_tag: true
-
-[Typedef]
-id: functionally_related_to
-name: functionally related to
-namespace: uberon
-xref: RO:0002328
-
-[Typedef]
-id: has_component
-name: has component
-namespace: uberon
-xref: RO:0002180
-is_a: has_part ! has part
 
 [Typedef]
 id: has_developmental_contribution_from
@@ -171,11 +482,30 @@ def: "x has potential to developmentrally contribute to y iff x developmentally 
 xref: RO:0002385
 
 [Typedef]
-id: has_potential_to_directly_develop_into
-name: has potential to directly develop into
+id: has_relational_adjective
+name: has_relational_adjective
 namespace: uberon
-def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
-xref: RO:0002388
+xref: UBPROP:0000007
+property_value: curator_notes "Used to connect a class to an adjectival form of its label. For example, a class with label 'intestine' may have a relational adjective 'intestinal'." xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: homology_notes
+name: homology_notes
+namespace: uberon
+def: "Notes on the homology status of this class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000003
+is_metadata_tag: true
+
+[Typedef]
+id: immediately_deep_to
+name: immediately_deep_to
+namespace: uberon
+def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001107
+is_a: adjacent_to ! adjacent_to
+is_a: deep_to ! deep_to
 
 [Typedef]
 id: immediately_preceded_by
@@ -187,24 +517,17 @@ synonym: "is directly preceded by" EXACT []
 synonym: "is immediately preceded by" EXACT [SIO:000251]
 synonym: "starts_at_end_of" EXACT []
 xref: RO:0002087
+property_value: external_definition "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]." xsd:string {source="SIO:000251"}
 property_value: seeAlso SIO:000251
-property_value: UBPROP:0000001 "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]." xsd:string {source="SIO:000251"}
 is_a: preceded_by ! preceded_by
 
 [Typedef]
-id: input_of
-name: input of
+id: immediately_superficial_to
+name: immediately_superficial_to
 namespace: uberon
-xref: RO:0002352
-is_a: functionally_related_to ! functionally related to
-
-[Typedef]
-id: overlaps
-name: overlaps
-namespace: uberon
-def: "A overlaps B if they share some part in common." []
-xref: RO:0002131
-expand_expression_to: "BFO_0000051 some (BFO_0000050 some ?Y)" []
+xref: BSPO:0015014
+is_a: adjacent_to ! adjacent_to
+is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: part_of
@@ -215,12 +538,13 @@ is_transitive: true
 inverse_of: has_part ! has part
 
 [Typedef]
-id: part_of_structure_that_is_capable_of
-name: part of structure that is capable of
+id: posterior_to
+name: posterior_to
 namespace: uberon
-xref: RO:0002329
-holds_over_chain: part_of capable_of
-is_a: functionally_related_to ! functionally related to
+def: "x posterior_to y iff x is further along the antero-posterior axis than y, towards the body/tail. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail." [http://orcid.org/0000-0002-6601-2165]
+synonym: "caudal_to" NARROW []
+xref: BSPO:0000099
+is_transitive: true
 
 [Typedef]
 id: preceded_by
@@ -238,4 +562,54 @@ name: precedes
 namespace: uberon
 xref: BFO:0000063
 is_transitive: true
+
+[Typedef]
+id: produced_by
+name: produced_by
+namespace: uberon
+xref: RO:0003001
+
+[Typedef]
+id: produces
+name: produces
+namespace: uberon
+xref: RO:0003000
+
+[Typedef]
+id: starts
+name: starts
+namespace: uberon
+def: "Relation between occurrents, shares a start boundary with." [Allen:starts, https://orcid.org/0000-0002-6601-2165]
+xref: RO:0002223
+is_a: part_of ! part of
+inverse_of: starts_with ! starts with
+
+[Typedef]
+id: starts_with
+name: starts with
+namespace: uberon
+xref: RO:0002224
+is_transitive: true
+is_a: has_part ! has part
+
+[Typedef]
+id: subdivision_of
+name: subdivision of
+namespace: uberon
+comment: placeholder relation. X = 'subdivision of A' and subdivision_of some B means that X is the mereological sum of A and B
+
+[Typedef]
+id: superficial_to
+name: superficial_to
+namespace: uberon
+def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000108
+
+[Typedef]
+id: taxon_notes
+name: taxon_notes
+namespace: uberon
+def: "Notes on the how instances of this class vary across species." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000008
+is_metadata_tag: true
 

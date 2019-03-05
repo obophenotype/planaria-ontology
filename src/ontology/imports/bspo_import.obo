@@ -31,6 +31,16 @@ is_a: BSPO:0000054 ! anatomical side
 relationship: finishes_axis BSPO:0000011 ! upper-lower axis
 
 [Term]
+id: BSPO:0000005
+name: anatomical surface
+namespace: spatial
+def: "A 2D surface of an anatomical continuant." [BSPO:cjm]
+comment: to be merged into CARO
+synonym: "surface" EXACT []
+xref: FMA:24137
+is_a: CARO:0000010 ! anatomical boundary
+
+[Term]
 id: BSPO:0000007
 name: right side
 namespace: spatial
@@ -76,6 +86,15 @@ intersection_of: BSPO:0000010 ! anatomical axis
 intersection_of: orthogonal_to BSPO:0000018 ! transverse plane
 relationship: approximately_perpendicular_to BSPO:0000016 ! dorsal-ventral axis
 relationship: orthogonal_to BSPO:0000018 ! transverse plane
+
+[Term]
+id: BSPO:0000014
+name: apical-basal axis relative to substrate
+namespace: spatial
+def: "An axis that extends through an organism or organism part from the part of the organism or organism part attached to a substrate (basal) to the furthest from the attachment (apical). Note that the apical-basal axis is often used for organismal parts where there is attachment via a basal lamina or other structure." [BSPO:mah]
+synonym: "apical/basal" EXACT []
+synonym: "longitudinal axis" RELATED []
+is_a: BSPO:0000010 ! anatomical axis
 
 [Term]
 id: BSPO:0000016
@@ -135,30 +154,36 @@ xref: FMA:52810
 is_a: BSPO:0000400 ! anatomical plane
 
 [Term]
-id: BSPO:0000031
-name: upper region
-namespace: spatial
-is_a: BSPO:0000070 ! anatomical region
-intersection_of: BSPO:0000070 ! anatomical region
-intersection_of: overlaps BSPO:0000001 ! upper side
-relationship: overlaps BSPO:0000001 ! upper side
-
-[Term]
-id: BSPO:0000032
-name: lower region
-namespace: spatial
-is_a: BSPO:0000070 ! anatomical region
-intersection_of: BSPO:0000070 ! anatomical region
-intersection_of: overlaps BSPO:0000002 ! lower side
-relationship: overlaps BSPO:0000002 ! lower side
-
-[Term]
 id: BSPO:0000054
 name: anatomical side
 namespace: spatial
 def: "An anatomical region bounded by a plane perpendicular to an axis through the middle." [BSPO:cjm]
 xref: FBql:00005841
 is_a: BSPO:0000070 ! anatomical region
+
+[Term]
+id: BSPO:0000057
+name: apical side
+namespace: spatial
+def: "Anatomical side that is located on the apical end of an organism or structure." [BSPO:wd]
+synonym: "apical" EXACT []
+xref: FBcv:0000054
+xref: FBql:00005854
+is_a: BSPO:0000054 ! anatomical side
+relationship: opposite_to BSPO:0000058 ! basal side
+relationship: starts_axis BSPO:0000014 ! apical-basal axis relative to substrate
+
+[Term]
+id: BSPO:0000058
+name: basal side
+namespace: spatial
+def: "Anatomical side that is located on the basal end of an organism or structure." [BSPO:wd]
+comment: The part of the organism attached to a substrate. Axis of symmetry.
+synonym: "basal" EXACT []
+xref: FBcv:0000055
+xref: FBql:00005855
+is_a: BSPO:0000054 ! anatomical side
+relationship: finishes_axis BSPO:0000014 ! apical-basal axis relative to substrate
 
 [Term]
 id: BSPO:0000070
@@ -168,6 +193,48 @@ def: "A 3D region in space without well-defined compartmental boundaries; for ex
 comment: to be merged into CARO
 xref: FBql:00005841
 is_a: CARO:0000003 ! anatomical structure
+
+[Term]
+id: BSPO:0000086
+name: anatomical compartment
+namespace: spatial
+comment: to be merged into CARO
+xref: FBql:00005873
+xref: FMA:9647
+is_a: CARO:0000003 ! anatomical structure
+
+[Term]
+id: BSPO:0000196
+name: medial-external axis
+namespace: spatial
+def: "An anatomical axis that extends from the center of the body outwards or externally." [BSPO:curators]
+comment: The medial-external axis could apply to a sphere-shaped body.
+synonym: "proximal-distal axis" RELATED []
+is_a: BSPO:0000010 ! anatomical axis
+created_by: wasila.dahdul
+creation_date: 2013-07-02T11:21:42Z
+
+[Term]
+id: BSPO:0000373
+name: apical surface
+namespace: spatial
+def: "Anatomical surface that is located on the apical side of the body or body part." [BSPO:wd]
+xref: FBql:00005854
+is_a: BSPO:0000005 ! anatomical surface
+intersection_of: BSPO:0000005 ! anatomical surface
+intersection_of: surface_of BSPO:0000057 ! apical side
+relationship: surface_of BSPO:0000057 ! apical side
+
+[Term]
+id: BSPO:0000374
+name: basal surface
+namespace: spatial
+def: "Anatomical surface that is located on the basal side of the body or body part." [BSPO:wd]
+xref: FBql:00005855
+is_a: BSPO:0000005 ! anatomical surface
+intersection_of: BSPO:0000005 ! anatomical surface
+intersection_of: surface_of BSPO:0000058 ! basal side
+relationship: surface_of BSPO:0000058 ! basal side
 
 [Term]
 id: BSPO:0000400
@@ -241,6 +308,25 @@ def: "A non-material anatomical entity of two dimensions. Anatomical boundaries 
 is_a: CARO:0000007 ! immaterial anatomical entity
 
 [Typedef]
+id: adjacent_to
+name: adjacent to
+namespace: spatial
+xref: RO:0002220
+is_symmetric: true
+
+[Typedef]
+id: anterior_to
+name: anterior to
+namespace: spatial
+def: "x anterior to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that extends through an organism from head end to opposite end of body or tail." [BSPO:cjm]
+synonym: "rostral_to" EXACT []
+xref: BSPO:0000096
+property_value: seeAlso FBcv:0000039
+property_value: seeAlso FBql:00005863
+is_transitive: true
+inverse_of: posterior_to ! posterior to
+
+[Typedef]
 id: approximately_perpendicular_to
 name: approximately perpendicular to
 namespace: spatial
@@ -248,6 +334,15 @@ def: "Crosses at an angle that is 90 degrees, or close to 90 degrees. In any non
 xref: BSPO:0000104
 domain: BSPO:0000010 ! anatomical axis
 range: BSPO:0000010 ! anatomical axis
+
+[Typedef]
+id: deep_to
+name: deep to
+namespace: spatial
+def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [BSPO:cjm]
+xref: BSPO:0000107
+is_transitive: true
+inverse_of: superficial_to ! superficial to
 
 [Typedef]
 id: finishes_axis
@@ -266,6 +361,42 @@ xref: BFO:0000051
 is_transitive: true
 
 [Typedef]
+id: immediately_deep_to
+name: immediately deep to
+namespace: spatial
+def: "x immediately deep to y iff x deep_to y and x is contiguous with y." [BSPO:curators]
+xref: BSPO:0001107
+is_a: deep_to ! deep to
+inverse_of: immediately_superficial_to ! immediately superficial to
+
+[Typedef]
+id: immediately_superficial_to
+name: immediately superficial to
+namespace: spatial
+def: "x immediately superficial to y iff x superficial to y and x is contiguous with y." [BSPO:curators]
+xref: BSPO:0015014
+is_a: superficial_to ! superficial to
+
+[Typedef]
+id: in_lateral_side_of
+name: in lateral side of
+namespace: spatial
+def: "X in lateral side of Y <=> if X is in left side of Y or X is in right side of Y. X is often, but not always a paired structure" [UBERON:cjm]
+xref: BSPO:0000126
+property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+is_a: part_of ! part of
+
+[Typedef]
+id: ipsilateral_to
+name: ipsilateral to
+namespace: spatial
+def: "On the same side as. For example, the left arm is ipsilateral to the left leg." [BSPO:cjm]
+xref: BSPO:0000105
+property_value: seeAlso FBql:00005850
+is_symmetric: true
+is_a: in_lateral_side_of ! in lateral side of
+
+[Typedef]
 id: left_of
 name: left of
 namespace: spatial
@@ -275,6 +406,14 @@ is_transitive: true
 inverse_of: right_of ! right of
 
 [Typedef]
+id: opposite_to
+name: opposite to
+namespace: spatial
+def: "Direcly opposite to. i.e. on the opposite side through the axis." [BSPO:cjm]
+xref: BSPO:0000113
+is_a: ipsilateral_to ! ipsilateral to
+
+[Typedef]
 id: orthogonal_to
 name: orthogonal to
 namespace: spatial
@@ -282,14 +421,6 @@ def: "crossing at right angles" [BSPO:cjm]
 xref: BSPO:0015005
 domain: BSPO:0000010 ! anatomical axis
 range: BSPO:0000400 ! anatomical plane
-
-[Typedef]
-id: overlaps
-name: overlaps
-namespace: spatial
-def: "x overlaps y iff they have some part in common." [BSPO:cjm]
-comment: "(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))" CLIF []
-xref: RO:0002131
 
 [Typedef]
 id: parallel_to
@@ -314,6 +445,17 @@ xref: BSPO:0015006
 domain: BSPO:0000010 ! anatomical axis
 
 [Typedef]
+id: posterior_to
+name: posterior to
+namespace: spatial
+def: "x posterior to y iff x is further along the antero-posterior axis than y, towards the body/tail. An antero-posterior axis is an axis that extends through an organism from head end to opposite end of body or tail." [BSPO:cjm]
+synonym: "caudal to" NARROW vertebrate []
+xref: BSPO:0000099
+property_value: seeAlso FBcv:0000045
+property_value: seeAlso FBql:00005864
+is_transitive: true
+
+[Typedef]
 id: right_of
 name: right of
 namespace: spatial
@@ -329,4 +471,20 @@ comment: A directional axis can be divided by a plane. Following Allen Interval 
 xref: BSPO:0015007
 domain: BSPO:0000054 ! anatomical side
 range: BSPO:0000010 ! anatomical axis
+
+[Typedef]
+id: superficial_to
+name: superficial to
+namespace: spatial
+def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [BSPO:cjm]
+xref: BSPO:0000108
+is_transitive: true
+
+[Typedef]
+id: surface_of
+name: surface of
+namespace: spatial
+comment: placeholder. used for relation between anatomical surface and an anatomical side.
+xref: BSPO:0015008
+domain: BSPO:0000005 ! anatomical surface
 
