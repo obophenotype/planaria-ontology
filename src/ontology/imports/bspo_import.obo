@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-03-05/imports/bspo_import.owl
+data-version: plana/releases/2019-03-06/imports/bspo_import.owl
 ontology: plana/imports/bspo_import
 
 [Term]
@@ -154,6 +154,24 @@ xref: FMA:52810
 is_a: BSPO:0000400 ! anatomical plane
 
 [Term]
+id: BSPO:0000031
+name: upper region
+namespace: spatial
+is_a: BSPO:0000070 ! anatomical region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000001 ! upper side
+relationship: overlaps BSPO:0000001 ! upper side
+
+[Term]
+id: BSPO:0000032
+name: lower region
+namespace: spatial
+is_a: BSPO:0000070 ! anatomical region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000002 ! lower side
+relationship: overlaps BSPO:0000002 ! lower side
+
+[Term]
 id: BSPO:0000054
 name: anatomical side
 namespace: spatial
@@ -193,6 +211,28 @@ def: "A 3D region in space without well-defined compartmental boundaries; for ex
 comment: to be merged into CARO
 xref: FBql:00005841
 is_a: CARO:0000003 ! anatomical structure
+
+[Term]
+id: BSPO:0000073
+name: apical region
+namespace: spatial
+def: "Anatomical region located on the apical end on the body or body part." [BSPO:wd]
+xref: FBql:00005854
+is_a: BSPO:0000070 ! anatomical region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000057 ! apical side
+relationship: overlaps BSPO:0000057 ! apical side
+
+[Term]
+id: BSPO:0000074
+name: basal region
+namespace: spatial
+def: "Anatomical region located basally on the body or body part." [BSPO:wd]
+xref: FBql:00005855
+is_a: BSPO:0000070 ! anatomical region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000058 ! basal side
+relationship: overlaps BSPO:0000058 ! basal side
 
 [Term]
 id: BSPO:0000086
@@ -421,6 +461,14 @@ def: "crossing at right angles" [BSPO:cjm]
 xref: BSPO:0015005
 domain: BSPO:0000010 ! anatomical axis
 range: BSPO:0000400 ! anatomical plane
+
+[Typedef]
+id: overlaps
+name: overlaps
+namespace: spatial
+def: "x overlaps y iff they have some part in common." [BSPO:cjm]
+comment: "(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))" CLIF []
+xref: RO:0002131
 
 [Typedef]
 id: parallel_to

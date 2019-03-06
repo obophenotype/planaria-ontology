@@ -85,6 +85,29 @@
       "type" : "PROPERTY",
       "lbl" : "existence ends during or before"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002131",
+      "meta" : {
+        "definition" : {
+          "val" : "A overlaps B if they share some part in common.",
+          "xrefs" : [ ]
+        },
+        "xrefs" : [ {
+          "val" : "RO:0002131"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "overlaps"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000424",
+          "val" : "BFO_0000051 some (BFO_0000050 some ?Y)"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "overlaps"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/BSPO_0015014",
       "meta" : {
         "xrefs" : [ {
@@ -100,6 +123,38 @@
       },
       "type" : "PROPERTY",
       "lbl" : "immediately_superficial_to"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002328",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002328"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "functionally_related_to"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "functionally related to"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002329",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002329"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "part_of_structure_that_is_capable_of"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "part of structure that is capable of"
     }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty",
       "type" : "PROPERTY",
@@ -156,6 +211,15 @@
       "id" : "http://www.geneontology.org/formats/oboInOwl#inSubset",
       "type" : "PROPERTY",
       "lbl" : "in_subset"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/uberon/core#efo_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "EFO slim"
+        } ]
+      },
+      "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/UBERON_0000068",
       "meta" : {
@@ -388,6 +452,29 @@
       "type" : "PROPERTY",
       "lbl" : "description"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/BSPO_0000126",
+      "meta" : {
+        "definition" : {
+          "val" : "X in_lateral_side_of Y <=> if X is in_left_side_of Y or X is in_right_side_of Y. X is often, but not always a paired structure",
+          "xrefs" : [ "https://orcid.org/0000-0002-6601-2165" ]
+        },
+        "xrefs" : [ {
+          "val" : "BSPO:0000126"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "in_lateral_side_of"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "in_lateral_side_of"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002087",
       "meta" : {
         "definition" : {
@@ -579,6 +666,15 @@
       "type" : "PROPERTY",
       "lbl" : "posterior_to"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/uberon/core#upper_level",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "abstract upper-level terms not directly useful for analysis"
+        } ]
+      },
+      "type" : "PROPERTY"
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym",
       "type" : "PROPERTY",
       "lbl" : "has_exact_synonym"
@@ -586,6 +682,22 @@
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasDbXref",
       "type" : "PROPERTY",
       "lbl" : "database_cross_reference"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002352",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002352"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "input_of"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "input of"
     }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0003001",
       "meta" : {
@@ -639,6 +751,22 @@
       "type" : "PROPERTY",
       "lbl" : "produces"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0000053",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0000053"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "bearer_of"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "bearer of"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002230",
       "meta" : {
         "xrefs" : [ {
@@ -654,6 +782,22 @@
       },
       "type" : "PROPERTY",
       "lbl" : "ends with"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0001019",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0001019"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "contains"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "contains"
     }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002229",
       "meta" : {
@@ -820,6 +964,32 @@
       "type" : "CLASS",
       "lbl" : "processual entity"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/BSPO_0000096",
+      "meta" : {
+        "definition" : {
+          "val" : "x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer",
+          "xrefs" : [ "http://orcid.org/0000-0002-6601-2165" ]
+        },
+        "xrefs" : [ {
+          "val" : "BSPO:0000096"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "cjm"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-07-31T02:15:46Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "anterior_to"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "anterior_to"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/UBERON_0000109",
       "meta" : {
         "definition" : {
@@ -882,6 +1052,22 @@
       },
       "type" : "CLASS",
       "lbl" : "gastrula stage"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002180",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002180"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "has_component"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "has component"
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0100001",
       "type" : "PROPERTY",
@@ -961,9 +1147,9 @@
         }, {
           "val" : "FBdv:00005288"
         }, {
-          "val" : "EHDAA:27"
-        }, {
           "val" : "XAO:1000001"
+        }, {
+          "val" : "EHDAA:27"
         }, {
           "val" : "ZFS:0000001"
         }, {
@@ -1202,6 +1388,26 @@
       "type" : "PROPERTY",
       "lbl" : "starts"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002388",
+      "meta" : {
+        "definition" : {
+          "val" : "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y",
+          "xrefs" : [ ]
+        },
+        "xrefs" : [ {
+          "val" : "RO:0002388"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "has_potential_to_directly_develop_into"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "has potential to directly develop into"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/BSPO_0000108",
       "meta" : {
         "definition" : {
@@ -1265,9 +1471,77 @@
       "type" : "CLASS",
       "lbl" : "death stage"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002258",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002258"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "developmentally_preceded_by"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "developmentally preceded by"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002215",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002215"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "capable_of"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "capable of"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+      "type" : "PROPERTY",
+      "lbl" : "latin term"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002216",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002216"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "capable_of_part_of"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "capable of part of"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000424",
       "type" : "PROPERTY",
       "lbl" : "expand expression to"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/BFO_0000067",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "BFO:0000067"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "contains_process"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "contains process"
     }, {
       "id" : "http://purl.org/dc/elements/1.1/contributor",
       "meta" : {
@@ -1464,6 +1738,10 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000062"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002352",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002328"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000109",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000068"
@@ -1492,9 +1770,17 @@
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002180",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/BFO_0000051"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000110",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000068"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/BSPO_0000126",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/BFO_0000050"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000068",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000063",
@@ -1536,6 +1822,10 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002223",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000104"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002215",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002328"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000068",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
@@ -1543,6 +1833,10 @@
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000092",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000062",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000068"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002216",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002328"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0002255",
       "pred" : "subPropertyOf",
@@ -1592,17 +1886,21 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002329",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002328"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0002202",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0002254"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000108",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000068"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000105",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000000"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000108",
+      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000068"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000109",
       "pred" : "is_a",
@@ -1649,12 +1947,15 @@
       "subsets" : [ ],
       "xrefs" : [ ],
       "basicPropertyValues" : [ ],
-      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-03-05/imports/uberon_import.owl"
+      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-03-06/imports/uberon_import.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ ],
     "domainRangeAxioms" : [ ],
     "propertyChainAxioms" : [ {
+      "predicateId" : "http://purl.obolibrary.org/obo/RO_0002496",
+      "chainPredicateIds" : [ "http://purl.obolibrary.org/obo/RO_0002258", "http://purl.obolibrary.org/obo/RO_0002496" ]
+    }, {
       "predicateId" : "http://purl.obolibrary.org/obo/RO_0002255",
       "chainPredicateIds" : [ "http://purl.obolibrary.org/obo/RO_0002203", "http://purl.obolibrary.org/obo/BFO_0000050" ]
     }, {
@@ -1669,6 +1970,9 @@
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/RO_0002497",
       "chainPredicateIds" : [ "http://purl.obolibrary.org/obo/BFO_0000050", "http://purl.obolibrary.org/obo/RO_0002497" ]
+    }, {
+      "predicateId" : "http://purl.obolibrary.org/obo/RO_0002329",
+      "chainPredicateIds" : [ "http://purl.obolibrary.org/obo/BFO_0000050", "http://purl.obolibrary.org/obo/RO_0002215" ]
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/RO_0002496",
       "chainPredicateIds" : [ "http://purl.obolibrary.org/obo/RO_0002496", "http://purl.obolibrary.org/obo/BFO_0000062" ]

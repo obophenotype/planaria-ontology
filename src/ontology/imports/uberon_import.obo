@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-03-05/imports/uberon_import.owl
+data-version: plana/releases/2019-03-06/imports/uberon_import.owl
 ontology: plana/imports/uberon_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000104>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n\nEquivalentClasses(ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000104>))\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>))\n)
 
@@ -310,6 +310,48 @@ xref: RO:0002220
 is_symmetric: true
 
 [Typedef]
+id: anterior_to
+name: anterior_to
+namespace: uberon
+def: "x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer" [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000096
+is_transitive: true
+created_by: cjm
+creation_date: 2009-07-31T02:15:46Z
+
+[Typedef]
+id: bearer_of
+name: bearer of
+namespace: uberon
+xref: RO:0000053
+
+[Typedef]
+id: capable_of
+name: capable of
+namespace: uberon
+xref: RO:0002215
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: capable_of_part_of
+name: capable of part of
+namespace: uberon
+xref: RO:0002216
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: contains
+name: contains
+namespace: uberon
+xref: RO:0001019
+
+[Typedef]
+id: contains_process
+name: contains process
+namespace: uberon
+xref: BFO:0000067
+
+[Typedef]
 id: curator_notes
 name: curator notes
 namespace: uberon
@@ -359,6 +401,12 @@ namespace: uberon
 xref: RO:0002255
 holds_over_chain: develops_into part_of
 is_a: has_potential_to_developmentally_contribute_to ! has potential to developmentally contribute to
+
+[Typedef]
+id: developmentally_preceded_by
+name: developmentally preceded by
+namespace: uberon
+xref: RO:0002258
 
 [Typedef]
 id: develops_from
@@ -423,6 +471,7 @@ id: existence_starts_during_or_after
 name: existence starts during or after
 namespace: uberon
 xref: RO:0002496
+holds_over_chain: developmentally_preceded_by existence_starts_during_or_after
 holds_over_chain: part_of existence_starts_during_or_after
 transitive_over: part_of ! part of
 transitive_over: preceded_by ! preceded_by
@@ -453,6 +502,19 @@ xref: http://xmlns.com/foaf/0.1/page
 is_metadata_tag: true
 
 [Typedef]
+id: functionally_related_to
+name: functionally related to
+namespace: uberon
+xref: RO:0002328
+
+[Typedef]
+id: has_component
+name: has component
+namespace: uberon
+xref: RO:0002180
+is_a: has_part ! has part
+
+[Typedef]
 id: has_developmental_contribution_from
 name: has developmental contribution from
 namespace: uberon
@@ -480,6 +542,13 @@ name: has potential to developmentally contribute to
 namespace: uberon
 def: "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y" []
 xref: RO:0002385
+
+[Typedef]
+id: has_potential_to_directly_develop_into
+name: has potential to directly develop into
+namespace: uberon
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+xref: RO:0002388
 
 [Typedef]
 id: has_relational_adjective
@@ -530,12 +599,44 @@ is_a: adjacent_to ! adjacent_to
 is_a: superficial_to ! superficial_to
 
 [Typedef]
+id: in_lateral_side_of
+name: in_lateral_side_of
+namespace: uberon
+def: "X in_lateral_side_of Y <=> if X is in_left_side_of Y or X is in_right_side_of Y. X is often, but not always a paired structure" [https://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000126
+property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+is_a: part_of ! part of
+
+[Typedef]
+id: input_of
+name: input of
+namespace: uberon
+xref: RO:0002352
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: overlaps
+name: overlaps
+namespace: uberon
+def: "A overlaps B if they share some part in common." []
+xref: RO:0002131
+expand_expression_to: "BFO_0000051 some (BFO_0000050 some ?Y)" []
+
+[Typedef]
 id: part_of
 name: part of
 namespace: uberon
 xref: BFO:0000050
 is_transitive: true
 inverse_of: has_part ! has part
+
+[Typedef]
+id: part_of_structure_that_is_capable_of
+name: part of structure that is capable of
+namespace: uberon
+xref: RO:0002329
+holds_over_chain: part_of capable_of
+is_a: functionally_related_to ! functionally related to
 
 [Typedef]
 id: posterior_to
