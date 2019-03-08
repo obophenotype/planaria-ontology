@@ -52,7 +52,7 @@ all_main: $(MAIN_FILES)
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
 
-IMPORTS =  bspo go ro uberon IAO
+IMPORTS =  bspo go ro uberon iao
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)
@@ -250,10 +250,10 @@ mirror/uberon.owl: mirror/uberon.trigger
 
 ## ONTOLOGY: IAO
 ## Copy of IAO is re-downloaded whenever source changes
-mirror/IAO.trigger: $(SRC)
+mirror/iao.trigger: $(SRC)
 
-mirror/IAO.owl: mirror/IAO.trigger
-	$(ROBOT) convert -I $(URIBASE)/IAO.owl -o $@
+mirror/iao.owl: mirror/iao.trigger
+	$(ROBOT) convert -I $(URIBASE)/iao.owl -o $@
 
 .PRECIOUS: mirror/%.owl
 

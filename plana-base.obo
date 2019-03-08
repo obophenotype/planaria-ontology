@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-03-05/plana-base.owl
+data-version: plana/releases/2019-03-08/plana-base.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -12,6 +12,7 @@ name: Stage 1
 namespace: Schmidtea_mediterranea_Developmental_Stages
 def: "D0-D2. Zygote and dispersed blastomere cleavage in a yolk syncytium. Days 0-2 post-egg capsule deposition at 20˚C." [PMID:28072387]
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
+relationship: BFO:0000050 UBERON:0000106
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000001 xsd:string
 
@@ -909,10 +910,7 @@ def: "The first few specialized divisions of an activated animal egg." []
 xref: GO:0040016
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 relationship: BFO:0000050 GO:0009790
-relationship: RO:0002490 PLANA:0000001 ! Stage 1
-relationship: RO:0002490 PLANA:0000002 ! Stage 2
-relationship: RO:0002496 PLANA:0000001 ! Stage 1
-relationship: RO:0002497 PLANA:0000002 ! Stage 2
+relationship: BFO:0000050 PLANA:0000002 ! Stage 2
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000057 xsd:string
 
 [Term]
@@ -1098,11 +1096,11 @@ id: PLANA:0000068
 name: embryonic gut cavity
 def: "Lumen of embryonic digestive tract, prior to formation of the branched defintive gut." [PMID:28072387]
 is_a: PLANA:0000242 ! anatomical cavity
+relationship: BFO:0000050 PLANA:0000041 ! aboral hemisphere
 relationship: BFO:0000050 PLANA:0000058 ! embryonic digestive system
+relationship: BFO:0000050 PLANA:0000076 ! oral hemisphere
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
-relationship: RO:0001018 PLANA:0000041 ! aboral hemisphere
-relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000004 ! Stage 4
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
@@ -1252,18 +1250,16 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000076 x
 id: PLANA:0000077
 name: organogenesis stage
 namespace: Schmidtea_mediterranea_Developmental_Terms
-def: "A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." []
 synonym: "organogenesis" EXACT []
 xref: UBERON:0000111
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 is_a: UBERON:0000068
 is_a: UBERON:0000105
-relationship: RO:0002490 PLANA:0000005 ! Stage 5
-relationship: RO:0002490 PLANA:0000006 ! Stage 6
-relationship: RO:0002490 PLANA:0000007 ! Stage 7
-relationship: RO:0002490 PLANA:0000008 ! Stage 8
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002496 PLANA:0000005 ! Stage 5
+relationship: BFO:0000050 PLANA:0000005 ! Stage 5
+relationship: BFO:0000050 PLANA:0000006 ! Stage 6
+relationship: BFO:0000050 PLANA:0000007 ! Stage 7
+relationship: BFO:0000050 PLANA:0000008 ! Stage 8
+relationship: BFO:0000050 PLANA:0000214 ! juvenile
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000077 xsd:string
 
 [Term]
@@ -1537,10 +1533,9 @@ xref: GO:0048729
 is_a: GO:0009653
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 relationship: BFO:0000050 GO:0009888
-relationship: RO:0002490 PLANA:0000006 ! Stage 6
-relationship: RO:0002490 PLANA:0000007 ! Stage 7
-relationship: RO:0002490 PLANA:0000008 ! Stage 8
-relationship: RO:0002496 PLANA:0000006 ! Stage 6
+relationship: BFO:0000050 PLANA:0000006 ! Stage 6
+relationship: BFO:0000050 PLANA:0000007 ! Stage 7
+relationship: BFO:0000050 PLANA:0000008 ! Stage 8
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000094 xsd:string
 
 [Term]
@@ -1628,13 +1623,13 @@ property_value: UBPROP:0000008 "The ventral nerve cords make up the nervous syst
 [Term]
 id: PLANA:0000098
 name: zygote
-def: "Diploid cell produced by the fusion of sperm cell nucleus and egg cell." []
-xref: CL:0000365
-is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: BFO:0000050 UBERON:0000106
+def: "Diploid cell resulting from the fusion of male and female gametes at fertilization. [ The_Dictionary_of_Cell_and_Molecular_Biology:Third_Edition ]\n\nDiploid cell produced by the fusion of sperm cell nucleus and egg cell." []
+xref: BTO:0000854
+is_a: PLANA:0000117 ! embryonic structure
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
-relationship: RO:0001018 PLANA:0000001 ! Stage 1
+relationship: RO:0002490 PLANA:0000001 ! Stage 1
 relationship: RO:0002496 PLANA:0000001 ! Stage 1
+relationship: RO:0002496 UBERON:0000106
 relationship: RO:0002497 PLANA:0000001 ! Stage 1
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000098 xsd:string
 
@@ -2035,10 +2030,9 @@ def: "The production of haploid germ cells from diploid precursor cells through 
 is_a: GO:0048609
 is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
 relationship: BFO:0000050 GO:0019953
+relationship: BFO:0000050 PLANA:0000214 ! juvenile
+relationship: BFO:0000050 PLANA:0004503 ! sexually mature adult
 relationship: PLANA:0007536 PLANA:0004503 ! specific_to sexually mature adult
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
-relationship: RO:0002496 PLANA:0000214 ! juvenile
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000132 xsd:string
 
 [Term]
@@ -2116,6 +2110,15 @@ synonym: "regernative development" EXACT []
 xref: GO:0031099
 xref: Wikipedia:Regeneration_(biology)
 is_a: GO:0048856
+
+[Term]
+id: PLANA:0000139
+name: anatomical axis
+def: "A straight line through space, intersecting an anatomical entity." [BSPO:cjm]
+comment: Axis directions are defined in terms of axes.
+xref: http://upload.wikimedia.org/wikipedia/commons/3/34/Anatomical_Directions_and_Axes.JPG
+xref: PLANA:0000139
+is_a: PLANA:0000489 ! anatomical line
 
 [Term]
 id: PLANA:0000201
@@ -2699,11 +2702,11 @@ synonym: "immaterial physical anatomical entity" EXACT []
 xref: AAO:0010265
 xref: AEO:0000007
 xref: BILA:0000007
-xref: CARO:0000007
 xref: EHDAA2:0003007
 xref: FBbt:00007015
 xref: FMA:67112
 xref: HAO:0000007
+xref: PLANA:0000401
 xref: TAO:0001835
 xref: TGMA:0001827
 xref: UBERON:0000466
@@ -2766,11 +2769,11 @@ comment: Depicted by field contains hematoxylin and eosin staining section of a 
 xref: UBERON:0001731
 is_a: PLANA:0000242 ! anatomical cavity
 relationship: BFO:0000050 PLANA:0000016 ! definitive pharynx
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2785,15 +2788,15 @@ comment: Depicted by field contains hematoxylin and eosin staining on a coronal 
 xref: UBERON:0006909
 is_a: PLANA:0000242 ! anatomical cavity
 relationship: BFO:0000050 PLANA:0000026 ! definitive gut
-relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0000421 ! tail
-relationship: RO:0001018 PLANA:0004527 ! copulatory region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
+relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0000421 ! tail
+relationship: BFO:0000050 PLANA:0004527 ! copulatory region
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007506 ! anterior compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000007 ! Stage 7
 relationship: RO:0002490 PLANA:0000008 ! Stage 8
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -2810,10 +2813,10 @@ def: "The orifice that connects the mouth to the exterior of the body." []
 xref: UBERON:0000166
 is_a: PLANA:0000242 ! anatomical cavity
 relationship: BFO:0000050 PLANA:0000072 ! mouth
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007545 ! epidermal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2825,12 +2828,12 @@ name: pharnygeal pouch cavity
 def: "Anatomical space between the definitive pharynx and the epithelial cells comprising parapharyngeal pouch." [OCLC:16809160]
 comment: Depicted by field contains hematoxylin and eosin staining  coronal section section of a asexual adult animal. Parapharyngeal pouch cavity is indicated by arrows. Scale bar = 250um
 is_a: PLANA:0000242 ! anatomical cavity
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007560 ! gastrovascular compartment
 relationship: BSPO:0015014 PLANA:0000413 ! pharynx outer epithelial surface
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2845,16 +2848,16 @@ comment: Depicted by field is an electron micrograph of the dorsal epidermis in 
 is_a: BSPO:0000373
 relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
 relationship: BFO:0000050 PLANA:0000096 ! ventral epidermis
-relationship: RO:0001018 PLANA:0000418 ! head
-relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0000421 ! tail
-relationship: RO:0001018 PLANA:0004527 ! copulatory region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
+relationship: BFO:0000050 PLANA:0000418 ! head
+relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0000421 ! tail
+relationship: BFO:0000050 PLANA:0004527 ! copulatory region
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007506 ! anterior compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007545 ! epidermal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2869,17 +2872,17 @@ comment: The depicted by field is an electron micrograph of the dorsal epidermis
 is_a: BSPO:0000374
 relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
 relationship: BFO:0000050 PLANA:0000096 ! ventral epidermis
+relationship: BFO:0000050 PLANA:0000418 ! head
+relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0000421 ! tail
+relationship: BFO:0000050 PLANA:0004527 ! copulatory region
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007506 ! anterior compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007545 ! epidermal compartment
 relationship: BSPO:0015014 PLANA:0001005 ! basal lamina of epithelium
-relationship: RO:0001018 PLANA:0000418 ! head
-relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0000421 ! tail
-relationship: RO:0001018 PLANA:0004527 ! copulatory region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2893,17 +2896,17 @@ def: "The surface of the gut lumen in contact with ingested food." [PMID:2166434
 comment: The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the anterior primary gut branch. The lumen gut surface is marked by black arrows. Scale bar is 200um.
 is_a: BSPO:0000005
 relationship: BFO:0000050 PLANA:0000066 ! gastrodermis
+relationship: BFO:0000050 PLANA:0000418 ! head
+relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0000421 ! tail
+relationship: BFO:0000050 PLANA:0004527 ! copulatory region
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007506 ! anterior compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007560 ! gastrovascular compartment
 relationship: BSPO:0015014 PLANA:0000405 ! lumen of digestive tract
-relationship: RO:0001018 PLANA:0000418 ! head
-relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0000421 ! tail
-relationship: RO:0001018 PLANA:0004527 ! copulatory region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2916,12 +2919,12 @@ name: pharynx lumen epithelial surface
 def: "The epithelial surface lining the interior of the pharynx, facing the lumen." [UBERON:0001731]
 comment: The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the pharynx and surrounding tissues. The pharynx lumen  epithelial surface is marked by black arrows. Scale bar is 200um.
 is_a: BSPO:0000005
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
 relationship: BFO:0000050 PLANA:0000472 ! outer pharyngeal epithelium
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2934,12 +2937,12 @@ name: pharynx outer epithelial surface
 def: "Epithelial surface covering the outside of the pharynx." [doi:10.1002/jmor.1052060308\nPMID\:29865769]
 comment: The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the pharynx and surrounding tissues. The pharynx outer epithelial surface is marked by black arrows. Scale bar is 200um.
 is_a: BSPO:0000005
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
 relationship: BFO:0000050 PLANA:0000472 ! outer pharyngeal epithelium
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2953,12 +2956,12 @@ def: "The surface of the parapharyngeal pouch facing the pharynx." [OCLC:1680916
 comment: The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the pharynx and surrounding tissues. Anterior is up. The parapharyngeal pouch surface is marked by black arrows. Scale bar is 200um.
 is_a: BSPO:0000005
 relationship: BFO:0000050 PLANA:0000081 ! pharyngeal pouch
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007560 ! gastrovascular compartment
 relationship: BSPO:0015014 PLANA:0000407 ! pharnygeal pouch cavity
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -3772,7 +3775,7 @@ def: "A principle subdivision of an organism that includes all structures along 
 comment: Depiction shows an asexual with the term annoated in yellow. Scale bar =500um
 synonym: "anteroposterior axis" BROAD []
 xref: UBERON:0013701
-is_a: BSPO:0000010
+is_a: BSPO:0000013
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/mainbodyaxis.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000498 xsd:string
 
@@ -4578,7 +4581,7 @@ id: PLANA:0004511
 name: oral-aboral axis
 def: "Axis that runs from the oral pole and to the aboral pole of the spherical embryo (Stage 3 through early Stage 6). The oral pole is centered around the temporary embryonic pharynx; the aboral pole is located opposite the temporary embryonic pharynx." [PMID:28072387]
 comment: Depicted by is an illustration noting the oral-aboral axis in cyan double headed arrow. Note it starts at the temporary embryonic pharynx and extends to opposite.
-is_a: BSPO:0000010
+is_a: PLANA:0000139 ! anatomical axis
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
@@ -4598,10 +4601,11 @@ name: primitive ectoderm surface
 def: "The apical surface of the single layered primitive ectoderm that is in contact with the environment." [https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000001.md, OCLC:20423827, OCLC:464776945, OCLC:82522822, PMID:28072387]
 is_a: BSPO:0000005
 relationship: BFO:0000050 PLANA:0000029 ! primitive ectoderm
+relationship: BFO:0000050 PLANA:0000041 ! aboral hemisphere
+relationship: BFO:0000050 PLANA:0000076 ! oral hemisphere
+relationship: BFO:0000050 PLANA:0000116 ! embryo
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
-relationship: RO:0001018 PLANA:0000041 ! aboral hemisphere
-relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002490 PLANA:0000002 ! Stage 2
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000004 ! Stage 4
@@ -4616,10 +4620,10 @@ id: PLANA:0004513
 name: primtive gut cell surface
 def: "The surface of the primitive gut cells in contact with the embryonic wall." [PMID:28072387]
 is_a: BSPO:0000005
+relationship: BFO:0000050 PLANA:0000076 ! oral hemisphere
 relationship: BFO:0000050 PLANA:0000085 ! primitive gut cell
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
-relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000004 ! Stage 4
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
@@ -4634,11 +4638,11 @@ id: PLANA:0004514
 name: embryonic gut cell surface
 def: "The surface of phagocytic embryonic gut cells in contact with ingested yolk cells." [PMID:28072387]
 is_a: BSPO:0000005
+relationship: BFO:0000050 PLANA:0000041 ! aboral hemisphere
 relationship: BFO:0000050 PLANA:0000059 ! embryonic gut cell
+relationship: BFO:0000050 PLANA:0000076 ! oral hemisphere
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
-relationship: RO:0001018 PLANA:0000041 ! aboral hemisphere
-relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002490 PLANA:0000004 ! Stage 4
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -4654,9 +4658,10 @@ name: temporary embryonic pharynx lumen epithelial surface
 def: "The epithelial cell surface lining the temporary embryonic pharynx lumen." [PMID:20100474, PMID:28072387]
 is_a: BSPO:0000005
 relationship: BFO:0000050 PLANA:0000023 ! temporary embryonic pharynx
+relationship: BFO:0000050 PLANA:0000076 ! oral hemisphere
+relationship: BFO:0000050 PLANA:0000116 ! embryo
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
-relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002490 PLANA:0000002 ! Stage 2
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000004 ! Stage 4
@@ -4848,14 +4853,14 @@ name: oviduct lumen
 def: "Anatomical space enclosed by the oviduct epithelium." [PMID:22074376]
 is_a: PLANA:0000242 ! anatomical cavity
 relationship: BFO:0000050 PLANA:0000205 ! oviduct
+relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0004527 ! copulatory region
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007506 ! anterior compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007554 ! parenchymal compartment
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
-relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0004527 ! copulatory region
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -4869,16 +4874,16 @@ name: sperm duct lumen
 def: "Anatomical space enclosed by the sperm duct epithelium." [PMID:19022767\nPMID\:22074376]
 is_a: PLANA:0000242 ! anatomical cavity
 relationship: BFO:0000050 PLANA:0000207 ! sperm duct
+relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
+relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
+relationship: BFO:0000050 PLANA:0000421 ! tail
+relationship: BFO:0000050 PLANA:0004527 ! copulatory region
+relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007506 ! anterior compartment
+relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
+relationship: BFO:0000050 PLANA:0007554 ! parenchymal compartment
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
-relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0000421 ! tail
-relationship: RO:0001018 PLANA:0004527 ! copulatory region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -4932,11 +4937,11 @@ name: tuba lumen
 def: "Anatomical space enclosed by tuba. Oocyte(s) are fertilized in the tuba lumen by sperm that traveled up the oviduct." [PMID:19022767\nPMID\:20844018\nPMID\:22074376\nPMID\:27149082]
 is_a: PLANA:0000242 ! anatomical cavity
 relationship: BFO:0000050 PLANA:0000230 ! tuba
+relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
+relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
+relationship: BFO:0000050 PLANA:0007506 ! anterior compartment
+relationship: BFO:0000050 PLANA:0007554 ! parenchymal compartment
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
-relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -4968,7 +4973,13 @@ creation_date: 2017-04-26T19:32:04Z
 id: PLANA:0007503
 name: sagittal plane
 def: "Anatomical plane which divides the body into right and left parts. This plane passes through the midline." []
+xref: BSPO:0000417
+is_a: PLANA:0000139 ! anatomical axis
 is_a: PLANA:0000490 ! anatomical plane
+intersection_of: PLANA:0000490 ! anatomical plane
+intersection_of: BSPO:0015005 BSPO:0000017
+intersection_of: parallel_to BSPO:0000013
+intersection_of: parallel_to BSPO:0000016
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007503 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-04-26T19:32:33Z
@@ -5136,8 +5147,8 @@ id: PLANA:0007519
 name: anteroposterior axis
 def: "Axis that runs along the long axis of the animal from anterior (head) to posterior (tail). It is perpendicular to the dorsoventral axis and as such, it splits dorsal and ventral regions of the animal to either side." []
 comment: Depiction shows an asexual with the term annoated in yellow. Scale bar =500um
-is_a: BSPO:0000010
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/anteroposterioraxis.png
+is_a: BSPO:0000013
+property_value: depicted:by http://purl.obolibrary.org/obo/plana/images/anteroposterioraxis.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007519 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-05-04T17:59:38Z
@@ -5146,7 +5157,7 @@ creation_date: 2017-05-04T17:59:38Z
 id: PLANA:0007520
 name: dorsoventral axis
 def: "Axis that runs along the short axis of the animal, perpendicular to the anteroposterior axis, running from the dorsal (back) side of the animal to the ventral (belly) side of the animal. This axis splits anterior and posterior regions of the animal to either side." []
-is_a: BSPO:0000010
+is_a: BSPO:0000016
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007520 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-05-04T18:00:07Z
@@ -5156,7 +5167,7 @@ id: PLANA:0007521
 name: dextro-sinister axis
 def: "Axis perpendicular to both the anteroposterior and dorsoventral axis that runs from the left side of the animal, through the medial region (center) and out to the right side." []
 comment: Depiction shows an asexual with the term annoated in yellow. Scale bar =500um
-is_a: BSPO:0000010
+is_a: PLANA:0000139 ! anatomical axis
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/dextro-sinisteraxis.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007521 xsd:string
 created_by: Steph Nowotarski
@@ -5178,8 +5189,8 @@ id: PLANA:0007523
 name: proximodistal axis
 def: "Axis that starts at the distal part of an appendage, closest to the body, and runs to the proximal part of an appendage, farthest from the body." []
 comment: Depicted by shows a planarian pharynx exposed by tricaine treatment. The proximodistal axis is denoted with the double headed magenta arrow.
-is_a: BSPO:0000010
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/proximodistalaxis.png {xref="PMID:24737865"}
+is_a: BSPO:0000015
+property_value: depicted:by http://purl.obolibrary.org/obo/plana/images/proximodistalaxis.png {xref="PMID:24737865"}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007523 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-05-04T18:02:04Z
@@ -5577,9 +5588,9 @@ name: temporary embryonic pharynx cavity
 def: "Anatomical space enclosed by the temporary embryonic pharynx epithelial cells. Lumen through which yolk cells are transported into the embryonic gut cavity." [PMID:28072387]
 is_a: PLANA:0000242 ! anatomical cavity
 relationship: BFO:0000050 PLANA:0000023 ! temporary embryonic pharynx
+relationship: BFO:0000050 PLANA:0000076 ! oral hemisphere
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
-relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000004 ! Stage 4
 relationship: RO:0002490 PLANA:0000005 ! Stage 5

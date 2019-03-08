@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-03-06/imports/uberon_import.owl
+data-version: plana/releases/2019-03-08/imports/uberon_import.owl
 ontology: plana/imports/uberon_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000104>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n\nEquivalentClasses(ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000104>))\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>))\n)
 
@@ -302,6 +302,14 @@ xref: XAO:0000000
 xref: ZFA:0100000
 
 [Typedef]
+id: aboral_to
+name: aboral_to
+namespace: uberon
+def: "nearer to the aboral opening of the organism, on the oral-aboral axis." [BSPO:cjm]
+xref: BSPO:0015202
+is_transitive: true
+
+[Typedef]
 id: adjacent_to
 name: adjacent_to
 namespace: uberon
@@ -425,6 +433,30 @@ name: develops_into
 namespace: uberon
 xref: RO:0002203
 is_a: has_potential_to_develop_into ! has potential to develop into
+
+[Typedef]
+id: distal_to
+name: distal_to
+namespace: uberon
+def: "x distal_to y iff x is further along the proximo-distal axis than y, towards the appendage tip. A proximo-distal axis extends from tip of an appendage (distal) to where it joins the body (proximal)." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000097
+
+[Typedef]
+id: distalmost_part_of
+name: distalmost_part_of
+namespace: uberon
+def: "X distalmost_part_of Y <=> X is part_of Y and X is adjacent_to the distal boundary of Y" [https://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001108
+is_a: in_distal_side_of ! in_distal_side_of
+
+[Typedef]
+id: dorsal_to
+name: dorsal_to
+namespace: uberon
+def: "x dorsal_to y iff x is further along the dorso-ventral axis than y, towards the back. A dorso-ventral axis is an axis that bisects an organism from back (e.g. spinal column) to front (e.g. belly)." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000098
+is_transitive: true
+inverse_of: ventral_to ! ventral_to
 
 [Typedef]
 id: editor_note
@@ -568,6 +600,14 @@ xref: UBPROP:0000003
 is_metadata_tag: true
 
 [Typedef]
+id: immediately_anterior_to
+name: immediately_anterior_to
+namespace: uberon
+xref: BSPO:0015009
+is_a: adjacent_to ! adjacent_to
+is_a: anterior_to ! anterior_to
+
+[Typedef]
 id: immediately_deep_to
 name: immediately_deep_to
 namespace: uberon
@@ -575,6 +615,14 @@ def: "This relation holds when both the deep_to and ajdacent_to relationship sim
 xref: BSPO:0001107
 is_a: adjacent_to ! adjacent_to
 is_a: deep_to ! deep_to
+
+[Typedef]
+id: immediately_posterior_to
+name: immediately_posterior_to
+namespace: uberon
+xref: BSPO:0015012
+is_a: adjacent_to ! adjacent_to
+is_a: posterior_to ! posterior_to
 
 [Typedef]
 id: immediately_preceded_by
@@ -599,6 +647,22 @@ is_a: adjacent_to ! adjacent_to
 is_a: superficial_to ! superficial_to
 
 [Typedef]
+id: in_deep_part_of
+name: in_deep_part_of
+namespace: uberon
+def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the deep portion." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001101
+is_a: part_of ! part of
+
+[Typedef]
+id: in_distal_side_of
+name: in_distal_side_of
+namespace: uberon
+def: "X distal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the distal portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000125
+is_a: part_of ! part of
+
+[Typedef]
 id: in_lateral_side_of
 name: in_lateral_side_of
 namespace: uberon
@@ -608,11 +672,44 @@ property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-pai
 is_a: part_of ! part of
 
 [Typedef]
+id: in_proximal_side_of
+name: in_proximal_side_of
+namespace: uberon
+def: "X proximal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the proximal portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000124
+is_a: part_of ! part of
+inverse_of: in_distal_side_of ! in_distal_side_of
+
+[Typedef]
+id: in_superficial_part_of
+name: in_superficial_part_of
+namespace: uberon
+def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the superficial portion." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001100
+is_a: part_of ! part of
+
+[Typedef]
 id: input_of
 name: input of
 namespace: uberon
 xref: RO:0002352
 is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: intersects_midsagittal_plane_of
+name: intersects_midsagittal_plane_of
+namespace: uberon
+def: "X intersects_median_plane of iff X crosses the midine plane of Y." []
+xref: BSPO:0005001
+is_a: part_of ! part of
+
+[Typedef]
+id: oral_to
+name: oral_to
+namespace: uberon
+def: "nearer to the oral opening of the organism, on the oral-aboral axis." [BSPO:cjm]
+xref: BSPO:0015201
+is_transitive: true
 
 [Typedef]
 id: overlaps
@@ -639,6 +736,22 @@ holds_over_chain: part_of capable_of
 is_a: functionally_related_to ! functionally related to
 
 [Typedef]
+id: postaxial_to
+name: postaxial_to
+namespace: uberon
+def: "x preaxial_to y iff x is further along the preaxial-postaxial axis than y, towards the postaxial side." [http://medical-dictionary.thefreedictionary.com/postaxial]
+synonym: "posterior_to (developmentally)" RELATED [MA:th]
+xref: BSPO:0001114
+is_transitive: true
+
+[Typedef]
+id: postaxialmost_part_of
+name: postaxialmost_part_of
+namespace: uberon
+xref: BSPO:0001115
+is_a: part_of ! part of
+
+[Typedef]
 id: posterior_to
 name: posterior_to
 namespace: uberon
@@ -646,6 +759,24 @@ def: "x posterior_to y iff x is further along the antero-posterior axis than y, 
 synonym: "caudal_to" NARROW []
 xref: BSPO:0000099
 is_transitive: true
+
+[Typedef]
+id: preaxial_to
+name: preaxial_to
+namespace: uberon
+def: "x preaxial_to y iff x is further along the preaxial-postaxial axis than y, towards the front." [http://medical-dictionary.thefreedictionary.com/preaxial]
+synonym: "anterior_to (developmentally)" RELATED [MA:th]
+synonym: "lateral (radial) to" RELATED []
+synonym: "medial (tibial) to" RELATED []
+xref: BSPO:1000000
+is_transitive: true
+
+[Typedef]
+id: preaxialmost_part_of
+name: preaxialmost_part_of
+namespace: uberon
+xref: BSPO:0001113
+is_a: part_of ! part of
 
 [Typedef]
 id: preceded_by
@@ -675,6 +806,21 @@ id: produces
 name: produces
 namespace: uberon
 xref: RO:0003000
+
+[Typedef]
+id: proximal_to
+name: proximal_to
+namespace: uberon
+def: "x proximal_to y iff x is closer to the point of attachment with the body than y." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000100
+
+[Typedef]
+id: proximalmost_part_of
+name: proximalmost_part_of
+namespace: uberon
+def: "X proximalmost_part_of Y <=> X is part_of Y and X is adjacent_to the proximal boundary of Y" [https://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001106
+is_a: in_proximal_side_of ! in_proximal_side_of
 
 [Typedef]
 id: starts
@@ -713,4 +859,12 @@ namespace: uberon
 def: "Notes on the how instances of this class vary across species." [https://orcid.org/0000-0002-6601-2165]
 xref: UBPROP:0000008
 is_metadata_tag: true
+
+[Typedef]
+id: ventral_to
+name: ventral_to
+namespace: uberon
+def: "x ventral_to y iff x is further along the dorso-ventral axis than y, towards the front. A dorso-ventral axis is an axis that bisects an organism from back (e.g. spinal column) to front (e.g. belly)." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000102
+is_transitive: true
 

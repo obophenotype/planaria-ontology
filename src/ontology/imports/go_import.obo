@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-03-06/imports/go_import.owl
+data-version: plana/releases/2019-03-08/imports/go_import.owl
 ontology: plana/imports/go_import
 
 [Term]
@@ -1026,6 +1026,16 @@ intersection_of: regulates GO:0005515 ! protein binding
 relationship: regulates GO:0005515 ! protein binding
 
 [Term]
+id: GO:0043473
+name: pigmentation
+namespace: biological_process
+def: "The accumulation of pigment in an organism, tissue or cell, either by increased deposition or by increased number of cells." [GOC:jl]
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_pir
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0043549
 name: regulation of kinase activity
 namespace: biological_process
@@ -1518,6 +1528,28 @@ intersection_of: negatively_regulates GO:0032501 ! multicellular organismal proc
 relationship: negatively_regulates GO:0032501 ! multicellular organismal process
 
 [Term]
+id: GO:0051301
+name: cell division
+namespace: biological_process
+def: "The process resulting in division and partitioning of components of a cell to form more cells; may or may not be accompanied by the physical separation of a cell into distinct, individually membrane-bounded daughter cells." [GOC:di, GOC:go_curators, GOC:pr]
+comment: Note that this term differs from 'cytokinesis ; GO:0000910' in that cytokinesis does not include nuclear division.
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_pir
+xref: Wikipedia:Cell_division
+is_a: GO:0009987 ! cellular process
+
+[Term]
+id: GO:0051302
+name: regulation of cell division
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of the physical partitioning and separation of a cell into daughter cells." [GOC:go_curators]
+is_a: GO:0050794 ! regulation of cellular process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0051301 ! cell division
+relationship: regulates GO:0051301 ! cell division
+
+[Term]
 id: GO:0051338
 name: regulation of transferase activity
 namespace: biological_process
@@ -1589,6 +1621,37 @@ comment: Note that this term is in the subset of terms that should not be used f
 subset: gocheck_do_not_manually_annotate
 is_a: GO:0009987 ! cellular process
 is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0051781
+name: positive regulation of cell division
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of cell division." [GOC:ai]
+synonym: "activation of cell division" NARROW []
+synonym: "stimulation of cell division" NARROW []
+synonym: "up regulation of cell division" EXACT []
+synonym: "up-regulation of cell division" EXACT []
+synonym: "upregulation of cell division" EXACT []
+is_a: GO:0048522 ! positive regulation of cellular process
+is_a: GO:0051302 ! regulation of cell division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0051301 ! cell division
+relationship: positively_regulates GO:0051301 ! cell division
+
+[Term]
+id: GO:0051782
+name: negative regulation of cell division
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of cell division." [GOC:ai]
+synonym: "down regulation of cell division" EXACT []
+synonym: "down-regulation of cell division" EXACT []
+synonym: "downregulation of cell division" EXACT []
+synonym: "inhibition of cell division" NARROW []
+is_a: GO:0048523 ! negative regulation of cellular process
+is_a: GO:0051302 ! regulation of cell division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0051301 ! cell division
+relationship: negatively_regulates GO:0051301 ! cell division
 
 [Term]
 id: GO:0060089
