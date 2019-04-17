@@ -641,10 +641,10 @@
           "val" : "IndependentContinuant"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
-          "val" : "a molecule"
+          "val" : "an organism"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
-          "val" : "an organism"
+          "val" : "a molecule"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
           "val" : "an orchestra."
@@ -713,6 +713,70 @@
       },
       "type" : "PROPERTY",
       "lbl" : "definition source"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002000",
+      "meta" : {
+        "definition" : {
+          "val" : "a relation between a 2D immaterial entity (the boundary) and a material entity, in which the boundary delimits the material entity",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0001900",
+          "val" : "http://purl.obolibrary.org/obo/RO_0001901"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
+          "val" : "the surface of my skin is a 2D boundary of my body"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "boundary of"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "is 2D boundary of"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Although the boundary is two-dimensional, it exists in three-dimensional space and thus has a 3D shape."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "is boundary of"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "A 2D boundary may have holes and gaps, but it must be a single connected entity, not an aggregate of several disconnected parts."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "2D_boundary_of"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "2D boundary of"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002002",
+      "meta" : {
+        "definition" : {
+          "val" : "a relation between a material entity and a 2D immaterial entity (the boundary), in which the boundary delimits the material entity",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "has boundary"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "has_2D_boundary"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
+          "val" : "my body has 2D boundary the surface of my skin"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Although the boundary is two-dimensional, it exists in three-dimensional space and thus has a 3D shape."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "A 2D boundary may have holes and gaps, but it must be a single connected entity, not an aggregate of several disconnected parts."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0001900",
+          "val" : "http://purl.obolibrary.org/obo/RO_0001901"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "has 2D boundary"
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0010000",
       "meta" : {
@@ -797,6 +861,41 @@
       },
       "type" : "PROPERTY",
       "lbl" : "has participant"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0001025",
+      "meta" : {
+        "definition" : {
+          "val" : "a relation between two independent continuants, the target and the location, in which the target is entirely within the location",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
+          "val" : "my brain is located in my head"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "located_in"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
+          "val" : "this rat is located in this cage"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Most location relations will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/source",
+          "val" : "http://www.obofoundry.org/ro/#OBO_REL:located_in"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Location as a relation between instances: The primitive instance-level relation c located_in r at t reflects the fact that each continuant is at any given time associated with exactly one spatial region, namely its exact location. Following we can use this relation to define a further instance-level location relation - not between a continuant and the region which it exactly occupies, but rather between one continuant and another. c is located in c1, in this sense, whenever the spatial region occupied by c is part_of the spatial region occupied by c1.    Note that this relation comprehends both the relation of exact location between one continuant and another which obtains when r and r1 are identical (for example, when a portion of fluid exactly fills a cavity), as well as those sorts of inexact location relations which obtain, for example, between brain and head or between ovum and uterus"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000111",
+          "val" : "located in"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0001900",
+          "val" : "http://purl.obolibrary.org/obo/RO_0001901"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "located in"
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000600",
       "meta" : {
@@ -1236,6 +1335,32 @@
       "type" : "PROPERTY",
       "lbl" : "participates in"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002350",
+      "meta" : {
+        "definition" : {
+          "val" : "is member of is a mereological relation between a item and a collection.",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "member part of"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
+          "val" : "An organism that is a member of a population of organisms"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+          "val" : "SIO"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "is member of"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0001900",
+          "val" : "http://purl.obolibrary.org/obo/RO_0001901"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "member of"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0000053",
       "meta" : {
         "definition" : {
@@ -1268,9 +1393,55 @@
       "type" : "PROPERTY",
       "lbl" : "bearer of"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002351",
+      "meta" : {
+        "definition" : {
+          "val" : "has member is a mereological relation between a collection and an item.",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+          "val" : "SIO"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0001900",
+          "val" : "http://purl.obolibrary.org/obo/RO_0001901"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "has member"
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
       "type" : "PROPERTY",
       "lbl" : "shorthand"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0001015",
+      "meta" : {
+        "definition" : {
+          "val" : "a relation between two independent continuants, the location and the target, in which the target is entirely within the location",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
+          "val" : "this cage is the location of this rat"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000111",
+          "val" : "is location of"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Most location relations will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
+          "val" : "my head is the location of my brain"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "location_of"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0001900",
+          "val" : "http://purl.obolibrary.org/obo/RO_0001901"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "location of"
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000136",
       "meta" : {
@@ -1812,6 +1983,10 @@
       "pred" : "type",
       "obj" : "http://purl.obolibrary.org/obo/IAO_0000409"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0001015",
+      "pred" : "inverseOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0001025"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/IAO_0000230",
       "pred" : "type",
       "obj" : "http://purl.obolibrary.org/obo/IAO_0000225"
@@ -1860,6 +2035,10 @@
       "pred" : "type",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#Subset"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002000",
+      "pred" : "inverseOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002002"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/BFO_0000141",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000004"
@@ -1887,6 +2066,10 @@
       "sub" : "http://purl.obolibrary.org/obo/IAO_0000123",
       "pred" : "type",
       "obj" : "http://purl.obolibrary.org/obo/IAO_0000078"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002350",
+      "pred" : "inverseOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002351"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/BFO_0000020",
       "pred" : "is_a",
@@ -1932,6 +2115,10 @@
       "pred" : "type",
       "obj" : "http://purl.obolibrary.org/obo/IAO_0000078"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002350",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/BFO_0000050"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/IAO_0000033",
       "pred" : "http://purl.obolibrary.org/obo/IAO_0000136",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000017"
@@ -1939,6 +2126,10 @@
       "sub" : "http://purl.obolibrary.org/obo/IAO_0000103",
       "pred" : "type",
       "obj" : "http://purl.obolibrary.org/obo/IAO_0000225"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002351",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/BFO_0000051"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/IAO_0000120",
       "pred" : "type",
@@ -1965,7 +2156,7 @@
       "subsets" : [ ],
       "xrefs" : [ ],
       "basicPropertyValues" : [ ],
-      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-03-08/imports/iao_import.owl"
+      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-04-17/imports/iao_import.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ ],
@@ -1977,6 +2168,10 @@
       "predicateId" : "http://purl.obolibrary.org/obo/BFO_0000066",
       "domainClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000003" ],
       "rangeClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000004" ]
+    }, {
+      "predicateId" : "http://purl.obolibrary.org/obo/RO_0002002",
+      "domainClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000040" ],
+      "rangeClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000141" ]
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/IAO_0000136",
       "domainClassIds" : [ "http://purl.obolibrary.org/obo/IAO_0000030" ]

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-03-08/imports/bspo_import.owl
+data-version: plana/releases/2019-04-17/imports/bspo_import.owl
 ontology: plana/imports/bspo_import
 
 [Term]
@@ -1394,6 +1394,14 @@ xref: BSPO:0015015
 is_a: ventral_to ! ventral to
 
 [Typedef]
+id: in_anterior_side_of
+name: in anterior side of
+namespace: spatial
+def: "X anterior side of Y <=> if Y is subdivided into two anterior and posterior portions, X is part of the anterior portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000123
+is_a: part_of ! part of
+
+[Typedef]
 id: in_deep_part_of
 name: in deep part of
 namespace: spatial
@@ -1416,6 +1424,14 @@ namespace: spatial
 def: "X in lateral side of Y <=> if X is in left side of Y or X is in right side of Y. X is often, but not always a paired structure" [UBERON:cjm]
 xref: BSPO:0000126
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+is_a: part_of ! part of
+
+[Typedef]
+id: in_posterior_side_of
+name: in posterior side of
+namespace: spatial
+def: "X posterior side of Y <=> if Y is subdivided into two anterior and posterior portions, X is part of the posterior portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000122
 is_a: part_of ! part of
 
 [Typedef]
