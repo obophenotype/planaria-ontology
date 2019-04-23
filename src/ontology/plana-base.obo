@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-04-17/plana-base.owl
+data-version: plana/releases/2019-04-23/plana-base.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -486,16 +486,9 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000031 x
 
 [Term]
 id: PLANA:0000032
-name: dorsal midline
-def: "The median line/ plane of bilateral symmetry along the anteroposterior axis on the dorsal surface of the animal." []
-is_a: PLANA:0000030 ! midline
-relationship: RO:0002490 PLANA:0000007 ! Stage 7
-relationship: RO:0002490 PLANA:0000008 ! Stage 8
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
-relationship: subdivision_of PLANA:0007504 ! dorsal compartment
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000032 xsd:string
+name: dorsal region of the midline
+intersection_of: PLANA:0000030 ! midline
+intersection_of: RO:0002180 BSPO:0000079
 
 [Term]
 id: PLANA:0000033
@@ -595,16 +588,9 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000037 x
 
 [Term]
 id: PLANA:0000038
-name: ventral midline
-def: "The median line/ plane of bilateral symmetry along the anteroposterior axis on the ventral surface of the animal." []
-is_a: PLANA:0000030 ! midline
-relationship: RO:0002490 PLANA:0000007 ! Stage 7
-relationship: RO:0002490 PLANA:0000008 ! Stage 8
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
-relationship: subdivision_of PLANA:0007505 ! ventral compartment
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000038 xsd:string
+name: ventral region of the midline
+intersection_of: PLANA:0000030 ! midline
+intersection_of: RO:0002180 BSPO:0000084
 
 [Term]
 id: PLANA:0000039
@@ -680,10 +666,13 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000042 x
 
 [Term]
 id: PLANA:0000043
+name: dorsal/ventral compartment boundary of the whole animal
 name: dorsoventral margin
 def: "Region along the edge of the animal where the dorsal and ventral surfaces meet." []
 synonym: "edge" BROAD []
 is_a: PLANA:0000102 ! anatomical compartment subdivision
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000094
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -852,8 +841,11 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000053 x
 [Term]
 id: PLANA:0000054
 name: dorsal epidermis
+name: dorsal surface of the epidermal compartment
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." [OCLC:16809160]
 is_a: PLANA:0000037 ! definitive tissue
+intersection_of: PLANA:0000034 ! definitive epidermis
+intersection_of: RO:0002180 BSPO:0000379
 relationship: BFO:0000050 PLANA:0000034 ! definitive epidermis
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -1095,7 +1087,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000067 x
 id: PLANA:0000068
 name: embryonic gut cavity
 def: "Lumen of embryonic digestive tract, prior to formation of the branched defintive gut." [PMID:28072387]
-is_a: PLANA:0000242 ! anatomical cavity
+is_a: UBERON:0002553
 relationship: BFO:0000050 PLANA:0000041 ! aboral hemisphere
 relationship: BFO:0000050 PLANA:0000058 ! embryonic digestive system
 relationship: BFO:0000050 PLANA:0000076 ! oral hemisphere
@@ -1337,7 +1329,6 @@ name: racing stripe
 def: "Ciliated epidermal cells located along the dorsal midline." [PMID:17553481]
 is_a: PLANA:0000109 ! anatomical compartment subdivision feature
 relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
-relationship: RO:0001018 PLANA:0000032 ! dorsal midline
 relationship: subdivision_of PLANA:0007504 ! dorsal compartment
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000082 xsd:string
 
@@ -1561,8 +1552,11 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000095 x
 [Term]
 id: PLANA:0000096
 name: ventral epidermis
+name: ventral region of the epidermal compartment
 def: "Single cell layer of ventral, post-mitotic, heavily ciliated epithelial cells" []
 is_a: PLANA:0000037 ! definitive tissue
+intersection_of: PLANA:0000034 ! definitive epidermis
+intersection_of: RO:0002180 BSPO:0000084
 relationship: BFO:0000050 PLANA:0000034 ! definitive epidermis
 relationship: BFO:0000050 PLANA:0007545 ! epidermal compartment
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -2116,13 +2110,28 @@ xref: Wikipedia:Regeneration_(biology)
 is_a: GO:0048856
 
 [Term]
-id: PLANA:0000139
-name: anatomical axis
-def: "A straight line through space, intersecting an anatomical entity." [BSPO:cjm]
-comment: Axis directions are defined in terms of axes.
-xref: PLANA:0000139
-is_a: PLANA:0000489 ! anatomical line
-property_value: http://xmlns.com/foaf/0.1/depiction http://upload.wikimedia.org/wikipedia/commons/3/34/Anatomical_Directions_and_Axes.JPG xsd:string
+id: PLANA:0000140
+name: anterior compartment of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000087
+
+[Term]
+id: PLANA:0000141
+name: dorsal compartment of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000089
+
+[Term]
+id: PLANA:0000142
+name: posterior compartment of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000090
+
+[Term]
+id: PLANA:0000143
+name: ventral compartment of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000091
 
 [Term]
 id: PLANA:0000201
@@ -2687,11 +2696,13 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000241 x
 
 [Term]
 id: PLANA:0000242
-name: anatomical cavity
-def: "Anatomical space which contains portions of one or more body substances and is bounded by the internal surface of one maximally connected anatomical structure. Examples: cranial cavity, pharyngeal recess space, nasal cavity, tooth socket, cavity of serous sac, lumen of stomach, lumen of artery, fornix of vagina." []
+name: obsolete anatomical cavity
+def: "OBSOLETE Anatomical space which contains portions of one or more body substances and is bounded by the internal surface of one maximally connected anatomical structure. Examples: cranial cavity, pharyngeal recess space, nasal cavity, tooth socket, cavity of serous sac, lumen of stomach, lumen of artery, fornix of vagina." []
+comment: replacing with UBERON term
 xref: UBERON:0002553
-is_a: PLANA:0000403 ! anatomical space
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000242 xsd:string
+is_obsolete: true
+replaced_by: UBERON:0002553
 
 [Term]
 id: PLANA:0000400
@@ -2729,8 +2740,9 @@ replaced_by: UBERON:0000466
 
 [Term]
 id: PLANA:0000402
-name: anatomical point
-def: "Non-material anatomical entity of zero dimension, which forms a boundary of an anatomical line or surface." []
+name: obsolete anatomical point
+def: "OBSOLETE Non-material anatomical entity of zero dimension, which forms a boundary of an anatomical line or surface." []
+comment: replacing with UBERON term
 xref: AAO:0010266
 xref: AEO:0000009
 xref: BILA:0000009
@@ -2739,13 +2751,15 @@ xref: EHDAA2:0003009
 xref: FMA:9658
 xref: TAO:0001839
 xref: UBERON:0006983
-is_a: UBERON:0000466
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000402 xsd:string
+is_obsolete: true
+replaced_by: UBERON:0006983
 
 [Term]
 id: PLANA:0000403
-name: anatomical space
-def: "Non-material anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more organism substances or anatomical structures." []
+name: obsolete anatomical space
+def: "OBSOLETE Non-material anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more organism substances or anatomical structures." []
+comment: replacing with UBERON term
 synonym: "lumen" BROAD []
 synonym: "lumen space" EXACT []
 synonym: "space" BROAD []
@@ -2766,11 +2780,12 @@ xref: UMLS:C0524461
 xref: VHOG:0001728
 xref: XAO:0003190
 xref: ZFA:0001643
-is_a: UBERON:0000466
 property_value: http://purl.obolibrary.org/obo/hasRelatedSynonym "anatomical spaces" xsd:string
 property_value: http://purl.obolibrary.org/obo/inSubset "upper_level"
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000403 xsd:string
+is_obsolete: true
+replaced_by: UBERON:0000464
 
 [Term]
 id: PLANA:0000404
@@ -2778,7 +2793,7 @@ name: cavity of pharynx
 def: "A anatomical space that is enclosed by a pharynx." []
 comment: Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. Cavity of pharynx is indicated by arrows. Scale bar = 250um
 xref: UBERON:0001731
-is_a: PLANA:0000242 ! anatomical cavity
+is_a: UBERON:0002553
 relationship: BFO:0000050 PLANA:0000016 ! definitive pharynx
 relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
 relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
@@ -2797,7 +2812,7 @@ name: lumen of digestive tract
 def: "An anatomical space that is surrounded by a digestive tract." [PMID:21664348]
 comment: Depicted by field contains hematoxylin and eosin staining on a coronal section of a asexual adult animal. The lumen of the digestive tract is indicated by arrows. Scale bar = 250um
 xref: UBERON:0006909
-is_a: PLANA:0000242 ! anatomical cavity
+is_a: UBERON:0002553
 relationship: BFO:0000050 PLANA:0000026 ! definitive gut
 relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
 relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
@@ -2822,7 +2837,7 @@ id: PLANA:0000406
 name: oral opening
 def: "The orifice that connects the mouth to the exterior of the body." []
 xref: UBERON:0000166
-is_a: PLANA:0000242 ! anatomical cavity
+is_a: UBERON:0002553
 relationship: BFO:0000050 PLANA:0000072 ! mouth
 relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
 relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
@@ -2838,7 +2853,7 @@ id: PLANA:0000407
 name: pharnygeal pouch cavity
 def: "Anatomical space between the definitive pharynx and the epithelial cells comprising parapharyngeal pouch." [OCLC:16809160]
 comment: Depicted by field contains hematoxylin and eosin staining  coronal section section of a asexual adult animal. Parapharyngeal pouch cavity is indicated by arrows. Scale bar = 250um
-is_a: PLANA:0000242 ! anatomical cavity
+is_a: UBERON:0002553
 relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
 relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
 relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
@@ -2853,52 +2868,15 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000407 x
 
 [Term]
 id: PLANA:0000409
-name: apical epidermis surface
-def: "The apical surface of the single layered epidermis that is in contact with the environment." []
-comment: Depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane from an asexual adult animal. The apical epidermis surface is noted with magenta arrows. Scale bar is 5um.
-is_a: BSPO:0000373
-relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
-relationship: BFO:0000050 PLANA:0000096 ! ventral epidermis
-relationship: BFO:0000050 PLANA:0000418 ! head
-relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
-relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
-relationship: BFO:0000050 PLANA:0000421 ! tail
-relationship: BFO:0000050 PLANA:0004527 ! copulatory region
-relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
-relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
-relationship: BFO:0000050 PLANA:0007506 ! anterior compartment
-relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
-relationship: BFO:0000050 PLANA:0007545 ! epidermal compartment
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/apicalepidermissurface.png
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000409 xsd:string
+name: apical surface of the epidermal compartment
+intersection_of: PLANA:0000034 ! definitive epidermis
+intersection_of: RO:0002180 BSPO:0000373
 
 [Term]
 id: PLANA:0000410
-name: basal epidermis surface
-def: "The basal surface of the epidermal epithelium in direct contact with the basal lamina." []
-comment: The depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane. The basal epidermis surface is noted with magenta arrows. Scale bar is 5um.
-is_a: BSPO:0000374
-relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
-relationship: BFO:0000050 PLANA:0000096 ! ventral epidermis
-relationship: BFO:0000050 PLANA:0000418 ! head
-relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
-relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
-relationship: BFO:0000050 PLANA:0000421 ! tail
-relationship: BFO:0000050 PLANA:0004527 ! copulatory region
-relationship: BFO:0000050 PLANA:0007504 ! dorsal compartment
-relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
-relationship: BFO:0000050 PLANA:0007506 ! anterior compartment
-relationship: BFO:0000050 PLANA:0007507 ! posterior compartment
-relationship: BFO:0000050 PLANA:0007545 ! epidermal compartment
-relationship: BSPO:0015014 PLANA:0001005 ! basal lamina of epithelium
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/basalepidermissurface.png
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000410 xsd:string
+name: basal surface of the epidermal compartment
+intersection_of: PLANA:0000034 ! definitive epidermis
+intersection_of: RO:0002180 BSPO:0000374
 
 [Term]
 id: PLANA:0000411
@@ -3638,8 +3616,9 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000488 x
 
 [Term]
 id: PLANA:0000489
-name: anatomical line
-def: "Non-material anatomical entity of one dimension, which forms a boundary of an anatomical surface or is a modulation of an anatomical surface." []
+name: obsolete anatomical line
+def: "OBSOLETE Non-material anatomical entity of one dimension, which forms a boundary of an anatomical surface or is a modulation of an anatomical surface." []
+comment: reolacing with CARO term
 xref: AAO:0010267
 xref: AEO:0000008
 xref: BILA:0000008
@@ -3652,30 +3631,33 @@ xref: TGMA:0001828
 xref: UBERON:0006800
 xref: XAO:0004003
 xref: ZFA:0001689
-is_a: UBERON:0000466
 property_value: http://purl.obolibrary.org/obo/inSubset "upper_level"
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000489 xsd:string
+is_obsolete: true
+replaced_by: CARO:0000008
 
 [Term]
 id: PLANA:0000490
-name: anatomical plane
-def: "A flat anatomical 2D surface that bisects an anatomical structure or an anatomical space." []
+name: obsolete anatomical plane
+def: "OBSOLETE A flat anatomical 2D surface that bisects an anatomical structure or an anatomical space." []
 comment: All anatomical planes are fiat anatomical boundaries - no morphological boundary could ever be a perfect plane.
+comment: replacing with BSPO term
 xref: CARO:0001013
 xref: FMA:242982
 xref: UBERON:0035085
-is_a: UBERON:0000466
 property_value: http://purl.obolibrary.org/obo/hasRelatedSynonym "fiat anatomical surface" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000490 xsd:string
+is_obsolete: true
+replaced_by: BSPO:0000400
 
 [Term]
 id: PLANA:0000491
 name: plane of autotomy
 def: "An anatomical plane that bisects a zone of weakness in an appendage. When autotomy occurs, the appendage divides along this plane." []
 xref: UBERON:0035086
-is_a: PLANA:0000490 ! anatomical plane
+is_a: BSPO:0000400
 property_value: IAO:0000232 "this class is intended for autotomy that bisects an appendage. Other forms of autotomy are possible: for example, a sea cucumber and autotomitize internal organs" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000491 xsd:string
@@ -3779,26 +3761,23 @@ replaced_by: UBERON:0000015
 
 [Term]
 id: PLANA:0000497
-name: anatomical junction
-def: "An anatomical structure that connects two structures" []
+name: obsolete anatomical junction
+def: "OBSOLETE An anatomical structure that connects two structures" []
+comment: replacing with UBERON term
 synonym: "anatomical junction" EXACT []
 synonym: "junction" BROAD []
 xref: FMA:5898
 xref: http://www.snomedbrowser.com/Codes/Details/91833003
 xref: UBERON:0007651
-is_a: UBERON:0000466
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000497 xsd:string
+is_obsolete: true
+replaced_by: UBERON:0007651
 
 [Term]
 id: PLANA:0000498
 name: main body axis
-def: "A principle subdivision of an organism that includes all structures along the primary axis, typically the anterior-posterior axis, from head to tail, including structures of the body proper where present (for example, ribs), but excluding appendages." []
-comment: Depiction shows an asexual with the term annoated in yellow. Scale bar =500um
-synonym: "anteroposterior axis" BROAD []
-xref: UBERON:0013701
-is_a: BSPO:0000013
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/mainbodyaxis.png
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000498 xsd:string
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000013
 
 [Term]
 id: PLANA:0000499
@@ -4599,22 +4578,9 @@ creation_date: 2017-07-19T21:35:08Z
 
 [Term]
 id: PLANA:0004511
-name: oral-aboral axis
-def: "Axis that runs from the oral pole and to the aboral pole of the spherical embryo (Stage 3 through early Stage 6). The oral pole is centered around the temporary embryonic pharynx; the aboral pole is located opposite the temporary embryonic pharynx." [PMID:28072387]
-comment: Depicted by is an illustration noting the oral-aboral axis in cyan double headed arrow. Note it starts at the temporary embryonic pharynx and extends to opposite.
-is_a: PLANA:0000139 ! anatomical axis
-relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
-relationship: RO:0002490 PLANA:0000003 ! Stage 3
-relationship: RO:0002490 PLANA:0000004 ! Stage 4
-relationship: RO:0002490 PLANA:0000005 ! Stage 5
-relationship: RO:0002490 PLANA:0000006 ! Stage 6
-relationship: RO:0002496 PLANA:0000003 ! Stage 3
-relationship: RO:0002497 PLANA:0000006 ! Stage 6
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/oralaboralaxis.png
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004511 xsd:string
-created_by: Erin Davies
-creation_date: 2017-07-27T14:55:23Z
+name: oral-aboral axis of the embryo
+intersection_of: PLANA:0000116 ! embryo
+intersection_of: RO:0002180 BSPO:0000198
 
 [Term]
 id: PLANA:0004512
@@ -4872,7 +4838,7 @@ creation_date: 2017-08-31T19:21:09Z
 id: PLANA:0004530
 name: oviduct lumen
 def: "Anatomical space enclosed by the oviduct epithelium." [PMID:22074376]
-is_a: PLANA:0000242 ! anatomical cavity
+is_a: UBERON:0002553
 relationship: BFO:0000050 PLANA:0000205 ! oviduct
 relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
 relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
@@ -4893,7 +4859,7 @@ creation_date: 2017-09-01T17:52:16Z
 id: PLANA:0004531
 name: sperm duct lumen
 def: "Anatomical space enclosed by the sperm duct epithelium." [PMID:19022767\nPMID\:22074376]
-is_a: PLANA:0000242 ! anatomical cavity
+is_a: UBERON:0002553
 relationship: BFO:0000050 PLANA:0000207 ! sperm duct
 relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
 relationship: BFO:0000050 PLANA:0000420 ! parapharyngeal region
@@ -4956,7 +4922,7 @@ creation_date: 2017-09-02T22:43:04Z
 id: PLANA:0004534
 name: tuba lumen
 def: "Anatomical space enclosed by tuba. Oocyte(s) are fertilized in the tuba lumen by sperm that traveled up the oviduct." [PMID:19022767\nPMID\:20844018\nPMID\:22074376\nPMID\:27149082]
-is_a: PLANA:0000242 ! anatomical cavity
+is_a: UBERON:0002553
 relationship: BFO:0000050 PLANA:0000230 ! tuba
 relationship: BFO:0000050 PLANA:0000419 ! prepharyngeal region
 relationship: BFO:0000050 PLANA:0007505 ! ventral compartment
@@ -4971,20 +4937,11 @@ created_by: Erin Davies
 creation_date: 2017-09-02T22:55:44Z
 
 [Term]
-id: PLANA:0007501
-name: transverse plane
-def: "Anatomical plane which contains the midline and is perpendicular to the coronal and sagittal planes." []
-is_a: PLANA:0000490 ! anatomical plane
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007501 xsd:string
-created_by: Steph Nowotarski
-creation_date: 2017-04-26T19:31:44Z
-
-[Term]
 id: PLANA:0007502
 name: coronal plane
 def: "Anatomial plane which divides the body into ventral and dorsal regions. This plane always includes the midline and is also known as the frontal plane." []
 comment: Depicted by field contains hematoxylin and eosin staining of a coronal plane section of a asexual adult animal. Scale bar = 250um
-is_a: PLANA:0000490 ! anatomical plane
+is_a: BSPO:0000400
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/coronal.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007502 xsd:string
 created_by: Steph Nowotarski
@@ -4992,18 +4949,9 @@ creation_date: 2017-04-26T19:32:04Z
 
 [Term]
 id: PLANA:0007503
-name: sagittal plane
-def: "Anatomical plane which divides the body into right and left parts. This plane passes through the midline." []
-xref: BSPO:0000417
-is_a: PLANA:0000139 ! anatomical axis
-is_a: PLANA:0000490 ! anatomical plane
-intersection_of: PLANA:0000490 ! anatomical plane
-intersection_of: BSPO:0015005 BSPO:0000017
-intersection_of: parallel_to BSPO:0000013
-intersection_of: parallel_to BSPO:0000016
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007503 xsd:string
-created_by: Steph Nowotarski
-creation_date: 2017-04-26T19:32:33Z
+name: sagittal plane of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000417
 
 [Term]
 id: PLANA:0007504
@@ -5165,56 +5113,33 @@ creation_date: 2017-05-04T15:35:23Z
 
 [Term]
 id: PLANA:0007519
-name: anteroposterior body axis
-def: "Axis that runs along the long axis of the animal from anterior (head) to posterior (tail). It is perpendicular to the dorsoventral axis and as such, it splits dorsal and ventral regions of the animal to either side." []
-comment: Depiction shows an asexual with the term annoated in yellow. Scale bar =500um
-is_a: BSPO:0000013
-property_value: depicted:by http://purl.obolibrary.org/obo/plana/images/anteroposterioraxis.png
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007519 xsd:string
-created_by: Steph Nowotarski
-creation_date: 2017-05-04T17:59:38Z
+name: anterior-posterior axis of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000013
 
 [Term]
 id: PLANA:0007520
-name: dorsoventral axis
-def: "Axis that runs along the short axis of the animal, perpendicular to the anteroposterior axis, running from the dorsal (back) side of the animal to the ventral (belly) side of the animal. This axis splits anterior and posterior regions of the animal to either side." []
-is_a: BSPO:0000016
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007520 xsd:string
-created_by: Steph Nowotarski
-creation_date: 2017-05-04T18:00:07Z
+name: dorsal-ventral axis of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000016
 
 [Term]
 id: PLANA:0007521
-name: dextro-sinister axis
-def: "Axis perpendicular to both the anteroposterior and dorsoventral axis that runs from the left side of the animal, through the medial region (center) and out to the right side." []
-comment: Depiction shows an asexual with the term annoated in yellow. Scale bar =500um
-is_a: PLANA:0000139 ! anatomical axis
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/dextro-sinisteraxis.png
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007521 xsd:string
-created_by: Steph Nowotarski
-creation_date: 2017-05-04T18:00:51Z
+name: dextro-sinister axis of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000017
 
 [Term]
 id: PLANA:0007522
-name: mediolateral axis
-def: "Axis that runs from the center of the body, starting at the anteroposterior axis and out to the lateral (left, right, dorsal or ventral) surface of the animal." []
-comment: Depiction shows an asexual with the term annoated in yellow. Scale bar =500um
-is_a: BSPO:0000196
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/mediolateralaxis.png
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007522 xsd:string
-created_by: Steph Nowotarski
-creation_date: 2017-05-04T18:01:37Z
+name: medial-lateral axis of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0001001
 
 [Term]
 id: PLANA:0007523
-name: proximodistal axis
-def: "Axis that starts at the distal part of an appendage, closest to the body, and runs to the proximal part of an appendage, farthest from the body." []
-comment: Depicted by shows a planarian pharynx exposed by tricaine treatment. The proximodistal axis is denoted with the double headed magenta arrow.
-is_a: BSPO:0000015
-property_value: depicted:by http://purl.obolibrary.org/obo/plana/images/proximodistalaxis.png {xref="PMID:24737865"}
-property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007523 xsd:string
-created_by: Steph Nowotarski
-creation_date: 2017-05-04T18:02:04Z
+name: proximal-distal axis of the whole animal
+intersection_of: PLANA:0000136 ! whole organism
+intersection_of: RO:0002180 BSPO:0000015
 
 [Term]
 id: PLANA:0007524
@@ -5455,6 +5380,8 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007544 x
 id: PLANA:0007545
 name: epidermal compartment
 def: "The outermost region of the deep-superficial axis. This anatomical compartment contains definitive epidermis, basal lamina and subepidermal nerve plexus." []
+synonym: "epidermal surface" EXACT []
+synonym: "epidermis surface" EXACT []
 is_a: BSPO:0000086
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
@@ -5607,7 +5534,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007555 x
 id: PLANA:0007556
 name: temporary embryonic pharynx cavity
 def: "Anatomical space enclosed by the temporary embryonic pharynx epithelial cells. Lumen through which yolk cells are transported into the embryonic gut cavity." [PMID:28072387]
-is_a: PLANA:0000242 ! anatomical cavity
+is_a: UBERON:0002553
 relationship: BFO:0000050 PLANA:0000023 ! temporary embryonic pharynx
 relationship: BFO:0000050 PLANA:0000076 ! oral hemisphere
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
@@ -5645,7 +5572,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007557 x
 id: PLANA:0007558
 name: fission plane
 def: "Transverse anatomical plane, located approximately 1-2 mm from the posterior extremity of an adult animal, at which fission occurs." [OCLC:16809160, PMID:11972158]
-is_a: PLANA:0000490 ! anatomical plane
+is_a: BSPO:0000400
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007558 xsd:string
 created_by: Erin Davies
 

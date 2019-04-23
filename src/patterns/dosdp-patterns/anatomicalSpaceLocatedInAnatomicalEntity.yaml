@@ -1,0 +1,29 @@
+pattern_name: anatomicalSpacecLocatedInAnatomicalEntity.yaml 
+pattern_iri: https://tobedetermined 
+description: "An anatomical space, region, axis, or surface of an anatomical entity."
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+
+classes:
+  anatomical space: CARO:0000000
+  anatomical entity: UBERON:0001062
+
+relations: 
+ has component: RO:0002180
+  
+vars:
+  anatomical_space: "'anatomical space'"
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "%s of %s"
+  vars:
+   - anatomical_space
+   - anatomical_entity
+
+equivalentTo:
+  text: "%s and ('has component' some %s)"
+  vars:
+    - anatomical_entity
+    - anatomical_space
