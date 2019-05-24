@@ -11,3 +11,12 @@ ASSETS += $(ONT).csv
 
 $(ONT).csv: 
 	$(ROBOT) query -use-graphs true -f csv -i $(SRC) --query ../sparql/plana_terms.sparql $@ && perl -pi -e 's/\r//' $@
+
+
+imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
+    $(ROBOT) extract -i $< -T imports/uberon_terms_combined.txt --method BOT \
+        reason \
+        filter --term-file uberon_terms_combined.txt --axioms "subclass equivalent" --trim true \
+        annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@
+
+.PRECIOUS: imports/uberon_import.owl
