@@ -14,9 +14,10 @@ $(ONT).csv:
 
 
 imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
-    $(ROBOT) extract -i $< -T imports/uberon_terms_combined.txt --method BOT \
-        reason \
-        filter --term-file uberon_terms_combined.txt --axioms "subclass equivalent" --trim true \
+	$(ROBOT) extract -i $< -T imports/uberon_terms_combined.txt --method BOT \
+	reason \
+        filter --term-file imports/uberon_terms_combined.txt --axioms "subclass equivalent" --select "self annotations" --trim true \
         annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@
 
 .PRECIOUS: imports/uberon_import.owl
+
