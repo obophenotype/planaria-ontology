@@ -163,6 +163,7 @@ Declaration(Class(obo:PLANA_0000134))
 Declaration(Class(obo:PLANA_0000135))
 Declaration(Class(obo:PLANA_0000136))
 Declaration(Class(obo:PLANA_0000137))
+Declaration(Class(obo:PLANA_0000138))
 Declaration(Class(obo:PLANA_0000201))
 Declaration(Class(obo:PLANA_0000203))
 Declaration(Class(obo:PLANA_0000204))
@@ -405,7 +406,6 @@ Declaration(Class(obo:UBERON_0000475))
 Declaration(Class(obo:UBERON_0000476))
 Declaration(Class(obo:UBERON_0005423))
 Declaration(Class(obo:UBERON_0007567))
-Declaration(Class(obo:hyman_vesicle))
 Declaration(ObjectProperty(obo:PLANA_0007536))
 Declaration(ObjectProperty(obo:RO_0001018))
 Declaration(ObjectProperty(obo:RO_0002202))
@@ -418,6 +418,7 @@ Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/uberon/core#subdivisi
 Declaration(AnnotationProperty(obo:IAO_0000116))
 Declaration(AnnotationProperty(obo:IAO_0000232))
 Declaration(AnnotationProperty(obo:IAO_0000412))
+Declaration(AnnotationProperty(obo:IAO_0100001))
 Declaration(AnnotationProperty(obo:UBPROP_0000001))
 Declaration(AnnotationProperty(obo:UBPROP_0000003))
 Declaration(AnnotationProperty(obo:UBPROP_0000007))
@@ -1308,7 +1309,7 @@ SubClassOf(obo:PLANA_0000042 ObjectSomeValuesFrom(obo:RO_0002490 obo:PLANA_00045
 SubClassOf(obo:PLANA_0000042 ObjectSomeValuesFrom(obo:RO_0002490 obo:PLANA_0004504))
 SubClassOf(obo:PLANA_0000042 ObjectSomeValuesFrom(obo:RO_0002496 obo:PLANA_0000007))
 
-# Class: obo:PLANA_0000043 (dorsoventral margin)
+# Class: obo:PLANA_0000043 (dorsal ventral margin)
 
 AnnotationAssertion(obo:IAO_0000115 obo:PLANA_0000043 "Region along the edge of the animal where the dorsal and ventral surfaces meet."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:PLANA_0000043 "edge"^^xsd:string)
@@ -2281,7 +2282,7 @@ SubClassOf(obo:PLANA_0000095 ObjectSomeValuesFrom(obo:RO_0002490 obo:PLANA_00045
 SubClassOf(obo:PLANA_0000095 ObjectSomeValuesFrom(obo:RO_0002490 obo:PLANA_0004504))
 SubClassOf(obo:PLANA_0000095 ObjectSomeValuesFrom(obo:RO_0002496 obo:PLANA_0000006))
 
-# Class: obo:PLANA_0000096 (ventral epidermis)
+# Class: obo:PLANA_0000096 (ventral region of the epidermal compartment)
 
 AnnotationAssertion(obo:IAO_0000115 obo:PLANA_0000096 "Single cell layer of ventral, post-mitotic, heavily ciliated epithelial cells"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:PLANA_0000096 "Planarian_Anatomy"^^xsd:string)
@@ -2920,6 +2921,17 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:PLANA_0000137 "biological_proce
 AnnotationAssertion(oboInOwl:id obo:PLANA_0000137 "PLANA:0000137")
 AnnotationAssertion(rdfs:label obo:PLANA_0000137 "regeneration"^^xsd:string)
 SubClassOf(obo:PLANA_0000137 obo:GO_0048856)
+
+# Class: obo:PLANA_0000138 (hyman vesicle)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29100657"^^xsd:string) obo:IAO_0000115 obo:PLANA_0000138 "PROG-2-5 positive granules that range in size from 0.5um to 1um present in epithelia and epithelia progenitor cells. These are distinct from rhabdites."^^xsd:string)
+AnnotationAssertion(oboInOwl:created_by obo:PLANA_0000138 "Steph Nowotarski"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:PLANA_0000138 "2018-08-03T19:14:32Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasOBONamespace obo:PLANA_0000138 "Planarian_Anatomy"^^xsd:string)
+AnnotationAssertion(rdfs:comment obo:PLANA_0000138 "Depcited by is an immuno electron microscopy image of a mesenchymal cell labeled with anti-PROG-2-5 immuno-gold. Large rhod-shaped granules resembling rhabdites are found in the same cell labeled with PROG-2-5+ oval-shaped granules (pseudo-colored in blue). Higher magnification of the boxed region is shown in the panel below. e, endoplasmic reticulum; m, mitochondria; n, nucleus; rh, rhabdite. Scale bar, 1 μm."^^xsd:string)
+AnnotationAssertion(rdfs:label obo:PLANA_0000138 "hyman vesicle")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29100657"^^xsd:string) foaf:depiction obo:PLANA_0000138 <http://purl.obolibrary.org/obo/plana/images/hymanvesicle.png>)
+SubClassOf(obo:PLANA_0000138 obo:PLANA_0000433)
 
 # Class: obo:PLANA_0000201 (bursal canal)
 
@@ -6803,16 +6815,6 @@ SubClassOf(obo:PLANA_0007560 obo:BSPO_0000086)
 SubClassOf(obo:PLANA_0007560 ObjectSomeValuesFrom(obo:RO_0002490 obo:PLANA_0000214))
 SubClassOf(obo:PLANA_0007560 ObjectSomeValuesFrom(obo:RO_0002490 obo:PLANA_0004503))
 SubClassOf(obo:PLANA_0007560 ObjectSomeValuesFrom(obo:RO_0002490 obo:PLANA_0004504))
-
-# Class: obo:hyman_vesicle (obo:hyman_vesicle)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29100657"^^xsd:string) obo:IAO_0000115 obo:hyman_vesicle "PROG-2-5 positive granules that range in size from 0.5um to 1um present in epithelia and epithelia progenitor cells. These are distinct from rhabdites."^^xsd:string)
-AnnotationAssertion(oboInOwl:created_by obo:hyman_vesicle "Steph Nowotarski"^^xsd:string)
-AnnotationAssertion(oboInOwl:creation_date obo:hyman_vesicle "2018-08-03T19:14:32Z"^^xsd:dateTime)
-AnnotationAssertion(oboInOwl:hasOBONamespace obo:hyman_vesicle "Planarian_Anatomy"^^xsd:string)
-AnnotationAssertion(rdfs:comment obo:hyman_vesicle "Depcited by is an immuno electron microscopy image of a mesenchymal cell labeled with anti-PROG-2-5 immuno-gold. Large rhod-shaped granules resembling rhabdites are found in the same cell labeled with PROG-2-5+ oval-shaped granules (pseudo-colored in blue). Higher magnification of the boxed region is shown in the panel below. e, endoplasmic reticulum; m, mitochondria; n, nucleus; rh, rhabdite. Scale bar, 1 μm."^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29100657"^^xsd:string) foaf:depiction obo:hyman_vesicle <http://purl.obolibrary.org/obo/plana/images/hymanvesicle.png>)
-SubClassOf(obo:hyman_vesicle obo:PLANA_0000433)
 
 
 EquivalentClasses(ObjectUnionOf(ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000068) ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000092)) ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000104))
