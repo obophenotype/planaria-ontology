@@ -1,0 +1,65 @@
+pattern_name: anatomicalSpacecLocatedInAnatomicalEntity.yaml 
+pattern_iri: https://tobedetermined 
+description: "An anatomical space, region, axis, or surface of an anatomical entity."
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+
+classes:
+  anatomical space: CARO:0000000
+  anatomical entity: UBERON:0001062
+
+relations: 
+  has component: RO:0002180
+  
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  depicted_by: foaf:depicted_by
+  image_comment: rdfs:comment
+  def_dbxref: oboInOwl:hasDbXref
+  image_dbxref: oboInOwl:hasDbXref
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+  anatomical_space: "'anatomical space'"
+  depicted_by: "'depicted_by'"
+  image_comment: "'image_comment'"
+
+data_list_vars:
+  def_dbxref: xsd:string
+  image_dbxref: xsd:string
+
+name:
+  text: "%s of %s"
+  vars:
+   - anatomical_space
+   - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "%s of %s"
+    vars:
+     - anatomical_entity
+     - anatomical_space
+
+  - annotationProperty: depicted_by
+    var: depicted_by
+    xrefs: image_dbxref
+    annotations: 
+      - annotationProperty: image_comment
+        text: "%s"
+        vars:
+         - image_comment
+  
+def:
+  text: "%s of %s"
+  vars:
+    - anatomical_entity
+    - anatomical_space
+  xrefs: def_dbxref
+
+equivalentTo:
+  text: "%s and ('has component' some %s)"
+  vars:
+    - anatomical_entity
+    - anatomical_space

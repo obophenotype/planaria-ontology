@@ -7,10 +7,7 @@
 # Top-level targets
 # ----------------------------------------
 
-all: all_imports patterns all_main all_subsets sparql_test all_reports all_assets $(ONT).csv
-test: sparql_test all_reports
+ASSETS += $(ONT).csv
 
 $(ONT).csv: 
-	$(ROBOT) query -use-graphs true -f csv -i $(SRC) --query ../sparql/plana_terms.sparql $@ && cp $@ ../.. 
-
-
+	$(ROBOT) query -use-graphs true -f csv -i $(SRC) --query ../sparql/plana_terms.sparql $@ && perl -pi -e 's/\r//' $@

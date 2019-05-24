@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-05-03/plana-base.owl
+data-version: plana/releases/2019-05-23/plana-base.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -486,9 +486,12 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000031 x
 
 [Term]
 id: PLANA:0000032
+name: dorsal midline
 def: "The median line/plane of bilateral symmetry along the anteroposterior axis on the dorsal surface of the animal." []
+synonym: "midline of dorsal region" EXACT []
 intersection_of: PLANA:0000030 ! midline
 intersection_of: RO:0002180 BSPO:0000079
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000033
@@ -588,9 +591,12 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000037 x
 
 [Term]
 id: PLANA:0000038
+name: ventral midline
 def: "The median line/ plane of bilateral symmetry along the anteroposterior axis on the ventral surface of the animal." []
+synonym: "midline of ventral region" EXACT []
 intersection_of: PLANA:0000030 ! midline
 intersection_of: RO:0002180 BSPO:0000084
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000039
@@ -666,15 +672,18 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000042 x
 
 [Term]
 id: PLANA:0000043
+name: dorsal ventral margin
 name: dorsoventral margin
 def: "Region along the edge of the animal where the dorsal and ventral surfaces meet." []
 synonym: "edge" BROAD []
+synonym: "whole organism of dorsal/ventral compartment boundary" EXACT []
 is_a: PLANA:0000102 ! anatomical compartment subdivision
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000094
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000043 xsd:string
 
 [Term]
@@ -840,10 +849,12 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000053 x
 [Term]
 id: PLANA:0000054
 name: dorsal epidermis
+def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." []
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." [OCLC:16809160]
+synonym: "definitive epidermis of dorsal region" EXACT []
 is_a: PLANA:0000037 ! definitive tissue
 intersection_of: PLANA:0000034 ! definitive epidermis
-intersection_of: RO:0002180 BSPO:0000379
+intersection_of: RO:0002180 BSPO:0000079
 relationship: BFO:0000050 PLANA:0000034 ! definitive epidermis
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -860,6 +871,7 @@ relationship: RO:0002490 PLANA:0000008 ! Stage 8
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000054 xsd:string
 
 [Term]
@@ -1550,7 +1562,9 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000095 x
 [Term]
 id: PLANA:0000096
 name: ventral epidermis
+name: ventral region of the epidermal compartment
 def: "Single cell layer of ventral, post-mitotic, heavily ciliated epithelial cells" []
+synonym: "definitive epidermis of ventral region" EXACT []
 is_a: PLANA:0000037 ! definitive tissue
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: RO:0002180 BSPO:0000084
@@ -1573,6 +1587,7 @@ relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: RO:0002496 PLANA:0000005 ! Stage 5
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000096 xsd:string
 
 [Term]
@@ -2108,27 +2123,39 @@ is_a: GO:0048856
 
 [Term]
 id: PLANA:0000140
-def: "Compartment along the anteroposterior axis closer to the head rather than the tail, from the head margin to the esophagus." []
+name: anterior region of the whole animal
+def: "Compartment along the anteroposterior axis closer to the head rather than the tail, from the head margin to the esophagus." [OCLC:16809160]
+synonym: "whole organism of anterior region" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
-intersection_of: RO:0002180 BSPO:0000087
+intersection_of: RO:0002180 BSPO:0000071
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000141
+name: dorsal region of the whole animal
 def: "Three dimensional compartment along the dorsoventral axis that is above the anteroposterior axis,  containing the eyes." []
+synonym: "whole organism of dorsal region" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
-intersection_of: RO:0002180 BSPO:0000089
+intersection_of: RO:0002180 BSPO:0000079
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000142
+name: posterior compartment of the whole animal
 def: "Three dimensional compartment along the anteroposterior axis that is closer to the tail rather than the head, from the anterior boundary of the pharyngeal pouch to the tip of the tail." []
+synonym: "whole organism of posterior region" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
-intersection_of: RO:0002180 BSPO:0000090
+intersection_of: RO:0002180 BSPO:0000072
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000143
+name: ventral compartment of the whole animal
 def: "Compartment along the dorsoventral axis that is below the anteroposterior axis." []
+synonym: "whole organism of ventral region" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
-intersection_of: RO:0002180 BSPO:0000091
+intersection_of: RO:0002180 BSPO:0000084
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000201
@@ -2864,15 +2891,21 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000407 x
 
 [Term]
 id: PLANA:0000409
+name: apical surface of the epidermal compartment
 def: "The apical surface of the single layered epidermis that is in contact with the environment." []
+synonym: "definitive epidermis of apical surface" EXACT []
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: RO:0002180 BSPO:0000373
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/apicalepidermissurface.png {comment="Depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane from an asexual adult animal. The apical epidermis surface is noted with magenta arrows. Scale bar is 5um."}
 
 [Term]
 id: PLANA:0000410
+name: basal surface of the epidermal compartment
 def: "The basal surface of the epidermal epithelium in direct contact with the basal lamina." []
+synonym: "definitive epidermis of basal surface" EXACT []
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: RO:0002180 BSPO:0000374
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/basalepidermissurface.png {comment="The depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane. The basal epidermis surface is noted with magenta arrows. Scale bar is 5um."}
 
 [Term]
 id: PLANA:0000411
@@ -3768,12 +3801,6 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000497 x
 is_obsolete: true
 
 [Term]
-id: PLANA:0000498
-def: "A principle subdivision of an organism that includes all structures along the primary axis, typically the anterior-posterior axis, from head to tail, including structures of the body proper where present (for example, ribs), but excluding appendages." []
-intersection_of: PLANA:0000136 ! whole organism
-intersection_of: RO:0002180 BSPO:0000013
-
-[Term]
 id: PLANA:0000499
 name: cell
 def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." []
@@ -4572,9 +4599,12 @@ creation_date: 2017-07-19T21:35:08Z
 
 [Term]
 id: PLANA:0004511
-def: "Axis that runs from the oral pole and to the aboral pole of the spherical embryo (Stage 3 through early Stage 6). The oral pole is centered around the temporary embryonic pharynx; the aboral pole is located opposite the temporary embryonic pharynx." []
+name: oral-aboral axis of the embryo
+def: "Axis that runs from the oral pole and to the aboral pole of the spherical embryo (Stage 3 through early Stage 6). The oral pole is centered around the temporary embryonic pharynx; the aboral pole is located opposite the temporary embryonic pharynx." [PMID:28072387]
+synonym: "embryo of oral-aboral axis" EXACT []
 intersection_of: PLANA:0000116 ! embryo
 intersection_of: RO:0002180 BSPO:0000198
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/oralaboralaxis.png {comment="Depicted by is an illustration noting the oral-aboral axis in cyan double headed arrow. Note it starts at the temporary embryonic pharynx and extends to opposite."}
 
 [Term]
 id: PLANA:0004512
@@ -4943,9 +4973,12 @@ creation_date: 2017-04-26T19:32:04Z
 
 [Term]
 id: PLANA:0007503
+name: sagittal plane of the whole animal
 def: "Anatomical plane which divides the body into right and left parts. This plane passes through the midline." []
+synonym: "whole organism of sagittal plane" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000417
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0007504
@@ -5107,33 +5140,48 @@ creation_date: 2017-05-04T15:35:23Z
 
 [Term]
 id: PLANA:0007519
+name: anterior-posterior axis of the whole animal
 def: "Axis that runs along the long axis of the animal from anterior (head) to posterior (tail). It is perpendicular to the dorsoventral axis and as such, it splits dorsal and ventral regions of the animal to either side." []
+synonym: "whole organism of anterior-posterior axis" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000013
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/anteroposterioraxis.png {comment="Depiction shows an asexual with the term annoated in yellow. Scale bar =500um"}
 
 [Term]
 id: PLANA:0007520
+name: dorsal-ventral axis of the whole animal
 def: "Axis that runs along the short axis of the animal, perpendicular to the anteroposterior axis, running from the dorsal (back) side of the animal to the ventral (belly) side of the animal. This axis splits anterior and posterior regions of the animal to either side." []
+synonym: "whole organism of dorsal-ventral axis" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000016
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0007521
+name: dextro-sinister axis of the whole animal
 def: "Axis perpendicular to both the anteroposterior and dorsoventral axis that runs from the left side of the animal, through the medial region (center) and out to the right side." []
+synonym: "whole organism of left-right axis" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000017
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/dextro-sinisteraxis.png {comment="Depiction shows an asexual with the term annoated in yellow. Scale bar =500um"}
 
 [Term]
 id: PLANA:0007522
+name: medial-lateral axis of the whole animal
 def: "Axis that runs from the center of the body, starting at the anteroposterior axis and out to the lateral (left, right, dorsal or ventral) surface of the animal." []
+synonym: "whole organism of medial-lateral axis" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0001001
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/mediolateralaxis.png {comment="Depiction shows an asexual with the term annoated in yellow. Scale bar =500um"}
 
 [Term]
 id: PLANA:0007523
+name: proximal-distal axis of the whole animal
 def: "Axis that starts at the distal part of an appendage, closest to the body, and runs to the proximal part of an appendage, farthest from the body." []
+synonym: "whole organism of proximal-distal axis" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000015
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/proximodistalaxis.png {comment="Depicted by shows a planarian pharynx exposed by tricaine treatment. The proximodistal axis is denoted with the double headed magenta arrow."}
 
 [Term]
 id: PLANA:0007524

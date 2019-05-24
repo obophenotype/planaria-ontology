@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2019-05-03
+data-version: releases/2019-05-23
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -357,6 +357,102 @@ xref: FMA:52810
 is_a: BSPO:0000400 ! anatomical plane
 
 [Term]
+id: BSPO:0000026
+name: antero-dorsal region
+namespace: spatial
+def: "Anatomical region that overlaps the anterior and dorsal regions of a body or body part." [BSPO:wd]
+synonym: "anterodorsal region " EXACT []
+is_a: BSPO:0000071 ! anterior region
+is_a: BSPO:0000079 ! dorsal region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000055 ! anterior side
+intersection_of: overlaps BSPO:0000063 ! dorsal side
+relationship: overlaps BSPO:0000055 ! anterior side
+relationship: overlaps BSPO:0000063 ! dorsal side
+created_by: Melissa  Haendel
+creation_date: 2009-06-15T01:01:38Z
+
+[Term]
+id: BSPO:0000027
+name: antero-ventral region
+namespace: spatial
+def: "Anatomical region that overlaps the anterior and ventral regions of a body or body part." [BSPO:wd]
+synonym: "anteroventral region " EXACT []
+is_a: BSPO:0000071 ! anterior region
+is_a: BSPO:0000084 ! ventral region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000055 ! anterior side
+intersection_of: overlaps BSPO:0000068 ! ventral side
+relationship: overlaps BSPO:0000055 ! anterior side
+relationship: overlaps BSPO:0000068 ! ventral side
+created_by: Melissa  Haendel
+creation_date: 2009-06-15T01:04:59Z
+
+[Term]
+id: BSPO:0000028
+name: postero-lateral region
+namespace: spatial
+def: "Anatomical region that overlaps the posterior and lateral regions of the body or body part." [BSPO:wd]
+synonym: "posterolateral region" EXACT []
+is_a: BSPO:0000072 ! posterior region
+is_a: BSPO:0000082 ! lateral region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000056 ! posterior side
+intersection_of: overlaps BSPO:0000066 ! lateral side
+relationship: overlaps BSPO:0000056 ! posterior side
+relationship: overlaps BSPO:0000066 ! lateral side
+created_by: Melissa  Haendel
+creation_date: 2009-06-15T01:06:01Z
+
+[Term]
+id: BSPO:0000029
+name: antero-lateral region
+namespace: spatial
+def: "Anatomical region that overlaps the anterior and lateral regions of a body or body part." [BSPO:wd]
+synonym: "anterolateral region" EXACT []
+is_a: BSPO:0000071 ! anterior region
+is_a: BSPO:0000082 ! lateral region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000055 ! anterior side
+intersection_of: overlaps BSPO:0000066 ! lateral side
+relationship: overlaps BSPO:0000055 ! anterior side
+relationship: overlaps BSPO:0000066 ! lateral side
+created_by: Melissa  Haendel
+creation_date: 2009-06-15T01:07:18Z
+
+[Term]
+id: BSPO:0000030
+name: postero-dorsal region
+namespace: spatial
+def: "Anatomical region that overlaps the posterior and dorsal regions of the body or body part." [BSPO:wd]
+synonym: "posterodorsal region" EXACT []
+is_a: BSPO:0000072 ! posterior region
+is_a: BSPO:0000079 ! dorsal region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000056 ! posterior side
+intersection_of: overlaps BSPO:0000063 ! dorsal side
+relationship: overlaps BSPO:0000056 ! posterior side
+relationship: overlaps BSPO:0000063 ! dorsal side
+created_by: Melissa  Haendel
+creation_date: 2009-06-15T01:08:13Z
+
+[Term]
+id: BSPO:0000035
+name: postero-ventral region
+namespace: spatial
+def: "Anatomical region that overlaps the posterior and ventral regions of a body or body part." [BSPO:wd]
+synonym: "posteroventral region" EXACT []
+is_a: BSPO:0000072 ! posterior region
+is_a: BSPO:0000084 ! ventral region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000056 ! posterior side
+intersection_of: overlaps BSPO:0000068 ! ventral side
+relationship: overlaps BSPO:0000056 ! posterior side
+relationship: overlaps BSPO:0000068 ! ventral side
+created_by: Melissa  Haendel
+creation_date: 2009-06-15T01:08:38Z
+
+[Term]
 id: BSPO:0000043
 name: apical/basal compartment boundary
 namespace: spatial
@@ -381,6 +477,34 @@ namespace: spatial
 def: "An anatomical region bounded by a plane perpendicular to an axis through the middle." [BSPO:cjm]
 xref: FBql:00005841
 is_a: BSPO:0000070 ! anatomical region
+
+[Term]
+id: BSPO:0000055
+name: anterior side
+namespace: spatial
+def: "An anatomical region that is the entire part of an anatomical structure anterior to a transverse plane and bounded on one side by the same transverse plane." [BSPO:RW]
+synonym: "anterior" EXACT []
+synonym: "rostral" EXACT []
+xref: FBcv:0000053
+xref: FBql:00005848
+is_a: BSPO:0000054 ! anatomical side
+is_a: BSPO:0000072 ! posterior region
+relationship: anterior_to BSPO:0000056 ! posterior side
+relationship: opposite_to BSPO:0000056 ! posterior side
+relationship: starts_axis BSPO:0000013 ! anterior-posterior axis
+
+[Term]
+id: BSPO:0000056
+name: posterior side
+namespace: spatial
+def: "An anatomical region that is the entire part of an anatomical structure posterior to a transverse plane and bounded on one side by the same transverse plane." [BSPO:RW, BSPO:wd]
+synonym: "caudal" NARROW vertebrate []
+synonym: "posterior" EXACT []
+xref: FBcv:0000065
+xref: FBql:00005849
+is_a: BSPO:0000054 ! anatomical side
+relationship: finishes_axis BSPO:0000013 ! anterior-posterior axis
+relationship: posterior_to BSPO:0000055 ! anterior side
 
 [Term]
 id: BSPO:0000057
@@ -449,6 +573,28 @@ def: "A 3D region in space without well-defined compartmental boundaries; for ex
 comment: to be merged into CARO
 xref: FBql:00005841
 is_a: CARO:0000003 ! anatomical structure
+
+[Term]
+id: BSPO:0000071
+name: anterior region
+namespace: spatial
+def: "Anatomical region anteriorly located on the body or body part." [BSPO:wd]
+xref: FBql:00005848
+is_a: BSPO:0000070 ! anatomical region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000055 ! anterior side
+relationship: overlaps BSPO:0000055 ! anterior side
+
+[Term]
+id: BSPO:0000072
+name: posterior region
+namespace: spatial
+def: "Anatomical region posteriorly located on the body or body part." [BSPO:wd]
+xref: FBql:00005849
+is_a: BSPO:0000070 ! anatomical region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000056 ! posterior side
+relationship: overlaps BSPO:0000056 ! posterior side
 
 [Term]
 id: BSPO:0000073
@@ -612,6 +758,28 @@ def: "An axis that extends from the oral opening to the furthest point in an org
 is_a: BSPO:0000010 ! anatomical axis
 created_by: wasila.dahdul
 creation_date: 2013-07-02T11:29:33Z
+
+[Term]
+id: BSPO:0000371
+name: anterior surface
+namespace: spatial
+def: "Anatomical surface that is located on the anterior side of the body or body part." [BSPO:wd]
+xref: FBql:00005848
+is_a: BSPO:0000005 ! anatomical surface
+intersection_of: BSPO:0000005 ! anatomical surface
+intersection_of: surface_of BSPO:0000055 ! anterior side
+relationship: surface_of BSPO:0000055 ! anterior side
+
+[Term]
+id: BSPO:0000372
+name: posterior surface
+namespace: spatial
+def: "Anatomical surface that is located on the posterior side of the body or body part." [BSPO:wd]
+xref: FBql:00005849
+is_a: BSPO:0000005 ! anatomical surface
+intersection_of: BSPO:0000005 ! anatomical surface
+intersection_of: surface_of BSPO:0000056 ! posterior side
+relationship: surface_of BSPO:0000056 ! posterior side
 
 [Term]
 id: BSPO:0000373
@@ -887,12 +1055,10 @@ subset: goslim_pir
 subset: goslim_plant
 synonym: "glycoprotein binding" NARROW []
 synonym: "protein amino acid binding" EXACT []
-xref: reactome:R-HSA-170835 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3"
-xref: reactome:R-HSA-170846 "TGFBR2 recruits TGFBR1"
-xref: reactome:R-HSA-3645786 "TGFBR2 mutant dimers recruit TGFBR1"
-xref: reactome:R-HSA-3656484 "TGFBR2 recruits TGFBR1 KD Mutants"
-xref: reactome:R-HSA-3702153 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3 MH2 domain mutants"
-xref: reactome:R-HSA-3713560 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3 phosphorylation motif mutants"
+xref: MIPS_funcat:16.01
+xref: MIPS_funcat:18.01.07
+xref: Reactome:R-HSA-170835 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3"
+xref: Reactome:R-HSA-170846 "TGFBR2 recruits TGFBR1"
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -911,6 +1077,7 @@ namespace: biological_process
 def: "The chemical reactions and pathways involving the phosphate group, the anion or salt of any phosphoric acid." [GOC:ai]
 synonym: "phosphate metabolic process" RELATED []
 synonym: "phosphate metabolism" EXACT []
+xref: MIPS_funcat:01.04
 is_a: GO:0006793 ! phosphorus metabolic process
 
 [Term]
@@ -940,6 +1107,7 @@ synonym: "signaling cascade" NARROW []
 synonym: "signaling pathway" RELATED []
 synonym: "signalling cascade" NARROW []
 synonym: "signalling pathway" RELATED [GOC:mah]
+xref: MIPS_funcat:30
 xref: Wikipedia:Signal_transduction
 is_a: GO:0009987 ! cellular process
 is_a: GO:0050794 ! regulation of cellular process
@@ -955,6 +1123,7 @@ def: "The biological process whose specific outcome is the progression of a mult
 comment: Note that this term was 'developmental process'.
 subset: goslim_chembl
 subset: goslim_plant
+xref: MIPS_funcat:41
 is_a: GO:0032501 ! multicellular organismal process
 is_a: GO:0048856 ! anatomical structure development
 
@@ -965,6 +1134,7 @@ namespace: biological_process
 def: "The union of male and female gametes to form a zygote." [GOC:ems, GOC:mtg_sensu]
 synonym: "zygote biosynthesis" RELATED []
 synonym: "zygote formation" RELATED []
+xref: MIPS_funcat:41.05.01
 is_a: GO:0009566 ! fertilization
 
 [Term]
@@ -1012,6 +1182,7 @@ synonym: "metabolism" EXACT []
 synonym: "metabolism resulting in cell growth" NARROW []
 synonym: "multicellular organism metabolic process" NARROW []
 synonym: "single-organism metabolic process" RELATED []
+xref: MIPS_funcat:01
 xref: Wikipedia:Metabolism
 is_a: GO:0008150 ! biological_process
 created_by: janelomax
@@ -1032,7 +1203,6 @@ id: GO:0009653
 name: anatomical structure morphogenesis
 namespace: biological_process
 def: "The process in which anatomical structures are generated and organized. Morphogenesis pertains to the creation of form." [GOC:go_curators, ISBN:0521436125]
-subset: goslim_plant
 synonym: "anatomical structure organization" EXACT []
 synonym: "embryogenesis and morphogenesis" BROAD []
 synonym: "morphogenesis" EXACT []
@@ -1259,79 +1429,8 @@ subset: goslim_metagenomics
 subset: goslim_plant
 subset: goslim_yeast
 synonym: "phosphokinase activity" EXACT []
-xref: reactome:R-HSA-109822 "MAPK3,(MAPK1) phosphorylates GRB2-1:SOS1:p-Y427-SHC1"
-xref: reactome:R-HSA-109823 "MAPK3,(MAPK1) phosphorylates GRB2-1:SOS1:p-Y-IRS1,p-Y-IRS2"
-xref: reactome:R-HSA-111898 "Phosphorylation of cPLA2 by ERK-2"
-xref: reactome:R-HSA-112381 "Hyperphosphorylation (Ser2) of RNA Pol II CTD by P-TEFb complex"
-xref: reactome:R-HSA-139908 "Phosphorylation of DLC2 by MAPK8"
-xref: reactome:R-HSA-139918 "Phosphorylation of BIM by JNK"
-xref: reactome:R-HSA-165692 "Phosphorylation of 4E-BP1 by activated mTORC1"
-xref: reactome:R-HSA-165718 "mTORC1 phosphorylation of RPS6KB1 (S6K)"
-xref: reactome:R-HSA-165726 "Phosphorylation of Ribosomal protein S6 by activated S6K1"
-xref: reactome:R-HSA-165758 "Phosphorylation and inactivation of eEF2K by activated S6K1"
-xref: reactome:R-HSA-165766 "Phosphorylation and activation of eIF4G by activated S6K1"
-xref: reactome:R-HSA-165777 "Phosphorylation and activation of eIF4B by activated S6K1"
-xref: reactome:R-HSA-167084 "Hyperphosphorylation (Ser2) of RNA Pol II CTD by P-TEFb complex"
-xref: reactome:R-HSA-167098 "Phosphorylation (Ser5) of RNA pol II CTD"
-xref: reactome:R-HSA-167191 "Hyperphosphorylation (Ser2) of RNA Pol II CTD by the P-TEFb(Cyclin T1:Cdk9) complex"
-xref: reactome:R-HSA-170055 "Myt-1 mediated phosphorylation of Cyclin B:Cdc2 complexes"
-xref: reactome:R-HSA-170070 "Wee1-mediated phosphorylation of Cyclin B1:phospho-Cdc2 complexes"
-xref: reactome:R-HSA-170076 "CAK-mediated phosphorylation of Cyclin B1:Cdc2 complexes"
-xref: reactome:R-HSA-170087 "CAK-mediated phosphorylation of Cyclin A:Cdc2 complexes"
-xref: reactome:R-HSA-170116 "Myt-1 mediated phosphorylation of Cyclin A:Cdc2"
-xref: reactome:R-HSA-170126 "Phosphorylation of Cyclin B1 in the CRS domain"
-xref: reactome:R-HSA-170156 "Wee1-mediated phosphorylation of Cyclin A:phospho-Cdc2 complexes"
-xref: reactome:R-HSA-170704 "Phosphorylation of DSIF by the P-TEFb(Cyclin T1:Cdk9) complex"
-xref: reactome:R-HSA-170706 "Phosphorylation of  NEFL by the P-TEFb(Cyclin T1:Cdk9) complex"
-xref: reactome:R-HSA-174164 "Phosphorylation of Cyclin A:Cdk2 at Tyr 15"
-xref: reactome:R-HSA-1839091 "Cytosolic FGFR1 fusion protein-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-1839107 "BCR-FGFR1-associated PI3K phosphorylates PIP2 to PIP3."
-xref: reactome:R-HSA-1839110 "p-BCR-p-FGFR1 phosphorylates GAB2"
-xref: reactome:R-HSA-187949 "CAK-mediated phosphorylation of Cyclin A:Cdk2"
-xref: reactome:R-HSA-188350 "CAK-mediated phosphorylation of Cyclin E:Cdk2"
-xref: reactome:R-HSA-191636 "Phosphorylation of Cx43 by c-src"
-xref: reactome:R-HSA-195275 "Phosphorylation of APC component of the destruction complex"
-xref: reactome:R-HSA-195283 "Phosphorylation of phospho- (Ser45, Thr41) beta-catenin  at Ser37 by GSK-3"
-xref: reactome:R-HSA-195287 "Phosphorylation of phospho-(Ser45 ) at Thr 41 by GSK-3"
-xref: reactome:R-HSA-195300 "Phosphorylation of phospho-(Ser45,Thr41,Ser37) at Ser33 by GSK-3"
-xref: reactome:R-HSA-195318 "Phosphorylation of beta-catenin at Ser45 by CK1 alpha"
-xref: reactome:R-HSA-201717 "CSNK2-mediated phosphorylation of DVL"
-xref: reactome:R-HSA-211583 "Partial autophosphorylation of PAK-2 at  Ser-19, Ser-20, Ser-55, Ser-192, and Ser-197"
-xref: reactome:R-HSA-211650 "Autophosphorylation of PAK-2p34 in the activation loop"
-xref: reactome:R-HSA-2214351 "PLK1 phosphorylates GORASP1"
-xref: reactome:R-HSA-2294580 "PLK1 hyperphosphorylates Condensin II complex"
-xref: reactome:R-HSA-2529020 "CK2 phosphorylates condensin I subunits"
-xref: reactome:R-HSA-389762 "Phosphorylation of PD-1"
-xref: reactome:R-HSA-392752 "Phosphorylation of L1 by CK-II"
-xref: reactome:R-HSA-442724 "Phosphorylation of CREB1 by ribosomal protein S6 kinases (RSKs)"
-xref: reactome:R-HSA-445079 "Phosphorylation of L1 by ERK"
-xref: reactome:R-HSA-5654690 "FGFR1-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654692 "FGFR1- and PTPN11- associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654697 "FGFR2- and PTPN11- associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654701 "FGFR2-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654705 "FGFR3-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654709 "FGFR3- and PTPN11-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654714 "FGFR4- and PTPN11-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654717 "FGFR4-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5655235 "Activated FGFR4 mutant-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5655289 "Activated FGFR3 mutant-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5655290 "Activated FGFR1 mutant-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5655323 "Activated FGFR2 mutant-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5668545 "NIK autophosphorylates on T559"
-xref: reactome:R-HSA-6788855 "FN3KRP phosphorylates PsiAm, RibAm"
-xref: reactome:R-HSA-6788867 "FN3K phosphorylates ketosamines"
-xref: reactome:R-HSA-6814409 "CK2 phosphorylates PDCL"
-xref: reactome:R-HSA-68954 "Mcm2-7 is phosphorylated by DDK"
-xref: reactome:R-HSA-69195 "Phosphorylation of Cyclin E:CDK2 complexes by WEE1"
-xref: reactome:R-HSA-69604 "Phosphorylation of Cdc25A at Ser-123 by Chk1"
-xref: reactome:R-HSA-75028 "Phosphorylation of Wee1 kinase by Chk1"
-xref: reactome:R-HSA-75809 "Phosphorylation of Cdc25C at Ser216 by CHEK2"
-xref: reactome:R-HSA-77071 "Phosphorylation (Ser5) of RNA pol II CTD"
-xref: reactome:R-HSA-8853323 "Activated FGFR3 fusion-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-8942836 "CDK4/6:CCND complexes are activated by T-loop phosphorylation of CDK4/6"
-xref: reactome:R-HSA-8948039 "FUNDC1 is phosphorylated by CK2"
-xref: reactome:R-HSA-8948143 "p-S13, FUNDC1 is phosphorylated by CK2 at Tyr18"
-xref: reactome:R-HSA-8948146 "FUNDC1 is phosphorylated by ULK1 at Ser17"
+xref: Reactome:R-HSA-6788855 "FN3KRP phosphorylates PsiAm, RibAm"
+xref: Reactome:R-HSA-6788867 "FN3K phosphorylates ketosamines"
 is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
 relationship: part_of GO:0016310 ! phosphorylation
 
@@ -1360,11 +1459,11 @@ subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
 xref: EC:2
-xref: reactome:R-HSA-1483089 "PE is converted to PS by PTDSS2"
-xref: reactome:R-HSA-1483186 "PC is converted to PS by PTDSS1"
-xref: reactome:R-HSA-5668414 "TRAF2 ubiquitinates cIAP1,2 in cIAP1,2:TRAF1:TRAF2:TRAF3:NIK"
-xref: reactome:R-HSA-6787403 "GTPBP3 and MTO1 transform uridine-34 yielding 5-taurinomethyluridine-34 in tRNA"
-xref: reactome:R-HSA-8868783 "TSR3 transfers aminocarboxypropyl group from S-adenosylmethionine to N(1)-methylpseudouridine-1248 of 18SE rRNA yielding N(1)-methyl-N(3)-aminocarboxypropylpseudouridine-1248"
+xref: Reactome:R-HSA-1483089 "PE is converted to PS by PTDSS2"
+xref: Reactome:R-HSA-1483186 "PC is converted to PS by PTDSS1"
+xref: Reactome:R-HSA-5668414 "TRAF2 ubiquitinates cIAP1,2 in cIAP1,2:TRAF1:TRAF2:TRAF3:NIK"
+xref: Reactome:R-HSA-6787403 "GTPBP3 and MTO1 transform uridine-34 yielding 5-taurinomethyluridine-34 in tRNA"
+xref: Reactome:R-HSA-8868783 "TSR3 transfers aminocarboxypropyl group from S-adenosylmethionine to N(1)-methylpseudouridine-1248 of 18SE rRNA yielding N(1)-methyl-N(3)-aminocarboxypropylpseudouridine-1248"
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -1518,6 +1617,7 @@ id: GO:0030545
 name: receptor regulator activity
 namespace: molecular_function
 def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is changed." [GOC:ceb]
+xref: MIPS_funcat:18.02.07
 is_a: GO:0098772 ! molecular function regulator
 
 [Term]
@@ -1775,6 +1875,7 @@ synonym: "up-regulation of enzyme activity" EXACT []
 synonym: "up-regulation of metalloenzyme activity" NARROW []
 synonym: "upregulation of enzyme activity" EXACT []
 synonym: "upregulation of metalloenzyme activity" NARROW []
+xref: MIPS_funcat:18.02.01.01
 is_a: GO:0044093 ! positive regulation of molecular function
 is_a: GO:0050790 ! regulation of catalytic activity
 intersection_of: GO:0008150 ! biological_process
@@ -2122,6 +2223,7 @@ def: "The biological process whose specific outcome is the progression of an ana
 comment: This term was added by GO_REF:0000021.
 subset: goslim_chembl
 subset: goslim_generic
+subset: goslim_plant
 synonym: "development of an anatomical structure" EXACT []
 is_a: GO:0032502 ! developmental process
 
@@ -2151,6 +2253,7 @@ def: "Any process that modulates the activity of an enzyme." [GOC:ai, GOC:ebc, G
 subset: goslim_chembl
 synonym: "regulation of enzyme activity" EXACT []
 synonym: "regulation of metalloenzyme activity" NARROW []
+xref: MIPS_funcat:18.02.01
 is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0003824 ! catalytic activity
@@ -2191,6 +2294,7 @@ subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
 synonym: "physiological response to stimulus" EXACT []
+xref: MIPS_funcat:34.11
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -2482,6 +2586,7 @@ def: "Any process that modulates the frequency, rate or extent of a molecular fu
 subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_pir
+subset: goslim_plant
 synonym: "regulation of a molecular function" EXACT []
 is_a: GO:0065007 ! biological regulation
 intersection_of: GO:0008150 ! biological_process
@@ -3084,10 +3189,13 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000031 x
 
 [Term]
 id: PLANA:0000032
+name: dorsal midline
 def: "The median line/plane of bilateral symmetry along the anteroposterior axis on the dorsal surface of the animal." []
+synonym: "midline of dorsal region" EXACT []
 is_a: PLANA:0000030 ! midline
 intersection_of: PLANA:0000030 ! midline
 intersection_of: has_component BSPO:0000079 ! dorsal region
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000033
@@ -3139,10 +3247,13 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000037 x
 
 [Term]
 id: PLANA:0000038
+name: ventral midline
 def: "The median line/ plane of bilateral symmetry along the anteroposterior axis on the ventral surface of the animal." []
+synonym: "midline of ventral region" EXACT []
 is_a: PLANA:0000030 ! midline
 intersection_of: PLANA:0000030 ! midline
 intersection_of: has_component BSPO:0000084 ! ventral region
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000039
@@ -3180,13 +3291,16 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000042 x
 
 [Term]
 id: PLANA:0000043
+name: dorsal ventral margin
 name: dorsoventral margin
 def: "Region along the edge of the animal where the dorsal and ventral surfaces meet." []
 synonym: "edge" BROAD []
+synonym: "whole organism of dorsal/ventral compartment boundary" EXACT []
 is_a: PLANA:0000102 ! anatomical compartment subdivision
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000094 ! dorsal/ventral compartment boundary
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000043 xsd:string
 
 [Term]
@@ -3275,11 +3389,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000053 x
 [Term]
 id: PLANA:0000054
 name: dorsal epidermis
+def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." []
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." [OCLC:16809160]
+synonym: "definitive epidermis of dorsal region" EXACT []
 is_a: PLANA:0000034 ! definitive epidermis
 is_a: PLANA:0000037 ! definitive tissue
 intersection_of: PLANA:0000034 ! definitive epidermis
-intersection_of: has_component BSPO:0000379 ! dorsal surface
+intersection_of: has_component BSPO:0000079 ! dorsal region
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000054 xsd:string
 
 [Term]
@@ -3645,11 +3762,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000095 x
 [Term]
 id: PLANA:0000096
 name: ventral epidermis
+name: ventral region of the epidermal compartment
 def: "Single cell layer of ventral, post-mitotic, heavily ciliated epithelial cells" []
+synonym: "definitive epidermis of ventral region" EXACT []
 is_a: PLANA:0000034 ! definitive epidermis
 is_a: PLANA:0000037 ! definitive tissue
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: has_component BSPO:0000084 ! ventral region
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000096 xsd:string
 
 [Term]
@@ -4014,31 +4134,43 @@ is_a: GO:0048856 ! anatomical structure development
 
 [Term]
 id: PLANA:0000140
-def: "Compartment along the anteroposterior axis closer to the head rather than the tail, from the head margin to the esophagus." []
+name: anterior region of the whole animal
+def: "Compartment along the anteroposterior axis closer to the head rather than the tail, from the head margin to the esophagus." [OCLC:16809160]
+synonym: "whole organism of anterior region" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
-intersection_of: has_component BSPO:0000087 ! anterior compartment
+intersection_of: has_component BSPO:0000071 ! anterior region
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000141
+name: dorsal region of the whole animal
 def: "Three dimensional compartment along the dorsoventral axis that is above the anteroposterior axis,  containing the eyes." []
+synonym: "whole organism of dorsal region" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
-intersection_of: has_component BSPO:0000089 ! dorsal compartment
+intersection_of: has_component BSPO:0000079 ! dorsal region
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000142
+name: posterior compartment of the whole animal
 def: "Three dimensional compartment along the anteroposterior axis that is closer to the tail rather than the head, from the anterior boundary of the pharyngeal pouch to the tip of the tail." []
+synonym: "whole organism of posterior region" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
-intersection_of: has_component BSPO:0000090 ! posterior compartment
+intersection_of: has_component BSPO:0000072 ! posterior region
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000143
+name: ventral compartment of the whole animal
 def: "Compartment along the dorsoventral axis that is below the anteroposterior axis." []
+synonym: "whole organism of ventral region" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
-intersection_of: has_component BSPO:0000091 ! ventral compartment
+intersection_of: has_component BSPO:0000084 ! ventral region
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000201
@@ -4513,17 +4645,23 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000407 x
 
 [Term]
 id: PLANA:0000409
+name: apical surface of the epidermal compartment
 def: "The apical surface of the single layered epidermis that is in contact with the environment." []
+synonym: "definitive epidermis of apical surface" EXACT []
 is_a: PLANA:0000034 ! definitive epidermis
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: has_component BSPO:0000373 ! apical surface
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/apicalepidermissurface.png {comment="Depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane from an asexual adult animal. The apical epidermis surface is noted with magenta arrows. Scale bar is 5um."}
 
 [Term]
 id: PLANA:0000410
+name: basal surface of the epidermal compartment
 def: "The basal surface of the epidermal epithelium in direct contact with the basal lamina." []
+synonym: "definitive epidermis of basal surface" EXACT []
 is_a: PLANA:0000034 ! definitive epidermis
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: has_component BSPO:0000374 ! basal surface
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/basalepidermissurface.png {comment="The depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane. The basal epidermis surface is noted with magenta arrows. Scale bar is 5um."}
 
 [Term]
 id: PLANA:0000411
@@ -5157,13 +5295,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/91833003
 xref: UBERON:0007651
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000497 xsd:string
 is_obsolete: true
-
-[Term]
-id: PLANA:0000498
-def: "A principle subdivision of an organism that includes all structures along the primary axis, typically the anterior-posterior axis, from head to tail, including structures of the body proper where present (for example, ribs), but excluding appendages." []
-is_a: PLANA:0000136 ! whole organism
-intersection_of: PLANA:0000136 ! whole organism
-intersection_of: has_component BSPO:0000013 ! anterior-posterior axis
 
 [Term]
 id: PLANA:0000499
@@ -5860,10 +5991,13 @@ creation_date: 2017-07-19T21:35:08Z
 
 [Term]
 id: PLANA:0004511
-def: "Axis that runs from the oral pole and to the aboral pole of the spherical embryo (Stage 3 through early Stage 6). The oral pole is centered around the temporary embryonic pharynx; the aboral pole is located opposite the temporary embryonic pharynx." []
+name: oral-aboral axis of the embryo
+def: "Axis that runs from the oral pole and to the aboral pole of the spherical embryo (Stage 3 through early Stage 6). The oral pole is centered around the temporary embryonic pharynx; the aboral pole is located opposite the temporary embryonic pharynx." [PMID:28072387]
+synonym: "embryo of oral-aboral axis" EXACT []
 is_a: PLANA:0000116 ! embryo
 intersection_of: PLANA:0000116 ! embryo
 intersection_of: has_component BSPO:0000198 ! oral-aboral axis
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/oralaboralaxis.png {comment="Depicted by is an illustration noting the oral-aboral axis in cyan double headed arrow. Note it starts at the temporary embryonic pharynx and extends to opposite."}
 
 [Term]
 id: PLANA:0004512
@@ -6076,10 +6210,13 @@ creation_date: 2017-04-26T19:32:04Z
 
 [Term]
 id: PLANA:0007503
+name: sagittal plane of the whole animal
 def: "Anatomical plane which divides the body into right and left parts. This plane passes through the midline." []
+synonym: "whole organism of sagittal plane" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000417 ! sagittal plane
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0007504
@@ -6217,38 +6354,53 @@ creation_date: 2017-05-04T15:35:23Z
 
 [Term]
 id: PLANA:0007519
+name: anterior-posterior axis of the whole animal
 def: "Axis that runs along the long axis of the animal from anterior (head) to posterior (tail). It is perpendicular to the dorsoventral axis and as such, it splits dorsal and ventral regions of the animal to either side." []
+synonym: "whole organism of anterior-posterior axis" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000013 ! anterior-posterior axis
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/anteroposterioraxis.png {comment="Depiction shows an asexual with the term annoated in yellow. Scale bar =500um"}
 
 [Term]
 id: PLANA:0007520
+name: dorsal-ventral axis of the whole animal
 def: "Axis that runs along the short axis of the animal, perpendicular to the anteroposterior axis, running from the dorsal (back) side of the animal to the ventral (belly) side of the animal. This axis splits anterior and posterior regions of the animal to either side." []
+synonym: "whole organism of dorsal-ventral axis" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000016 ! dorsal-ventral axis
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0007521
+name: dextro-sinister axis of the whole animal
 def: "Axis perpendicular to both the anteroposterior and dorsoventral axis that runs from the left side of the animal, through the medial region (center) and out to the right side." []
+synonym: "whole organism of left-right axis" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000017 ! left-right axis
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/dextro-sinisteraxis.png {comment="Depiction shows an asexual with the term annoated in yellow. Scale bar =500um"}
 
 [Term]
 id: PLANA:0007522
+name: medial-lateral axis of the whole animal
 def: "Axis that runs from the center of the body, starting at the anteroposterior axis and out to the lateral (left, right, dorsal or ventral) surface of the animal." []
+synonym: "whole organism of medial-lateral axis" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0001001 ! medial-lateral axis
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/mediolateralaxis.png {comment="Depiction shows an asexual with the term annoated in yellow. Scale bar =500um"}
 
 [Term]
 id: PLANA:0007523
+name: proximal-distal axis of the whole animal
 def: "Axis that starts at the distal part of an appendage, closest to the body, and runs to the proximal part of an appendage, farthest from the body." []
+synonym: "whole organism of proximal-distal axis" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000015 ! proximal-distal axis
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/proximodistalaxis.png {comment="Depicted by shows a planarian pharynx exposed by tricaine treatment. The proximodistal axis is denoted with the double headed magenta arrow."}
 
 [Term]
 id: PLANA:0007524
