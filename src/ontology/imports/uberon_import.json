@@ -1,62 +1,920 @@
 {
   "graphs" : [ {
-    "nodes" : [ ],
+    "nodes" : [ {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000105",
+      "meta" : {
+        "definition" : {
+          "val" : "A spatiotemporal region encompassing some part of the life cycle of an organism.",
+          "xrefs" : [ "https://orcid.org/0000-0002-6601-2165" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level", "http://purl.obolibrary.org/obo/uberon/core#efo_slim" ],
+        "xrefs" : [ {
+          "val" : "MmusDv:0000000"
+        }, {
+          "val" : "ZFS:0100000"
+        }, {
+          "val" : "FBdv:00007012"
+        }, {
+          "val" : "ncithesaurus:Developmental_Stage"
+        }, {
+          "val" : "EFO:0000399"
+        }, {
+          "val" : "WBls:0000002"
+        }, {
+          "val" : "PdumDv:0000090"
+        }, {
+          "val" : "FMA:24120"
+        }, {
+          "val" : "OlatDv:0000010"
+        }, {
+          "val" : "ZFS:0000000"
+        }, {
+          "val" : "XAO:1000000"
+        }, {
+          "val" : "BILS:0000105"
+        }, {
+          "val" : "HsapDv:0000000"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasNarrowSynonym",
+          "val" : "stage",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasNarrowSynonym",
+          "val" : "developmental stage",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "this class represents a proper part of the life cycle of an organism. The class 'life cycle' should not be placed here"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000012",
+          "val" : "the WBls class 'all stages' belongs here as it is the superclass of other WBls stages"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000012",
+          "val" : "we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "life cycle stage"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000106",
+      "meta" : {
+        "definition" : {
+          "val" : "A stage at which the organism is a single cell produced by means of sexual reproduction.",
+          "xrefs" : [ "http://en.wikipedia.org/wiki/Zygote" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim" ],
+        "xrefs" : [ {
+          "val" : "PdumDv:0000100"
+        }, {
+          "val" : "BILS:0000106"
+        }, {
+          "val" : "FBdv:00005288"
+        }, {
+          "val" : "XAO:1000001"
+        }, {
+          "val" : "EHDAA:27"
+        }, {
+          "val" : "ZFS:0000001"
+        }, {
+          "val" : "VHOG:0000745"
+        }, {
+          "val" : "BilaDO:0000005"
+        }, {
+          "val" : "NCIT:C12601"
+        }, {
+          "val" : "EFO:0001322"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "fertilized egg stage",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "one-cell stage",
+          "xrefs" : [ "VHOG:0000745" ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "one cell stage",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "fertilized egg stage",
+          "xrefs" : [ "BTO:0000854" ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "zygotum",
+          "xrefs" : [ "http://en.wikipedia.org/wiki/Zygote" ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "zygote",
+          "xrefs" : [ "VHOG:0000745" ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "1-cell stage",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "http://purl.obolibrary.org/obo/EMAPA_16033"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000003",
+          "val" : "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "zygote stage"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002220",
+      "meta" : {
+        "definition" : {
+          "val" : "x adjacent_to y iff: x and y share a boundary",
+          "xrefs" : [ ]
+        },
+        "xrefs" : [ {
+          "val" : "RO:0002220"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "adjacent_to"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "adjacent_to"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002496",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002496"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "existence_starts_during_or_after"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "existence starts during or after"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/BSPO_0001107",
+      "meta" : {
+        "definition" : {
+          "val" : "This relation holds when both the deep_to and ajdacent_to relationship similarly hold.",
+          "xrefs" : [ "http://orcid.org/0000-0002-6601-2165" ]
+        },
+        "xrefs" : [ {
+          "val" : "BSPO:0001107"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "immediately_deep_to"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "immediately_deep_to"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0001062",
+      "meta" : {
+        "definition" : {
+          "val" : "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species.",
+          "xrefs" : [ "http://orcid.org/0000-0001-9114-8737", "FMA:62955" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "NCIT:C12219"
+        }, {
+          "val" : "EHDAA2:0002229"
+        }, {
+          "val" : "AAO:0010841"
+        }, {
+          "val" : "CARO:0000000"
+        }, {
+          "val" : "UMLS:C1515976"
+        }, {
+          "val" : "AEO:0000000"
+        }, {
+          "val" : "FBbt_root:00000000"
+        }, {
+          "val" : "BILA:0000000"
+        }, {
+          "val" : "XAO:0000000"
+        }, {
+          "val" : "ZFA:0100000"
+        }, {
+          "val" : "FMA:62955"
+        }, {
+          "val" : "WBbt:0000100"
+        }, {
+          "val" : "MA:0000001"
+        }, {
+          "val" : "TAO:0100000"
+        }, {
+          "val" : "HAO:0000000"
+        }, {
+          "val" : "FBbt:10000000"
+        }, {
+          "val" : "TGMA:0001822"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "anatomical entity"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000061",
+      "meta" : {
+        "definition" : {
+          "val" : "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome.",
+          "xrefs" : [ "CARO:0000003" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "AEO:0000003"
+        }, {
+          "val" : "FBbt:00007001"
+        }, {
+          "val" : "AAO:0010825"
+        }, {
+          "val" : "EHDAA2:0003003"
+        }, {
+          "val" : "FMA:305751"
+        }, {
+          "val" : "EMAPA:0"
+        }, {
+          "val" : "MESH:D000825"
+        }, {
+          "val" : "VHOG:0001759"
+        }, {
+          "val" : "ZFA:0000037"
+        }, {
+          "val" : "HAO:0000003"
+        }, {
+          "val" : "XAO:0003000"
+        }, {
+          "val" : "TAO:0000037"
+        }, {
+          "val" : "MA:0003000"
+        }, {
+          "val" : "GAID:781"
+        }, {
+          "val" : "CARO:0000003"
+        }, {
+          "val" : "BILA:0000003"
+        }, {
+          "val" : "TGMA:0001823"
+        }, {
+          "val" : "FMA:67135"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "connected biological structure",
+          "xrefs" : [ "CARO:0000003" ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "biological structure",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "anatomical structure"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/BSPO_0015014",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "BSPO:0015014"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "immediately_superficial_to"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "immediately_superficial_to"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/BFO_0000050",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "BFO:0000050"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "part_of"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "part of"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000092",
+      "meta" : {
+        "definition" : {
+          "val" : "stage succeeding embryo, including mature structure",
+          "xrefs" : [ "https://orcid.org/0000-0002-6601-2165" ]
+        },
+        "xrefs" : [ {
+          "val" : "WBls:0000103"
+        }, {
+          "val" : "BilaDO:0000003"
+        }, {
+          "val" : "WBls:0000022"
+        }, {
+          "val" : "OGES:000024"
+        }, {
+          "val" : "OGES:000010"
+        }, {
+          "val" : "WBls:0000093"
+        }, {
+          "val" : "OGES:000014"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasNarrowSynonym",
+          "val" : "post-hatching stage",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "postembryonic",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "postembryonic stage",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "https://github.com/obophenotype/uberon/issues/344"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000008",
+          "val" : "In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "post-embryonic stage"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000475",
+      "meta" : {
+        "definition" : {
+          "val" : "Anatomical structure which is a subdivision of a whole organism, consisting of components of multiple anatomical systems, largely surrounded by a contiguous region of integument.",
+          "xrefs" : [ "http://orcid.org/0000-0001-9114-8737", "CARO:0000032", "CARO:DOS" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#upper_level", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
+        "xrefs" : [ {
+          "val" : "MA:0002433"
+        }, {
+          "val" : "VHOG:0001758"
+        }, {
+          "val" : "FBbt:00007009"
+        }, {
+          "val" : "MESH:D001829"
+        }, {
+          "val" : "MAT:0000293"
+        }, {
+          "val" : "HAO:0000032"
+        }, {
+          "val" : "galen:BodyPart"
+        }, {
+          "val" : "TGMA:0001840"
+        }, {
+          "val" : "ZFA:0001308"
+        }, {
+          "val" : "CARO:0000032"
+        }, {
+          "val" : "XAO:0003013"
+        }, {
+          "val" : "FMA:7153"
+        }, {
+          "val" : "BILA:0000032"
+        }, {
+          "val" : "CALOHA:TS-2084"
+        }, {
+          "val" : "OpenCyc:Mx4rvViAHJwpEbGdrcN5Y29ycA"
+        }, {
+          "val" : "NCIT:C32221"
+        }, {
+          "val" : "AEO:0000032"
+        }, {
+          "val" : "EMAPA:36031"
+        }, {
+          "val" : "UMLS:C0229962"
+        }, {
+          "val" : "MIAA:0000293"
+        }, {
+          "val" : "EFO:0000808"
+        }, {
+          "val" : "TAO:0001308"
+        }, {
+          "val" : "AAO:0010053"
+        }, {
+          "val" : "EHDAA2:0003032"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "body region",
+          "xrefs" : [ "FMA:7153" ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cardinal body part",
+          "xrefs" : [ "FMA:7153" ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "body part",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "anatomic region",
+          "xrefs" : [ "MA:0002433" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Reflects CARO2. todo - check the inclusion of FMA 'cardinal body part here', and check child terms for consistency"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "organism subdivision"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000068",
+      "meta" : {
+        "definition" : {
+          "val" : "A life cycle stage that starts with fertilization and ends with the fully formed embryo.",
+          "xrefs" : [ "http://orcid.org/0000-0002-6601-2165" ]
+        },
+        "xrefs" : [ {
+          "val" : "WBls:0000003"
+        }, {
+          "val" : "WBls:0000102"
+        }, {
+          "val" : "FMA:72652"
+        }, {
+          "val" : "BilaDO:0000002"
+        }, {
+          "val" : "XAO:1000012"
+        }, {
+          "val" : "HsapDv:0000002"
+        }, {
+          "val" : "OGES:000000"
+        }, {
+          "val" : "FBdv:00005289"
+        }, {
+          "val" : "EV:0300001"
+        }, {
+          "val" : "MmusDv:0000002"
+        }, {
+          "val" : "WBls:0000092"
+        }, {
+          "val" : "OGES:000022"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "embryonic stage",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "embryogenesis",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "embryo stage"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000464",
+      "meta" : {
+        "definition" : {
+          "val" : "Non-material anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more organism substances or anatomical structures.",
+          "xrefs" : [ "http://orcid.org/0000-0001-9114-8737" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "AAO:0010110"
+        }, {
+          "val" : "EHDAA2:0003005"
+        }, {
+          "val" : "VHOG:0001728"
+        }, {
+          "val" : "FMA:5897"
+        }, {
+          "val" : "NCIT:C94478"
+        }, {
+          "val" : "ZFA:0001643"
+        }, {
+          "val" : "HAO:0000005"
+        }, {
+          "val" : "TGMA:0001825"
+        }, {
+          "val" : "UMLS:C0524461"
+        }, {
+          "val" : "TAO:0001668"
+        }, {
+          "val" : "CARO:0000005"
+        }, {
+          "val" : "AEO:0000005"
+        }, {
+          "val" : "BILA:0000005"
+        }, {
+          "val" : "FBbt:00007017"
+        }, {
+          "val" : "XAO:0003190"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasBroadSynonym",
+          "val" : "space",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anatomical spaces",
+          "xrefs" : [ "ZFA:0001643" ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "lumen space",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "lumen",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "anatomical space"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000476",
+      "meta" : {
+        "definition" : {
+          "val" : "Anatomical structure that consists of cell parts and cell substances and together does not constitute a cell or a tissue.",
+          "xrefs" : [ "http://orcid.org/0000-0001-9114-8737" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
+        "xrefs" : [ {
+          "val" : "HAO:0000040"
+        }, {
+          "val" : "XAO:0003162"
+        }, {
+          "val" : "AAO:0010268"
+        }, {
+          "val" : "CARO:0000040"
+        }, {
+          "val" : "TGMA:0001841"
+        }, {
+          "val" : "TAO:0000382"
+        }, {
+          "val" : "FMA:63863"
+        }, {
+          "val" : "AEO:0000040"
+        }, {
+          "val" : "BILA:0000040"
+        }, {
+          "val" : "ZFA:0000382"
+        }, {
+          "val" : "FBbt:00007013"
+        }, {
+          "val" : "EHDAA2:0003040"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "acellular anatomical structures",
+          "xrefs" : [ "ZFA:0000382" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "acellular anatomical structure"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000465",
+      "meta" : {
+        "definition" : {
+          "val" : "Anatomical entity that has mass.",
+          "xrefs" : [ "http://orcid.org/0000-0001-9114-8737" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "EHDAA2:0003006"
+        }, {
+          "val" : "TAO:0001836"
+        }, {
+          "val" : "FMA:67165"
+        }, {
+          "val" : "HAO:0000006"
+        }, {
+          "val" : "CARO:0000006"
+        }, {
+          "val" : "TGMA:0001826"
+        }, {
+          "val" : "VHOG:0001721"
+        }, {
+          "val" : "AAO:0010264"
+        }, {
+          "val" : "BILA:0000006"
+        }, {
+          "val" : "AEO:0000006"
+        }, {
+          "val" : "FBbt:00007016"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "material anatomical entity"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000466",
+      "meta" : {
+        "definition" : {
+          "val" : "Anatomical entity that has no mass.",
+          "xrefs" : [ "http://orcid.org/0000-0001-9114-8737" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "EHDAA2:0003007"
+        }, {
+          "val" : "VHOG:0001727"
+        }, {
+          "val" : "TAO:0001835"
+        }, {
+          "val" : "AAO:0010265"
+        }, {
+          "val" : "FMA:67112"
+        }, {
+          "val" : "TGMA:0001827"
+        }, {
+          "val" : "HAO:0000007"
+        }, {
+          "val" : "AEO:0000007"
+        }, {
+          "val" : "BILA:0000007"
+        }, {
+          "val" : "FBbt:00007015"
+        }, {
+          "val" : "CARO:0000007"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "immaterial physical anatomical entity",
+          "xrefs" : [ "FMA:67112" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "immaterial anatomical entity"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000104",
+      "meta" : {
+        "definition" : {
+          "val" : "An entire span of an organism's life, commencing with the zygote stage and ending in the death of the organism.",
+          "xrefs" : [ "https://orcid.org/0000-0002-6601-2165" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "FBdv:00000000"
+        }, {
+          "val" : "ncithesaurus:Life"
+        }, {
+          "val" : "HsapDv:0000001"
+        }, {
+          "val" : "OGES:000011"
+        }, {
+          "val" : "MmusDv:0000001"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "entire life cycle",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "lifespan",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "life",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "entire lifespan",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "https://github.com/obophenotype/uberon/issues/532"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "life cycle"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0005423",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "AEO:0000125"
+        }, {
+          "val" : "CALOHA:TS-2122"
+        }, {
+          "val" : "FBbt:00007006"
+        }, {
+          "val" : "FMA:292313"
+        }, {
+          "val" : "MIAA:0000019"
+        }, {
+          "val" : "EHDAA2:0003125"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "developing structure",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "developmental tissue",
+          "xrefs" : [ "MIAA:0000019" ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "developmental structure",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "developing anatomical structure"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0007567",
+      "meta" : {
+        "definition" : {
+          "val" : "An anatomical structure that is undergoing regeneration.",
+          "xrefs" : [ "http://orcid.org/0000-0002-6601-2165" ]
+        },
+        "xrefs" : [ {
+          "val" : "EHDAA2:0003233"
+        }, {
+          "val" : "ZFA:0005147"
+        }, {
+          "val" : "XAO:0004059"
+        }, {
+          "val" : "AEO:0000200"
+        }, {
+          "val" : "TAO:0005147"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "regenerating tissue",
+          "xrefs" : [ "ZFA:0005147" ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "regenerative tissue",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "regenerating tissues",
+          "xrefs" : [ "ZFA:0005147" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
+          "val" : "A portion of tissue that is regrowing after damage or amputation.[TAO]"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "we define this in terms of active participation in regeneration, rather that capabilities. In this sense it is different from the AEO structure."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+          "val" : "EHDAA2:0003233"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "regenerating anatomical structure"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0002553",
+      "meta" : {
+        "definition" : {
+          "val" : "Anatomical space which contains portions of one or more body substances and is bounded by the internal surface of one maximally connected anatomical structure. Examples: cranial cavity, pharyngeal recess space, nasal cavity, tooth socket, cavity of serous sac, lumen of stomach, lumen of artery, fornix of vagina.",
+          "xrefs" : [ "FMA:67552" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "EMAPA:37442"
+        }, {
+          "val" : "galen:Cavity"
+        }, {
+          "val" : "MA:0002447"
+        }, {
+          "val" : "FMA:67552"
+        }, {
+          "val" : "NCIT:C34007"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasBroadSynonym",
+          "val" : "cavity",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "anatomical cavity"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000111",
+      "meta" : {
+        "definition" : {
+          "val" : "A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism.",
+          "xrefs" : [ "http://en.wikipedia.org/wiki/Organogenesis" ]
+        },
+        "xrefs" : [ {
+          "val" : "BilaDO:0000010"
+        }, {
+          "val" : "OGES:000005"
+        }, {
+          "val" : "MmusDv:0000018"
+        }, {
+          "val" : "HsapDv:0000015"
+        }, {
+          "val" : "OGES:000032"
+        }, {
+          "val" : "BILS:0000111"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "segmentation stage",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "https://github.com/obophenotype/uberon/issues/533"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "organogenesis stage"
+    } ],
     "edges" : [ {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0002553",
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000464",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000464"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000068",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0005423",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000465"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000106",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000068"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000106",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000466",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0001062"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000465",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0001062"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000475",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000061"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000476",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000061"
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000466"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000092",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000111",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000061",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000465"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/BSPO_0015014",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0002220"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/BSPO_0001107",
-      "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/RO_0002220"
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0002553",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000464"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000466",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0001062"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0007567",
       "pred" : "is_a",
@@ -66,24 +924,60 @@
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000068"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000464",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000466"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000105",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000104"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000111",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/BSPO_0001107",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002220"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000061",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002496",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000106"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000476",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000061"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000068",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000475",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000061"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000465",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0001062"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0005423",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000465"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000106",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000106",
+      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000068"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000061",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000465"
     } ],
     "id" : "http://purl.obolibrary.org/obo/plana/imports/uberon_import.owl",
     "meta" : {
       "subsets" : [ ],
       "xrefs" : [ ],
       "basicPropertyValues" : [ ],
-      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-05-24/imports/uberon_import.owl"
+      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-05-25/imports/uberon_import.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ ],
