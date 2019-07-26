@@ -16,7 +16,7 @@ annotationProperties:
   exact_synonym: oio:hasExactSynonym
   depicted_by: foaf:depicted_by
   image_comment: rdfs:comment
-  def_dbxref: oboInOwl:hasDbXref
+  term_id: oboInOwl:id
 
 vars:
   anatomical_entity: "'anatomical entity'"
@@ -26,6 +26,10 @@ vars:
 
 data_list_vars:
   def_dbxref: xsd:string
+  exact_syn: xsd:string
+
+data_vars:
+  term_id: "'term_id'" 
 
 name:
   text: "%s of %s"
@@ -37,8 +41,8 @@ annotations:
   - annotationProperty: exact_synonym
     text: "%s of %s"
     vars:
-     - anatomical_entity
      - anatomical_space
+     - anatomical_entity
 
   - annotationProperty: depicted_by
     var: depicted_by
@@ -47,6 +51,14 @@ annotations:
         text: "%s"
         vars:
          - image_comment
+
+  - annotationProperty: term_id
+    text: "%s"
+    vars:
+     - term_id
+
+exact_synonym:
+    value: exact_syn
   
 def:
   text: "%s of %s"

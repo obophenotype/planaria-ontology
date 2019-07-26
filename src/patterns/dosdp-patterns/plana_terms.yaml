@@ -1,0 +1,45 @@
+pattern_name: plana_terms 
+pattern_iri: https://tbd
+description: "simple terms unique to PLANA"
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+
+
+
+classes:
+  parent_entity: BFO:0000040
+  new_entity: BFO:0000040
+
+annotationProperties:
+  dbxref: oboInOwl:hasDbXref
+
+vars:
+  parent_entity: "'parent_entity'"
+  new_entity: "'new_entity'"
+
+data_list_vars:
+  def_dbxref: xsd:string
+  exact_syns: xsd:string
+
+subClassOf:
+    text: "%s"
+    vars:
+      - parent_entity
+
+name:
+  text: "%s"
+  vars:
+    - new_entity
+
+exact_synonym:
+    value: exact_syns
+
+def:
+  text: "%s of %s needs def"
+  vars:
+    - new_entity
+    - parent_entity
+  xrefs: def_dbxref
+
+

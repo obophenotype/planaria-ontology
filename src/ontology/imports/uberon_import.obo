@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-05-25/imports/uberon_import.owl
+data-version: plana/releases/2019-07-26/imports/uberon_import.owl
 ontology: plana/imports/uberon_import
 
 [Term]
@@ -54,6 +54,7 @@ xref: WBls:0000092
 xref: WBls:0000102
 xref: XAO:1000012
 is_a: UBERON:0000105 ! life cycle stage
+relationship: precedes UBERON:0000092 ! post-embryonic stage
 
 [Term]
 id: UBERON:0000092
@@ -71,6 +72,7 @@ xref: WBls:0000022
 xref: WBls:0000093
 xref: WBls:0000103
 is_a: UBERON:0000105 ! life cycle stage
+relationship: preceded_by UBERON:0000068 ! embryo stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/344
 property_value: UBPROP:0000008 "In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)" xsd:string
 
@@ -89,6 +91,7 @@ xref: HsapDv:0000001
 xref: MmusDv:0000001
 xref: ncithesaurus:Life
 xref: OGES:000011
+relationship: has_part UBERON:0000105 ! life cycle stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/532
 
 [Term]
@@ -247,7 +250,7 @@ synonym: "cardinal body part" RELATED [FMA:7153]
 xref: AAO:0010053
 xref: AEO:0000032
 xref: BILA:0000032
-xref: birnlex:7
+xref: BIRNLEX:7
 xref: Body:part
 xref: CALOHA:TS-2084
 xref: CARO:0000032
@@ -304,7 +307,7 @@ subset: upper_level
 xref: AAO:0010841
 xref: AEO:0000000
 xref: BILA:0000000
-xref: birnlex:6
+xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
@@ -328,7 +331,7 @@ namespace: uberon
 def: "Anatomical space which contains portions of one or more body substances and is bounded by the internal surface of one maximally connected anatomical structure. Examples: cranial cavity, pharyngeal recess space, nasal cavity, tooth socket, cavity of serous sac, lumen of stomach, lumen of artery, fornix of vagina." [FMA:67552]
 subset: upper_level
 synonym: "cavity" BROAD []
-xref: birnlex:1011
+xref: BIRNLEX:1011
 xref: EMAPA:37442 {source="MA:th"}
 xref: FMA:67552
 xref: galen:Cavity
@@ -375,12 +378,95 @@ name: adjacent_to
 namespace: uberon
 def: "x adjacent_to y iff: x and y share a boundary" []
 xref: RO:0002220
+is_a: deep_to ! deep_to
+is_a: superficial_to ! superficial_to
+
+[Typedef]
+id: capable_of
+name: capable of
+namespace: uberon
+xref: RO:0002215
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: capable_of_part_of
+name: capable of part of
+namespace: uberon
+xref: RO:0002216
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: deep_to
+name: deep_to
+namespace: uberon
+def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000107
+
+[Typedef]
+id: developmentally_contributes_to
+name: developmentally_contributes_to
+namespace: uberon
+xref: RO:0002255
+is_a: has_potential_to_developmentally_contribute_to ! has potential to developmentally contribute to
+
+[Typedef]
+id: develops_from
+name: develops_from
+namespace: uberon
+xref: RO:0002202
+is_a: has_developmental_contribution_from ! has developmental contribution from
+
+[Typedef]
+id: develops_into
+name: develops_into
+namespace: uberon
+xref: RO:0002203
+is_a: has_potential_to_develop_into ! has potential to develop into
 
 [Typedef]
 id: existence_starts_during_or_after
 name: existence starts during or after
 namespace: uberon
 xref: RO:0002496
+
+[Typedef]
+id: functionally_related_to
+name: functionally related to
+namespace: uberon
+xref: RO:0002328
+
+[Typedef]
+id: has_component
+name: has component
+namespace: uberon
+xref: RO:0002180
+is_a: has_part ! has part
+
+[Typedef]
+id: has_developmental_contribution_from
+name: has developmental contribution from
+namespace: uberon
+xref: RO:0002254
+
+[Typedef]
+id: has_part
+name: has part
+namespace: uberon
+xref: BFO:0000051
+
+[Typedef]
+id: has_potential_to_develop_into
+name: has potential to develop into
+namespace: uberon
+def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
+xref: RO:0002387
+
+[Typedef]
+id: has_potential_to_developmentally_contribute_to
+name: has potential to developmentally contribute to
+namespace: uberon
+def: "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y" []
+xref: RO:0002385
 
 [Typedef]
 id: immediately_deep_to
@@ -391,6 +477,20 @@ xref: BSPO:0001107
 is_a: adjacent_to ! adjacent_to
 
 [Typedef]
+id: immediately_preceded_by
+name: immediately_preceded_by
+namespace: uberon
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+synonym: "directly preceded by" EXACT []
+synonym: "is directly preceded by" EXACT []
+synonym: "is immediately preceded by" EXACT [SIO:000251]
+synonym: "starts_at_end_of" EXACT []
+xref: RO:0002087
+property_value: seeAlso SIO:000251
+property_value: UBPROP:0000001 "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]." xsd:string {source="SIO:000251"}
+is_a: preceded_by ! preceded_by
+
+[Typedef]
 id: immediately_superficial_to
 name: immediately_superficial_to
 namespace: uberon
@@ -398,8 +498,53 @@ xref: BSPO:0015014
 is_a: adjacent_to ! adjacent_to
 
 [Typedef]
+id: in_lateral_side_of
+name: in_lateral_side_of
+namespace: uberon
+def: "X in_lateral_side_of Y <=> if X is in_left_side_of Y or X is in_right_side_of Y. X is often, but not always a paired structure" [https://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000126
+property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+is_a: part_of ! part of
+
+[Typedef]
+id: input_of
+name: input of
+namespace: uberon
+xref: RO:0002352
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
 id: part_of
 name: part of
 namespace: uberon
 xref: BFO:0000050
+
+[Typedef]
+id: part_of_structure_that_is_capable_of
+name: part of structure that is capable of
+namespace: uberon
+xref: RO:0002329
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: preceded_by
+name: preceded_by
+namespace: uberon
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+synonym: "is preceded by" EXACT [SIO:000249]
+synonym: "takes place after" EXACT [Allen:precedes]
+xref: BFO:0000062
+
+[Typedef]
+id: precedes
+name: precedes
+namespace: uberon
+xref: BFO:0000063
+
+[Typedef]
+id: superficial_to
+name: superficial_to
+namespace: uberon
+def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000108
 

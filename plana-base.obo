@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-05-25/plana-base.owl
+data-version: plana/releases/2019-07-26/plana-base.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -488,7 +488,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000031 x
 id: PLANA:0000032
 name: dorsal midline
 def: "The median line/plane of bilateral symmetry along the anteroposterior axis on the dorsal surface of the animal." []
-synonym: "midline of dorsal region" EXACT []
+synonym: "dorsal region of midline" EXACT []
 intersection_of: PLANA:0000030 ! midline
 intersection_of: RO:0002180 BSPO:0000079
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -593,7 +593,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000037 x
 id: PLANA:0000038
 name: ventral midline
 def: "The median line/ plane of bilateral symmetry along the anteroposterior axis on the ventral surface of the animal." []
-synonym: "midline of ventral region" EXACT []
+synonym: "ventral region of midline" EXACT []
 intersection_of: PLANA:0000030 ! midline
 intersection_of: RO:0002180 BSPO:0000084
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -673,10 +673,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000042 x
 [Term]
 id: PLANA:0000043
 name: dorsal ventral margin
-name: dorsoventral margin
 def: "Region along the edge of the animal where the dorsal and ventral surfaces meet." []
-synonym: "edge" BROAD []
-synonym: "whole organism of dorsal/ventral compartment boundary" EXACT []
+synonym: "dorsal/ventral compartment boundary of whole organism" EXACT []
+synonym: "dorsoventral margin" EXACT []
+synonym: "edge" EXACT []
 is_a: PLANA:0000102 ! anatomical compartment subdivision
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000094
@@ -851,7 +851,7 @@ id: PLANA:0000054
 name: dorsal epidermis
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." []
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." [OCLC:16809160]
-synonym: "definitive epidermis of dorsal region" EXACT []
+synonym: "dorsal region of definitive epidermis" EXACT []
 is_a: PLANA:0000037 ! definitive tissue
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: RO:0002180 BSPO:0000079
@@ -1564,7 +1564,7 @@ id: PLANA:0000096
 name: ventral epidermis
 name: ventral region of the epidermal compartment
 def: "Single cell layer of ventral, post-mitotic, heavily ciliated epithelial cells" []
-synonym: "definitive epidermis of ventral region" EXACT []
+synonym: "ventral region of definitive epidermis" EXACT []
 is_a: PLANA:0000037 ! definitive tissue
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: RO:0002180 BSPO:0000084
@@ -2135,7 +2135,7 @@ creation_date: 2018-08-03T19:14:32Z
 id: PLANA:0000140
 name: anterior region of the whole animal
 def: "Compartment along the anteroposterior axis closer to the head rather than the tail, from the head margin to the esophagus." [OCLC:16809160]
-synonym: "whole organism of anterior region" EXACT []
+synonym: "anterior region of whole organism" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000071
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -2143,8 +2143,8 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0000141
 name: dorsal region of the whole animal
-def: "Three dimensional compartment along the dorsoventral axis that is above the anteroposterior axis,  containing the eyes." []
-synonym: "whole organism of dorsal region" EXACT []
+def: "Three dimensional compartment along the dorsoventral axis that is above the anteroposterior axis, containing the eyes." []
+synonym: "dorsal region of whole organism" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000079
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -2153,7 +2153,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0000142
 name: posterior compartment of the whole animal
 def: "Three dimensional compartment along the anteroposterior axis that is closer to the tail rather than the head, from the anterior boundary of the pharyngeal pouch to the tip of the tail." []
-synonym: "whole organism of posterior region" EXACT []
+synonym: "posterior region of whole organism" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000072
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -2162,7 +2162,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0000143
 name: ventral compartment of the whole animal
 def: "Compartment along the dorsoventral axis that is below the anteroposterior axis." []
-synonym: "whole organism of ventral region" EXACT []
+synonym: "ventral region of whole organism" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000084
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -2903,7 +2903,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000407 x
 id: PLANA:0000409
 name: apical surface of the epidermal compartment
 def: "The apical surface of the single layered epidermis that is in contact with the environment." []
-synonym: "definitive epidermis of apical surface" EXACT []
+synonym: "apical surface of definitive epidermis" EXACT []
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: RO:0002180 BSPO:0000373
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/apicalepidermissurface.png {comment="Depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane from an asexual adult animal. The apical epidermis surface is noted with magenta arrows. Scale bar is 5um."}
@@ -2912,7 +2912,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obol
 id: PLANA:0000410
 name: basal surface of the epidermal compartment
 def: "The basal surface of the epidermal epithelium in direct contact with the basal lamina." []
-synonym: "definitive epidermis of basal surface" EXACT []
+synonym: "basal surface of definitive epidermis" EXACT []
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: RO:0002180 BSPO:0000374
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/basalepidermissurface.png {comment="The depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane. The basal epidermis surface is noted with magenta arrows. Scale bar is 5um."}
@@ -4544,6 +4544,785 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0001005 x
 property_value: UBPROP:0000003 "A basal lamina is certainly present in Bilateria and was evaluated as an autapomorphy of this taxon.[well established][VHOG]" xsd:string
 
 [Term]
+id: PLANA:0002000
+name: adenal rhabdite
+def: "Rhabdites that are located basally to the epidermis, in the mesenchyme. In Smed these are present in cells likely on their way to becoming mature epidermis." [ISBN:9780070316607]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002001
+name: adherens junction
+def: "A cell junction at which anchoring proteins (cadherins or integrins) extend through the plasma membrane and are attached to actin filaments." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002002
+name: adhesive papilla
+def: "Finger-like processes at the terminal pore of adhesive gland cells around the marginal adhesive zone. They protrude past the epidermis and are longer microvilli, and shorter than cilia." [ISBN:9780070316607]
+synonym: "adhesive papillae" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002003
+name: amputation
+def: "A wound resulting in two or more separate fragments of tissue." []
+is_a: PLANA:0002026 ! cut
+
+[Term]
+id: PLANA:0002004
+name: anterior gut branch
+def: "A branch of the triclad gut located anterior to the definitive pharynx." [PMID:21664348]
+synonym: "anterior branch" EXACT []
+synonym: "anterior intestinal branch" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002005
+name: anterior tip
+def: "The anterior-medial region of the head margin." [PMID:22479207]
+synonym: "head tip" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002006
+name: antrum
+def: "A chamber formation in an organ." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002007
+name: auricle
+def: "A sense organ located along the dorsolateral head margin. The auricular groove is highly innervtated by ciliated sensory neurons, and has an altered epidermis devoid of rhabdites and gland cells." [ISBN:9780070316607]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002008
+name: axon
+def: "The long process of a neuron that conducts nerve impulses, usually away from the cell body to the terminals and varicosities, which are sites of storage and release of neurotransmitter." []
+synonym: "nerve fiber" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002009
+name: axoneme
+def: "The bundle of microtubules and associated proteins that forms the core of cilia (also called flagella) in eukaryotic cells and is responsible for their movements." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002010
+name: basal body
+def: "A membrane-tethered, short cylindrical array of microtubules and associated proteins found at the base of a eukaryotic cilium (also called flagellum) that is similar in structure to a centriole and derives from it. The cilium basal body is the site of assembly and remodelling of the cilium and serves as a nucleation site for axoneme growth. As well as anchoring the cilium, it is thought to provide a selective gateway regulating the entry of ciliary proteins and vesicles by intraflagellar transport." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002011
+name: brain visual center
+def: "The cephalic ganglion region innervated by the optic nerve (posterior-projecting photoreceptor neuron fasiculated axons)." [PMID:16033796]
+synonym: "visual center" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002012
+name: bulbar cavity
+def: "An enlarged portion of the seminal vesicle, comprised of secretory epithelial cells, that connects to the ejaculatory duct within the penis papilla." [ISBN:9780070316607]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002013
+name: Category 1 cell
+def: "Irradiation-sensitive, mesenchymal cells that are absent from the head region anterior to the eyes and the pharynx. The Category 1 designation encompasses the neoblast population." [PMID:18786419]
+synonym: "Category 1 gene expressing cell" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002014
+name: cell body
+def: "The portion of a cell bearing surface projections such as axons, dendrites, cilia, or flagella that includes the nucleus, but excludes all cell projections." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002015
+name: cephalic ganglia lobe
+def: "One of two bilaterally symmetric structures comprising the planarian brain." [PMID:17999079]
+synonym: "bi-lobed brain" EXACT []
+synonym: "bi-lobed cephalic ganglia" EXACT []
+synonym: "brain" EXACT []
+synonym: "brain ganglia" EXACT []
+synonym: "brain lobe" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002016
+name: cephalic ganglia neuron
+def: "A central nervous system neuron located within the planarian brain." [PMID:17999079]
+synonym: "brain neuron" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002017
+name: chemical amputation
+def: "NEEDS DEF" []
+is_a: PLANA:0002108 ! wound
+
+[Term]
+id: PLANA:0002018
+name: chemical pharynx amputation
+def: "NEEDS DEF" []
+synonym: "chemical pharyngeal amputation" EXACT []
+is_a: PLANA:0002017 ! chemical amputation
+
+[Term]
+id: PLANA:0002019
+name: chemosensory neuron
+def: "Any neuron (FBbt:00005106) that capable of some detection of chemical stimulus involved in sensory perception (GO:0050907)." []
+synonym: "chemoreceptive neuron" EXACT []
+synonym: "chemoreceptor neuron" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002020
+name: chromatoid body
+def: "A membrane-less, cytoplasmic ribonucleoprotein granule present in neoblasts and germ cells implicated in post-transcriptional regulation. The RNA helicase DHH1/RCK, Tudor, SmB, methylated substrates of PRMT5, PIWI-3 and Germinal Histone H4 localize to chromatoid bodies in neoblasts." [PMID:22318224, PMID:24903754]
+synonym: "nuage" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002021
+name: chromosome
+def: "A structure composed of a very long molecule of DNA and associated proteins (e.g. histones) that carries hereditary information." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002022
+name: chromosome arm
+def: "Under the microscope chromosomes appear as thin, thread-like structures. They all have a short arm and long arm separated by a primary constriction called the centromere. The short arm is designated as p and the long arm as q." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002023
+name: ciliated epithelium
+def: "Epithelium bearing vibratile cilia on the free surface." []
+synonym: "ciliated epidermis" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002024
+name: cilium
+def: "A specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface and of some cytoplasmic parts. Each cilium is largely bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored to a basal body. The longitudinal array of microtubules are almost always in a 9+2 array with 2 microtubles in the central cilia bundle and 9 sets of doublet microtubules around the perimeter. The exception to this arrangement is spermatazoa flagella, which have a 9+1 array in planarians." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002025
+name: commissure
+def: "A bundle of nerve fibers crossing from one side to the other side of the brain or spinal cord." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002026
+name: cut
+def: "A wound or cleft resulted from tissue separation into parts or laid open or penetrated with a sharp edge or instrument." []
+is_a: PLANA:0002099 ! surgical wound
+
+[Term]
+id: PLANA:0002027
+name: dendrite
+def: "A neuron projection that has a short, tapering, morphology. Dendrites receive and integrate signals from other neurons or from sensory stimuli, and conduct nerve impulses towards the axon or the cell body. In most neurons, the impulse is conveyed from dendrites to axon via the cell body, but in some types of unipolar neuron, the impulse does not travel via the cell body." []
+synonym: "cell dendrite" EXACT []
+synonym: "dendritic process" EXACT []
+synonym: "dendritic projection" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002028
+name: dorsal-ventral muscle
+def: "A muscle cell that runs in the transverse plane that connects the dorsal and ventral sides of the animal." [PMID:30962434]
+synonym: "dorsoventral fibers" EXACT []
+synonym: "DVM" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002029
+name: early female germ cell
+def: "A premeiotic female germ cell (i.e., a diploid female germline stem cell or transit amplifying oogonial cell)." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002030
+name: early male germ cell
+def: "A premeiotic male germ cell (i.e., a spermatogonial stem cell or transit amplifying spermatogonial cell)." [PMID:27330085]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002031
+name: embryonic gut
+def: "A cryptic digestive cavity comprised of phagocytic embryonic gut cells." [PMID:28072387]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002032
+name: epidermal cell
+def: "An epithelial cell of the integument (the outer layer of an organism)." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002033
+name: epidermal rhabdite
+def: "Rhabdites located within epidermal cells." [ISBN:9780070316607]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002034
+name: ER membrane
+def: "The lipid bilayer surrounding the endoplasmic reticulum." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002035
+name: eumelanin
+def: "The black pigment that gives non-neuronal pigment cells of the optic cup their characteristic color." [PMID:15760337, PMID:26017970, PMID:8812261]
+synonym: "eye cell pigment" EXACT []
+synonym: "eye pigment" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002036
+name: excretory cell
+def: "A cell involved in the elimination of metabolic and foreign toxins, and in maintaining the ionic, acid-base and water balance of biological fluids." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002037
+name: extracellular matrix
+def: "A structure lying external to one or more cells, which provides structural support, biochemical or biomechanical cues for cells or tissues." []
+synonym: "ECM" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002038
+name: extracellular space
+def: "That part of a multicellular organism outside the cells proper, usually taken to be outside the plasma membranes, and occupied by fluid." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002039
+name: fission
+def: "NEEDS DEF" []
+is_a: PLANA:0002108 ! wound
+
+[Term]
+id: PLANA:0002040
+name: flagellum
+def: "Planarian undulipodia consisting of spermatazoa cell posterior protrusions. Planarian spermatozoa contain two flagella and are composed of 9 + 1 axonemal microtubule arrangements in their flagella (markedly different from the 9 + 2 structures generally observed in sperm of other animals)." [PMID:4190073]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002041
+name: gap junction
+def: "A cell-cell junction composed of pannexins or innexins and connexins, two different families of channel-forming proteins." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002042
+name: genital atrium
+def: "A chamber where egg capsules are formed. One or more zygotes and yolk cells produced by the vitelline glands collect in the genital atrium; glands surrounding the genital atrium produce the egg capsule shell." [PMID: 22074376]
+synonym: "female antrum" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002043
+name: germ cell cyst
+def: "A clonally-related group of interconnected spermatogonial cells, enveloped by somatic gonadal cells." [PMID:17376870]
+synonym: "germ cell cluster" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002044
+name: germline stem cell
+def: "Stem cell that is the precursor of gametes." []
+synonym: "germ cell" EXACT []
+synonym: "germ stem cell" EXACT []
+synonym: "germline cell" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002045
+name: glycogen granule
+def: "Cytoplasmic bead-like structures of animal cells, visible by electron microscope. Each granule is a functional unit with the biosynthesis and catabolism of glycogen being catalyzed by enzymes bound to the granule surface." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002046
+name: incision
+def: "NEEDS DEF" []
+is_a: BFO:0000001
+is_a: PLANA:0002026 ! cut
+
+[Term]
+id: PLANA:0002047
+name: inner pharynx epidermal cell
+def: "Epithelial cells lining the inside of the pharynx. In Smed, distally located cells are heavily ciliated." [ISBN:9780070316607]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002048
+name: inner zone of gland cells
+def: "Gland or secretory cells sandwiched between muscle and epidermal layers in the pharynx." [ISBN:9780070316607]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002049
+name: interellular junction
+def: "A cell junction that forms a connection between two or more cells in a multicellular organism; excludes direct cytoplasmic junctions such as ring canals." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002050
+name: linear amputation
+def: "NEEDS DEF" []
+is_a: PLANA:0002003 ! amputation
+
+[Term]
+id: PLANA:0002051
+name: linear incision
+def: "NEEDS DEF" []
+is_a: PLANA:0002046 ! incision
+
+[Term]
+id: PLANA:0002052
+name: lipid droplet
+def: "An intracellular non-membrane-bounded organelle comprising a matrix of coalesced lipids surrounded by a phospholipid monolayer. May include associated proteins." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002053
+name: lumen
+def: "The cavity or channel within a tube or tubular organ such as a blood vessel or the intestine." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002054
+name: marginal adhesive zone
+def: "Zone present along the lateral dorsoventral boundary that sits just underneath the animal, in contact with substrates. It is comprised of bunches of adhesion gland cells whose terminal pores form pore rosettes through the dorsal ventral boundary epidermis.This region of is devoid of rhabdites." [ISBN:9780070316607]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002055
+name: mechanosensory neuron
+def: "Any neuron (FBbt:00005106) that is capable of some detection of mechanical stimulus involved in sensory perception (GO:0050974)." []
+synonym: "mechanosensory cell" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002056
+name: medial muscle cell
+def: "Subset of dorsal-ventral muscle cells located in the medial body region." [PMID:30962434]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002057
+name: meiotic germ cell
+def: "A germ cell undergoing meiosis." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002058
+name: melanosome
+def: "A tissue-specific, membrane-bounded cytoplasmic organelle within which melanin pigments are synthesized and stored. Melanosomes are synthesized in melanocyte cells." [GO:0042470]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002059
+name: mucus
+def: "A secreted, mucin-rich extracellular substance coating the epidermal surface of the animal implicated in gliding locomotion, substrate adhesion, innate immunity and predator avoidance." [PMID:22653920]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002060
+name: nephridiopore
+def: "the external opening and terminus of a protonephridia made by a terminal cell." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002061
+name: neurite
+def: "Cell appendage of the neuron which includes the axon and the dendrite." []
+synonym: "neuronal process" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002062
+name: neuropeptidergic neuron
+def: "A neuron that produces and releases neuropeptides at chemical synapses." [PMID:24173799]
+synonym: "cns peptidergic cell" EXACT []
+synonym: "peptidergic neuron" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002063
+name: non-ciliated epidermis
+def: "Differentiating, immature epidermal cells lacking cilia." [PMID:26457503]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002064
+name: nuclear envelope
+def: "The double lipid bilayer enclosing the nucleus and separating its contents from the rest of the cytoplasm; includes the intermembrane space, a gap of width 20-40 nm (also called the perinuclear space)." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002065
+name: nuclear inner membrane
+def: "The inner, i.e. lumen-facing, lipid bilayer of the nuclear envelope." [GO:0005637]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002066
+name: nuclear lumen
+def: "The volume enclosed by the nuclear inner membrane." [GO:0031981]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002067
+name: nuclear outer membrane
+def: "The outer, i.e. cytoplasm-facing, lipid bilayer of the nuclear envelope; continuous with the endoplasmic reticulum of the cell and sometimes studded with ribosomes." [GO:0005640]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002068
+name: nuclear periphery
+def: "The portion of the nuclear lumen proximal to the inner nuclear membrane." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002069
+name: ommochrome pigment cell
+def: "Parenchymal cells that synthesize and contain brown ommonchrome pigment." [PMID:27240733]
+synonym: "non-melanin pigment cell" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002070
+name: optic nerve
+def: "A neuron projection bundle that connects the retina or its analog in the eye with the brain. This includes the vertebrate optic nerve (not truly a nerve) as well as analogous structures such as the Bolwig nerve in Drosophila" []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002071
+name: outer pharynx epidermal cell
+def: "Heavily ciliated, insunk epithelial cells bounding the outside of the pharynx. Outer pharynx epithelial cell nuclei are positioned beneath the pharynx musculature." [ISBN:9780070316607]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002072
+name: parasagittal
+def: "relating to or situated in a plane adjacent or parallel to the plane which divides the body into right and left halves." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002073
+name: phagocytic cell
+def: "A cell that engulfs large particles or cells via invagination of the plasma membrane and creation of a phagosome." []
+synonym: "phagocyte" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002074
+name: pharynx tip
+def: "The distal-most end of the pharnyx containing an opening to the pharynx lumen." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002075
+name: pigment cell
+def: "A pigment cell is a cell that contains pigment granules." []
+synonym: "pigment producing cell" EXACT []
+synonym: "pigmented cell" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002076
+name: pigment granule
+def: "A small, subcellular membrane-bounded vesicle containing pigment and/or pigment precursor molecules. Pigment granule biogenesis is poorly understood, as pigment granules are derived from multiple sources including the endoplasmic reticulum, coated vesicles, lysosomes, and endosomes." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002077
+name: plug amputation
+def: "NEEDS DEF" []
+is_a: PLANA:0002003 ! amputation
+
+[Term]
+id: PLANA:0002078
+name: point incision
+def: "NEEDS DEF" []
+synonym: "poke" EXACT []
+synonym: "puncture" EXACT []
+is_a: PLANA:0002046 ! incision
+
+[Term]
+id: PLANA:0002079
+name: pore
+def: "An anatomical space that is an opening, usually at the end of a canal or duct, on the surface of the integument or the lining of an internal anatomical space." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002080
+name: post-meiotic germ cell
+def: "A haploid gamete undergoing terminal differentiation." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002081
+name: postsynaptic cell
+def: "A specialized area of membrane facing the presynaptic membrane on the tip of the nerve ending and separated from it by a minute cleft (the synaptic cleft). Neurotransmitters cross the synaptic cleft and transmit the signal to the postsynaptic membrane." []
+synonym: "post-synaptic cell" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002082
+name: premeiotic germ cell
+def: "A diploid germline stem cell or transit amplifying germ cell that has not committed to undergoing meiotic DNA replication, reductive divisions or terminal differentiation." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002083
+name: presynaptic cell
+def: "The part of a synapse that is part of the presynaptic cell." []
+synonym: "pre-synaptic cell" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002084
+name: presynaptic terminal
+def: "Terminal inflated portion of the axon, containing the specialized apparatus necessary to release neurotransmitters. The axon terminus is considered to be the whole region of thickening and the terminal bouton is a specialized region of it." []
+synonym: "pre-synaptic terminal" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002085
+name: presynaptic vesicle
+def: "A secretory organelle, typically 50 nm in diameter, of presynaptic nerve terminals; accumulates in high concentrations of neurotransmitters and secretes these into the synaptic cleft by fusion with the 'active zone' of the presynaptic plasma membrane." []
+synonym: "pre-synaptic vesicle" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002086
+name: primary gut branch
+def: "The largest branch of the triclad intestine. It is comprised of the gastrodermis, a columnar epithelium, surrounded by basal lamina and visceral musculature." [PMID:21664348]
+synonym: "main gut branch" EXACT []
+synonym: "primary intestine branch" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002087
+name: primitive gut
+def: "Four large phagocytic cells associated with the temporary embryonic pharynx." [PMID:28072387]
+synonym: "primitive endoderm" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002088
+name: quarternary gut branch
+def: "Gut branches originating from and connected to the tertiary gut branches." [PMID:21664348]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002089
+name: reproductive organ
+def: "An organ involved in reproduction" []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002090
+name: reproductive structure
+def: "Any anatomical structure that is part of the reproductive system." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002091
+name: rhabdome
+def: "The light sensing structure consisting of photoreceptor neuron dendrites that project into the optic lumen and show close associations with eumelanin-containing pigment cup cells." [PMID:15760337, PMID:16033796, PMID:21852957]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002092
+name: rhabdomere
+def: "The dendritic process of a bipolar photoreceptor neuron that projects into the optic cup lumen and senses light." [PMID:15760337, PMID:16033796, PMID:21852957]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002093
+name: secretory duct
+def: "A tubular structure that transports secreted or excreted substances." []
+synonym: "secretory canal" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002094
+name: secretory granule
+def: "A small subcellular vesicle, surrounded by a membrane, that is formed from the Golgi apparatus and contains a highly concentrated protein destined for secretion. Secretory granules move towards the periphery of the cell and upon stimulation, their membranes fuse with the cell membrane, and their protein load is exteriorized. Processing of the contained protein may take place in secretory granules." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002095
+name: somatic cell
+def: "One of the cells of the body that compose the tissues, organs, and parts of that individual other than the germ cells." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002096
+name: somatic gonadal cell
+def: "A non-germline cell within the ovary or testis." [PMID:27163480;PMID\:27330085]
+synonym: "gonadal niche cell" EXACT []
+synonym: "somatic gonadal niche cell" EXACT []
+synonym: "somatic gonadal support cell" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002097
+name: specialized neoblast
+def: "A presumptive progenitor cell that expresses both pan-neoblast markers and pro-differentiation gene(s), frequently developmental transcription factors, implicated in lineage commitment and tissue-specific differentiation programs." [PMID:23404104]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002098
+name: stalk
+def: "A thin, flexible rod that anchors an egg capsule to a solid substrate." [ISBN:9780070316607]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002099
+name: surgical wound
+def: "NEEDS DEF" []
+is_a: PLANA:0002108 ! wound
+
+[Term]
+id: PLANA:0002100
+name: synapse
+def: "The junction between a nerve fiber of one neuron and another neuron, muscle fiber or glial cell. As the nerve fiber approaches the synapse it enlarges into a specialized structure, the presynaptic nerve ending, which contains mitochondria and synaptic vesicles. At the tip of the nerve ending is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic nerve ending secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane." []
+synonym: "neural synapse" EXACT []
+synonym: "neuronal synapse" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002101
+name: synaptic cleft
+def: "The narrow gap that separates the presynaptic and postsynaptic membranes, into which neurotransmitter is released." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002102
+name: synaptic vesicle
+def: "A secretory organelle, typically 50 nm in diameter, of presynaptic nerve terminals; accumulates in high concentrations of neurotransmitters and secretes these into the synaptic cleft by fusion with the 'active zone' of the presynaptic plasma membrane." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002103
+name: synaptonemal complex
+def: "A proteinaceous scaffold found between homologous chromosomes during meiosis. It consists of 2 lateral elements and a central element, all running parallel to each other. Transverse filaments connect the lateral elements to the central element." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002104
+name: tail tip
+def: "The posterior-medial region of the tail margin." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002105
+name: telomere
+def: "The terminal region of a linear chromosome that includes the telomeric DNA repeats and associated proteins." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002106
+name: tight junction
+def: "A cell-cell junction that seals cells together in an epithelium in a way that prevents even small molecules from leaking from one side of the sheet to the other." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002107
+name: wedge amputation
+def: "NEEDS DEF" []
+is_a: PLANA:0002003 ! amputation
+
+[Term]
+id: PLANA:0002108
+name: wound
+def: "An injury that breaches the epidermis." [injury]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002109
+name: X1 cell
+def: "A sorted cell population enriched for irradiation-sensitive, cycling cells (4n cells, with high levels of Hoescht 33342 staining) with scant cytoplasm (low levels of calcein-AM staining). X1 cells are enriched for cycling neoblasts." [PMID:16872450]
+synonym: "X1" EXACT []
+synonym: "X1 cell population" EXACT []
+synonym: "X1 neoblast" EXACT []
+synonym: "X1 population" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002110
+name: X1(FS) cell
+def: "A heterogeneous sorted cell population of unstained planarian cells with similar size and complexity to irradiation-sensitive, cycling cells contained in the X1 gate. Unlike X1 cells, X1(FS) cells are amenable to cell transplantation." [PMID:21566185]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002111
+name: X2 cell
+def: "A sorted cell population containing irradiation-sensitive and irradiation-insensitive cells, characterized by weak Hoescht 33342 and calcein-AM staining. X2 cell populations contain neoblasts as well as a variety of lineage-dedicated post-mitotic progenitor cells." [PMID:16872450]
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002112
+name: Xins cell
+def: "A sorted cell population of irradiation-insensitive cells that contains a variety of post-mitotic, differentiated cell types." [PMID:16872450]
+synonym: "Xins" EXACT []
+synonym: "Xins cell population" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002113
+name: post-pharyngeal
+def: "Posterior to the pharynx." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002114
+name: post-blastema
+def: "Adjacent to blastema, or proximal to blastema." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002115
+name: pre-pharyngeal
+def: "Anterior to the pharynx." []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002116
+name: fission fragment
+def: "A fragment derived from a spontaneous or induced fission event." []
+synonym: "defined_class" EXACT []
+is_a: BFO:0000001
+
+[Term]
+id: PLANA:0002117
+name: oblique
+def: "Slanting or inclined in direction or course or position; neither parallel nor perpendicular nor right-angular." [NCIT:C73707]
+is_a: FBcv:0000052
+
+[Term]
+id: PLANA:0003000
+name: anterior photoreceptor neuron
+def: "photoreceptor neuron of anterior" []
+synonym: "anterior of photoreceptor neuron" EXACT []
+intersection_of: PLANA:0000017 ! photoreceptor neuron
+intersection_of: RO:0002180 FBcv:0000053
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
 id: PLANA:0004503
 name: sexually mature adult
 namespace: Schmidtea_mediterranea_Developmental_Stages
@@ -4611,7 +5390,7 @@ creation_date: 2017-07-19T21:35:08Z
 id: PLANA:0004511
 name: oral-aboral axis of the embryo
 def: "Axis that runs from the oral pole and to the aboral pole of the spherical embryo (Stage 3 through early Stage 6). The oral pole is centered around the temporary embryonic pharynx; the aboral pole is located opposite the temporary embryonic pharynx." [PMID:28072387]
-synonym: "embryo of oral-aboral axis" EXACT []
+synonym: "oral-aboral axis of embryo" EXACT []
 intersection_of: PLANA:0000116 ! embryo
 intersection_of: RO:0002180 BSPO:0000198
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/oralaboralaxis.png {comment="Depicted by is an illustration noting the oral-aboral axis in cyan double headed arrow. Note it starts at the temporary embryonic pharynx and extends to opposite."}
@@ -4985,7 +5764,7 @@ creation_date: 2017-04-26T19:32:04Z
 id: PLANA:0007503
 name: sagittal plane of the whole animal
 def: "Anatomical plane which divides the body into right and left parts. This plane passes through the midline." []
-synonym: "whole organism of sagittal plane" EXACT []
+synonym: "sagittal plane of whole organism" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000417
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -5152,7 +5931,9 @@ creation_date: 2017-05-04T15:35:23Z
 id: PLANA:0007519
 name: anterior-posterior axis of the whole animal
 def: "Axis that runs along the long axis of the animal from anterior (head) to posterior (tail). It is perpendicular to the dorsoventral axis and as such, it splits dorsal and ventral regions of the animal to either side." []
-synonym: "whole organism of anterior-posterior axis" EXACT []
+synonym: "anterior-posterior axis" EXACT []
+synonym: "anterior-posterior axis of whole organism" EXACT []
+synonym: "main body axis" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000013
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/anteroposterioraxis.png {comment="Depiction shows an asexual with the term annoated in yellow. Scale bar =500um"}
@@ -5161,7 +5942,8 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obol
 id: PLANA:0007520
 name: dorsal-ventral axis of the whole animal
 def: "Axis that runs along the short axis of the animal, perpendicular to the anteroposterior axis, running from the dorsal (back) side of the animal to the ventral (belly) side of the animal. This axis splits anterior and posterior regions of the animal to either side." []
-synonym: "whole organism of dorsal-ventral axis" EXACT []
+synonym: "dorsal-ventral axis" EXACT []
+synonym: "dorsal-ventral axis of whole organism" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000016
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -5170,7 +5952,9 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0007521
 name: dextro-sinister axis of the whole animal
 def: "Axis perpendicular to both the anteroposterior and dorsoventral axis that runs from the left side of the animal, through the medial region (center) and out to the right side." []
-synonym: "whole organism of left-right axis" EXACT []
+synonym: "dextro-sinister axis" EXACT []
+synonym: "left-right axis" EXACT []
+synonym: "left-right axis of whole organism" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000017
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/dextro-sinisteraxis.png {comment="Depiction shows an asexual with the term annoated in yellow. Scale bar =500um"}
@@ -5179,7 +5963,8 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obol
 id: PLANA:0007522
 name: medial-lateral axis of the whole animal
 def: "Axis that runs from the center of the body, starting at the anteroposterior axis and out to the lateral (left, right, dorsal or ventral) surface of the animal." []
-synonym: "whole organism of medial-lateral axis" EXACT []
+synonym: "medial-lateral axis" EXACT []
+synonym: "medial-lateral axis of whole organism" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0001001
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/mediolateralaxis.png {comment="Depiction shows an asexual with the term annoated in yellow. Scale bar =500um"}
@@ -5188,7 +5973,8 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obol
 id: PLANA:0007523
 name: proximal-distal axis of the whole animal
 def: "Axis that starts at the distal part of an appendage, closest to the body, and runs to the proximal part of an appendage, farthest from the body." []
-synonym: "whole organism of proximal-distal axis" EXACT []
+synonym: "proximal-distal axis" EXACT []
+synonym: "proximal-distal axis of whole organism" EXACT []
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000015
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/proximodistalaxis.png {comment="Depicted by shows a planarian pharynx exposed by tricaine treatment. The proximodistal axis is denoted with the double headed magenta arrow."}
@@ -5316,7 +6102,7 @@ name: adhesion gland
 def: "Specialized epithelial cells located along the dorsoventral margin. Adhesion glands are comprised of three cell types, the viscid and releasing gland cells which penetrate through an epithelial anchor cell and terminate at the epithelial surface." [OCLC:16809160\nPMID\:20865784]
 is_a: PLANA:0000037 ! definitive tissue
 relationship: BFO:0000050 PLANA:0000484 ! secretory system
-relationship: RO:0001018 PLANA:0000043 ! dorsoventral margin
+relationship: RO:0001018 PLANA:0000043 ! dorsal ventral margin
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -5338,7 +6124,7 @@ name: anchor cell
 def: "Specialized epithelial cell located along the dorsoventral margin that surrounds the viscid and releasing gland cells." [OCLC:16809160\nPMID\:20865784]
 is_a: PLANA:0000487 ! acidophilic gland cell
 relationship: BFO:0000050 PLANA:0007538 ! adhesion gland
-relationship: RO:0001018 PLANA:0000043 ! dorsoventral margin
+relationship: RO:0001018 PLANA:0000043 ! dorsal ventral margin
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -5360,7 +6146,7 @@ name: viscid gland cell
 def: "A specialized insunk epithelial cell that is part of the adhesion glands which is responsible for production and excretion of the viscid substance allowing adherence to a substrate." [OCLC:16809160\nPMID\:20865784]
 is_a: PLANA:0000487 ! acidophilic gland cell
 relationship: BFO:0000050 PLANA:0007538 ! adhesion gland
-relationship: RO:0001018 PLANA:0000043 ! dorsoventral margin
+relationship: RO:0001018 PLANA:0000043 ! dorsal ventral margin
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -5382,7 +6168,7 @@ name: releasing gland cell
 def: "Specialized insunk epithelial cell that is part of the adhesion gland which is responsible for production of releasing substance." [OCLC:16809160\nPMID\:20865784]
 is_a: PLANA:0000487 ! acidophilic gland cell
 relationship: BFO:0000050 PLANA:0007538 ! adhesion gland
-relationship: RO:0001018 PLANA:0000043 ! dorsoventral margin
+relationship: RO:0001018 PLANA:0000043 ! dorsal ventral margin
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region

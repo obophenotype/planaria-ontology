@@ -15,6 +15,7 @@ Prefix(oboInOwl:=<http://www.geneontology.org/formats/oboInOwl#>)
 
 Ontology(<http://purl.obolibrary.org/obo/plana>
 Import(<http://purl.obolibrary.org/obo/plana/imports/bspo_import.owl>)
+Import(<http://purl.obolibrary.org/obo/plana/imports/fbcv_import.owl>)
 Import(<http://purl.obolibrary.org/obo/plana/imports/go_import.owl>)
 Import(<http://purl.obolibrary.org/obo/plana/imports/iao_import.owl>)
 Import(<http://purl.obolibrary.org/obo/plana/imports/ro_import.owl>)
@@ -578,8 +579,6 @@ AnnotationAssertion(oboInOwl:created_by foaf:depiction "Sofia Robb"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date foaf:depiction "2017-09-11T16:38:22Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id foaf:depiction "depiction"@en)
 
-AnnotationAssertion(obo:IAO_0000115 obo:RO_0002579 "Relation p is the indirect form of relation q iff p is a subPropertyOf q, and there exists some p' such that p' is the direct form of q, p' o p' -> p, and forall x,y : x q y -> either (1) x p y or (2) x p' y")
-AnnotationAssertion(rdfs:label obo:RO_0002579 "is indirect form of"^^xsd:string)
 
 ############################
 #   Object Properties
@@ -1313,11 +1312,8 @@ SubClassOf(obo:PLANA_0000042 ObjectSomeValuesFrom(obo:RO_0002496 obo:PLANA_00000
 
 # Class: obo:PLANA_0000043 (dorsal ventral margin)
 
-AnnotationAssertion(obo:IAO_0000115 obo:PLANA_0000043 "Region along the edge of the animal where the dorsal and ventral surfaces meet."^^xsd:string)
-AnnotationAssertion(oboInOwl:hasBroadSynonym obo:PLANA_0000043 "edge"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:PLANA_0000043 "Planarian_Anatomy"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:PLANA_0000043 "PLANA:0000043"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:PLANA_0000043 "dorsoventral margin"^^xsd:string)
 AnnotationAssertion(rdfs:seeAlso obo:PLANA_0000043 "https://planosphere.stowers.org/ontology/PLANA_0000043")
 SubClassOf(obo:PLANA_0000043 obo:PLANA_0000102)
 SubClassOf(obo:PLANA_0000043 ObjectSomeValuesFrom(obo:RO_0002490 obo:PLANA_0000214))
@@ -6821,4 +6817,6 @@ SubClassOf(obo:PLANA_0007560 ObjectSomeValuesFrom(obo:RO_0002490 obo:PLANA_00045
 
 EquivalentClasses(ObjectUnionOf(ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000068) ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000092)) ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000104))
 DisjointClasses(ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000068) ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000092))
+AnnotationAssertion(obo:IAO_0000115 obo:RO_0002579 "Relation p is the indirect form of relation q iff p is a subPropertyOf q, and there exists some p' such that p' is the direct form of q, p' o p' -> p, and forall x,y : x q y -> either (1) x p y or (2) x p' y")
+AnnotationAssertion(rdfs:label obo:RO_0002579 "is indirect form of"^^xsd:string)
 )

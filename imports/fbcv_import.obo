@@ -1,0 +1,493 @@
+format-version: 1.2
+data-version: plana/releases/2019-07-26/imports/fbcv_import.owl
+ontology: plana/imports/fbcv_import
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#id>))\n\n\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000003> \"FBdv:00007008\"^^xsd:string)\n)
+
+[Term]
+id: BFO:0000002
+name: continuant
+disjoint_from: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000003
+name: occurrent
+def: "An entity that has temporal parts and that happens, unfolds or develops through time. Sometimes also called perdurants." [BFOC:ANON]
+created_by: djs93
+creation_date: 2009-10-01T05:56:28Z
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: FBcv:0000000
+name: FlyBase CV
+namespace: FlyBase miscellaneous CV
+
+[Term]
+id: FBcv:0000005
+name: qualifier
+namespace: FlyBase miscellaneous CV
+def: "Term used to qualify a descriptor." [FBC:MMC]
+subset: do_not_annotate
+is_a: FBcv:0000000 ! FlyBase CV
+
+[Term]
+id: FBcv:0000038
+name: relative spatial qualifier
+namespace: spatial_qualifier
+subset: do_not_annotate
+xref: PATO:0001631
+is_a: FBcv:0000052 ! spatial qualifier
+
+[Term]
+id: FBcv:0000039
+name: anterior to
+namespace: spatial_qualifier
+xref: PATO:0001632
+is_a: FBcv:0000038 ! relative spatial qualifier
+
+[Term]
+id: FBcv:0000041
+name: dorsal to
+namespace: spatial_qualifier
+xref: PATO:0001233
+is_a: FBcv:0000038 ! relative spatial qualifier
+
+[Term]
+id: FBcv:0000045
+name: posterior to
+namespace: spatial_qualifier
+xref: PATO:0001633
+is_a: FBcv:0000038 ! relative spatial qualifier
+
+[Term]
+id: FBcv:0000049
+name: ventral to
+namespace: spatial_qualifier
+xref: PATO:0001196
+is_a: FBcv:0000038 ! relative spatial qualifier
+
+[Term]
+id: FBcv:0000052
+name: spatial qualifier
+namespace: spatial_qualifier
+def: "Qualifier that describes the spatial characteristics of a phenotype or expression pattern." [FBC:MMC]
+subset: do_not_annotate
+is_a: FBcv:0000005 ! qualifier
+
+[Term]
+id: FBcv:0000053
+name: anterior
+namespace: spatial_qualifier
+def: "Restricted to anterior region of some specified type." [FBC:DS]
+is_a: FBcv:0000052 ! spatial qualifier
+
+[Term]
+id: GO:0000003
+name: reproduction
+namespace: biological_process
+alt_id: GO:0019952
+alt_id: GO:0050876
+def: "The production of new individuals that contain some portion of genetic material inherited from one or more parent organisms." [GOC:go_curators, GOC:isa_complete, GOC:jl, ISBN:0198506732]
+subset: goslim_agr
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "reproductive physiological process" EXACT []
+xref: Wikipedia:Reproduction
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0003006
+name: developmental process involved in reproduction
+namespace: biological_process
+def: "A developmental process in which a progressive change in the state of some part of an organism specifically contributes to its ability to form offspring." [GOC:dph, GOC:isa_complete]
+synonym: "puberty" NARROW [GOC:dph]
+synonym: "reproductive developmental process" RELATED [GOC:dph, GOC:tb]
+is_a: GO:0022414 ! reproductive process
+is_a: GO:0032502 ! developmental process
+
+[Term]
+id: GO:0007275
+name: multicellular organism development
+namespace: biological_process
+def: "The biological process whose specific outcome is the progression of a multicellular organism over time from an initial condition (e.g. a zygote or a young adult) to a later condition (e.g. a multicellular animal or an aged adult)." [GOC:dph, GOC:ems, GOC:isa_complete, GOC:tb]
+comment: Note that this term was 'developmental process'.
+subset: goslim_chembl
+subset: goslim_plant
+is_a: GO:0044707 ! single-multicellular organism process
+is_a: GO:0044767 ! single-organism developmental process
+is_a: GO:0048856 ! anatomical structure development
+
+[Term]
+id: GO:0008150
+name: biological_process
+namespace: biological_process
+alt_id: GO:0000004
+alt_id: GO:0007582
+def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." [GOC:go_curators, GOC:isa_complete]
+comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. Note that when this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code ND, no data, is used to indicate this.
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_plant
+subset: goslim_pombe
+subset: goslim_yeast
+subset: gosubset_prok
+synonym: "biological process" EXACT []
+synonym: "physiological process" EXACT []
+xref: Wikipedia:Biological_process
+
+[Term]
+id: GO:0009653
+name: anatomical structure morphogenesis
+namespace: biological_process
+def: "The process in which anatomical structures are generated and organized. Morphogenesis pertains to the creation of form." [GOC:go_curators, ISBN:0521436125]
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "anatomical structure organization" EXACT []
+synonym: "embryogenesis and morphogenesis" BROAD []
+synonym: "morphogenesis" EXACT []
+xref: Wikipedia:Morphogenesis
+is_a: BFO:0000003 ! occurrent
+is_a: GO:0032502 ! developmental process
+relationship: part_of GO:0048856 ! anatomical structure development
+
+[Term]
+id: GO:0009888
+name: tissue development
+namespace: biological_process
+def: "The process whose specific outcome is the progression of a tissue over time, from its formation to the mature structure." [ISBN:0471245208]
+synonym: "histogenesis" EXACT []
+synonym: "histogenesis and organogenesis" BROAD []
+xref: Wikipedia:Histogenesis
+is_a: GO:0048856 ! anatomical structure development
+
+[Term]
+id: GO:0009987
+name: cellular process
+namespace: biological_process
+alt_id: GO:0008151
+alt_id: GO:0050875
+def: "Any process that is carried out at the cellular level, but not necessarily restricted to a single cell. For example, cell communication occurs among more than one cell, but occurs at the cellular level." [GOC:go_curators, GOC:isa_complete]
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "cell growth and/or maintenance" NARROW []
+synonym: "cell physiology" EXACT []
+synonym: "cellular physiological process" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0019953
+name: sexual reproduction
+namespace: biological_process
+def: "A reproduction process that creates a new organism by combining the genetic material of two organisms. It occurs both in eukaryotes and prokaryotes: in multicellular eukaryotic organisms, an individual is created anew; in prokaryotes, the initial cell has additional or transformed genetic material. In a process called genetic recombination, genetic material (DNA) originating from two different individuals (parents) join up so that homologous sequences are aligned with each other, and this is followed by exchange of genetic information. After the new recombinant chromosome is formed, it is passed on to progeny." [GOC:jl, http://en.wikipedia.org/wiki/Sexual_reproduction, ISBN:0387520546]
+comment: Sexual reproduction may be seen as the regular alternation, in the life cycle of haplontic, diplontic and diplohaplontic organisms, of meiosis and fertilization which provides for the production offspring. In diplontic organisms there is a life cycle in which the products of meiosis behave directly as gametes, fusing to form a zygote from which the diploid, or sexually reproductive polyploid, adult organism will develop. In diplohaplontic organisms a haploid phase (gametophyte) exists in the life cycle between meiosis and fertilization (e.g. higher plants, many algae and Fungi); the products of meiosis are spores that develop as haploid individuals from which haploid gametes develop to form a diploid zygote; diplohaplontic organisms show an alternation of haploid and diploid generations. In haplontic organisms meiosis occurs in the zygote, giving rise to four haploid cells (e.g. many algae and protozoa), only the zygote is diploid and this may form a resistant spore, tiding organisms over hard times.
+xref: Wikipedia:Sexual_reproduction
+is_a: GO:0000003 ! reproduction
+is_a: GO:0044703 ! multi-organism reproductive process
+
+[Term]
+id: GO:0022414
+name: reproductive process
+namespace: biological_process
+def: "A biological process that directly contributes to the process of producing new individuals by one or two organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." [GOC:dph, GOC:isa_complete]
+subset: gosubset_prok
+is_a: BFO:0000003 ! occurrent
+is_a: GO:0008150 ! biological_process
+relationship: part_of GO:0000003 ! reproduction
+
+[Term]
+id: GO:0032501
+name: multicellular organismal process
+namespace: biological_process
+alt_id: GO:0050874
+def: "Any biological process, occurring at the level of a multicellular organism, pertinent to its function." [GOC:curators, GOC:dph, GOC:isa_complete, GOC:tb]
+subset: goslim_pir
+synonym: "organismal physiological process" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0032502
+name: developmental process
+namespace: biological_process
+def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition." [GOC:isa_complete]
+subset: goslim_agr
+subset: goslim_aspergillus
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "development" NARROW []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0032504
+name: multicellular organism reproduction
+namespace: biological_process
+def: "The biological process in which new individuals are produced by one or two multicellular organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." [GOC:isa_complete, GOC:jid]
+is_a: GO:0000003 ! reproduction
+is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0044699
+name: single-organism process
+namespace: biological_process
+def: "A biological process that involves only one organism." [GOC:jl]
+synonym: "single organism process" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0044703
+name: multi-organism reproductive process
+namespace: biological_process
+def: "A biological process that directly contributes to the process of producing new individuals, involving another organism." [GOC:jl]
+is_a: GO:0022414 ! reproductive process
+is_a: GO:0051704 ! multi-organism process
+
+[Term]
+id: GO:0044707
+name: single-multicellular organism process
+namespace: biological_process
+def: "A biological process occurring within a single, multicellular organism." [GOC:jl]
+is_a: GO:0032501 ! multicellular organismal process
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0044763
+name: single-organism cellular process
+namespace: biological_process
+def: "Any process that is carried out at the cellular level, occurring within a single organism." [GOC:jl]
+is_a: GO:0009987 ! cellular process
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0044767
+name: single-organism developmental process
+namespace: biological_process
+def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition, involving only one organism." [GOC:jl]
+is_a: GO:0032502 ! developmental process
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0048609
+name: multicellular organismal reproductive process
+namespace: biological_process
+def: "The process, occurring above the cellular level, that is pertinent to the reproductive function of a multicellular organism. This includes the integrated processes at the level of tissues and organs." [GOC:dph, GOC:jid, GOC:tb]
+synonym: "organismal reproductive process" BROAD [GOC:curators]
+synonym: "reproductive process in a multicellular organism" EXACT [GOC:curators]
+is_a: GO:0022414 ! reproductive process
+relationship: part_of GO:0032504 ! multicellular organism reproduction
+
+[Term]
+id: GO:0048856
+name: anatomical structure development
+namespace: biological_process
+def: "The biological process whose specific outcome is the progression of an anatomical structure from an initial condition to its mature state. This process begins with the formation of the structure and ends with the mature structure, whatever form that may be including its natural destruction. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." [GO_REF:0000021, GOC:mtg_15jun06]
+comment: This term was added by GO_REF:0000021.
+subset: goslim_chembl
+subset: goslim_generic
+synonym: "development of an anatomical structure" EXACT []
+is_a: GO:0032502 ! developmental process
+
+[Term]
+id: GO:0051301
+name: cell division
+namespace: biological_process
+def: "The process resulting in division and partitioning of components of a cell to form more cells; may or may not be accompanied by the physical separation of a cell into distinct, individually membrane-bounded daughter cells." [GOC:di, GOC:go_curators, GOC:pr]
+comment: Note that this term differs from 'cytokinesis ; GO:0000910' in that cytokinesis does not include nuclear division.
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_pir
+subset: gosubset_prok
+xref: Wikipedia:Cell_division
+is_a: GO:0044763 ! single-organism cellular process
+
+[Term]
+id: GO:0051704
+name: multi-organism process
+namespace: biological_process
+alt_id: GO:0051706
+def: "A biological process which involves another organism of the same or different species." [GOC:jl]
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "interaction between organisms" EXACT []
+synonym: "physiological interaction between organisms" EXACT []
+synonym: "physiological interaction with other organism" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Typedef]
+id: BFO:0000060
+name: precedes
+comment: X precedes Y iff: end(X) before_or_simultaneous_with start(Y)
+synonym: "ends_before" EXACT []
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: ends_during BFO:0000060
+holds_over_chain: happens_during BFO:0000060
+is_transitive: true
+is_a: RO:0002089 ! starts_before
+inverse_of: preceded_by ! preceded_by
+
+[Typedef]
+id: RO:0002084
+name: during_which_ends
+comment: Perviously used http://purl.obolibrary.org/obo/RO_0002122 - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.
+inverse_of: ends_during ! ends_during
+
+[Typedef]
+id: RO:0002085
+name: encompasses
+comment: Previously had ID  http://purl.obolibrary.org/obo/RO_0002124 in test files in sandpit - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.  Official ID now chosen from DOS ID range.
+is_transitive: true
+is_a: RO:0002084 ! during_which_ends
+is_a: RO:0002088 ! during_which_starts
+inverse_of: happens_during ! happens_during
+
+[Typedef]
+id: RO:0002086
+name: ends_after
+comment: X ends_after Y iff: end(Y) before_or_simultaneous_with end(X)
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: ends_during preceded_by
+is_transitive: true
+
+[Typedef]
+id: RO:0002088
+name: during_which_starts
+comment: Previously had ID  http://purl.obolibrary.org/obo/RO_0002123 in test files in sandpit - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.  Official ID now chosen from DOS ID range.
+inverse_of: starts_during ! starts_during
+
+[Typedef]
+id: RO:0002089
+name: starts_before
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: starts_during BFO:0000060
+is_transitive: true
+
+[Typedef]
+id: ends_at_start_of
+name: immediately_precedes
+comment: X immediately_precedes_Y iff: end(X) simultaneous_with start(Y)
+synonym: "ends_at_start_of" EXACT []
+xref: RO:0002090
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+is_a: BFO:0000060 ! precedes
+
+[Typedef]
+id: ends_during
+name: ends_during
+namespace: gene_ontology
+comment: X ends_during Y iff: ((start(Y) before_or_simultaneous_with end(X)) AND end(X) before_or_simultaneous_with end(Y). This relation will be used after 2013-05-21.
+xref: RO:0002093
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+
+[Typedef]
+id: happens_during
+name: happens_during
+namespace: gene_ontology
+comment: X happens_during Y iff: (start(Y) before_or_simultaneous_with start(X)) AND (end(X) before_or_simultaneous_with end(Y)). This relation will be used after 2013-05-21.
+xref: RO:0002092
+is_transitive: true
+is_a: ends_during ! ends_during
+is_a: starts_during ! starts_during
+
+[Typedef]
+id: has_part
+name: has_part
+namespace: relationship
+xref: BFO:0000051
+xref: OBO_REL:has_part
+is_transitive: true
+
+[Typedef]
+id: negatively_regulates
+name: negatively regulates
+namespace: external
+xref: RO:0002212
+is_a: regulates ! regulates
+transitive_over: part_of ! part_of
+
+[Typedef]
+id: occurs_in
+name: occurs in
+namespace: gene_ontology
+xref: BFO:0000066
+transitive_over: part_of ! part_of
+
+[Typedef]
+id: part_of
+name: part_of
+namespace: external
+namespace: relationship
+synonym: "part_of" EXACT []
+xref: BFO:0000050
+xref: OBO_REL:part_of
+is_transitive: true
+is_a: happens_during ! happens_during
+
+[Typedef]
+id: positively_regulates
+name: positively regulates
+namespace: external
+xref: RO:0002213
+holds_over_chain: negatively_regulates negatively_regulates
+is_a: regulates ! regulates
+transitive_over: part_of ! part_of
+
+[Typedef]
+id: preceded_by
+name: preceded_by
+comment: X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)
+synonym: "proceeds" EXACT []
+synonym: "starts_after" EXACT []
+xref: BFO:0000062
+xref: OBO_REL:preceded_by
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: happens_during preceded_by
+holds_over_chain: starts_during preceded_by
+is_transitive: true
+is_a: RO:0002086 ! ends_after
+created_by: djs93
+creation_date: 2009-10-09T10:00:53Z
+
+[Typedef]
+id: regulates
+name: regulates
+namespace: external
+namespace: gene_ontology
+xref: RO:0002211
+is_transitive: true
+transitive_over: part_of ! part_of
+
+[Typedef]
+id: starts_at_end_of
+name: immediately_preceded_by
+comment: X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)
+synonym: "starts_at_end_of" EXACT []
+xref: RO:0002087
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+is_a: preceded_by ! preceded_by
+inverse_of: ends_at_start_of ! immediately_precedes
+
+[Typedef]
+id: starts_during
+name: starts_during
+namespace: gene_ontology
+comment: X starts_during Y iff: (start(Y) before_or_simultaneous_with start(X)) AND (start(X) before_or_simultaneous_with end(Y)). This relations will be used after 2013-05-21.
+xref: RO:0002091
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+
