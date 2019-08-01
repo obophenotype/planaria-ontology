@@ -10,7 +10,7 @@
 ASSETS += $(ONT).csv
 
 $(ONT).csv: 
-	$(ROBOT) query -use-graphs true -f csv -i $(SRC) --query ../sparql/plana_terms.sparql $@ && perl -pi -e 's/\r//' $@
+	$(ROBOT) query -use-graphs true -f csv -i $(ONT).owl --query ../sparql/plana_terms.sparql $@ && perl -pi -e 's/\r//' $@ && cp $@ ../..
 
 
 imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
