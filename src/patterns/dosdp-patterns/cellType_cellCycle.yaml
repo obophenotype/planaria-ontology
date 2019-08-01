@@ -1,16 +1,16 @@
-pattern_name: cellTypes.yaml 
+pattern_name: cellType_cellCycle.yaml 
 pattern_iri: https://tobedetermined 
-description: "anatomical entity cell type"
+description: "cell type and cell cycle phase"
 
 contributors:
   - https://orcid.org/0000-0002-3528-5267
 
 classes:
-  anatomical entity: UBERON:0001062
-  cell: PLANA:0000499
+  cell_type_entity: PLANA:0000499
+  cell_cycle_phase: GO:0022403
 
 relations:
-  part of: BFO_0000050
+  contains process: BFO:0000067
 
   
 annotationProperties:
@@ -20,8 +20,8 @@ annotationProperties:
   term_id: oboInOwl:id
 
 vars:
-  anatomical_entity: "'anatomical entity'"
-  cell: "'cell'"
+  cell_type_entity: "'cell_type_entity'"
+  cell_cycle_phase: "'cell_cycle_phase'"
   depicted_by: "'depicted_by'"
   image_comment: "'image_comment'"
 
@@ -35,8 +35,8 @@ data_vars:
 name:
   text: "%s %s"
   vars:
-   - anatomical_entity
-   - cell
+   - cell_cycle_phase
+   - cell_type_entity
 
 annotations:
 
@@ -57,14 +57,14 @@ exact_synonym:
     value: exact_syn
   
 def:
-  text: "%s which is part of the %s"
+  text: "%s undergoing %s"
   vars:
-    - cell
-    - anatomical_entity
+    - cell_type_entity
+    - cell_cycle_phase
   xrefs: def_dbxref
 
-subclass:
-  text: "%s 'part of' some %s"
+subClassOf:
+  text: "%s and ('contains process' some %s)"
   vars:
-    - anatomical_entity
-    - cell
+    - cell_type_entity
+    - cell_cycle_phase

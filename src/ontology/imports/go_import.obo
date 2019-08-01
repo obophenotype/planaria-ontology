@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-07-26/imports/go_import.owl
+data-version: plana/releases/2019-08-01/imports/go_import.owl
 ontology: plana/imports/go_import
 
 [Term]
@@ -18,6 +18,198 @@ subset: goslim_plant
 synonym: "reproductive physiological process" EXACT []
 xref: Wikipedia:Reproduction
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
+
+[Term]
+id: GO:0000080
+name: mitotic G1 phase
+namespace: biological_process
+def: "The cell cycle 'gap' phase which is the interval between the completion of DNA segregation by mitosis and the beginning of DNA synthesis." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "G1 phase of mitotic cell cycle" EXACT []
+xref: MIPS_funcat:10.03.01.01.01
+is_a: GO:0051318 ! G1 phase
+relationship: part_of GO:0051329 ! mitotic interphase
+
+[Term]
+id: GO:0000084
+name: mitotic S phase
+namespace: biological_process
+def: "The cell cycle phase, following G1, during which DNA synthesis takes place as part of a mitotic cell cycle." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "S phase of mitotic cell cycle" EXACT []
+synonym: "S-phase of mitotic cell cycle" EXACT []
+xref: MIPS_funcat:10.03.01.01.05
+is_a: GO:0051320 ! S phase
+relationship: part_of GO:0051329 ! mitotic interphase
+
+[Term]
+id: GO:0000085
+name: mitotic G2 phase
+namespace: biological_process
+def: "The cell cycle 'gap' phase which is the interval between the completion of DNA synthesis and the beginning of DNA segregation by mitosis." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "G2 phase of mitotic cell cycle" EXACT []
+xref: MIPS_funcat:10.03.01.01.07
+is_a: GO:0051319 ! G2 phase
+relationship: part_of GO:0051329 ! mitotic interphase
+
+[Term]
+id: GO:0000087
+name: mitotic M phase
+namespace: biological_process
+def: "A cell cycle phase during which nuclear division occurs, and which is comprises the phases: prophase, metaphase, anaphase and telophase and occurs as part of a mitotic cell cycle." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "M phase of mitotic cell cycle" EXACT []
+synonym: "M-phase of mitotic cell cycle" EXACT []
+is_a: GO:0000279 ! M phase
+is_a: GO:0098763 ! mitotic cell cycle phase
+intersection_of: GO:0000279 ! M phase
+intersection_of: happens_during GO:0000278 ! mitotic cell cycle
+
+[Term]
+id: GO:0000088
+name: mitotic prophase
+namespace: biological_process
+def: "The cell cycle phase which is the first stage of M phase of mitosis and during which chromosomes condense and the two daughter centrioles and their asters migrate toward the poles of the cell." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051324 ! prophase
+relationship: part_of GO:0000087 ! mitotic M phase
+
+[Term]
+id: GO:0000089
+name: mitotic metaphase
+namespace: biological_process
+def: "The cell cycle phase, following prophase, during which chromosomes become aligned on the equatorial plate of the cell as part of a mitotic cell cycle." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051323 ! metaphase
+relationship: part_of GO:0000087 ! mitotic M phase
+
+[Term]
+id: GO:0000090
+name: mitotic anaphase
+namespace: biological_process
+def: "The cell cycle phase during which chromosomes separate and migrate towards the poles of the spindle the as part of a mitotic cell cycle." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051322 ! anaphase
+relationship: part_of GO:0000087 ! mitotic M phase
+
+[Term]
+id: GO:0000093
+name: mitotic telophase
+namespace: biological_process
+def: "The cell cycle phase which follows anaphase during M phase of mitosis and during which the chromosomes arrive at the poles of the cell and the division of the cytoplasm starts." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051326 ! telophase
+relationship: part_of GO:0000087 ! mitotic M phase
+
+[Term]
+id: GO:0000237
+name: leptotene
+namespace: biological_process
+def: "The cell cycle phase which is the first stage of prophase I in meiosis, and during which the chromosomes first become visible." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:Leptotene
+xref: Wikipedia:Meiosis#Leptotene
+is_a: GO:0098764 ! meiosis I cell cycle phase
+relationship: part_of GO:0007128 ! meiotic prophase I
+
+[Term]
+id: GO:0000238
+name: zygotene
+namespace: biological_process
+def: "The cell cycle phase which follows leptotene during prophase I of meiosis, and during which each chromosome pairs with its homolog; the two become aligned and crossing over may occur." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:Meiosis#Zygotene
+xref: Wikipedia:Zygotene
+is_a: GO:0098764 ! meiosis I cell cycle phase
+relationship: part_of GO:0007128 ! meiotic prophase I
+
+[Term]
+id: GO:0000239
+name: pachytene
+namespace: biological_process
+def: "The cell cycle phase which follows zygotene during prophase I of meiosis, and during which crossing over occurs between a chromatid in one partner and another chromatid in the homologous chromosome." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:Meiosis#Pachytene
+xref: Wikipedia:Pachytene
+is_a: GO:0098764 ! meiosis I cell cycle phase
+relationship: part_of GO:0007128 ! meiotic prophase I
+
+[Term]
+id: GO:0000240
+name: diplotene
+namespace: biological_process
+def: "The cell cycle phase which follows pachytene during prophase I of meiosis, during which the homologous chromosomes begin to separate and the synaptonemal complex dissolves." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:Diplotene
+xref: Wikipedia:Meiosis#Diplotene
+is_a: GO:0098764 ! meiosis I cell cycle phase
+relationship: part_of GO:0007128 ! meiotic prophase I
+
+[Term]
+id: GO:0000241
+name: diakinesis
+namespace: biological_process
+def: "The cell cycle phase which follows diplotene during prophase I of meiosis, the separation of homologous chromosomes is complete and crossing over has occurred." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:Diakinesis
+xref: Wikipedia:Meiosis#Diakinesis
+is_a: GO:0098764 ! meiosis I cell cycle phase
+relationship: part_of GO:0007128 ! meiotic prophase I
+
+[Term]
+id: GO:0000278
+name: mitotic cell cycle
+namespace: biological_process
+alt_id: GO:0007067
+def: "Progression through the phases of the mitotic cell cycle, the most common eukaryotic cell cycle, which canonically comprises four successive phases called G1, S, G2, and M and includes replication of the genome and the subsequent segregation of chromosomes into daughter cells. In some variant cell cycles nuclear replication or nuclear division may not be followed by cell division, or G1 and G2 phases may be absent." [GOC:mah, ISBN:0815316194, Reactome:69278]
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_yeast
+synonym: "mitosis" RELATED []
+xref: MIPS_funcat:10.03.01
+xref: MIPS_funcat:10.03.01.01
+xref: Wikipedia:Mitosis
+is_a: GO:0007049 ! cell cycle
+intersection_of: GO:0007049 ! cell cycle
+intersection_of: has_part GO:0140014 ! mitotic nuclear division
+relationship: has_part GO:0140014 ! mitotic nuclear division
+
+[Term]
+id: GO:0000279
+name: M phase
+namespace: biological_process
+def: "A cell cycle phase during which nuclear division occurs, and which is comprises the phases: prophase, metaphase, anaphase and telophase." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "M-phase" EXACT []
+xref: Wikipedia:M_phase
+is_a: GO:0022403 ! cell cycle phase
+
+[Term]
+id: GO:0000280
+name: nuclear division
+namespace: biological_process
+def: "The division of a cell nucleus into two nuclei, with DNA and other nuclear contents distributed between the daughter nuclei." [GOC:mah]
+subset: goslim_pir
+synonym: "karyokinesis" RELATED []
+xref: MIPS_funcat:10.03.04
+xref: MIPS_funcat:10.03.04.07
+is_a: GO:0048285 ! organelle fission
 
 [Term]
 id: GO:0003006
@@ -133,6 +325,136 @@ xref: MIPS_funcat:01.04
 is_a: GO:0006793 ! phosphorus metabolic process
 
 [Term]
+id: GO:0006996
+name: organelle organization
+namespace: biological_process
+alt_id: GO:1902589
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of an organelle within a cell. An organelle is an organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." [GOC:mah]
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_pir
+synonym: "organelle organisation" EXACT [GOC:curators]
+synonym: "organelle organization and biogenesis" RELATED [GOC:dph, GOC:jl, GOC:mah]
+synonym: "single organism organelle organization" EXACT [GOC:TermGenie]
+synonym: "single-organism organelle organization" RELATED []
+is_a: GO:0016043 ! cellular component organization
+created_by: jl
+creation_date: 2013-12-19T15:25:51Z
+
+[Term]
+id: GO:0007049
+name: cell cycle
+namespace: biological_process
+def: "The progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events. Canonically, the cell cycle comprises the replication and segregation of genetic material followed by the division of the cell, but in endocycles or syncytial cells nuclear replication or nuclear division may not be followed by cell division." [GOC:go_curators, GOC:mtg_cell_cycle]
+subset: gocheck_do_not_manually_annotate
+subset: goslim_agr
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_chembl
+subset: goslim_flybase_ribbon
+subset: goslim_generic
+subset: goslim_pir
+subset: goslim_plant
+synonym: "cell-division cycle" EXACT []
+xref: MIPS_funcat:10
+xref: MIPS_funcat:10.03
+xref: Wikipedia:Cell_cycle
+is_a: GO:0009987 ! cellular process
+
+[Term]
+id: GO:0007088
+name: regulation of mitotic nuclear division
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of mitosis." [GOC:go_curators]
+synonym: "regulation of mitosis" EXACT []
+is_a: GO:0007346 ! regulation of mitotic cell cycle
+is_a: GO:0010564 ! regulation of cell cycle process
+is_a: GO:0051783 ! regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0140014 ! mitotic nuclear division
+relationship: regulates GO:0140014 ! mitotic nuclear division
+
+[Term]
+id: GO:0007128
+name: meiotic prophase I
+namespace: biological_process
+def: "The cell cycle phase which is the first stage of meiosis I and during which chromosomes condense and the two daughter centrioles and their asters migrate toward the poles of the cell." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051324 ! prophase
+is_a: GO:0098764 ! meiosis I cell cycle phase
+
+[Term]
+id: GO:0007132
+name: meiotic metaphase I
+namespace: biological_process
+def: "The cell cycle phase, following prophase I, during which chromosomes become aligned on the equatorial plate of the cell as part of meiosis I." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051323 ! metaphase
+is_a: GO:0098764 ! meiosis I cell cycle phase
+
+[Term]
+id: GO:0007133
+name: meiotic anaphase I
+namespace: biological_process
+def: "The cell cycle phase during which chromosomes separate and migrate towards the poles of the spindle the as part of meiosis I." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051322 ! anaphase
+is_a: GO:0098764 ! meiosis I cell cycle phase
+
+[Term]
+id: GO:0007134
+name: meiotic telophase I
+namespace: biological_process
+def: "The cell cycle phase which follows anaphase I of meiosis and during which the chromosomes arrive at the poles of the cell and the division of the cytoplasm starts." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051326 ! telophase
+is_a: GO:0098764 ! meiosis I cell cycle phase
+
+[Term]
+id: GO:0007136
+name: meiotic prophase II
+namespace: biological_process
+def: "The cell cycle phase which is the first stage of meiosis II and during which chromosomes condense and the two daughter centrioles and their asters migrate toward the poles of the cell." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051324 ! prophase
+is_a: GO:0098765 ! meiosis II cell cycle phase
+
+[Term]
+id: GO:0007137
+name: meiotic metaphase II
+namespace: biological_process
+def: "The cell cycle phase, following prophase II, during which chromosomes become aligned on the equatorial plate of the cell as part of meiosis II." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051323 ! metaphase
+is_a: GO:0098765 ! meiosis II cell cycle phase
+
+[Term]
+id: GO:0007138
+name: meiotic anaphase II
+namespace: biological_process
+def: "The cell cycle phase during which chromosomes separate and migrate towards the poles of the spindle the as part of meiosis II." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051322 ! anaphase
+is_a: GO:0098765 ! meiosis II cell cycle phase
+
+[Term]
+id: GO:0007139
+name: meiotic telophase II
+namespace: biological_process
+def: "The cell cycle phase which follows anaphase II of meiosis and during which the chromosomes arrive at the poles of the cell and the division of the cytoplasm starts." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0051326 ! telophase
+is_a: GO:0098765 ! meiosis II cell cycle phase
+
+[Term]
 id: GO:0007154
 name: cell communication
 namespace: biological_process
@@ -190,6 +512,22 @@ xref: MIPS_funcat:41.05.01
 is_a: GO:0009566 ! fertilization
 
 [Term]
+id: GO:0007346
+name: regulation of mitotic cell cycle
+namespace: biological_process
+def: "Any process that modulates the rate or extent of progress through the mitotic cell cycle." [GOC:dph, GOC:go_curators, GOC:tb]
+synonym: "mitotic cell cycle modulation" EXACT []
+synonym: "mitotic cell cycle regulation" EXACT []
+synonym: "mitotic cell cycle regulator" RELATED []
+synonym: "modulation of mitotic cell cycle progression" EXACT []
+synonym: "regulation of mitotic cell cycle progression" EXACT []
+synonym: "regulation of progression through mitotic cell cycle" EXACT [GOC:dph, GOC:tb]
+is_a: GO:0051726 ! regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0000278 ! mitotic cell cycle
+relationship: regulates GO:0000278 ! mitotic cell cycle
+
+[Term]
 id: GO:0008150
 name: biological_process
 namespace: biological_process
@@ -236,6 +574,7 @@ synonym: "single-organism metabolic process" RELATED []
 xref: MIPS_funcat:01
 xref: Wikipedia:Metabolism
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 created_by: janelomax
 creation_date: 2012-10-17T15:46:40Z
 
@@ -399,8 +738,21 @@ synonym: "cell physiology" EXACT []
 synonym: "cellular physiological process" EXACT []
 synonym: "single-organism cellular process" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 created_by: janelomax
 creation_date: 2012-12-11T16:56:55Z
+
+[Term]
+id: GO:0010469
+name: regulation of signaling receptor activity
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of a signaling receptor activity. Receptor activity is when a molecule combines with an extracellular or intracellular messenger to initiate a change in cell activity." [GOC:dph, GOC:tb]
+synonym: "regulation of receptor activity" BROAD []
+is_a: GO:0009966 ! regulation of signal transduction
+is_a: GO:0065009 ! regulation of molecular function
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0038023 ! signaling receptor activity
+relationship: regulates GO:0038023 ! signaling receptor activity
 
 [Term]
 id: GO:0010562
@@ -423,6 +775,42 @@ is_a: GO:0051174 ! regulation of phosphorus metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0006793 ! phosphorus metabolic process
 relationship: negatively_regulates GO:0006793 ! phosphorus metabolic process
+
+[Term]
+id: GO:0010564
+name: regulation of cell cycle process
+namespace: biological_process
+def: "Any process that modulates a cellular process that is involved in the progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events." [GOC:dph, GOC:tb]
+is_a: GO:0051726 ! regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0022402 ! cell cycle process
+relationship: regulates GO:0022402 ! cell cycle process
+
+[Term]
+id: GO:0010638
+name: positive regulation of organelle organization
+namespace: biological_process
+def: "Any process that increases the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of an organelle." [GOC:dph, GOC:tb]
+synonym: "positive regulation of organelle organisation" EXACT [GOC:mah]
+synonym: "positive regulation of organelle organization and biogenesis" RELATED [GOC:mah]
+is_a: GO:0033043 ! regulation of organelle organization
+is_a: GO:0051130 ! positive regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0006996 ! organelle organization
+relationship: positively_regulates GO:0006996 ! organelle organization
+
+[Term]
+id: GO:0010639
+name: negative regulation of organelle organization
+namespace: biological_process
+def: "Any process that decreases the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of an organelle." [GOC:dph, GOC:tb]
+synonym: "negative regulation of organelle organisation" EXACT [GOC:mah]
+synonym: "negative regulation of organelle organization and biogenesis" RELATED [GOC:mah]
+is_a: GO:0033043 ! regulation of organelle organization
+is_a: GO:0051129 ! negative regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0006996 ! organelle organization
+relationship: negatively_regulates GO:0006996 ! organelle organization
 
 [Term]
 id: GO:0010646
@@ -455,6 +843,40 @@ is_a: GO:0048523 ! negative regulation of cellular process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0007154 ! cell communication
 relationship: negatively_regulates GO:0007154 ! cell communication
+
+[Term]
+id: GO:0010948
+name: negative regulation of cell cycle process
+namespace: biological_process
+def: "Any process that decreases the rate, frequency or extent of a cellular process that is involved in the progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events." [GOC:dph, GOC:tb]
+is_a: GO:0010564 ! regulation of cell cycle process
+is_a: GO:0045786 ! negative regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0022402 ! cell cycle process
+relationship: negatively_regulates GO:0022402 ! cell cycle process
+created_by: tanyaberardini
+creation_date: 2009-04-27T09:53:22Z
+
+[Term]
+id: GO:0016043
+name: cellular component organization
+namespace: biological_process
+alt_id: GO:0044235
+alt_id: GO:0071842
+def: "A process that results in the assembly, arrangement of constituent parts, or disassembly of a cellular component." [GOC:ai, GOC:jl, GOC:mah]
+subset: goslim_agr
+subset: goslim_mouse
+subset: goslim_pir
+subset: goslim_plant
+synonym: "cell organisation" EXACT []
+synonym: "cell organization and biogenesis" RELATED [GOC:mah]
+synonym: "cellular component organisation at cellular level" EXACT [GOC:mah]
+synonym: "cellular component organisation in other organism" EXACT [GOC:mah]
+synonym: "cellular component organization at cellular level" EXACT []
+synonym: "cellular component organization in other organism" EXACT []
+xref: MIPS_funcat:42
+is_a: GO:0009987 ! cellular process
+is_a: GO:0071840 ! cellular component organization or biogenesis
 
 [Term]
 id: GO:0016301
@@ -552,6 +974,25 @@ is_a: GO:0000003 ! reproduction
 is_a: GO:0044703 ! multi-organism reproductive process
 
 [Term]
+id: GO:0022402
+name: cell cycle process
+namespace: biological_process
+def: "The cellular process that ensures successive accurate and complete genome replication and chromosome segregation." [GOC:isa_complete, GOC:mtg_cell_cycle]
+subset: gocheck_do_not_annotate
+is_a: GO:0009987 ! cellular process
+intersection_of: GO:0009987 ! cellular process
+intersection_of: part_of GO:0007049 ! cell cycle
+relationship: part_of GO:0007049 ! cell cycle
+
+[Term]
+id: GO:0022403
+name: cell cycle phase
+namespace: biological_process
+def: "One of the distinct periods or stages into which the cell cycle is divided. Each phase is characterized by the occurrence of specific biochemical and morphological events." [GOC:mtg_cell_cycle]
+subset: gocheck_do_not_annotate
+is_a: GO:0044848 ! biological phase
+
+[Term]
 id: GO:0022412
 name: cellular process involved in reproduction in multicellular organism
 namespace: biological_process
@@ -573,6 +1014,7 @@ synonym: "single organism reproductive process" RELATED []
 is_a: GO:0008150 ! biological_process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: part_of GO:0000003 ! reproduction
+disjoint_from: GO:0044848 ! biological phase
 relationship: part_of GO:0000003 ! reproduction
 created_by: janelomax
 creation_date: 2012-09-19T15:56:06Z
@@ -620,6 +1062,7 @@ synonym: "signalling" EXACT []
 synonym: "signalling process" RELATED [GOC:mah]
 synonym: "single organism signaling" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 created_by: janelomax
 creation_date: 2010-02-16T09:30:50Z
 
@@ -756,6 +1199,7 @@ subset: goslim_pir
 synonym: "organismal physiological process" EXACT []
 synonym: "single-multicellular organism process" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 created_by: janelomax
 creation_date: 2012-09-19T16:07:47Z
 
@@ -772,6 +1216,7 @@ subset: goslim_pir
 synonym: "development" NARROW []
 synonym: "single-organism developmental process" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 created_by: janelomax
 creation_date: 2012-12-19T12:21:31Z
 
@@ -782,6 +1227,19 @@ namespace: biological_process
 def: "The biological process in which new individuals are produced by one or two multicellular organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." [GOC:isa_complete, GOC:jid]
 is_a: GO:0000003 ! reproduction
 is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0033043
+name: regulation of organelle organization
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of an organelle." [GOC:mah]
+subset: goslim_yeast
+synonym: "regulation of organelle organisation" EXACT [GOC:mah]
+synonym: "regulation of organelle organization and biogenesis" RELATED [GOC:mah]
+is_a: GO:0051128 ! regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0006996 ! organelle organization
+relationship: regulates GO:0006996 ! organelle organization
 
 [Term]
 id: GO:0033673
@@ -819,7 +1277,23 @@ relationship: positively_regulates GO:0016301 ! kinase activity
 
 [Term]
 id: GO:0038023
+name: signaling receptor activity
+namespace: molecular_function
 alt_id: GO:0004872
+alt_id: GO:0019041
+def: "Receiving a signal and transmitting it in the cell to initiate a change in cell activity. A signal is a physical entity or change in state that is used to transfer information in order to trigger a response." [GOC:bf, GOC:signaling]
+subset: goslim_agr
+subset: goslim_chembl
+subset: goslim_flybase_ribbon
+subset: goslim_metagenomics
+subset: goslim_mouse
+subset: goslim_pir
+subset: goslim_plant
+synonym: "receptor activity" BROAD []
+synonym: "receptor activity involved in signal transduction" EXACT [GOC:bf]
+is_a: GO:0060089 ! molecular transducer activity
+created_by: rfoulger
+creation_date: 2011-08-01T02:45:27Z
 
 [Term]
 id: GO:0040019
@@ -837,6 +1311,19 @@ is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0009790 ! embryo development
 relationship: positively_regulates GO:0009790 ! embryo development
+
+[Term]
+id: GO:0040020
+name: regulation of meiotic nuclear division
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of meiotic nuclear division, the process in which the nucleus of a diploid cell divides twice forming four haploid cells, one or more of which usually function as gametes." [GOC:ems, GOC:ma]
+synonym: "regulation of meiosis" BROAD [GOC:vw]
+is_a: GO:0010564 ! regulation of cell cycle process
+is_a: GO:0051445 ! regulation of meiotic cell cycle
+is_a: GO:0051783 ! regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0140013 ! meiotic nuclear division
+relationship: regulates GO:0140013 ! meiotic nuclear division
 
 [Term]
 id: GO:0042325
@@ -1035,6 +1522,165 @@ created_by: janelomax
 creation_date: 2012-09-19T15:56:30Z
 
 [Term]
+id: GO:0044848
+name: biological phase
+namespace: biological_process
+def: "A distinct period or stage in a biological process or cycle." [GOC:jl]
+comment: Note that phases are is_a disjoint from other biological processes. happens_during relationships can operate between phases and other biological processes e.g. DNA replication happens_during S phase.
+subset: gocheck_do_not_manually_annotate
+is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0050896 ! response to stimulus
+disjoint_from: GO:0051704 ! multi-organism process
+disjoint_from: GO:0071840 ! cellular component organization or biogenesis
+created_by: janelomax
+creation_date: 2014-07-16T13:12:40Z
+
+[Term]
+id: GO:0045786
+name: negative regulation of cell cycle
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the rate or extent of progression through the cell cycle." [GOC:dph, GOC:go_curators, GOC:tb]
+synonym: "down regulation of progression through cell cycle" EXACT []
+synonym: "down-regulation of progression through cell cycle" EXACT []
+synonym: "downregulation of progression through cell cycle" EXACT []
+synonym: "inhibition of progression through cell cycle" NARROW []
+synonym: "negative regulation of cell cycle progression" EXACT []
+synonym: "negative regulation of progression through cell cycle" EXACT []
+is_a: GO:0048523 ! negative regulation of cellular process
+is_a: GO:0051726 ! regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0007049 ! cell cycle
+relationship: negatively_regulates GO:0007049 ! cell cycle
+
+[Term]
+id: GO:0045787
+name: positive regulation of cell cycle
+namespace: biological_process
+def: "Any process that activates or increases the rate or extent of progression through the cell cycle." [GOC:go_curators]
+synonym: "activation of progression through cell cycle" NARROW []
+synonym: "positive regulation of cell cycle progression" EXACT []
+synonym: "positive regulation of progression through cell cycle" EXACT [GOC:dph, GOC:tb]
+synonym: "stimulation of progression through cell cycle" NARROW []
+synonym: "up regulation of progression through cell cycle" EXACT []
+synonym: "up-regulation of progression through cell cycle" EXACT []
+synonym: "upregulation of progression through cell cycle" EXACT []
+is_a: GO:0048522 ! positive regulation of cellular process
+is_a: GO:0051726 ! regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0007049 ! cell cycle
+relationship: positively_regulates GO:0007049 ! cell cycle
+
+[Term]
+id: GO:0045835
+name: negative regulation of meiotic nuclear division
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of meiosis." [GOC:go_curators]
+synonym: "down regulation of meiosis" EXACT []
+synonym: "down-regulation of meiosis" EXACT []
+synonym: "downregulation of meiosis" EXACT []
+synonym: "inhibition of meiosis" NARROW []
+synonym: "negative regulation of meiosis" EXACT []
+is_a: GO:0010948 ! negative regulation of cell cycle process
+is_a: GO:0040020 ! regulation of meiotic nuclear division
+is_a: GO:0051447 ! negative regulation of meiotic cell cycle
+is_a: GO:0051784 ! negative regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0140013 ! meiotic nuclear division
+relationship: negatively_regulates GO:0140013 ! meiotic nuclear division
+
+[Term]
+id: GO:0045836
+name: positive regulation of meiotic nuclear division
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of meiosis." [GOC:go_curators]
+synonym: "activation of meiosis" NARROW []
+synonym: "positive regulation of meiosis" EXACT []
+synonym: "stimulation of meiosis" NARROW []
+synonym: "up regulation of meiosis" EXACT []
+synonym: "up-regulation of meiosis" EXACT []
+synonym: "upregulation of meiosis" EXACT []
+is_a: GO:0040020 ! regulation of meiotic nuclear division
+is_a: GO:0051446 ! positive regulation of meiotic cell cycle
+is_a: GO:0051785 ! positive regulation of nuclear division
+is_a: GO:0090068 ! positive regulation of cell cycle process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0140013 ! meiotic nuclear division
+relationship: positively_regulates GO:0140013 ! meiotic nuclear division
+
+[Term]
+id: GO:0045839
+name: negative regulation of mitotic nuclear division
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the rate or extent of mitosis. Mitosis is the division of the eukaryotic cell nucleus to produce two daughter nuclei that, usually, contain the identical chromosome complement to their mother." [GOC:dph, GOC:go_curators, GOC:tb]
+synonym: "down regulation of mitosis" EXACT []
+synonym: "down-regulation of mitosis" EXACT []
+synonym: "downregulation of mitosis" EXACT []
+synonym: "inhibition of mitosis" NARROW []
+synonym: "negative regulation of mitosis" EXACT []
+is_a: GO:0007088 ! regulation of mitotic nuclear division
+is_a: GO:0010948 ! negative regulation of cell cycle process
+is_a: GO:0045930 ! negative regulation of mitotic cell cycle
+is_a: GO:0051784 ! negative regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0140014 ! mitotic nuclear division
+relationship: negatively_regulates GO:0140014 ! mitotic nuclear division
+
+[Term]
+id: GO:0045840
+name: positive regulation of mitotic nuclear division
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of mitosis." [GOC:go_curators]
+synonym: "activation of mitosis" NARROW []
+synonym: "mitogenic activity" NARROW []
+synonym: "positive regulation of mitosis" EXACT []
+synonym: "stimulation of mitosis" NARROW []
+synonym: "up regulation of mitosis" EXACT []
+synonym: "up-regulation of mitosis" EXACT []
+synonym: "upregulation of mitosis" EXACT []
+is_a: GO:0007088 ! regulation of mitotic nuclear division
+is_a: GO:0045931 ! positive regulation of mitotic cell cycle
+is_a: GO:0051785 ! positive regulation of nuclear division
+is_a: GO:0090068 ! positive regulation of cell cycle process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0140014 ! mitotic nuclear division
+relationship: positively_regulates GO:0140014 ! mitotic nuclear division
+
+[Term]
+id: GO:0045930
+name: negative regulation of mitotic cell cycle
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the rate or extent of progression through the mitotic cell cycle." [GOC:dph, GOC:go_curators, GOC:tb]
+synonym: "down regulation of progression through mitotic cell cycle" EXACT []
+synonym: "down-regulation of progression through mitotic cell cycle" EXACT []
+synonym: "downregulation of progression through mitotic cell cycle" EXACT []
+synonym: "inhibition of progression through mitotic cell cycle" NARROW []
+synonym: "negative regulation of mitotic cell cycle progression" EXACT []
+synonym: "negative regulation of progression through mitotic cell cycle" EXACT [GOC:dph, GOC:tb]
+is_a: GO:0007346 ! regulation of mitotic cell cycle
+is_a: GO:0045786 ! negative regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0000278 ! mitotic cell cycle
+relationship: negatively_regulates GO:0000278 ! mitotic cell cycle
+
+[Term]
+id: GO:0045931
+name: positive regulation of mitotic cell cycle
+namespace: biological_process
+def: "Any process that activates or increases the rate or extent of progression through the mitotic cell cycle." [GOC:dph, GOC:go_curators, GOC:tb]
+synonym: "activation of progression through mitotic cell cycle" NARROW []
+synonym: "positive regulation of mitotic cell cycle progression" EXACT []
+synonym: "positive regulation of progression through mitotic cell cycle" EXACT [GOC:dph, GOC:tb]
+synonym: "stimulation of progression through mitotic cell cycle" NARROW []
+synonym: "up regulation of progression through mitotic cell cycle" EXACT []
+synonym: "up-regulation of progression through mitotic cell cycle" EXACT []
+synonym: "upregulation of progression through mitotic cell cycle" EXACT []
+is_a: GO:0007346 ! regulation of mitotic cell cycle
+is_a: GO:0045787 ! positive regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0000278 ! mitotic cell cycle
+relationship: positively_regulates GO:0000278 ! mitotic cell cycle
+
+[Term]
 id: GO:0045936
 name: negative regulation of phosphate metabolic process
 namespace: biological_process
@@ -1110,6 +1756,15 @@ is_a: GO:0030546 ! signaling receptor activator activity
 relationship: part_of GO:0007165 ! signal transduction
 created_by: midori
 creation_date: 2010-09-13T04:51:59Z
+
+[Term]
+id: GO:0048285
+name: organelle fission
+namespace: biological_process
+def: "The creation of two or more organelles by division of one organelle." [GOC:jid]
+subset: goslim_pir
+subset: goslim_yeast
+is_a: GO:0006996 ! organelle organization
 
 [Term]
 id: GO:0048518
@@ -1393,6 +2048,55 @@ intersection_of: negatively_regulates GO:0005488 ! binding
 relationship: negatively_regulates GO:0005488 ! binding
 
 [Term]
+id: GO:0051128
+name: regulation of cellular component organization
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of cell structures, including the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." [GOC:ai]
+synonym: "regulation of cell organisation" RELATED [GOC:mah]
+synonym: "regulation of cell organization" RELATED [GOC:mah]
+synonym: "regulation of cellular component organisation" EXACT [GOC:curators]
+synonym: "regulation of cellular component organization and biogenesis" RELATED [GOC:mah]
+is_a: GO:0050794 ! regulation of cellular process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0016043 ! cellular component organization
+relationship: regulates GO:0016043 ! cellular component organization
+
+[Term]
+id: GO:0051129
+name: negative regulation of cellular component organization
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of cell structures, including the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." [GOC:ai]
+synonym: "down regulation of cell organization" EXACT []
+synonym: "down-regulation of cell organization" EXACT []
+synonym: "downregulation of cell organization" EXACT []
+synonym: "inhibition of cell organization" NARROW []
+synonym: "negative regulation of cell organisation" RELATED [GOC:mah]
+synonym: "negative regulation of cellular component organization and biogenesis" RELATED [GOC:mah]
+is_a: GO:0048523 ! negative regulation of cellular process
+is_a: GO:0051128 ! regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0016043 ! cellular component organization
+relationship: negatively_regulates GO:0016043 ! cellular component organization
+
+[Term]
+id: GO:0051130
+name: positive regulation of cellular component organization
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of cell structures, including the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." [GOC:ai]
+synonym: "activation of cell organization" NARROW []
+synonym: "positive regulation of cell organisation" EXACT []
+synonym: "positive regulation of cellular component organization and biogenesis" RELATED [GOC:mah]
+synonym: "stimulation of cell organization" NARROW []
+synonym: "up regulation of cell organization" EXACT []
+synonym: "up-regulation of cell organization" EXACT []
+synonym: "upregulation of cell organization" EXACT []
+is_a: GO:0048522 ! positive regulation of cellular process
+is_a: GO:0051128 ! regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0016043 ! cellular component organization
+relationship: positively_regulates GO:0016043 ! cellular component organization
+
+[Term]
 id: GO:0051174
 name: regulation of phosphorus metabolic process
 namespace: biological_process
@@ -1467,6 +2171,183 @@ intersection_of: regulates GO:0051301 ! cell division
 relationship: regulates GO:0051301 ! cell division
 
 [Term]
+id: GO:0051318
+name: G1 phase
+namespace: biological_process
+def: "The cell cycle 'gap' phase which is the interval between the completion of DNA segregation (usually by mitosis or meiosis) and the beginning of DNA synthesis." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:G1_phase
+is_a: GO:0022403 ! cell cycle phase
+relationship: part_of GO:0051325 ! interphase
+
+[Term]
+id: GO:0051319
+name: G2 phase
+namespace: biological_process
+def: "The cell cycle 'gap' phase which is the interval between the completion of DNA synthesis and the beginning of DNA segregation (usually by mitosis or meiosis)." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:G2_phase
+is_a: GO:0022403 ! cell cycle phase
+relationship: part_of GO:0051325 ! interphase
+
+[Term]
+id: GO:0051320
+name: S phase
+namespace: biological_process
+def: "The cell cycle phase, following G1, during which DNA synthesis takes place." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "S-phase" EXACT []
+xref: Wikipedia:S_phase
+is_a: GO:0022403 ! cell cycle phase
+relationship: part_of GO:0051325 ! interphase
+
+[Term]
+id: GO:0051321
+name: meiotic cell cycle
+namespace: biological_process
+alt_id: GO:0007126
+def: "Progression through the phases of the meiotic cell cycle, in which canonically a cell replicates to produce four offspring with half the chromosomal content of the progenitor cell via two nuclear divisions." [GOC:ai]
+subset: goslim_yeast
+synonym: "meiosis" RELATED []
+xref: Wikipedia:Meiosis
+is_a: GO:0007049 ! cell cycle
+is_a: GO:0022414 ! reproductive process
+intersection_of: GO:0007049 ! cell cycle
+intersection_of: has_part GO:0140013 ! meiotic nuclear division
+relationship: has_part GO:0140013 ! meiotic nuclear division
+
+[Term]
+id: GO:0051322
+name: anaphase
+namespace: biological_process
+def: "The cell cycle phase, following metaphase, during which the chromosomes separate and migrate towards the poles of the spindle." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:Anaphase
+is_a: GO:0022403 ! cell cycle phase
+
+[Term]
+id: GO:0051323
+name: metaphase
+namespace: biological_process
+def: "The cell cycle phase, following prophase or prometaphase in higher eukaryotes, during which chromosomes become aligned on the equatorial plate of the cell." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:Metaphase
+is_a: GO:0022403 ! cell cycle phase
+relationship: part_of GO:0000279 ! M phase
+
+[Term]
+id: GO:0051324
+name: prophase
+namespace: biological_process
+def: "The cell cycle phase which is the first stage of M phase of meiosis and mitosis and during which chromosomes condense and the two daughter centrioles and their asters migrate toward the poles of the cell." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:Prophase
+is_a: GO:0022403 ! cell cycle phase
+relationship: part_of GO:0000279 ! M phase
+
+[Term]
+id: GO:0051325
+name: interphase
+namespace: biological_process
+def: "The cell cycle phase following cytokinesis which begins with G1 phase, proceeds through S phase and G2 phase and ends when prophase of meiosis or mitosis begins. During interphase the cell readies itself for meiosis or mitosis and the replication of its DNA occurs." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "karyostasis" EXACT []
+synonym: "resting phase" BROAD []
+xref: Wikipedia:Interphase
+is_a: GO:0022403 ! cell cycle phase
+
+[Term]
+id: GO:0051326
+name: telophase
+namespace: biological_process
+def: "The cell cycle phase which follows anaphase during M phase of mitosis and meiosis and during which the chromosomes arrive at the poles of the cell and the division of the cytoplasm starts." [GOC:mtg_cell_cycle]
+comment: note that this term should not be used for direct annotation. if you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic s-phase). to capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+xref: Wikipedia:Telophase
+is_a: GO:0022403 ! cell cycle phase
+relationship: part_of GO:0000279 ! M phase
+
+[Term]
+id: GO:0051327
+name: meiotic M phase
+namespace: biological_process
+def: "A cell cycle phase during which nuclear division occurs, and which is comprises the phases: prophase, metaphase, anaphase and telophase and occurs as part of a meiotic cell cycle." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "M phase of meiotic cell cycle" EXACT []
+is_a: GO:0000279 ! M phase
+is_a: GO:0098762 ! meiotic cell cycle phase
+intersection_of: GO:0000279 ! M phase
+intersection_of: happens_during GO:0051321 ! meiotic cell cycle
+
+[Term]
+id: GO:0051328
+name: meiotic interphase
+namespace: biological_process
+def: "The cell cycle phase which begins after cytokinesis and ends when meiotic prophase begins. Meiotic cells have an interphase after each meiotic division, but only interphase I involves replication of the cell's DNA." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "interphase of meiotic cell cycle" EXACT []
+is_a: GO:0051325 ! interphase
+is_a: GO:0098762 ! meiotic cell cycle phase
+intersection_of: GO:0051325 ! interphase
+intersection_of: happens_during GO:0051321 ! meiotic cell cycle
+
+[Term]
+id: GO:0051329
+name: mitotic interphase
+namespace: biological_process
+def: "The cell cycle phase following cytokinesis which begins with G1 phase, proceeds through S phase and G2 phase and ends when mitotic prophase begins. During interphase the cell readies itself for mitosis and the replication of its DNA occurs." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "interphase of mitotic cell cycle" EXACT []
+is_a: GO:0051325 ! interphase
+is_a: GO:0098763 ! mitotic cell cycle phase
+intersection_of: GO:0051325 ! interphase
+intersection_of: happens_during GO:0000278 ! mitotic cell cycle
+
+[Term]
+id: GO:0051330
+name: meiotic G1 phase
+namespace: biological_process
+def: "The cell cycle 'gap' phase which is the interval between the completion of DNA segregation by meiosis and the beginning of DNA synthesis." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "G1 phase of meiotic cell cycle" EXACT []
+is_a: GO:0051318 ! G1 phase
+relationship: part_of GO:0051328 ! meiotic interphase
+
+[Term]
+id: GO:0051331
+name: meiotic G2 phase
+namespace: biological_process
+def: "The cell cycle 'gap' phase which is the interval between the completion of DNA synthesis and the beginning of DNA segregation by meiosis." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "G2 phase of meiotic cell cycle" EXACT []
+is_a: GO:0051319 ! G2 phase
+relationship: part_of GO:0051328 ! meiotic interphase
+
+[Term]
+id: GO:0051332
+name: meiotic S phase
+namespace: biological_process
+def: "The cell cycle phase, following G1, during which DNA synthesis takes place as part of a meiotic cell cycle." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "S phase of meiotic cell cycle" EXACT []
+synonym: "S-phase of meiotic cell cycle" EXACT []
+is_a: GO:0051320 ! S phase
+relationship: part_of GO:0051328 ! meiotic interphase
+
+[Term]
 id: GO:0051338
 name: regulation of transferase activity
 namespace: biological_process
@@ -1517,6 +2398,60 @@ intersection_of: negatively_regulates GO:0016740 ! transferase activity
 relationship: negatively_regulates GO:0016740 ! transferase activity
 
 [Term]
+id: GO:0051445
+name: regulation of meiotic cell cycle
+namespace: biological_process
+def: "Any process that modulates the rate or extent of progression through the meiotic cell cycle." [GOC:ai, GOC:dph, GOC:tb]
+synonym: "meiotic cell cycle modulation" EXACT []
+synonym: "meiotic cell cycle regulation" EXACT []
+synonym: "meiotic cell cycle regulator" RELATED []
+synonym: "modulation of meiotic cell cycle progression" EXACT []
+synonym: "regulation of meiotic cell cycle progression" EXACT []
+synonym: "regulation of progression through meiotic cell cycle" EXACT [GOC:dph, GOC:tb]
+is_a: GO:0051726 ! regulation of cell cycle
+is_a: GO:2000241 ! regulation of reproductive process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0051321 ! meiotic cell cycle
+relationship: regulates GO:0051321 ! meiotic cell cycle
+
+[Term]
+id: GO:0051446
+name: positive regulation of meiotic cell cycle
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of progression through the meiotic cell cycle." [GOC:ai, GOC:dph, GOC:tb]
+synonym: "activation of progression through meiotic cell cycle" NARROW []
+synonym: "positive regulation of meiotic cell cycle progression" EXACT []
+synonym: "positive regulation of progression through meiotic cell cycle" EXACT [GOC:dph, GOC:tb]
+synonym: "stimulation of progression through meiotic cell cycle" NARROW []
+synonym: "up regulation of progression through meiotic cell cycle" EXACT []
+synonym: "up-regulation of progression through meiotic cell cycle" EXACT []
+synonym: "upregulation of progression through meiotic cell cycle" EXACT []
+is_a: GO:0045787 ! positive regulation of cell cycle
+is_a: GO:0051445 ! regulation of meiotic cell cycle
+is_a: GO:2000243 ! positive regulation of reproductive process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0051321 ! meiotic cell cycle
+relationship: positively_regulates GO:0051321 ! meiotic cell cycle
+
+[Term]
+id: GO:0051447
+name: negative regulation of meiotic cell cycle
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the rate or extent of progression through the meiotic cell cycle." [GOC:ai, GOC:dph, GOC:tb]
+synonym: "down regulation of progression through meiotic cell cycle" EXACT []
+synonym: "down-regulation of progression through meiotic cell cycle" EXACT []
+synonym: "downregulation of progression through meiotic cell cycle" EXACT []
+synonym: "inhibition of progression through meiotic cell cycle" NARROW []
+synonym: "negative regulation of meiotic cell cycle progression" EXACT []
+synonym: "negative regulation of progression through meiotic cell cycle" EXACT [GOC:dph, GOC:tb]
+is_a: GO:0045786 ! negative regulation of cell cycle
+is_a: GO:0051445 ! regulation of meiotic cell cycle
+is_a: GO:2000242 ! negative regulation of reproductive process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0051321 ! meiotic cell cycle
+relationship: negatively_regulates GO:0051321 ! meiotic cell cycle
+
+[Term]
 id: GO:0051704
 name: multi-organism process
 namespace: biological_process
@@ -1538,6 +2473,26 @@ comment: Note that this term is in the subset of terms that should not be used f
 subset: gocheck_do_not_manually_annotate
 is_a: GO:0009987 ! cellular process
 is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0051726
+name: regulation of cell cycle
+namespace: biological_process
+alt_id: GO:0000074
+def: "Any process that modulates the rate or extent of progression through the cell cycle." [GOC:ai, GOC:dph, GOC:tb]
+subset: goslim_yeast
+synonym: "cell cycle modulation" EXACT []
+synonym: "cell cycle regulation" EXACT []
+synonym: "cell cycle regulator" RELATED []
+synonym: "control of cell cycle progression" EXACT []
+synonym: "modulation of cell cycle progression" EXACT []
+synonym: "regulation of cell cycle progression" EXACT []
+synonym: "regulation of progression through cell cycle" EXACT []
+synonym: "tumor suppressor" RELATED []
+is_a: GO:0050794 ! regulation of cellular process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0007049 ! cell cycle
+relationship: regulates GO:0007049 ! cell cycle
 
 [Term]
 id: GO:0051781
@@ -1569,6 +2524,56 @@ is_a: GO:0051302 ! regulation of cell division
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0051301 ! cell division
 relationship: negatively_regulates GO:0051301 ! cell division
+
+[Term]
+id: GO:0051783
+name: regulation of nuclear division
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of nuclear division, the partitioning of the nucleus and its genetic information." [GOC:ai]
+is_a: GO:0033043 ! regulation of organelle organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0000280 ! nuclear division
+relationship: regulates GO:0000280 ! nuclear division
+
+[Term]
+id: GO:0051784
+name: negative regulation of nuclear division
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of nuclear division, the partitioning of the nucleus and its genetic information." [GOC:ai]
+synonym: "down regulation of nuclear division" EXACT []
+synonym: "down-regulation of nuclear division" EXACT []
+synonym: "downregulation of nuclear division" EXACT []
+synonym: "inhibition of nuclear division" NARROW []
+is_a: GO:0010639 ! negative regulation of organelle organization
+is_a: GO:0051783 ! regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0000280 ! nuclear division
+relationship: negatively_regulates GO:0000280 ! nuclear division
+
+[Term]
+id: GO:0051785
+name: positive regulation of nuclear division
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of nuclear division, the partitioning of the nucleus and its genetic information." [GOC:ai]
+synonym: "activation of nuclear division" NARROW []
+synonym: "stimulation of nuclear division" NARROW []
+synonym: "up regulation of nuclear division" EXACT []
+synonym: "up-regulation of nuclear division" EXACT []
+synonym: "upregulation of nuclear division" EXACT []
+is_a: GO:0010638 ! positive regulation of organelle organization
+is_a: GO:0051783 ! regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0000280 ! nuclear division
+relationship: positively_regulates GO:0000280 ! nuclear division
+
+[Term]
+id: GO:0060089
+name: molecular transducer activity
+namespace: molecular_function
+def: "A compound molecular function in which an effector function is controlled by one or more regulatory components." [GOC:dos, GOC:pdt]
+subset: gocheck_do_not_manually_annotate
+subset: goslim_pir
+is_a: GO:0003674 ! molecular_function
 
 [Term]
 id: GO:0060467
@@ -1608,6 +2613,21 @@ intersection_of: regulates GO:0003674 ! molecular_function
 relationship: regulates GO:0003674 ! molecular_function
 
 [Term]
+id: GO:0071840
+name: cellular component organization or biogenesis
+namespace: biological_process
+alt_id: GO:0071841
+def: "A process that results in the biosynthesis of constituent macromolecules, assembly, arrangement of constituent parts, or disassembly of a cellular component." [GOC:mah]
+subset: goslim_flybase_ribbon
+subset: goslim_metagenomics
+synonym: "cellular component organisation or biogenesis" EXACT [GOC:mah]
+synonym: "cellular component organisation or biogenesis at cellular level" EXACT [GOC:mah]
+synonym: "cellular component organization or biogenesis at cellular level" EXACT []
+is_a: GO:0008150 ! biological_process
+created_by: midori
+creation_date: 2010-09-10T01:39:16Z
+
+[Term]
 id: GO:0080154
 name: regulation of fertilization
 namespace: biological_process
@@ -1621,6 +2641,61 @@ created_by: donghui
 creation_date: 2010-09-01T03:44:27Z
 
 [Term]
+id: GO:0090068
+name: positive regulation of cell cycle process
+namespace: biological_process
+def: "Any process that increases the rate, frequency or extent of a cellular process that is involved in the progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events." [GOC:dph, GOC:tb]
+is_a: GO:0010564 ! regulation of cell cycle process
+is_a: GO:0045787 ! positive regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0022402 ! cell cycle process
+relationship: positively_regulates GO:0022402 ! cell cycle process
+created_by: tanyaberardini
+creation_date: 2009-09-09T11:39:52Z
+
+[Term]
+id: GO:0098762
+name: meiotic cell cycle phase
+namespace: biological_process
+def: "One of the distinct periods or stages into which the meiotic cell cycle is divided. Each phase is characterized by the occurrence of specific biochemical and morphological events." [GOC:dos]
+comment: This term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation should be to 'regulation of x/y phase transition' or to a process which occurs during the reported phase (e.g. mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0022403 ! cell cycle phase
+intersection_of: GO:0022403 ! cell cycle phase
+intersection_of: happens_during GO:0051321 ! meiotic cell cycle
+relationship: happens_during GO:0051321 ! meiotic cell cycle
+
+[Term]
+id: GO:0098763
+name: mitotic cell cycle phase
+namespace: biological_process
+def: "One of the distinct periods or stages into which the mitotic cell cycle is divided. Each phase is characterized by the occurrence of specific biochemical and morphological events." [GOC:dos]
+comment: This term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation should be to 'regulation of x/y phase transition' or to a process which occurs during the reported phase (e.g. mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0022403 ! cell cycle phase
+intersection_of: GO:0022403 ! cell cycle phase
+intersection_of: happens_during GO:0000278 ! mitotic cell cycle
+relationship: happens_during GO:0000278 ! mitotic cell cycle
+
+[Term]
+id: GO:0098764
+name: meiosis I cell cycle phase
+namespace: biological_process
+def: "A meiotic cell cycle phase prior to a during which some part of meiosis I nuclear division or the proceeding cytokinesis occurs." [GOC:dos]
+comment: This term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation should be to 'regulation of x/y phase transition' or to a process which occurs during the reported phase (e.g. mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0098762 ! meiotic cell cycle phase
+
+[Term]
+id: GO:0098765
+name: meiosis II cell cycle phase
+namespace: biological_process
+def: "A meiotic cell cycle phase that occurs after meiosis I (the first meiotic nuclear division)." [GOC:dos]
+comment: This term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation should be to 'regulation of x/y phase transition' or to a process which occurs during the reported phase (e.g. mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0098762 ! meiotic cell cycle phase
+
+[Term]
 id: GO:0098772
 name: molecular function regulator
 namespace: molecular_function
@@ -1628,6 +2703,33 @@ def: "A molecular function that modulates the activity of a gene product or comp
 subset: goslim_flybase_ribbon
 is_a: GO:0003674 ! molecular_function
 relationship: part_of GO:0065009 ! regulation of molecular function
+
+[Term]
+id: GO:0140013
+name: meiotic nuclear division
+namespace: biological_process
+def: "One of the two nuclear divisions that occur as part of the meiotic cell cycle." [PMID:9334324]
+subset: goslim_pombe
+is_a: GO:0000280 ! nuclear division
+is_a: GO:1903046 ! meiotic cell cycle process
+intersection_of: GO:0000280 ! nuclear division
+intersection_of: part_of GO:0051321 ! meiotic cell cycle
+created_by: pg
+creation_date: 2017-03-23T09:40:00Z
+
+[Term]
+id: GO:0140014
+name: mitotic nuclear division
+namespace: biological_process
+def: "A mitotic cell cycle process comprising the steps by which the nucleus of a eukaryotic cell divides; the process involves condensation of chromosomal DNA into a highly compacted form. Canonically, mitosis produces two daughter nuclei whose chromosome complement is identical to that of the mother cell." [ISBN:0198547684]
+subset: goslim_chembl
+subset: goslim_generic
+is_a: GO:0000280 ! nuclear division
+is_a: GO:1903047 ! mitotic cell cycle process
+intersection_of: GO:0000280 ! nuclear division
+intersection_of: part_of GO:0000278 ! mitotic cell cycle
+created_by: pg
+creation_date: 2017-03-23T14:44:23Z
 
 [Term]
 id: GO:1900120
@@ -1676,6 +2778,34 @@ intersection_of: positively_regulates GO:0005102 ! signaling receptor binding
 relationship: positively_regulates GO:0005102 ! signaling receptor binding
 created_by: bf
 creation_date: 2012-02-22T11:41:00Z
+
+[Term]
+id: GO:1903046
+name: meiotic cell cycle process
+namespace: biological_process
+def: "A process that is part of the meiotic cell cycle." [GO_REF:0000060, GOC:mtg_cell_cycle, GOC:TermGenie]
+subset: gocheck_do_not_annotate
+is_a: GO:0022402 ! cell cycle process
+is_a: GO:0022414 ! reproductive process
+intersection_of: GO:0009987 ! cellular process
+intersection_of: part_of GO:0051321 ! meiotic cell cycle
+disjoint_from: GO:1903047 ! mitotic cell cycle process
+relationship: part_of GO:0051321 ! meiotic cell cycle
+created_by: jl
+creation_date: 2014-05-22T14:22:28Z
+
+[Term]
+id: GO:1903047
+name: mitotic cell cycle process
+namespace: biological_process
+def: "A process that is part of the mitotic cell cycle." [GO_REF:0000060, GOC:mtg_cell_cycle, GOC:TermGenie]
+subset: gocheck_do_not_annotate
+is_a: GO:0022402 ! cell cycle process
+intersection_of: GO:0009987 ! cellular process
+intersection_of: part_of GO:0000278 ! mitotic cell cycle
+relationship: part_of GO:0000278 ! mitotic cell cycle
+created_by: jl
+creation_date: 2014-05-22T14:22:34Z
 
 [Term]
 id: GO:1905516
@@ -1751,6 +2881,47 @@ relationship: positively_regulates GO:0022414 ! reproductive process
 created_by: midori
 creation_date: 2010-11-10T02:44:08Z
 
+[Term]
+id: GO:2000272
+name: negative regulation of signaling receptor activity
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of a signaling receptor activity." [GOC:obol]
+synonym: "negative regulation of receptor activity" BROAD []
+is_a: GO:0010469 ! regulation of signaling receptor activity
+is_a: GO:0044092 ! negative regulation of molecular function
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0038023 ! signaling receptor activity
+relationship: negatively_regulates GO:0038023 ! signaling receptor activity
+created_by: rfoulger
+creation_date: 2010-12-02T09:28:47Z
+
+[Term]
+id: GO:2000273
+name: positive regulation of signaling receptor activity
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of signaling receptor activity." [GOC:obol]
+is_a: GO:0010469 ! regulation of signaling receptor activity
+is_a: GO:0044093 ! positive regulation of molecular function
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0038023 ! signaling receptor activity
+relationship: positively_regulates GO:0038023 ! signaling receptor activity
+created_by: rfoulger
+creation_date: 2010-12-02T09:28:50Z
+
+[Typedef]
+id: ends_during
+name: ends_during
+namespace: external
+xref: RO:0002093
+
+[Typedef]
+id: happens_during
+name: happens during
+namespace: external
+xref: RO:0002092
+is_transitive: true
+is_a: ends_during ! ends_during
+
 [Typedef]
 id: has_part
 name: has part
@@ -1794,4 +2965,10 @@ name: regulates
 namespace: external
 xref: RO:0002211
 is_transitive: true
+
+[Typedef]
+id: starts_during
+name: starts_during
+namespace: external
+xref: RO:0002091
 
