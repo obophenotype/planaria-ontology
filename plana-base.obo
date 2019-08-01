@@ -4764,12 +4764,12 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002013
 name: Category 1 cell
-def: "Category 1 cell of cell needs def" [PMID:18786419]
+def: "Category 1 cell of parenchymal compartment cell needs def" [PMID:18786419]
 synonym: "Category 1 gene expressing cell" EXACT []
 xref: PMID:18786419
 xref: PMID:21894189
 xref: PMID:22439894
-is_a: PLANA:0000499 ! cell
+is_a: PLANA:0003116 ! parenchymal compartment cell
 relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
@@ -5043,7 +5043,7 @@ xref: PMID:28216315
 xref: PMID:28292427
 xref: UBERON:0007601
 is_a: PLANA:0000037 ! definitive tissue
-is_a: PLANA:0002118
+is_a: PLANA:0002118 ! epithelium
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5317,11 +5317,11 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002043
 name: germ cell cyst
-def: "germ cell cyst of reproductive system product needs def" [PMID:17376870]
+def: "germ cell cyst of definitive tissue needs def" [PMID:17376870]
 synonym: "germ cell cluster" EXACT []
 xref: PMID:17376870
 xref: PMID:22318224
-is_a: PLANA:0000215 ! reproductive system product
+is_a: PLANA:0000037 ! definitive tissue
 relationship: BFO:0000050 PLANA:0000208 ! testis
 relationship: BFO:0000050 PLANA:0000217 ! gonad
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
@@ -5371,10 +5371,10 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002045
 name: glycogen granule
-def: "glycogen granule of cellular component needs def" []
+def: "glycogen granule of intracellular granule needs def" []
 xref: GO:0042587
 xref: PMID:30608231
-is_a: PLANA:0000433 ! cellular component
+is_a: MICRO:0000215
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5434,6 +5434,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0002051
 name: linear incision
 def: "linear incision of incision needs def" []
+synonym: "scratch" EXACT []
 is_a: PLANA:0002046 ! incision
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
@@ -5748,6 +5749,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0002078
 name: point incision
 def: "point incision of incision needs def" []
+synonym: "poke" EXACT []
 is_a: PLANA:0002046 ! incision
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
@@ -5844,7 +5846,7 @@ xref: PMID:20865784
 xref: PMID:27122174
 xref: PMID:28137894
 xref: PMID:29674431
-is_a: PLANA:0002119
+is_a: PLANA:0002119 ! gut branch
 relationship: BFO:0000050 PLANA:0000026 ! definitive gut
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
@@ -5857,7 +5859,7 @@ name: primitive gut
 def: "primitive gut of extraembryonic organ needs def" [PMID:28072387]
 synonym: "primitive endoderm" EXACT []
 xref: PMID:28072387
-is_a: PLANA:0002120
+is_a: PLANA:0002120 ! extraembryonic organ
 relationship: BFO:0000050 PLANA:0000058 ! embryonic digestive system
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
@@ -5873,7 +5875,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0002088
 name: quarternary gut branch
 def: "quarternary gut branch of gut branch needs def" [PMID:21664348]
-is_a: PLANA:0002119
+is_a: PLANA:0002119 ! gut branch
 relationship: BFO:0000050 PLANA:0000026 ! definitive gut
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! sexually mature adult
@@ -6085,7 +6087,7 @@ name: synaptonemal complex
 def: "synaptonemal complex of chromosomal_structural_element needs def" []
 xref: GO:0000795
 xref: PMID:25404302
-is_a: PLANA:0002123
+is_a: PLANA:0002123 ! chromosomal_structural_element
 relationship: BFO:0000050 PLANA:0000529 ! nucleus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0002057 ! specific_to meiotic germ cell
@@ -6111,7 +6113,7 @@ xref: GO:0000781
 xref: https://doi.org/10.1101/279364
 xref: PMID:22371573
 xref: PMID:25404302
-is_a: PLANA:0002121
+is_a: PLANA:0002121 ! chromosome_part
 relationship: BFO:0000050 PLANA:0002022 ! chromosome arm
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
@@ -6121,7 +6123,7 @@ name: tight junction
 def: "tight junction of cell-cell junction needs def" []
 xref: GO:0070160
 is_a: PLANA:0000507 ! cell-cell junction
-relationship: BFO:0000050 PLANA:0002118
+relationship: BFO:0000050 PLANA:0002118 ! epithelium
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -6136,7 +6138,318 @@ id: PLANA:0002108
 name: wound
 def: "wound of insult needs def" []
 synonym: "injury" EXACT []
-is_a: PLANA:0002122
+is_a: PLANA:0002122 ! perturbation
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002109
+name: X1 cell
+def: "X1 cell of FACS sorted cell population needs def" [PMID:16872450]
+synonym: "X1" EXACT []
+synonym: "X1 cell population" EXACT []
+synonym: "X1 neoblast" EXACT []
+synonym: "X1 population" EXACT []
+xref: PMID:17670787
+xref: PMID:18456843
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:21937596
+xref: PMID:22385657
+xref: PMID:22427692
+xref: PMID:22543868
+xref: PMID:22549959
+xref: PMID:23235145
+xref: PMID:23629965
+xref: PMID:24120894
+xref: PMID:24367277
+xref: PMID:24992682
+xref: PMID:25254346
+xref: PMID:25558068
+xref: PMID:25956527
+xref: PMID:26114597
+xref: PMID:26457503
+xref: PMID:26711341
+xref: PMID:27013241
+xref: PMID:27068018
+xref: PMID:27150006
+xref: PMID:27502555
+xref: PMID:27523733
+xref: PMID:27551436
+xref: PMID:28137894
+xref: PMID:29100657
+xref: PMID:29557542
+xref: PMID:29674432
+xref: PMID:29906446
+xref: PMID:30194301
+is_a: PLANA:0002138 ! FACS sorted cell population
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002110
+name: X1(FS) cell
+def: "X1(FS) cell of FACS sorted cell population needs def" [PMID:21566185]
+xref: PMID:21566185
+is_a: PLANA:0002138 ! FACS sorted cell population
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002111
+name: X2 cell
+def: "X2 cell of FACS sorted cell population needs def" [PMID:16872450]
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:22427692
+xref: PMID:22543868
+xref: PMID:23629965
+xref: PMID:24367277
+xref: PMID:25017721
+xref: PMID:27013241
+xref: PMID:27150006
+xref: PMID:27502555
+xref: PMID:27606067
+xref: PMID:27864883
+xref: PMID:28137894
+xref: PMID:29674432
+is_a: PLANA:0002138 ! FACS sorted cell population
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002112
+name: Xins cell
+def: "Xins cell of FACS sorted cell population needs def" [PMID:16872450]
+synonym: "Xins" EXACT []
+synonym: "Xins cell population" EXACT []
+xref: PMID:17670787
+xref: PMID:18456843
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:22427692
+xref: PMID:22479207
+xref: PMID:22543868
+xref: PMID:23629965
+xref: PMID:24367277
+xref: PMID:24992682
+xref: PMID:25558068
+xref: PMID:25956527
+xref: PMID:26114597
+xref: PMID:26457503
+xref: PMID:26711341
+xref: PMID:27013241
+xref: PMID:27502555
+xref: PMID:29100657
+xref: PMID:29674432
+xref: PMID:29906446
+xref: PMID:30194301
+is_a: PLANA:0002138 ! FACS sorted cell population
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002113
+name: post-pharyngeal region
+def: "post-pharyngeal region of anatomical compartment subdivision needs def" []
+synonym: "post pharyngeal" EXACT []
+synonym: "post-pharyngeal" EXACT []
+synonym: "postpharyngeal region" EXACT []
+is_a: PLANA:0000102 ! anatomical compartment subdivision
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002114
+name: post-blastema region
+def: "post-blastema region of anatomical region needs def" []
+synonym: "post-blastema" EXACT []
+synonym: "postblastema" EXACT []
+synonym: "postblastema region" EXACT []
+is_a: BSPO:0000070
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002116
+name: fission fragment
+def: "fission fragment of regenerating anatomical structure needs def" []
+is_a: UBERON:0007567
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002117
+name: oblique
+def: "oblique of spatial qualifier needs def" [NCIT:C73707]
+xref: NCIT:C73707
+is_a: FBcv:0000052
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002118
+name: epithelium
+def: "epithelium of definitive tissue needs def" [NCIT:C12710]
+xref: NCIT:C12710
+is_a: PLANA:0000037 ! definitive tissue
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002119
+name: gut branch
+def: "gut branch of definitive tissue needs def" []
+is_a: PLANA:0000037 ! definitive tissue
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002120
+name: extraembryonic organ
+def: "extraembryonic organ of organ needs def" []
+is_a: PLANA:0000431 ! organ
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002121
+name: chromosome_part
+def: "chromosome_part of nuclear part needs def" [SO:0000830]
+xref: SO:0000830
+is_a: PLANA:0000532 ! nuclear part
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002122
+name: perturbation
+def: "perturbation of material anatomical entity needs def" []
+synonym: "insult" EXACT []
+is_a: UBERON:0000465
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002123
+name: chromosomal_structural_element
+def: "chromosomal_structural_element of chromosome_part needs def" []
+synonym: "chromosomal structural element" EXACT []
+xref: SO:0000628
+is_a: PLANA:0002121 ! chromosome_part
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002124
+name: longitudinal
+def: "longitudinal of spatial qualifier needs def" [NCIT:C25242]
+xref: NCIT:C25242
+is_a: FBcv:0000052
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002125
+name: thick
+def: "thick of general qualifier needs def" [NCIT:C81186]
+xref: NCIT:C81186
+is_a: PLANA:0002127 ! general qualifier
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002126
+name: thin
+def: "thin of general qualifier needs def" [NCIT:C65127]
+xref: NCIT:C65127
+is_a: PLANA:0002127 ! general qualifier
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002127
+name: general qualifier
+def: "general qualifier of qualifier needs def" [NCIT:C27993]
+xref: NCIT:C27993
+is_a: FBcv:0000005
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002128
+name: fragment
+def: "fragment of regenerating anatomical structure needs def" []
+synonym: "piece" EXACT []
+is_a: UBERON:0007567
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002129
+name: longitudinal region
+def: "longitudinal region of anatomical region needs def" []
+is_a: BSPO:0000070
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002130
+name: chemical wound
+def: "chemical wound of wound needs def" []
+is_a: PLANA:0002108 ! wound
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002131
+name: plug wound
+def: "plug wound of wound needs def" []
+is_a: PLANA:0002108 ! wound
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002132
+name: wedge wound
+def: "wedge wound of wound needs def" []
+is_a: PLANA:0002108 ! wound
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002133
+name: regenerating fragment
+def: "regenerating fragment of fragment needs def" []
+is_a: PLANA:0002128 ! fragment
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002134
+name: sagittal orientation
+def: "sagittal orientation of longitudinal orientation needs def" []
+synonym: "longitudinal orientation" EXACT []
+is_a: PATO:0005024
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002135
+name: parasagittal orientation
+def: "parasagittal orientation of sagittal orientation needs def" []
+xref: PATO:0005023
+is_a: PLANA:0002134 ! sagittal orientation
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002136
+name: syncytium
+def: "syncytium of anatomical structure needs def" [PMID:27330085]
+xref: AEO:0000203
+is_a: UBERON:0000061
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002137
+name: intracellular granule
+def: "intracellular granule of non-membrane-bounded organelle needs def" []
+xref: MICRO:0000215
+is_a: PLANA:0000531 ! non-membrane-bounded organelle
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002138
+name: FACS sorted cell population
+def: "FACS sorted cell population of derived cell population needs def" []
+is_a: PLANA:0002139 ! derived cell population
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0002139
+name: derived cell population
+def: "derived cell population of material anatomical entity needs def" []
+is_a: UBERON:0000465
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
