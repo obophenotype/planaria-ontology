@@ -60,7 +60,7 @@ all_main: $(MAIN_FILES)
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
 
-IMPORTS =  bspo go ro uberon iao fbcv pato micro
+IMPORTS =  bspo go ro uberon iao fbcv pato
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(foreach f,$(FORMATS), $(n).$(f)))
@@ -267,16 +267,6 @@ mirror/pato.owl: mirror/pato.trigger
 	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pato.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 .PRECIOUS: mirror/%.owl
-
-## ONTOLOGY: micro
-## Copy of micro is re-downloaded whenever source changes
-mirror/micro.trigger: $(SRC)
-
-mirror/micro.owl: mirror/micro.trigger
-	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/micro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-.PRECIOUS: mirror/%.owl
-
 
 ## ONTOLOGY: go
 ## Copy of go is re-downloaded whenever source changes

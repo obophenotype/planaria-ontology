@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-08-01/plana-full.owl
+data-version: plana/releases/2019-08-05/plana-full.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -3786,6 +3786,84 @@ property_value: IAO:0000117 "Alan Ruttenberg" xsd:string
 property_value: IAO:0000119 "Barry Smith, Werner Ceusters" xsd:string
 
 [Term]
+id: PATO:0000001
+name: quality
+namespace: quality
+alt_id: PATO:0000072
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [PATOC:GVG]
+synonym: "trait" EXACT []
+is_a: BFO:0000020 ! specifically dependent continuant
+property_value: IAO:0000589 "quality (PATO)" xsd:string
+
+[Term]
+id: PATO:0000133
+name: orientation
+namespace: quality
+alt_id: PATO:0000137
+def: "A spatial quality inhering in a bearer by virtue of the bearer's placement which is defined by the angle between the bearer and an axis, or the angle between the bearer and another object." [PATOC:JE]
+subset: attribute_slim
+subset: relational_slim
+synonym: "amount of rotation" RELATED []
+synonym: "angle" RELATED []
+synonym: "angular magnitude" RELATED []
+synonym: "angular placement" EXACT []
+synonym: "plane angle" RELATED []
+is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0000140
+name: position
+namespace: quality
+alt_id: PATO:0001032
+alt_id: PATO:0001631
+def: "A spatial quality inhering in a bearer by virtue of the bearer's spatial location relative to other objects in the vicinity." [PATOC:GVG]
+subset: attribute_slim
+synonym: "location" EXACT []
+synonym: "placement" EXACT []
+synonym: "relational spatial quality" EXACT []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001018
+name: physical quality
+namespace: quality
+alt_id: PATO:0002079
+def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." [PATOC:GVG]
+subset: attribute_slim
+synonym: "relational physical quality" EXACT []
+xref: Wikipedia:Physical_property
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+namespace: quality
+alt_id: PATO:0001237
+alt_id: PATO:0001238
+def: "A quality which inheres in a continuant." [PATOC:GVG]
+comment: Relational qualities are qualities that hold between multiple entities. Normal (monadic) qualities such as the shape of a eyeball exist purely as a quality of that eyeball. A relational quality such as sensitivity to light is a quality of that eyeball (and connecting nervous system) as it relates to incoming light waves/particles.
+synonym: "monadic quality of a continuant" EXACT []
+synonym: "monadic quality of an object" NARROW []
+synonym: "monadic quality of continuant" NARROW []
+synonym: "multiply inhering quality of a physical entity" EXACT []
+synonym: "quality of a continuant" EXACT []
+synonym: "quality of a single physical entity" EXACT []
+synonym: "quality of an object" EXACT []
+synonym: "quality of continuant" EXACT []
+xref: snap:Quality
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0005024
+name: longitudinal orientation
+namespace: quality
+def: "An orientation quality inhering in a bearer by virtue of the bearer having a position that is directed along the longitudinal or anterior-posterior axis." [PATOC:WD]
+subset: value_slim
+is_a: PATO:0000133 ! orientation
+created_by: wasila.dahdul
+creation_date: 2014-10-17T14:24:19Z
+
+[Term]
 id: PLANA:0000001
 name: Stage 1
 namespace: Schmidtea_mediterranea_Developmental_Stages
@@ -3879,9 +3957,12 @@ id: PLANA:0000008
 name: Stage 8
 namespace: Schmidtea_mediterranea_Developmental_Stages
 def: "D13-D15. Organogenesis and organ maturation continues. Hatching. Days 13-15 post-egg capsule deposition at 20˚C." [PMID:28072387]
+def: "Stage 8 needs def" []
 comment: Depicted by field contains hematoxylin and eosin staining section of a stage 8 embryo. Scale bar = 100um
+synonym: "hatchling" EXACT []
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/stage8.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000008 xsd:string
 
@@ -3904,7 +3985,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -3932,7 +4013,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -3994,6 +4075,129 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000015 x
 id: PLANA:0000016
 name: definitive pharynx
 def: "A plicate and protrusible organ that is the sole point of entry and exit for the Triclad gut. It contains epithelial, muscular, secretory and neuronal cell types." [OCLC:16809160]
+def: "definitive pharynx needs def" []
+synonym: "definitive pharynx" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN: 9780070316607
+xref: PMID:15866156
+xref: PMID:16033796
+xref: PMID:16311336
+xref: PMID:16890156
+xref: PMID:17251262
+xref: PMID:17376870
+xref: PMID:17390146
+xref: PMID:17670787
+xref: PMID:17905225
+xref: PMID:17942485
+xref: PMID:18063755
+xref: PMID:18063757
+xref: PMID:18202849
+xref: PMID:18287199
+xref: PMID:18456843
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:19174194
+xref: PMID:19211673
+xref: PMID:19247960
+xref: PMID:19766622
+xref: PMID:19852954
+xref: PMID:19933103
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:20422023
+xref: PMID:20511647
+xref: PMID:20599901
+xref: PMID:20707997
+xref: PMID:20865784
+xref: PMID:20967238
+xref: PMID:21179478
+xref: PMID:21282632
+xref: PMID:21295483
+xref: PMID:21356107
+xref: PMID:21458439
+xref: PMID:21664348
+xref: PMID:21747960
+xref: PMID:21806978
+xref: PMID:21828097
+xref: PMID:21852957
+xref: PMID:21894189
+xref: PMID:21937596
+xref: PMID:22125640
+xref: PMID:22339734
+xref: PMID:22371573
+xref: PMID:22385657
+xref: PMID:22411224
+xref: PMID:22439894
+xref: PMID:22451003
+xref: PMID:22543868
+xref: PMID:22884275
+xref: PMID:23079596
+xref: PMID:23123964
+xref: PMID:23250205
+xref: PMID:23297191
+xref: PMID:23318635
+xref: PMID:23405188
+xref: PMID:23629965
+xref: PMID:23652002
+xref: PMID:23954785
+xref: PMID:24040508
+xref: PMID:24063805
+xref: PMID:24120894
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24238224
+xref: PMID:24704339
+xref: PMID:24737865
+xref: PMID:24922054
+xref: PMID:25017721
+xref: PMID:25254346
+xref: PMID:25356635
+xref: PMID:25558068
+xref: PMID:25725068
+xref: PMID:25956527
+xref: PMID:26062938
+xref: PMID:26114597
+xref: PMID:26457503
+xref: PMID:26459857
+xref: PMID:26525673
+xref: PMID:26711341
+xref: PMID:27034770
+xref: PMID:27063937
+xref: PMID:27074666
+xref: PMID:27122174
+xref: PMID:27150006
+xref: PMID:27163480
+xref: PMID:27240733
+xref: PMID:27441386
+xref: PMID:27501047
+xref: PMID:27551436
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:27654173
+xref: PMID:28072387
+xref: PMID:28126842
+xref: PMID:28171748
+xref: PMID:28245923
+xref: PMID:28287248
+xref: PMID:28292427
+xref: PMID:28434803
+xref: PMID:28461239
+xref: PMID:28495872
+xref: PMID:28686611
+xref: PMID:28807897
+xref: PMID:28893948
+xref: PMID:29291981
+xref: PMID:29674431
+xref: PMID:29906446
+xref: PMID:30194301
+xref: PMID:30237141
+xref: PMID:30282036
+xref: PMID:30383829
+xref: PMID:30399335
+xref: PMID:30471994
+xref: PMID:30485821
+xref: PMID:30729158
+xref: PMID:30962434
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
@@ -4008,6 +4212,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000016 xsd:string
 
 [Term]
@@ -4037,7 +4242,7 @@ is_a: PLANA:0000015 ! non ciliated epithelial cell
 is_a: PLANA:0000033 ! epidermal progenitor
 relationship: develops_from PLANA:0000035 ! Category 3 cell
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
-relationship: part_of PLANA:0000054 ! dorsal epidermis
+relationship: part_of PLANA:0000054 ! dorsal region of definitive epidermis
 relationship: part_of PLANA:0000096 ! ventral epidermis
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
@@ -4049,7 +4254,7 @@ relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -4059,8 +4264,13 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000018 x
 [Term]
 id: PLANA:0000019
 name: muscle progenitor
+def: "muscle progenitor needs def" []
 def: "Progenitor neoblasts implicated in the maintenance and regeneration of muscle fibers." [PMID:25017721]
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:30471994
 is_a: PLANA:0000120 ! progenitor cell
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000019 xsd:string
 
 [Term]
@@ -4105,7 +4315,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000106 ! ciliated epithelial cell
 relationship: develops_from PLANA:0000018 ! Category 4 cell
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
-relationship: part_of PLANA:0000054 ! dorsal epidermis
+relationship: part_of PLANA:0000054 ! dorsal region of definitive epidermis
 relationship: part_of PLANA:0000096 ! ventral epidermis
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
@@ -4221,7 +4431,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -4261,6 +4471,43 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000030 x
 id: PLANA:0000031
 name: pigment cup cell
 def: "Non-neuronal, pigmented cells arrayed along the proximal side of the optic cup." [PMID:21852957, PMID:22884275]
+def: "pigment cup cell needs def" []
+synonym: "eye pigment cell" EXACT []
+synonym: "eye pigment cup cell" EXACT []
+synonym: "eye pigment producing cell" EXACT []
+synonym: "eye pigmented cell" EXACT []
+synonym: "melanin pigment cell" EXACT []
+synonym: "optic cup cell" EXACT []
+synonym: "photoceptor pigmented cell" EXACT []
+synonym: "pigment cell" EXACT []
+xref: PMID:17251262
+xref: PMID:17390146
+xref: PMID:17553481
+xref: PMID:17905225
+xref: PMID:20967238
+xref: PMID:21282632
+xref: PMID:21458439
+xref: PMID:21852957
+xref: PMID:22339734
+xref: PMID:22445864
+xref: PMID:23250205
+xref: PMID:23318641
+xref: PMID:24063805
+xref: PMID:25254346
+xref: PMID:25493551
+xref: PMID:26017970
+xref: PMID:27122174
+xref: PMID:27551436
+xref: PMID:27606067
+xref: PMID:28137894
+xref: PMID:28245923
+xref: PMID:28287248
+xref: PMID:28495872
+xref: PMID:28976975
+xref: PMID:29158443
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:30471994
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000561 ! neuron associated cell (sensu Nematoda and Protostomia)
@@ -4275,11 +4522,12 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000031 xsd:string
 
 [Term]
 id: PLANA:0000032
-name: dorsal midline
+name: dorsal region of midline
 def: "The median line/plane of bilateral symmetry along the anteroposterior axis on the dorsal surface of the animal." []
 synonym: "dorsal region of midline" EXACT []
 is_a: PLANA:0000030 ! midline
@@ -4355,7 +4603,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -4393,7 +4641,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000037 x
 
 [Term]
 id: PLANA:0000038
-name: ventral midline
+name: ventral region of midline
 def: "The median line/ plane of bilateral symmetry along the anteroposterior axis on the ventral surface of the animal." []
 synonym: "ventral region of midline" EXACT []
 is_a: PLANA:0000030 ! midline
@@ -4421,7 +4669,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -4477,7 +4725,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000042 x
 
 [Term]
 id: PLANA:0000043
-name: dorsal ventral margin
+name: dorsal/ventral compartment boundary of whole organism
 def: "Region along the edge of the animal where the dorsal and ventral surfaces meet." []
 synonym: "dorsal/ventral compartment boundary of whole organism" EXACT []
 synonym: "dorsoventral margin" EXACT []
@@ -4515,6 +4763,8 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000044 x
 id: PLANA:0000045
 name: circular muscle fiber
 def: "Body wall muscle fibers arrayed around the dorsoventral axis. Upon regeneration, these are thought to be produced de novo in the blastema." [https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000005.md, PMID:26904543]
+def: "circular muscle fiber needs def" []
+synonym: "circular muscle fiber" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000101 ! muscle cell
@@ -4533,6 +4783,7 @@ relationship: RO:0001018 PLANA:0007549 ! contained in body wall musculature comp
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000045 xsd:string
 
 [Term]
@@ -4553,7 +4804,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -4588,8 +4839,19 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000047 x
 
 [Term]
 id: PLANA:0000048
+name: diagonal muscle cell
 name: diagonal muscle fiber
 def: "Body wall muscle fibers arrayed diagonally along the anteroposterior axis." [PMID:26904543]
+def: "diagonal muscle fiber needs def" []
+synonym: "diagonal fiber" EXACT []
+synonym: "diagonal muscle" EXACT []
+synonym: "diagonal muscle fiber" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:23903188
+xref: PMID:27068018
+xref: PMID:28461239
+xref: PMID:28807897
+xref: PMID:30471994
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000101 ! muscle cell
 relationship: part_of PLANA:0000240 ! body wall musculature
@@ -4606,6 +4868,7 @@ relationship: RO:0001018 PLANA:0007549 ! contained in body wall musculature comp
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000048 xsd:string
 
 [Term]
@@ -4665,6 +4928,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000053 x
 [Term]
 id: PLANA:0000054
 name: dorsal epidermis
+name: dorsal region of definitive epidermis
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." []
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." [OCLC:16809160]
 synonym: "dorsal region of definitive epidermis" EXACT []
@@ -4684,7 +4948,7 @@ def: "Ciliated epithelial cells along the dorsal midline." [PMID:17553481]
 synonym: "racing stripe" BROAD []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
-relationship: part_of PLANA:0000054 ! dorsal epidermis
+relationship: part_of PLANA:0000054 ! dorsal region of definitive epidermis
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4837,8 +5101,21 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000064 x
 [Term]
 id: PLANA:0000065
 name: flame cell
-def: "Terminal structure of the protonephridia unit, capping the proximal tubules. Flame cells are defined by the ‘filtration weir’, which consists of closely apposed strands of cytoplasm surrounding a central cilia bundle, and by numerous microvilli between weir and cilia. Positive for acetyated tubulin." [OCLC:16809160, PMID:21828097, PMID:26057828]
+def: "Terminal structure of the protonephridia unit, capping the proximal tubules. Flame cells are defined by the ‘filtration weir’, or filtration diaphragm, which consists of closely apposed strands of cytoplasm surrounding a central cilia bundle, and by numerous microvilli between weir and cilia. Positive for acetyated tubulin." [OCLC:16809160, PMID:21828097, PMID:26057828]
 comment: Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same. In the diagram, terminal flame cells and their corresponding cilia are in blues, the proximal tubule is in reds, the distal tubule is in greens while the  collecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green.
+xref: ISBN:9780070316607
+xref: PMID:17670787
+xref: PMID:19247960
+xref: PMID:19852954
+xref: PMID:21828097
+xref: PMID:21937596
+xref: PMID:24523458
+xref: PMID:26057828
+xref: PMID:26711341
+xref: PMID:27068018
+xref: PMID:27542689
+xref: PMID:29674431
+xref: PMID:29674432
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: adjacent_to PLANA:0000087 ! proximal tubule
@@ -4854,6 +5131,7 @@ relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/flamecell.png {xref="PMID:26057828"}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000065 xsd:string
 property_value: UBPROP:0000003 "Has functional homology with vertebrate podocytes." xsd:string {xref="PMID:26057828"}
@@ -4923,8 +5201,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000068 x
 [Term]
 id: PLANA:0000069
 name: inner longitudinal muscle fiber
+def: "inner longitudinal muscle fiber needs def" []
 def: "Inner most body wall muscle fibers arrayed along the anteroposterior axis. These fibers are thicker than the outer longitudinal muscle fibers. The pattern of these muscles differs along the dorsoventral axis, with the dorsal arrangement converging at the central zone of the anterior pole. The ventral arrangement is more parallel or may diverge slightly as it approaches the ventral pole." [https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000003.md, PMID:26904543]
+synonym: "inner longitudinal muscle fiber" EXACT []
+synonym: "inner longitudinal muscle layer" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:30962434
 is_a: PLANA:0000071 ! longitudinal muscle fiber
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000069 xsd:string
 
 [Term]
@@ -4950,11 +5234,41 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000070 x
 
 [Term]
 id: PLANA:0000071
+name: longitudinal muscle cell
 name: longitudinal muscle fiber
 def: "Body wall muscle fibers arrayed along the anteroposterior axis. Upon regeneration, these muscles are thought to be established from truncated pre-existing fibers." [https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000005.md, PMID:26904543]
+def: "longitudinal muscle fiber needs def" []
+synonym: "body wall longitudinal fiber" EXACT []
+synonym: "BW longitudinal fiber" EXACT []
+synonym: "longitudinal fiber" EXACT []
+synonym: "longitudinal muscle" EXACT []
+synonym: "longitudinal muscle cell" EXACT []
+synonym: "longitudinal muscle fiber" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:23903188
+xref: PMID:27551436
+xref: PMID:28461239
+xref: PMID:28807897
+xref: PMID:30471994
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000101 ! muscle cell
+intersection_of: PLANA:0000101 ! muscle cell
+intersection_of: develops_from PLANA:0000134 ! longitudinal muscle progenitor cell
+intersection_of: part_of PLANA:0000240 ! body wall musculature
+intersection_of: RO:0001018 PLANA:0000418 ! contained in head
+intersection_of: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
+intersection_of: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
+intersection_of: RO:0001018 PLANA:0000421 ! contained in tail
+intersection_of: RO:0001018 PLANA:0004527 ! contained in copulatory region
+intersection_of: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
+intersection_of: RO:0001018 PLANA:0007505 ! contained in ventral compartment
+intersection_of: RO:0001018 PLANA:0007506 ! contained in anterior compartment
+intersection_of: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+intersection_of: RO:0001018 PLANA:0007549 ! contained in body wall musculature compartment
+intersection_of: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
+intersection_of: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
+intersection_of: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 relationship: develops_from PLANA:0000134 ! longitudinal muscle progenitor cell
 relationship: part_of PLANA:0000240 ! body wall musculature
 relationship: RO:0001018 PLANA:0000418 ! contained in head
@@ -4970,6 +5284,7 @@ relationship: RO:0001018 PLANA:0007549 ! contained in body wall musculature comp
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000071 xsd:string
 
 [Term]
@@ -5006,7 +5321,7 @@ relationship: part_of PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0003001 PLANA:0000204 ! produced by ovary
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000074 xsd:string
 
@@ -5060,16 +5375,23 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000077 x
 [Term]
 id: PLANA:0000078
 name: outer longitudinal muscle fiber
+def: "outer longitudinal muscle fiber needs def" []
 def: "Outer most body wall muscle fibers arrayed along the anteroposterior axis. These fibers are thinner than the inner longitudinal muscle fibers." [https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000003.md, PMID:26904543]
+synonym: "outer longitudinal muscle layer" EXACT []
+xref: ISBN:9780070316607
 is_a: PLANA:0000071 ! longitudinal muscle fiber
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000078 xsd:string
 
 [Term]
 id: PLANA:0000079
 name: parenchymal musculature
-def: "Dorsal-ventral muscle fibers present through the mesenchyme." [OCLC:16809160]
+def: "Muscles that are present through the mesenchyme, inclusing dorsal-ventral muscles, intestinal muscles and pharynx muscles." [OCLC:16809160]
 comment: The depicted by field is a hemotoxylin and eosin stained sagittal section with the dorsal side up and anterior to the right. The parenchymal musculature, or dorsal ventral muscle fibers are the periodic vertical strands apparent in the middle of the image. Scale bar is 200um.
 synonym: "dorsoventral muscle fibers" BROAD []
+synonym: "parenchymal muscle" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:30962434
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000422 ! tail stripe
@@ -5086,7 +5408,8 @@ relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/parenchymalmusculature.png%20
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/parenchymalmusculature.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000079 xsd:string
 
 [Term]
@@ -5100,7 +5423,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000080 x
 [Term]
 id: PLANA:0000081
 name: pharyngeal pouch
+name: pharynx pouch
 def: "An epithelial structure housing the definitive pharynx, connected to the esophagus and mouth." [OCLC:16809160]
+def: "pharyngeal pouch needs def" []
+synonym: "pharyngeal pouch" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000049 ! digestive system
@@ -5109,6 +5435,7 @@ relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000081 xsd:string
 
 [Term]
@@ -5116,7 +5443,7 @@ id: PLANA:0000082
 name: racing stripe
 def: "Ciliated epidermal cells located along the dorsal midline." [PMID:17553481]
 is_a: PLANA:0000109 ! anatomical compartment subdivision feature
-relationship: part_of PLANA:0000054 ! dorsal epidermis
+relationship: part_of PLANA:0000054 ! dorsal region of definitive epidermis
 relationship: subdivision_of PLANA:0007504 ! dorsal compartment
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000082 xsd:string
 
@@ -5146,7 +5473,8 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000084 x
 [Term]
 id: PLANA:0000085
 name: primitive gut cell
-def: "Four large phagocytic cells associated with the temporary embryonic pharynx." [PMID:28072387]
+def: "A phagocytic cell closely associated with the temporary embryonic pharynx." [PMID:28072387]
+xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0004518 ! extraembryonic cell
@@ -5155,6 +5483,7 @@ relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0000058 ! embryonic digestive system
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
 relationship: RO:0002497 PLANA:0000005 ! existence ends during or before Stage 5
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000085 xsd:string
 
 [Term]
@@ -5253,7 +5582,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0003001 PLANA:0000208 ! produced by testis
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000090 xsd:string
 
@@ -5274,6 +5603,8 @@ id: PLANA:0000092
 name: syncytial yolk cell
 namespace: Schmidtea_mediterranea_Developmental_Terms
 def: "Fused yolk cells surrounding blastomeres undergoing dispersed cleavage during Stages 1 and 2." [PMID:15599763]
+def: "syncytial yolk cell needs def" []
+synonym: "syncytial yolk cell" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0004518 ! extraembryonic cell
 relationship: existence_starts_during_or_after PLANA:0000001 ! Stage 1
@@ -5281,6 +5612,7 @@ relationship: RO:0002490 PLANA:0000001 ! existence overlaps Stage 1
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002497 PLANA:0000002 ! existence ends during or before Stage 2
 relationship: RO:0003001 PLANA:0000231 ! produced by vitelline gland
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000092 xsd:string
 
 [Term]
@@ -5332,7 +5664,7 @@ relationship: part_of PLANA:0000429 ! neoblast compartment
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -5344,7 +5676,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000095 x
 [Term]
 id: PLANA:0000096
 name: ventral epidermis
-name: ventral region of the epidermal compartment
+name: ventral region of definitive epidermis
 def: "Single cell layer of ventral, post-mitotic, heavily ciliated epithelial cells" []
 synonym: "ventral region of definitive epidermis" EXACT []
 is_a: PLANA:0000034 ! definitive epidermis
@@ -5456,7 +5788,7 @@ name: rhabdite
 def: "Straight or curved rod-like structures within the epidermal cells, oriented with long axis at right angles to the epidermal surface, that are discharged into mucous secretions." [OCLC:16809160]
 is_a: PLANA:0000430 ! epithelial cell component
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
-relationship: part_of PLANA:0000054 ! dorsal epidermis
+relationship: part_of PLANA:0000054 ! dorsal region of definitive epidermis
 relationship: part_of PLANA:0000096 ! ventral epidermis
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -5499,7 +5831,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0003001 PLANA:0000231 ! produced by vitelline gland
@@ -5527,7 +5859,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5548,7 +5880,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5579,8 +5911,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000114 x
 [Term]
 id: PLANA:0000115
 name: distal tubule epithelial cell
-def: "Nonciliated epithelial cells that assemble into protonephridial proximal tubules." [PMID:21828097]
+def: "Nonciliated epithelial cells that assemble into protonephridial distal tubules." []
 comment: Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same. In the diagram, terminal flame cells and their corresponding cilia are in blues, the proximal tubule is in reds, the distal tubule is in greens while the  collecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green.
+synonym: "distal tubule cell" EXACT []
+xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000015 ! non ciliated epithelial cell
 relationship: part_of PLANA:0000053 ! distal tubule
@@ -5595,7 +5929,8 @@ relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
-property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/distaltubuleepithelialcell.png {xref="PMID:26057828"}
+property_value: depicted:by http://purl.obolibrary.org/obo/plana/images/distaltubuleepithelialcell.png {xref="PMID:26057828"}
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000115 xsd:string
 
 [Term]
@@ -5632,7 +5967,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5732,7 +6067,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000127 xsd:string
@@ -5753,7 +6088,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000128 xsd:string
@@ -5785,7 +6120,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5841,7 +6176,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -5864,7 +6199,7 @@ relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5874,10 +6209,21 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000135 x
 id: PLANA:0000136
 name: whole organism
 def: "Anatomical structure that is an individual member of of Schmidtea mediterranea or any other flatworm of the class Turbellaria." []
+def: "whole organism needs def" []
+synonym: "intact animal" EXACT []
+synonym: "intact planarian" EXACT []
 synonym: "whole animal" EXACT []
 synonym: "whole body" EXACT []
+synonym: "whole worm" EXACT []
+synonym: "WW" EXACT []
+xref: PMID:17251262
+xref: PMID:26711341
+xref: PMID:27502555
+xref: PMID:28976975
+xref: PMID:29906446
 xref: UBERON:0000468
 is_a: UBERON:0000061 ! anatomical structure
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000137
@@ -5901,7 +6247,7 @@ creation_date: 2018-08-03T19:14:32Z
 
 [Term]
 id: PLANA:0000140
-name: anterior region of the whole animal
+name: anterior region of whole organism
 def: "Compartment along the anteroposterior axis closer to the head rather than the tail, from the head margin to the esophagus." [OCLC:16809160]
 synonym: "anterior region of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
@@ -5912,7 +6258,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0000141
-name: dorsal region of the whole animal
+name: dorsal region of whole organism
 def: "Three dimensional compartment along the dorsoventral axis that is above the anteroposterior axis, containing the eyes." []
 synonym: "dorsal region of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
@@ -5923,7 +6269,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0000142
-name: posterior compartment of the whole animal
+name: posterior region of whole organism
 def: "Three dimensional compartment along the anteroposterior axis that is closer to the tail rather than the head, from the anterior boundary of the pharyngeal pouch to the tip of the tail." []
 synonym: "posterior region of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
@@ -5934,7 +6280,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0000143
-name: ventral compartment of the whole animal
+name: ventral region of whole organism
 def: "Compartment along the dorsoventral axis that is below the anteroposterior axis." []
 synonym: "ventral region of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
@@ -5946,7 +6292,12 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0000201
 name: bursal canal
-def: "The passageway connecting the gonopore to the bursa (genital atrium). Part of the copulatory apparatus. During mating, sperm from a partner is deposited into the bursal canal, where it collects in the bursa before travelling up the oviducts to the bursa.  Egg capsules pass through the bursal canal as they are laid through the gonopore." [PMID:22074376]
+def: "The passageway connecting the genital atrium to the copulatory bursa. Part of the copulatory apparatus. During mating, sperm from a partner is deposited into the bursal canal, where it collects in the copulatory bursa before travelling up the oviducts to the tuba." []
+xref: ISBN: 9780070316607
+xref: PMID:20967238
+xref: PMID:22074376
+xref: PMID:25278423
+xref: PMID:27149082
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -5955,9 +6306,10 @@ relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000201 xsd:string
 
 [Term]
@@ -6158,7 +6510,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -6184,7 +6536,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000219 xsd:string
@@ -6208,7 +6560,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000220 xsd:string
 
@@ -6230,7 +6582,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000221 xsd:string
 
@@ -6250,14 +6602,26 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000222 xsd:string
 
 [Term]
 id: PLANA:0000223
 name: female germline stem cell
+name: oogonial stem cell
 def: "A piwi-1+, nanos+ cell residing in the ovary that self-renews and give rise to oogonial cells that differentiate into oocytes." [PMID:19022767, PMID:20844018]
+def: "female germline stem cell needs def" []
+synonym: "female germ cell" EXACT []
+synonym: "female germline cell" EXACT []
+synonym: "female germline stem cell" EXACT []
+synonym: "oogonial stem cell" EXACT []
+synonym: "ovarian germline stem cell" EXACT []
+xref: PMID:23652002
+xref: PMID:25278423
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:27330085
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000121 ! stem cell
@@ -6269,15 +6633,23 @@ relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000223 xsd:string
 
 [Term]
 id: PLANA:0000224
 name: cement gland
-def: "Glands surrounding the copulatory bursa that are required for production of the proteinaceous egg capsule shell and stalk." [ASIN:B000M4NK9M, PMID:18942102, PMID:22074376, PMID:27149082]
+def: "Glands surrounding the genital atrium that are required for production of the proteinaceous egg capsule shell and stalk." []
+def: "Glands surrounding the genital atrium that are required for production of the proteinaceous egg capsule shell and stalk." [ASIN:B000M4NK9M, PMID:18942102, PMID:22074376, PMID:27149082]
+synonym: "shell gland" EXACT []
+xref: ISBN: 9780070316607
+xref: PMID:20967238
+xref: PMID:23652002
+xref: PMID:25278423
+xref: PMID:27149082
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6287,9 +6659,10 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000224 xsd:string
 
 [Term]
@@ -6384,9 +6757,15 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000232 x
 [Term]
 id: PLANA:0000233
 name: copulatory bursa
-def: "A chamber where egg capsules are formed. One or more zygotes and yolk cells produced by the vitelline glands collect in the copulatory bursa; glands surrounding the copulatory bursa produce the egg capsule shell.\n  Nascent egg capsules exit the body by passing through the bursal canal and gonopore. The copulatory bursa is synonymous with the term genital atrium." [PMID:22074376]
+def: "An organ that receives and stores sperm from mating partners." [PMID:22074376]
 synonym: "bursa" EXACT []
 synonym: "genital atrium" EXACT []
+synonym: "male antrum" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN: 9780070316607
+xref: PMID:20967238
+xref: PMID:22074376
+xref: PMID:25278423
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6396,6 +6775,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000233 xsd:string
 
 [Term]
@@ -6447,7 +6827,7 @@ relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000239 xsd:string
@@ -6488,12 +6868,17 @@ property_value: UBPROP:0000008 "define generically to encompass both vertebrates
 [Term]
 id: PLANA:0000241
 name: pharyngeal longitudinal muscle fiber
+def: "pharyngeal longitudinal muscle fiber needs def" []
 def: "Pharynx muscle fibers running anteroposterior (proximal to distal)." [ASIN:B000M4NK9M]
+synonym: "pharyngeal longitudinal muscle cell" EXACT []
+synonym: "pharyngeal longitudinal muscle fiber" EXACT []
+synonym: "pharynx longitudinal muscle fiber" EXACT []
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000478 ! musculature of pharynx
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000241 xsd:string
 
 [Term]
@@ -6591,8 +6976,14 @@ replaced_by: UBERON:0000464
 [Term]
 id: PLANA:0000404
 name: cavity of pharynx
+name: pharynx lumen
 def: "A anatomical space that is enclosed by a pharynx." []
+def: "cavity of pharynx needs def" []
 comment: Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. Cavity of pharynx is indicated by arrows. Scale bar = 250um
+synonym: "cavity of pharynx" EXACT []
+synonym: "pharyngeal lumen" EXACT []
+synonym: "pharynx cavity" EXACT []
+xref: PMID:24120894
 xref: UBERON:0001731
 is_a: BFO:0000002 ! continuant
 is_a: UBERON:0002553 ! anatomical cavity
@@ -6605,6 +6996,7 @@ relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/cavityofpharynx.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000404 xsd:string
 
@@ -6612,7 +7004,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000404 x
 id: PLANA:0000405
 name: lumen of digestive tract
 def: "An anatomical space that is surrounded by a digestive tract." [PMID:21664348]
+def: "lumen of digestive tract needs def" []
 comment: Depicted by field contains hematoxylin and eosin staining on a coronal section of a asexual adult animal. The lumen of the digestive tract is indicated by arrows. Scale bar = 250um
+synonym: "digestive system lumen" EXACT []
+synonym: "gut cavity" EXACT []
+synonym: "lumen of digestive tract" EXACT []
+xref: PMID:17553481
+xref: PMID:21828097
+xref: PMID:28072387
 xref: UBERON:0006909
 is_a: BFO:0000002 ! continuant
 is_a: UBERON:0002553 ! anatomical cavity
@@ -6632,6 +7031,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/lumenofdigestivetract.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000405 xsd:string
 
@@ -6656,7 +7056,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000406 x
 id: PLANA:0000407
 name: pharnygeal pouch cavity
 def: "Anatomical space between the definitive pharynx and the epithelial cells comprising parapharyngeal pouch." [OCLC:16809160]
+def: "pharnygeal pouch cavity needs def" []
 comment: Depicted by field contains hematoxylin and eosin staining  coronal section section of a asexual adult animal. Parapharyngeal pouch cavity is indicated by arrows. Scale bar = 250um
+synonym: "pharnygeal cavity" EXACT []
+synonym: "pharyngeal pouch cavity" EXACT []
 is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: immediately_superficial_to PLANA:0000413 ! pharynx outer epithelial surface
@@ -6668,12 +7071,13 @@ relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/parapharyngealpouchcavity.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000407 xsd:string
 
 [Term]
 id: PLANA:0000409
-name: apical surface of the epidermal compartment
+name: apical surface of definitive epidermis
 def: "The apical surface of the single layered epidermis that is in contact with the environment." []
 synonym: "apical surface of definitive epidermis" EXACT []
 is_a: PLANA:0000034 ! definitive epidermis
@@ -6684,7 +7088,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obol
 
 [Term]
 id: PLANA:0000410
-name: basal surface of the epidermal compartment
+name: basal surface of definitive epidermis
 def: "The basal surface of the epidermal epithelium in direct contact with the basal lamina." []
 synonym: "basal surface of definitive epidermis" EXACT []
 is_a: PLANA:0000034 ! definitive epidermis
@@ -6720,8 +7124,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000411 x
 [Term]
 id: PLANA:0000412
 name: pharynx lumen epithelial surface
+def: "pharynx lumen epithelial surface needs def" []
 def: "The epithelial surface lining the interior of the pharynx, facing the lumen." [UBERON:0001731]
 comment: The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the pharynx and surrounding tissues. The pharynx lumen  epithelial surface is marked by black arrows. Scale bar is 200um.
+synonym: "pharyngeal inner epidermis surface" EXACT []
+synonym: "pharyngeal inner epithelial surface" EXACT []
+synonym: "pharyngeal lumen epithelial surface" EXACT []
+synonym: "pharynx inner epidermis surface" EXACT []
+synonym: "pharynx lumen epithelial surface" EXACT []
 is_a: BSPO:0000005 ! anatomical surface
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0000472 ! outer pharyngeal epithelium
@@ -6732,14 +7142,22 @@ relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/pharynxlumenepithelialsurface.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000412 xsd:string
 
 [Term]
 id: PLANA:0000413
 name: pharynx outer epithelial surface
-def: "Epithelial surface covering the outside of the pharynx." [doi:10.1002/jmor.1052060308\nPMID\:29865769]
+name: pharynx outer epithelium surface
+def: "Epithelial surface covering the outside of the pharynx." [doi:10.1002/jmor.1052060308, PMID:29865769]
+def: "pharynx outer epithelial surface needs def" []
 comment: The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the pharynx and surrounding tissues. The pharynx outer epithelial surface is marked by black arrows. Scale bar is 200um.
+synonym: "pharyngeal outer epidermis surface" EXACT []
+synonym: "pharyngeal outer epithelial surface" EXACT []
+synonym: "pharynx outer epidermis surface" EXACT []
+synonym: "pharynx outer side" EXACT []
+xref: PMID:24120894
 is_a: BSPO:0000005 ! anatomical surface
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0000472 ! outer pharyngeal epithelium
@@ -6750,14 +7168,17 @@ relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/pharynxouterepithelialsurface.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000413 xsd:string
 
 [Term]
 id: PLANA:0000414
 name: pharyngeal pouch surface
+def: "pharyngeal pouch surface needs def" []
 def: "The surface of the parapharyngeal pouch facing the pharynx." [OCLC:16809160]
 comment: The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the pharynx and surrounding tissues. Anterior is up. The parapharyngeal pouch surface is marked by black arrows. Scale bar is 200um.
+synonym: "pharyngeal pouch surface" EXACT []
 is_a: BSPO:0000005 ! anatomical surface
 relationship: immediately_superficial_to PLANA:0000407 ! pharnygeal pouch cavity
 relationship: part_of PLANA:0000081 ! pharyngeal pouch
@@ -6769,6 +7190,7 @@ relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/parapharyngealpouchsurface.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000414 xsd:string
 
@@ -6808,14 +7230,38 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000418 x
 [Term]
 id: PLANA:0000419
 name: prepharyngeal region
+def: "prepharyngeal region needs def" []
 def: "Region of the juvenile or adult animal between the posterior end of the cephalic ganglia and the anterior end of the definitive pharynx." []
-comment: http://purl.obolibrary.org/obo/Depicted%20by%20field%20contains%20diagram%20representation%20of%20body%20region.
+comment: Depicted by field contains diagram representation of body region.
+synonym: "neck" EXACT []
+synonym: "pre-pharyngeal region" EXACT []
+synonym: "pre-pharynx region" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: PMID:17251262
+xref: PMID:18202849
+xref: PMID:18287199
+xref: PMID:21295481
+xref: PMID:21852957
+xref: PMID:22339734
+xref: PMID:23318641
+xref: PMID:24120894
+xref: PMID:24922054
+xref: PMID:26556349
+xref: PMID:27063937
+xref: PMID:27150006
+xref: PMID:28216315
+xref: PMID:28245923
+xref: PMID:28287248
+xref: PMID:28893948
+xref: PMID:29547123
+xref: PMID:29674431
 is_a: PLANA:0000102 ! anatomical compartment subdivision
 relationship: posterior_to PLANA:0000418 ! head
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 relationship: subdivision_of PLANA:0007506 ! anterior compartment
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/neck.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000419 xsd:string
 
@@ -6937,6 +7383,161 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000428 x
 id: PLANA:0000429
 name: neoblast compartment
 def: "A heterogeneous population of pluripotent, somatic adult stem cells and lineage primed progenitors that are required for maintenance and regeneration of all cell types in planaria, including the germline." [https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000004.md, PMID:16311336, PMID:21566185, PMID:22899852]
+def: "neoblast compartment needs def" []
+synonym: "adult somatic stem cell" EXACT []
+synonym: "adult stem cell" EXACT []
+synonym: "ASC" EXACT []
+synonym: "neoblast compartment" EXACT []
+synonym: "pASC" EXACT []
+synonym: "planarian adult stem cell" EXACT []
+synonym: "planarian stem cell" EXACT []
+synonym: "somatic stem cell" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: PMID:15866156
+xref: PMID:15972844
+xref: PMID:16033796
+xref: PMID:16311336
+xref: PMID:16344473
+xref: PMID:16890156
+xref: PMID:17251262
+xref: PMID:17376870
+xref: PMID:17390146
+xref: PMID:17553481
+xref: PMID:17670787
+xref: PMID:17905225
+xref: PMID:18063755
+xref: PMID:18202849
+xref: PMID:18287199
+xref: PMID:18456843
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:19174194
+xref: PMID:19247960
+xref: PMID:19564616
+xref: PMID:19766622
+xref: PMID:19805089
+xref: PMID:20040488
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:20599901
+xref: PMID:20844018
+xref: PMID:21179477
+xref: PMID:21179478
+xref: PMID:21282632
+xref: PMID:21356107
+xref: PMID:21458439
+xref: PMID:21664348
+xref: PMID:21747960
+xref: PMID:21806978
+xref: PMID:21852957
+xref: PMID:21894189
+xref: PMID:21937596
+xref: PMID:22125640
+xref: PMID:22223737
+xref: PMID:22252538
+xref: PMID:22252539
+xref: PMID:22318224
+xref: PMID:22339734
+xref: PMID:22371573
+xref: PMID:22385657
+xref: PMID:22411224
+xref: PMID:22427692
+xref: PMID:22439894
+xref: PMID:22445864
+xref: PMID:22451003
+xref: PMID:22479207
+xref: PMID:22543868
+xref: PMID:22549959
+xref: PMID:22696458
+xref: PMID:22884275
+xref: PMID:22899852
+xref: PMID:23079596
+xref: PMID:23235145
+xref: PMID:23250205
+xref: PMID:23297191
+xref: PMID:23318635
+xref: PMID:23318641
+xref: PMID:23405188
+xref: PMID:23629965
+xref: PMID:23903188
+xref: PMID:23954785
+xref: PMID:24040508
+xref: PMID:24063805
+xref: PMID:24120894
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24238224
+xref: PMID:24367277
+xref: PMID:24415944
+xref: PMID:24523458
+xref: PMID:24704339
+xref: PMID:24737865
+xref: PMID:24903754
+xref: PMID:24922054
+xref: PMID:24992682
+xref: PMID:25017721
+xref: PMID:25254346
+xref: PMID:25278423
+xref: PMID:25356635
+xref: PMID:25956527
+xref: PMID:26057828
+xref: PMID:26114597
+xref: PMID:26457503
+xref: PMID:26459857
+xref: PMID:26516985
+xref: PMID:26525673
+xref: PMID:26556349
+xref: PMID:26618653
+xref: PMID:26651295
+xref: PMID:26884331
+xref: PMID:27013241
+xref: PMID:27063937
+xref: PMID:27068018
+xref: PMID:27122174
+xref: PMID:27149082
+xref: PMID:27150006
+xref: PMID:27163480
+xref: PMID:27304889
+xref: PMID:27441386
+xref: PMID:27501047
+xref: PMID:27502555
+xref: PMID:27523733
+xref: PMID:27542689
+xref: PMID:27551436
+xref: PMID:27606067
+xref: PMID:27612384
+xref: PMID:27654173
+xref: PMID:27864883
+xref: PMID:28072387
+xref: PMID:28137894
+xref: PMID:28171748
+xref: PMID:28216315
+xref: PMID:28287248
+xref: PMID:28292427
+xref: PMID:28461239
+xref: PMID:28686611
+xref: PMID:28757112
+xref: PMID:28893948
+xref: PMID:29095551
+xref: PMID:29100657
+xref: PMID:29124009
+xref: PMID:29273738
+xref: PMID:29291974
+xref: PMID:29364871
+xref: PMID:29547123
+xref: PMID:29557542
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:29906446
+xref: PMID:30143032
+xref: PMID:30194301
+xref: PMID:30237141
+xref: PMID:30282036
+xref: PMID:30297872
+xref: PMID:30471994
+xref: PMID:30485821
+xref: PMID:30729158
+xref: PMID:30962434
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000114 ! anatomical system
@@ -6953,6 +7554,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000429 xsd:string
 
 [Term]
@@ -6993,9 +7595,12 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000433 x
 id: PLANA:0000459
 name: optic chiasma
 def: "A decussation of the diencephalon where the fibers of the optic nerve cross" [PMID:18466009]
+def: "optic chiasma needs def" []
+synonym: "chiasm" EXACT []
 synonym: "chiasma opticum" EXACT []
 synonym: "decussation of optic nerve fibers" EXACT []
-synonym: "optic chiasm" EXACT []
+synonym: "optic chiasma" EXACT []
+synonym: "optic chiasmata" EXACT []
 xref: AAO:0010622
 xref: BAMS:DC
 xref: BAMS:OC
@@ -7019,6 +7624,23 @@ xref: MA:0001098
 xref: MBA:117
 xref: MESH:D009897
 xref: Optic:chiasm
+xref: PMID:15866156
+xref: PMID:16033796
+xref: PMID:17553481
+xref: PMID:17905225
+xref: PMID:18202849
+xref: PMID:19048075
+xref: PMID:19211673
+xref: PMID:21282632
+xref: PMID:22339734
+xref: PMID:22445864
+xref: PMID:25356635
+xref: PMID:25493551
+xref: PMID:26618653
+xref: PMID:27800171
+xref: PMID:28495872
+xref: PMID:30194301
+xref: PMID:30962434
 xref: TAO:0000556
 xref: UBERON:0000959
 xref: UMLS:C0029126
@@ -7034,6 +7656,7 @@ relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://purl.obolibrary.org/obo/hasRelatedSynonym "chiasma" xsd:string
 property_value: http://purl.obolibrary.org/obo/hasRelatedSynonym "chiasma nervorum opticorum" xsd:string
 property_value: http://purl.obolibrary.org/obo/hasRelatedSynonym "optic chiasm (Rufus of Ephesus)" xsd:string
@@ -7097,7 +7720,20 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000464 x
 [Term]
 id: PLANA:0000465
 name: pharynx nerve plexus
+def: "pharynx nerve plexus needs def" []
 def: "Plexus of nerves located in the definitive pharynx comprised of inner and outer wall rings." []
+synonym: "nerve ganglia of pharynx" EXACT []
+synonym: "neural plexus of the pharynx" EXACT []
+synonym: "pharyngeal nerve plexus" EXACT []
+synonym: "pharyngeal nerve ring" EXACT []
+synonym: "pharyngeal nervous system" EXACT []
+synonym: "pharyngeal neural plexus" EXACT []
+synonym: "pharynx nerve ring" EXACT []
+xref: PMID:16033796
+xref: PMID:17905225
+xref: PMID:20967238
+xref: PMID:23250205
+xref: PMID:23297191
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000016 ! definitive pharynx
@@ -7106,6 +7742,7 @@ relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000465 xsd:string
 
 [Term]
@@ -7203,59 +7840,98 @@ property_value: UBPROP:0000001 "Multi-cell component structure of the central ne
 id: PLANA:0000472
 name: outer pharyngeal epithelium
 def: "Heavily ciliated epidermal cells covering the outer surface of the pharynx shaft. These are \"insunk\" epidermal cells in which the nuclei reside behind the layers of longitudinal and circumferential muscles and the epithelial cell body sends out a ciliated projection to the surface to cover and encase the shaft." [ASIN:B000M4NK9M]
+def: "outer pharyngeal epithelium needs def" []
+synonym: "epithelial pharynx lining" EXACT []
+synonym: "outer pharyngeal epidermis" EXACT []
+synonym: "outer pharyngeal epithelium" EXACT []
+synonym: "outer pharynx epidermis" EXACT []
+xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: immediately_superficial_to PLANA:0000476 ! outer pharyngeal longitudinal muscle fiber
-relationship: part_of PLANA:0004528 ! pharyngeal epithelium
+relationship: part_of PLANA:0004528 ! pharynx epithelium
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000472 xsd:string
 
 [Term]
 id: PLANA:0000473
 name: outer pharyngeal circular muscle fiber
+def: "outer pharyngeal circular muscle fiber needs def" []
 def: "Pharynx muscle fibers thar run circumferentially about the pharynx and lie just beneath the outer longitudinal pharynx muscles." [ASIN:B000M4NK9M]
+synonym: "outer circular muscle layer" EXACT []
+synonym: "pharyneal outer circular muscle fiber" EXACT []
+synonym: "pharyngeal outer circular muscle cell" EXACT []
+synonym: "pharynx outer circular muscle fiber" EXACT []
+xref: ISBN:9780070316607
 is_a: PLANA:0007535 ! pharyngeal circular muscle fiber
 relationship: immediately_deep_to PLANA:0000476 ! outer pharyngeal longitudinal muscle fiber
 relationship: RO:0001018 PLANA:0007560 ! contained in gastrovascular compartment
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000473 xsd:string
 
 [Term]
 id: PLANA:0000474
 name: inner pharyngeal circular muscle fiber
+def: "inner pharyngeal circular muscle fiber needs def" []
 def: "Pharynx muscle fiber that runs circumferentially about the pharynx and lies just beneath the inner logitudinal pharynx muscle fibers." [ASIN:B000M4NK9M]
+synonym: "inner circular muscle layer" EXACT []
+synonym: "pharyngeal inner circular muscle cell" EXACT []
+synonym: "pharyngeal inner circular muscle fiber" EXACT []
+synonym: "pharynx inner circular muscle fiber" EXACT []
 is_a: PLANA:0007535 ! pharyngeal circular muscle fiber
 relationship: immediately_deep_to PLANA:0007534 ! inner pharyngeal epithelium
 relationship: immediately_superficial_to PLANA:0000475 ! inner pharyngeal longitudinal muscle fiber
 relationship: RO:0001018 PLANA:0007560 ! contained in gastrovascular compartment
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000474 xsd:string
 
 [Term]
 id: PLANA:0000475
 name: inner pharyngeal longitudinal muscle fiber
+def: "inner pharyngeal longitudinal muscle fiber needs def" []
 def: "Pharynx muscle fibers running anteroposterior which lie beneath both the inner circular muscle fibers and the apical, ciliated portion of the epithium lining the lumenal surface." [ASIN:B000M4NK9M]
+synonym: "inner longitudinal muscle layer" EXACT []
+synonym: "pharyngeal inner longitudinal muscle cell" EXACT []
+synonym: "pharyngeal inner longitudinal muscle fiber" EXACT []
+synonym: "pharynx inner longitudinal muscle fiber" EXACT []
+xref: ISBN:9780070316607
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000241 ! pharyngeal longitudinal muscle fiber
 relationship: immediately_deep_to PLANA:0000474 ! inner pharyngeal circular muscle fiber
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000475 xsd:string
 
 [Term]
 id: PLANA:0000476
 name: outer pharyngeal longitudinal muscle fiber
+def: "outer pharyngeal longitudinal muscle fiber needs def" []
 def: "Pharynx muscle fibers running anteroposterior which lie just underneath the apical, cilaited portion of the outer epithelium." [ASIN:B000M4NK9M]
+synonym: "pharyngeal outer longitudinal muscle cell" EXACT []
+synonym: "pharyngeal outer longitudinal muscle fiber" EXACT []
+synonym: "pharynx outer longitudinal muscle fiber" EXACT []
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000241 ! pharyngeal longitudinal muscle fiber
 relationship: immediately_deep_to PLANA:0000472 ! outer pharyngeal epithelium
 relationship: immediately_superficial_to PLANA:0000473 ! outer pharyngeal circular muscle fiber
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000476 xsd:string
 
 [Term]
 id: PLANA:0000477
 name: pharyngeal radial muscle fiber
+def: "pharyngeal radial muscle fiber needs def" []
 def: "Pharynx muscle fibers that run radially, connecting the outer muscle fibers and epithelia with their inner counterparts." [ASIN:B000M4NK9M]
+synonym: "pharyngeal radial muscle cell" EXACT []
+synonym: "pharyngeal radial muscle fiber" EXACT []
+synonym: "pharynx radial muscle fiber" EXACT []
+synonym: "radial muscle cell" EXACT []
+synonym: "radial muscle fiber" EXACT []
+xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000101 ! muscle cell
 relationship: part_of PLANA:0000478 ! musculature of pharynx
@@ -7265,12 +7941,19 @@ relationship: RO:0001018 PLANA:0007560 ! contained in gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000477 xsd:string
 
 [Term]
 id: PLANA:0000478
 name: musculature of pharynx
+def: "musculature of pharynx needs def" []
 def: "The total musculature within the pharynx." [PMID:26904543]
+synonym: "pharyngeal musculature" EXACT []
+synonym: "pharynx muscle" EXACT []
+synonym: "pharynx musculature" EXACT []
+xref: PMID:29674432
+xref: SBN:9780070316607
 xref: UBERON:0004467
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
@@ -7280,24 +7963,34 @@ relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000478 xsd:string
 
 [Term]
 id: PLANA:0000479
 name: inner pharynx nerve plexus
+def: "inner pharynx nerve plexus needs def" []
 def: "Ring of the pharynx nerve plexus that is proximal to the lumen." []
+synonym: "inner pharyngeal nerve ring" EXACT []
+synonym: "inner pharynx nerve ring" EXACT []
+xref: ISBN:9780070316607
 is_a: PLANA:0000465 ! pharynx nerve plexus
 relationship: part_of PLANA:0000465 ! pharynx nerve plexus
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000479 xsd:string
 
 [Term]
 id: PLANA:0000480
 name: outer pharynx nerve plexus
+def: "outer pharynx nerve plexus needs def" []
 def: "Ring of the pharynx nerve plexus that is proximal to the exterior surface." [doi:10.1002/jmor.1051550208\nPMID\:27612384]
+synonym: "outer pharyngeal nerve ring" EXACT []
+synonym: "outer pharynx nerve ring" EXACT []
 is_a: PLANA:0000465 ! pharynx nerve plexus
 relationship: part_of PLANA:0000465 ! pharynx nerve plexus
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000480 xsd:string
 
 [Term]
@@ -7317,7 +8010,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000481 xsd:string
 
 [Term]
@@ -7367,9 +8060,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000486 x
 [Term]
 id: PLANA:0000487
 name: acidophilic gland cell
+def: "acidophilic gland cell needs def" []
 def: "One of two distinct histochemical classes of gland cells, these can be found throughout the body but primarily form clusters of subepidermal marginal adhesive glands along the dorsalventral border of the animal." [PMID:20865784]
 synonym: "eosinophilic gland cell" BROAD []
+synonym: "eosinophilic gland cell" EXACT []
+synonym: "erythrophilous gland cell" EXACT []
+xref: PMID:20865784
 is_a: PLANA:0000485 ! gland cell
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000487 xsd:string
 
 [Term]
@@ -8202,7 +8900,7 @@ xref: XAO:0003163
 xref: ZFA:0001485
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000476 ! acellular anatomical structure
-relationship: immediately_deep_to PLANA:0000054 ! dorsal epidermis
+relationship: immediately_deep_to PLANA:0000054 ! dorsal region of definitive epidermis
 relationship: immediately_deep_to PLANA:0000096 ! ventral epidermis
 relationship: immediately_superficial_to PLANA:0000240 ! body wall musculature
 relationship: part_of PLANA:0004529 ! integumental system
@@ -8233,17 +8931,17 @@ property_value: UBPROP:0000003 "A basal lamina is certainly present in Bilateria
 [Term]
 id: PLANA:0002000
 name: adenal rhabdite
-def: "adenal rhabdite of rhabdite needs def" [ISBN:9780070316607]
+def: "Rhabdites that are located basally to the epidermis, in the mesenchyme. In Smed these are present in cells likely on their way to becoming part of the mature epidermis." [ISBN:9780070316607]
 xref: ISBN:9780070316607
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000104 ! rhabdite
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002001
 name: adherens junction
-def: "adherens junction of cell junction needs def" []
+def: "A cell junction at which anchoring proteins (cadherins or integrins) extend through the plasma membrane and are attached to actin filaments." []
 xref: GO:0005912
 xref: PMID:26556349
 is_a: PLANA:0000506 ! cell junction
@@ -8256,14 +8954,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002002
 name: adhesive papilla
-def: "adhesive papilla of cell projection needs def" [ISBN:9780070316607]
+def: "Finger-like processes at the terminal pore of adhesive gland cells around the marginal adhesive zone. They protrude past the epidermis and are longer microvilli, and shorter than cilia." [ISBN:9780070316607]
 synonym: "adhesive papillae" EXACT []
 xref: ISBN:9780070316607
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0007540 ! viscid gland cell
 relationship: part_of PLANA:0007541 ! releasing gland cell
-relationship: RO:0001018 PLANA:0000043 ! contained in dorsal ventral margin
+relationship: RO:0001018 PLANA:0000043 ! contained in dorsal/ventral compartment boundary of whole organism
 relationship: RO:0001018 PLANA:0002054 ! contained in marginal adhesive zone
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
@@ -8273,14 +8971,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002003
 name: amputation
-def: "amputation of cut needs def" []
+def: "A wound resulting in two or more separate tissue fragments." []
 is_a: PLANA:0002026 ! cut
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002004
 name: anterior gut branch
-def: "anterior gut branch of definitive tissue needs def" [PMID:21664348]
+def: "A branch of the triclad gut located anterior to the definitive pharynx." [PMID:21664348]
 synonym: "anterior branch" EXACT []
 synonym: "anterior intestinal branch" EXACT []
 xref: PMID:18063757
@@ -8315,7 +9013,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002005
 name: anterior tip
-def: "anterior tip of anatomical compartment subdivision feature needs def" [PMID:22479207]
+def: "The anterior-medial region of the head margin." [PMID:22479207]
 synonym: "head tip" EXACT []
 xref: PMID:15866156
 xref: PMID:18063755
@@ -8338,16 +9036,16 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002006
 name: antrum
-def: "antrum of obsolete anatomical cavity needs def" []
+def: "A chamber formation in an organ." []
 xref: ISBN:9780070316607
 xref: NCIT:C97102
-is_a: PLANA:0000242 ! obsolete anatomical cavity
+is_a: UBERON:0002553 ! anatomical cavity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002007
 name: auricle
-def: "auricle of organ needs def" [ISBN:9780070316607]
+def: "A sense organ located along the dorsolateral head margin. The auricular groove is highly innervtated by ciliated sensory neurons, and has an altered epidermis devoid of rhabdites and gland cells." [ISBN:9780070316607]
 xref: ISBN:9780070316607
 xref: PMID:27800171
 xref: PMID:28495872
@@ -8367,7 +9065,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002008
 name: axon
-def: "axon of cell projection needs def" []
+def: "The long process of a neuron that conducts nerve impulses, usually away from the cell body to the terminals and varicosities, which are sites of storage and release of neurotransmitter." []
 synonym: "nerve fiber" EXACT []
 xref: GO:0030424
 xref: PMID:16033796
@@ -8393,7 +9091,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002009
 name: axoneme
-def: "axoneme of intracellular non-membrane-bounded organelle needs def" []
+def: "The bundle of microtubules and associated proteins that forms the core of cilia (also called flagella) in eukaryotic cells and is responsible for their movements." []
 xref: GO:0005930
 xref: PMID:23144623
 xref: PMID:26057828
@@ -8406,7 +9104,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002010
 name: basal body
-def: "basal body of intracellular non-membrane-bounded organelle needs def" []
+def: "A membrane-tethered, short cylindrical array of microtubules and associated proteins found at the base of a eukaryotic cilium (also called flagellum) that is similar in structure to a centriole and derives from it. The cilium basal body is the site of assembly and remodelling of the cilium and serves as a nucleation site for axoneme growth. As well as anchoring the cilium, it is thought to provide a selective gateway regulating the entry of ciliary proteins and vesicles by intraflagellar transport." []
 xref: GO:0036064
 xref: ISBN:9780070316607
 xref: PMID:21282632
@@ -8420,7 +9118,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002011
 name: brain visual center
-def: "brain visual center of definitive tissue needs def" [PMID:16033796]
+def: "The cephalic ganglion region innervated by the optic nerve (posterior-projecting photoreceptor neuron fasiculated axons)." [PMID:16033796]
 synonym: "visual center" EXACT []
 xref: PMID:16033796
 xref: PMID:26618653
@@ -8438,11 +9136,11 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002012
 name: bulbar cavity
-def: "bulbar cavity of obsolete anatomical cavity needs def" [ISBN:9780070316607]
+def: "An enlarged portion of the seminal vesicle, comprised of secretory epithelial cells, that connects to the ejaculatory duct within the penis papilla." [ISBN:9780070316607]
 xref: https://doi.org/10.1101/279364
 xref: ISBN:9780070316607
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000242 ! obsolete anatomical cavity
+is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of PLANA:0000234 ! seminal vesicle
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
@@ -8455,19 +9153,19 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002013
 name: Category 1 cell
-def: "Category 1 cell of parenchymal compartment cell needs def" [PMID:18786419]
+def: "Irradiation-sensitive, mesenchymal cells that are absent from the head region anterior to the eyes and the pharynx. The Category 1 designation encompasses the neoblast population." [PMID:18786419]
 synonym: "Category 1 gene expressing cell" EXACT []
 xref: PMID:18786419
 xref: PMID:21894189
 xref: PMID:22439894
-is_a: PLANA:0003116 ! parenchymal compartment cell
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+is_a: PLANA:0003116 ! parenchyma cell
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002014
 name: cell body
-def: "cell body of cellular component needs def" []
+def: "The portion of a cell bearing surface projections such as axons, dendrites, cilia, or flagella that includes the nucleus, but excludes all cell projections." []
 xref: GO:0044297
 xref: PMID:15866156
 xref: PMID:16033796
@@ -8480,7 +9178,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002015
 name: cephalic ganglia lobe
-def: "cephalic ganglia lobe of definitive tissue needs def" [PMID:17999079]
+def: "One of two bilaterally symmetric structures comprising the planarian brain." [PMID:17999079]
 synonym: "bi-lobed brain" EXACT []
 synonym: "bi-lobed cephalic ganglia" EXACT []
 synonym: "brain" EXACT []
@@ -8605,7 +9303,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002016
 name: cephalic ganglia neuron
-def: "cephalic ganglia neuron of central nervous system neuron needs def" [PMID:17999079]
+def: "A central nervous system neuron located within the planarian brain." [PMID:17999079]
 synonym: "brain neuron" EXACT []
 xref: PMID:24173799
 xref: PMID:27612382
@@ -8620,14 +9318,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002017
 name: chemical amputation
-def: "chemical amputation of wound needs def" [PMID:24737865]
+def: "Amputation carried out by application of chemicals." [PMID:24737865]
 is_a: PLANA:0002108 ! wound
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002018
 name: chemical pharynx amputation
-def: "chemical pharynx amputation of chemical amputation needs def" [PMID:24737865]
+def: "Amputation of the phaynx, including the esophagus, by treatment with Sodium Azide." [PMID:24737865]
 synonym: "chemical pharyngeal amputation" EXACT []
 is_a: PLANA:0002017 ! chemical amputation
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -8635,7 +9333,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002019
 name: chemosensory neuron
-def: "chemosensory neuron of sensory neuron needs def" []
+def: "Any neuron that capable of some detection of chemical stimulus involved in sensory perception." []
 synonym: "chemoreceptive neuron" EXACT []
 synonym: "chemoreceptor neuron" EXACT []
 xref: FBbt:00005922
@@ -8652,7 +9350,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002020
 name: chromatoid body
-def: "chromatoid body of non-membrane-bounded organelle needs def" [PMID:22318224, PMID:24903754]
+def: "A membrane-less, cytoplasmic ribonucleoprotein granule present in neoblasts and germ cells implicated in post-transcriptional regulation. The RNA helicase DHH1/RCK, Tudor, SmB, methylated substrates of PRMT5, PIWI-3 and Germinal Histone H4 localize to chromatoid bodies in neoblasts." [PMID:22318224, PMID:24903754]
 synonym: "nuage" EXACT []
 xref: PMID:19247960
 xref: PMID:20215344
@@ -8684,7 +9382,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
@@ -8699,8 +9397,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002021
 name: chromosome
-def: "chromosome of non-membrane-bounded organelle needs def" []
-def: "chromosome of nuclear part needs def" []
+def: "A structure composed of a very long molecule of DNA and associated proteins (e.g. histones) that carries hereditary information." []
 xref: GO:0005694
 xref: PMID:25404302
 xref: PMID:28757112
@@ -8715,7 +9412,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002022
 name: chromosome arm
-def: "chromosome arm of nuclear part needs def" []
+def: "Under the microscope chromosomes appear as thin, thread-like structures. They all have a short arm and long arm separated by a primary constriction called the centromere. The short arm is designated as p and the long arm as q." []
 xref: NCIT:C13355
 xref: PMID:25404302
 is_a: PLANA:0000532 ! nuclear part
@@ -8725,8 +9422,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002023
 name: ciliated epithelium
-def: "ciliated epithelium of definitive tissue needs def" []
-def: "ciliated epithelium of epithelium needs def" []
+def: "Epithelium bearing vibratile cilia on the free surface." []
 xref: PMID:26457503
 xref: PMID:26711341
 xref: PMID:28216315
@@ -8738,7 +9434,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002024
 name: cilium
-def: "cilium of cell projection needs def" []
+def: "A specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface and of some cytoplasmic parts. Each cilium is largely bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored to a basal body. The longitudinal array of microtubules are almost always in a 9+2 array with 2 microtubles in the central cilia bundle and 9 sets of doublet microtubules around the perimeter. The exception to this arrangement is spermatazoa flagella, which have a 9+1 array in planarians." []
 xref: GO:0005929
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000106 ! ciliated epithelial cell
@@ -8747,8 +9443,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002025
 name: commissure
-def: "commissure of cell projection needs def" []
-def: "commissure of definitive tissue needs def" []
+def: "A bundle of nerve fibers crossing from one side to the other side of the brain or spinal cord." []
 xref: NCIT:C32349
 is_a: PLANA:0000037 ! definitive tissue
 is_a: PLANA:0000501 ! cell projection
@@ -8758,7 +9453,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002026
 name: cut
-def: "cut of surgical wound needs def" []
+def: "A wound or cleft resulted from tissue separation into parts or laid open or penetrated with a sharp edge or instrument." []
 xref: NCIT:C50518
 is_a: PLANA:0002099 ! surgical wound
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -8766,7 +9461,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002027
 name: dendrite
-def: "dendrite of cell projection needs def" []
+def: "A neuron projection that has a short, tapering, morphology. Dendrites receive and integrate signals from other neurons or from sensory stimuli, and conduct nerve impulses towards the axon or the cell body. In most neurons, the impulse is conveyed from dendrites to axon via the cell body, but in some types of unipolar neuron, the impulse does not travel via the cell body." []
 synonym: "cell dendrite" EXACT []
 synonym: "dendritic process" EXACT []
 synonym: "dendritic projection" EXACT []
@@ -8784,7 +9479,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002028
 name: dorsal-ventral muscle cell
-def: "dorsal-ventral muscle cell of muscle cell needs def" [PMID:30962434]
+def: "A muscle cell that runs in the transverse plane that connects the dorsal and ventral sides of the animal." [PMID:30962434]
 synonym: "dorsal-ventral muscle" EXACT []
 synonym: "dorsal-ventral muscle fibers" EXACT []
 synonym: "dorsoventral  muscle fibers" EXACT []
@@ -8804,7 +9499,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -8813,7 +9508,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002029
 name: early female germ cell
-def: "early female germ cell of female germ cell needs def" []
+def: "A premeiotic female germ cell (i.e., a diploid female germline stem cell or transit amplifying oogonial cell)." []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000229 ! female germ cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -8821,7 +9516,7 @@ relationship: part_of PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -8829,7 +9524,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002030
 name: early male germ cell
-def: "early male germ cell of male germ cell needs def" [PMID:27330085]
+def: "A premeiotic male germ cell (i.e., a spermatogonial stem cell or transit amplifying spermatogonial cell)." [PMID:27330085]
 xref: PMID:27330085
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000228 ! male germ cell
@@ -8849,7 +9544,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002031
 name: embryonic gut
-def: "embryonic gut of extraembryonic structure needs def" [PMID:28072387]
+def: "A cryptic digestive cavity comprised of phagocytic embryonic gut cells." [PMID:28072387]
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000063 ! extraembryonic structure
@@ -8866,7 +9561,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002032
 name: epidermal cell
-def: "epidermal cell of epithelial cell needs def" []
+def: "An epithelial cell of the integument (the outer layer of an organism)." []
 xref: CL:0000362
 xref: PMID:21458439
 xref: PMID:24922054
@@ -8890,7 +9585,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002033
 name: epidermal rhabdite
-def: "epidermal rhabdite of rhabdite needs def" [ISBN:9780070316607]
+def: "Rhabdites located within epidermal cells." [ISBN:9780070316607]
 xref: ISBN:9780070316607
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000104 ! rhabdite
@@ -8900,7 +9595,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002034
 name: ER membrane
-def: "ER membrane of bounding membrane of organelle needs def" []
+def: "The lipid bilayer surrounding the endoplasmic reticulum." []
 xref: GO:0005789
 is_a: PLANA:0000521 ! bounding membrane of organelle
 relationship: part_of PLANA:0007513 ! endoplasmic reticulum
@@ -8909,7 +9604,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002035
 name: eumelanin
-def: "eumelanin of cellular component needs def" [PMID:15760337, PMID:26017970, PMID:8812261]
+def: "The black pigment that gives non-neuronal pigment cells of the optic cup their characteristic color." [PMID:15760337, PMID:26017970, PMID:8812261]
 synonym: "eye cell pigment" EXACT []
 synonym: "eye pigment" EXACT []
 xref: CHEBI:24009
@@ -8923,7 +9618,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002036
 name: excretory cell
-def: "excretory cell of terminally differentiated cell needs def" []
+def: "A cell involved in the elimination of metabolic and foreign toxins, and in maintaining the ionic, acid-base and water balance of biological fluids." []
 xref: CL:0000424
 xref: PMID:21566185
 xref: PMID:24173799
@@ -8937,7 +9632,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002037
 name: extracellular matrix
-def: "extracellular matrix of acellular anatomical structure needs def" []
+def: "A structure lying external to one or more cells, which provides structural support, biochemical or biomechanical cues for cells or tissues." []
 synonym: "ECM" EXACT []
 xref: GO:0031012
 xref: PMID:19048075
@@ -8954,7 +9649,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002038
 name: extracellular space
-def: "extracellular space of acellular anatomical structure needs def" []
+def: "That part of a multicellular organism outside the cells proper, usually taken to be outside the plasma membranes, and occupied by fluid." []
 xref: GO:0005615
 xref: PMID:21828097
 is_a: UBERON:0000476 ! acellular anatomical structure
@@ -8963,14 +9658,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002039
 name: fission
-def: "fission of wound needs def" []
+def: "A form of asexual reproduction resulting in self-amputation of posterior tissue, generating an anterior fragment and a fission fragment." []
 is_a: PLANA:0002108 ! wound
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002040
 name: flagellum
-def: "flagellum of cell projection needs def" [PMID:4190073]
+def: "Planarian undulipodia consisting of spermatazoa cell posterior protrusions. Planarian spermatozoa contain two flagella and are composed of 9 + 1 axonemal microtubule arrangements in their flagella (markedly different from the 9 + 2 structures generally observed in sperm of other animals)." [PMID:4190073]
 xref: PMID:29095551
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000090 ! sperm
@@ -8981,7 +9676,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002041
 name: gap junction
-def: "gap junction of cell-cell junction needs def" []
+def: "A cell-cell junction composed of pannexins or innexins and connexins, two different families of channel-forming proteins." []
 xref: GO:0005921
 xref: PMID:17670787
 xref: PMID:22125640
@@ -8991,12 +9686,12 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002042
 name: genital atrium
-def: "genital atrium of cell-cell junction needs def" [PMID: 22074376]
+def: "A chamber where egg capsules are formed. One or more zygotes and yolk cells produced by the vitelline glands collect in the genital atrium; glands surrounding the genital atrium produce the egg capsule shell." [PMID: 22074376]
 synonym: "female antrum" EXACT []
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000507 ! cell-cell junction
+is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
-relationship: part_of BFO:0000040 ! material entity
+relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
@@ -9008,7 +9703,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002043
 name: germ cell cyst
-def: "germ cell cyst of definitive tissue needs def" [PMID:17376870]
+def: "A clonally-related group of interconnected spermatogonial or oogonial cells, enveloped by somatic gonadal cells." [PMID:17376870]
 synonym: "germ cell cluster" EXACT []
 xref: PMID:17376870
 xref: PMID:22318224
@@ -9024,7 +9719,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002044
 name: germline stem cell
-def: "germline stem cell of stem cell needs def" []
+def: "Stem cell that is the precursor of gametes." []
 synonym: "germ cell" EXACT []
 synonym: "germ stem cell" EXACT []
 synonym: "germline cell" EXACT []
@@ -9061,7 +9756,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002045
 name: glycogen granule
-def: "glycogen granule of intracellular granule needs def" []
+def: "Cytoplasmic bead-like structures of animal cells, visible by electron microscope. Each granule is a functional unit with the biosynthesis and catabolism of glycogen being catalyzed by enzymes bound to the granule surface." []
 xref: GO:0042587
 xref: PMID:30608231
 is_a: MICRO:0000215
@@ -9070,19 +9765,18 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002046
 name: incision
-def: "incision of cut needs def" []
+def: "A breach of the epidermis made with a defined edge or point." []
 is_a: PLANA:0002026 ! cut
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002047
 name: inner pharynx epidermal cell
-def: "inner pharynx epidermal cell of ciliated epithelial cell needs def" [ISBN:9780070316607]
-def: "inner pharynx epidermal cell of epidermal cell needs def" [ISBN:9780070316607]
+def: "Epithelial cells lining the inside of the pharynx. In Smed, distally located cells are heavily ciliated." [ISBN:9780070316607]
 xref: PMID:20511647
 is_a: PLANA:0000106 ! ciliated epithelial cell
 is_a: PLANA:0002032 ! epidermal cell
-relationship: part_of PLANA:0004528 ! pharyngeal epithelium
+relationship: part_of PLANA:0004528 ! pharynx epithelium
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
@@ -9091,7 +9785,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002048
 name: inner zone of gland cells
-def: "inner zone of gland cells of definitive tissue needs def" [ISBN:9780070316607]
+def: "Gland or secretory cells sandwiched between muscle and epidermal layers in the pharynx." [ISBN:9780070316607]
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000016 ! definitive pharynx
@@ -9106,7 +9800,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002049
 name: intercellular junction
-def: "intercellular junction of cell-cell junction needs def" []
+def: "A cell junction that forms a connection between two or more cells in a multicellular organism; excludes direct cytoplasmic junctions such as ring canals." []
 xref: GO:0005911
 is_a: PLANA:0000507 ! cell-cell junction
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9114,14 +9808,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002050
 name: linear amputation
-def: "linear amputation of amputation needs def" []
+def: "An amputation performed with a transverse, oblique or longitudinal cut." []
 is_a: PLANA:0002003 ! amputation
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002051
 name: linear incision
-def: "linear incision of incision needs def" []
+def: "A breach of the epidermis and optionally down into other structures though an insult with a knife or other instrument, such that the movement includes the z direction and one or more of the x y direction." []
 synonym: "scratch" EXACT []
 is_a: PLANA:0002046 ! incision
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9129,7 +9823,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002052
 name: lipid droplet
-def: "lipid droplet of intracellular non-membrane-bounded organelle needs def" []
+def: "An intracellular non-membrane-bounded organelle comprising a matrix of coalesced lipids surrounded by a phospholipid monolayer. May include associated proteins." []
 xref: GO:0005811
 xref: https://doi.org/10.1101/279364
 xref: PMID:30608231
@@ -9139,7 +9833,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002053
 name: lumen
-def: "lumen of anatomical cavity needs def" []
+def: "The cavity or channel within a tube or tubular organ such as a blood vessel or the intestine." []
 xref: NCIT:C94478
 is_a: UBERON:0002553 ! anatomical cavity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9147,7 +9841,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002054
 name: marginal adhesive zone
-def: "marginal adhesive zone of anatomical compartment needs def" [ISBN:9780070316607]
+def: "Zone present along the lateral dorsoventral boundary that sits just underneath the animal, in contact with substrates. It is comprised of bunches of adhesion gland cells whose terminal pores form pore rosettes through the dorsal ventral boundary epidermis.This region of is devoid of rhabdites." [ISBN:9780070316607]
 xref: PMID:20865784
 is_a: BSPO:0000086 ! anatomical compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -9158,7 +9852,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002055
 name: mechanosensory neuron
-def: "mechanosensory neuron of sensory neuron needs def" []
+def: "Any neuron that is capable of some detection of mechanical stimulus involved in sensory perception." []
 synonym: "mechanosensory cell" EXACT []
 xref: FBbt:00005919
 xref: PMID:25725068
@@ -9170,7 +9864,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002056
 name: medial muscle cell
-def: "medial muscle cell of muscle cell needs def" [PMID:30962434]
+def: "Subset of dorsal-ventral muscle cells located in the medial body region." [PMID:30962434]
 xref: PMID:29674431
 is_a: PLANA:0000101 ! muscle cell
 relationship: part_of PLANA:0000079 ! parenchymal musculature
@@ -9182,7 +9876,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002057
 name: meiotic germ cell
-def: "meiotic germ cell of germ cell needs def" []
+def: "A germ cell undergoing meiosis." []
 xref: PMID:27330085
 is_a: PLANA:0000227 ! germ cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -9194,7 +9888,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002058
 name: melanosome
-def: "melanosome of intracellular membrane-bounded organelle needs def" [GO:0042470]
+def: "A tissue-specific, membrane-bounded cytoplasmic organelle within which melanin pigments are synthesized and stored. Melanosomes are synthesized in melanocyte cells." [GO:0042470]
 xref: GO:0042470
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
@@ -9209,7 +9903,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002059
 name: mucus
-def: "mucus of acellular anatomical structure needs def" [PMID:22653920]
+def: "A secreted, mucin-rich extracellular substance coating the epidermal surface of the animal implicated in gliding locomotion, substrate adhesion, innate immunity and predator avoidance." [PMID:22653920]
 xref: PMID:21282632
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: part_of PLANA:0000484 ! secretory system
@@ -9218,7 +9912,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002060
 name: nephridiopore
-def: "nephridiopore of pore needs def" []
+def: "the external opening and terminus of a protonephridia made by a terminal cell." []
 xref: ISBN:9780070316607
 xref: PMID:21828097
 is_a: BFO:0000002 ! continuant
@@ -9229,7 +9923,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002061
 name: neurite
-def: "neurite of cell projection needs def" []
+def: "Cell appendage of the neuron which includes the axon and the dendrite." []
 synonym: "neuronal process" EXACT []
 xref: FMA:61814
 xref: ISBN:9780070316607
@@ -9243,7 +9937,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002062
 name: neuropeptidergic neuron
-def: "neuropeptidergic neuron of neuron needs def" [PMID:24173799]
+def: "A neuron that produces and releases neuropeptides at chemical synapses." [PMID:24173799]
 synonym: "cns peptidergic cell" EXACT []
 synonym: "peptidergic neuron" EXACT []
 xref: PMID:24173799
@@ -9256,7 +9950,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002063
 name: non-ciliated epidermis
-def: "non-ciliated epidermis of definitive epidermis needs def" [PMID:26457503]
+def: "Differentiating, immature epidermal cells lacking cilia." [PMID:26457503]
 xref: PMID:28292427
 is_a: PLANA:0000034 ! definitive epidermis
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9264,7 +9958,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002064
 name: nuclear envelope
-def: "nuclear envelope of membrane part needs def" []
+def: "The double lipid bilayer enclosing the nucleus and separating its contents from the rest of the cytoplasm; includes the intermembrane space, a gap of width 20-40 nm (also called the perinuclear space)." []
 xref: GO:0005635
 xref: https://doi.org/10.1101/279364
 is_a: PLANA:0000522 ! membrane part
@@ -9273,7 +9967,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002065
 name: nuclear inner membrane
-def: "nuclear inner membrane of membrane part needs def" [GO:0005637]
+def: "The inner, i.e. lumen-facing, lipid bilayer of the nuclear envelope." [GO:0005637]
 synonym: "inner leaflet" EXACT []
 xref: GO:0005637
 is_a: PLANA:0000522 ! membrane part
@@ -9282,7 +9976,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002066
 name: nuclear lumen
-def: "nuclear lumen of nuclear part needs def" [GO:0031981]
+def: "The volume enclosed by the nuclear inner membrane." [GO:0031981]
 xref: GO:0031981
 is_a: PLANA:0000532 ! nuclear part
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9290,7 +9984,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002067
 name: nuclear outer membrane
-def: "nuclear outer membrane of membrane part needs def" [GO:0005640]
+def: "The outer, i.e. cytoplasm-facing, lipid bilayer of the nuclear envelope; continuous with the endoplasmic reticulum of the cell and sometimes studded with ribosomes." [GO:0005640]
 synonym: "outer leaflet" EXACT []
 xref: GO:0005640
 is_a: PLANA:0000522 ! membrane part
@@ -9299,7 +9993,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002068
 name: nuclear periphery
-def: "nuclear periphery of nuclear part needs def" []
+def: "The portion of the nuclear lumen proximal to the inner nuclear membrane." []
 xref: GO:0034399
 xref: PMID:25404302
 is_a: PLANA:0000532 ! nuclear part
@@ -9308,7 +10002,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002069
 name: ommochrome pigment cell
-def: "ommochrome pigment cell of pigment cell needs def" [PMID:27240733]
+def: "Parenchymal cells that synthesize and contain brown ommonchrome pigment." [PMID:27240733]
 synonym: "non-melanin pigment cell" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002075 ! pigment cell
@@ -9321,7 +10015,7 @@ relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -9330,7 +10024,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002070
 name: optic nerve
-def: "optic nerve of nerve needs def" []
+def: "A neuron projection bundle that connects the retina or its analog in the eye with the brain. This includes the vertebrate optic nerve (not truly a nerve) as well as analogous structures such as the Bolwig nerve in Drosophila" []
 xref: PMID:27800171
 xref: UBERON:0004904
 is_a: BFO:0000040 ! material entity
@@ -9348,12 +10042,11 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002071
 name: outer pharynx epidermal cell
-def: "outer pharynx epidermal cell of ciliated epithelial cell needs def" [ISBN:9780070316607]
-def: "outer pharynx epidermal cell of epidermal cell needs def" [ISBN:9780070316607]
+def: "Heavily ciliated, insunk epithelial cells bounding the outside of the pharynx. Outer pharynx epithelial cell nuclei are positioned beneath the pharynx musculature." [ISBN:9780070316607]
 xref: PMID:20511647
 is_a: PLANA:0000106 ! ciliated epithelial cell
 is_a: PLANA:0002032 ! epidermal cell
-relationship: part_of PLANA:0004528 ! pharyngeal epithelium
+relationship: part_of PLANA:0004528 ! pharynx epithelium
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -9363,7 +10056,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002073
 name: phagocytic cell
-def: "phagocytic cell of terminally differentiated cell needs def" []
+def: "A cell that engulfs large particles or cells via invagination of the plasma membrane and creation of a phagosome." []
 synonym: "phagocyte" EXACT []
 xref: ISBN:9780070316607
 xref: PMID:25956527
@@ -9375,7 +10068,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002074
 name: pharynx tip
-def: "pharynx tip of definitive tissue needs def" []
+def: "The distal-most end of the pharnyx containing an opening to the pharynx lumen." []
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000016 ! definitive pharynx
 relationship: PLANA:0007536 PLANA:0000016 ! specific_to definitive pharynx
@@ -9387,7 +10080,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002075
 name: pigment cell
-def: "pigment cell of terminally differentiated cell needs def" []
+def: "A pigment cell is a cell that contains pigment granules." []
 synonym: "pigment producing cell" EXACT []
 synonym: "pigmented cell" EXACT []
 xref: CL:0000147
@@ -9398,7 +10091,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002076
 name: pigment granule
-def: "pigment granule of membrane-bounded organelle needs def" []
+def: "A small, subcellular membrane-bounded vesicle containing pigment and/or pigment precursor molecules. Pigment granule biogenesis is poorly understood, as pigment granules are derived from multiple sources including the endoplasmic reticulum, coated vesicles, lysosomes, and endosomes." []
 xref: GO:0048770
 xref: ISBN:9780070316607
 xref: PMID:27551436
@@ -9409,14 +10102,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002077
 name: plug amputation
-def: "plug amputation of amputation needs def" []
+def: "An amputation of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
 is_a: PLANA:0002003 ! amputation
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002078
 name: point incision
-def: "point incision of incision needs def" []
+def: "A breach of the epidermis made with a defined edge or point." []
 synonym: "poke" EXACT []
 is_a: PLANA:0002046 ! incision
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9424,7 +10117,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002079
 name: pore
-def: "pore of anatomical cavity needs def" []
+def: "An anatomical space that is an opening, usually at the end of a canal or duct, on the surface of the integument or the lining of an internal anatomical space." []
 xref: UBERON:0008915
 is_a: UBERON:0002553 ! anatomical cavity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9432,7 +10125,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002080
 name: post-meiotic germ cell
-def: "post-meiotic germ cell of germ cell needs def" []
+def: "A haploid gamete undergoing terminal differentiation." []
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000227 ! germ cell
 relationship: develops_from PLANA:0002082 ! premeiotic germ cell
@@ -9445,7 +10138,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002081
 name: postsynaptic cell
-def: "postsynaptic cell of cell needs def" []
+def: "A specialized area of membrane facing the presynaptic membrane on the tip of the nerve ending and separated from it by a minute cleft (the synaptic cleft). Neurotransmitters cross the synaptic cleft and transmit the signal to the postsynaptic membrane." []
 synonym: "post-synaptic cell" EXACT []
 xref: GO:0045211
 xref: PMID:24950970
@@ -9459,7 +10152,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002082
 name: premeiotic germ cell
-def: "premeiotic germ cell of germ cell needs def" []
+def: "A diploid germline stem cell or transit amplifying germ cell that has not committed to undergoing meiotic DNA replication, reductive divisions or terminal differentiation." []
 is_a: PLANA:0000227 ! germ cell
 relationship: part_of PLANA:0000204 ! ovary
 relationship: part_of PLANA:0000208 ! testis
@@ -9471,7 +10164,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002083
 name: presynaptic cell
-def: "presynaptic cell of neuron needs def" []
+def: "The part of a synapse that is part of the presynaptic cell." []
 synonym: "pre-synaptic cell" EXACT []
 xref: GO:0098793
 xref: PMID:24950970
@@ -9482,7 +10175,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002084
 name: presynaptic terminal
-def: "presynaptic terminal of cell part needs def" []
+def: "Terminal inflated portion of the axon, containing the specialized apparatus necessary to release neurotransmitters. The axon terminus is considered to be the whole region of thickening and the terminal bouton is a specialized region of it." []
 synonym: "pre-synaptic terminal" EXACT []
 xref: GO:0043195
 xref: PMID:23903188
@@ -9493,7 +10186,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002085
 name: presynaptic vesicle
-def: "presynaptic vesicle of membrane-bounded organelle needs def" []
+def: "A secretory organelle, typically 50 nm in diameter, of presynaptic nerve terminals; accumulates in high concentrations of neurotransmitters and secretes these into the synaptic cleft by fusion with the 'active zone' of the presynaptic plasma membrane." []
 synonym: "pre-synaptic vesicle" EXACT []
 xref: GO:0008021
 xref: PMID:23903188
@@ -9504,7 +10197,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002086
 name: primary gut branch
-def: "primary gut branch of gut branch needs def" [PMID:21664348]
+def: "The largest branch of the triclad intestine. It is comprised of the gastrodermis, a columnar epithelium, surrounded by basal lamina and visceral musculature." [PMID:21664348]
 synonym: "main gut branch" EXACT []
 synonym: "primary intestine branch" EXACT []
 xref: PMID:17553481
@@ -9513,24 +10206,18 @@ xref: PMID:27122174
 xref: PMID:28137894
 xref: PMID:29674431
 is_a: PLANA:0002119 ! gut branch
-relationship: part_of PLANA:0000026 ! definitive gut
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
-relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002087
 name: primitive gut
-def: "primitive gut of extraembryonic organ needs def" [PMID:28072387]
+def: "Four large phagocytic cells associated with the temporary embryonic pharynx." [PMID:28072387]
 synonym: "primitive endoderm" EXACT []
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002120 ! extraembryonic organ
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0000058 ! embryonic digestive system
-relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
@@ -9541,18 +10228,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002088
 name: quarternary gut branch
-def: "quarternary gut branch of gut branch needs def" [PMID:21664348]
+def: "Gut branches originating from and connected to the tertiary gut branches." [PMID:21664348]
 is_a: PLANA:0002119 ! gut branch
-relationship: part_of PLANA:0000026 ! definitive gut
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
-relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002089
 name: reproductive organ
-def: "reproductive organ of organ needs def" []
+def: "An organ involved in reproduction" []
 xref: https://doi.org/10.1101/279364
 xref: PMID:16344473
 xref: PMID:17376870
@@ -9572,7 +10255,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002090
 name: reproductive structure
-def: "reproductive structure of anatomical structure needs def" []
+def: "Any anatomical structure that is part of the reproductive system." []
 xref: PMID:17376870
 xref: UBERON:0005156
 is_a: UBERON:0000061 ! anatomical structure
@@ -9585,7 +10268,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002091
 name: rhabdome
-def: "rhabdome of definitive tissue needs def" [PMID:15760337, PMID:16033796, PMID:21852957]
+def: "The light sensing structure consisting of photoreceptor neuron dendrites that project into the optic lumen and show close associations with eumelanin-containing pigment cup cells." [PMID:15760337, PMID:16033796, PMID:21852957]
 xref: PMID:26017970
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
@@ -9601,7 +10284,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002092
 name: rhabdomere
-def: "rhabdomere of cell projection needs def" [PMID:15760337, PMID:16033796, PMID:21852957]
+def: "The dendritic process of a bipolar photoreceptor neuron that projects into the optic cup lumen and senses light." [PMID:15760337, PMID:16033796, PMID:21852957]
 xref: PMID:16033796
 xref: PMID:18202849
 xref: PMID:20865784
@@ -9625,7 +10308,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002093
 name: secretory duct
-def: "secretory duct of definitive tissue needs def" []
+def: "A tubular structure that transports secreted or excreted substances." []
 synonym: "secretory canal" EXACT []
 xref: PMID:30383829
 xref: UBERON:0000058
@@ -9639,7 +10322,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002094
 name: secretory granule
-def: "secretory granule of membrane-bounded organelle needs def" []
+def: "A small subcellular vesicle, surrounded by a membrane, that is formed from the Golgi apparatus and contains a highly concentrated protein destined for secretion. Secretory granules move towards the periphery of the cell and upon stimulation, their membranes fuse with the cell membrane, and their protein load is exteriorized. Processing of the contained protein may take place in secretory granules." []
 xref: GO:0030141
 xref: PMID:29100657
 is_a: PLANA:0000526 ! membrane-bounded organelle
@@ -9649,7 +10332,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002095
 name: somatic cell
-def: "somatic cell of cell needs def" []
+def: "One of the cells of the body that compose the tissues, organs, and parts of that individual other than the germ cells." []
 xref: BTO:0001268
 xref: PMID:20599901
 xref: PMID:21852957
@@ -9668,8 +10351,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002096
 name: somatic gonadal cell
-def: "somatic gonadal cell of somatic cell needs def" [PMID:27163480, PMID:27330085]
-def: "somatic gonadal cell of terminally differentiated cell needs def" [PMID:27163480, PMID:27330085]
+def: "A non-germline cell within the ovary or testis." [PMID:27163480, PMID:27330085]
 synonym: "gonadal niche cell" EXACT []
 synonym: "somatic gonadal niche cell" EXACT []
 synonym: "somatic gonadal support cell" EXACT []
@@ -9684,7 +10366,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002097
 name: specialized neoblast
-def: "specialized neoblast of progenitor cell needs def" [PMID:23404104]
+def: "A presumptive progenitor cell that expresses both pan-neoblast markers and pro-differentiation gene(s), frequently developmental transcription factors, implicated in lineage commitment and tissue-specific differentiation programs." [PMID:23404104]
 xref: PMID:25254346
 xref: PMID:26651295
 xref: PMID:27542689
@@ -9700,7 +10382,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002098
 name: stalk
-def: "stalk of acellular anatomical structure needs def" [ISBN:9780070316607]
+def: "A thin, flexible rod that anchors an egg capsule to a solid substrate." [ISBN:9780070316607]
 xref: ISBN:9780070316607
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: part_of PLANA:0000216 ! egg capsule
@@ -9709,14 +10391,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002099
 name: surgical wound
-def: "surgical wound of wound needs def" []
+def: "A wound produced by non-autonomous physical means." []
 is_a: PLANA:0002108 ! wound
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002100
 name: synapse
-def: "synapse of cell-cell junction needs def" []
+def: "The junction between a nerve fiber of one neuron and another neuron, muscle fiber or glial cell. As the nerve fiber approaches the synapse it enlarges into a specialized structure, the presynaptic nerve ending, which contains mitochondria and synaptic vesicles. At the tip of the nerve ending is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic nerve ending secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane." []
 synonym: "neural synapse" EXACT []
 synonym: "neuronal synapse" EXACT []
 xref: GO:0045202
@@ -9731,7 +10413,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002101
 name: synaptic cleft
-def: "synaptic cleft of extracellular space needs def" []
+def: "The narrow gap that separates the presynaptic and postsynaptic membranes, into which neurotransmitter is released." []
 xref: GO:0043083
 xref: PMID:23903188
 is_a: PLANA:0002038 ! extracellular space
@@ -9742,7 +10424,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002102
 name: synaptic vesicle
-def: "synaptic vesicle of membrane-bounded organelle needs def" []
+def: "A secretory organelle, typically 50 nm in diameter, of presynaptic nerve terminals; accumulates in high concentrations of neurotransmitters and secretes these into the synaptic cleft by fusion with the 'active zone' of the presynaptic plasma membrane." []
 xref: GO:0008021
 xref: PMID:24950970
 is_a: PLANA:0000526 ! membrane-bounded organelle
@@ -9752,11 +10434,10 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002103
 name: synaptonemal complex
-def: "synaptonemal complex of chromosomal_structural_element needs def" []
+def: "A proteinaceous scaffold found between homologous chromosomes during meiosis. It consists of 2 lateral elements and a central element, all running parallel to each other. Transverse filaments connect the lateral elements to the central element." []
 xref: GO:0000795
 xref: PMID:25404302
 is_a: PLANA:0002123 ! chromosomal_structural_element
-relationship: part_of PLANA:0000529 ! nucleus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: PLANA:0007536 PLANA:0002057 ! specific_to meiotic germ cell
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9764,7 +10445,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002104
 name: tail tip
-def: "tail tip of anatomical compartment subdivision feature needs def" []
+def: "The posterior-medial region of the tail margin." []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000109 ! anatomical compartment subdivision feature
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -9777,7 +10458,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002105
 name: telomere
-def: "telomere of chromosome_part needs def" []
+def: "The terminal region of a linear chromosome that includes the telomeric DNA repeats and associated proteins." []
 xref: GO:0000781
 xref: https://doi.org/10.1101/279364
 xref: PMID:22371573
@@ -9789,7 +10470,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002106
 name: tight junction
-def: "tight junction of cell-cell junction needs def" []
+def: "A cell-cell junction that seals cells together in an epithelium in a way that prevents even small molecules from leaking from one side of the sheet to the other." []
 xref: GO:0070160
 is_a: PLANA:0000507 ! cell-cell junction
 relationship: part_of PLANA:0002118 ! epithelium
@@ -9798,14 +10479,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002107
 name: wedge amputation
-def: "wedge amputation of amputation needs def" []
+def: "A piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
 is_a: PLANA:0002003 ! amputation
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002108
 name: wound
-def: "wound of perturbation needs def" []
+def: "An injury that breaches the epidermis." []
 synonym: "injury" EXACT []
 is_a: PLANA:0002122 ! perturbation
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9813,7 +10494,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002109
 name: X1 cell
-def: "X1 cell of FACS sorted cell population needs def" [PMID:16872450]
+def: "A sorted cell population enriched for irradiation-sensitive, cycling cells (4n cells, with high levels of Hoescht 33342 staining) with scant cytoplasm (low levels of calcein-AM staining). X1 cells are enriched for cycling neoblasts." [PMID:16872450]
 synonym: "X1" EXACT []
 synonym: "X1 cell population" EXACT []
 synonym: "X1 neoblast" EXACT []
@@ -9858,7 +10539,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002110
 name: X1(FS) cell
-def: "X1(FS) cell of FACS sorted cell population needs def" [PMID:21566185]
+def: "A heterogeneous sorted cell population of unstained planarian cells with similar size and complexity to irradiation-sensitive, cycling cells contained in the X1 gate. Unlike X1 cells, X1(FS) cells are amenable to cell transplantation." [PMID:21566185]
 xref: PMID:21566185
 is_a: PLANA:0002138 ! FACS sorted cell population
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9866,7 +10547,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002111
 name: X2 cell
-def: "X2 cell of FACS sorted cell population needs def" [PMID:16872450]
+def: "A sorted cell population containing irradiation-sensitive and irradiation-insensitive cells, characterized by weak Hoescht 33342 and calcein-AM staining. X2 cell populations contain neoblasts as well as a variety of lineage-dedicated post-mitotic progenitor cells." [PMID:16872450]
 xref: PMID:18786419
 xref: PMID:19048075
 xref: PMID:20215344
@@ -9889,7 +10570,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002112
 name: Xins cell
-def: "Xins cell of FACS sorted cell population needs def" [PMID:16872450]
+def: "A sorted cell population of irradiation-insensitive cells that contains a variety of post-mitotic, differentiated cell types." [PMID:16872450]
 synonym: "Xins" EXACT []
 synonym: "Xins cell population" EXACT []
 xref: PMID:17670787
@@ -9921,17 +10602,22 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002113
 name: post-pharyngeal region
-def: "post-pharyngeal region of anatomical compartment subdivision needs def" []
+def: "Posterior to the pharynx." []
 synonym: "post pharyngeal" EXACT []
 synonym: "post-pharyngeal" EXACT []
 synonym: "postpharyngeal region" EXACT []
+is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000102 ! anatomical compartment subdivision
+relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
+relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
+relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002114
 name: post-blastema region
-def: "post-blastema region of anatomical region needs def" []
+def: "Adjacent to blastema, or proximal to blastema." []
 synonym: "post-blastema" EXACT []
 synonym: "postblastema" EXACT []
 synonym: "postblastema region" EXACT []
@@ -9941,14 +10627,14 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002116
 name: fission fragment
-def: "fission fragment of regenerating anatomical structure needs def" []
+def: "A fragment derived from a spontaneous or induced fission event." []
 is_a: UBERON:0007567 ! regenerating anatomical structure
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002117
 name: oblique
-def: "oblique of spatial qualifier needs def" [NCIT:C73707]
+def: "Slanting or inclined in direction or course or position; neither parallel nor perpendicular nor right-angular." [NCIT:C73707]
 xref: NCIT:C73707
 is_a: FBcv:0000052 ! spatial qualifier
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9956,7 +10642,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002118
 name: epithelium
-def: "epithelium of definitive tissue needs def" [NCIT:C12710]
+def: "The avascular cellular layers that cover body surfaces and cavities and may form glands." [NCIT:C12710]
 xref: NCIT:C12710
 is_a: PLANA:0000037 ! definitive tissue
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9964,29 +10650,37 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002119
 name: gut branch
-def: "gut branch of definitive tissue needs def" []
+def: "The triclad planarian gut is serially bifrucated into connected lumens where each bifrucation is a branch." []
 is_a: PLANA:0000037 ! definitive tissue
+relationship: part_of PLANA:0000026 ! definitive gut
+relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
+relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
+relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002120
 name: extraembryonic organ
-def: "extraembryonic organ of organ needs def" []
+def: "Organ that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis." []
 is_a: PLANA:0000431 ! organ
+relationship: part_of PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002121
 name: chromosome_part
-def: "chromosome_part of nuclear part needs def" [SO:0000830]
+def: "This is a manufactured term, that serves the purpose of allow the parts of a chromosome to have an is_a path to the root." [SO:0000830]
 xref: SO:0000830
 is_a: PLANA:0000532 ! nuclear part
+relationship: part_of PLANA:0002021 ! chromosome
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002122
 name: perturbation
-def: "perturbation of material anatomical entity needs def" []
+def: "An event or occurrence that causes damage to a tissue or organ." []
 synonym: "insult" EXACT []
 is_a: UBERON:0000465 ! material anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9994,7 +10688,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002123
 name: chromosomal_structural_element
-def: "chromosomal_structural_element of chromosome_part needs def" []
+def: "structural element of a chromosome, for example, a telomere and a centromere" []
 synonym: "chromosomal structural element" EXACT []
 xref: SO:0000628
 is_a: PLANA:0002121 ! chromosome_part
@@ -10003,7 +10697,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002124
 name: longitudinal
-def: "longitudinal of spatial qualifier needs def" [NCIT:C25242]
+def: "Running lengthwise" [NCIT:C25242]
 xref: NCIT:C25242
 is_a: FBcv:0000052 ! spatial qualifier
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10011,7 +10705,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002125
 name: thick
-def: "thick of general qualifier needs def" [NCIT:C81186]
+def: "Wide in width, extent or cross-section." [NCIT:C81186]
 xref: NCIT:C81186
 is_a: PLANA:0002127 ! thin
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10019,7 +10713,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002126
 name: thin
-def: "thin of general qualifier needs def" [NCIT:C65127]
+def: "Narrow in width, extent or cross-section." [NCIT:C65127]
 xref: NCIT:C65127
 is_a: PLANA:0002127 ! thin
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10027,7 +10721,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002127
 name: thin
-def: "thin of qualifier needs def" [NCIT:C27993]
+def: "A term that helps define and render another concept unique." [NCIT:C27993]
 xref: NCIT:C27993
 is_a: FBcv:0000005 ! qualifier
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10035,7 +10729,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002128
 name: fragment
-def: "fragment of regenerating anatomical structure needs def" []
+def: "A piece of tissue isolated from the body." []
 synonym: "piece" EXACT []
 is_a: UBERON:0007567 ! regenerating anatomical structure
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10043,50 +10737,50 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002129
 name: longitudinal region
-def: "longitudinal region of anatomical region needs def" []
+def: "A region bounded by any sagittal plane though the animal and the left or right side of the animal. NOTE: sagittal plane is an anatomical plane that divides a bilateral body into left and right parts, not necessarily of even size" []
 is_a: BSPO:0000070 ! anatomical region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002130
 name: chemical wound
-def: "chemical wound of wound needs def" []
+def: "An intentional wound produced by non-autonomous chemical means." []
 is_a: PLANA:0002108 ! wound
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002131
 name: plug wound
-def: "plug wound of wound needs def" []
+def: "A wound resulting from the removal of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
 is_a: PLANA:0002108 ! wound
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002132
 name: wedge wound
-def: "wedge wound of wound needs def" []
+def: "A wound resulting from the removal of a piece of tissue from the lateral margin at any given point that extends interiorly to more medial structures." []
 is_a: PLANA:0002108 ! wound
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002133
 name: regenerating fragment
-def: "regenerating fragment of fragment needs def" []
+def: "A fragment that has undergone wound healing and is undergoing tissue replacement and morphallaxis." []
 is_a: PLANA:0002128 ! fragment
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002134
 name: sagittal orientation
-def: "sagittal orientation of longitudinal orientation needs def" []
+def: "An orientation quality inhering in a bearer by virtue of the bearer having a position that is in the sagittal plane. This plane runs longitudinally and is not necessarily medial." []
 synonym: "longitudinal orientation" EXACT []
-is_a: PATO:0005024
+is_a: PATO:0005024 ! longitudinal orientation
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002135
 name: parasagittal orientation
-def: "parasagittal orientation of sagittal orientation needs def" []
+def: "An orientation quality inhering in a bearer by virtue of the bearer having a position that is in the parasagittal plane, which runs longitudinally, and is never medial." []
 xref: PATO:0005023
 is_a: PLANA:0002134 ! sagittal orientation
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10094,7 +10788,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002136
 name: syncytium
-def: "syncytium of anatomical structure needs def" [PMID:27330085]
+def: "An anatomical entity consisting of a single or a few multinucleated structures" [PMID:27330085]
 xref: AEO:0000203
 is_a: UBERON:0000061 ! anatomical structure
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10102,7 +10796,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002137
 name: intracellular granule
-def: "intracellular granule of non-membrane-bounded organelle needs def" []
+def: "Cytoplasmic part which forms a distinctive granular particle, which may or may not be visible using light microscopy." []
 xref: MICRO:0000215
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10110,20 +10804,20 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0002138
 name: FACS sorted cell population
-def: "FACS sorted cell population of derived cell population needs def" []
+def: "Any number of cells from dissociated planarian tissue sorted via a FACS sorter for any parameter." []
 is_a: PLANA:0002139 ! derived cell population
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002139
 name: derived cell population
-def: "derived cell population of material anatomical entity needs def" []
+def: "Cells isolated from dissociated planarian tissue." []
 is_a: UBERON:0000465 ! material anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003000
-name: anterior photoreceptor neuron
+name: anterior of photoreceptor neuron
 def: "photoreceptor neuron of anterior" []
 synonym: "anterior of photoreceptor neuron" EXACT []
 is_a: PLANA:0000017 ! photoreceptor neuron
@@ -10208,29 +10902,29 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0003110
-name: definitive pharynx neuron
-def: "neuron which is part of the definitive pharynx" [PMID:18202849, PMID:29674431, PMID:30485821]
+name: pharynxdefinitive pharynx neuron
+def: "neuron which is part of the pharynxdefinitive pharynx" [PMID:18202849, PMID:29674431, PMID:30485821]
 synonym: "pharyngeal neuron" EXACT []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003111
-name: definitive pharynx epithelial cell
-def: "epithelial cell which is part of the definitive pharynx" [PMID:20511647]
+name: pharynxdefinitive pharynx epithelial cell
+def: "epithelial cell which is part of the pharynxdefinitive pharynx" [PMID:20511647]
 synonym: "pharynx epithelial cell" EXACT []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003112
-name: definitive pharynx muscle cell
-def: "muscle cell which is part of the definitive pharynx" [PMID:27068018]
+name: pharynxdefinitive pharynx muscle cell
+def: "muscle cell which is part of the pharynxdefinitive pharynx" [PMID:27068018]
 synonym: "pharynx muscle fiber" EXACT []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003113
-name: pharyngeal pouch epithelial cell
-def: "epithelial cell which is part of the pharyngeal pouch" []
+name: pharynx pouch epithelial cell
+def: "epithelial cell which is part of the pharynx pouch" []
 synonym: "pharyngeal cavity epithelial cell" EXACT []
 synonym: "pharynx cavity epithelial cell" EXACT []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10252,51 +10946,51 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0003116
-name: parenchymal compartment cell
-def: "cell which is part of the parenchymal compartment" [PMID:19247960, PMID:29674431]
+name: parenchyma cell
+def: "cell which is part of the parenchyma" [PMID:19247960, PMID:29674431]
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003200
-name: mitotic G1 phase neoblast compartment
-def: "neoblast compartment undergoing mitotic G1 phase" []
+name: mitotic G1 phase neoblast
+def: "neoblast undergoing mitotic G1 phase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003201
-name: mitotic S phase neoblast compartment
-def: "neoblast compartment undergoing mitotic S phase" []
+name: mitotic S phase neoblast
+def: "neoblast undergoing mitotic S phase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003202
-name: mitotic G2 phase neoblast compartment
-def: "neoblast compartment undergoing mitotic G2 phase" []
+name: mitotic G2 phase neoblast
+def: "neoblast undergoing mitotic G2 phase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003203
-name: mitotic prophase neoblast compartment
-def: "neoblast compartment undergoing mitotic prophase" []
+name: mitotic prophase neoblast
+def: "neoblast undergoing mitotic prophase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003204
-name: mitotic metaphase neoblast compartment
-def: "neoblast compartment undergoing mitotic metaphase" []
+name: mitotic metaphase neoblast
+def: "neoblast undergoing mitotic metaphase" []
 synonym: "M phase neoblast" EXACT []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003205
-name: mitotic anaphase neoblast compartment
-def: "neoblast compartment undergoing mitotic anaphase" []
+name: mitotic anaphase neoblast
+def: "neoblast undergoing mitotic anaphase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003206
-name: mitotic telophase neoblast compartment
-def: "neoblast compartment undergoing mitotic telophase" []
+name: mitotic telophase neoblast
+def: "neoblast undergoing mitotic telophase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10343,44 +11037,44 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0003214
-name: mitotic G1 phase female germline stem cell
-def: "female germline stem cell undergoing mitotic G1 phase" []
+name: mitotic G1 phase oogonial stem cell
+def: "oogonial stem cell undergoing mitotic G1 phase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003215
-name: mitotic S phase female germline stem cell
-def: "female germline stem cell undergoing mitotic S phase" []
+name: mitotic S phase oogonial stem cell
+def: "oogonial stem cell undergoing mitotic S phase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003216
-name: mitotic G2 phase female germline stem cell
-def: "female germline stem cell undergoing mitotic G2 phase" []
+name: mitotic G2 phase oogonial stem cell
+def: "oogonial stem cell undergoing mitotic G2 phase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003217
-name: mitotic prophase female germline stem cell
-def: "female germline stem cell undergoing mitotic prophase" []
+name: mitotic prophase oogonial stem cell
+def: "oogonial stem cell undergoing mitotic prophase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003218
-name: mitotic metaphase female germline stem cell
-def: "female germline stem cell undergoing mitotic metaphase" []
+name: mitotic metaphase oogonial stem cell
+def: "oogonial stem cell undergoing mitotic metaphase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003219
-name: mitotic anaphase female germline stem cell
-def: "female germline stem cell undergoing mitotic anaphase" []
+name: mitotic anaphase oogonial stem cell
+def: "oogonial stem cell undergoing mitotic anaphase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003220
-name: mitotic telophase female germline stem cell
-def: "female germline stem cell undergoing mitotic telophase" []
+name: mitotic telophase oogonial stem cell
+def: "oogonial stem cell undergoing mitotic telophase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10644,8 +11338,8 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0003302
-name: definitive pharynx primordium
-def: "This primordium develops into definitive pharynx" []
+name: pharynxdefinitive pharynx primordium
+def: "This primordium develops into pharynxdefinitive pharynx" []
 xref: PMID:18202849
 xref: PMID:21282632
 xref: PMID:25254346
@@ -10827,9 +11521,13 @@ id: PLANA:0004503
 name: sexually mature adult
 namespace: Schmidtea_mediterranea_Developmental_Stages
 def: "A fully formed, sexually mature organism. The sexually reproducing Schmidtea mediterranea biotype exists as an obligate cross-fertilizing hermaphrodite." [PMID:19022767\nPMID\:11972158]
+def: "sexually mature adult needs def" []
 comment: Depcited by field shows a light microscopy image of a sexually mature adult with a scale bar of 2 mm.
+synonym: "sexual adult" EXACT []
+synonym: "sexually mature adult" EXACT []
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/sexuallymatureadult.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004503 xsd:string
 created_by: Erin Davies
@@ -10863,7 +11561,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004506 xsd:string
 created_by: Erin Davies
@@ -10881,7 +11579,7 @@ relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004507 xsd:string
@@ -10890,7 +11588,7 @@ creation_date: 2017-07-19T21:35:08Z
 
 [Term]
 id: PLANA:0004511
-name: oral-aboral axis of the embryo
+name: oral-aboral axis of embryo
 def: "Axis that runs from the oral pole and to the aboral pole of the spherical embryo (Stage 3 through early Stage 6). The oral pole is centered around the temporary embryonic pharynx; the aboral pole is located opposite the temporary embryonic pharynx." [PMID:28072387]
 synonym: "oral-aboral axis of embryo" EXACT []
 is_a: PLANA:0000116 ! embryo
@@ -11039,6 +11737,8 @@ creation_date: 2017-07-27T20:01:15Z
 id: PLANA:0004520
 name: temporary embryonic pharynx radial muscle cell
 def: "Differentiated radial muscle cell present in the temporary embryonic pharynx." [PMID:16932928]
+def: "temporary embryonic pharynx radial muscle cell needs def" []
+synonym: "temporary embryonic pharynx radial muscle fiber" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000101 ! muscle cell
@@ -11048,6 +11748,7 @@ relationship: part_of PLANA:0000023 ! temporary embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004520 xsd:string
 created_by: Erin Davies
 creation_date: 2017-07-27T20:01:39Z
@@ -11071,8 +11772,11 @@ creation_date: 2017-07-27T20:02:04Z
 
 [Term]
 id: PLANA:0004524
+name: temporary embryonic pharynx circular muscle cell
 name: temporary embryonic pharynx circular muscle fiber
 def: "Differentiated muscle cell present in a circular muscle fiber of the temporary embryonic pharynx." [PMID:16932928]
+def: "temporary embryonic pharynx circular muscle fiber needs def" []
+synonym: "temporary embryonic pharynx circular muscle fiber" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000101 ! muscle cell
@@ -11082,6 +11786,7 @@ relationship: part_of PLANA:0000023 ! temporary embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004524 xsd:string
 created_by: Erin Davies
 creation_date: 2017-07-27T20:43:26Z
@@ -11106,7 +11811,12 @@ creation_date: 2017-08-28T18:20:43Z
 [Term]
 id: PLANA:0004528
 name: pharyngeal epithelium
+name: pharynx epithelium
 def: "Epithelia associated with the pharynx organ." []
+def: "pharyngeal epithelium needs def" []
+synonym: "pharnyx epidermis" EXACT []
+synonym: "pharyngeal epidermis" EXACT []
+synonym: "pharyngeal epithelium" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000016 ! definitive pharynx
@@ -11115,6 +11825,7 @@ relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004528 xsd:string
 created_by: Erin Davies
 creation_date: 2017-08-31T14:53:38Z
@@ -11146,7 +11857,7 @@ relationship: part_of PLANA:0004527 ! copulatory region
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
 relationship: part_of PLANA:0007507 ! posterior compartment
-relationship: part_of PLANA:0007554 ! parenchymal compartment
+relationship: part_of PLANA:0007554 ! parenchyma
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
@@ -11170,7 +11881,7 @@ relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
 relationship: part_of PLANA:0007507 ! posterior compartment
-relationship: part_of PLANA:0007554 ! parenchymal compartment
+relationship: part_of PLANA:0007554 ! parenchyma
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
@@ -11231,7 +11942,7 @@ relationship: part_of PLANA:0000230 ! tuba
 relationship: part_of PLANA:0000419 ! prepharyngeal region
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
-relationship: part_of PLANA:0007554 ! parenchymal compartment
+relationship: part_of PLANA:0007554 ! parenchyma
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
@@ -11252,7 +11963,7 @@ creation_date: 2017-04-26T19:32:04Z
 
 [Term]
 id: PLANA:0007503
-name: sagittal plane of the whole animal
+name: sagittal plane of whole organism
 def: "Anatomical plane which divides the body into right and left parts. This plane passes through the midline." []
 synonym: "sagittal plane of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
@@ -11421,7 +12132,7 @@ creation_date: 2017-05-04T15:35:23Z
 
 [Term]
 id: PLANA:0007519
-name: anterior-posterior axis of the whole animal
+name: anterior-posterior axis of whole organism
 def: "Axis that runs along the long axis of the animal from anterior (head) to posterior (tail). It is perpendicular to the dorsoventral axis and as such, it splits dorsal and ventral regions of the animal to either side." []
 synonym: "anterior-posterior axis" EXACT []
 synonym: "anterior-posterior axis of whole organism" EXACT []
@@ -11434,7 +12145,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obol
 
 [Term]
 id: PLANA:0007520
-name: dorsal-ventral axis of the whole animal
+name: dorsal-ventral axis of whole organism
 def: "Axis that runs along the short axis of the animal, perpendicular to the anteroposterior axis, running from the dorsal (back) side of the animal to the ventral (belly) side of the animal. This axis splits anterior and posterior regions of the animal to either side." []
 synonym: "dorsal-ventral axis" EXACT []
 synonym: "dorsal-ventral axis of whole organism" EXACT []
@@ -11446,7 +12157,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0007521
-name: dextro-sinister axis of the whole animal
+name: left-right axis of whole organism
 def: "Axis perpendicular to both the anteroposterior and dorsoventral axis that runs from the left side of the animal, through the medial region (center) and out to the right side." []
 synonym: "dextro-sinister axis" EXACT []
 synonym: "left-right axis" EXACT []
@@ -11459,7 +12170,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obol
 
 [Term]
 id: PLANA:0007522
-name: medial-lateral axis of the whole animal
+name: medial-lateral axis of whole organism
 def: "Axis that runs from the center of the body, starting at the anteroposterior axis and out to the lateral (left, right, dorsal or ventral) surface of the animal." []
 synonym: "medial-lateral axis" EXACT []
 synonym: "medial-lateral axis of whole organism" EXACT []
@@ -11471,7 +12182,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obol
 
 [Term]
 id: PLANA:0007523
-name: proximal-distal axis of the whole animal
+name: proximal-distal axis of whole organism
 def: "Axis that starts at the distal part of an appendage, closest to the body, and runs to the proximal part of an appendage, farthest from the body." []
 synonym: "proximal-distal axis" EXACT []
 synonym: "proximal-distal axis of whole organism" EXACT []
@@ -11528,7 +12239,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007528 xsd:string
@@ -11551,15 +12262,24 @@ creation_date: 2017-06-22T18:29:52Z
 [Term]
 id: PLANA:0007534
 name: inner pharyngeal epithelium
-def: "Heavily ciliated epidermal cells covering the inner surface of the pharynx shaft." [doi:10.1002/jmor.1051550208\nOCLC\:16809160]
+def: "Heavily ciliated epidermal cells covering the inner surface of the pharynx shaft." [doi:10.1002/jmor.1051550208, OCLC:16809160]
+def: "inner pharyngeal epithelium needs def" []
+synonym: "epithelial pharynx lining" EXACT []
+synonym: "epithelium lining the lumen of the pharynx" EXACT []
+synonym: "inner epithelium" EXACT []
+synonym: "inner pharyngeal epidermis" EXACT []
+synonym: "inner pharyngeal epithelium" EXACT []
+synonym: "inner pharynx epidermis" EXACT []
+xref: PMID:24120894
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: immediately_superficial_to PLANA:0000474 ! inner pharyngeal circular muscle fiber
-relationship: part_of PLANA:0004528 ! pharyngeal epithelium
+relationship: part_of PLANA:0004528 ! pharynx epithelium
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007534 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-07-24T19:28:03Z
@@ -11567,7 +12287,11 @@ creation_date: 2017-07-24T19:28:03Z
 [Term]
 id: PLANA:0007535
 name: pharyngeal circular muscle fiber
+def: "pharyngeal circular muscle fiber needs def" []
 def: "Pharynx muscle fibers running parallel to the diameter of the pharynx." [ASIN:B000M4NK9M]
+synonym: "pharyngeal circular muscle cell" EXACT []
+synonym: "pharynx circular muscle cell" EXACT []
+synonym: "pharynx circular muscle fiber" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000101 ! muscle cell
 relationship: part_of PLANA:0000478 ! musculature of pharynx
@@ -11576,6 +12300,7 @@ relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007535 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-07-24T19:39:14Z
@@ -11607,7 +12332,7 @@ def: "Specialized epithelial cells located along the dorsoventral margin. Adhesi
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000484 ! secretory system
-relationship: RO:0001018 PLANA:0000043 ! contained in dorsal ventral margin
+relationship: RO:0001018 PLANA:0000043 ! contained in dorsal/ventral compartment boundary of whole organism
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -11630,7 +12355,7 @@ def: "Specialized epithelial cell located along the dorsoventral margin that sur
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000487 ! acidophilic gland cell
 relationship: part_of PLANA:0007538 ! adhesion gland
-relationship: RO:0001018 PLANA:0000043 ! contained in dorsal ventral margin
+relationship: RO:0001018 PLANA:0000043 ! contained in dorsal/ventral compartment boundary of whole organism
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -11650,7 +12375,7 @@ def: "A specialized insunk epithelial cell that is part of the adhesion glands w
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000487 ! acidophilic gland cell
 relationship: part_of PLANA:0007538 ! adhesion gland
-relationship: RO:0001018 PLANA:0000043 ! contained in dorsal ventral margin
+relationship: RO:0001018 PLANA:0000043 ! contained in dorsal/ventral compartment boundary of whole organism
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -11671,7 +12396,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000487 ! acidophilic gland cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0007538 ! adhesion gland
-relationship: RO:0001018 PLANA:0000043 ! contained in dorsal ventral margin
+relationship: RO:0001018 PLANA:0000043 ! contained in dorsal/ventral compartment boundary of whole organism
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -11696,7 +12421,7 @@ relationship: part_of PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007543 xsd:string
 
 [Term]
@@ -11735,7 +12460,7 @@ relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007546 xsd:string
 
 [Term]
@@ -11788,7 +12513,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007550 xsd:string
 
 [Term]
@@ -11802,7 +12527,7 @@ relationship: part_of PLANA:0000429 ! neoblast compartment
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007551 xsd:string
 
 [Term]
@@ -11814,7 +12539,7 @@ is_a: PLANA:0000012 ! neural progenitor
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007552 xsd:string
 
 [Term]
@@ -11830,13 +12555,92 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007553 x
 
 [Term]
 id: PLANA:0007554
+name: parenchyma
 name: parenchymal compartment
 def: "An anatomical compartment of the deep-superficial axis between the gastrodermal nerve plexus and submuscular nerve plexus." []
+def: "parenchymal compartment needs def" []
 synonym: "mesenchyme" BROAD []
+synonym: "mesenchyme" EXACT []
+synonym: "parenchymal compartment" EXACT []
+xref: ISBN: 9780070316607
+xref: PMID:15866156
+xref: PMID:16311336
+xref: PMID:16890156
+xref: PMID:17376870
+xref: PMID:17390146
+xref: PMID:17553481
+xref: PMID:17670787
+xref: PMID:17905225
+xref: PMID:18202849
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:19174194
+xref: PMID:19211673
+xref: PMID:19247960
+xref: PMID:20040488
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:20422023
+xref: PMID:20865784
+xref: PMID:21356107
+xref: PMID:21458439
+xref: PMID:21664348
+xref: PMID:21806978
+xref: PMID:21828097
+xref: PMID:21852957
+xref: PMID:21937596
+xref: PMID:22252539
+xref: PMID:22318224
+xref: PMID:22385657
+xref: PMID:22411224
+xref: PMID:22439894
+xref: PMID:22445864
+xref: PMID:23235145
+xref: PMID:23318635
+xref: PMID:23405188
+xref: PMID:23629965
+xref: PMID:24063805
+xref: PMID:24120894
+xref: PMID:24173799
+xref: PMID:24238224
+xref: PMID:24367277
+xref: PMID:24704339
+xref: PMID:24737865
+xref: PMID:24950970
+xref: PMID:25017721
+xref: PMID:25558068
+xref: PMID:25956527
+xref: PMID:26114597
+xref: PMID:26457503
+xref: PMID:26711341
+xref: PMID:26884331
+xref: PMID:27122174
+xref: PMID:27163480
+xref: PMID:27441386
+xref: PMID:27551436
+xref: PMID:27606067
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:27864883
+xref: PMID:28072387
+xref: PMID:28137894
+xref: PMID:28287248
+xref: PMID:28292427
+xref: PMID:28461239
+xref: PMID:28807897
+xref: PMID:28976975
+xref: PMID:29100657
+xref: PMID:29357350
+xref: PMID:29557542
+xref: PMID:29674432
+xref: PMID:30143032
+xref: PMID:30194301
+xref: PMID:30962434
 is_a: BSPO:0000086 ! anatomical compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps sexually mature adult
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007554 xsd:string
 
 [Term]
@@ -11850,13 +12654,15 @@ relationship: part_of PLANA:0000429 ! neoblast compartment
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
+relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007555 xsd:string
 
 [Term]
 id: PLANA:0007556
 name: temporary embryonic pharynx cavity
 def: "Anatomical space enclosed by the temporary embryonic pharynx epithelial cells. Lumen through which yolk cells are transported into the embryonic gut cavity." [PMID:28072387]
+def: "temporary embryonic pharynx cavity needs def" []
+synonym: "temporary embryonic pharynx lumen" EXACT []
 is_a: BFO:0000002 ! continuant
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
@@ -11869,6 +12675,7 @@ relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007556 xsd:string
 created_by: Erin Davies
 
@@ -12730,7 +13537,7 @@ property_value: seeAlso Involved:in
 holds_over_chain: RO:0002327 part_of
 is_a: RO:0002217 ! actively participates in
 is_a: RO:0002431 ! involved in or involved in regulation of
-transitive_over: part_of ! part of
+transitive_over: part_of ! part_of
 
 [Typedef]
 id: RO:0002333
@@ -13019,7 +13826,7 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 holds_over_chain: part_of RO:0002497
 holds_over_chain: RO:0002286 RO:0002497
 is_a: RO:0002487 ! relation between structure and stage
-transitive_over: part_of ! part of
+transitive_over: part_of ! part_of
 transitive_over: precedes ! precedes
 
 [Typedef]
@@ -13280,7 +14087,6 @@ domain: BFO:0000004 ! independent continuant
 range: BFO:0000004 ! independent continuant
 is_symmetric: true
 is_a: RO:0002163 ! spatially disjoint from
-is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: anterior_to
@@ -13436,7 +14242,7 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 holds_over_chain: part_of existence_starts_during_or_after
 holds_over_chain: RO:0002258 existence_starts_during_or_after
 is_a: RO:0002487 ! relation between structure and stage
-transitive_over: part_of ! part of
+transitive_over: part_of ! part_of
 transitive_over: preceded_by ! preceded_by
 
 [Typedef]
@@ -13502,11 +14308,15 @@ inverse_of: developmentally_contributes_to ! developmentally contributes to
 [Typedef]
 id: has_part
 name: has part
+name: has_part
 namespace: chebi_ontology
 namespace: external
+namespace: quality
 namespace: spatial
 namespace: uberon
 def: "a core relation that holds between a whole and its part" []
+def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
+comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
 xref: BFO:0000051
 property_value: IAO:0000111 "has part" xsd:string
 property_value: IAO:0000112 "my body has part my brain (continuant parthood, two material entities)" xsd:string
@@ -13580,7 +14390,6 @@ namespace: spatial
 namespace: uberon
 def: "x immediately superficial to y iff x superficial to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0015014
-is_a: adjacent_to ! adjacent_to
 is_a: superficial_to ! superficial_to
 
 [Typedef]
@@ -13593,7 +14402,7 @@ def: "X in lateral side of Y <=> if X is in left side of Y or X is in right side
 def: "X in_lateral_side_of Y <=> if X is in_left_side_of Y or X is in_right_side_of Y. X is often, but not always a paired structure" [https://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000126
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
-is_a: part_of ! part of
+is_a: part_of ! part_of
 
 [Typedef]
 id: input_of
@@ -13647,7 +14456,7 @@ domain: BFO:0000003 ! occurrent
 range: BFO:0000004 ! independent continuant
 holds_over_chain: part_of occurs_in
 inverse_of: BFO:0000067 ! contains process
-transitive_over: part_of ! part of
+transitive_over: part_of ! part_of
 
 [Typedef]
 id: opposite_to
@@ -13692,7 +14501,9 @@ def: "x is parallel t y iff x and y are lines or planes which when extended inde
 [Typedef]
 id: part_of
 name: part of
+name: part_of
 namespace: external
+namespace: quality
 namespace: spatial
 namespace: uberon
 def: "a core relation that holds between a part and its whole" []
@@ -13862,6 +14673,7 @@ def: "Near the outer surface of the organism. Thus, skin is superficial to the m
 def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [BSPO:cjm]
 xref: BSPO:0000108
 is_transitive: true
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: surface_of
