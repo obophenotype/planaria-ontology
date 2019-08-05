@@ -379,6 +379,8 @@ name: adjacent_to
 namespace: uberon
 def: "x adjacent_to y iff: x and y share a boundary" []
 xref: RO:0002220
+is_a: deep_to ! deep_to
+is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: capable_of
@@ -400,7 +402,6 @@ name: deep_to
 namespace: uberon
 def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000107
-is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: developmentally_contributes_to
@@ -474,7 +475,7 @@ name: immediately_deep_to
 namespace: uberon
 def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001107
-is_a: deep_to ! deep_to
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: immediately_preceded_by
@@ -495,7 +496,7 @@ id: immediately_superficial_to
 name: immediately_superficial_to
 namespace: uberon
 xref: BSPO:0015014
-is_a: superficial_to ! superficial_to
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: in_lateral_side_of
@@ -547,5 +548,4 @@ name: superficial_to
 namespace: uberon
 def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000108
-is_a: adjacent_to ! adjacent_to
 
