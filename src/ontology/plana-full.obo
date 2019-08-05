@@ -529,6 +529,14 @@ xref: FMA:9647
 is_a: CARO:0000003 ! anatomical structure
 
 [Term]
+id: BSPO:0000090
+name: posterior compartment
+namespace: spatial
+xref: FBcv:0000036
+xref: FBql:00005875
+is_a: BSPO:0000086 ! anatomical compartment
+
+[Term]
 id: BSPO:0000092
 name: anatomical compartment boundary
 namespace: spatial
@@ -1109,6 +1117,27 @@ xref: MIPS_funcat:18.01.07
 xref: Reactome:R-HSA-170835 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3"
 xref: Reactome:R-HSA-170846 "TGFBR2 recruits TGFBR1"
 is_a: GO:0005488 ! binding
+
+[Term]
+id: GO:0005575
+name: cellular_component
+namespace: cellular_component
+alt_id: GO:0008372
+def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao-1337158144]
+comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_plant
+subset: goslim_yeast
+synonym: "cell or subcellular entity" EXACT []
+synonym: "cellular component" EXACT []
+synonym: "subcellular entity" RELATED [NIF_Subcellular:nlx_subcell_100315]
+xref: NIF_Subcellular:sao-1337158144
+xref: NIF_Subcellular:sao1337158144
 
 [Term]
 id: GO:0006793
@@ -3976,6 +4005,7 @@ is_a: PLANA:0000121 ! stem cell
 relationship: develops_from PLANA:0000212 ! blastomere compartment
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -3983,7 +4013,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
@@ -4004,6 +4033,7 @@ is_a: PLANA:0000120 ! progenitor cell
 relationship: develops_from PLANA:0000212 ! blastomere compartment
 relationship: part_of PLANA:0000088 ! renal system
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -4011,7 +4041,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -4048,6 +4077,7 @@ is_a: PLANA:0000033 ! epidermal progenitor
 relationship: develops_from PLANA:0000212 ! blastomere compartment
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4056,7 +4086,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -4200,8 +4229,8 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000049 ! digestive system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007560 ! contained in gastrovascular compartment
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
@@ -4242,6 +4271,7 @@ relationship: develops_from PLANA:0000035 ! Category 3 cell
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000054 ! dorsal epidermis
 relationship: part_of PLANA:0000096 ! ventral epidermis
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4250,7 +4280,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
@@ -4280,6 +4309,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000431 ! organ
 relationship: develops_from PLANA:0000011 ! protonephridial progenitor
 relationship: part_of PLANA:0000088 ! renal system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4287,7 +4317,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -4314,6 +4343,7 @@ relationship: develops_from PLANA:0000018 ! Category 4 cell
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000054 ! dorsal epidermis
 relationship: part_of PLANA:0000096 ! ventral epidermis
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4322,7 +4352,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -4385,13 +4414,13 @@ is_a: PLANA:0000431 ! organ
 relationship: develops_from PLANA:0000039 ! gamma neoblast
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000049 ! digestive system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -4419,6 +4448,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000033 ! epidermal progenitor
 relationship: develops_from PLANA:0000014 ! zeta neoblast
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4427,7 +4457,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
@@ -4562,6 +4591,7 @@ is_a: PLANA:0000431 ! organ
 relationship: develops_from PLANA:0000033 ! epidermal progenitor
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0004529 ! integumental system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4570,7 +4600,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
@@ -4590,6 +4619,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000033 ! epidermal progenitor
 relationship: develops_from PLANA:0000028 ! Category 2 cell
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4598,7 +4628,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
@@ -4657,6 +4686,7 @@ relationship: develops_from PLANA:0000212 ! blastomere compartment
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000049 ! digestive system
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -4664,7 +4694,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
@@ -4723,7 +4752,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000042 x
 id: PLANA:0000043
 name: dorsal ventral margin
 def: "Region along the edge of the animal where the dorsal and ventral surfaces meet." []
-synonym: "dorsal/ventral compartment boundary of whole animal" EXACT []
+synonym: "dorsal/ventral compartment boundary of whole organism" EXACT []
 synonym: "dorsoventral margin" EXACT []
 synonym: "edge" EXACT []
 is_a: PLANA:0000102 ! anatomical compartment subdivision
@@ -4740,7 +4769,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000043 x
 [Term]
 id: PLANA:0000044
 name: cephalic ganglia
-def: "The planarian brain, consisting of two bilaterally symmetric lobes occupying a ventral position in the head." [OCLC:16809160\nPMID\:17999079]
+def: "The planarian brain, consisting of two bilaterally symmetric lobes occupying a ventral position in the head." [OCLC:16809160, PMID:17999079]
 synonym: "brain" BROAD []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
@@ -4765,6 +4794,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000101 ! muscle cell
 relationship: develops_from PLANA:0000130 ! circular muscle progenitor cell
 relationship: part_of PLANA:0000240 ! body wall musculature
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4773,7 +4803,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007549 ! contained in body wall musculature compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -4791,6 +4820,7 @@ is_a: PLANA:0000121 ! stem cell
 relationship: develops_from PLANA:0000212 ! blastomere compartment
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -4798,7 +4828,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -4818,6 +4847,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: adjacent_to PLANA:0000053 ! distal tubule
 relationship: part_of PLANA:0000088 ! renal system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4825,7 +4855,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -4848,6 +4877,7 @@ xref: PMID:30471994
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000101 ! muscle cell
 relationship: part_of PLANA:0000240 ! body wall musculature
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4856,7 +4886,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007549 ! contained in body wall musculature compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -4904,6 +4933,7 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: adjacent_to PLANA:0000047 ! collecting duct
 relationship: develops_from PLANA:0000011 ! protonephridial progenitor
 relationship: part_of PLANA:0000020 ! protonephridia
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4911,7 +4941,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -4941,6 +4970,7 @@ synonym: "racing stripe" BROAD []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000054 ! dorsal epidermis
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4948,7 +4978,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5030,13 +5059,13 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000013 ! visceral musculature
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000026 ! definitive gut
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -5077,13 +5106,13 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: develops_from PLANA:0000011 ! protonephridial progenitor
 relationship: part_of PLANA:0000020 ! protonephridia
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5112,6 +5141,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: adjacent_to PLANA:0000087 ! proximal tubule
 relationship: part_of PLANA:0000064 ! flame bulb
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -5119,7 +5149,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5137,13 +5166,13 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: develops_from PLANA:0000039 ! gamma neoblast
 relationship: part_of PLANA:0000026 ! definitive gut
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5156,6 +5185,7 @@ def: "Secretory cells that release digestive enzymes into the lumen of the intes
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000105 ! secretory cell
 relationship: part_of PLANA:0000066 ! gastrodermis
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -5163,7 +5193,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007560 ! contained in gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5209,6 +5238,7 @@ def: "Absorptive digestive cells that engulf food particles for intracellular di
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: part_of PLANA:0000066 ! gastrodermis
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -5216,7 +5246,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007560 ! contained in gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5245,6 +5274,7 @@ is_a: PLANA:0000101 ! muscle cell
 intersection_of: PLANA:0000101 ! muscle cell
 intersection_of: develops_from PLANA:0000134 ! longitudinal muscle progenitor cell
 intersection_of: part_of PLANA:0000240 ! body wall musculature
+intersection_of: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 intersection_of: RO:0001018 PLANA:0000418 ! contained in head
 intersection_of: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 intersection_of: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -5253,13 +5283,13 @@ intersection_of: RO:0001018 PLANA:0004527 ! contained in copulatory region
 intersection_of: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 intersection_of: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 intersection_of: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-intersection_of: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 intersection_of: RO:0001018 PLANA:0007549 ! contained in body wall musculature compartment
 intersection_of: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 intersection_of: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 intersection_of: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 relationship: develops_from PLANA:0000134 ! longitudinal muscle progenitor cell
 relationship: part_of PLANA:0000240 ! body wall musculature
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -5268,7 +5298,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007549 ! contained in body wall musculature compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5285,9 +5314,9 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000049 ! digestive system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -5384,6 +5413,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000422 ! tail stripe
 relationship: part_of PLANA:0000428 ! musculature system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -5392,7 +5422,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5416,8 +5445,8 @@ synonym: "pharyngeal pouch" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000049 ! digestive system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5444,10 +5473,10 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: develops_from PLANA:0000039 ! gamma neoblast
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000026 ! definitive gut
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -5498,6 +5527,7 @@ relationship: adjacent_to PLANA:0000065 ! flame cell
 relationship: develops_from PLANA:0000011 ! protonephridial progenitor
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000020 ! protonephridia
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -5505,7 +5535,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -5536,13 +5565,13 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: develops_from PLANA:0000039 ! gamma neoblast
 relationship: part_of PLANA:0000026 ! definitive gut
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5561,13 +5590,13 @@ is_a: PLANA:0000122 ! gamete
 is_a: PLANA:0000228 ! male germ cell
 relationship: develops_from PLANA:0000238 ! elongate spermatid
 relationship: part_of PLANA:0000208 ! testis
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0003001 PLANA:0000208 ! produced by testis
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000090 xsd:string
@@ -5610,13 +5639,13 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: develops_from PLANA:0000039 ! gamma neoblast
 relationship: part_of PLANA:0000026 ! definitive gut
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5691,6 +5720,7 @@ xref: WBbt:0005829
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: part_of PLANA:0000103 ! central nervous system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -5698,7 +5728,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -5808,6 +5837,7 @@ is_a: PLANA:0000119 ! terminally differentiated cell
 is_a: PLANA:0000215 ! reproductive system product
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000060 ! embryonic wall
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -5815,7 +5845,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5838,12 +5867,12 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000120 ! progenitor cell
 relationship: part_of PLANA:0000016 ! pharynx
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5857,6 +5886,7 @@ def: "Ciliated epithelial cells that assemble into proximal tubules." [PMID:2182
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000106 ! ciliated epithelial cell
 relationship: part_of PLANA:0000087 ! proximal tubule
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -5864,7 +5894,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5903,6 +5932,7 @@ xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000015 ! non ciliated epithelial cell
 relationship: part_of PLANA:0000053 ! distal tubule
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -5910,7 +5940,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -5944,6 +5973,7 @@ def: "Nonciliated epithelial cells that assemble into collecting ducts." [PMID:2
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000015 ! non ciliated epithelial cell
 relationship: part_of PLANA:0000047 ! collecting duct
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -5951,7 +5981,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6046,12 +6075,12 @@ is_a: PLANA:0000106 ! ciliated epithelial cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0004532 ! oviduct epithelium
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6066,13 +6095,13 @@ is_a: PLANA:0000106 ! ciliated epithelial cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0004533 ! sperm duct epithelium
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6096,6 +6125,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000019 ! muscle progenitor cell
 relationship: part_of PLANA:0000240 ! body wall musculature
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -6104,7 +6134,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6152,6 +6181,7 @@ relationship: develops_from PLANA:0000212 ! blastomere compartment
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000240 ! body wall musculature
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -6160,7 +6190,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
@@ -6224,7 +6253,7 @@ id: PLANA:0000138
 name: hyman vesicle
 def: "PROG-2-5 positive granules that range in size from 0.5um to 1um present in epithelia and epithelia progenitor cells. These are distinct from rhabdites." [PMID:29100657]
 comment: Depcited by is an immuno electron microscopy image of a mesenchymal cell labeled with anti-PROG-2-5 immuno-gold. Large rhod-shaped granules resembling rhabdites are found in the same cell labeled with PROG-2-5+ oval-shaped granules (pseudo-colored in blue). Higher magnification of the boxed region is shown in the panel below. e, endoplasmic reticulum; m, mitochondria; n, nucleus; rh, rhabdite. Scale bar, 1 μm.
-is_a: PLANA:0000433 ! cellular component
+is_a: GO:0005575 ! cellular_component
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/hymanvesicle.png {xref="PMID:29100657"}
 created_by: Steph Nowotarski
 creation_date: 2018-08-03T19:14:32Z
@@ -6233,7 +6262,7 @@ creation_date: 2018-08-03T19:14:32Z
 id: PLANA:0000140
 name: anterior region of the whole animal
 def: "Compartment along the anteroposterior axis closer to the head rather than the tail, from the head margin to the esophagus." [OCLC:16809160]
-synonym: "anterior region of whole animal" EXACT []
+synonym: "anterior region of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000071 ! anterior region
@@ -6244,7 +6273,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0000141
 name: dorsal region of the whole animal
 def: "Three dimensional compartment along the dorsoventral axis that is above the anteroposterior axis, containing the eyes." []
-synonym: "dorsal region of whole animal" EXACT []
+synonym: "dorsal region of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000079 ! dorsal region
@@ -6255,18 +6284,18 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0000142
 name: posterior compartment of the whole animal
 def: "Three dimensional compartment along the anteroposterior axis that is closer to the tail rather than the head, from the anterior boundary of the pharyngeal pouch to the tip of the tail." []
-synonym: "posterior region of whole animal" EXACT []
+synonym: "posterior compartment of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
-intersection_of: has_component BSPO:0000072 ! posterior region
-relationship: has_component BSPO:0000072 ! posterior region
+intersection_of: has_component BSPO:0000090 ! posterior compartment
+relationship: has_component BSPO:0000090 ! posterior compartment
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000143
 name: ventral compartment of the whole animal
 def: "Compartment along the dorsoventral axis that is below the anteroposterior axis." []
-synonym: "ventral region of whole animal" EXACT []
+synonym: "ventral region of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000084 ! ventral region
@@ -6287,9 +6316,9 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6306,9 +6335,9 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000203 xsd:string
@@ -6333,12 +6362,12 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000205 xsd:string
@@ -6352,9 +6381,9 @@ is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000206 xsd:string
@@ -6382,13 +6411,13 @@ name: testis
 def: "A gonad containing male germline stem cells which fuel sperm production. Testes are located dorsolaterally, and are excluded from the head. The neoblast compartment, including piwi-1+, nanos+ primordial germ cells, fuels formation of testes during juvenile development and regeneration." [PMID:19022767]
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000217 ! gonad
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000208 xsd:string
 
 [Term]
@@ -6487,13 +6516,13 @@ is_a: PLANA:0000121 ! stem cell
 is_a: PLANA:0000228 ! male germ cell
 relationship: part_of PLANA:0000126 ! reproductive system
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6513,13 +6542,13 @@ relationship: develops_from PLANA:0000218 ! male primordial germ cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000208 ! testis
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6537,13 +6566,13 @@ is_a: PLANA:0000228 ! male germ cell
 relationship: develops_from PLANA:0000219 ! male germline stem cell
 relationship: part_of PLANA:0000208 ! testis
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000220 xsd:string
@@ -6559,13 +6588,13 @@ is_a: PLANA:0000228 ! male germ cell
 relationship: develops_from PLANA:0000220 ! spermatogonium
 relationship: part_of PLANA:0000208 ! testis
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000221 xsd:string
@@ -6579,13 +6608,13 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000228 ! male germ cell
 relationship: part_of PLANA:0000208 ! testis
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000222 xsd:string
@@ -6636,10 +6665,10 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6752,8 +6781,8 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -6768,8 +6797,8 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000234 xsd:string
@@ -6825,6 +6854,7 @@ xref: WBbt:0005813
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: part_of PLANA:0000428 ! musculature system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -6833,7 +6863,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007549 ! contained in body wall musculature compartment
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -6966,10 +6995,10 @@ xref: UBERON:0001731
 is_a: BFO:0000002 ! continuant
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of PLANA:0000016 ! pharynx
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6994,6 +7023,7 @@ is_a: BFO:0000002 ! continuant
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000026 ! definitive gut
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000419 ! prepharyngeal region
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0000421 ! tail
@@ -7001,7 +7031,6 @@ relationship: part_of PLANA:0004527 ! copulatory region
 relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -7020,9 +7049,9 @@ xref: UBERON:0000166
 is_a: BFO:0000002 ! continuant
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of PLANA:0000072 ! mouth
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0007505 ! ventral compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007545 ! epidermal compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -7039,10 +7068,10 @@ synonym: "pharyngeal pouch cavity" EXACT []
 is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: immediately_superficial_to PLANA:0000413 ! pharynx outer epithelium surface
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -7081,6 +7110,7 @@ comment: The depicted by field is a hemotoxylin and eosin stained coronal sectio
 is_a: BSPO:0000005 ! anatomical surface
 relationship: immediately_superficial_to PLANA:0000405 ! digestive tract lumen
 relationship: part_of PLANA:0000066 ! gastrodermis
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000418 ! head
 relationship: part_of PLANA:0000419 ! prepharyngeal region
 relationship: part_of PLANA:0000420 ! parapharyngeal region
@@ -7089,7 +7119,6 @@ relationship: part_of PLANA:0004527 ! copulatory region
 relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -7108,11 +7137,11 @@ synonym: "pharyngeal lumen epithelial surface" EXACT []
 synonym: "pharynx inner epidermis surface" EXACT []
 synonym: "pharynx lumen epithelial surface" EXACT []
 is_a: BSPO:0000005 ! anatomical surface
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0000472 ! outer pharynx epithelium
 relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -7132,11 +7161,11 @@ synonym: "pharynx outer epidermis surface" EXACT []
 synonym: "pharynx outer side" EXACT []
 xref: PMID:24120894
 is_a: BSPO:0000005 ! anatomical surface
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0000472 ! outer pharynx epithelium
 relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -7154,10 +7183,10 @@ synonym: "pharyngeal pouch surface" EXACT []
 is_a: BSPO:0000005 ! anatomical surface
 relationship: immediately_superficial_to PLANA:0000407 ! pharynx pouch cavity
 relationship: part_of PLANA:0000081 ! pharynx pouch
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -7247,7 +7276,7 @@ relationship: posterior_to PLANA:0000419 ! prepharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
-relationship: subdivision_of PLANA:0007507 ! posterior compartment
+relationship: subdivision_of PLANA:0000142 ! posterior compartment of the whole animal
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/parapharyngealregion.png
 property_value: IAO:0000232 "Trunk is a synonym here because the parapharyngeal region is always contained in a trunk fragment. However, a trunk fragment may also contain some neck and some tail." xsd:string
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000420 xsd:string
@@ -7264,7 +7293,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
-relationship: subdivision_of PLANA:0007507 ! posterior compartment
+relationship: subdivision_of PLANA:0000142 ! posterior compartment of the whole animal
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/tail.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000421 xsd:string
 
@@ -7277,8 +7306,8 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: subdivision_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: subdivision_of PLANA:0000421 ! tail
-relationship: subdivision_of PLANA:0007507 ! posterior compartment
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000422 xsd:string
 
 [Term]
@@ -7531,7 +7560,8 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000429 x
 id: PLANA:0000430
 name: epithelial cell component
 def: "A part of an epithelial cell." []
-is_a: PLANA:0000433 ! cellular component
+is_a: BFO:0000002 ! continuant
+is_a: GO:0005575 ! cellular_component
 relationship: part_of PLANA:0000100 ! epithelial cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000430 xsd:string
 
@@ -7555,10 +7585,9 @@ replaced_by: UBERON:0007567
 
 [Term]
 id: PLANA:0000433
-name: cellular component
-def: "The part of a cell, extracellular environment or virus in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together. Source: NIF_Subcellular:sao-1337158144, GOC:go_curators" []
+name: obsolete cellular component
+def: "OBSOLETE The part of a cell, extracellular environment or virus in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together. Source: NIF_Subcellular:sao-1337158144, GOC:go_curators" []
 xref: GO:0005575
-is_a: PLANA:0000500 ! cell part
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000433 xsd:string
 
 [Term]
@@ -7719,6 +7748,7 @@ name: subepidermal nerve plexus
 def: "Plexus of nerves located just between the definitive epidermis and the body wall musculature." [PMID:27612384\ndoi\:10.1002/jmor.1051550208]
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000492 ! nerve plexus
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7727,7 +7757,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -7739,6 +7768,7 @@ name: submuscular nerve plexus
 def: "Plexus of nerves that innervate the body wall muscles." []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000492 ! nerve plexus
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7747,7 +7777,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -7817,8 +7846,8 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: immediately_superficial_to PLANA:0000476 ! pharynx outer longitudinal muscle cell
 relationship: part_of PLANA:0004528 ! pharynx epithelium
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -7897,8 +7926,8 @@ xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000101 ! muscle cell
 relationship: part_of PLANA:0000478 ! pharynx musculature
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007560 ! contained in gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -7936,7 +7965,7 @@ synonym: "inner pharynx nerve ring" EXACT []
 xref: ISBN:9780070316607
 is_a: PLANA:0000465 ! pharynx nerve plexus
 relationship: part_of PLANA:0000465 ! pharynx nerve plexus
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000479 xsd:string
 
@@ -7948,7 +7977,7 @@ synonym: "outer pharyngeal nerve ring" EXACT []
 synonym: "outer pharynx nerve ring" EXACT []
 is_a: PLANA:0000465 ! pharynx nerve plexus
 relationship: part_of PLANA:0000465 ! pharynx nerve plexus
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000480 xsd:string
 
@@ -7961,6 +7990,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000556 ! neurosecretory neuron
 relationship: develops_from PLANA:0007550 ! serotonergic neural progenitor cell
 relationship: part_of PLANA:0000044 ! cephalic ganglia
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7968,7 +7998,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000481 xsd:string
 
@@ -8144,7 +8173,7 @@ name: brain commissure
 def: "any of the nerve fiber tracts that span the longitudinal fissure between the cerebral and/or cerebellar hemispheres of the brain" []
 xref: UBERON:0005970
 is_a: PLANA:0000493 ! nervous system commissure
-relationship: part_of PLANA:0007537 ! brain
+relationship: part_of PLANA:0000044 ! cephalic ganglia
 property_value: http://purl.obolibrary.org/obo/inSubset "pheno_slim"
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000494 xsd:string
@@ -8190,6 +8219,13 @@ xref: http://www.snomedbrowser.com/Codes/Details/91833003
 xref: UBERON:0007651
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000497 xsd:string
 is_obsolete: true
+
+[Term]
+id: PLANA:0000498
+name: obsolete main body axis
+comment: replacing duplicate PLANA term
+is_obsolete: true
+replaced_by: PLANA:0007519
 
 [Term]
 id: PLANA:0000499
@@ -8238,7 +8274,7 @@ id: PLANA:0000501
 name: cell projection
 def: "A prolongation or process extending from a cell." []
 xref: GO_0042995
-is_a: PLANA:0000433 ! cellular component
+is_a: GO:0005575 ! cellular_component
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000501 xsd:string
 
@@ -8274,7 +8310,7 @@ id: PLANA:0000505
 name: cell-cell contact zone
 def: "Extended zone of intimate apposition between two cells containing one or more types of intercellular junctions." []
 xref: GO_0044291
-is_a: PLANA:0000433 ! cellular component
+is_a: GO:0005575 ! cellular_component
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000505 xsd:string
 
@@ -8310,7 +8346,7 @@ id: PLANA:0000509
 name: intracellular part
 def: "Any constituent part of the living contents of a cell; the matter contained within (but not including) the plasma membrane, usually taken to exclude large vacuoles and masses of secretory or ingested material. In eukaryotes it includes the nucleus and cytoplasm." []
 xref: GO:0044424
-is_a: PLANA:0000433 ! cellular component
+is_a: GO:0005575 ! cellular_component
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000509 xsd:string
 
@@ -8319,7 +8355,7 @@ id: PLANA:0000510
 name: cytoplasm
 def: "All of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures" []
 xref: GO:0005737
-is_a: PLANA:0000433 ! cellular component
+is_a: GO:0005575 ! cellular_component
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000510 xsd:string
 
@@ -8405,7 +8441,7 @@ id: PLANA:0000520
 name: membrane
 def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." []
 xref: GO_0016020
-is_a: PLANA:0000433 ! cellular component
+is_a: GO:0005575 ! cellular_component
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000520 xsd:string
 
@@ -8450,7 +8486,7 @@ id: PLANA:0000525
 name: organelle
 def: "Organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, and prokaryotic structures such as anammoxosomes and pirellulosomes. Excludes the plasma membrane." []
 xref: GO_0043226
-is_a: PLANA:0000433 ! cellular component
+is_a: GO:0005575 ! cellular_component
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000525 xsd:string
 
@@ -8816,6 +8852,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000565 ! autonomic neuron
 relationship: part_of PLANA:0000465 ! pharynx nerve plexus
 relationship: part_of PLANA:0000468 ! gastrodermal plexus
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -8824,7 +8861,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007560 ! contained in gastrovascular compartment
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000566 xsd:string
@@ -8862,6 +8898,7 @@ relationship: immediately_deep_to PLANA:0000054 ! dorsal epidermis
 relationship: immediately_deep_to PLANA:0000096 ! ventral epidermis
 relationship: immediately_superficial_to PLANA:0000240 ! body wall musculature
 relationship: part_of PLANA:0004529 ! integumental system
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -8870,7 +8907,6 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -8902,6 +8938,7 @@ name: adherens junction
 def: "A cell junction at which anchoring proteins (cadherins or integrins) extend through the plasma membrane and are attached to actin filaments." []
 xref: GO:0005912
 xref: PMID:26556349
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000506 ! cell junction
 relationship: part_of PLANA:0000508 ! cell-cell adhesion
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -9041,6 +9078,7 @@ xref: PMID:25493551
 xref: PMID:25772472
 xref: PMID:27800171
 xref: PMID:28495872
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000099 ! neuron
 relationship: PLANA:0007536 PLANA:0000099 ! specific_to neuron
@@ -9054,6 +9092,7 @@ xref: GO:0005930
 xref: PMID:23144623
 xref: PMID:26057828
 xref: PMID:26912790
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
 relationship: part_of PLANA:0002024 ! cilium
 relationship: part_of PLANA:0002040 ! flagellum
@@ -9068,6 +9107,7 @@ xref: ISBN:9780070316607
 xref: PMID:21282632
 xref: PMID:21828097
 xref: PMID:21937596
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
 relationship: part_of PLANA:0002024 ! cilium
 relationship: part_of PLANA:0002040 ! flagellum
@@ -9102,7 +9142,7 @@ is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of PLANA:0000234 ! seminal vesicle
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -9130,7 +9170,7 @@ xref: PMID:16033796
 xref: PMID:20865784
 xref: PMID:27612384
 xref: PMID:28495872
-is_a: PLANA:0000433 ! cellular component
+is_a: PLANA:0000433 ! obsolete cellular component
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9339,7 +9379,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
@@ -9394,6 +9434,7 @@ id: PLANA:0002024
 name: cilium
 def: "A specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface and of some cytoplasmic parts. Each cilium is largely bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored to a basal body. The longitudinal array of microtubules are almost always in a 9+2 array with 2 microtubles in the central cilia bundle and 9 sets of doublet microtubules around the perimeter. The exception to this arrangement is spermatazoa flagella, which have a 9+1 array in planarians." []
 xref: GO:0005929
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000106 ! ciliated epithelial cell
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9429,6 +9470,7 @@ xref: PMID:17553481
 xref: PMID:22445864
 xref: PMID:25493551
 xref: PMID:28495872
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000099 ! neuron
 relationship: PLANA:0007536 PLANA:0000099 ! specific_to neuron
@@ -9456,7 +9498,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -9494,7 +9536,7 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -9569,7 +9611,8 @@ xref: CHEBI:24009
 xref: PMID:25356635
 xref: PMID:26017970
 xref: PMID:27240733
-is_a: PLANA:0000433 ! cellular component
+is_a: BFO:0000002 ! continuant
+is_a: PLANA:0000433 ! obsolete cellular component
 relationship: part_of PLANA:0002058 ! melanosome
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
@@ -9625,6 +9668,7 @@ id: PLANA:0002040
 name: flagellum
 def: "Planarian undulipodia consisting of spermatazoa cell posterior protrusions. Planarian spermatozoa contain two flagella and are composed of 9 + 1 axonemal microtubule arrangements in their flagella (markedly different from the 9 + 2 structures generally observed in sperm of other animals)." [PMID:4190073]
 xref: PMID:29095551
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000090 ! sperm
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
@@ -9652,7 +9696,7 @@ relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -9737,7 +9781,7 @@ is_a: PLANA:0002032 ! epidermal cell
 relationship: part_of PLANA:0004528 ! pharynx epithelium
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9749,7 +9793,7 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000016 ! pharynx
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -9887,6 +9931,7 @@ xref: FMA:61814
 xref: ISBN:9780070316607
 xref: PMID:27612382
 xref: PMID:29547123
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000099 ! neuron
 relationship: PLANA:0007536 PLANA:0000099 ! specific_to neuron
@@ -9911,6 +9956,7 @@ name: non-ciliated epidermis
 def: "Differentiating, immature epidermal cells lacking cilia." [PMID:26457503]
 xref: PMID:28292427
 is_a: PLANA:0000034 ! definitive epidermis
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9972,7 +10018,7 @@ relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -10053,6 +10099,7 @@ def: "A small, subcellular membrane-bounded vesicle containing pigment and/or pi
 xref: GO:0048770
 xref: ISBN:9780070316607
 xref: PMID:27551436
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000526 ! membrane-bounded organelle
 relationship: part_of PLANA:0002075 ! pigment cell
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10148,6 +10195,7 @@ def: "A secretory organelle, typically 50 nm in diameter, of presynaptic nerve t
 synonym: "pre-synaptic vesicle" EXACT []
 xref: GO:0008021
 xref: PMID:23903188
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000526 ! membrane-bounded organelle
 relationship: part_of PLANA:0002083 ! presynaptic cell
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10283,6 +10331,7 @@ name: secretory granule
 def: "A small subcellular vesicle, surrounded by a membrane, that is formed from the Golgi apparatus and contains a highly concentrated protein destined for secretion. Secretory granules move towards the periphery of the cell and upon stimulation, their membranes fuse with the cell membrane, and their protein load is exteriorized. Processing of the contained protein may take place in secretory granules." []
 xref: GO:0030141
 xref: PMID:29100657
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000526 ! membrane-bounded organelle
 relationship: part_of PLANA:0000105 ! secretory cell
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10363,6 +10412,7 @@ xref: GO:0045202
 xref: PMID:18202849
 xref: PMID:18287199
 xref: PMID:21282632
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000507 ! cell-cell junction
 relationship: part_of PLANA:0000099 ! neuron
 relationship: RO:0000056 GO:0007154 ! participates in cell communication
@@ -10385,6 +10435,7 @@ name: synaptic vesicle
 def: "A secretory organelle, typically 50 nm in diameter, of presynaptic nerve terminals; accumulates in high concentrations of neurotransmitters and secretes these into the synaptic cleft by fusion with the 'active zone' of the presynaptic plasma membrane." []
 xref: GO:0008021
 xref: PMID:24950970
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000526 ! membrane-bounded organelle
 relationship: part_of PLANA:0000099 ! neuron
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10407,7 +10458,7 @@ def: "The posterior-medial region of the tail margin." []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000109 ! anatomical compartment subdivision feature
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -10430,6 +10481,7 @@ id: PLANA:0002106
 name: tight junction
 def: "A cell-cell junction that seals cells together in an epithelium in a way that prevents even small molecules from leaking from one side of the sheet to the other." []
 xref: GO:0070160
+is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000507 ! cell-cell junction
 relationship: part_of PLANA:0002118 ! epithelium
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -10566,7 +10618,7 @@ synonym: "post-pharyngeal" EXACT []
 synonym: "postpharyngeal region" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000102 ! anatomical compartment subdivision
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
+relationship: RO:0001018 PLANA:0007507 ! contained in obsolete posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -11366,7 +11418,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0003500
 name: brain progenitor cell
-def: "This progenitor cell develops into brain" []
+def: "This progenitor cell develops into obsolete brain" []
 xref: PMID:26525673
 is_a: CARO:0000000 ! anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -11511,13 +11563,13 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: part_of PLANA:0000208 ! testis
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004506 xsd:string
@@ -11756,7 +11808,7 @@ relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: posterior_to PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: subdivision_of PLANA:0007507 ! posterior compartment
+relationship: subdivision_of PLANA:0000142 ! posterior compartment of the whole animal
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/copulatoryregion.png
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004527 xsd:string
 created_by: Erin Davies
@@ -11772,8 +11824,8 @@ synonym: "pharyngeal epithelium" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000016 ! pharynx
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -11802,13 +11854,13 @@ def: "Anatomical space enclosed by the oviduct epithelium." [PMID:22074376]
 is_a: BFO:0000002 ! continuant
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000205 ! oviduct
 relationship: part_of PLANA:0000419 ! prepharyngeal region
 relationship: part_of PLANA:0000420 ! parapharyngeal region
 relationship: part_of PLANA:0004527 ! copulatory region
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007554 ! parenchyma
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -11824,6 +11876,7 @@ def: "Anatomical space enclosed by the sperm duct epithelium." [PMID:19022767\nP
 is_a: BFO:0000002 ! continuant
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
+relationship: part_of PLANA:0000142 ! posterior compartment of the whole animal
 relationship: part_of PLANA:0000207 ! sperm duct
 relationship: part_of PLANA:0000419 ! prepharyngeal region
 relationship: part_of PLANA:0000420 ! parapharyngeal region
@@ -11832,7 +11885,6 @@ relationship: part_of PLANA:0004527 ! copulatory region
 relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
-relationship: part_of PLANA:0007507 ! posterior compartment
 relationship: part_of PLANA:0007554 ! parenchyma
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -11850,12 +11902,12 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000205 ! oviduct
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004532 xsd:string
@@ -11871,12 +11923,12 @@ is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000207 ! sperm duct
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0004533 xsd:string
@@ -11917,7 +11969,8 @@ creation_date: 2017-04-26T19:32:04Z
 id: PLANA:0007503
 name: sagittal plane of the whole animal
 def: "Anatomical plane which divides the body into right and left parts. This plane passes through the midline." []
-synonym: "sagittal plane of whole animal" EXACT []
+synonym: "midline plane" EXACT []
+synonym: "sagittal plane of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000417 ! sagittal plane
@@ -11978,18 +12031,11 @@ creation_date: 2017-04-27T16:39:34Z
 
 [Term]
 id: PLANA:0007507
-name: posterior compartment
-def: "Three dimensional compartment along the anteroposterior axis that is closer to the tail rather than the head, from the anterior boundary of the pharyngeal pouch to the tip of the tail." []
+name: obsolete posterior compartment
+def: "OBSOLETE Three dimensional compartment along the anteroposterior axis that is closer to the tail rather than the head, from the anterior boundary of the pharyngeal pouch to the tip of the tail." []
 xref: BSPO:0000090
 xref: FBcv:0000036
 xref: FBql:00005875
-is_a: BSPO:0000086 ! anatomical compartment
-relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
-relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
-relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007507 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-04-27T16:39:59Z
@@ -12087,7 +12133,8 @@ id: PLANA:0007519
 name: anterior-posterior axis of the whole animal
 def: "Axis that runs along the long axis of the animal from anterior (head) to posterior (tail). It is perpendicular to the dorsoventral axis and as such, it splits dorsal and ventral regions of the animal to either side." []
 synonym: "anterior-posterior axis" EXACT []
-synonym: "anterior-posterior axis of whole animal" EXACT []
+synonym: "anterior-posterior axis of whole organism" EXACT []
+synonym: "longitudinal axis" EXACT []
 synonym: "main body axis" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
@@ -12100,7 +12147,7 @@ id: PLANA:0007520
 name: dorsal-ventral axis of the whole animal
 def: "Axis that runs along the short axis of the animal, perpendicular to the anteroposterior axis, running from the dorsal (back) side of the animal to the ventral (belly) side of the animal. This axis splits anterior and posterior regions of the animal to either side." []
 synonym: "dorsal-ventral axis" EXACT []
-synonym: "dorsal-ventral axis of whole animal" EXACT []
+synonym: "dorsal-ventral axis of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000016 ! dorsal-ventral axis
@@ -12113,7 +12160,7 @@ name: dextro-sinister axis of the whole animal
 def: "Axis perpendicular to both the anteroposterior and dorsoventral axis that runs from the left side of the animal, through the medial region (center) and out to the right side." []
 synonym: "dextro-sinister axis" EXACT []
 synonym: "left-right axis" EXACT []
-synonym: "left-right axis of whole animal" EXACT []
+synonym: "left-right axis of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000017 ! left-right axis
@@ -12125,7 +12172,9 @@ id: PLANA:0007522
 name: medial-lateral axis of the whole animal
 def: "Axis that runs from the center of the body, starting at the anteroposterior axis and out to the lateral (left, right, dorsal or ventral) surface of the animal." []
 synonym: "medial-lateral axis" EXACT []
-synonym: "medial-lateral axis of whole animal" EXACT []
+synonym: "medial-lateral axis of whole organism" EXACT []
+synonym: "mediolateral" EXACT []
+synonym: "mediolateral axis" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0001001 ! medial-lateral axis
@@ -12137,7 +12186,7 @@ id: PLANA:0007523
 name: proximal-distal axis of the whole animal
 def: "Axis that starts at the distal part of an appendage, closest to the body, and runs to the proximal part of an appendage, farthest from the body." []
 synonym: "proximal-distal axis" EXACT []
-synonym: "proximal-distal axis of whole animal" EXACT []
+synonym: "proximal-distal axis of whole organism" EXACT []
 is_a: PLANA:0000136 ! whole organism
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000015 ! proximal-distal axis
@@ -12170,7 +12219,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
-relationship: subdivision_of PLANA:0007507 ! posterior compartment
+relationship: subdivision_of PLANA:0000142 ! posterior compartment of the whole animal
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007525 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-05-15T18:28:47Z
@@ -12183,6 +12232,7 @@ xref: CL:0000125
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000561 ! neuron associated cell (sensu Nematoda and Protostomia)
 relationship: part_of PLANA:0000470 ! neuropil
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -12190,7 +12240,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -12204,9 +12253,9 @@ name: ganglion
 def: "A biological tissue mass of nerve cell bodies." []
 xref: UBERON:0000045
 is_a: PLANA:0000037 ! definitive tissue
+relationship: part_of PLANA:0000044 ! cephalic ganglia
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 relationship: part_of PLANA:0000097 ! ventral nerve cord
-relationship: part_of PLANA:0007537 ! brain
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007529 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-06-22T18:29:52Z
@@ -12246,8 +12295,8 @@ synonym: "pharynx circular muscle fiber" EXACT []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000101 ! muscle cell
 relationship: part_of PLANA:0000478 ! pharynx musculature
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -12258,20 +12307,9 @@ creation_date: 2017-07-24T19:39:14Z
 
 [Term]
 id: PLANA:0007537
-name: brain
-def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell." []
+name: obsolete brain
+def: "OBSOLETE The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell." []
 xref: UBERON:0000955
-is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000431 ! organ
-relationship: part_of PLANA:0000103 ! central nervous system
-relationship: RO:0001018 PLANA:0000418 ! contained in head
-relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
-relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007537 xsd:string
 created_by: Steph Nowotarski
 creation_date: 2017-09-05T14:18:21Z
@@ -12284,13 +12322,13 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000484 ! secretory system
 relationship: RO:0001018 PLANA:0000043 ! contained in dorsal ventral margin
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -12307,13 +12345,13 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000487 ! acidophilic gland cell
 relationship: part_of PLANA:0007538 ! adhesion gland
 relationship: RO:0001018 PLANA:0000043 ! contained in dorsal ventral margin
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007539 xsd:string
 created_by: Steph Nowotarski
@@ -12327,13 +12365,13 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000487 ! acidophilic gland cell
 relationship: part_of PLANA:0007538 ! adhesion gland
 relationship: RO:0001018 PLANA:0000043 ! contained in dorsal ventral margin
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007540 xsd:string
 created_by: Steph Nowotarski
@@ -12348,13 +12386,13 @@ is_a: PLANA:0000487 ! acidophilic gland cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0007538 ! adhesion gland
 relationship: RO:0001018 PLANA:0000043 ! contained in dorsal ventral margin
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007545 ! contained in epidermal compartment
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007541 xsd:string
 created_by: Steph Nowotarski
@@ -12456,6 +12494,7 @@ is_a: PLANA:0000012 ! neural progenitor
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 relationship: part_of PLANA:0000103 ! central nervous system
 relationship: part_of PLANA:0000429 ! neoblast
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -12463,7 +12502,6 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007550 xsd:string
 
@@ -12636,13 +12674,13 @@ is_a: PLANA:0000492 ! nerve plexus
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
 relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
-relationship: RO:0001018 PLANA:0007507 ! contained in posterior compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007557 xsd:string
@@ -12684,6 +12722,19 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007560 x
 [Term]
 id: Subset
 is_a: IAO:0000102 ! data about an ontology part
+
+[Term]
+id: UBERON:0000015
+name: non-material anatomical boundary
+namespace: uberon
+def: "A non-material anatomical entity of two dimensions. Anatomical boundaries are contiguous structures." [CARO:0000010]
+comment: Except in the case of abstracted fiat boundaries such as the midline plane of an organism, all 2D anatomical entities have a 3 dimensional projection. For example, the surface of the shell of a muscle has a distinct shape that projects into the third dimension. Note that boundaries are 2D structures. They have no thickness - and so can not be sites of gene expression or gene product localisation. For this, use boundary region terms.
+subset: upper_level
+synonym: "anatomical boundary" EXACT [CARO:0000010]
+xref: AEO:0000192
+xref: CARO:0000010
+xref: FMA:50705
+is_a: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0000061
@@ -13043,6 +13094,21 @@ xref: MIAA:0000019
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0006983
+name: anatomical point
+namespace: uberon
+def: "Non-material anatomical entity of zero dimension, which forms a boundary of an anatomical line or surface." [FMA:9658, http://orcid.org/0000-0001-9114-8737]
+subset: upper_level
+xref: AAO:0010266
+xref: AEO:0000009
+xref: BILA:0000009
+xref: CARO:0000009
+xref: EHDAA2:0003009
+xref: FMA:9658
+xref: TAO:0001839
+is_a: UBERON:0000466 ! immaterial anatomical entity
+
+[Term]
 id: UBERON:0007567
 name: regenerating anatomical structure
 namespace: uberon
@@ -13059,6 +13125,18 @@ xref: ZFA:0005147
 is_a: UBERON:0000061 ! anatomical structure
 property_value: IAO:0000116 "we define this in terms of active participation in regeneration, rather that capabilities. In this sense it is different from the AEO structure." xsd:string
 property_value: UBPROP:0000001 "A portion of tissue that is regrowing after damage or amputation.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005147", ontology="TAO", source="ZFIN:curator"}
+
+[Term]
+id: UBERON:0007651
+name: anatomical junction
+namespace: uberon
+def: "An anatomical structure that connects two structures" [http://code.google.com/p/caro2/issues/detail?id=15]
+subset: upper_level
+synonym: "anatomical junction" EXACT []
+synonym: "junction" BROAD []
+xref: FMA:5898
+xref: http://www.snomedbrowser.com/Codes/Details/91833003
+is_a: UBERON:0000061 ! anatomical structure
 
 [Typedef]
 id: BFO:0000060
@@ -14036,7 +14114,6 @@ range: BFO:0000004 ! independent continuant
 is_symmetric: true
 is_a: deep_to ! deep to
 is_a: RO:0002163 ! spatially disjoint from
-is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: anterior_to
@@ -14340,7 +14417,6 @@ namespace: spatial
 namespace: uberon
 def: "x immediately superficial to y iff x superficial to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0015014
-is_a: adjacent_to ! adjacent_to
 is_a: superficial_to ! superficial_to
 
 [Typedef]
@@ -14624,6 +14700,7 @@ def: "Near the outer surface of the organism. Thus, skin is superficial to the m
 def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [BSPO:cjm]
 xref: BSPO:0000108
 is_transitive: true
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: surface_of
