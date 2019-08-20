@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-08-06/plana-full.owl
+data-version: plana/releases/2019-08-20/plana-full.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -3974,6 +3974,9 @@ name: Stage 7
 namespace: Schmidtea_mediterranea_Developmental_Stages
 def: "D9-D11. Organogenesis and organ maturation continues. Embryos elongated. Eyes just visible. Onset of gliding motility. Days 9-11 post-egg capsule deposition at 20˚C." [PMID:28072387]
 comment: Depicted by field contains hematoxylin and eosin staining section of a stage 7 embryo. Scale bar = 100um
+synonym: "hatchling" EXACT []
+synonym: "stage 7 embryo" EXACT []
+xref: PMID:28812561
 is_a: BFO:0000003 ! occurrent
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
 relationship: part_of UBERON:0000068 ! embryo stage
@@ -3998,6 +4001,22 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000008 x
 id: PLANA:0000009
 name: sigma neoblast
 def: "A heterogeneous subpopulation of neoblasts with enriched expression of SoxP-1 and SoxP-2 thought to contain both pluripotent stem cells and tissue-specific progenitors." [PMID:25017721]
+synonym: "sigma class neoblast" EXACT []
+synonym: "sigma-class neoblast" EXACT []
+xref: PMID:15972844
+xref: PMID:25017721
+xref: PMID:25956527
+xref: PMID:26457503
+xref: PMID:26651295
+xref: PMID:27013241
+xref: PMID:27150006
+xref: PMID:27542689
+xref: PMID:28287248
+xref: PMID:28686611
+xref: PMID:28757112
+xref: PMID:29557542
+xref: PMID:29674432
+xref: PMID:29906446
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000120 ! progenitor cell
@@ -4026,10 +4045,11 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000009 x
 [Term]
 id: PLANA:0000011
 name: protonephridial progenitor
+name: protonephridial progenitor cell
 def: "Neoblasts and post-mitotic, differentiating daughters coexpressing POU2-3, six1/2-2, Sal1, Eya and Osr,  required for maintenance and regeneration of protonephridial cell types." [PMID:21937596]
+def: "This progenitor cell develops into protonephridia" []
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
-is_a: PLANA:0000120 ! progenitor cell
 relationship: develops_from PLANA:0000212 ! blastomere compartment
 relationship: part_of PLANA:0000088 ! renal system
 relationship: part_of PLANA:0000429 ! neoblast
@@ -4045,23 +4065,29 @@ relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000011 xsd:string
 
 [Term]
 id: PLANA:0000012
 name: neural progenitor
+name: neural progenitor cell
 def: "Neoblasts and their differentiating daughters implicated in maintenance and regeneration of different tissues in the nervous system." []
-is_a: PLANA:0000120 ! progenitor cell
+def: "This progenitor cell develops into nervous system" []
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of PLANA:0000025 ! nervous system
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000012 xsd:string
 
 [Term]
 id: PLANA:0000013
 name: visceral musculature
 def: "Musculature surrounding internal organs of the body." [PMID:26904543]
+synonym: "visceral muscle" EXACT []
+xref: PMID:30471994
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000428 ! musculature system
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000013 xsd:string
@@ -4071,9 +4097,28 @@ created_by: Erin Davies
 id: PLANA:0000014
 name: zeta neoblast
 def: "An abundant neoblast subclass consisting of p53+, zfp1+ progenitors required for maintenance and regeneration of epidermal cell type(s)." [PMID:25017721]
+synonym: "zeta" EXACT []
+synonym: "zeta class" EXACT []
+synonym: "zeta class neoblast" EXACT []
+synonym: "zeta-class neoblast" EXACT []
+synonym: "zeta-neoblast" EXACT []
+xref: PMID:25017721
+xref: PMID:25956527
+xref: PMID:26457503
+xref: PMID:26651295
+xref: PMID:27013241
+xref: PMID:27150006
+xref: PMID:27542689
+xref: PMID:28292427
+xref: PMID:28757112
+xref: PMID:28807897
+xref: PMID:29158443
+xref: PMID:29557542
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:29906446
 is_a: BFO:0000040 ! material entity
-is_a: CARO:0000000 ! anatomical entity
-is_a: PLANA:0000033 ! epidermal progenitor
+is_a: PLANA:0000033 ! epidermal progenitor cell
 relationship: develops_from PLANA:0000212 ! blastomere compartment
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000429 ! neoblast
@@ -4246,6 +4291,57 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000016 x
 id: PLANA:0000017
 name: photoreceptor neuron
 def: "Bipolar photoreceptor neurons with dendritic projections into the optic cup and axons that innervate the underlying brain." [PMID:21852957, PMID:22884275]
+synonym: "neuronal photoreceptive cell" EXACT []
+synonym: "optical neuron" EXACT []
+synonym: "photoreceptive neuron" EXACT []
+synonym: "photoreceptor cell" EXACT []
+synonym: "photosensitive cell" EXACT []
+synonym: "PRN" EXACT []
+synonym: "visual neuron" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:16033796
+xref: PMID:17251262
+xref: PMID:17390146
+xref: PMID:17553481
+xref: PMID:17905225
+xref: PMID:17942485
+xref: PMID:18202849
+xref: PMID:19048075
+xref: PMID:20967238
+xref: PMID:21282632
+xref: PMID:21852957
+xref: PMID:22339734
+xref: PMID:22411224
+xref: PMID:22427692
+xref: PMID:22445864
+xref: PMID:22549959
+xref: PMID:22884275
+xref: PMID:23250205
+xref: PMID:23318641
+xref: PMID:24063805
+xref: PMID:24922054
+xref: PMID:25254346
+xref: PMID:25356635
+xref: PMID:25493551
+xref: PMID:25772472
+xref: PMID:26017970
+xref: PMID:26618653
+xref: PMID:27068018
+xref: PMID:27606067
+xref: PMID:27612384
+xref: PMID:27800171
+xref: PMID:28137894
+xref: PMID:28216315
+xref: PMID:28245923
+xref: PMID:28495872
+xref: PMID:28976975
+xref: PMID:29547123
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:30143032
+xref: PMID:30399335
+xref: PMID:30471994
+xref: PMID:30485821
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000099 ! neuron
@@ -4263,10 +4359,12 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000017 x
 id: PLANA:0000018
 name: Category 4 cell
 def: "Post-mitotic, mesenchymally and epidermally located progenitors downstream of the Category 3 cells." [PMID:25017721, PMID:26457503]
+xref: PMID:18786419
+xref: PMID:22439894
+xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
-is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000015 ! non ciliated epithelial cell
-is_a: PLANA:0000033 ! epidermal progenitor
+is_a: PLANA:0000033 ! epidermal progenitor cell
 relationship: develops_from PLANA:0000035 ! Category 3 cell
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000054 ! dorsal epidermis
@@ -4304,6 +4402,41 @@ id: PLANA:0000020
 name: protonephridia
 def: "Excretory organs consisting of flame cells, proximal tubules, and distal tubules connected to a mesenchymal collecting duct." [OCLC:16809160, PMID:21828097, PMID:26057828]
 comment: Depicted by field contains a whole-mount acetylated tubulin (AcTub) staining. Scale bars: 500 μm. Inset to right shows depth-coded projection of AcTub staining. Superficial structures are in blue and deeper structures are in red. Scale bars: 50 μm
+synonym: "excretory organ" EXACT []
+synonym: "nephridia" EXACT []
+synonym: "osmoregulatory duct" EXACT []
+synonym: "protonephridial tubule" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:19852954
+xref: PMID:19933103
+xref: PMID:21828097
+xref: PMID:21937596
+xref: PMID:22479207
+xref: PMID:23318635
+xref: PMID:23318641
+xref: PMID:23954785
+xref: PMID:24063805
+xref: PMID:24523458
+xref: PMID:24737865
+xref: PMID:24992682
+xref: PMID:25017721
+xref: PMID:25254346
+xref: PMID:26057828
+xref: PMID:26457503
+xref: PMID:26651295
+xref: PMID:26711341
+xref: PMID:27068018
+xref: PMID:27150006
+xref: PMID:27501047
+xref: PMID:27551436
+xref: PMID:27612384
+xref: PMID:28245923
+xref: PMID:28292427
+xref: PMID:28807897
+xref: PMID:29100657
+xref: PMID:29158443
+xref: PMID:29674431
+xref: PMID:29674432
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000431 ! organ
@@ -4336,6 +4469,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000021 x
 id: PLANA:0000022
 name: Category 5 cell
 def: "Post-mitotic, ciliated epidermal cells." [PMID:25017721]
+xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000106 ! ciliated epithelial cell
@@ -4366,6 +4500,8 @@ id: PLANA:0000023
 name: temporary embryonic pharynx
 def: "An innervated, muscular pump that ingests yolk cells into the gut cavity. The temporary embryonic pharynx is an extraembryonic tissue that forms during Stage 2, functions during Stages 3-5, and degenerates during Stages 6-7." []
 comment: Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo that zooms into the temporary embryonic pharynx.
+synonym: "embryonic pharynx" EXACT []
+xref: ISBN:9780070316607
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
@@ -4388,6 +4524,10 @@ id: PLANA:0000024
 name: Smed asexual biotype
 def: "Obligate asexual animals that reproduce solely through fission followed by whole body regeneration. Asexual Smed are stable diploids that harbor a chromosome translocation, making them karyotypically distinct from sexual Smed." [PMID:11972158]
 comment: Depicted by field contains light micrscope image of asexual and sexual biotypes of Schmidtea meditteranea with their respective karyotypes. Note that the asexual bioptype has a chromosome inversion compared to the sexual.
+synonym: "asexual" EXACT []
+synonym: "asexual adult" EXACT []
+synonym: "asexual biotype" EXACT []
+xref: PMID:28812561
 is_a: PLANA:0000021 ! biotype
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/smedasexualbiotype.png {comment="PMID:23136835"}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000024 xsd:string
@@ -4396,6 +4536,52 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000024 x
 id: PLANA:0000025
 name: nervous system
 def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organisms, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [UBERON:0001016]
+synonym: "nerve system" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:16033796
+xref: PMID:16311336
+xref: PMID:17251262
+xref: PMID:18202849
+xref: PMID:19048075
+xref: PMID:19211673
+xref: PMID:19247960
+xref: PMID:20223763
+xref: PMID:20707997
+xref: PMID:20967238
+xref: PMID:21806978
+xref: PMID:22339734
+xref: PMID:22427692
+xref: PMID:22445864
+xref: PMID:22549959
+xref: PMID:22696458
+xref: PMID:23079596
+xref: PMID:23250205
+xref: PMID:23297191
+xref: PMID:23318641
+xref: PMID:23903188
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24737865
+xref: PMID:24950970
+xref: PMID:25254346
+xref: PMID:25278423
+xref: PMID:25725068
+xref: PMID:26062938
+xref: PMID:26114597
+xref: PMID:26556349
+xref: PMID:27013241
+xref: PMID:27068018
+xref: PMID:27163480
+xref: PMID:27501047
+xref: PMID:27523733
+xref: PMID:27551436
+xref: PMID:27612384
+xref: PMID:27864883
+xref: PMID:28292427
+xref: PMID:29357350
+xref: PMID:29557542
+xref: PMID:29674431
+xref: PMID:30399335
 xref: UBERON:0001016
 is_a: PLANA:0000114 ! anatomical system
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -4407,7 +4593,103 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000025 x
 id: PLANA:0000026
 name: definitive gut
 def: "The planarian triclad gut contains a central anterior gut branch connected to two posterior gut branches arranged around the definitive pharynx. Secondary gut branches extend laterally from the primary gut branches, while tertiary gut branches extend from the secondary branches. Food and waste enter and exit the definitive gut through the defintive pharynx." [PMID:21664348]
+synonym: "adult gut" EXACT []
+synonym: "blind gut" EXACT []
+synonym: "digestive tract" EXACT []
+synonym: "gastrovascular digestive tract" EXACT []
+synonym: "gastrovascular tract" EXACT []
 synonym: "gut" EXACT []
+synonym: "intestinal tract" EXACT []
+synonym: "intestine" EXACT []
+synonym: "three-branched gut" EXACT []
+synonym: "triclad gut" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:17553481
+xref: PMID:17942485
+xref: PMID:18063757
+xref: PMID:18287199
+xref: PMID:19174194
+xref: PMID:19247960
+xref: PMID:19933103
+xref: PMID:20707997
+xref: PMID:20865784
+xref: PMID:20967238
+xref: PMID:21179478
+xref: PMID:21282632
+xref: PMID:21356107
+xref: PMID:21458439
+xref: PMID:21566185
+xref: PMID:21566195
+xref: PMID:21664348
+xref: PMID:21806978
+xref: PMID:21828097
+xref: PMID:22411224
+xref: PMID:22439894
+xref: PMID:22451003
+xref: PMID:22899852
+xref: PMID:23079596
+xref: PMID:23235145
+xref: PMID:23250205
+xref: PMID:23318635
+xref: PMID:23318641
+xref: PMID:23405188
+xref: PMID:23903188
+xref: PMID:23954785
+xref: PMID:24040508
+xref: PMID:24063805
+xref: PMID:24120894
+xref: PMID:24173799
+xref: PMID:24238224
+xref: PMID:24415944
+xref: PMID:24737865
+xref: PMID:24950970
+xref: PMID:24992682
+xref: PMID:25017721
+xref: PMID:25254346
+xref: PMID:25356635
+xref: PMID:25558068
+xref: PMID:25956527
+xref: PMID:26062938
+xref: PMID:26114597
+xref: PMID:26457503
+xref: PMID:26556349
+xref: PMID:26651295
+xref: PMID:27034770
+xref: PMID:27063937
+xref: PMID:27074666
+xref: PMID:27122174
+xref: PMID:27150006
+xref: PMID:27163480
+xref: PMID:27240733
+xref: PMID:27441386
+xref: PMID:27501047
+xref: PMID:27542689
+xref: PMID:27551436
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:27864883
+xref: PMID:28072387
+xref: PMID:28216315
+xref: PMID:28245923
+xref: PMID:28287248
+xref: PMID:28292427
+xref: PMID:28461239
+xref: PMID:28686611
+xref: PMID:28807897
+xref: PMID:29100657
+xref: PMID:29158443
+xref: PMID:29547123
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:29906446
+xref: PMID:30143032
+xref: PMID:30194301
+xref: PMID:30282036
+xref: PMID:30297872
+xref: PMID:30383829
+xref: PMID:30471994
+xref: PMID:30962434
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000431 ! organ
@@ -4435,6 +4717,10 @@ id: PLANA:0000027
 name: Smed sexual biotype
 def: "Cross-fertilizing hemaphrodites that reproduce sexually and do not undergo fission. After mating, each parent lays an egg capsule containing one or more embryos. Sexual Smed are stable diploids." [PMID:11972158]
 comment: Depicted by field contains light micrscope image of asexual and sexual biotypes of Schmidtea meditteranea with their respective karyotypes. Note that the asexual bioptype has a chromosome inversion compared to the sexual.
+synonym: "hermaphroditic biotype" EXACT []
+synonym: "sexual" EXACT []
+synonym: "sexual hermaphrodite" EXACT []
+xref: PMID:28812561
 is_a: PLANA:0000021 ! biotype
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/smedsexualbiotype.png {comment="PMID:23136835"}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000027 xsd:string
@@ -4443,9 +4729,33 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000027 x
 id: PLANA:0000028
 name: Category 2 cell
 def: "Post-mitotic, mesenchymally located epidermal progenitors downstream of the zeta neoblasts." [PMID:18786419, PMID:20040488, PMID:22385657, PMID:25017721, PMID:26114597]
+synonym: "Category 2 gene expressing cell" EXACT []
+synonym: "early division progeny" EXACT []
+synonym: "early epidermal progenitor" EXACT []
+synonym: "early neoblast progeny" EXACT []
+synonym: "early post-mitotic progeny" EXACT []
+synonym: "early progeny" EXACT []
+synonym: "NB.21.11e expressing cell" EXACT []
+synonym: "prog-1+ epidermal progenitor cell" EXACT []
+synonym: "Smed-NB.21.11e+ cell" EXACT []
+xref: PMID:18786419
+xref: PMID:21894189
+xref: PMID:22427692
+xref: PMID:22439894
+xref: PMID:22899852
+xref: PMID:23318635
+xref: PMID:23629965
+xref: PMID:24063805
+xref: PMID:24173799
+xref: PMID:24367277
+xref: PMID:26651295
+xref: PMID:27013241
+xref: PMID:27068018
+xref: PMID:27542689
+xref: PMID:28072387
+xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
-is_a: CARO:0000000 ! anatomical entity
-is_a: PLANA:0000033 ! epidermal progenitor
+is_a: PLANA:0000033 ! epidermal progenitor cell
 relationship: develops_from PLANA:0000014 ! zeta neoblast
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
@@ -4468,6 +4778,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000028 x
 id: PLANA:0000029
 name: primitive ectoderm
 def: "A single cell layer of extraembryonic, post-mitotic ectodermal cells bounding the embryo. The primitive ectoderm forms during Stage 2 and is thought to degenerate as the definitive epidermis forms during Stages 5-7." [https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000001.md, OCLC:20423827, OCLC:464776945, OCLC:82522822]
+xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000063 ! extraembryonic structure
@@ -4564,9 +4875,11 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0000033
 name: epidermal progenitor
+name: epidermal progenitor cell
 def: "Mitotically active zeta neoblasts and their post-mitotic descendants which undergo progressive differentiation and outward directed movement through the mesenchyme prior to incorporation into the epidermis, where terminal differentiation occurs." [PMID:18786419, PMID:20040488, PMID:22385657, PMID:25017721, PMID:26114597, PMID:26457503]
+def: "This progenitor cell develops into dorsal midline" []
 comment: Depicted by shows multiple epithelia progenitor cell markers via in situ as progenitors mature towards the epidermis in a transverse plane.
-is_a: PLANA:0000120 ! progenitor cell
+is_a: CARO:0000000 ! anatomical entity
 intersection_of: PLANA:0000120 ! progenitor cell
 intersection_of: part_of PLANA:0004529 ! integumental system
 intersection_of: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -4576,6 +4889,7 @@ relationship: part_of PLANA:0004529 ! integumental system
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: http://xmlns.com/foaf/0.1/depiction http://purl.obolibrary.org/obo/plana/images/epidermalprogenitor.png {xref="PMID:26457503"}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000033 xsd:string
 
@@ -4584,11 +4898,67 @@ id: PLANA:0000034
 name: definitive epidermis
 def: "A single cell layer of post-mitotic epithelial cells containing ciliated and non-ciliated cell types forming the exterior surface of the animal." [OCLC:16809160]
 comment: At present, this definition does not apply to epithelial structures other than the dorsal and ventral epidermis (i.e., the pharyngeal epithelium).
+synonym: "epidermal layer" EXACT []
 synonym: "epidermis" EXACT []
+synonym: "epithelium" EXACT []
+synonym: "mature epidermis" EXACT []
+synonym: "tegument" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:15866156
+xref: PMID:16311336
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:19247960
+xref: PMID:19852954
+xref: PMID:20215344
+xref: PMID:20511647
+xref: PMID:20599901
+xref: PMID:20865784
+xref: PMID:21179478
+xref: PMID:21282632
+xref: PMID:21295483
+xref: PMID:22252539
+xref: PMID:22549959
+xref: PMID:23235145
+xref: PMID:23297191
+xref: PMID:23954785
+xref: PMID:24120894
+xref: PMID:24173799
+xref: PMID:24922054
+xref: PMID:24950970
+xref: PMID:25558068
+xref: PMID:25772472
+xref: PMID:26114597
+xref: PMID:26457503
+xref: PMID:26651295
+xref: PMID:26711341
+xref: PMID:27034770
+xref: PMID:27074666
+xref: PMID:27150006
+xref: PMID:27163480
+xref: PMID:27240733
+xref: PMID:27501047
+xref: PMID:27612384
+xref: PMID:28137894
+xref: PMID:28216315
+xref: PMID:28245923
+xref: PMID:28292427
+xref: PMID:28686611
+xref: PMID:28757112
+xref: PMID:28976975
+xref: PMID:29100657
+xref: PMID:29158443
+xref: PMID:29273738
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:29906446
+xref: PMID:30194301
+xref: PMID:30282036
+xref: PMID:30962434
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000431 ! organ
-relationship: develops_from PLANA:0000033 ! epidermal progenitor
+relationship: develops_from PLANA:0000033 ! epidermal progenitor cell
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
@@ -4614,9 +4984,34 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000034 x
 id: PLANA:0000035
 name: Category 3 cell
 def: "Post-mitotic, mesenchymally located epidermal progenitors downstream of the Category 2 cells." [PMID:18786419, PMID:20040488, PMID:26114597, PMID:26457503]
+synonym: "AGAT-1 expressing cell" EXACT []
+synonym: "AGAT1 expressing cell" EXACT []
+synonym: "Category 3 gene expressing cell" EXACT []
+synonym: "late division progeny" EXACT []
+synonym: "late epidermal progenitor" EXACT []
+synonym: "late neoblast progeny" EXACT []
+synonym: "late postmitotic progeny" EXACT []
+synonym: "late progeny" EXACT []
+synonym: "Smed-AGAT-1+ cell" EXACT []
+xref: PMID:18786419
+xref: PMID:21894189
+xref: PMID:22252539
+xref: PMID:22427692
+xref: PMID:22439894
+xref: PMID:22899852
+xref: PMID:23297191
+xref: PMID:23318635
+xref: PMID:23629965
+xref: PMID:23954785
+xref: PMID:24063805
+xref: PMID:24173799
+xref: PMID:24367277
+xref: PMID:26651295
+xref: PMID:27013241
+xref: PMID:27068018
+xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
-is_a: CARO:0000000 ! anatomical entity
-is_a: PLANA:0000033 ! epidermal progenitor
+is_a: PLANA:0000033 ! epidermal progenitor cell
 relationship: develops_from PLANA:0000028 ! Category 2 cell
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
@@ -4640,6 +5035,134 @@ id: PLANA:0000036
 name: eye
 def: "An organ that detects light." []
 comment: Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. The eyes are indicated by arrows. Scale bar = 250um
+synonym: "cerebral eye" EXACT []
+synonym: "eye spot" EXACT []
+synonym: "eye-spot" EXACT []
+synonym: "eyespot" EXACT []
+synonym: "ocelli" EXACT []
+synonym: "photoreceptor" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:15866156
+xref: PMID:15972844
+xref: PMID:16311336
+xref: PMID:16890156
+xref: PMID:17251262
+xref: PMID:17553481
+xref: PMID:17905225
+xref: PMID:17942485
+xref: PMID:18063755
+xref: PMID:18063757
+xref: PMID:18202849
+xref: PMID:18287199
+xref: PMID:18456843
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:19174194
+xref: PMID:19211673
+xref: PMID:19247960
+xref: PMID:19766622
+xref: PMID:19805089
+xref: PMID:19852954
+xref: PMID:20040488
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:20422023
+xref: PMID:20599901
+xref: PMID:20707997
+xref: PMID:20865784
+xref: PMID:20967238
+xref: PMID:21179478
+xref: PMID:21282632
+xref: PMID:21295481
+xref: PMID:21295483
+xref: PMID:21356107
+xref: PMID:21458439
+xref: PMID:21566185
+xref: PMID:21566195
+xref: PMID:21747960
+xref: PMID:21806978
+xref: PMID:21828097
+xref: PMID:21852957
+xref: PMID:21894189
+xref: PMID:21937596
+xref: PMID:22125640
+xref: PMID:22318224
+xref: PMID:22339734
+xref: PMID:22385657
+xref: PMID:22411224
+xref: PMID:22439894
+xref: PMID:22445864
+xref: PMID:22479207
+xref: PMID:22549959
+xref: PMID:22884275
+xref: PMID:22899852
+xref: PMID:23235145
+xref: PMID:23297191
+xref: PMID:23318635
+xref: PMID:23318641
+xref: PMID:23405188
+xref: PMID:23629965
+xref: PMID:23903188
+xref: PMID:24063805
+xref: PMID:24120894
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24238224
+xref: PMID:24415944
+xref: PMID:24704339
+xref: PMID:24737865
+xref: PMID:24922054
+xref: PMID:24950970
+xref: PMID:24992682
+xref: PMID:25017721
+xref: PMID:25254346
+xref: PMID:25356635
+xref: PMID:25493551
+xref: PMID:25558068
+xref: PMID:25725068
+xref: PMID:25772472
+xref: PMID:25956527
+xref: PMID:26017970
+xref: PMID:26062938
+xref: PMID:26114597
+xref: PMID:26457503
+xref: PMID:26525673
+xref: PMID:26556349
+xref: PMID:26618653
+xref: PMID:26711341
+xref: PMID:26884331
+xref: PMID:27034770
+xref: PMID:27063937
+xref: PMID:27150006
+xref: PMID:27240733
+xref: PMID:27542689
+xref: PMID:27551436
+xref: PMID:27606067
+xref: PMID:27654173
+xref: PMID:27800171
+xref: PMID:28171748
+xref: PMID:28216315
+xref: PMID:28287248
+xref: PMID:28292427
+xref: PMID:28495872
+xref: PMID:28686611
+xref: PMID:28893948
+xref: PMID:28976975
+xref: PMID:29100657
+xref: PMID:29158443
+xref: PMID:29273738
+xref: PMID:29291974
+xref: PMID:29291981
+xref: PMID:29357350
+xref: PMID:29547123
+xref: PMID:29674431
+xref: PMID:30237141
+xref: PMID:30282036
+xref: PMID:30297872
+xref: PMID:30383829
+xref: PMID:30485821
+xref: PMID:30962434
 xref: UBERON:0000970
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
@@ -4679,6 +5202,21 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0000039
 name: gamma neoblast
 def: "An abundant neoblast subclass, exhibiting enriched expression of gata456a, hnf4, prox-1 and nkx2.2, implicated in maintenance and regeneration of the definitive gut." [PMID:25017721]
+synonym: "gamma" EXACT []
+synonym: "gamma class neoblast" EXACT []
+synonym: "gamma-neoblast" EXACT []
+synonym: "gut progenitor cell" EXACT []
+xref: PMID:25017721
+xref: PMID:26651295
+xref: PMID:27013241
+xref: PMID:27150006
+xref: PMID:27542689
+xref: PMID:28287248
+xref: PMID:28757112
+xref: PMID:28807897
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:29906446
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000120 ! progenitor cell
@@ -4715,6 +5253,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000040 x
 id: PLANA:0000041
 name: aboral hemisphere
 def: "Stage 3-5 embryo hemisphere centered around the pole opposite the temporary embryonic pharynx." [PMID:28072387]
+xref: PMID:28072387
 is_a: PLANA:0000423 ! embryonic subdivision
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
@@ -4770,7 +5309,85 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000043 x
 id: PLANA:0000044
 name: cephalic ganglia
 def: "The planarian brain, consisting of two bilaterally symmetric lobes occupying a ventral position in the head." [OCLC:16809160, PMID:17999079]
+synonym: "bi-lobed brain" EXACT []
+synonym: "bi-lobed cephalic ganglia" EXACT []
 synonym: "brain" BROAD []
+synonym: "brain" EXACT []
+synonym: "cerebral ganglia" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:15866156
+xref: PMID:16033796
+xref: PMID:16344473
+xref: PMID:16890156
+xref: PMID:17251262
+xref: PMID:17376870
+xref: PMID:17553481
+xref: PMID:17670787
+xref: PMID:17905225
+xref: PMID:17942485
+xref: PMID:18063755
+xref: PMID:18063757
+xref: PMID:18202849
+xref: PMID:18287199
+xref: PMID:19048075
+xref: PMID:19174194
+xref: PMID:19211673
+xref: PMID:19247960
+xref: PMID:19766622
+xref: PMID:20215344
+xref: PMID:20422023
+xref: PMID:20844018
+xref: PMID:20967238
+xref: PMID:21179478
+xref: PMID:21282632
+xref: PMID:21295481
+xref: PMID:21458439
+xref: PMID:21566195
+xref: PMID:21806978
+xref: PMID:22074376
+xref: PMID:22125640
+xref: PMID:22339734
+xref: PMID:22411224
+xref: PMID:22445864
+xref: PMID:22451003
+xref: PMID:22549959
+xref: PMID:23235145
+xref: PMID:23297191
+xref: PMID:23318635
+xref: PMID:23318641
+xref: PMID:23405188
+xref: PMID:23652002
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24238224
+xref: PMID:24415944
+xref: PMID:24950970
+xref: PMID:25254346
+xref: PMID:25278423
+xref: PMID:25356635
+xref: PMID:25404302
+xref: PMID:25725068
+xref: PMID:25772472
+xref: PMID:25956527
+xref: PMID:26017970
+xref: PMID:26884331
+xref: PMID:27013241
+xref: PMID:27074666
+xref: PMID:27163480
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:27800171
+xref: PMID:28072387
+xref: PMID:28126842
+xref: PMID:28216315
+xref: PMID:28287248
+xref: PMID:29291974
+xref: PMID:29291981
+xref: PMID:29547123
+xref: PMID:29674431
+xref: PMID:30194301
+xref: PMID:30237141
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
@@ -4814,6 +5431,48 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000045 x
 id: PLANA:0000046
 name: clonogenic neoblast
 def: "Pluripotent piwi-1+ stem cells that self-renew, form expanding colonies and produce differentiating daughters that contribute to multiple organ systems. cNeoblasts are predicted to be broadly distributed across the anteroposterior axis of the adult worm." [PMID:21566185]
+synonym: "adult pluripotent stem cell" EXACT []
+synonym: "clonogenic stem cell" EXACT []
+synonym: "cNeoblast" EXACT []
+synonym: "pluripotent stem cell" EXACT []
+xref: PMID:16344473
+xref: PMID:19247960
+xref: PMID:20215344
+xref: PMID:21566185
+xref: PMID:21852957
+xref: PMID:21937596
+xref: PMID:22318224
+xref: PMID:22385657
+xref: PMID:22411224
+xref: PMID:22543868
+xref: PMID:22549959
+xref: PMID:22884275
+xref: PMID:22899852
+xref: PMID:23079596
+xref: PMID:23297191
+xref: PMID:23318641
+xref: PMID:23652002
+xref: PMID:23954785
+xref: PMID:24040508
+xref: PMID:24120894
+xref: PMID:24173799
+xref: PMID:25017721
+xref: PMID:25254346
+xref: PMID:25356635
+xref: PMID:26711341
+xref: PMID:27063937
+xref: PMID:27074666
+xref: PMID:27149082
+xref: PMID:27150006
+xref: PMID:27502555
+xref: PMID:27523733
+xref: PMID:27551436
+xref: PMID:28434803
+xref: PMID:29357350
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:29906446
+xref: PMID:30962434
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000121 ! stem cell
@@ -4843,6 +5502,9 @@ name: collecting duct
 def: "Non-ciliated tubules associated with the distal tubules, which cross the basement membrane and terminate in the dorsal epidermis." [PMID:26057828]
 comment: Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same. In the diagram, terminal flame cells and their corresponding cilia are in blues, the proximal tubule is in reds, the distal tubule is in greens while the  collecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green.
 synonym: "collection duct" EXACT []
+xref: PMID:26057828
+xref: PMID:27068018
+xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: adjacent_to PLANA:0000053 ! distal tubule
@@ -4897,6 +5559,38 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000048 x
 id: PLANA:0000049
 name: digestive system
 def: "Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes." []
+synonym: "gastrointestinal system" EXACT []
+synonym: "gastrovascular system" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:15866156
+xref: PMID:16311336
+xref: PMID:16344473
+xref: PMID:17390146
+xref: PMID:17553481
+xref: PMID:17905225
+xref: PMID:18063757
+xref: PMID:18287199
+xref: PMID:19048075
+xref: PMID:19247960
+xref: PMID:19766622
+xref: PMID:19933103
+xref: PMID:20040488
+xref: PMID:20215344
+xref: PMID:20707997
+xref: PMID:21356107
+xref: PMID:21664348
+xref: PMID:21806978
+xref: PMID:22451003
+xref: PMID:22479207
+xref: PMID:23079596
+xref: PMID:24737865
+xref: PMID:24922054
+xref: PMID:25254346
+xref: PMID:25558068
+xref: PMID:26556349
+xref: PMID:27068018
+xref: PMID:27501047
+xref: PMID:29357350
 xref: UBERON:0001007
 is_a: PLANA:0000114 ! anatomical system
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -4927,6 +5621,8 @@ id: PLANA:0000053
 name: distal tubule
 def: "Sinusoidal, non-ciliated tubules connected to proximal tubules within the parenchyma. Tubules are formed via intercellular junctions between two epithelial cells." [PMID:21828097]
 comment: Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same. In the diagram, terminal flame cells and their corresponding cilia are in blues, the proximal tubule is in reds, the distal tubule is in greens while the  collecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green.
+xref: PMID:21828097
+xref: PMID:27068018
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
@@ -5041,6 +5737,7 @@ id: PLANA:0000060
 name: embryonic wall
 def: "The parenchymal space between the gut cavity and the primitive ectoderm containing undifferentiated blastomeres in Stage 3-5 embryos." [OCLC:16809160, PMID:12888018]
 comment: Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo with anatomical feature noted with black indicators.
+xref: PMID:28072387
 is_a: PLANA:0000423 ! embryonic subdivision
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
@@ -5055,6 +5752,13 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000060 x
 id: PLANA:0000061
 name: enteric musculature
 def: "Visceral muscle surrounding the definitive gut." [PMID:26904543]
+synonym: "enteric muscle" EXACT []
+synonym: "intestinal muscle" EXACT []
+xref: PMID:21664348
+xref: PMID:22411224
+xref: PMID:23079596
+xref: PMID:30471994
+xref: PMID:30962434
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000013 ! visceral musculature
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
@@ -5077,6 +5781,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000061 x
 id: PLANA:0000062
 name: esophagus
 def: "Attachment between the triclad gut and the proximal end of the definitive pharynx." [PMID:24737865\nOCLC\:16809160]
+synonym: "gut pharynx intersection" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:18063757
+xref: PMID:20707997
+xref: PMID:21806978
+xref: PMID:27063937
+xref: PMID:29674431
+xref: PMID:30485821
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000016 ! pharynx
@@ -5161,6 +5873,18 @@ property_value: UBPROP:0000003 "Has functional homology with vertebrate podocyte
 id: PLANA:0000066
 name: gastrodermis
 def: "The single cell layer columnar epithelial lining of the intestine. The gastrodermis is surrounded by a basal lamina and enteric muscle." [PMID:21664348]
+synonym: "gut epithelia" EXACT []
+synonym: "gut epithelium" EXACT []
+synonym: "intestinal epithelium" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:21282632
+xref: PMID:21664348
+xref: PMID:24120894
+xref: PMID:25558068
+xref: PMID:27441386
+xref: PMID:27501047
+xref: PMID:28287248
+xref: PMID:30608231
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
@@ -5182,6 +5906,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000066 x
 id: PLANA:0000067
 name: goblet cell
 def: "Secretory cells that release digestive enzymes into the lumen of the intestine." [PMID:21664348]
+xref: PMID:20865784
+xref: PMID:21664348
+xref: PMID:23079596
+xref: PMID:27501047
+xref: PMID:28137894
+xref: PMID:28287248
+xref: PMID:29674431
+xref: PMID:29674432
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000105 ! secretory cell
 relationship: part_of PLANA:0000066 ! gastrodermis
@@ -5235,6 +5967,17 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000069 x
 id: PLANA:0000070
 name: intestinal phagocyte
 def: "Absorptive digestive cells that engulf food particles for intracellular digestion." [PMID:21664348]
+synonym: "enterocyte" EXACT []
+synonym: "gut enterocyte" EXACT []
+synonym: "gut phagocyte" EXACT []
+synonym: "intestinal epithelial cell" EXACT []
+xref: PMID:19933103
+xref: PMID:21664348
+xref: PMID:23079596
+xref: PMID:27542689
+xref: PMID:28072387
+xref: PMID:29674431
+xref: PMID:29674432
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: part_of PLANA:0000066 ! gastrodermis
@@ -5310,6 +6053,29 @@ id: PLANA:0000072
 name: mouth
 def: "The sole point of entry and exit for the Triclad planarian flatworm gut. The mouth is connected to the pharyngeal pouch to allow for exit and re-entry of the definitive pharynx on the ventral side of the animal. The mouth contains several cell types, including epithelial cells, muscle, and secretory cells." [OCLC:16809160]
 synonym: "Manus" EXACT [https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000006.md]
+synonym: "manus" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:17251262
+xref: PMID:17905225
+xref: PMID:18287199
+xref: PMID:19174194
+xref: PMID:19211673
+xref: PMID:20707997
+xref: PMID:21295481
+xref: PMID:21458439
+xref: PMID:21806978
+xref: PMID:23954785
+xref: PMID:26457503
+xref: PMID:26556349
+xref: PMID:27034770
+xref: PMID:27063937
+xref: PMID:27074666
+xref: PMID:27122174
+xref: PMID:28807897
+xref: PMID:29674431
+xref: PMID:30399335
+xref: PMID:30471994
+xref: PMID:30485821
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
@@ -5330,7 +6096,19 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000072 x
 id: PLANA:0000074
 name: oocyte
 def: "A female germ cell that has entered meiosis." []
+synonym: "egg" EXACT []
+synonym: "female gamete" EXACT []
+synonym: "ovum" EXACT []
 xref: CL:0000023
+xref: PMID:25278423
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:27304889
+xref: PMID:27330085
+xref: PMID:27501047
+xref: PMID:28072387
+xref: PMID:28434803
+xref: PMID:28812561
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000122 ! gamete
 is_a: PLANA:0000229 ! female germ cell
@@ -5347,6 +6125,36 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000074 x
 id: PLANA:0000075
 name: optic cup
 def: "A portion of the eye containing pigment cells and dendritic projections from photoreceptor neurons." [PMID:21852957, PMID:22884275]
+synonym: "eye cup" EXACT []
+synonym: "photoreceptor pigment cup" EXACT []
+synonym: "photoreceptor pigmentation" EXACT []
+synonym: "pigment cup" EXACT []
+synonym: "pigmented cell cup" EXACT []
+synonym: "pigmented optic cup" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:15866156
+xref: PMID:20707997
+xref: PMID:20865784
+xref: PMID:21458439
+xref: PMID:21828097
+xref: PMID:21852957
+xref: PMID:22411224
+xref: PMID:22427692
+xref: PMID:22445864
+xref: PMID:22549959
+xref: PMID:22884275
+xref: PMID:25493551
+xref: PMID:26017970
+xref: PMID:26618653
+xref: PMID:27068018
+xref: PMID:27240733
+xref: PMID:27542689
+xref: PMID:27606067
+xref: PMID:27800171
+xref: PMID:28495872
+xref: PMID:29547123
+xref: PMID:30143032
+xref: PMID:30194301
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
@@ -5365,6 +6173,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000075 x
 id: PLANA:0000076
 name: oral hemisphere
 def: "Stage 3-5 embryo hemisphere centered around the temporary embryonic pharynx." [PMID:28072387]
+xref: PMID:28072387
 is_a: PLANA:0000423 ! embryonic subdivision
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
@@ -5433,6 +6242,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000079 x
 id: PLANA:0000080
 name: peripheral nervous system
 def: "A major division of the nervous system that contains nerves which connect the central nervous system (CNS) with sensory organs, other organs, muscles, blood vessels and glands." []
+xref: PMID:20967238
+xref: PMID:22339734
+xref: PMID:23903188
+xref: PMID:26017970
+xref: PMID:26884331
+xref: PMID:27150006
+xref: PMID:27612382
+xref: PMID:29674431
 xref: UBERON:0000010
 is_a: PLANA:0000025 ! nervous system
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000080 xsd:string
@@ -5467,6 +6284,10 @@ id: PLANA:0000084
 name: posterior primary gut branch
 def: "The primary gut branches of the triclad gut lateral and posterior to the pharynx and pharyngeal pouch." [PMID:21664348]
 comment: Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. The posterior primary gut branch is indicated by arrows. Scale bar = 250um
+synonym: "major posterior gut branch" EXACT []
+synonym: "primary posterior intestinal branch" EXACT []
+xref: PMID:23318641
+xref: PMID:24063805
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
@@ -5519,6 +6340,10 @@ id: PLANA:0000087
 name: proximal tubule
 def: "Ciliated epithelial cells form tubules, generating coiled, branching units terminating in flame bulbs. Tubules are formed via intercellular junctions between two epithelial cells. Proximal tubules are connected to non-ciliated distal tubules within the parenchyma." [PMID:21828097]
 comment: Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same. In the diagram, terminal flame cells and their corresponding cilia are in blues, the proximal tubule is in reds, the distal tubule is in greens while the  collecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green.
+xref: PMID:21828097
+xref: PMID:21937596
+xref: PMID:26057828
+xref: PMID:27068018
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
@@ -5548,6 +6373,31 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000087 x
 id: PLANA:0000088
 name: renal system
 def: "The renal system is an anatomical system that maintains fluid balance and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products." []
+synonym: "excretory system" EXACT []
+synonym: "protonephridial system" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:17670787
+xref: PMID:19048075
+xref: PMID:19247960
+xref: PMID:19852954
+xref: PMID:20707997
+xref: PMID:21828097
+xref: PMID:21937596
+xref: PMID:22427692
+xref: PMID:23079596
+xref: PMID:23235145
+xref: PMID:23903188
+xref: PMID:24173799
+xref: PMID:24523458
+xref: PMID:24737865
+xref: PMID:25254346
+xref: PMID:26057828
+xref: PMID:26711341
+xref: PMID:27068018
+xref: PMID:27542689
+xref: PMID:28461239
+xref: PMID:29674431
+xref: PMID:30297872
 xref: UBERON:0001008
 is_a: PLANA:0000114 ! anatomical system
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -5560,6 +6410,9 @@ id: PLANA:0000089
 name: secondary gut branch
 def: "Gut branches, originating from and connected to the primary gut branches, that extend laterally towards the body edge." [PMID:21664348]
 comment: Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. The secondary gut branch is indicated by arrows. Scale bar = 250um
+xref: PMID:27122174
+xref: PMID:28287248
+xref: PMID:30471994
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
@@ -5583,8 +6436,19 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000089 x
 id: PLANA:0000090
 name: sperm
 def: "A mature male germ cell that develops from a spermatid." []
+synonym: "mature sperm" EXACT []
 synonym: "spermatozoa" EXACT []
 xref: CL:0000019
+xref: https://doi.org/10.1101/279364
+xref: PMID:17390146
+xref: PMID:20844018
+xref: PMID:22074376
+xref: PMID:25278423
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:27304889
+xref: PMID:28072387
+xref: PMID:29095551
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000122 ! gamete
 is_a: PLANA:0000228 ! male germ cell
@@ -5634,6 +6498,15 @@ id: PLANA:0000093
 name: tertiary gut branch
 def: "Gut branches originating from and connected to the secondary gut branches." [PMID:21664348]
 comment: Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. The tertiary gut branch indicated is by arrows. Scale bar = 250um
+synonym: "tertiary branch" EXACT []
+synonym: "tertiary intestinal branch" EXACT []
+xref: PMID:21664348
+xref: PMID:23250205
+xref: PMID:27122174
+xref: PMID:28137894
+xref: PMID:28287248
+xref: PMID:30194301
+xref: PMID:30471994
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000037 ! definitive tissue
@@ -5670,6 +6543,18 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000094 x
 id: PLANA:0000095
 name: trail cell
 def: "Ovo+ neoblasts and post-mitotic eye progenitors that simultaneously migrate and differentiate into photoreceptor neurons and non-neuronal pigment cup cells comprising the optic cup." [PMID:22884275]
+synonym: "eye progenitor" EXACT []
+synonym: "eye progenitor cell" EXACT []
+synonym: "ovo+ eye progenitor" EXACT []
+xref: PMID:21852957
+xref: PMID:22884275
+xref: PMID:23250205
+xref: PMID:24040508
+xref: PMID:27606067
+xref: PMID:28072387
+xref: PMID:28245923
+xref: PMID:29674431
+xref: PMID:30485821
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000120 ! progenitor cell
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
@@ -5707,14 +6592,76 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000096 x
 id: PLANA:0000097
 name: ventral nerve cord
 def: "The pair of closely united ventral longitudinal nerves with their segmental ganglia that is characteristic of many elongate invertebrates (as earthworms)[BTO]. A large process bundle that runs along the vental mid-line extending from the ventral region of the nerve ring[WB]. The ventral cord is one of the distinguishing traits of the central nervous system of all arthropods (such as insects, crustaceans and arachnids) as well as many other invertebrates, such as the annelid worms[GO]." []
+synonym: "nerve cord" EXACT []
 synonym: "ventral cord" EXACT []
+synonym: "VNC" EXACT []
 xref: BTO:0002328
 xref: EFO:0000896
 xref: FBbt:00001102
 xref: http://en.wikipedia.org/wiki/Ventral_nerve_cord
+xref: ISBN:9780070316607
 xref: MAT:0000339
 xref: MIAA:0000339
 xref: nlx:146329
+xref: PMID:16033796
+xref: PMID:16890156
+xref: PMID:17251262
+xref: PMID:17390146
+xref: PMID:17553481
+xref: PMID:17905225
+xref: PMID:18063755
+xref: PMID:18063757
+xref: PMID:18202849
+xref: PMID:18287199
+xref: PMID:19174194
+xref: PMID:19211673
+xref: PMID:19247960
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:20422023
+xref: PMID:20599901
+xref: PMID:20707997
+xref: PMID:20967238
+xref: PMID:21179478
+xref: PMID:21282632
+xref: PMID:21566185
+xref: PMID:21806978
+xref: PMID:21828097
+xref: PMID:22074376
+xref: PMID:22125640
+xref: PMID:22339734
+xref: PMID:22479207
+xref: PMID:23250205
+xref: PMID:23297191
+xref: PMID:23318635
+xref: PMID:23954785
+xref: PMID:24063805
+xref: PMID:24120894
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24950970
+xref: PMID:25254346
+xref: PMID:25356635
+xref: PMID:25558068
+xref: PMID:25772472
+xref: PMID:25956527
+xref: PMID:26017970
+xref: PMID:26062938
+xref: PMID:26457503
+xref: PMID:26556349
+xref: PMID:27013241
+xref: PMID:27034770
+xref: PMID:27150006
+xref: PMID:27163480
+xref: PMID:27612382
+xref: PMID:28072387
+xref: PMID:28126842
+xref: PMID:28245923
+xref: PMID:28807897
+xref: PMID:29291974
+xref: PMID:29674431
+xref: PMID:30143032
+xref: PMID:30471994
 xref: UBERON:0000934
 xref: WBbt:0005829
 is_a: BFO:0000040 ! material entity
@@ -5745,6 +6692,7 @@ id: PLANA:0000098
 name: zygote
 def: "Diploid cell resulting from the fusion of male and female gametes at fertilization. [ The_Dictionary_of_Cell_and_Molecular_Biology:Third_Edition ]\n\nDiploid cell produced by the fusion of sperm cell nucleus and egg cell." []
 xref: BTO:0000854
+xref: PMID:28812561
 is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000117 ! embryonic structure
 relationship: existence_starts_during_or_after PLANA:0000001 ! Stage 1
@@ -5757,8 +6705,64 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000098 x
 id: PLANA:0000099
 name: neuron
 def: "The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." []
+synonym: "differentiated neuron" EXACT []
+synonym: "nerve cell" EXACT []
 synonym: "neural cell" BROAD []
+synonym: "neural cell" EXACT []
+synonym: "neuronal cell" EXACT []
 xref: CL:0000540
+xref: PMID:16033796
+xref: PMID:16890156
+xref: PMID:17553481
+xref: PMID:17905225
+xref: PMID:18202849
+xref: PMID:18287199
+xref: PMID:19048075
+xref: PMID:19174194
+xref: PMID:19211673
+xref: PMID:20215344
+xref: PMID:21566185
+xref: PMID:22411224
+xref: PMID:22439894
+xref: PMID:22479207
+xref: PMID:22549959
+xref: PMID:23297191
+xref: PMID:23903188
+xref: PMID:23954785
+xref: PMID:24040508
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24737865
+xref: PMID:24922054
+xref: PMID:24950970
+xref: PMID:25254346
+xref: PMID:25356635
+xref: PMID:25558068
+xref: PMID:26457503
+xref: PMID:26525673
+xref: PMID:27013241
+xref: PMID:27063937
+xref: PMID:27150006
+xref: PMID:27163480
+xref: PMID:27542689
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:27864883
+xref: PMID:28072387
+xref: PMID:28126842
+xref: PMID:28137894
+xref: PMID:28245923
+xref: PMID:28292427
+xref: PMID:28461239
+xref: PMID:28807897
+xref: PMID:29100657
+xref: PMID:29184198
+xref: PMID:29291974
+xref: PMID:29291981
+xref: PMID:29357350
+xref: PMID:29674432
+xref: PMID:30143032
+xref: PMID:30399335
 is_a: PLANA:0000540 ! electrically signaling cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5769,7 +6773,16 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000099 x
 id: PLANA:0000100
 name: epithelial cell
 def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where the apical part is directed towards the lumen and the basal part to the basal lamina." []
+synonym: "epidermis cell" EXACT []
 xref: CL:0000066
+xref: PMID:18202849
+xref: PMID:19048075
+xref: PMID:20865784
+xref: PMID:22479207
+xref: PMID:24737865
+xref: PMID:26114597
+xref: PMID:28072387
+xref: PMID:28461239
 is_a: PLANA:0000119 ! terminally differentiated cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000100 xsd:string
 
@@ -5777,7 +6790,37 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000100 x
 id: PLANA:0000101
 name: muscle cell
 def: "A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns." []
+synonym: "muscle fiber" EXACT []
+synonym: "myocyte" EXACT []
 xref: CL:0000187
+xref: PMID:15972844
+xref: PMID:18202849
+xref: PMID:19174194
+xref: PMID:20422023
+xref: PMID:20511647
+xref: PMID:21458439
+xref: PMID:21828097
+xref: PMID:22252539
+xref: PMID:22479207
+xref: PMID:23318641
+xref: PMID:23405188
+xref: PMID:23954785
+xref: PMID:24415944
+xref: PMID:24737865
+xref: PMID:25254346
+xref: PMID:25558068
+xref: PMID:26062938
+xref: PMID:27063937
+xref: PMID:27523733
+xref: PMID:28216315
+xref: PMID:28287248
+xref: PMID:28292427
+xref: PMID:28461239
+xref: PMID:28686611
+xref: PMID:28807897
+xref: PMID:28893948
+xref: PMID:30471994
+xref: PMID:30962434
 is_a: PLANA:0000539 ! electrically responsive cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000101 xsd:string
 
@@ -5785,6 +6828,9 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000101 x
 id: PLANA:0000102
 name: anatomical compartment subdivision
 def: "A subdivision of an anatomical compartment." []
+synonym: "body region" EXACT []
+xref: PMID:28292427
+xref: PMID:29547123
 is_a: PLANA:0000417 ! definitive organism subdivision
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000102 xsd:string
 
@@ -5792,6 +6838,82 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000102 x
 id: PLANA:0000103
 name: central nervous system
 def: "The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord." []
+synonym: "CNS" EXACT []
+synonym: "head-restricted nervous system" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: PMID:16033796
+xref: PMID:16344473
+xref: PMID:16890156
+xref: PMID:17251262
+xref: PMID:17553481
+xref: PMID:17670787
+xref: PMID:17905225
+xref: PMID:17942485
+xref: PMID:18063757
+xref: PMID:18202849
+xref: PMID:18287199
+xref: PMID:19174194
+xref: PMID:19247960
+xref: PMID:19933103
+xref: PMID:20865784
+xref: PMID:20967238
+xref: PMID:21282632
+xref: PMID:21295481
+xref: PMID:21458439
+xref: PMID:21664348
+xref: PMID:21806978
+xref: PMID:21828097
+xref: PMID:22125640
+xref: PMID:22252539
+xref: PMID:22339734
+xref: PMID:22385657
+xref: PMID:22411224
+xref: PMID:22427692
+xref: PMID:22439894
+xref: PMID:22445864
+xref: PMID:23297191
+xref: PMID:23318635
+xref: PMID:23318641
+xref: PMID:23903188
+xref: PMID:24063805
+xref: PMID:24173799
+xref: PMID:24367277
+xref: PMID:24704339
+xref: PMID:24737865
+xref: PMID:24922054
+xref: PMID:24950970
+xref: PMID:25356635
+xref: PMID:25493551
+xref: PMID:25772472
+xref: PMID:25956527
+xref: PMID:26017970
+xref: PMID:26459857
+xref: PMID:26711341
+xref: PMID:26884331
+xref: PMID:27013241
+xref: PMID:27063937
+xref: PMID:27068018
+xref: PMID:27074666
+xref: PMID:27150006
+xref: PMID:27163480
+xref: PMID:27240733
+xref: PMID:27523733
+xref: PMID:27542689
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:27800171
+xref: PMID:27864883
+xref: PMID:28126842
+xref: PMID:28434803
+xref: PMID:28461239
+xref: PMID:28807897
+xref: PMID:28976975
+xref: PMID:29273738
+xref: PMID:29291981
+xref: PMID:30399335
+xref: PMID:30471994
+xref: PMID:30729158
+xref: PMID:30962434
 xref: UBERON:0001017
 is_a: PLANA:0000025 ! nervous system
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000103 xsd:string
@@ -5824,7 +6946,11 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000105 x
 id: PLANA:0000106
 name: ciliated epithelial cell
 def: "An epithelial cell that has cilia." []
+synonym: "ciliated epidermal cell" EXACT []
 xref: CL:0000067
+xref: PMID:24737865
+xref: PMID:28461239
+xref: PMID:28807897
 is_a: PLANA:0000100 ! epithelial cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000106 xsd:string
 
@@ -5832,7 +6958,14 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000106 x
 id: PLANA:0000107
 name: yolk cell
 def: "An extraembryonic cell, produced by somatic vitellogenic glands in adult hermaphrodites, that provides nutrition to the developing embryo." [PMID:27149082]
+synonym: "vitellocyte" EXACT []
 xref: CL:0000428
+xref: ISBN:9780070316607
+xref: PMID:22074376
+xref: PMID:27149082
+xref: PMID:28072387
+xref: PMID:28434803
+xref: PMID:29674431
 is_a: PLANA:0000119 ! terminally differentiated cell
 is_a: PLANA:0000215 ! reproductive system product
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -5861,10 +6994,13 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000109 x
 [Term]
 id: PLANA:0000110
 name: definitive pharynx progenitor
+name: definitive pharynx progenitor cell
 def: "foxA1+ neoblasts and their post-mitotic, differentiating daughters required for maintenance and regeneration of the definitive pharynx." [PMID:24737865, PMID:25254346]
+def: "This progenitor cell develops into pharynx" []
 synonym: "pharynx progenitor" EXACT []
+synonym: "pharynx progenitor cell" EXACT []
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000120 ! progenitor cell
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of PLANA:0000016 ! pharynx
 relationship: part_of PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
@@ -5877,12 +7013,15 @@ relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000110 xsd:string
 
 [Term]
 id: PLANA:0000111
 name: proximal tubule epithelial cell
 def: "Ciliated epithelial cells that assemble into proximal tubules." [PMID:21828097]
+synonym: "proximal tubule cell" EXACT []
+xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000106 ! ciliated epithelial cell
 relationship: part_of PLANA:0000087 ! proximal tubule
@@ -5991,6 +7130,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000118 x
 id: PLANA:0000119
 name: terminally differentiated cell
 def: "A post-mitotic, terminally differentiated cell type found in planarian embryos, juveniles and/or adult animals." []
+xref: PMID:29674432
 is_a: PLANA:0000499 ! cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000119 xsd:string
 
@@ -5999,6 +7139,9 @@ id: PLANA:0000120
 name: progenitor cell
 def: "A cycling neoblast and/or post-mitotic cell that is primed or irreversibly committed to a tissue-specific differentation program" []
 synonym: "precursor cell" BROAD []
+xref: https://doi.org/10.1101/279364
+xref: PMID:21852957
+xref: PMID:29674432
 is_a: PLANA:0000499 ! cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000120 xsd:string
 
@@ -6007,6 +7150,24 @@ id: PLANA:0000121
 name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." []
 xref: CL:0000034
+xref: https://doi.org/10.1101/279364
+xref: PMID:17376870
+xref: PMID:19805089
+xref: PMID:20422023
+xref: PMID:20707997
+xref: PMID:21937596
+xref: PMID:22385657
+xref: PMID:23123964
+xref: PMID:23318635
+xref: PMID:24063805
+xref: PMID:24173799
+xref: PMID:26062938
+xref: PMID:26651295
+xref: PMID:26711341
+xref: PMID:27013241
+xref: PMID:27034770
+xref: PMID:27501047
+xref: PMID:29124009
 is_a: PLANA:0000499 ! cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000121 xsd:string
 
@@ -6015,6 +7176,12 @@ id: PLANA:0000122
 name: gamete
 def: "A mature sexual reproductive cell having a single set of unpaired chromosomes." []
 xref: CL:0000300
+xref: PMID:20844018
+xref: PMID:23652002
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:27304889
+xref: PMID:28434803
 is_a: PLANA:0000215 ! reproductive system product
 is_a: PLANA:0000227 ! germ cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6204,6 +7371,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000134 x
 id: PLANA:0000135
 name: female primordial germ cell
 def: "Definition forthcoming" []
+xref: PMID:17390146
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000121 ! stem cell
 is_a: PLANA:0000229 ! female germ cell
@@ -6330,6 +7498,18 @@ id: PLANA:0000203
 name: gonopore
 def: "The gonopore, a component of the copulatory apparatus, is an opening located on the ventral side of the animal posterior to the definitive pharynx. The gonopore is the sole point of exit and entry for the reproductive system, allowing from reciprocal exchange of sperm during copulation and egg capsule laying." [PMID:22074376]
 synonym: "genital pore" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:16344473
+xref: PMID:19247960
+xref: PMID:20967238
+xref: PMID:21566185
+xref: PMID:22074376
+xref: PMID:22899852
+xref: PMID:25278423
+xref: PMID:27149082
+xref: PMID:28072387
+xref: PMID:28434803
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6346,6 +7526,28 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000203 x
 id: PLANA:0000204
 name: ovary
 def: "A gonad containing female germline stem cells which fuel oocyte production. Two ovaries are located ventally, underneath the body wall musculature, immediately posterior to the cephalic ganglia (brain) and adjacent to the ventral nerve cords. The neoblast compartment, including piwi-1+, nanos+ primordial germ cells, fuel formation of the ovaries during juvenile development." [PMID:17376870]
+synonym: "female gonad" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:16344473
+xref: PMID:17376870
+xref: PMID:17390146
+xref: PMID:18456843
+xref: PMID:19247960
+xref: PMID:20844018
+xref: PMID:20967238
+xref: PMID:22074376
+xref: PMID:22318224
+xref: PMID:22371573
+xref: PMID:23652002
+xref: PMID:25278423
+xref: PMID:25404302
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:27330085
+xref: PMID:28072387
+xref: PMID:28434803
+xref: PMID:28812561
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000217 ! gonad
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
@@ -6357,6 +7559,20 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000204 x
 id: PLANA:0000205
 name: oviduct
 def: "Ciliated tubes adjacent to the ventral nerve cords, adjoining the tuba and the bursal canal, that transport fertilized oocytes to the genital atrium." [PMID:22074376]
+synonym: "ovovitilline duct" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:16344473
+xref: PMID:17376870
+xref: PMID:19247960
+xref: PMID:20844018
+xref: PMID:20967238
+xref: PMID:22074376
+xref: PMID:23652002
+xref: PMID:25278423
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6376,6 +7592,17 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000205 x
 id: PLANA:0000206
 name: penis papilla
 def: "A rounded protuberance, connected to the seminal vesicles, responsible for transferring semen into a mating partner's bursal canal." [PMID:22074376]
+synonym: "penis" EXACT []
+synonym: "penis bulb" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:20967238
+xref: PMID:22074376
+xref: PMID:23652002
+xref: PMID:25278423
+xref: PMID:27074666
+xref: PMID:28072387
+xref: PMID:28434803
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6392,6 +7619,21 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000206 x
 id: PLANA:0000207
 name: sperm duct
 def: "A network of tubes that transport sperm from the testes to the seminal vesicles. Tubes connect each testis to ducts that run along the ventral nerve cords. The ducts bifurcate immediately posterior to the pharynx, where they connect to the seminal vesicles." [PMID:19022767\nPMID\:22074376]
+synonym: "seminal duct" EXACT []
+synonym: "sperm ductule" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:17390146
+xref: PMID:19247960
+xref: PMID:20844018
+xref: PMID:20967238
+xref: PMID:22074376
+xref: PMID:23652002
+xref: PMID:25278423
+xref: PMID:27149082
+xref: PMID:27304889
+xref: PMID:28072387
+xref: PMID:28434803
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6409,6 +7651,32 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000207 x
 id: PLANA:0000208
 name: testis
 def: "A gonad containing male germline stem cells which fuel sperm production. Testes are located dorsolaterally, and are excluded from the head. The neoblast compartment, including piwi-1+, nanos+ primordial germ cells, fuels formation of testes during juvenile development and regeneration." [PMID:19022767]
+synonym: "male gonad" EXACT []
+synonym: "testis lobe" EXACT []
+synonym: "testis lobule" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:16344473
+xref: PMID:17376870
+xref: PMID:18456843
+xref: PMID:19247960
+xref: PMID:20844018
+xref: PMID:20967238
+xref: PMID:22074376
+xref: PMID:22318224
+xref: PMID:22371573
+xref: PMID:23629965
+xref: PMID:23652002
+xref: PMID:25278423
+xref: PMID:25404302
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:27304889
+xref: PMID:27330085
+xref: PMID:28072387
+xref: PMID:28434803
+xref: PMID:28812561
+xref: PMID:29095551
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000217 ! gonad
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
@@ -6434,6 +7702,7 @@ replaced_by: UBERON:0005423
 id: PLANA:0000211
 name: primitive ectoderm cell
 def: "Primitive ectoderm cells differentiate from the blastomere population, exit the cell cycle and interact to boud the embryo during Stage 2." [https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000001.md, OCLC:20423827, OCLC:464776945, OCLC:82522822]
+xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000106 ! ciliated epithelial cell
@@ -6489,6 +7758,20 @@ id: PLANA:0000216
 name: egg capsule
 def: "A proteinaceous, semi-permeable shell housing yolk cells and one or more embryos.  Egg capsules are anchored to a substrate via a stalk." [PMID:18942102]
 comment: Depicted by field shows a light microscopy image of egg capsules with a scale bar of 3mm
+synonym: "capsule" EXACT []
+synonym: "cocoon" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:16344473
+xref: PMID:17376870
+xref: PMID:20967238
+xref: PMID:22074376
+xref: PMID:22371573
+xref: PMID:25278423
+xref: PMID:27149082
+xref: PMID:28072387
+xref: PMID:28434803
+xref: PMID:28812561
 is_a: PLANA:0000215 ! reproductive system product
 relationship: RO:0003001 PLANA:0004503 ! produced by adult hermaphrodite
 property_value: depicted:by http://purl.obolibrary.org/obo/plana/images/eggcapsule.png
@@ -6498,6 +7781,20 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000216 x
 id: PLANA:0000217
 name: gonad
 def: "Reproductive organ that produces and releases eggs (ovary) or sperm (testis)." []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:16344473
+xref: PMID:17376870
+xref: PMID:17390146
+xref: PMID:20844018
+xref: PMID:22074376
+xref: PMID:22252538
+xref: PMID:22371573
+xref: PMID:23652002
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:28434803
+xref: PMID:28976975
 xref: UBERON:0000991
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6511,6 +7808,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000217 x
 id: PLANA:0000218
 name: male primordial germ cell
 def: "Neoblasts coexpressing piwi-1 and nanos that are required for male and female gonad formation. Primordial germ cells are present in both asexual and sexual adults." [PMID:17376870]
+xref: PMID:17390146
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000121 ! stem cell
 is_a: PLANA:0000228 ! male germ cell
@@ -6558,7 +7856,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000219 x
 id: PLANA:0000220
 name: spermatogonium
 def: "An euploid male germ cell of an early stage of spermatogenesis. In planaria, the gh4+ stem cell daughter exiting the niche undergoes three rounds of transit amplifying division with incomplete cytokinesis prior to transitioning to terminal differentiation." [PMID:27163480, PMID:27330085]
+synonym: "spermatogonial cell" EXACT []
 xref: CL:0000020
+xref: https://doi.org/10.1101/279364
+xref: PMID:23629965
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000120 ! progenitor cell
@@ -6581,7 +7882,17 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000220 x
 id: PLANA:0000221
 name: spermatocyte
 def: "A tektin-1+ male germ cell that develops from spermatogonia. The euploid primary spermatocytes undergo meiosis and give rise to the haploid secondary spermatocytes which in turn give rise to spermatids." [PMID:27330085]
+synonym: "primary spermatocyte" EXACT []
 xref: CL:0000017
+xref: PMID:17376870
+xref: PMID:20844018
+xref: PMID:22074376
+xref: PMID:25278423
+xref: PMID:25404302
+xref: PMID:27163480
+xref: PMID:27304889
+xref: PMID:27330085
+xref: PMID:29095551
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000228 ! male germ cell
@@ -6604,6 +7915,14 @@ id: PLANA:0000222
 name: spermatid
 def: "A male germ cell that develops from the haploid secondary spermatocytes. Without further division, spermatids undergo structural changes and give rise to spermatozoa." []
 xref: CL:0000018
+xref: PMID:17376870
+xref: PMID:20844018
+xref: PMID:22074376
+xref: PMID:25278423
+xref: PMID:25404302
+xref: PMID:27163480
+xref: PMID:27304889
+xref: PMID:27330085
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000228 ! male germ cell
 relationship: part_of PLANA:0000208 ! testis
@@ -6706,6 +8025,9 @@ id: PLANA:0000228
 name: male germ cell
 def: "A male germ cell is a germ cell that supports male gamete production." []
 xref: CL:0000015
+xref: PMID:23652002
+xref: PMID:27304889
+xref: PMID:27330085
 is_a: PLANA:0000227 ! germ cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000228 xsd:string
 
@@ -6721,6 +8043,11 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000229 x
 id: PLANA:0000230
 name: tuba
 def: "A sperm storage organ located immediately posterior to the ovary, at the anterior end of the oviduct. Oocytes exiting the ovary are fertilized in the tuba as they enter the oviduct." [PMID:19022767\nPMID\:20844018\nPMID\:22074376\nPMID\:27149082]
+xref: PMID:22074376
+xref: PMID:25278423
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:28434803
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6737,6 +8064,21 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000230 x
 id: PLANA:0000231
 name: vitelline gland
 def: "Glands surrounding the oviducts which produce yolk cells. Yolk cells deposited into the oviducts travel to the genital atrium where they are packaged, along with one or more zygotes, into developing egg capsules." [PMID:16932928, PMID:18942102, PMID:27149082]
+synonym: "vitellaria" EXACT []
+synonym: "vitellarium" EXACT []
+synonym: "yolk gland" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: ISBN:9780070316607
+xref: PMID:16344473
+xref: PMID:17390146
+xref: PMID:19247960
+xref: PMID:22074376
+xref: PMID:23652002
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:27501047
+xref: PMID:28072387
+xref: PMID:28434803
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6754,6 +8096,18 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000231 x
 id: PLANA:0000232
 name: copulatory apparatus
 def: "Accessory reproductive structures involved in copulation, egg capsule development and laying." [PMID:22074376]
+synonym: "copulatory complex" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:16344473
+xref: PMID:17376870
+xref: PMID:17390146
+xref: PMID:19247960
+xref: PMID:20967238
+xref: PMID:22074376
+xref: PMID:23652002
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:28434803
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000427 ! multicellular anatomical structure
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -6807,6 +8161,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000234 x
 id: PLANA:0000237
 name: round spermatid
 def: "A cyst of 8 interconnected spermatocytes undergoes meiosis, producing 32 haploid round spermatids. Round spermatids express protein kinase A, and  undergo morphogenesis to produce mature sperm." [PMID:27163480, PMID:27330085]
+xref: https://doi.org/10.1101/279364
+xref: PMID:20844018
+xref: PMID:27304889
+xref: PMID:29095551
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000222 ! spermatid
 relationship: develops_from PLANA:0000221 ! spermatocyte
@@ -6816,6 +8174,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000237 x
 id: PLANA:0000238
 name: elongate spermatid
 def: "Spermatids expressing protein kinase A undergoing morphogenic changes to make mature sperm." [PMID:27163480, PMID:27330085]
+synonym: "elongating spermatid" EXACT []
+xref: PMID:20844018
+xref: PMID:27304889
+xref: PMID:29095551
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000222 ! spermatid
 relationship: develops_from PLANA:0000237 ! round spermatid
@@ -6846,9 +8208,29 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000239 x
 id: PLANA:0000240
 name: body wall musculature
 def: "Any collection of muscles that is part of a body wall [Automatically generated definition]." []
+synonym: "body muscle" EXACT []
+synonym: "body wall muscle" EXACT []
+synonym: "body-wall muscle" EXACT []
+synonym: "body-wall musculature" EXACT []
+synonym: "BWM" EXACT []
+synonym: "muscle layer surrounding the body wall" EXACT []
 xref: BSA:0000058
 xref: BTO:0001863
 xref: FMA:86931
+xref: PMID:19048075
+xref: PMID:19174194
+xref: PMID:21828097
+xref: PMID:22385657
+xref: PMID:24992682
+xref: PMID:27063937
+xref: PMID:27074666
+xref: PMID:28171748
+xref: PMID:29100657
+xref: PMID:29547123
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:30471994
+xref: PMID:30962434
 xref: UBERON:0004462
 xref: WBbt:0005813
 is_a: BFO:0000040 ! material entity
@@ -7045,6 +8427,11 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000405 x
 id: PLANA:0000406
 name: oral opening
 def: "The orifice that connects the mouth to the exterior of the body." []
+synonym: "pharyngeal mouth opening" EXACT []
+synonym: "pharynx opening" EXACT []
+xref: PMID:17670787
+xref: PMID:29674431
+xref: PMID:30399335
 xref: UBERON:0000166
 is_a: BFO:0000002 ! continuant
 is_a: UBERON:0002553 ! anatomical cavity
@@ -7270,7 +8657,17 @@ id: PLANA:0000420
 name: parapharyngeal region
 def: "Region of the animal lateral to and surrounding the definitive pharynx." []
 comment: http://purl.obolibrary.org/obo/Depicted%20by%20field%20contains%20diagram%20representation%20of%20body%20region.
+synonym: "para-pharyngeal" EXACT []
+synonym: "parapharyngeal" EXACT []
+synonym: "peri-pharyngeal" EXACT []
+synonym: "peripharyngeal region" EXACT []
 synonym: "trunk" BROAD []
+xref: PMID:22125640
+xref: PMID:25956527
+xref: PMID:26651295
+xref: PMID:28807897
+xref: PMID:29674431
+xref: PMID:30143032
 is_a: PLANA:0000102 ! anatomical compartment subdivision
 relationship: posterior_to PLANA:0000419 ! prepharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -7372,7 +8769,16 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000427 x
 id: PLANA:0000428
 name: musculature system
 def: "Total musculature of the planarian body." []
+synonym: "muscular system" EXACT []
+synonym: "musculature" EXACT []
 xref: http://purl.obolibrary.org/obo/UBERON_0001015
+xref: ISBN:9780070316607
+xref: PMID:15866156
+xref: PMID:17942485
+xref: PMID:20707997
+xref: PMID:24950970
+xref: PMID:27068018
+xref: PMID:28137894
 is_a: PLANA:0000114 ! anatomical system
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -7569,6 +8975,7 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000430 x
 id: PLANA:0000431
 name: organ
 def: "Anatomical structure that performs a specific function or group of functions." []
+xref: PMID:29547123
 xref: UBERON:0000062
 is_a: PLANA:0000427 ! multicellular anatomical structure
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000431 xsd:string
@@ -7589,6 +8996,7 @@ name: obsolete cellular component
 def: "OBSOLETE The part of a cell, extracellular environment or virus in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together. Source: NIF_Subcellular:sao-1337158144, GOC:go_curators" []
 xref: GO:0005575
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000433 xsd:string
+is_obsolete: true
 
 [Term]
 id: PLANA:0000459
@@ -7682,6 +9090,21 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000460 x
 id: PLANA:0000461
 name: lateral branches
 def: "Nerve branches that extend from the lateral side of each cephalic ganglia lobe. Each lobe has nine lateral branches which terminate in sensory organs. Evidence suggests they play a role in chemosensation." [PMID:12128224, PMID:18466009, PMID:27612384, PMID:4452894, PMID:9493832]
+synonym: "bilateral cephalic ganglia branch" EXACT []
+synonym: "brain branch" EXACT []
+synonym: "cephalic brain branch" EXACT []
+synonym: "cephalic branch" EXACT []
+synonym: "lateral brain branch" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:18287199
+xref: PMID:20422023
+xref: PMID:21282632
+xref: PMID:21806978
+xref: PMID:24922054
+xref: PMID:25254346
+xref: PMID:27612384
+xref: PMID:29674431
+xref: PMID:30399335
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000044 ! cephalic ganglia
@@ -7697,6 +9120,9 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000461 x
 id: PLANA:0000462
 name: sensory cell
 def: "A cell that performs a sensory function." []
+xref: ISBN:9780070316607
+xref: PMID:17251262
+xref: PMID:17942485
 is_a: PLANA:0000119 ! terminally differentiated cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000462 xsd:string
 
@@ -7704,6 +9130,23 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000462 x
 id: PLANA:0000463
 name: cholinergic neuron
 def: "Neurons that express choline acetyltransferase." [PMID:20338223]
+synonym: "acetylcholinergic neuron" EXACT []
+xref: PMID:21566185
+xref: PMID:23652002
+xref: PMID:23903188
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24950970
+xref: PMID:25356635
+xref: PMID:26525673
+xref: PMID:27163480
+xref: PMID:27612382
+xref: PMID:27864883
+xref: PMID:28126842
+xref: PMID:28137894
+xref: PMID:29291981
+xref: PMID:30143032
+xref: PMID:30194301
 is_a: PLANA:0000556 ! neurosecretory neuron
 relationship: part_of PLANA:0000465 ! pharynx nerve plexus
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000463 xsd:string
@@ -7712,6 +9155,22 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000463 x
 id: PLANA:0000464
 name: GABAergic neuron
 def: "Neurons that express glutamine decarboxylase." [PMID:18440152]
+synonym: "GABA neuron" EXACT []
+synonym: "GABAergic cell" EXACT []
+synonym: "gabanergic neuron" EXACT []
+synonym: "inhibitory neuron" EXACT []
+xref: PMID:23903188
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24922054
+xref: PMID:24950970
+xref: PMID:25356635
+xref: PMID:26525673
+xref: PMID:27864883
+xref: PMID:28216315
+xref: PMID:29291981
+xref: PMID:30194301
+xref: PMID:30485821
 is_a: PLANA:0000556 ! neurosecretory neuron
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000464 xsd:string
 
@@ -7804,6 +9263,8 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000468 x
 id: PLANA:0000470
 name: neuropil
 def: "A cluster of neurites that is part of a nervous system and forms a network of dendrites and axons where synapses are present and in which neuronal somata do not occur." [PMID:27612384]
+synonym: "central neuropil" EXACT []
+synonym: "cephalic ganglia neuropil" EXACT []
 xref: birnlex:1142
 xref: BTO:0005268
 xref: C12617
@@ -7816,6 +9277,15 @@ xref: http://linkedlifedata.com/resource/umls/id/C0228081
 xref: http://www.snomedbrowser.com/Codes/Details/67146008
 xref: MESH:D019581
 xref: NIF_Subcellular:sao205380252
+xref: PMID:16033796
+xref: PMID:17553481
+xref: PMID:24173799
+xref: PMID:24950970
+xref: PMID:25356635
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:29291974
+xref: PMID:29291981
 xref: UBERON:0002606
 xref: UMLS:C0228081
 is_a: BFO:0000040 ! material entity
@@ -7985,6 +9455,18 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000480 x
 id: PLANA:0000481
 name: serotonergic neuron
 def: "Neurons that express the neurotransmitter serotonin." [] {comment="PMID:17624455"}
+synonym: "serotonergic cell" EXACT []
+xref: PMID:23903188
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24922054
+xref: PMID:24950970
+xref: PMID:25356635
+xref: PMID:26525673
+xref: PMID:27864883
+xref: PMID:28137894
+xref: PMID:29357350
+xref: PMID:30194301
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000556 ! neurosecretory neuron
@@ -8005,6 +9487,15 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000481 x
 id: PLANA:0000482
 name: dopaminergic neuron
 def: "A neuron that expresses the neurotransmitter dopamine." [PMID:17565705]
+xref: PMID:21458439
+xref: PMID:23250205
+xref: PMID:23903188
+xref: PMID:24131630
+xref: PMID:24173799
+xref: PMID:24950970
+xref: PMID:25356635
+xref: PMID:27864883
+xref: PMID:30194301
 is_a: PLANA:0000556 ! neurosecretory neuron
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000482 xsd:string
 
@@ -8029,6 +9520,15 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000484 x
 id: PLANA:0000485
 name: gland cell
 def: "Specialized insunk epithelial cells located in the mesenchyme that participate in mucus secretion. They are characterized by elongated cell bodies with long cytoplasmic projections that terminate between, or penetrate directly through  epithelial cells and form a secretory pore at the surface." [PMID:20865784]
+synonym: "secretory gland cell" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:19247960
+xref: PMID:20865784
+xref: PMID:23318635
+xref: PMID:24737865
+xref: PMID:28807897
+xref: PMID:29674431
+xref: PMID:30962434
 is_a: PLANA:0000100 ! epithelial cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -8039,6 +9539,8 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000485 x
 id: PLANA:0000486
 name: secretory pore
 def: "The opening by which the gland cells secrete mucus to the exterior of the animal." [PMID:20865784]
+synonym: "pore" EXACT []
+xref: ISBN:9780070316607
 is_a: PLANA:0000037 ! definitive tissue
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -8061,6 +9563,12 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000487 x
 id: PLANA:0000488
 name: basophilic gland cell
 def: "One of two distinct histochemical classes of gland cells, these are found near the ventral mesenchyme, the pharynx and in the dorsal region of the head. May also be called cyanophilic gland cells." [PMID:20865784]
+synonym: "cyanophilic gland cell" EXACT []
+synonym: "cyanophilic secretory cell" EXACT []
+synonym: "cyanophilous gland" EXACT []
+xref: ISBN:9780070316607
+xref: PMID:20865784
+xref: PMID:23405188
 is_a: PLANA:0000485 ! gland cell
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000488 xsd:string
 
@@ -8116,7 +9624,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000491 x
 id: PLANA:0000492
 name: nerve plexus
 def: "Anatomical junction where subdivisions of two or more neural trees interconnect with one another to form a network through which nerve fibers of the constituent nerve trees become regrouped; together with other nerve plexuses, nerves and ganglia, it constitutes the peripheral nervous system. Examples: cervical nerve plexus, brachial nerve plexus, sacral nerve plexus[FMA]." []
+synonym: "neural network" EXACT []
+synonym: "neural plexus" EXACT []
 synonym: "plexus" BROAD []
+synonym: "plexus" EXACT []
 xref: AEO:0000138
 xref: BTO:0000205
 xref: C12929
@@ -8126,7 +9637,12 @@ xref: FMA:5901
 xref: http://en.wikipedia.org/wiki/Nervous_system_plexus
 xref: http://linkedlifedata.com/resource/umls/id/C0501403
 xref: http://www.snomedbrowser.com/Codes/Details/122455009
+xref: ISBN:9780070316607
 xref: MA:0002407
+xref: PMID:18202849
+xref: PMID:24737865
+xref: PMID:27612382
+xref: PMID:29357350
 xref: UBERON:0001810
 xref: UMLS:C0501403
 is_a: PLANA:0000037 ! definitive tissue
@@ -8184,12 +9700,108 @@ id: PLANA:0000495
 name: blastema
 def: "A regenerating tissue composed of a proliferative mass of undifferentiated progenitor cells from which new differentiated structures arise" []
 synonym: "blastema cell" EXACT []
+synonym: "regeneration blastema" EXACT []
+synonym: "regenerative blastema" EXACT []
 xref: AEO:0000192
 xref: BTO:0001638
 xref: CARO:0000010
 xref: EFO:0003658
 xref: FMA:50705
+xref: https://doi.org/10.1101/279364
 xref: ncithesaurus:Blastemal_Cell
+xref: PMID:15866156
+xref: PMID:15972844
+xref: PMID:16033796
+xref: PMID:16890156
+xref: PMID:17251262
+xref: PMID:17553481
+xref: PMID:17670787
+xref: PMID:17905225
+xref: PMID:17942485
+xref: PMID:18063755
+xref: PMID:18202849
+xref: PMID:18456843
+xref: PMID:19048075
+xref: PMID:19174194
+xref: PMID:19247960
+xref: PMID:19766622
+xref: PMID:19852954
+xref: PMID:20040488
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:20422023
+xref: PMID:20599901
+xref: PMID:21179478
+xref: PMID:21295481
+xref: PMID:21295483
+xref: PMID:21356107
+xref: PMID:21458439
+xref: PMID:21566195
+xref: PMID:21664348
+xref: PMID:21806978
+xref: PMID:21937596
+xref: PMID:22125640
+xref: PMID:22252539
+xref: PMID:22318224
+xref: PMID:22411224
+xref: PMID:22439894
+xref: PMID:22451003
+xref: PMID:22479207
+xref: PMID:22549959
+xref: PMID:22884275
+xref: PMID:22899852
+xref: PMID:23235145
+xref: PMID:23250205
+xref: PMID:23318641
+xref: PMID:23405188
+xref: PMID:23629965
+xref: PMID:23652002
+xref: PMID:24040508
+xref: PMID:24063805
+xref: PMID:24120894
+xref: PMID:24173799
+xref: PMID:24415944
+xref: PMID:24523458
+xref: PMID:24704339
+xref: PMID:24922054
+xref: PMID:25254346
+xref: PMID:25558068
+xref: PMID:25725068
+xref: PMID:25772472
+xref: PMID:25956527
+xref: PMID:26062938
+xref: PMID:26459857
+xref: PMID:26525673
+xref: PMID:26711341
+xref: PMID:26884331
+xref: PMID:27013241
+xref: PMID:27068018
+xref: PMID:27240733
+xref: PMID:27542689
+xref: PMID:27551436
+xref: PMID:27606067
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:28126842
+xref: PMID:28137894
+xref: PMID:28171748
+xref: PMID:28216315
+xref: PMID:28461239
+xref: PMID:28757112
+xref: PMID:28807897
+xref: PMID:28893948
+xref: PMID:29158443
+xref: PMID:29273738
+xref: PMID:29291974
+xref: PMID:29291981
+xref: PMID:29357350
+xref: PMID:30194301
+xref: PMID:30237141
+xref: PMID:30282036
+xref: PMID:30297872
+xref: PMID:30471994
+xref: PMID:30485821
+xref: PMID:30729158
 xref: TAO:0001270
 xref: UBERON:0005306
 xref: XAO:0004060
@@ -8291,7 +9903,34 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000502 x
 id: PLANA:0000503
 name: cilium
 def: "A specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface and of some cytoplasmic parts. Each cilium is largely bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored to a basal body." []
+synonym: "cilia" EXACT []
 xref: GO_0005929
+xref: ISBN:9780070316607
+xref: PMID:15866156
+xref: PMID:19048075
+xref: PMID:19852954
+xref: PMID:19933103
+xref: PMID:21179478
+xref: PMID:21282632
+xref: PMID:21295481
+xref: PMID:21828097
+xref: PMID:21937596
+xref: PMID:22223737
+xref: PMID:23144623
+xref: PMID:23235145
+xref: PMID:23250205
+xref: PMID:23318641
+xref: PMID:24131630
+xref: PMID:24523458
+xref: PMID:24950970
+xref: PMID:25017721
+xref: PMID:26057828
+xref: PMID:26711341
+xref: PMID:26912790
+xref: PMID:27068018
+xref: PMID:27609598
+xref: PMID:28292427
+xref: PMID:30399335
 is_a: PLANA:0000501 ! cell projection
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000503 xsd:string
@@ -8319,6 +9958,8 @@ id: PLANA:0000506
 name: cell junction
 def: "A cellular component that forms a specialized region of connection between two or more cells or between a cell and the extracellular matrix. At a cell junction, anchoring proteins extend through the plasma membrane to link cytoskeletal proteins in one cell to cytoskeletal proteins in neighboring cells or to proteins in the extracellular matrix." []
 xref: GO:0030054
+xref: PMID:20511647
+xref: PMID:21458439
 is_a: PLANA:0000505 ! cell-cell contact zone
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000506 xsd:string
@@ -8355,6 +9996,8 @@ id: PLANA:0000510
 name: cytoplasm
 def: "All of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures" []
 xref: GO:0005737
+xref: PMID:16890156
+xref: PMID:28976975
 is_a: GO:0005575 ! cellular_component
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000510 xsd:string
@@ -8523,6 +10166,13 @@ id: PLANA:0000529
 name: nucleus
 def: "A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated. In most cells, the nucleus contains all of the cell's chromosomes except the organellar chromosomes, and is the site of RNA synthesis and processing. In some species, or in specialized cell types, RNA metabolism or DNA replication may be absent." []
 xref: GO_0005634
+xref: ISBN:9780070316607
+xref: PMID:23405188
+xref: PMID:25404302
+xref: PMID:26457503
+xref: PMID:28976975
+xref: PMID:29100657
+xref: PMID:29357350
 is_a: PLANA:0000526 ! membrane-bounded organelle
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
@@ -8606,6 +10256,12 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000537 x
 id: PLANA:0000538
 name: axon tract
 def: "A group of axons linking two or more neuropils and having a common origin, termination" []
+synonym: "axon bundle" EXACT []
+synonym: "axon bundles" EXACT []
+synonym: "axon tracts" EXACT []
+xref: PMID:22884275
+xref: PMID:24950970
+xref: PMID:28137894
 xref: UBERON:0001018
 is_a: PLANA:0000501 ! cell projection
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000538 xsd:string
@@ -8632,8 +10288,11 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000540 x
 id: PLANA:0000541
 name: nerve
 def: "An enclosed, cable-like bundle of axons in the peripheral nervous system originating in a nerve root in the central nervous system (or a condensed nervous structure) connecting with peripheral structures." []
+synonym: "nerve bundle" EXACT []
 synonym: "nerves" EXACT []
 synonym: "peripheral nerve" EXACT []
+xref: PMID:27612382
+xref: PMID:27800171
 xref: UBERON:0001021
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000080 ! peripheral nervous system
@@ -8670,8 +10329,16 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000545 x
 id: PLANA:0000546
 name: bipolar neuron
 def: "A type of interneuron that has two neurites, usually an axon and a dendrite, extending from opposite poles of an ovoid cell body." []
+synonym: "bipolar nerve cell" EXACT []
 xref: CL:0000103
 xref: FMA:67282
+xref: ISBN:9780070316607
+xref: PMID:16033796
+xref: PMID:18202849
+xref: PMID:21458439
+xref: PMID:22445864
+xref: PMID:24173799
+xref: PMID:25493551
 is_a: PLANA:0000550 ! interneuron
 relationship: part_of PLANA:0000466 ! subepidermal nerve plexus
 relationship: part_of PLANA:0000467 ! submuscular nerve plexus
@@ -8684,6 +10351,7 @@ id: PLANA:0000547
 name: commissural neuron
 def: "A neuron that has an axon which crosses the midline." []
 xref: CL:0000678
+xref: PMID:22339734
 is_a: PLANA:0000099 ! neuron
 relationship: part_of PLANA:0000097 ! ventral nerve cord
 relationship: part_of PLANA:0000459 ! optic chiasm
@@ -8707,7 +10375,9 @@ id: PLANA:0000549
 name: excitatory motor neuron
 def: "A motor neuron that is capable of directly inducing muscle contraction." []
 comment: In vertebrates, all motor neurons are excitatory, but various types of inhibitory motor neurons exist in invertebrates.
+synonym: "excitatory neuron" EXACT []
 xref: CL:0008014
+xref: PMID:25356635
 is_a: PLANA:0000553 ! motor neuron
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000549 xsd:string
@@ -8759,8 +10429,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000553 x
 id: PLANA:0000556
 name: neurosecretory neuron
 def: "Neuronal cells which synthesize, store and release neurohormones." []
+synonym: "neurosecretory cell" EXACT []
 xref: CL:0000381
 xref: FBbt:00005130
+xref: PMID:24173799
 is_a: PLANA:0000099 ! neuron
 is_a: PLANA:0000105 ! secretory cell
 relationship: part_of PLANA:0000080 ! peripheral nervous system
@@ -8783,8 +10455,11 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000558 x
 id: PLANA:0000559
 name: unipolar neuron
 def: "Neuron with one neurite that extends from the cell body." [PMID:18499291]
+synonym: "unipolar nerve cell" EXACT []
 xref: CL:0000106
 xref: FMA:67278
+xref: ISBN:9780070316607
+xref: PMID:24173799
 is_a: PLANA:0000552 ! sensory neuron
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000559 xsd:string
@@ -8793,8 +10468,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0000559 x
 id: PLANA:0000560
 name: multipolar neuron
 def: "Neuron with an axon and two or more dendrites." [PMID:18499291]
+synonym: "multipolar nerve cell" EXACT []
 xref: CL:0000104
 xref: FMA:67287
+xref: ISBN:9780070316607
 is_a: PLANA:0000099 ! neuron
 relationship: part_of PLANA:0000103 ! central nervous system
 relationship: part_of PLANA:0000466 ! subepidermal nerve plexus
@@ -8825,7 +10502,13 @@ creation_date: 2014-06-25T01:17:43Z
 id: PLANA:0000564
 name: peripheral nervous system neuron
 def: "Any neuron that is part of a peripheral nervous system." []
+synonym: "peripheral neuron" EXACT []
 xref: CL:2000032
+xref: PMID:23123964
+xref: PMID:23954785
+xref: PMID:25254346
+xref: PMID:26711341
+xref: PMID:29184198
 is_a: PLANA:0000099 ! neuron
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
@@ -8872,7 +10555,9 @@ id: PLANA:0001005
 name: basal lamina of epithelium
 def: "Acellular anatomical structure that consists of a thin sheet of fibrous proteins that underlie and support the cells of an epithelium. It separates the cells of an epithelium from any underlying tissue." []
 comment: Depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane from an asexual adult animal. The basal lamina is noted with a magenta bracket. Scale bar is 5um.
+synonym: "basal lamina" EXACT []
 synonym: "basal lamina of connective tissue" EXACT []
+synonym: "basement membrane" EXACT []
 xref: AAO:0010269
 xref: AEO:0000065
 xref: Basal:lamina
@@ -8883,8 +10568,24 @@ xref: EHDAA2:0003065
 xref: FMA:62918
 xref: HAO:0000065
 xref: http://linkedlifedata.com/resource/umls/id/C0085872
+xref: ISBN:9780070316607
 xref: MESH:D001485
 xref: NIF_Subcellular:sao1397492660
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:21664348
+xref: PMID:21828097
+xref: PMID:22479207
+xref: PMID:23079596
+xref: PMID:23405188
+xref: PMID:23903188
+xref: PMID:25017721
+xref: PMID:26057828
+xref: PMID:26457503
+xref: PMID:27551436
+xref: PMID:29100657
+xref: PMID:30383829
+xref: PMID:30962434
 xref: TAO:0001485
 xref: TGMA:0001850
 xref: UMLS:C0085872
@@ -11559,6 +13260,10 @@ creation_date: 2017-04-24T02:59:06Z
 id: PLANA:0004506
 name: testis somatic gonadal cell
 def: "dmd-1+ expressing somatic cells within the testis that promote male GSC maintenance. dmd-1+, ophis-1+ somatic gonadal cells ensheath germ cells via long cytoplasmic processes and promote differentiation." [PMID:23652002, PMID:27163480]
+synonym: "somatic gonadal cell of the testis" EXACT []
+synonym: "somatic niche cell of the testis" EXACT []
+synonym: "somatic testis cell" EXACT []
+xref: PMID:27163480
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: part_of PLANA:0000208 ! testis
@@ -11580,6 +13285,9 @@ creation_date: 2017-07-19T21:05:52Z
 id: PLANA:0004507
 name: ovarian somatic gonadal cell
 def: "ophis+ somatic cells (gh4-, nanos-) in the ovary that may provide trophic support to female germline stem cells and differentiating oogonia." [PMID:27163480]
+synonym: "somatic follicular cell of the ovary" EXACT []
+synonym: "somatic ovarian cell" EXACT []
+xref: PMID:27163480
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -11688,6 +13396,7 @@ creation_date: 2017-07-27T16:26:16Z
 id: PLANA:0004517
 name: blastomere
 def: "An undifferentiated, cycling embryonic cell in Stage 1-5 embryos that expresses piwi-1, numerous adult asexual neoblast enriched genes, and early embryo enriched genes." [PMID:28072387]
+xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000123 ! embryonic cell
@@ -12033,10 +13742,14 @@ creation_date: 2017-04-27T16:39:34Z
 id: PLANA:0007507
 name: obsolete posterior compartment
 def: "OBSOLETE Three dimensional compartment along the anteroposterior axis that is closer to the tail rather than the head, from the anterior boundary of the pharyngeal pouch to the tip of the tail." []
+synonym: "posterior region" EXACT []
+synonym: "posterior tail region" EXACT []
 xref: BSPO:0000090
 xref: FBcv:0000036
 xref: FBql:00005875
+xref: PMID:26556349
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007507 xsd:string
+is_obsolete: true
 created_by: Steph Nowotarski
 creation_date: 2017-04-27T16:39:59Z
 
@@ -12054,7 +13767,11 @@ creation_date: 2017-05-03T13:48:26Z
 id: PLANA:0007509
 name: plasma membrane
 def: "The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." []
+synonym: "cell membrane" EXACT []
+synonym: "cytoplasmic membrane" EXACT []
 xref: GO:0005886
+xref: PMID:20511647
+xref: PMID:27523733
 is_a: PLANA:0007511 ! extracellular organelle
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007509 xsd:string
 created_by: Steph Nowotarski
@@ -12074,6 +13791,11 @@ creation_date: 2017-05-03T18:08:16Z
 id: PLANA:0007512
 name: mitochondrion
 def: "A spherical to rod shaped organelle that generates the majority of a cell's supply of ATP via cellular respiration. Mitochondria have their own genome and consist of outer and inner membranes, the latter folds inward to form cristae. This folding increases the surface area of the membrane and thus increases the space available to produce ATP. The inner and outer membranes are separated by an intermembrane space, and the inner membrane encloses the matrix." []
+synonym: "mitochondria" EXACT []
+xref: PMID:21828097
+xref: PMID:22318224
+xref: PMID:26516985
+xref: PMID:29100657
 is_a: PLANA:0000526 ! membrane-bounded organelle
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007512 xsd:string
@@ -12084,6 +13806,7 @@ creation_date: 2017-05-03T18:19:46Z
 id: PLANA:0007513
 name: endoplasmic reticulum
 def: "Network of interconnected, flattened, and/or tubular membrane, known as cisternae. This membrane is contiguous with the outer nuclear membrane. The endoplasmic reticulum is involved in both protein and lipid synthesis." []
+xref: PMID:30143032
 is_a: PLANA:0000526 ! membrane-bounded organelle
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007513 xsd:string
@@ -12197,6 +13920,30 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obol
 id: PLANA:0007524
 name: anterior pole
 def: "Distinct anterior cluster of muscle cells located at the midline which express notum, follistatin, zic-1, and foxD." [PMID:21566195, PMID:23297191, PMID:24040508, PMID:24415944, PMID:24704339, PMID:24992682]
+synonym: "anterior signaling center" EXACT []
+xref: PMID:18063755
+xref: PMID:21566195
+xref: PMID:23297191
+xref: PMID:23318641
+xref: PMID:23903188
+xref: PMID:23954785
+xref: PMID:24040508
+xref: PMID:24415944
+xref: PMID:24523458
+xref: PMID:24704339
+xref: PMID:24992682
+xref: PMID:25254346
+xref: PMID:25725068
+xref: PMID:26062938
+xref: PMID:26525673
+xref: PMID:27074666
+xref: PMID:27800171
+xref: PMID:28216315
+xref: PMID:28292427
+xref: PMID:28893948
+xref: PMID:29547123
+xref: PMID:29906446
+xref: PMID:30485821
 is_a: PLANA:0000109 ! anatomical compartment subdivision feature
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -12213,6 +13960,18 @@ creation_date: 2017-05-15T18:28:35Z
 id: PLANA:0007525
 name: posterior pole
 def: "Distinct posterior cluster of muscle cells located at the midline which express wnt1." [PMID:18063755] {comment="PMID:21680047"}
+synonym: "posterior regeneration pole" EXACT []
+synonym: "tail tip" EXACT []
+xref: PMID:18063755
+xref: PMID:19805089
+xref: PMID:21566195
+xref: PMID:23318641
+xref: PMID:23903188
+xref: PMID:24415944
+xref: PMID:25725068
+xref: PMID:26062938
+xref: PMID:27074666
+xref: PMID:30485821
 is_a: PLANA:0000109 ! anatomical compartment subdivision feature
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -12228,7 +13987,15 @@ creation_date: 2017-05-15T18:28:47Z
 id: PLANA:0007528
 name: glial cell
 def: "A non-neuronal cell of the nervous system. They not only provide physical support, but also respond to injury, regulate the ionic and chemical composition of the extracellular milieu, guide neuronal migration during development, and exchange metabolites with neurons." [PMID:27612384]
+synonym: "glia" EXACT []
+synonym: "glia cell" EXACT []
 xref: CL:0000125
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:28137894
+xref: PMID:29674431
+xref: PMID:29674432
+xref: PMID:30471994
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000561 ! neuron associated cell (sensu Nematoda and Protostomia)
 relationship: part_of PLANA:0000470 ! neuropil
@@ -12311,6 +14078,7 @@ name: obsolete brain
 def: "OBSOLETE The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell." []
 xref: UBERON:0000955
 property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007537 xsd:string
+is_obsolete: true
 created_by: Steph Nowotarski
 creation_date: 2017-09-05T14:18:21Z
 
@@ -12318,6 +14086,8 @@ creation_date: 2017-09-05T14:18:21Z
 id: PLANA:0007538
 name: adhesion gland
 def: "Specialized epithelial cells located along the dorsoventral margin. Adhesion glands are comprised of three cell types, the viscid and releasing gland cells which penetrate through an epithelial anchor cell and terminate at the epithelial surface." [OCLC:16809160\nPMID\:20865784]
+synonym: "marginal adhesive gland" EXACT []
+xref: ISBN:9780070316607
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000484 ! secretory system
@@ -12402,6 +14172,8 @@ creation_date: 2017-09-05T15:08:48Z
 id: PLANA:0007543
 name: TrpA+ central nervous system neuron
 def: "A subset of TrpA+ neurons, located medially in the cephalic ganglia, whose formation is dependent on function of runt-1 and ap2." [] {comment="PMID:22549959"}
+synonym: "TrpA+ neuron" EXACT []
+xref: PMID:25254346
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000562 ! central nervous system neuron
@@ -12417,6 +14189,9 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007543 x
 id: PLANA:0007544
 name: cintillo+ sensory neuron
 def: "A subset of sensory neurons located along the dorsal head margin." [PMID:12557210]
+synonym: "cintillo+ neuron" EXACT []
+xref: PMID:25254346
+xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000552 ! sensory neuron
 relationship: RO:0001018 PLANA:0000418 ! contained in head
@@ -12428,8 +14203,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007544 x
 id: PLANA:0007545
 name: epidermal compartment
 def: "The outermost region of the deep-superficial axis. This anatomical compartment contains definitive epidermis, basal lamina and subepidermal nerve plexus." []
+synonym: "epidermal region" EXACT []
 synonym: "epidermal surface" EXACT []
 synonym: "epidermis surface" EXACT []
+xref: PMID:27551436
 is_a: BSPO:0000086 ! anatomical compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -12441,7 +14218,7 @@ id: PLANA:0007546
 name: TrpA+ neural progenitor cell
 def: "piwi-1+, runt-1+, ap2+ progenitor neoblasts required for production of TrpA+ neurons." [PMID:25254346] {comment="PMID:22549959"}
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000012 ! neural progenitor
+is_a: PLANA:0000012 ! neural progenitor cell
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 relationship: part_of PLANA:0000103 ! central nervous system
 relationship: part_of PLANA:0000429 ! neoblast
@@ -12490,7 +14267,7 @@ id: PLANA:0007550
 name: serotonergic neural progenitor cell
 def: "piwi-1+, lhx1/5-1+, pitx+ progenitor neoblasts required for specification of tph+ serotonergic neurons." [PMID:23903188, PMID:24131630, PMID:25254346]
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000012 ! neural progenitor
+is_a: PLANA:0000012 ! neural progenitor cell
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 relationship: part_of PLANA:0000103 ! central nervous system
 relationship: part_of PLANA:0000429 ! neoblast
@@ -12510,7 +14287,7 @@ id: PLANA:0007551
 name: klf+ sensory neuron progenitor cell
 def: "piwi-1+, klf+ progenitor neoblasts required for production of cintillo+ sensory neurons." [PMID:25254346]
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000012 ! neural progenitor
+is_a: PLANA:0000012 ! neural progenitor cell
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 relationship: part_of PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000418 ! contained in head
@@ -12523,8 +14300,10 @@ property_value: seeAlso https://planosphere.stowers.org/ontology/PLANA_0007551 x
 id: PLANA:0007552
 name: nu neoblast
 def: "A population of piwi-2+, ston-2+, elav-2+, ptprd-9+ and msi-1+ progenitors that give rise to one or more neuronal (pc-2+, synapsin+) lineages." [PMID:27150006]
+synonym: "vNeoblast" EXACT []
+xref: PMID:27150006
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000012 ! neural progenitor
+is_a: PLANA:0000012 ! neural progenitor cell
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
@@ -12635,7 +14414,7 @@ id: PLANA:0007555
 name: pax3/7+ neural progenitor cell
 def: "piwi-1+, pax3/7+ progenitor neoblasts implicated in the production of DBH+ ventral midline neurons." [PMID: 25254346]
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000012 ! neural progenitor
+is_a: PLANA:0000012 ! neural progenitor cell
 relationship: part_of PLANA:0000103 ! central nervous system
 relationship: part_of PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000418 ! contained in head
@@ -12989,7 +14768,7 @@ synonym: "cardinal body part" RELATED [FMA:7153]
 xref: AAO:0010053
 xref: AEO:0000032
 xref: BILA:0000032
-xref: birnlex:7
+xref: BIRNLEX:7
 xref: Body:part
 xref: CALOHA:TS-2084
 xref: CARO:0000032
@@ -13046,7 +14825,7 @@ subset: upper_level
 xref: AAO:0010841
 xref: AEO:0000000
 xref: BILA:0000000
-xref: birnlex:6
+xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
@@ -13070,7 +14849,7 @@ namespace: uberon
 def: "Anatomical space which contains portions of one or more body substances and is bounded by the internal surface of one maximally connected anatomical structure. Examples: cranial cavity, pharyngeal recess space, nasal cavity, tooth socket, cavity of serous sac, lumen of stomach, lumen of artery, fornix of vagina." [FMA:67552]
 subset: upper_level
 synonym: "cavity" BROAD []
-xref: birnlex:1011
+xref: BIRNLEX:1011
 xref: EMAPA:37442 {source="MA:th"}
 xref: FMA:67552
 xref: galen:Cavity
@@ -13549,7 +15328,7 @@ property_value: IAO:0000232 "This relation differs from the parent relation 'cap
 property_value: IAO:0000232 "This relation is currently used experimentally by the Gene Ontology Consortium. It may not be stable and may be obsoleted at some future time." xsd:string
 is_a: capable_of ! capable of
 inverse_of: RO:0002333 ! enabled by
-transitive_over: has_part ! has part
+transitive_over: has_part ! has_part
 transitive_over: RO:0002017 ! has component activity
 
 [Typedef]
@@ -14112,6 +15891,7 @@ property_value: RO:0001900 RO:0001901
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000004 ! independent continuant
 is_symmetric: true
+is_a: deep_to ! deep to
 is_a: RO:0002163 ! spatially disjoint from
 
 [Typedef]
@@ -14179,7 +15959,6 @@ def: "Further away from the surface of the organism. Thus, the muscular layer is
 def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000107
 is_transitive: true
-is_a: adjacent_to ! adjacent_to
 inverse_of: superficial_to ! superficial_to
 
 [Typedef]
@@ -14314,7 +16093,7 @@ property_value: IAO:0000116 "The definition of 'has component' is still under di
 property_value: IAO:0000232 "For use in recording has_part with a cardinality constraint, because OWL does not permit cardinality constraints to be used in combination with transitive object properties. In situations where you would want to say something like 'has part exactly 5 digit, you would instead use has_component exactly 5 digit." xsd:string
 property_value: RO:0001900 RO:0001901
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:Componency
-is_a: has_part ! has part
+is_a: has_part ! has_part
 
 [Typedef]
 id: has_developmental_contribution_from
@@ -14337,13 +16116,16 @@ name: has part
 name: has_part
 namespace: chebi_ontology
 namespace: external
+namespace: protein
 namespace: quality
+namespace: relationship
 namespace: spatial
 namespace: uberon
 def: "a core relation that holds between a whole and its part" []
 def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
 comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
 xref: BFO:0000051
+xref: OBO_REL:has_part
 property_value: IAO:0000111 "has part" xsd:string
 property_value: IAO:0000112 "my body has part my brain (continuant parthood, two material entities)" xsd:string
 property_value: IAO:0000112 "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)" xsd:string
@@ -14352,6 +16134,7 @@ property_value: IAO:0000116 "Everything has itself as a part. Any part of any pa
 property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)\n\nA continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'." xsd:string
 property_value: IAO:0000118 "has_part" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/BFO
 property_value: RO:0001900 RO:0001901
 is_cyclic: false
 is_transitive: true
@@ -14386,6 +16169,7 @@ namespace: uberon
 def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
 def: "x immediately deep to y iff x deep_to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0001107
+is_a: adjacent_to ! adjacent_to
 is_a: deep_to ! deep to
 inverse_of: immediately_superficial_to ! immediately superficial to
 
@@ -14529,11 +16313,15 @@ id: part_of
 name: part of
 name: part_of
 namespace: external
+namespace: protein
 namespace: quality
+namespace: relationship
 namespace: spatial
 namespace: uberon
 def: "a core relation that holds between a part and its whole" []
+synonym: "part_of" EXACT []
 xref: BFO:0000050
+xref: OBO_REL:part_of
 property_value: IAO:0000111 "is part of" xsd:string
 property_value: IAO:0000112 "my brain is part of my body (continuant parthood, two material entities)" xsd:string
 property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
@@ -14542,6 +16330,7 @@ property_value: IAO:0000116 "Everything is part of itself. Any part of any part 
 property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000118 "part_of" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/BFO
 property_value: RO:0001900 RO:0001901
 property_value: RO:0040042 BFO:0000002
 property_value: RO:0040042 BFO:0000003
@@ -14555,7 +16344,7 @@ property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:PartO
 property_value: seeAlso http://www.obofoundry.org/ro/#OBO_REL:part_of xsd:string
 is_transitive: true
 is_a: overlaps ! overlaps
-inverse_of: has_part ! has part
+inverse_of: has_part ! has_part
 
 [Typedef]
 id: part_of_structure_that_is_capable_of
