@@ -1,0 +1,95 @@
+format-version: 1.2
+data-version: plana/releases/2019-08-20/imports/pato_import.owl
+ontology: plana/imports/pato_import
+
+[Term]
+id: PATO:0000001
+name: quality
+namespace: quality
+alt_id: PATO:0000072
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [PATOC:GVG]
+synonym: "trait" EXACT []
+
+[Term]
+id: PATO:0000133
+name: orientation
+namespace: quality
+alt_id: PATO:0000137
+def: "A spatial quality inhering in a bearer by virtue of the bearer's placement which is defined by the angle between the bearer and an axis, or the angle between the bearer and another object." [PATOC:JE]
+subset: attribute_slim
+subset: relational_slim
+synonym: "amount of rotation" RELATED []
+synonym: "angle" RELATED []
+synonym: "angular magnitude" RELATED []
+synonym: "angular placement" EXACT []
+synonym: "plane angle" RELATED []
+is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0000140
+name: position
+namespace: quality
+alt_id: PATO:0001032
+alt_id: PATO:0001631
+def: "A spatial quality inhering in a bearer by virtue of the bearer's spatial location relative to other objects in the vicinity." [PATOC:GVG]
+subset: attribute_slim
+synonym: "location" EXACT []
+synonym: "placement" EXACT []
+synonym: "relational spatial quality" EXACT []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001018
+name: physical quality
+namespace: quality
+alt_id: PATO:0002079
+def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." [PATOC:GVG]
+subset: attribute_slim
+synonym: "relational physical quality" EXACT []
+xref: Wikipedia:Physical_property
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+namespace: quality
+alt_id: PATO:0001237
+alt_id: PATO:0001238
+def: "A quality which inheres in a continuant." [PATOC:GVG]
+comment: Relational qualities are qualities that hold between multiple entities. Normal (monadic) qualities such as the shape of a eyeball exist purely as a quality of that eyeball. A relational quality such as sensitivity to light is a quality of that eyeball (and connecting nervous system) as it relates to incoming light waves/particles.
+synonym: "monadic quality of a continuant" EXACT []
+synonym: "monadic quality of an object" NARROW []
+synonym: "monadic quality of continuant" NARROW []
+synonym: "multiply inhering quality of a physical entity" EXACT []
+synonym: "quality of a continuant" EXACT []
+synonym: "quality of a single physical entity" EXACT []
+synonym: "quality of an object" EXACT []
+synonym: "quality of continuant" EXACT []
+xref: snap:Quality
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0005024
+name: longitudinal orientation
+namespace: quality
+def: "An orientation quality inhering in a bearer by virtue of the bearer having a position that is directed along the longitudinal or anterior-posterior axis." [PATOC:WD]
+subset: value_slim
+is_a: PATO:0000133 ! orientation
+created_by: wasila.dahdul
+creation_date: 2014-10-17T14:24:19Z
+
+[Typedef]
+id: has_part
+name: has_part
+namespace: quality
+def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
+comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
+xref: BFO:0000051
+
+[Typedef]
+id: part_of
+name: part_of
+namespace: quality
+xref: BFO:0000050
+is_transitive: true
+
