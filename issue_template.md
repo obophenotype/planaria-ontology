@@ -18,7 +18,8 @@ the definition should be understandable even for non-specialists. Include a PubM
 
 ## Suggested parent term
 
-Please look in the hierarchy in a browser such as [OLS](http://www.ebi.ac.uk/ols/ontologies/plana)
+-  Please look in the hierarchy in a browser such as [OLS](http://www.ebi.ac.uk/ols/ontologies/plana)
+-  Your new term should make sense in the following sentence "New Term" is a "Parent Term"
 
 ## Attribution
 
