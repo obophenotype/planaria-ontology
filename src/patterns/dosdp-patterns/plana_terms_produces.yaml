@@ -1,0 +1,21 @@
+pattern_name: plana_terms_produces.yaml
+pattern_iri: https://tbd
+description: "adding ObjectProperty:produces to PLANA terms"
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+
+relations:
+  produces: RO:0003000 
+
+classes:
+  produces_this: BFO:0000040
+
+vars:
+  produces_this: "'produces_this'"
+
+subClassOf:
+    text: "'produces' some  %s"
+    vars:
+      - produces_this
+

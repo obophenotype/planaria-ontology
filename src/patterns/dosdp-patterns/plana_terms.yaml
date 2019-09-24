@@ -11,9 +11,8 @@ classes:
 
 annotationProperties:
 #  dbxref: oboInOwl:hasDbXref
-  depicted_by: foaf:depicted_by
+  depicted_by: foaf:depiction
   image_comment: rdfs:comment
-  term_id: oboInOwl:id
 
 vars:
   parent_entity: "'parent_entity'"
@@ -28,7 +27,6 @@ data_list_vars:
   exact_syn: xsd:string
 
 annotations:
-  
   - annotationProperty: depicted_by
     var: depicted_by
     annotations:
@@ -36,12 +34,6 @@ annotations:
         text: "%s"
         vars:
          - image_comment
-
-  - annotationProperty: term_id
-    text: "%s"
-    vars:
-     - new_entity 
-
 
 subClassOf:
     text: "%s"

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-08-20/imports/pato_import.owl
+data-version: plana/releases/2019-09-24/imports/pato_import.owl
 ontology: plana/imports/pato_import
 
 [Term]
@@ -8,7 +8,25 @@ name: quality
 namespace: quality
 alt_id: PATO:0000072
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [PATOC:GVG]
-synonym: "trait" EXACT []
+
+[Term]
+id: PATO:0000051
+name: morphology
+namespace: quality
+def: "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure." [PATOC:GVG]
+subset: attribute_slim
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000052
+name: shape
+namespace: quality
+alt_id: PATO:0001647
+def: "A morphological quality inhering in a bearer by virtue of the bearer's ratios of distances between its features (points, edges, surfaces and also holes etc)." [PATOC:GVG]
+comment: Shapes are invariant on size transformations. Shapes can be subdivided into 2D and 3D shapes, We can also make a distinction between shapes of complete self-connected objects, and shapes of parts of objects.
+subset: attribute_slim
+synonym: "relational shape quality" EXACT []
+is_a: PATO:0000051 ! morphology
 
 [Term]
 id: PATO:0000133
@@ -69,6 +87,38 @@ xref: snap:Quality
 is_a: PATO:0000001 ! quality
 
 [Term]
+id: PATO:0001875
+name: triangular
+namespace: quality
+def: "A shape quality inhering in a bearer by virtue of the bearer's having three angles." [wordreference:wordreference]
+subset: cell_quality
+subset: value_slim
+synonym: "delta shaped" RELATED []
+synonym: "deltoid" EXACT []
+synonym: "triangle" RELATED []
+synonym: "triangle-shaped" RELATED []
+is_a: PATO:0002006 ! 2-D shape
+
+[Term]
+id: PATO:0001955
+name: cuneate
+namespace: quality
+def: "A shape quality inhering in a bearer by virtue of the bearer's being narrowly triangular, wider at the apex and tapering toward the base." [wordreference:wordreference]
+subset: value_slim
+synonym: "wedge-shaped" EXACT []
+is_a: PATO:0001875 ! triangular
+
+[Term]
+id: PATO:0002006
+name: 2-D shape
+namespace: quality
+def: "A shape that inheres in a 2 dimensional entity, such as a cross section or projection of a 3 dimensional entity." [PATOC:CJM]
+subset: attribute_slim
+synonym: "2-D projection" RELATED []
+synonym: "cross-sectional" RELATED []
+is_a: PATO:0000052 ! shape
+
+[Term]
 id: PATO:0005024
 name: longitudinal orientation
 namespace: quality
@@ -77,6 +127,16 @@ subset: value_slim
 is_a: PATO:0000133 ! orientation
 created_by: wasila.dahdul
 creation_date: 2014-10-17T14:24:19Z
+
+[Term]
+id: PATO:0040012
+name: plug shaped
+namespace: quality
+def: "A shape that is in the form of a plug, being tube-like and expanded on one end." [https://orcid.org/0000-0003-3162-7490]
+synonym: "plug like" EXACT []
+is_a: PATO:0000052 ! shape
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-5208-3432
+property_value: http://purl.org/dc/elements/1.1/date 2018-11-12T18:24:41Z xsd:dateTime
 
 [Typedef]
 id: has_part

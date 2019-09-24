@@ -37,9 +37,9 @@ subClassOf:
 
 =cut
 
-# perl ../split_tsv.pl plana_terms.tsv 12
+# perl ../split_tsv.pl plana_terms.tsv 14
 my $tsv = shift;
-my $prop_start = shift; ## first col=0. most recently it is 10 --> now 12
+my $prop_start = shift; ## first col=0. most recently it is 10 --> now 14
 open TSV, $tsv or die "Cant open $tsv\n";
 
 my $header = <TSV>;
@@ -58,7 +58,7 @@ while (my $line = <TSV>){
   $term_label =~s/\s+$//;
   $terms{$term_id}=$term_label;
 
-  for(my $i=10; $i < @line; $i+=2){
+  for(my $i=$prop_start; $i < @line; $i+=2){
     my @ids = split /\|/, $line[$i];
     my @labels = split /\|/, $line[$i+1];
     warn "$term_id:$term_label has unequal pairing of prop ids and labels" if scalar @ids != scalar @labels;
@@ -74,6 +74,7 @@ while (my $line = <TSV>){
     }
   } 
 } 
+#print Dumper \%props;
 
 foreach my $prop (sort keys %props){
   open OUT, ">plana_terms_$prop.tsv" or die "Can't open plana_terms_$prop.tsv for writing\n";

@@ -1,20 +1,7 @@
 format-version: 1.2
-data-version: plana/releases/2019-08-20/imports/uberon_import.owl
+data-version: plana/releases/2019-09-24/imports/uberon_import.owl
 ontology: plana/imports/uberon_import
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000104>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000105>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0000104> (life cycle)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0000104> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0000105> (life cycle stage)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0000105> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0001062> (anatomical entity)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0001062> owl:Thing)\n\n\n)
-
-[Term]
-id: UBERON:0000015
-name: non-material anatomical boundary
-namespace: uberon
-def: "A non-material anatomical entity of two dimensions. Anatomical boundaries are contiguous structures." [CARO:0000010]
-comment: Except in the case of abstracted fiat boundaries such as the midline plane of an organism, all 2D anatomical entities have a 3 dimensional projection. For example, the surface of the shell of a muscle has a distinct shape that projects into the third dimension. Note that boundaries are 2D structures. They have no thickness - and so can not be sites of gene expression or gene product localisation. For this, use boundary region terms.
-subset: upper_level
-synonym: "anatomical boundary" EXACT [CARO:0000010]
-xref: AEO:0000192
-xref: CARO:0000010
-xref: FMA:50705
-is_a: UBERON:0000466 ! immaterial anatomical entity
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000105>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0000105> (life cycle stage)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0000105> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0001062> (anatomical entity)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0001062> owl:Thing)\n\n\n)
 
 [Term]
 id: UBERON:0000061
@@ -68,45 +55,6 @@ xref: WBls:0000092
 xref: WBls:0000102
 xref: XAO:1000012
 is_a: UBERON:0000105 ! life cycle stage
-relationship: precedes UBERON:0000092 ! post-embryonic stage
-
-[Term]
-id: UBERON:0000092
-name: post-embryonic stage
-namespace: uberon
-def: "stage succeeding embryo, including mature structure" [https://orcid.org/0000-0002-6601-2165]
-synonym: "post-hatching stage" NARROW []
-synonym: "postembryonic" RELATED []
-synonym: "postembryonic stage" EXACT []
-xref: BilaDO:0000003
-xref: OGES:000010
-xref: OGES:000014
-xref: OGES:000024
-xref: WBls:0000022
-xref: WBls:0000093
-xref: WBls:0000103
-is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by UBERON:0000068 ! embryo stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/344
-property_value: UBPROP:0000008 "In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)" xsd:string
-
-[Term]
-id: UBERON:0000104
-name: life cycle
-namespace: uberon
-def: "An entire span of an organism's life, commencing with the zygote stage and ending in the death of the organism." [https://orcid.org/0000-0002-6601-2165]
-subset: upper_level
-synonym: "entire life cycle" EXACT []
-synonym: "entire lifespan" EXACT []
-synonym: "life" EXACT []
-synonym: "lifespan" EXACT []
-xref: FBdv:00000000
-xref: HsapDv:0000001
-xref: MmusDv:0000001
-xref: ncithesaurus:Life
-xref: OGES:000011
-relationship: has_part UBERON:0000105 ! life cycle stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/532
 
 [Term]
 id: UBERON:0000105
@@ -130,7 +78,6 @@ xref: WBls:0000002
 xref: XAO:1000000
 xref: ZFS:0000000
 xref: ZFS:0100000
-relationship: part_of UBERON:0000104 ! life cycle
 property_value: IAO:0000116 "this class represents a proper part of the life cycle of an organism. The class 'life cycle' should not be placed here" xsd:string
 property_value: UBPROP:0000012 "the WBls class 'all stages' belongs here as it is the superclass of other WBls stages" xsd:string
 property_value: UBPROP:0000012 "we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage" xsd:string
@@ -165,51 +112,6 @@ property_value: seeAlso EMAPA:16033
 property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107"}
 
 [Term]
-id: UBERON:0000111
-name: organogenesis stage
-namespace: uberon
-def: "A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." [http://en.wikipedia.org/wiki/Organogenesis]
-synonym: "segmentation stage" RELATED []
-xref: BilaDO:0000010
-xref: BILS:0000111
-xref: HsapDv:0000015
-xref: http://en.wikipedia.org/wiki/Organogenesis
-xref: MmusDv:0000018
-xref: OGES:000005
-xref: OGES:000032
-is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of UBERON:0000068 ! embryo stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/533
-
-[Term]
-id: UBERON:0000464
-name: anatomical space
-namespace: uberon
-def: "Non-material anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more organism substances or anatomical structures." [http://orcid.org/0000-0001-9114-8737]
-subset: upper_level
-synonym: "anatomical spaces" RELATED PLURAL [ZFA:0001643]
-synonym: "lumen" BROAD []
-synonym: "lumen space" EXACT []
-synonym: "space" BROAD []
-xref: AAO:0010110
-xref: AEO:0000005
-xref: BILA:0000005
-xref: CARO:0000005
-xref: EHDAA2:0003005
-xref: FBbt:00007017
-xref: FMA:5897
-xref: HAO:0000005
-xref: http://linkedlifedata.com/resource/umls/id/C0524461
-xref: NCIT:C94478
-xref: TAO:0001668
-xref: TGMA:0001825
-xref: UMLS:C0524461 {source="ncithesaurus:Lumen_Space"}
-xref: VHOG:0001728
-xref: XAO:0003190
-xref: ZFA:0001643
-is_a: UBERON:0000466 ! immaterial anatomical entity
-
-[Term]
 id: UBERON:0000465
 name: material anatomical entity
 namespace: uberon
@@ -229,26 +131,6 @@ xref: VHOG:0001721
 is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
-id: UBERON:0000466
-name: immaterial anatomical entity
-namespace: uberon
-def: "Anatomical entity that has no mass." [http://orcid.org/0000-0001-9114-8737]
-subset: upper_level
-synonym: "immaterial physical anatomical entity" EXACT [FMA:67112]
-xref: AAO:0010265
-xref: AEO:0000007
-xref: BILA:0000007
-xref: CARO:0000007
-xref: EHDAA2:0003007
-xref: FBbt:00007015
-xref: FMA:67112
-xref: HAO:0000007
-xref: TAO:0001835
-xref: TGMA:0001827
-xref: VHOG:0001727
-is_a: UBERON:0001062 ! anatomical entity
-
-[Term]
 id: UBERON:0000475
 name: organism subdivision
 namespace: uberon
@@ -264,7 +146,7 @@ synonym: "cardinal body part" RELATED [FMA:7153]
 xref: AAO:0010053
 xref: AEO:0000032
 xref: BILA:0000032
-xref: BIRNLEX:7
+xref: birnlex:7
 xref: Body:part
 xref: CALOHA:TS-2084
 xref: CARO:0000032
@@ -321,7 +203,7 @@ subset: upper_level
 xref: AAO:0010841
 xref: AEO:0000000
 xref: BILA:0000000
-xref: BIRNLEX:6
+xref: birnlex:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
@@ -345,13 +227,13 @@ namespace: uberon
 def: "Anatomical space which contains portions of one or more body substances and is bounded by the internal surface of one maximally connected anatomical structure. Examples: cranial cavity, pharyngeal recess space, nasal cavity, tooth socket, cavity of serous sac, lumen of stomach, lumen of artery, fornix of vagina." [FMA:67552]
 subset: upper_level
 synonym: "cavity" BROAD []
-xref: BIRNLEX:1011
+xref: birnlex:1011
 xref: EMAPA:37442 {source="MA:th"}
 xref: FMA:67552
 xref: galen:Cavity
 xref: MA:0002447
 xref: NCIT:C34007
-is_a: UBERON:0000464 ! anatomical space
+is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
 id: UBERON:0005423
@@ -367,21 +249,6 @@ xref: FBbt:00007006
 xref: FMA:292313
 xref: MIAA:0000019
 is_a: UBERON:0000465 ! material anatomical entity
-
-[Term]
-id: UBERON:0006983
-name: anatomical point
-namespace: uberon
-def: "Non-material anatomical entity of zero dimension, which forms a boundary of an anatomical line or surface." [FMA:9658, http://orcid.org/0000-0001-9114-8737]
-subset: upper_level
-xref: AAO:0010266
-xref: AEO:0000009
-xref: BILA:0000009
-xref: CARO:0000009
-xref: EHDAA2:0003009
-xref: FMA:9658
-xref: TAO:0001839
-is_a: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0007567
@@ -401,25 +268,13 @@ is_a: UBERON:0000061 ! anatomical structure
 property_value: IAO:0000116 "we define this in terms of active participation in regeneration, rather that capabilities. In this sense it is different from the AEO structure." xsd:string
 property_value: UBPROP:0000001 "A portion of tissue that is regrowing after damage or amputation.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005147", ontology="TAO", source="ZFIN:curator"}
 
-[Term]
-id: UBERON:0007651
-name: anatomical junction
-namespace: uberon
-def: "An anatomical structure that connects two structures" [http://code.google.com/p/caro2/issues/detail?id=15]
-subset: upper_level
-synonym: "anatomical junction" EXACT []
-synonym: "junction" BROAD []
-xref: FMA:5898
-xref: http://www.snomedbrowser.com/Codes/Details/91833003
-is_a: UBERON:0000061 ! anatomical structure
-
 [Typedef]
 id: adjacent_to
 name: adjacent_to
 namespace: uberon
 def: "x adjacent_to y iff: x and y share a boundary" []
 xref: RO:0002220
-is_a: deep_to ! deep_to
+is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: capable_of
@@ -441,6 +296,7 @@ name: deep_to
 namespace: uberon
 def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000107
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: developmentally_contributes_to
@@ -514,7 +370,7 @@ name: immediately_deep_to
 namespace: uberon
 def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001107
-is_a: adjacent_to ! adjacent_to
+is_a: deep_to ! deep_to
 
 [Typedef]
 id: immediately_preceded_by
@@ -535,7 +391,7 @@ id: immediately_superficial_to
 name: immediately_superficial_to
 namespace: uberon
 xref: BSPO:0015014
-is_a: superficial_to ! superficial_to
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: in_lateral_side_of
@@ -576,16 +432,9 @@ synonym: "takes place after" EXACT [Allen:precedes]
 xref: BFO:0000062
 
 [Typedef]
-id: precedes
-name: precedes
-namespace: uberon
-xref: BFO:0000063
-
-[Typedef]
 id: superficial_to
 name: superficial_to
 namespace: uberon
 def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000108
-is_a: adjacent_to ! adjacent_to
 
