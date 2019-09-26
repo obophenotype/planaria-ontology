@@ -9,13 +9,37 @@
       "type" : "PROPERTY",
       "lbl" : "database_cross_reference"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001633",
+      "meta" : {
+        "definition" : {
+          "val" : "A spatial quality inhering in a bearer by virtue of the bearer's being located toward the rear of an organism relative to another entity.",
+          "xrefs" : [ "PATOC:nw" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#relational_slim", "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#mpath_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "posterior (human torso)",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "superior (human head)",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "posterior to"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001875",
       "meta" : {
         "definition" : {
           "val" : "A shape quality inhering in a bearer by virtue of the bearer's having three angles.",
           "xrefs" : [ "wordreference:wordreference" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#cell_quality" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#cell_quality", "http://purl.obolibrary.org/obo/pato#value_slim" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "delta shaped",
@@ -57,11 +81,11 @@
           "xrefs" : [ ]
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
-          "val" : "PATO:0002079"
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "quality"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+          "val" : "PATO:0002079"
         } ]
       },
       "type" : "CLASS",
@@ -140,22 +164,22 @@
           "xrefs" : [ ]
         }, {
           "pred" : "hasExactSynonym",
-          "val" : "placement",
+          "val" : "location",
           "xrefs" : [ ]
         }, {
           "pred" : "hasExactSynonym",
-          "val" : "location",
+          "val" : "placement",
           "xrefs" : [ ]
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
           "val" : "PATO:0001032"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
           "val" : "PATO:0001631"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "quality"
         } ]
       },
       "type" : "CLASS",
@@ -168,6 +192,15 @@
       "id" : "http://www.geneontology.org/formats/oboInOwl#inSubset",
       "type" : "PROPERTY",
       "lbl" : "in_subset"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#mpath_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Pathology slim"
+        } ]
+      },
+      "type" : "PROPERTY"
     }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
       "type" : "PROPERTY",
@@ -198,6 +231,15 @@
       "type" : "PROPERTY",
       "lbl" : "definition"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#value_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Value slim"
+        } ]
+      },
+      "type" : "PROPERTY"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "meta" : {
         "definition" : {
@@ -208,27 +250,18 @@
           "val" : "BFO:0000051"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'."
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "quality"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
           "val" : "has_part"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'."
         } ]
       },
       "type" : "PROPERTY",
       "lbl" : "has_part"
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/pato#value_slim",
-      "meta" : {
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "Value slim"
-        } ]
-      },
-      "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/pato#relational_slim",
       "meta" : {
@@ -311,6 +344,10 @@
           "xrefs" : [ ]
         }, {
           "pred" : "hasExactSynonym",
+          "val" : "quality of an object",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
           "val" : "multiply inhering quality of a physical entity",
           "xrefs" : [ ]
         }, {
@@ -328,10 +365,6 @@
         }, {
           "pred" : "hasNarrowSynonym",
           "val" : "monadic quality of continuant",
-          "xrefs" : [ ]
-        }, {
-          "pred" : "hasExactSynonym",
-          "val" : "quality of an object",
           "xrefs" : [ ]
         } ],
         "basicPropertyValues" : [ {
@@ -364,14 +397,14 @@
           "xrefs" : [ ]
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "Shapes are invariant on size transformations. Shapes can be subdivided into 2D and 3D shapes, We can also make a distinction between shapes of complete self-connected objects, and shapes of parts of objects."
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "quality"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
           "val" : "PATO:0001647"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Shapes are invariant on size transformations. Shapes can be subdivided into 2D and 3D shapes, We can also make a distinction between shapes of complete self-connected objects, and shapes of parts of objects."
         } ]
       },
       "type" : "CLASS",
@@ -406,6 +439,10 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/pato#attribute_slim", "http://purl.obolibrary.org/obo/pato#relational_slim" ],
         "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "angular magnitude",
+          "xrefs" : [ ]
+        }, {
           "pred" : "hasExactSynonym",
           "val" : "angular placement",
           "xrefs" : [ ]
@@ -416,10 +453,6 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "plane angle",
-          "xrefs" : [ ]
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "angular magnitude",
           "xrefs" : [ ]
         }, {
           "pred" : "hasRelatedSynonym",
@@ -463,10 +496,6 @@
       "lbl" : "has_alternative_id"
     } ],
     "edges" : [ {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0001018",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0001241"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001875",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002006"
@@ -474,6 +503,22 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001241",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000052",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000051"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001955",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001875"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002006",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001018",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001241"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000051",
       "pred" : "is_a",
@@ -487,17 +532,9 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0000052",
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001633",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000051"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0001955",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0001875"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0002006",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000140"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000140",
       "pred" : "is_a",
@@ -512,7 +549,7 @@
       "subsets" : [ ],
       "xrefs" : [ ],
       "basicPropertyValues" : [ ],
-      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-09-24/imports/pato_import.owl"
+      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-09-26/imports/pato_import.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ ],

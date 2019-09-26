@@ -1,7 +1,20 @@
 format-version: 1.2
-data-version: plana/releases/2019-09-24/imports/uberon_import.owl
+data-version: plana/releases/2019-09-26/imports/uberon_import.owl
 ontology: plana/imports/uberon_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000105>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0000105> (life cycle stage)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0000105> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0001062> (anatomical entity)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0001062> owl:Thing)\n\n\n)
+
+[Term]
+id: UBERON:0000015
+name: non-material anatomical boundary
+namespace: uberon
+def: "A non-material anatomical entity of two dimensions. Anatomical boundaries are contiguous structures." [CARO:0000010]
+comment: Except in the case of abstracted fiat boundaries such as the midline plane of an organism, all 2D anatomical entities have a 3 dimensional projection. For example, the surface of the shell of a muscle has a distinct shape that projects into the third dimension. Note that boundaries are 2D structures. They have no thickness - and so can not be sites of gene expression or gene product localisation. For this, use boundary region terms.
+subset: upper_level
+synonym: "anatomical boundary" EXACT [CARO:0000010]
+xref: AEO:0000192
+xref: CARO:0000010
+xref: FMA:50705
+is_a: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0000061
@@ -131,6 +144,26 @@ xref: VHOG:0001721
 is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
+id: UBERON:0000466
+name: immaterial anatomical entity
+namespace: uberon
+def: "Anatomical entity that has no mass." [http://orcid.org/0000-0001-9114-8737]
+subset: upper_level
+synonym: "immaterial physical anatomical entity" EXACT [FMA:67112]
+xref: AAO:0010265
+xref: AEO:0000007
+xref: BILA:0000007
+xref: CARO:0000007
+xref: EHDAA2:0003007
+xref: FBbt:00007015
+xref: FMA:67112
+xref: HAO:0000007
+xref: TAO:0001835
+xref: TGMA:0001827
+xref: VHOG:0001727
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
 id: UBERON:0000475
 name: organism subdivision
 namespace: uberon
@@ -233,7 +266,7 @@ xref: FMA:67552
 xref: galen:Cavity
 xref: MA:0002447
 xref: NCIT:C34007
-is_a: UBERON:0001062 ! anatomical entity
+is_a: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0005423
@@ -249,6 +282,21 @@ xref: FBbt:00007006
 xref: FMA:292313
 xref: MIAA:0000019
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0006983
+name: anatomical point
+namespace: uberon
+def: "Non-material anatomical entity of zero dimension, which forms a boundary of an anatomical line or surface." [FMA:9658, http://orcid.org/0000-0001-9114-8737]
+subset: upper_level
+xref: AAO:0010266
+xref: AEO:0000009
+xref: BILA:0000009
+xref: CARO:0000009
+xref: EHDAA2:0003009
+xref: FMA:9658
+xref: TAO:0001839
+is_a: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0007567
@@ -267,6 +315,18 @@ xref: ZFA:0005147
 is_a: UBERON:0000061 ! anatomical structure
 property_value: IAO:0000116 "we define this in terms of active participation in regeneration, rather that capabilities. In this sense it is different from the AEO structure." xsd:string
 property_value: UBPROP:0000001 "A portion of tissue that is regrowing after damage or amputation.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005147", ontology="TAO", source="ZFIN:curator"}
+
+[Term]
+id: UBERON:0007651
+name: anatomical junction
+namespace: uberon
+def: "An anatomical structure that connects two structures" [http://code.google.com/p/caro2/issues/detail?id=15]
+subset: upper_level
+synonym: "anatomical junction" EXACT []
+synonym: "junction" BROAD []
+xref: FMA:5898
+xref: http://www.snomedbrowser.com/Codes/Details/91833003
+is_a: UBERON:0000061 ! anatomical structure
 
 [Typedef]
 id: adjacent_to

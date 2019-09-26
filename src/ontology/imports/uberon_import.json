@@ -178,6 +178,33 @@
       "type" : "PROPERTY",
       "lbl" : "functionally related to"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0007651",
+      "meta" : {
+        "definition" : {
+          "val" : "An anatomical structure that connects two structures",
+          "xrefs" : [ "http://code.google.com/p/caro2/issues/detail?id=15" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "FMA:5898"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasBroadSynonym",
+          "val" : "junction",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "anatomical junction",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "anatomical junction"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002329",
       "meta" : {
         "xrefs" : [ {
@@ -328,6 +355,49 @@
       "type" : "CLASS",
       "lbl" : "material anatomical entity"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000466",
+      "meta" : {
+        "definition" : {
+          "val" : "Anatomical entity that has no mass.",
+          "xrefs" : [ "http://orcid.org/0000-0001-9114-8737" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "EHDAA2:0003007"
+        }, {
+          "val" : "VHOG:0001727"
+        }, {
+          "val" : "TAO:0001835"
+        }, {
+          "val" : "AAO:0010265"
+        }, {
+          "val" : "FMA:67112"
+        }, {
+          "val" : "TGMA:0001827"
+        }, {
+          "val" : "HAO:0000007"
+        }, {
+          "val" : "AEO:0000007"
+        }, {
+          "val" : "BILA:0000007"
+        }, {
+          "val" : "FBbt:00007015"
+        }, {
+          "val" : "CARO:0000007"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "immaterial physical anatomical entity",
+          "xrefs" : [ "FMA:67112" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "immaterial anatomical entity"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "meta" : {
         "xrefs" : [ {
@@ -343,6 +413,36 @@
       },
       "type" : "PROPERTY",
       "lbl" : "has part"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0006983",
+      "meta" : {
+        "definition" : {
+          "val" : "Non-material anatomical entity of zero dimension, which forms a boundary of an anatomical line or surface.",
+          "xrefs" : [ "http://orcid.org/0000-0001-9114-8737", "FMA:9658" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "FMA:9658"
+        }, {
+          "val" : "CARO:0000009"
+        }, {
+          "val" : "AEO:0000009"
+        }, {
+          "val" : "BILA:0000009"
+        }, {
+          "val" : "EHDAA2:0003009"
+        }, {
+          "val" : "AAO:0010266"
+        }, {
+          "val" : "TAO:0001839"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "anatomical point"
     }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002180",
       "meta" : {
@@ -434,9 +534,9 @@
         }, {
           "val" : "FBdv:00005288"
         }, {
-          "val" : "XAO:1000001"
-        }, {
           "val" : "EHDAA:27"
+        }, {
+          "val" : "XAO:1000001"
         }, {
           "val" : "ZFS:0000001"
         }, {
@@ -868,6 +968,36 @@
       "type" : "CLASS",
       "lbl" : "acellular anatomical structure"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0000015",
+      "meta" : {
+        "definition" : {
+          "val" : "A non-material anatomical entity of two dimensions. Anatomical boundaries are contiguous structures.",
+          "xrefs" : [ "CARO:0000010" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "AEO:0000192"
+        }, {
+          "val" : "FMA:50705"
+        }, {
+          "val" : "CARO:0000010"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "anatomical boundary",
+          "xrefs" : [ "CARO:0000010" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Except in the case of abstracted fiat boundaries such as the midline plane of an organism, all 2D anatomical entities have a 3 dimensional projection. For example, the surface of the shell of a muscle has a distinct shape that projects into the third dimension. Note that boundaries are 2D structures. They have no thickness - and so can not be sites of gene expression or gene product localisation. For this, use boundary region terms."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "non-material anatomical boundary"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000062",
       "meta" : {
         "definition" : {
@@ -1012,6 +1142,10 @@
       "lbl" : "anatomical cavity"
     } ],
     "edges" : [ {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0006983",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000466"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0002087",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000062"
@@ -1023,6 +1157,10 @@
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0001062",
       "pred" : "is_a",
       "obj" : "http://www.w3.org/2002/07/owl#Thing"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000015",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000466"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/BSPO_0015014",
       "pred" : "subPropertyOf",
@@ -1036,9 +1174,17 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000050"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000466",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0001062"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0007567",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000061"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0002553",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000466"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000061",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002496",
@@ -1051,6 +1197,10 @@
       "sub" : "http://purl.obolibrary.org/obo/RO_0002215",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0002328"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0007651",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000061"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/BSPO_0000107",
       "pred" : "subPropertyOf",
@@ -1079,10 +1229,6 @@
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000105",
       "pred" : "is_a",
       "obj" : "http://www.w3.org/2002/07/owl#Thing"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0002553",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0001062"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0002329",
       "pred" : "subPropertyOf",
@@ -1125,7 +1271,7 @@
       "subsets" : [ ],
       "xrefs" : [ ],
       "basicPropertyValues" : [ ],
-      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-09-24/imports/uberon_import.owl"
+      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-09-26/imports/uberon_import.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ ],

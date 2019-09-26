@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-09-24/plana-full.owl
+data-version: plana/releases/2019-09-26/plana-full.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -197,8 +197,8 @@ name: antero-dorsal region
 namespace: spatial
 def: "Anatomical region that overlaps the anterior and dorsal regions of a body or body part." [BSPO:wd]
 synonym: "anterodorsal region " EXACT []
-is_a: BSPO:0000071 ! anterior region
-is_a: BSPO:0000079 ! dorsal region
+is_a: BSPO:0000027 ! antero-ventral region
+is_a: BSPO:0000030 ! postero-dorsal region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000055 ! anterior side
 intersection_of: overlaps BSPO:0000063 ! dorsal side
@@ -211,8 +211,8 @@ name: antero-ventral region
 namespace: spatial
 def: "Anatomical region that overlaps the anterior and ventral regions of a body or body part." [BSPO:wd]
 synonym: "anteroventral region " EXACT []
+is_a: BSPO:0000035 ! postero-ventral region
 is_a: BSPO:0000071 ! anterior region
-is_a: BSPO:0000084 ! ventral region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000055 ! anterior side
 intersection_of: overlaps BSPO:0000068 ! ventral side
@@ -239,8 +239,8 @@ name: antero-lateral region
 namespace: spatial
 def: "Anatomical region that overlaps the anterior and lateral regions of a body or body part." [BSPO:wd]
 synonym: "anterolateral region" EXACT []
+is_a: BSPO:0000028 ! postero-lateral region
 is_a: BSPO:0000071 ! anterior region
-is_a: BSPO:0000082 ! lateral region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000055 ! anterior side
 intersection_of: overlaps BSPO:0000066 ! lateral side
@@ -253,7 +253,7 @@ name: postero-dorsal region
 namespace: spatial
 def: "Anatomical region that overlaps the posterior and dorsal regions of the body or body part." [BSPO:wd]
 synonym: "posterodorsal region" EXACT []
-is_a: BSPO:0000072 ! posterior region
+is_a: BSPO:0000035 ! postero-ventral region
 is_a: BSPO:0000079 ! dorsal region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000056 ! posterior side
@@ -385,7 +385,7 @@ name: anterior region
 namespace: spatial
 def: "Anatomical region anteriorly located on the body or body part." [BSPO:wd]
 xref: FBql:00005848
-is_a: BSPO:0000070 ! anatomical region
+is_a: BSPO:0000072 ! posterior region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000055 ! anterior side
 relationship: overlaps BSPO:0000055 ! anterior side
@@ -407,7 +407,7 @@ name: apical region
 namespace: spatial
 def: "Anatomical region located on the apical end on the body or body part." [BSPO:wd]
 xref: FBql:00005854
-is_a: BSPO:0000070 ! anatomical region
+is_a: BSPO:0000074 ! basal region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000057 ! apical side
 relationship: overlaps BSPO:0000057 ! apical side
@@ -429,7 +429,7 @@ name: dorsal region
 namespace: spatial
 def: "Anatomical region dorsally located on the body or body part." [BSPO:wd]
 xref: FBql:00005842
-is_a: BSPO:0000070 ! anatomical region
+is_a: BSPO:0000084 ! ventral region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000063 ! dorsal side
 relationship: overlaps BSPO:0000063 ! dorsal side
@@ -442,7 +442,7 @@ def: "Anatomical region that overlaps the dorsal and lateral regions of a body o
 synonym: "dorsolateral region" EXACT []
 xref: FBql:00005845
 is_a: BSPO:0000079 ! dorsal region
-is_a: BSPO:0000082 ! lateral region
+is_a: BSPO:0000085 ! ventro-lateral region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000063 ! dorsal side
 intersection_of: overlaps BSPO:0000066 ! lateral side
@@ -3755,6 +3755,18 @@ xref: snap:Quality
 is_a: PATO:0000001 ! quality
 
 [Term]
+id: PATO:0001633
+name: posterior to
+namespace: quality
+def: "A spatial quality inhering in a bearer by virtue of the bearer's being located toward the rear of an organism relative to another entity." [PATOC:nw]
+subset: mpath_slim
+subset: relational_slim
+subset: value_slim
+synonym: "posterior (human torso)" EXACT []
+synonym: "superior (human head)" EXACT []
+is_a: PATO:0000140 ! position
+
+[Term]
 id: PATO:0001875
 name: triangular
 namespace: quality
@@ -3809,84 +3821,85 @@ property_value: http://purl.org/dc/elements/1.1/date 2018-11-12T18:24:41Z xsd:da
 [Term]
 id: PLANA:0000001
 name: Stage 1
-def: "D0-D2. Zygote and dispersed blastomere cleavage in a yolk syncytium. Days 0-2 post-egg capsule deposition at 20˚C." []
+def: "Zygote and dispersed blastomere cleavage in a yolk syncytium. Days 0-2 post-egg capsule deposition at 20˚C." []
 xref: PMID:28072387
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: part_of UBERON:0000106 ! zygote stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+is_a: UBERON:0000068 ! embryo stage
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000002
 name: Stage 2
-def: "D2-D3. Sphere formation. A fraction of the blastomeres differentiate into temporary embryonic tissues that provide form and function to the embryo. Undifferentiated blastomeres remain in the embryonic wall. Days 2-3 post-egg capsule deposition at 20˚C." []
+def: "Sphere formation. A fraction of the blastomeres differentiate into temporary embryonic tissues that provide form and function to the embryo. Undifferentiated blastomeres remain in the embryonic wall. Days 2-3 post-egg capsule deposition at 20˚C." []
+synonym: "protosphere" EXACT []
 xref: PMID:28072387
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: part_of UBERON:0000068 ! embryo stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+is_a: UBERON:0000068 ! embryo stage
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/Stage2.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 2 embryo. Scale bar = 100um"}
 
 [Term]
 id: PLANA:0000003
 name: Stage 3
-def: "D2-D4. Dispersed blastomere cleavage in the embryonic wall of nascent spheres. Yolk ingestion into the gut cavity. Days 2-4 post-egg capsule deposition at 20˚C." []
+def: "Dispersed blastomere cleavage in the embryonic wall of nascent spheres. Yolk ingestion into the gut cavity. Days 2-4 post-egg capsule deposition at 20˚C." []
 xref: PMID:28072387
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: part_of UBERON:0000068 ! embryo stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+is_a: UBERON:0000068 ! embryo stage
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/Stage3.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 3 embryo. Scale bar = 100um"}
 
 [Term]
 id: PLANA:0000004
 name: Stage 4
-def: "D3-D5. Dispersed blastomere cleavage in the embryonic wall. Yolk ingestion into the gut cavity. Early embryonic gut formation. Days 3-5 post-egg capsule deposition at 20˚C." []
+def: "Dispersed blastomere cleavage in the embryonic wall. Yolk ingestion into the gut cavity. Early embryonic gut formation. Days 3-5 post-egg capsule deposition at 20˚C." []
 xref: PMID:28072387
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: part_of UBERON:0000068 ! embryo stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+is_a: UBERON:0000068 ! embryo stage
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage4.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 4 embryo. Scale bar = 100um"}
 
 [Term]
 id: PLANA:0000005
 name: Stage 5
-def: "D5-D7. Organogenesis onset. Downregulation of early embryo enriched transcripts and birth of adult lineages within the blastomere population. Early embryonic gut formation continues. Yolk ingestion into the gut cavity. Days 5-7 post-egg capsule deposition at 20˚C." []
+def: "Organogenesis onset. Downregulation of early embryo enriched transcripts and birth of adult lineages within the blastomere population. Early embryonic gut formation continues. Yolk ingestion into the gut cavity. Days 5-7 post-egg capsule deposition at 20˚C." []
 xref: PMID:28072387
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: part_of UBERON:0000068 ! embryo stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+is_a: UBERON:0000068 ! embryo stage
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage5.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo. Scale bar = 100um"}
 
 [Term]
 id: PLANA:0000006
 name: Stage 6
-def: "D7-D9. Organogenesis and morphogenesis. Definitive organ formation. Temporary embryonic cell types degenerate. Embryo elongation. Days 7-9 post-egg capsule deposition at 20˚C." []
+def: "Organogenesis and morphogenesis. Definitive organ formation. Temporary embryonic cell types degenerate. Embryo elongation. Days 7-9 post-egg capsule deposition at 20˚C." []
 xref: PMID:28072387
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: part_of UBERON:0000068 ! embryo stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+is_a: UBERON:0000068 ! embryo stage
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage6.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 6 embryo. Scale bar = 100um"}
 
 [Term]
 id: PLANA:0000007
 name: Stage 7
-def: "D9-D11. Organogenesis and organ maturation continues. Embryos elongated. Eyes just visible. Onset of gliding motility. Days 9-11 post-egg capsule deposition at 20˚C." []
-synonym: "hatchling" EXACT []
-synonym: "stage 7 embryo" EXACT []
+def: "Organogenesis and organ maturation continues. Embryos elongated. Eyes just visible. Onset of gliding motility. Days 9-11 post-egg capsule deposition at 20˚C." []
 xref: PMID:28072387
 xref: PMID:28812561
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: part_of UBERON:0000068 ! embryo stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+is_a: UBERON:0000068 ! embryo stage
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage7.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 7 embryo. Scale bar = 100um"}
 
 [Term]
 id: PLANA:0000008
 name: Stage 8
-def: "D13-D15. Organogenesis and organ maturation continues. Hatching. Days 13-15 post-egg capsule deposition at 20˚C." []
+def: "Organogenesis and organ maturation continues. Hatching. Days 13-15 post-egg capsule deposition at 20˚C." []
 synonym: "hatchling" EXACT []
+synonym: "newborn hatchling" EXACT []
 xref: PMID:28072387
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+is_a: UBERON:0000068 ! embryo stage
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage8.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 8 embryo. Scale bar = 100um"}
 
 [Term]
@@ -4253,7 +4266,6 @@ is_a: PLANA:0000033 ! epidermal progenitor cell
 relationship: develops_from PLANA:0000035 ! Category 3 cell
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000054 ! dorsal epidermis
-relationship: part_of PLANA:0000096 ! ventral region of the epidermal compartment
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
@@ -4344,7 +4356,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/protonephridia.png {comment="http://purl.obolibrary.org/obo/Depicted by field contains a whole-mount acetylated tubulin (AcTub) staining. Scale bars_ 500 Œºm. Inset to right shows depth-coded projection of AcTub staining. Superficial structures are in blue and deeper structures are in red. Scale bars: 50 Œºm"}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/protonephridia.png {comment="http://purl.obolibrary.org/obo/Depicted by field contains a whole-mount acetylated tubulin (AcTub) staining. Scale bars_ 500 um. Inset to right shows depth-coded projection of AcTub staining. Superficial structures are in blue and deeper structures are in red. Scale bars: 50 um"}
 
 [Term]
 id: PLANA:0000021
@@ -4364,7 +4376,6 @@ is_a: PLANA:0000106 ! ciliated epithelial cell
 relationship: develops_from PLANA:0000018 ! Category 4 cell
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000054 ! dorsal epidermis
-relationship: part_of PLANA:0000096 ! ventral region of the epidermal compartment
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
@@ -4408,7 +4419,7 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/tempo
 [Term]
 id: PLANA:0000024
 name: Smed asexual biotype
-def: "Obligate asexual animals that reproduce solely through fission followed by whole body regeneration. Asexual Smed are stable diploids that harbor a chromosome translocation, making them karyotypically distinct from sexual Smed." []
+def: "Asexual animal strains that reproduce solely through fission followed by whole body regeneration. Asexual Smed are stable diploids that harbor a chromosome translocation, making them karyotypically distinct from sexual Smed." []
 synonym: "asexual" EXACT []
 synonym: "asexual adult" EXACT []
 synonym: "asexual biotype" EXACT []
@@ -4600,7 +4611,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000027
 name: Smed sexual biotype
-def: "Cross-fertilizing hemaphrodites that reproduce sexually and do not undergo fission. After mating, each parent lays an egg capsule containing one or more embryos. Sexual Smed are stable diploids." []
+def: "Strains of cross-fertilizing hemaphrodites that reproduce sexually and do not undergo fission. After mating, each parent lays an egg capsule containing one or more embryos. Sexual Smed are stable diploids." []
 synonym: "hermaphroditic biotype" EXACT []
 synonym: "sexual" EXACT []
 synonym: "sexual hermaphrodite" EXACT []
@@ -4762,7 +4773,7 @@ id: PLANA:0000032
 name: dorsal midline
 def: "The median line/plane of bilateral symmetry along the anteroposterior axis on the dorsal surface of the animal." []
 synonym: "dorsal region of midline" EXACT []
-is_a: PLANA:0000030 ! midline
+is_a: PLANA:0000038 ! ventral midline
 intersection_of: PLANA:0000030 ! midline
 intersection_of: has_component BSPO:0000079 ! dorsal region
 relationship: has_component BSPO:0000079 ! dorsal region
@@ -5499,26 +5510,12 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000051
 name: direct development
-def: "Embryonic development producing juvenile animals with body plans and feeding behavior similar to adults. Juveniles grow and mature into adults without undergoing metamorphosis." []
-xref: PMID:12888018
-is_a: GO:0048856 ! anatomical structure development
-is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+is_obsolete: true
 
 [Term]
 id: PLANA:0000052
 name: dispersed cleavage
-def: "A derived form of early embryonic cleavage present in ectolecithal embryos. Blastomeres divide asynchronously within a yolk syncytium, and division progeny do not remain in direct contact with one another." []
-xref: https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000001.md
-xref: OCLC:20423827
-xref: OCLC:42792751
-xref: OCLC:464776945
-xref: OCLC:82522822
-xref: PMID:15599763
-xref: PMID:19197510
-is_a: GO:0048856 ! anatomical structure development
-is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+is_obsolete: true
 
 [Term]
 id: PLANA:0000053
@@ -5551,7 +5548,7 @@ name: dorsal epidermis
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." []
 synonym: "dorsal epithelium" EXACT []
 synonym: "dorsal region of definitive epidermis" EXACT []
-is_a: PLANA:0000034 ! definitive epidermis
+is_a: PLANA:0000096 ! ventral region of the epidermal compartment
 intersection_of: PLANA:0000034 ! definitive epidermis
 intersection_of: has_component BSPO:0000079 ! dorsal region
 relationship: has_component BSPO:0000079 ! dorsal region
@@ -5587,8 +5584,7 @@ def: "Turbellarian (freshwater flatworm) embryos that undergo a modified form of
 xref: https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000002.md
 xref: PMID:22074376
 xref: PMID:27149082
-is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
-relationship: part_of GO:0009790 ! embryo development
+is_a: PLANA:0000116 ! embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5698,8 +5694,7 @@ name: extraembryonic structure
 def: "A multicellular anatomical structure that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis." []
 xref: UBERON:0000478
 is_a: UBERON:0005423 ! developing anatomical structure
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5728,7 +5723,7 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/flame
 [Term]
 id: PLANA:0000065
 name: flame cell
-def: "Terminal structure of the protonephridia unit, capping the proximal tubules. Flame cells are defined by the ‚Äòfiltration weir‚Äô, or filtration diaphragm, which consists of closely apposed strands of cytoplasm surrounding a central cilia bundle, and by numerous microvilli between weir and cilia. Positive for acetyated tubulin." []
+def: "Terminal structure of the protonephridia unit, capping the proximal tubules. Flame cells are defined by the filtration weir‚ or filtration diaphragm, which consists of closely apposed strands of cytoplasm surrounding a central cilia bundle, and by numerous microvilli between weir and cilia. Positive for acetyated tubulin." []
 xref: ISBN:9780070316607
 xref: OCLC:16809160
 xref: PMID:17670787
@@ -5833,8 +5828,7 @@ relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0000041 ! aboral hemisphere
 relationship: part_of PLANA:0000058 ! embryonic digestive system
 relationship: part_of PLANA:0000076 ! oral hemisphere
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
@@ -6171,15 +6165,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000086
 name: protosphere
-def: "Stage 2 embryo undergoing the process of sphere formation." []
-xref: PMID:28072387
-is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
-relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
-relationship: RO:0002497 PLANA:0000002 ! existence ends during or before Stage 2
-relationship: RO:0003001 PLANA:0000091 ! produced by sphere formation
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+is_obsolete: true
 
 [Term]
 id: PLANA:0000087
@@ -6311,18 +6297,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000091
 name: sphere formation
-def: "Generation of a multilayered spherical embryo comprised of temporary extraembryonic tissues and undifferentiated blastomeres." []
-xref: OCLC:20423827
-xref: OCLC:464776945
-xref: PMID:12888018
-xref: PMID:15599763
-xref: PMID:28072387
-is_a: BFO:0000002 ! continuant
-is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
-relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
-relationship: RO:0002497 PLANA:0000002 ! existence ends during or before Stage 2
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+is_obsolete: true
 
 [Term]
 id: PLANA:0000092
@@ -6515,13 +6490,14 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000098
 name: zygote
-def: "Diploid cell resulting from the fusion of male and female gametes at fertilization. [ The_Dictionary_of_Cell_and_Molecular_Biology:Third_Edition ]. Diploid cell produced by the fusion of sperm cell nucleus and egg cell." []
+def: "Diploid cell resulting from the fusion of male and female gametes at fertilization. [The_Dictionary_of_Cell_and_Molecular_Biology:Third_Edition ]." []
 xref: BTO:0000854
 xref: PMID:28812561
 is_a: BFO:0000002 ! continuant
-is_a: PLANA:0000117 ! embryonic structure
+is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
+is_a: UBERON:0000068 ! embryo stage
 relationship: existence_starts_during_or_after PLANA:0000001 ! Stage 1
-relationship: existence_starts_during_or_after UBERON:0000106 ! zygote stage
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000001 ! existence overlaps Stage 1
 relationship: RO:0002497 PLANA:0000001 ! existence ends during or before Stage 1
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -6750,7 +6726,6 @@ xref: OCLC:16809160
 is_a: PLANA:0000430 ! epithelial cell component
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000054 ! dorsal epidermis
-relationship: part_of PLANA:0000096 ! ventral region of the epidermal compartment
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -6851,9 +6826,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000112
 name: Schmidtea mediterranea developmental term
-def: "A term used to describe a developmental process during Schmidtea mediterranea embryogenesis." []
-xref: https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000000.md
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+is_obsolete: true
 
 [Term]
 id: PLANA:0000113
@@ -6910,8 +6883,7 @@ name: embryonic structure
 def: "Anatomical structure that is part of an embryo." []
 xref: UBERON:0002050
 is_a: UBERON:0005423 ! developing anatomical structure
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -7006,8 +6978,7 @@ name: embryonic cell
 def: "A cell of the embryo." []
 xref: CL:0002321
 is_a: PLANA:0000499 ! cell
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -7038,7 +7009,7 @@ name: reproductive system
 def: "Anatomical system that has as its parts the organs concerned with reproduction." []
 xref: UBERON:0000990
 is_a: PLANA:0000114 ! anatomical system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -7052,7 +7023,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000106 ! ciliated epithelial cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0004532 ! oviduct epithelium
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7074,7 +7045,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000106 ! ciliated epithelial cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0004533 ! sperm duct epithelium
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7086,6 +7057,13 @@ relationship: RO:0001018 PLANA:0007554 ! contained in parenchyma
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000129
+name: obsolete anatomical structure
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0000061
+is_obsolete: true
 
 [Term]
 id: PLANA:0000130
@@ -7122,15 +7100,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000132
 name: gametogenesis
-def: "The production of haploid germ cells from diploid precursor cells through meiosis." []
-xref: PMID:19022767
-is_a: GO:0048609 ! multicellular organismal reproductive process
-is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
-relationship: part_of GO:0019953 ! sexual reproduction
-relationship: part_of PLANA:0000214 ! juvenile
-relationship: part_of PLANA:0004503 ! adult hermaphrodite
-relationship: PLANA:0007536 PLANA:0004503 ! adult hermaphrodite
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+is_obsolete: true
 
 [Term]
 id: PLANA:0000133
@@ -7226,10 +7196,13 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000138
-name: hyman vesicle
+name: Hyman vesicle
 def: "PROG-2-5 positive granules that range in size from 0.5um to 1um present in epithelia and epithelia progenitor cells. These are distinct from rhabdites." []
 xref: PMID:29100657
-is_a: GO:0005575 ! cellular_component
+is_a: BFO:0000002 ! continuant
+is_a: PLANA:0002137 ! intracellular granule
+relationship: part_of PLANA:0000034 ! definitive epidermis
+relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/hymanvesicle.png {comment="Depcited by is an immuno electron microscopy image of a mesenchymal cell labeled with anti-PROG-2-5 immuno-gold. Large rhod-shaped granules resembling rhabdites are found in the same cell labeled with PROG-2-5+ oval-shaped granules (pseudo-colored in blue). Higher magnification of the boxed region is shown in the panel below. e, endoplasmic reticulum; m, mitochondria; n, nucleus; rh, rhabdite. Scale bar, 1 um."}
 
 [Term]
@@ -7248,7 +7221,7 @@ id: PLANA:0000141
 name: dorsal region of the whole animal
 def: "Three dimensional compartment along the dorsoventral axis that is above the anteroposterior axis, containing the eyes." []
 synonym: "dorsal region of whole organism" EXACT []
-is_a: PLANA:0000136 ! whole organism
+is_a: PLANA:0000143 ! ventral compartment of the whole animal
 intersection_of: PLANA:0000136 ! whole organism
 intersection_of: has_component BSPO:0000079 ! dorsal region
 relationship: has_component BSPO:0000079 ! dorsal region
@@ -7289,7 +7262,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
@@ -7319,7 +7292,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
@@ -7382,7 +7355,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7412,7 +7385,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
@@ -7444,7 +7417,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -7496,6 +7469,13 @@ relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000209
+name: obsolete developing anatomical structure
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0005423
+is_obsolete: true
+
+[Term]
 id: PLANA:0000211
 name: primitive ectoderm cell
 def: "Primitive ectoderm cells differentiate from the blastomere population, exit the cell cycle and interact to boud the embryo during Stage 2." []
@@ -7541,7 +7521,7 @@ id: PLANA:0000214
 name: juvenile
 def: "A sexually immature member of the Schmidtea mediterranea sexuallly reproducing biotype." []
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -7550,7 +7530,7 @@ name: reproductive system product
 def: "Products of the reproductive system include gametes, zygotes, yolk cells and egg capsules." []
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000061 ! anatomical structure
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0003001 PLANA:0000126 ! produced by reproductive system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -7599,7 +7579,7 @@ xref: UBERON:0000991
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -7644,7 +7624,7 @@ is_a: PLANA:0000228 ! male germ cell
 relationship: develops_from PLANA:0000218 ! male primordial germ cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000208 ! testis
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7673,7 +7653,7 @@ is_a: PLANA:0000120 ! progenitor cell
 is_a: PLANA:0000228 ! male germ cell
 relationship: develops_from PLANA:0000219 ! male germline stem cell
 relationship: part_of PLANA:0000208 ! testis
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7705,7 +7685,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000228 ! male germ cell
 relationship: develops_from PLANA:0000220 ! spermatogonium
 relationship: part_of PLANA:0000208 ! testis
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7733,7 +7713,7 @@ xref: PMID:27330085
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000228 ! male germ cell
 relationship: part_of PLANA:0000208 ! testis
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7768,7 +7748,7 @@ is_a: PLANA:0000229 ! female germ cell
 relationship: develops_from PLANA:0000135 ! female primordial germ cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000204 ! ovary
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
@@ -7794,7 +7774,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0001018 PLANA:0007504 ! contained in dorsal compartment
@@ -7807,21 +7787,12 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000225
 name: oviparity
-def: "A reproductive strategy in which eggs are laid, with most embryonic development occurring outside of the parent." []
-xref: PMID:19022767
-is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
-relationship: part_of GO:0009790 ! embryo development
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+is_obsolete: true
 
 [Term]
 id: PLANA:0000226
 name: cross-fertilization
-def: "Fertilization of an oocyte by sperm from a different individual. Reciprocal exchange of sperm occurs during Schmidtea mediterranea copulation." []
-xref: PMID:19022767
-xref: PMID:28812561
-is_a: GO:0007338 ! single fertilization
-is_a: PLANA:0000112 ! Schmidtea mediterranea developmental term
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+is_obsolete: true
 
 [Term]
 id: PLANA:0000227
@@ -7865,7 +7836,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
@@ -7898,7 +7869,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
@@ -7927,7 +7898,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000427 ! multicellular anatomical structure
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -7949,7 +7920,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -7966,7 +7937,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -8015,7 +7986,7 @@ is_a: PLANA:0000229 ! female germ cell
 relationship: develops_from PLANA:0000223 ! oogonial stem cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000204 ! ovary
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
@@ -8089,6 +8060,34 @@ relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000242
+name: obsolete anatomical cavity
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0002553
+is_obsolete: true
+
+[Term]
+id: PLANA:0000400
+name: obsolete anatomical entity
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0001062
+is_obsolete: true
+
+[Term]
+id: PLANA:0000401
+name: obsolete immaterial anatomical entity
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0000466
+is_obsolete: true
+
+[Term]
+id: PLANA:0000402
+name: obsolete anatomical point
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0006983
+is_obsolete: true
 
 [Term]
 id: PLANA:0000404
@@ -8278,6 +8277,13 @@ relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/parapharyngealpouchsurface.png {comment="The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the pharynx and surrounding tissues. Anterior is up. The parapharyngeal pouch surface is marked by black arrows. Scale bar is 200um."}
 
 [Term]
+id: PLANA:0000416
+name: obsolete organism subdivision
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0000475
+is_obsolete: true
+
+[Term]
 id: PLANA:0000417
 name: definitive organism subdivision
 def: "Anatomical structure which is a subdivision of a whole adult or juvenile organism, consisting of components of multiple anatomical systems." []
@@ -8363,9 +8369,15 @@ id: PLANA:0000423
 name: embryonic subdivision
 def: "Anatomical structure which is a subdivision of a whole developing/ embryonic organism, consisting of components of multiple anatomical systems." []
 is_a: UBERON:0000475 ! organism subdivision
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000424
+name: obsolete material anatomical entity
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0000465
+is_obsolete: true
 
 [Term]
 id: PLANA:0000425
@@ -8373,6 +8385,13 @@ name: definitive anatomical structure
 def: "Anatomical structure present in juvenile and adult planaria." []
 is_a: UBERON:0000061 ! anatomical structure
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000426
+name: obsolete acellular anatomical structure
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0000476
+is_obsolete: true
 
 [Term]
 id: PLANA:0000427
@@ -8597,6 +8616,20 @@ xref: PMID:29547123
 xref: UBERON:0000062
 is_a: PLANA:0000427 ! multicellular anatomical structure
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000432
+name: obsolete regenerating anatomical structure
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0007567
+is_obsolete: true
+
+[Term]
+id: PLANA:0000433
+name: obsolete cellular component
+comment: replacing with GO term
+property_value: IAO:0000125 GO:0005575
+is_obsolete: true
 
 [Term]
 id: PLANA:0000459
@@ -9175,6 +9208,20 @@ is_a: PLANA:0000485 ! gland cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000489
+name: obsolete anatomical line
+comment: replacing with CARO term
+property_value: IAO:0000125 CARO:0000008
+is_obsolete: true
+
+[Term]
+id: PLANA:0000490
+name: obsolete anatomical plane
+comment: replacing with BSPO term
+property_value: IAO:0000125 BSPO:0000400
+is_obsolete: true
+
+[Term]
 id: PLANA:0000492
 name: nerve plexus
 def: "Anatomical junction where subdivisions of two or more neural trees interconnect with one another to form a network through which nerve fibers of the constituent nerve trees become regrouped; together with other nerve plexuses, nerves and ganglia, it constitutes the peripheral nervous system. Examples: cervical nerve plexus, brachial nerve plexus, sacral nerve plexus[FMA]." []
@@ -9233,6 +9280,27 @@ xref: UBERON:0005970
 is_a: PLANA:0000493 ! nervous system commissure
 relationship: part_of PLANA:0000044 ! cephalic ganglia
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000496
+name: obsolete anatomical boundary
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0000015
+is_obsolete: true
+
+[Term]
+id: PLANA:0000497
+name: obsolete anatomical junction
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0007651
+is_obsolete: true
+
+[Term]
+id: PLANA:0000498
+name: obsolete main body axis
+comment: replacing duplicate PLANA term
+property_value: IAO:0000125 PLANA:0007519
+is_obsolete: true
 
 [Term]
 id: PLANA:0000499
@@ -9327,7 +9395,7 @@ def: "All of the contents of a cell excluding the plasma membrane and nucleus, b
 xref: GO:0005737
 xref: PMID:16890156
 xref: PMID:28976975
-is_a: GO:0005575 ! cellular_component
+is_a: PLANA:0000509 ! intracellular part
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9335,7 +9403,7 @@ id: PLANA:0000513
 name: cytoplasmic part
 def: "Any constituent part of the cytoplasm, all of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." []
 xref: GO:0044444
-is_a: PLANA:0000510 ! cytoplasm
+is_a: PLANA:0000509 ! intracellular part
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9375,7 +9443,8 @@ id: PLANA:0000522
 name: membrane part
 def: "Any constituent part of a membrane, a double layer of lipid molecules that encloses all cells, and, in eukaryotes, many organelles; may be a single or double lipid bilayer; also includes associated proteins." []
 xref: GO:0044425
-is_a: PLANA:0000520 ! membrane
+is_a: GO:0005575 ! cellular_component
+relationship: part_of PLANA:0000520 ! membrane
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9431,7 +9500,8 @@ id: PLANA:0000532
 name: nuclear part
 def: "Any constituent part of the nucleus, a membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated." []
 xref: GO:0044428
-is_a: PLANA:0000529 ! nucleus
+is_a: PLANA:0000509 ! intracellular part
+relationship: part_of PLANA:0000529 ! nucleus
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9653,12 +9723,8 @@ name: adherens junction
 def: "A cell junction at which anchoring proteins (cadherins or integrins) extend through the plasma membrane and are attached to actin filaments." []
 xref: GO:0005912
 xref: PMID:26556349
-is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000506 ! cell junction
 relationship: part_of PLANA:0000508 ! cell-cell adhesion
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9798,7 +9864,7 @@ xref: PMID:28495872
 is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000099 ! neuron
-relationship: PLANA:0007536 PLANA:0000099 ! neuron
+relationship: PLANA:0007536 PLANA:0000099 ! specific_to neuron
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9857,7 +9923,7 @@ xref: ISBN:9780070316607
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of PLANA:0000234 ! seminal vesicle
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -10087,8 +10153,8 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
 relationship: part_of PLANA:0000429 ! neoblast
 relationship: part_of PLANA:0004517 ! blastomere
-relationship: PLANA:0007536 PLANA:0000429 ! neoblast
-relationship: PLANA:0007536 PLANA:0004517 ! blastomere
+relationship: PLANA:0007536 PLANA:0000429 ! specific_to neoblast
+relationship: PLANA:0007536 PLANA:0004517 ! specific_to blastomere
 relationship: RO:0001018 PLANA:0000041 ! contained in aboral hemisphere
 relationship: RO:0001018 PLANA:0000060 ! contained in embryonic wall
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
@@ -10125,7 +10191,6 @@ xref: PMID:29364871
 xref: PMID:30143032
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
 is_a: PLANA:0000532 ! nuclear part
-relationship: part_of PLANA:0000529 ! nucleus
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10165,8 +10230,7 @@ id: PLANA:0002025
 name: commissure
 def: "A bundle of nerve fibers crossing from one side to the other side of the brain or spinal cord." []
 xref: NCIT:C32349
-is_a: PLANA:0000037 ! definitive tissue
-is_a: PLANA:0000501 ! cell projection
+is_a: PLANA:0000113 ! tissue
 relationship: part_of PLANA:0000103 ! central nervous system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -10194,7 +10258,7 @@ xref: PMID:28495872
 is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000099 ! neuron
-relationship: PLANA:0007536 PLANA:0000099 ! neuron
+relationship: PLANA:0007536 PLANA:0000099 ! specific_to neuron
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10336,7 +10400,13 @@ xref: PMID:27240733
 xref: PMID:8812261
 is_a: BFO:0000002 ! continuant
 is_a: GO:0005575 ! cellular_component
+relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0002058 ! melanosome
+relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
+relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
+relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
+relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10395,8 +10465,7 @@ xref: PMID:4190073
 is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000090 ! sperm
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000090 ! sperm
+relationship: PLANA:0007536 PLANA:0000090 ! specific_to sperm
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10419,7 +10488,7 @@ is_a: BFO:0000040 ! material entity
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -10437,7 +10506,7 @@ xref: PMID:22318224
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000208 ! testis
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -10486,6 +10555,7 @@ name: glycogen granule
 def: "Cytoplasmic bead-like structures of animal cells, visible by electron microscope. Each granule is a functional unit with the biosynthesis and catabolism of glycogen being catalyzed by enzymes bound to the granule surface." []
 xref: GO:0042587
 xref: PMID:30608231
+is_a: PLANA:0002137 ! intracellular granule
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10610,7 +10680,7 @@ def: "A germ cell undergoing meiosis." []
 xref: PMID:27330085
 is_a: PLANA:0000227 ! germ cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -10663,7 +10733,7 @@ xref: PMID:29547123
 is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000099 ! neuron
-relationship: PLANA:0007536 PLANA:0000099 ! neuron
+relationship: PLANA:0007536 PLANA:0000099 ! specific_to neuron
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10694,7 +10764,7 @@ name: nuclear envelope
 def: "The double lipid bilayer enclosing the nucleus and separating its contents from the rest of the cytoplasm; includes the intermembrane space, a gap of width 20-40 nm (also called the perinuclear space)." []
 xref: GO:0005635
 xref: https://doi.org/10.1101/279364
-is_a: PLANA:0000522 ! membrane part
+is_a: PLANA:0000520 ! membrane
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10704,6 +10774,7 @@ def: "The inner, i.e. lumen-facing, lipid bilayer of the nuclear envelope." []
 synonym: "inner leaflet" EXACT []
 xref: GO:0005637
 is_a: PLANA:0000522 ! membrane part
+relationship: part_of PLANA:0002064 ! nuclear envelope
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10721,6 +10792,7 @@ def: "The outer, i.e. cytoplasm-facing, lipid bilayer of the nuclear envelope; c
 synonym: "outer leaflet" EXACT []
 xref: GO:0005640
 is_a: PLANA:0000522 ! membrane part
+relationship: part_of PLANA:0002064 ! nuclear envelope
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -10806,7 +10878,7 @@ name: pharynx tip
 def: "The distal-most end of the pharnyx containing an opening to the pharynx lumen." []
 is_a: PLANA:0000037 ! definitive tissue
 relationship: part_of PLANA:0000016 ! pharynx
-relationship: PLANA:0007536 PLANA:0000016 ! pharynx
+relationship: PLANA:0007536 PLANA:0000016 ! specific_to pharynx
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -10867,7 +10939,7 @@ is_a: PLANA:0000227 ! germ cell
 relationship: develops_from PLANA:0002082 ! premeiotic germ cell
 relationship: part_of PLANA:0000204 ! ovary
 relationship: part_of PLANA:0000208 ! testis
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -10986,7 +11058,7 @@ xref: UBERON:0003133
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -10999,7 +11071,7 @@ xref: PMID:17376870
 xref: UBERON:0005156
 is_a: UBERON:0000061 ! anatomical structure
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -11104,7 +11176,7 @@ xref: PMID:27330085
 is_a: PLANA:0000119 ! terminally differentiated cell
 is_a: PLANA:0002095 ! somatic cell
 relationship: part_of PLANA:0000217 ! gonad
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -11185,8 +11257,7 @@ def: "A proteinaceous scaffold found between homologous chromosomes during meios
 xref: GO:0000795
 xref: PMID:25404302
 is_a: PLANA:0002123 ! chromosomal_structural_element
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0002057 ! meiotic germ cell
+relationship: PLANA:0007536 PLANA:0002057 ! specific_to meiotic germ cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -11407,8 +11478,7 @@ name: extraembryonic organ
 def: "Organ that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis." []
 is_a: PLANA:0000431 ! organ
 relationship: part_of PLANA:0000116 ! embryo
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -11524,6 +11594,7 @@ id: PLANA:0002137
 name: intracellular granule
 def: "Cytoplasmic part which forms a distinctive granular particle, which may or may not be visible using light microscopy." []
 xref: MICRO:0000215
+is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -12246,23 +12317,23 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0004503
 name: adult hermaphrodite
-def: "A fully formed, sexually mature organism. The sexually reproducing Schmidtea mediterranea biotype exists as an obligate cross-fertilizing hermaphrodite." []
+def: "A fully formed, sexually mature organism that reproduces through cross-fertilization." []
 synonym: "sexual adult" EXACT []
 synonym: "sexually mature adult" EXACT []
 xref: PMID:11972158
 xref: PMID:19022767
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/sexuallymatureadult.png {comment="Depcited by field shows a light microscopy image of a sexually mature adult with a scale bar of 2 mm."}
 
 [Term]
 id: PLANA:0004504
 name: asexual adult
-def: "The asexually reproducing Schmidtea mediterranea biotype exists as a constitutive adult, undergoing successive cycles of fission and whole animal regeneration. Asexual Schmidtea mediterranea contain primordial germ cells, but do not possess a reproductive system." []
+def: "Asexually reproducing Schmidtea mediterranea exist as constitutive adults, undergoing successive cycles of fission and whole animal regeneration. Asexual Schmidtea mediterranea contain primordial germ cells, but do not possess a reproductive system." []
 xref: PMID:11972158
 xref: PMID:17376870
 is_a: PLANA:0000040 ! Schmidtea mediterranea developmental stage
-relationship: PLANA:0007536 PLANA:0000024 ! Smed asexual biotype
+relationship: PLANA:0007536 PLANA:0000024 ! specific_to Smed asexual biotype
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/asexualadult.png {comment="Depicted by field shows an asexual adult with a scale bar of 500um"}
 
 [Term]
@@ -12277,7 +12348,7 @@ xref: PMID:27163480
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: part_of PLANA:0000208 ! testis
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -12300,7 +12371,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000204 ! ovary
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
@@ -12335,8 +12406,7 @@ relationship: part_of PLANA:0000029 ! primitive ectoderm
 relationship: part_of PLANA:0000041 ! aboral hemisphere
 relationship: part_of PLANA:0000076 ! oral hemisphere
 relationship: part_of PLANA:0000116 ! embryo
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
@@ -12352,8 +12422,7 @@ is_a: BSPO:0000005 ! anatomical surface
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0000076 ! oral hemisphere
 relationship: part_of PLANA:0000085 ! primitive gut cell
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
@@ -12370,8 +12439,7 @@ relationship: existence_starts_during_or_after PLANA:0000004 ! Stage 4
 relationship: part_of PLANA:0000041 ! aboral hemisphere
 relationship: part_of PLANA:0000059 ! embryonic gut cell
 relationship: part_of PLANA:0000076 ! oral hemisphere
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
@@ -12389,8 +12457,7 @@ relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: part_of PLANA:0000023 ! temporary embryonic pharynx
 relationship: part_of PLANA:0000076 ! oral hemisphere
 relationship: part_of PLANA:0000116 ! embryo
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
@@ -12428,8 +12495,7 @@ def: "Post-mitotic, terminally differentiated cells which, give rise to temporar
 xref: PMID:28072387
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
@@ -12512,7 +12578,7 @@ def: "Portion of the sexual biotype body plan immediately posterior to the parap
 xref: PMID:22074376
 is_a: PLANA:0000102 ! anatomical compartment subdivision
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: posterior_to PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -12562,7 +12628,7 @@ relationship: part_of PLANA:0004527 ! copulatory region
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
 relationship: part_of PLANA:0007554 ! parenchyma
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -12586,7 +12652,7 @@ relationship: part_of PLANA:0007504 ! dorsal compartment
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
 relationship: part_of PLANA:0007554 ! parenchyma
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -12600,7 +12666,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000205 ! oviduct
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -12621,7 +12687,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000037 ! definitive tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000207 ! sperm duct
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -12648,7 +12714,7 @@ relationship: part_of PLANA:0000419 ! prepharyngeal region
 relationship: part_of PLANA:0007505 ! ventral compartment
 relationship: part_of PLANA:0007506 ! anterior compartment
 relationship: part_of PLANA:0007554 ! parenchyma
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -12710,6 +12776,13 @@ relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0007507
+name: obsolete posterior compartment
+comment: replacing duplicate PLANA term
+property_value: IAO:0000125 PLANA:0000142
+is_obsolete: true
 
 [Term]
 id: PLANA:0007508
@@ -12955,6 +13028,13 @@ relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0007537
+name: obsolete brain
+comment: replacing duplicate PLANA term
+property_value: IAO:0000125 PLANA:0000044
+is_obsolete: true
 
 [Term]
 id: PLANA:0007538
@@ -13332,8 +13412,7 @@ is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0000023 ! temporary embryonic pharynx
 relationship: part_of PLANA:0000076 ! oral hemisphere
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
-relationship: PLANA:0007536 PLANA:0000116 ! embryo
+relationship: PLANA:0007536 PLANA:0000116 ! specific_to embryo
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
@@ -13351,7 +13430,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000492 ! nerve plexus
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -13382,7 +13461,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000492 ! nerve plexus
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: PLANA:0007536 PLANA:0000027 ! Smed sexual biotype
+relationship: PLANA:0007536 PLANA:0000027 ! specific_to Smed sexual biotype
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! contained in ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! contained in anterior compartment
@@ -13399,6 +13478,19 @@ relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: UBERON:0000015
+name: non-material anatomical boundary
+namespace: uberon
+def: "A non-material anatomical entity of two dimensions. Anatomical boundaries are contiguous structures." [CARO:0000010]
+comment: Except in the case of abstracted fiat boundaries such as the midline plane of an organism, all 2D anatomical entities have a 3 dimensional projection. For example, the surface of the shell of a muscle has a distinct shape that projects into the third dimension. Note that boundaries are 2D structures. They have no thickness - and so can not be sites of gene expression or gene product localisation. For this, use boundary region terms.
+subset: upper_level
+synonym: "anatomical boundary" EXACT [CARO:0000010]
+xref: AEO:0000192
+xref: CARO:0000010
+xref: FMA:50705
+is_a: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0000061
@@ -13529,6 +13621,26 @@ xref: VHOG:0001721
 is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
+id: UBERON:0000466
+name: immaterial anatomical entity
+namespace: uberon
+def: "Anatomical entity that has no mass." [http://orcid.org/0000-0001-9114-8737]
+subset: upper_level
+synonym: "immaterial physical anatomical entity" EXACT [FMA:67112]
+xref: AAO:0010265
+xref: AEO:0000007
+xref: BILA:0000007
+xref: CARO:0000007
+xref: EHDAA2:0003007
+xref: FBbt:00007015
+xref: FMA:67112
+xref: HAO:0000007
+xref: TAO:0001835
+xref: TGMA:0001827
+xref: VHOG:0001727
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
 id: UBERON:0000475
 name: organism subdivision
 namespace: uberon
@@ -13631,7 +13743,7 @@ xref: FMA:67552
 xref: galen:Cavity
 xref: MA:0002447
 xref: NCIT:C34007
-is_a: UBERON:0001062 ! anatomical entity
+is_a: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0005423
@@ -13647,6 +13759,21 @@ xref: FBbt:00007006
 xref: FMA:292313
 xref: MIAA:0000019
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0006983
+name: anatomical point
+namespace: uberon
+def: "Non-material anatomical entity of zero dimension, which forms a boundary of an anatomical line or surface." [FMA:9658, http://orcid.org/0000-0001-9114-8737]
+subset: upper_level
+xref: AAO:0010266
+xref: AEO:0000009
+xref: BILA:0000009
+xref: CARO:0000009
+xref: EHDAA2:0003009
+xref: FMA:9658
+xref: TAO:0001839
+is_a: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0007567
@@ -13665,6 +13792,18 @@ xref: ZFA:0005147
 is_a: UBERON:0000061 ! anatomical structure
 property_value: IAO:0000116 "we define this in terms of active participation in regeneration, rather that capabilities. In this sense it is different from the AEO structure." xsd:string
 property_value: UBPROP:0000001 "A portion of tissue that is regrowing after damage or amputation.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005147", ontology="TAO", source="ZFIN:curator"}
+
+[Term]
+id: UBERON:0007651
+name: anatomical junction
+namespace: uberon
+def: "An anatomical structure that connects two structures" [http://code.google.com/p/caro2/issues/detail?id=15]
+subset: upper_level
+synonym: "anatomical junction" EXACT []
+synonym: "junction" BROAD []
+xref: FMA:5898
+xref: http://www.snomedbrowser.com/Codes/Details/91833003
+is_a: UBERON:0000061 ! anatomical structure
 
 [Typedef]
 id: BFO:0000060
@@ -13690,6 +13829,12 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000116 "7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of \"mentions\" relation. Weaken the is_about relationship to be primitive. \n\nWe will try to build it back up by elaborating the various subproperties that are more precisely defined.\n\nSome currently missing phenomena that should be considered \"about\" are predications - \"The only person who knows the answer is sitting beside me\" , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic." xsd:string
 property_value: IAO:0000117 "person:Alan Ruttenberg" xsd:string
 property_value: IAO:0000119 "Smith, Ceusters, Ruttenberg, 2000 years of philosophy" xsd:string
+
+[Typedef]
+id: PLANA:0007536
+name: specific_to
+def: "Restricted to domain" []
+is_transitive: true
 
 [Typedef]
 id: RO:0000056
@@ -13959,6 +14104,7 @@ name: temporally related to
 comment: A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations.
 subset: ro-eco
 property_value: http://purl.org/dc/elements/1.1/source https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1 xsd:anyURI
+property_value: http://purl.org/dc/terms/source https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1 xsd:anyURI
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Allen%27s_interval_algebra
@@ -14025,6 +14171,7 @@ id: RO:0002304
 name: causally upstream of, positive effect
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x increases the frequency, rate or extent of y
 property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
+property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
 property_value: RO:0004049 RO:0002411
 is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004047 ! causally upstream of or within, positive effect
@@ -14034,6 +14181,7 @@ id: RO:0002305
 name: causally upstream of, negative effect
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x decreases the frequency, rate or extent of y
 property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
+property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
 property_value: RO:0004050 RO:0002411
 is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004046 ! causally upstream of or within, negative effect
@@ -15036,6 +15184,7 @@ holds_over_chain: has_part overlaps
 holds_over_chain: has_part part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
 holds_over_chain: part_of part_of
 is_a: RO:0002323 ! mereotopologically related to
+transitive_over: part_of ! part_of
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 
 [Typedef]
