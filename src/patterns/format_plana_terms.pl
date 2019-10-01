@@ -96,7 +96,7 @@ while (my $line = <TSV>){
   for(my $i=$prop_start; $i < @line; $i+=2){
     my @ids = split /\|/, $line[$i];
     my @labels = split /\|/, $line[$i+1];
-    warn "$term_id:$term_label has unequal pairing of prop ids and labels" if scalar @ids != scalar @labels;
+    warn "$term_id:$term_label $headers[$i] has unequal pairing of prop ids and labels" if scalar @ids != scalar @labels;
     for (my $j=0; $j<@ids; $j++){
       my $id = $ids[$j];
       my $label = $labels[$j];
