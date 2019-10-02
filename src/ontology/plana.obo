@@ -5116,6 +5116,12 @@ relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal region
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000040
+name: obsolete Schmidtea mediterranea developmental stage
+comment: this term is not needed. All previous children of this term  (Stage 1, Sage 2, etc) are now children of GO life cycle stage or zygote stage
+is_obsolete: true
+
+[Term]
 id: PLANA:0000041
 name: aboral hemisphere
 def: "Stage 3-5 embryo hemisphere centered around the pole opposite the temporary embryonic pharynx." []
@@ -6076,6 +6082,12 @@ relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000082
+name: obsolete racing stripe
+comment: racing stripe is now a synonym of PLANA:0000055 dorsal stripe
+is_obsolete: true
 
 [Term]
 id: PLANA:0000084
@@ -13784,6 +13796,7 @@ property_value: IAO:0000119 "Smith, Ceusters, Ruttenberg, 2000 years of philosop
 id: PLANA:0007536
 name: specific_to
 def: "Restricted to domain" []
+property_value: http://purl.obolibrary.org/obo/shorthand "specific_to" xsd:string
 is_transitive: true
 
 [Typedef]
@@ -14730,7 +14743,6 @@ range: BFO:0000004 ! independent continuant
 is_symmetric: true
 is_a: deep_to ! deep to
 is_a: RO:0002163 ! spatially disjoint from
-is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: anterior_to
@@ -15034,7 +15046,6 @@ namespace: spatial
 namespace: uberon
 def: "x immediately superficial to y iff x superficial to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0015014
-is_a: adjacent_to ! adjacent_to
 is_a: superficial_to ! superficial_to
 
 [Typedef]
@@ -15324,6 +15335,7 @@ def: "Near the outer surface of the organism. Thus, skin is superficial to the m
 def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [BSPO:cjm]
 xref: BSPO:0000108
 is_transitive: true
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: surface_of
