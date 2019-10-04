@@ -70,9 +70,8 @@ while (my $line = <TSV>){
   $term_label =~s/\s+$//;
   $terms{$term_id}=$term_label;
 
-  my @parent_ids = split /\|/ , $line[$parent_start];
-  my @parent_labels = split /\|/ , $line[$parent_start+1];
-  
+  my @parent_ids = split /\s*\|\s*/ , $line[$parent_start];
+  my @parent_labels = split /\s*\|\s*/ , $line[$parent_start+1];
   for (my $i=0; $i<@parent_ids; $i++){
     for (my $j=1 ; $j<$prop_start ; $j++){
       if ($j == $parent_start){
@@ -92,18 +91,22 @@ while (my $line = <TSV>){
     }
   }
 #print Dumper \%plana_terms;
-
+  
   for(my $i=$prop_start; $i < @line; $i+=2){
-    my @ids = split /\|/, $line[$i];
-    my @labels = split /\|/, $line[$i+1];
+    $line[$i] =~ s/^\s+//;
+    $line[$i] =~ s/\s+$//;
+    $line[$i+1] =~ s/^\s+//;
+    $line[$i+1] =~ s/\s+$//;
+    my @ids = split /\s*\|\s*/, $line[$i];
+    my @labels = split /\s*\|\s*/, $line[$i+1];
     warn "$term_id:$term_label $headers[$i] has unequal pairing of prop ids and labels" if scalar @ids != scalar @labels;
     for (my $j=0; $j<@ids; $j++){
       my $id = $ids[$j];
       my $label = $labels[$j];
-      $id =~s/^\s+//;
-      $id =~s/\s+$//;
-      $label =~s/^\s+//;
-      $label =~s/\s+$//;
+      #$id =~s/^\s+//;
+      #$id =~s/\s+$//;
+      #$label =~s/^\s+//;
+      #$label =~s/\s+$//;
       $props{$headers[$i]}{$term_id}{$ids[$j]}=$labels[$j];
     }
   } 

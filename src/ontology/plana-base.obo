@@ -155,7 +155,7 @@ def: "Musculature surrounding internal organs of the body." []
 synonym: "visceral muscle" EXACT []
 xref: PMID:26904543
 xref: PMID:30471994
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000428 ! musculature system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -574,9 +574,9 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000023
-name: temporary embryonic pharynx
-def: "An innervated, muscular pump that ingests yolk cells into the gut cavity. The temporary embryonic pharynx is an extraembryonic tissue that forms during Stage 2, functions during Stages 3-5, and degenerates during Stages 6-7." []
-synonym: "embryonic pharynx" EXACT []
+name: embryonic pharynx
+def: "An innervated, muscular pump that ingests yolk cells into the gut cavity. The embryonic pharynx is an extraembryonic tissue that forms during Stage 2, functions during Stages 3-5, and degenerates during Stages 6-7." []
+synonym: "temporary embryonic pharynx" EXACT []
 xref: ISBN:9780070316607
 xref: PMID:28072387
 is_a: PLANA:0002120 ! extraembryonic organ
@@ -592,7 +592,7 @@ relationship: RO:0002496 PLANA:0000002 ! Stage 2
 relationship: RO:0002497 PLANA:0000006 ! Stage 6
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 relationship: specific_to PLANA:0000116 ! embryo
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/temporaryembryonicpharynx.gif {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo that zooms into the temporary embryonic pharynx."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/temporaryembryonicpharynx.gif {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo that zooms in on the temporary embryonic pharynx."}
 
 [Term]
 id: PLANA:0000024
@@ -1253,15 +1253,6 @@ relationship: RO:0002496 PLANA:0000007 ! Stage 7
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/eye.png {comment=""}
 
 [Term]
-id: PLANA:0000037
-name: definitive tissue
-def: "Adult tissues built during organogenesis that are present in juveniles at birth." []
-xref: PMID:28072387
-xref: PMID:2888018
-is_a: PLANA:0000113 ! tissue
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
-
-[Term]
 id: PLANA:0000038
 name: ventral midline
 def: "The median line/ plane of bilateral symmetry along the anteroposterior axis on the ventral surface of the animal." []
@@ -1316,7 +1307,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000041
 name: aboral hemisphere
-def: "Stage 3-5 embryo hemisphere centered around the pole opposite the temporary embryonic pharynx." []
+def: "Stage 3-5 embryo hemisphere centered around the pole opposite the embryonic pharynx." []
 xref: PMID:28072387
 is_a: PLANA:0000423 ! embryonic subdivision
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
@@ -1572,7 +1563,7 @@ synonym: "collection duct" EXACT []
 xref: PMID:26057828
 xref: PMID:27068018
 xref: PMID:29674431
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000088 ! renal system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -1667,7 +1658,7 @@ name: distal tubule
 def: "Sinusoidal, non-ciliated tubules connected to proximal tubules within the parenchyma. Tubules are formed via intercellular junctions between two epithelial cells." []
 xref: PMID:21828097
 xref: PMID:27068018
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000020 ! protonephridia
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -1690,7 +1681,7 @@ id: PLANA:0000054
 name: dorsal epidermis
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." []
 synonym: "dorsal epithelium" EXACT []
-synonym: "dorsal region of definitive epidermis" EXACT []
+synonym: "dorsal region of epidermis" EXACT []
 intersection_of: PLANA:0000034 ! epidermis
 intersection_of: RO:0002180 BSPO:0000079
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -1701,7 +1692,7 @@ name: dorsal stripe
 def: "Ciliated epithelial cells along the dorsal midline." []
 synonym: "racing stripe" EXACT []
 xref: PMID:17553481
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002023 ! ciliated epithelium
 relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -1826,9 +1817,11 @@ xref: PMID:24737865
 xref: PMID:27063937
 xref: PMID:29674431
 xref: PMID:30485821
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000016 ! pharynx
+relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
+relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -1840,8 +1833,6 @@ name: extraembryonic structure
 def: "A multicellular anatomical structure that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis." []
 xref: UBERON:0000478
 is_a: UBERON:0005423
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
-relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -1850,7 +1841,7 @@ name: flame bulb
 def: "Terminal structure of protonephridia unit; consists of flame cells." []
 xref: PMID:21828097
 xref: PMID:26057828
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000020 ! protonephridia
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -1918,7 +1909,7 @@ xref: PMID:27441386
 xref: PMID:27501047
 xref: PMID:28287248
 xref: PMID:30608231
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002118 ! epithelium
 relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -2095,7 +2086,7 @@ xref: PMID:29674431
 xref: PMID:30399335
 xref: PMID:30471994
 xref: PMID:30485821
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000049 ! digestive system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -2144,7 +2135,7 @@ xref: PMID:28495872
 xref: PMID:29547123
 xref: PMID:30143032
 xref: PMID:30194301
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000036 ! eye
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
@@ -2160,7 +2151,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000076
 name: oral hemisphere
-def: "Stage 3-5 embryo hemisphere centered around the temporary embryonic pharynx." []
+def: "Stage 3-5 embryo hemisphere centered around the embryonic pharynx." []
 xref: PMID:28072387
 is_a: PLANA:0000423 ! embryonic subdivision
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
@@ -2207,8 +2198,7 @@ synonym: "parenchymal muscle" EXACT []
 xref: ISBN:9780070316607
 xref: OCLC:16809160
 xref: PMID:30962434
-is_a: PLANA:0000037 ! definitive tissue
-relationship: BFO:0000050 PLANA:0000422 ! tail stripe
+is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000428 ! musculature system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -2246,7 +2236,7 @@ name: pharynx pouch
 def: "An epithelial structure housing the definitive pharynx, connected to the esophagus and mouth." []
 synonym: "pharyngeal pouch" EXACT []
 xref: OCLC:16809160
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000049 ! digestive system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -2305,7 +2295,7 @@ xref: PMID:21828097
 xref: PMID:21937596
 xref: PMID:26057828
 xref: PMID:27068018
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000020 ! protonephridia
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -2478,7 +2468,7 @@ synonym: "ciliated ventral epithelium" EXACT []
 synonym: "ventral epidermin" EXACT []
 synonym: "ventral epithelia" EXACT []
 synonym: "ventral epithelium" EXACT []
-synonym: "ventral region of definitive epidermis" EXACT []
+synonym: "ventral region of epidermis" EXACT []
 intersection_of: PLANA:0000034 ! epidermis
 intersection_of: RO:0002180 BSPO:0000084
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -2966,8 +2956,6 @@ name: embryonic structure
 def: "Anatomical structure that is part of an embryo." []
 xref: UBERON:0002050
 is_a: UBERON:0005423
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
-relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -3311,12 +3299,11 @@ xref: PMID:20967238
 xref: PMID:22074376
 xref: PMID:25278423
 xref: PMID:27149082
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -3340,7 +3327,7 @@ xref: PMID:25278423
 xref: PMID:27149082
 xref: PMID:28072387
 xref: PMID:28434803
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002079 ! pore
 relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
@@ -3406,7 +3393,7 @@ xref: PMID:25278423
 xref: PMID:27149082
 xref: PMID:27163480
 xref: PMID:28072387
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -3466,7 +3453,7 @@ xref: PMID:27149082
 xref: PMID:27304889
 xref: PMID:28072387
 xref: PMID:28434803
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -3814,13 +3801,12 @@ xref: PMID:22074376
 xref: PMID:23652002
 xref: PMID:25278423
 xref: PMID:27149082
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -3866,7 +3852,7 @@ xref: PMID:25278423
 xref: PMID:27149082
 xref: PMID:27163480
 xref: PMID:28434803
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
@@ -3898,7 +3884,7 @@ xref: PMID:27163480
 xref: PMID:27501047
 xref: PMID:28072387
 xref: PMID:28434803
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -3926,10 +3912,12 @@ xref: PMID:23652002
 xref: PMID:27149082
 xref: PMID:27163480
 xref: PMID:28434803
-is_a: PLANA:0000427 ! multicellular anatomical structure
+is_a: PLANA:0002090 ! reproductive structure
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! ventral compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
+relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -3941,14 +3929,13 @@ id: PLANA:0000233
 name: copulatory bursa
 def: "An organ that receives and stores sperm from mating partners." []
 synonym: "bursa" EXACT []
-synonym: "genital atrium" EXACT []
 synonym: "male antrum" EXACT []
 xref: https://doi.org/10.1101/279364
 xref: ISBN:9780070316607
 xref: PMID:20967238
 xref: PMID:22074376
 xref: PMID:25278423
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
@@ -3964,7 +3951,7 @@ name: seminal vesicle
 def: "Glandular pouches adjoining the sperm ducts which produce seminal fluid." []
 xref: PMID:19022767
 xref: PMID:22074376
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
@@ -4101,7 +4088,7 @@ synonym: "pharyngeal longitudinal muscle cell" EXACT []
 synonym: "pharyngeal longitudinal muscle fiber" EXACT []
 synonym: "pharynx longitudinal muscle fiber" EXACT []
 xref: ASIN:B000M4NK9M
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000101 ! muscle cell
 relationship: BFO:0000050 PLANA:0000478 ! pharynx musculature
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -4188,7 +4175,7 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/parap
 id: PLANA:0000409
 name: apical surface of the epidermal compartment
 def: "The apical surface of the single layered epidermis that is in contact with the environment." []
-synonym: "apical surface of definitive epidermis" EXACT []
+synonym: "apical surface of epidermis" EXACT []
 intersection_of: PLANA:0000034 ! epidermis
 intersection_of: RO:0002180 BSPO:0000373
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/apicalepidermissurface.png {comment="Depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane from an asexual adult animal. The apical epidermis surface is noted with magenta arrows. Scale bar is 5um."}
@@ -4197,7 +4184,7 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/apica
 id: PLANA:0000410
 name: basal surface of the epidermal compartment
 def: "The basal surface of the epidermal epithelium in direct contact with the basal lamina." []
-synonym: "basal surface of definitive epidermis" EXACT []
+synonym: "basal surface of epidermis" EXACT []
 intersection_of: PLANA:0000034 ! epidermis
 intersection_of: RO:0002180 BSPO:0000374
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/basalepidermissurface.png {comment="The depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane. The basal epidermis surface is noted with magenta arrows. Scale bar is 5um."}
@@ -4646,9 +4633,8 @@ xref: UMLS:C0029126
 xref: VHOG:0000190
 xref: XAO:0004071
 xref: ZFA:0000556
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000025 ! nervous system
-relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 relationship: BFO:0000050 PLANA:0000124 ! visual system
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
@@ -4671,7 +4657,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000461
-name: lateral branches
+name: lateral branch
 def: "Nerve branches that extend from the lateral side of each cephalic ganglia lobe. Each lobe has nine lateral branches which terminate in sensory organs. Evidence suggests they play a role in chemosensation." []
 synonym: "bilateral cephalic ganglia branch" EXACT []
 synonym: "brain branch" EXACT []
@@ -4692,7 +4678,7 @@ xref: PMID:29674431
 xref: PMID:30399335
 xref: PMID:4452894
 xref: PMID:9493832
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
@@ -4736,7 +4722,7 @@ xref: PMID:30143032
 xref: PMID:30194301
 is_a: PLANA:0000556 ! neurosecretory neuron
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: BFO:0000050 PLANA:0000465 ! pharynx nerve plexus
+relationship: BFO:0000050 PLANA:0000465
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -4772,31 +4758,6 @@ relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
-id: PLANA:0000465
-name: pharynx nerve plexus
-def: "Plexus of nerves located in the definitive pharynx comprised of inner and outer wall rings." []
-synonym: "nerve ganglia of pharynx" EXACT []
-synonym: "neural plexus of the pharynx" EXACT []
-synonym: "pharyngeal nerve plexus" EXACT []
-synonym: "pharyngeal nerve ring" EXACT []
-synonym: "pharyngeal nervous system" EXACT []
-synonym: "pharyngeal neural plexus" EXACT []
-synonym: "pharynx nerve ring" EXACT []
-xref: PMID:16033796
-xref: PMID:17905225
-xref: PMID:20967238
-xref: PMID:23250205
-xref: PMID:23297191
-is_a: PLANA:0000037 ! definitive tissue
-relationship: BFO:0000050 PLANA:0000016 ! pharynx
-relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
-
-[Term]
 id: PLANA:0000466
 name: subepidermal nerve plexus
 def: "Plexus of nerves located just between the definitive epidermis and the body wall musculature." []
@@ -4804,6 +4765,7 @@ xref: doi:10.1002/jmor.1051550208
 xref: PMID:27612384
 is_a: PLANA:0000492 ! nerve plexus
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
+relationship: BFO:0000050 PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -4821,9 +4783,10 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000467
 name: submuscular nerve plexus
-def: "Plexus of nerves that innervate the body wall muscles." []
+def: "Plexus of nerves that innervate the body wall musculature." []
 is_a: PLANA:0000492 ! nerve plexus
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
+relationship: BFO:0000050 PLANA:0000428 ! musculature system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -4833,6 +4796,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007549 ! body wall musculature compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -4845,7 +4809,7 @@ def: "A thin net of single nerve fibers located around the gut." []
 xref: doi.org/10.1002/jmor.1051550208
 xref: PMID:17999079
 is_a: PLANA:0000492 ! nerve plexus
-relationship: BFO:0000050 PLANA:0000026 ! gut
+relationship: BFO:0000050 PLANA:0000049 ! digestive system
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -4890,8 +4854,8 @@ xref: PMID:29291974
 xref: PMID:29291981
 xref: UBERON:0002606
 xref: UMLS:C0228081
-is_a: PLANA:0000037 ! definitive tissue
-relationship: BFO:0000050 PLANA:0000103 ! central nervous system
+is_a: PLANA:0000113 ! tissue
+relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
@@ -4911,7 +4875,7 @@ synonym: "outer pharynx epidermis" EXACT []
 synonym: "outer pharynx epithelium" EXACT []
 xref: ASIN:B000M4NK9M
 xref: PMID:29674431
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002023 ! ciliated epithelium
 relationship: BFO:0000050 PLANA:0004528 ! pharynx epithelium
 relationship: BSPO:0015014 PLANA:0000476 ! pharynx outer longitudinal muscle cell
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
@@ -5028,7 +4992,7 @@ xref: PMID:26904543
 xref: PMID:29674432
 xref: SBN:9780070316607
 xref: UBERON:0004467
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000016 ! pharynx
 relationship: BFO:0000050 PLANA:0000428 ! musculature system
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -5045,9 +5009,9 @@ synonym: "inner pharyngeal nerve ring" EXACT []
 synonym: "inner pharynx nerve ring" EXACT []
 synonym: "pharynx inner nerve plexus" EXACT []
 xref: ISBN:9780070316607
-is_a: PLANA:0000037 ! definitive tissue
-is_a: PLANA:0000465 ! pharynx nerve plexus
-relationship: BFO:0000050 PLANA:0000465 ! pharynx nerve plexus
+is_a: PLANA:0000492 ! nerve plexus
+relationship: BFO:0000050 PLANA:0000016 ! pharynx
+relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -5064,9 +5028,9 @@ synonym: "outer pharynx nerve plexus" EXACT []
 synonym: "outer pharynx nerve ring" EXACT []
 xref: doi:10.1002/jmor.1051550208
 xref: PMID:27612384
-is_a: PLANA:0000037 ! definitive tissue
-is_a: PLANA:0000465 ! pharynx nerve plexus
-relationship: BFO:0000050 PLANA:0000465 ! pharynx nerve plexus
+is_a: PLANA:0000492 ! nerve plexus
+relationship: BFO:0000050 PLANA:0000016 ! pharynx
+relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -5177,7 +5141,7 @@ def: "The opening by which the gland cells secrete mucus to the exterior of the 
 synonym: "pore" EXACT []
 xref: ISBN:9780070316607
 xref: PMID:20865784
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002079 ! pore
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -5232,31 +5196,8 @@ xref: PMID:27612382
 xref: PMID:29357350
 xref: UBERON:0001810
 xref: UMLS:C0501403
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
-
-[Term]
-id: PLANA:0000493
-name: nervous system commissure
-def: "Axon tract that crosses the midline of the central nervous system[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." []
-synonym: "commissure" EXACT []
-synonym: "commissure of neuraxis" EXACT []
-synonym: "neuraxis commissure" EXACT []
-synonym: "white matter commissure" EXACT []
-xref: C32349
-xref: FBbt:00005103
-xref: FMA:83906
-xref: http://en.wikipedia.org/wiki/Commissure
-xref: http://linkedlifedata.com/resource/umls/id/C1185742
-xref: nlx:110
-xref: nlx:anat\:20090513
-xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw
-xref: TADS:0000201
-xref: UBERON:0001020
-xref: UMLS:C1185742
-is_a: PLANA:0000037 ! definitive tissue
-relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5264,7 +5205,7 @@ id: PLANA:0000494
 name: brain commissure
 def: "any of the nerve fiber tracts that span the longitudinal fissure between the cerebral and/or cerebellar hemispheres of the brain" []
 xref: UBERON:0005970
-is_a: PLANA:0000493 ! nervous system commissure
+is_a: PLANA:0000493
 relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -5484,7 +5425,7 @@ synonym: "peripheral nerve" EXACT []
 xref: PMID:27612382
 xref: PMID:27800171
 xref: UBERON:0001021
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -5517,7 +5458,7 @@ xref: PMID:24173799
 xref: PMID:25493551
 is_a: PLANA:0000550 ! interneuron
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: BFO:0000050 PLANA:0000465 ! pharynx nerve plexus
+relationship: BFO:0000050 PLANA:0000465
 relationship: BFO:0000050 PLANA:0000466 ! subepidermal nerve plexus
 relationship: BFO:0000050 PLANA:0000467 ! submuscular nerve plexus
 relationship: BFO:0000050 PLANA:0007548 ! transverse commissure
@@ -5546,7 +5487,7 @@ xref: WBbt:0005113
 is_a: PLANA:0000099 ! neuron
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: BFO:0000050 PLANA:0000465 ! pharynx nerve plexus
+relationship: BFO:0000050 PLANA:0000465
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5849,11 +5790,11 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0002011
 name: brain visual center
-def: "The cephalic ganglion region innervated by the optic nerve (posterior-projecting photoreceptor neuron fasiculated axons)." []
+def: "Region of the cephalic ganglia innervated by the optic nerve (posterior-projecting photoreceptor neuron fasiculated axons)." []
 synonym: "visual center" EXACT []
 xref: PMID:16033796
 xref: PMID:26618653
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
@@ -6028,9 +5969,10 @@ xref: PMID:30383829
 xref: PMID:30399335
 xref: PMID:30485821
 xref: PMID:30729158
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000418 ! head
+relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -6159,7 +6101,6 @@ xref: PMID:26711341
 xref: PMID:28216315
 xref: PMID:28292427
 xref: UBERON:0007601
-is_a: PLANA:0000037 ! definitive tissue
 is_a: PLANA:0002118 ! epithelium
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -6439,8 +6380,8 @@ def: "A clonally-related group of interconnected spermatogonial or oogonial cell
 synonym: "germ cell cluster" EXACT []
 xref: PMID:17376870
 xref: PMID:22318224
-is_a: PLANA:0000037 ! definitive tissue
-relationship: BFO:0000050 PLANA:0000208 ! testis
+is_a: PLANA:0002090 ! reproductive structure
+is_a: PLANA:0002136 ! syncytium
 relationship: BFO:0000050 PLANA:0000217 ! gonad
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -6524,11 +6465,12 @@ id: PLANA:0002048
 name: inner zone of gland cells
 def: "Gland or secretory cells sandwiched between muscle and epidermal layers in the pharynx." []
 xref: ISBN:9780070316607
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000016 ! pharynx
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
+relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -6795,12 +6737,12 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0002070
 name: optic nerve
-def: "A neuron projection bundle that connects the retina or its analog in the eye with the brain. This includes the vertebrate optic nerve (not truly a nerve) as well as analogous structures such as the Bolwig nerve in Drosophila" []
+def: "A neuron projection bundle that connects the retina or its analog in the eye with the brain. This includes the vertebrate optic nerve (not truly a nerve) as well as analogous structures such as the Bolwig nerve in Drosophila." []
 xref: PMID:27800171
 xref: UBERON:0004904
 is_a: PLANA:0000541 ! nerve
+relationship: BFO:0000050 PLANA:0000025 ! nervous system
 relationship: BFO:0000050 PLANA:0000124 ! visual system
-relationship: BFO:0000050 PLANA:0000493 ! nervous system commissure
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
@@ -6843,7 +6785,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 id: PLANA:0002074
 name: pharynx tip
 def: "The distal-most end of the pharnyx containing an opening to the pharynx lumen." []
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000016 ! pharynx
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -7051,7 +6993,7 @@ xref: PMID:15760337
 xref: PMID:16033796
 xref: PMID:21852957
 xref: PMID:26017970
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000036 ! eye
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
@@ -7092,7 +7034,7 @@ def: "A tubular structure that transports secreted or excreted substances." []
 synonym: "secretory canal" EXACT []
 xref: PMID:30383829
 xref: UBERON:0000058
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000484 ! secretory system
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -7135,7 +7077,6 @@ synonym: "somatic gonadal support cell" EXACT []
 xref: PMID:27163480
 xref: PMID:27330085
 is_a: PLANA:0000119 ! terminally differentiated cell
-is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000217 ! gonad
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -7414,14 +7355,14 @@ id: PLANA:0002118
 name: epithelium
 def: "The avascular cellular layers that cover body surfaces and cavities and may form glands." []
 xref: NCIT:C12710
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0002119
 name: gut branch
 def: "The triclad planarian gut is serially bifrucated into connected lumens where each bifrucation is a branch." []
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -7577,7 +7518,9 @@ xref: OCLC:16809160
 is_a: PLANA:0002118 ! epithelium
 relationship: BFO:0000050 PLANA:0000081 ! pharynx pouch
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! ventral compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
+relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -7602,7 +7545,7 @@ name: parenchyma
 def: "A loosely organized collection of connective tissue and cells, including neoblasts and their immediate progeny, located in the space outside of the organs between the body wall musculature and the definitive gut." []
 synonym: "mesenchyme" EXACT []
 xref: OCLC:16809160
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -7748,7 +7691,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0003116
 name: parenchymal cell
-def: "cell which is part of the parenchymal region" [PMID:19247960, PMID:29674431]
+def: "cell which is part of the parenchymal compartment" [PMID:19247960, PMID:29674431]
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -7797,43 +7740,43 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0003207
 name: G1 phase spermatogonial stem cell
-def: "male germline stem cell undergoing mitotic G1 phase" []
+def: "spermatogonial stem cell undergoing mitotic G1 phase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003208
 name: S phase spermatogonial stem cell
-def: "male germline stem cell undergoing mitotic S phase" []
+def: "spermatogonial stem cell undergoing mitotic S phase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003209
 name: G2 phase spermatogonial stem cell
-def: "male germline stem cell undergoing mitotic G2 phase" []
+def: "spermatogonial stem cell undergoing mitotic G2 phase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003210
 name: prophase spermatogonial stem cell
-def: "male germline stem cell undergoing mitotic prophase" []
+def: "spermatogonial stem cell undergoing mitotic prophase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003211
 name: metaphase spermatogonial stem cell
-def: "male germline stem cell undergoing mitotic metaphase" []
+def: "spermatogonial stem cell undergoing mitotic metaphase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003212
 name: anaphase spermatogonial stem cell
-def: "male germline stem cell undergoing mitotic anaphase" []
+def: "spermatogonial stem cell undergoing mitotic anaphase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003213
 name: telophase spermatogonial stem cell
-def: "male germline stem cell undergoing mitotic telophase" []
+def: "spermatogonial stem cell undergoing mitotic telophase" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -8433,12 +8376,12 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0004516
-name: temporary embryonic pharynx lumen epithelial surface
-def: "The epithelial cell surface lining the temporary embryonic pharynx lumen." []
+name: embryonic pharynx lumen epithelial surface
+def: "The epithelial cell surface lining the embryonic pharynx lumen." []
 xref: PMID:20100474
 xref: PMID:28072387
 is_a: BSPO:0000005
-relationship: BFO:0000050 PLANA:0000023 ! temporary embryonic pharynx
+relationship: BFO:0000050 PLANA:0000023 ! embryonic pharynx
 relationship: RO:0002490 PLANA:0000002 ! Stage 2
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000004 ! Stage 4
@@ -8484,12 +8427,12 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0004519
-name: temporary embryonic pharynx neuron
-def: "A neuronal cell innervating the temporary embryonic pharynx. Four neurons innervate the radial muscle fibers that ring the oral opening." []
+name: embryonic pharynx neuron
+def: "A neuronal cell innervating the embryonic pharynx. Four neurons innervate the radial muscle fibers that ring the oral opening." []
 xref: PMID:28072387
 is_a: PLANA:0000099 ! neuron
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: BFO:0000050 PLANA:0000023 ! temporary embryonic pharynx
+relationship: BFO:0000050 PLANA:0000023 ! embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000002 ! Stage 2
@@ -8505,13 +8448,13 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0004520
-name: temporary embryonic pharynx radial muscle cell
+name: embryonic pharynx radial muscle cell
 def: "Differentiated radial muscle cell present in the temporary embryonic pharynx." []
-synonym: "temporary embryonic pharynx radial muscle fiber" EXACT []
+synonym: "embryonic pharynx radial muscle fiber" EXACT []
 xref: PMID:16932928
 is_a: PLANA:0000101 ! muscle cell
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: BFO:0000050 PLANA:0000023 ! temporary embryonic pharynx
+relationship: BFO:0000050 PLANA:0000023 ! embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000002 ! Stage 2
@@ -8527,13 +8470,13 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0004521
-name: temporary embryonic pharynx epithelial cell
+name: embryonic pharynx epithelial cell
 def: "foxA1+ epithelial cell contained in the temporary embryonic pharynx." []
 xref: PMID:20100474
 xref: PMID:28072387
 is_a: PLANA:0000100 ! epithelial cell
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: BFO:0000050 PLANA:0000023 ! temporary embryonic pharynx
+relationship: BFO:0000050 PLANA:0000023 ! embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000002 ! Stage 2
@@ -8549,13 +8492,13 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0004524
-name: temporary embryonic pharynx circular muscle cell
-def: "Differentiated muscle cell present in a circular muscle fiber of the temporary embryonic pharynx." []
+name: embryonic pharynx circular muscle cell
+def: "Differentiated muscle cell present in a circular muscle fiber of the embryonic pharynx." []
 synonym: "temporary embryonic pharynx circular muscle fiber" EXACT []
 xref: PMID:16932928
 is_a: PLANA:0000101 ! muscle cell
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: BFO:0000050 PLANA:0000023 ! temporary embryonic pharynx
+relationship: BFO:0000050 PLANA:0000023 ! embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000002 ! Stage 2
@@ -8589,7 +8532,7 @@ def: "Epithelia associated with the pharynx organ." []
 synonym: "pharnyx epidermis" EXACT []
 synonym: "pharyngeal epidermis" EXACT []
 synonym: "pharyngeal epithelium" EXACT []
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002118 ! epithelium
 relationship: BFO:0000050 PLANA:0000016 ! pharynx
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -8655,7 +8598,7 @@ id: PLANA:0004532
 name: oviduct epithelium
 def: "Ciliated epithelium lining the oviduct." []
 xref: PMID:22074376
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002023 ! ciliated epithelium
 relationship: BFO:0000050 PLANA:0000205 ! oviduct
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -8675,7 +8618,7 @@ name: sperm duct epithelium
 def: "Ciliated epithelium lining the sperm duct." []
 xref: PMID:19022767
 xref: PMID:22074376
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002023 ! ciliated epithelium
 relationship: BFO:0000050 PLANA:0000207 ! sperm duct
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -8968,7 +8911,7 @@ synonym: "inner pharynx epithelium" EXACT []
 xref: doi:10.1002/jmor.1051550208
 xref: OCLC:16809160
 xref: PMID:24120894
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002023 ! ciliated epithelium
 relationship: BFO:0000050 PLANA:0004528 ! pharynx epithelium
 relationship: BSPO:0015014 PLANA:0000474 ! pharynx inner circular muscle cell
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -8998,12 +8941,12 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0007538
 name: adhesion gland
-def: "Specialized epithelial cells located along the dorsoventral margin. Adhesion glands are comprised of three cell types, the viscid and releasing gland cells which penetrate through an epithelial anchor cell and terminate at the epithelial surface." []
+def: "Groupings of specialized epithelial cells located along the dorsal ventral margin. Adhesion glands are comprised of three cell types, the viscid and releasing gland cells which penetrate through an epithelial anchor cell and terminate at the epidermal surface." []
 synonym: "marginal adhesive gland" EXACT []
 xref: ISBN:9780070316607
 xref: OCLC:16809160
 xref: PMID:20865784
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000484 ! secretory system
 relationship: RO:0001018 PLANA:0000043 ! dorsal ventral margin
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
@@ -9173,7 +9116,7 @@ id: PLANA:0007548
 name: transverse commissure
 def: "Axon tracts from ganglia that cross the midline, connecting the two ventral nerve cords." []
 xref: PMID:17999079
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0002025 ! commissure
 relationship: BFO:0000050 PLANA:0000097 ! ventral nerve cord
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -9256,7 +9199,7 @@ id: PLANA:0007553
 name: lateral nerve
 def: "A nerve extending laterally from the ventral nerve cord that innervates the submuscular plexus." []
 xref: PMID:17999079
-is_a: PLANA:0000037 ! definitive tissue
+is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -9367,12 +9310,12 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0007556
-name: temporary embryonic pharynx lumen
+name: embryonic pharynx lumen
 def: "A lumen enclosed by the temporary embryonic pharynx epithelial cells through which yolk cells are transported into the embryonic gut cavity." []
 xref: PMID:28072387
 is_a: PLANA:0002053 ! lumen
-relationship: BFO:0000050 PLANA:0000023 ! temporary embryonic pharynx
-relationship: BSPO:0001107 PLANA:0004516 ! temporary embryonic pharynx lumen epithelial surface
+relationship: BFO:0000050 PLANA:0000023 ! embryonic pharynx
+relationship: BSPO:0001107 PLANA:0004516 ! embryonic pharynx lumen epithelial surface
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000004 ! Stage 4

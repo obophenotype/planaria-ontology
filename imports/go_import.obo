@@ -327,6 +327,28 @@ xref: NIF_Subcellular:sao-1337158144
 xref: NIF_Subcellular:sao1337158144
 
 [Term]
+id: GO:0005576
+name: extracellular region
+namespace: cellular_component
+def: "The space external to the outermost structure of a cell. For cells without external protective or external encapsulating structures this refers to space outside of the plasma membrane. This term covers the host cell environment outside an intracellular parasite." [GOC:go_curators]
+comment: Note that this term is intended to annotate gene products that are not attached to the cell surface. For gene products from multicellular organisms which are secreted from a cell but retained within the organism (i.e. released into the interstitial fluid or blood), consider the cellular component term 'extracellular space ; GO:0005615'.
+subset: goslim_agr
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_chembl
+subset: goslim_flybase_ribbon
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_mouse
+subset: goslim_pir
+subset: goslim_plant
+subset: goslim_yeast
+synonym: "extracellular" EXACT []
+xref: MIPS_funcat:70.27
+xref: Wikipedia:Extracellular
+is_a: GO:0005575 ! cellular_component
+
+[Term]
 id: GO:0006793
 name: phosphorus metabolic process
 namespace: biological_process
@@ -1403,6 +1425,29 @@ intersection_of: negatively_regulates GO:0003824 ! catalytic activity
 relationship: negatively_regulates GO:0003824 ! catalytic activity
 
 [Term]
+id: GO:0043226
+name: organelle
+namespace: cellular_component
+def: "Organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, and prokaryotic structures such as anammoxosomes and pirellulosomes. Excludes the plasma membrane." [GOC:go_curators]
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_pir
+xref: NIF_Subcellular:sao1539965131
+xref: Wikipedia:Organelle
+is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0043230
+name: extracellular organelle
+namespace: cellular_component
+def: "Organized structure of distinctive morphology and function, occurring outside the cell. Includes, for example, extracellular membrane vesicles (EMVs) and the cellulosomes of anaerobic bacteria and fungi." [GOC:jl, PMID:9914479]
+subset: goslim_pir
+is_a: GO:0043226 ! organelle
+is_a: GO:0044421 ! extracellular region part
+intersection_of: GO:0043226 ! organelle
+intersection_of: part_of GO:0005576 ! extracellular region
+
+[Term]
 id: GO:0043393
 name: regulation of protein binding
 namespace: biological_process
@@ -1498,6 +1543,32 @@ synonym: "cellular metabolism" EXACT []
 synonym: "intermediary metabolism" RELATED [GOC:mah]
 is_a: GO:0008152 ! metabolic process
 is_a: GO:0009987 ! cellular process
+
+[Term]
+id: GO:0044421
+name: extracellular region part
+namespace: cellular_component
+def: "Any constituent part of the extracellular region, the space external to the outermost structure of a cell. For cells without external protective or external encapsulating structures this refers to space outside of the plasma membrane. This term covers constituent parts of the host cell environment outside an intracellular parasite." [GOC:jl]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
+synonym: "extracellular structure" RELATED [NIF_Subcellular:sao9117790637]
+xref: NIF_Subcellular:sao9117790637
+is_a: GO:0005575 ! cellular_component
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: part_of GO:0005576 ! extracellular region
+relationship: part_of GO:0005576 ! extracellular region
+
+[Term]
+id: GO:0044422
+name: organelle part
+namespace: cellular_component
+def: "Any constituent part of an organelle, an organized structure of distinctive morphology and function. Includes constituent parts of the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, but excludes the plasma membrane." [GOC:jl]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
+is_a: GO:0005575 ! cellular_component
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: part_of GO:0043226 ! organelle
+relationship: part_of GO:0043226 ! organelle
 
 [Term]
 id: GO:0044703
@@ -2718,6 +2789,39 @@ intersection_of: GO:0000280 ! nuclear division
 intersection_of: part_of GO:0000278 ! mitotic cell cycle
 created_by: pg
 creation_date: 2017-03-23T14:44:23Z
+
+[Term]
+id: GO:1900115
+name: extracellular regulation of signal transduction
+namespace: biological_process
+def: "Any regulation of signal transduction that takes place in the extracellular region." [GOC:signaling, GOC:TermGenie]
+synonym: "regulation of signaling pathway in extracellular region" EXACT [GOC:TermGenie]
+synonym: "regulation of signalling pathway in extracellular region" EXACT [GOC:TermGenie]
+is_a: GO:0009966 ! regulation of signal transduction
+intersection_of: GO:0009966 ! regulation of signal transduction
+intersection_of: occurs_in GO:0005576 ! extracellular region
+relationship: occurs_in GO:0005576 ! extracellular region
+created_by: bf
+creation_date: 2012-02-22T10:21:48Z
+
+[Term]
+id: GO:1900116
+name: extracellular negative regulation of signal transduction
+namespace: biological_process
+def: "Any negative regulation of signal transduction that takes place in extracellular region." [GOC:signaling, GOC:TermGenie]
+synonym: "down regulation of signal transduction in extracellular region" EXACT [GOC:TermGenie]
+synonym: "down-regulation of signal transduction in extracellular region" EXACT [GOC:TermGenie]
+synonym: "downregulation of signal transduction in extracellular region" EXACT [GOC:TermGenie]
+synonym: "extracellular inhibition of signaling pathway" NARROW [GOC:bf]
+synonym: "inhibition of signal transduction in extracellular region" NARROW [GOC:TermGenie]
+synonym: "negative regulation of signaling pathway in extracellular region" EXACT [GOC:TermGenie]
+synonym: "negative regulation of signalling pathway in extracellular region" EXACT [GOC:TermGenie]
+is_a: GO:0009968 ! negative regulation of signal transduction
+is_a: GO:1900115 ! extracellular regulation of signal transduction
+intersection_of: GO:0009968 ! negative regulation of signal transduction
+intersection_of: occurs_in GO:0005576 ! extracellular region
+created_by: bf
+creation_date: 2012-02-22T10:27:56Z
 
 [Term]
 id: GO:1900120
