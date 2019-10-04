@@ -4479,7 +4479,7 @@ relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/temporaryembryonicpharynx.gif {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo that zooms in on the temporary embryonic pharynx."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/temporaryembryonicpharynx.gif {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo that zooms in on the embryonic pharynx."}
 
 [Term]
 id: PLANA:0000024
@@ -4550,7 +4550,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000026
 name: gut
-def: "The planarian triclad gut contains a central anterior gut branch connected to two posterior gut branches arranged around the definitive pharynx. Secondary gut branches extend laterally from the primary gut branches, while tertiary gut branches extend from the secondary branches. Food and waste enter and exit the definitive gut through the defintive pharynx." []
+def: "The planarian triclad gut contains a central anterior gut branch connected to two posterior gut branches arranged around the pharynx. Secondary gut branches extend laterally from the primary gut branches, while tertiary gut branches extend from the secondary branches. Food and waste enter and exit the gut through the pharynx." []
 synonym: "adult gut" EXACT []
 synonym: "blind gut" EXACT []
 synonym: "definitive gut" EXACT []
@@ -5153,6 +5153,13 @@ relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/eye.png {comment=""}
 
 [Term]
+id: PLANA:0000037
+name: obsolete definitive tissue
+comment: we will move forward using "tissue" instead. We have not listed anything as a regenerating or developing tissue, so this seems unnecessary
+property_value: IAO:0000125 PLANA:0000113
+is_obsolete: true
+
+[Term]
 id: PLANA:0000038
 name: ventral midline
 def: "The median line/ plane of bilateral symmetry along the anteroposterior axis on the ventral surface of the animal." []
@@ -5210,7 +5217,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000042
 name: anterior primary gut branch
-def: "The single, central gut branch of the triclad gut anterior to the definitive pharynx." []
+def: "The single, central gut branch of the triclad gut anterior to the pharynx." []
 xref: PMID:21664348
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002086 ! primary gut branch
@@ -5609,9 +5616,15 @@ is_a: PLANA:0000116 ! embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000057
+name: obsolete embryonic cleavage
+comment: removing all processes. may bring back if PLANA expanded to cover processes.
+is_obsolete: true
+
+[Term]
 id: PLANA:0000058
 name: embryonic digestive system
-def: "A cryptic digestive system in Stage 3-6 embryos comprised of temporary embryonic cell types and organs, including the temporary embryonic pharynx and primitive gut cells. Embryonic gut cells, likely produced from blastomeres, form a phagocytic tissue layer surrounding the inner gut cavity during Stages 4-6. It is not known whether the embryonic gut is temporary embryonic tissue or a definitive tissue. For convenience, the embryonic gut is currently designated as an extraembryonic structure because cell type specific markers for the embryonic gut do not stain the definitive gut in hatchlings or adult animals." []
+def: "A cryptic digestive system in Stage 3-6 embryos comprised of temporary embryonic cell types and organs, including the embryonic pharynx and primitive gut cells. Embryonic gut cells, likely produced from blastomeres, form a phagocytic tissue layer surrounding the inner gut cavity during Stages 4-6. It is not known whether the embryonic gut is temporary embryonic tissue or a definitive tissue. For convenience, the embryonic gut is currently designated as an extraembryonic structure because cell type specific markers for the embryonic gut do not stain the definitive gut in hatchlings or adult animals." []
 xref: PMID:28072387
 is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000063 ! extraembryonic structure
@@ -5663,7 +5676,7 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/embry
 [Term]
 id: PLANA:0000061
 name: enteric musculature
-def: "Visceral muscle surrounding the definitive gut." []
+def: "Visceral muscle surrounding the gut." []
 synonym: "enteric muscle" EXACT []
 synonym: "intestinal muscle" EXACT []
 xref: PMID:21664348
@@ -5694,7 +5707,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000062
 name: esophagus
-def: "Attachment between the triclad gut and the proximal end of the definitive pharynx." []
+def: "Attachment between the triclad gut and the proximal end of the pharynx." []
 synonym: "gut pharynx intersection" EXACT []
 xref: ISBN:9780070316607
 xref: OCLC:16809160
@@ -5957,7 +5970,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000072
 name: mouth
-def: "The sole point of entry and exit for the Triclad planarian flatworm gut. The mouth is connected to the pharyngeal pouch to allow for exit and re-entry of the definitive pharynx on the ventral side of the animal. The mouth contains several cell types, including epithelial cells, muscle, and secretory cells." []
+def: "The sole point of entry and exit for the Triclad planarian flatworm gut. The mouth is connected to the pharyngeal pouch to allow for exit and re-entry of the pharynx on the ventral side of the animal. The mouth contains several cell types, including epithelial cells, muscle, and secretory cells." []
 synonym: "Manus" EXACT []
 synonym: "manus" EXACT []
 xref: ISBN:9780070316607
@@ -5997,6 +6010,26 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000074
+name: oocyte
+def: "A female germ cell that has entered meiosis." []
+synonym: "egg" EXACT []
+synonym: "female gamete" EXACT []
+synonym: "ovum" EXACT []
+xref: CL:0000023
+xref: PMID:25278423
+xref: PMID:27149082
+xref: PMID:27163480
+xref: PMID:27304889
+xref: PMID:27330085
+xref: PMID:27501047
+xref: PMID:28072387
+xref: PMID:28434803
+xref: PMID:28812561
+is_a: PLANA:0000122 ! gamete
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -6133,7 +6166,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000081
 name: pharynx pouch
-def: "An epithelial structure housing the definitive pharynx, connected to the esophagus and mouth." []
+def: "An epithelial structure housing the pharynx, connected to the esophagus and mouth." []
 synonym: "pharyngeal pouch" EXACT []
 xref: OCLC:16809160
 is_a: BFO:0000040 ! material entity
@@ -6177,7 +6210,7 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/poste
 [Term]
 id: PLANA:0000085
 name: primitive gut cell
-def: "A phagocytic cell closely associated with the temporary embryonic pharynx." []
+def: "A phagocytic cell closely associated with the embryonic pharynx." []
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
@@ -6345,6 +6378,12 @@ xref: PMID:30194301
 xref: PMID:30471994
 is_a: PLANA:0002119 ! gut branch
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/tertiarygutbranch.png {comment="Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. The tertiary gut branch indicated is by arrows. Scale bar = 250um"}
+
+[Term]
+id: PLANA:0000094
+name: obsolete tissue morphogenesis
+comment: removing all processes. may bring back if PLANA expanded to cover processes.
+is_obsolete: true
 
 [Term]
 id: PLANA:0000095
@@ -7218,7 +7257,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000203
 name: gonopore
-def: "The gonopore, a component of the copulatory apparatus, is an opening located on the ventral side of the animal posterior to the definitive pharynx. The gonopore is the sole point of exit and entry for the reproductive system, allowing from reciprocal exchange of sperm during copulation and egg capsule laying." []
+def: "The gonopore, a component of the copulatory apparatus, is an opening located on the ventral side of the animal posterior to the pharynx. The gonopore is the sole point of exit and entry for the reproductive system, allowing from reciprocal exchange of sperm during copulation and egg capsule laying." []
 synonym: "genital pore" EXACT []
 xref: https://doi.org/10.1101/279364
 xref: ISBN:9780070316607
@@ -7438,6 +7477,13 @@ relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000212
+name: obsolete blastomere compartment
+comment: replace with blastomere only
+property_value: IAO:0000125 PLANA:0004517
+is_obsolete: true
 
 [Term]
 id: PLANA:0000214
@@ -8008,6 +8054,13 @@ property_value: IAO:0000125 UBERON:0006983
 is_obsolete: true
 
 [Term]
+id: PLANA:0000403
+name: obsolete anatomical space
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0000464
+is_obsolete: true
+
+[Term]
 id: PLANA:0000404
 name: pharynx lumen
 def: "Anatomical space enclosed by the pharynx inner epithelium." []
@@ -8067,9 +8120,21 @@ relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/lumenofdigestivetract.png {comment="Depicted by field contains hematoxylin and eosin staining on a coronal section of a asexual adult animal. The lumen of the digestive tract is indicated by arrows. Scale bar = 250um"}
 
 [Term]
+id: PLANA:0000406
+name: oral opening
+def: "The orifice that connects the mouth to the exterior of the body." []
+synonym: "pharyngeal mouth opening" EXACT []
+synonym: "pharynx opening" EXACT []
+xref: PMID:17670787
+xref: PMID:29674431
+xref: PMID:30399335
+is_a: UBERON:0002553 ! anatomical cavity
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
 id: PLANA:0000407
 name: pharynx pouch cavity
-def: "Anatomical space between the definitive pharynx and the epithelial cells comprising parapharyngeal pouch." []
+def: "Anatomical space between the pharynx and the epithelial cells comprising parapharyngeal pouch." []
 synonym: "pharnygeal cavity" EXACT []
 synonym: "pharyngeal pouch cavity" EXACT []
 xref: OCLC:16809160
@@ -8200,7 +8265,7 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/head.
 [Term]
 id: PLANA:0000419
 name: prepharyngeal region
-def: "Region of the juvenile or adult animal between the posterior end of the cephalic ganglia and the anterior end of the definitive pharynx." []
+def: "Region of the juvenile or adult animal between the posterior end of the cephalic ganglia and the anterior end of the pharynx." []
 synonym: "neck" EXACT []
 synonym: "pre-pharyngeal region" EXACT []
 synonym: "pre-pharynx region" EXACT []
@@ -8215,7 +8280,7 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/neck.
 [Term]
 id: PLANA:0000420
 name: parapharyngeal region
-def: "Region of the animal lateral to and surrounding the definitive pharynx." []
+def: "Region of the animal lateral to and surrounding the pharynx." []
 synonym: "para-pharyngeal" EXACT []
 synonym: "parapharyngeal" EXACT []
 synonym: "peri-pharyngeal" EXACT []
@@ -8678,7 +8743,7 @@ xref: PMID:29291981
 xref: PMID:30143032
 xref: PMID:30194301
 is_a: PLANA:0000556 ! neurosecretory neuron
-relationship: part_of PLANA:0000465
+relationship: part_of PLANA:0000465 ! obsolete pharynx nerve plexus
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -8712,9 +8777,15 @@ relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000465
+name: obsolete pharynx nerve plexus
+comment: causes problems with is a and part of relationships for inner and outer pharynx nerve plexus in that both are true. 
+is_obsolete: true
+
+[Term]
 id: PLANA:0000466
 name: subepidermal nerve plexus
-def: "Plexus of nerves located just between the definitive epidermis and the body wall musculature." []
+def: "Plexus of nerves located just between the epidermis and the body wall musculature." []
 xref: doi:10.1002/jmor.1051550208
 xref: PMID:27612384
 is_a: BFO:0000040 ! material entity
@@ -9122,6 +9193,13 @@ property_value: IAO:0000125 BSPO:0000400
 is_obsolete: true
 
 [Term]
+id: PLANA:0000491
+name: obsolete plane of autotomy
+comment: replacing with UBERON term
+property_value: IAO:0000125 UBERON:0035086
+is_obsolete: true
+
+[Term]
 id: PLANA:0000492
 name: nerve plexus
 def: "Anatomical junction where subdivisions of two or more neural trees interconnect with one another to form a network through which nerve fibers of the constituent nerve trees become regrouped; together with other nerve plexuses, nerves and ganglia, it constitutes the peripheral nervous system. Examples: cervical nerve plexus, brachial nerve plexus, sacral nerve plexus[FMA]." []
@@ -9150,13 +9228,123 @@ relationship: part_of PLANA:0000080 ! peripheral nervous system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000493
+name: obsolete nervous system commissure
+comment: we will just use commissural neuron moving forward 
+property_value: IAO:0000125 PLANA:0000547
+is_obsolete: true
+
+[Term]
 id: PLANA:0000494
 name: brain commissure
 def: "any of the nerve fiber tracts that span the longitudinal fissure between the cerebral and/or cerebellar hemispheres of the brain" []
 xref: UBERON:0005970
 is_a: BFO:0000002 ! continuant
-is_a: PLANA:0000493
+is_a: PLANA:0000493 ! obsolete nervous system commissure
 relationship: part_of PLANA:0000044 ! cephalic ganglia
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000495
+name: blastema
+def: "A regenerating tissue composed of a proliferative mass of undifferentiated progenitor cells from which new differentiated structures arise" []
+synonym: "regeneration blastema" EXACT []
+synonym: "regenerative blastema" EXACT []
+xref: https://doi.org/10.1101/279364
+xref: PMID:15866156
+xref: PMID:15972844
+xref: PMID:16033796
+xref: PMID:16890156
+xref: PMID:17251262
+xref: PMID:17553481
+xref: PMID:17670787
+xref: PMID:17905225
+xref: PMID:17942485
+xref: PMID:18063755
+xref: PMID:18202849
+xref: PMID:18456843
+xref: PMID:19048075
+xref: PMID:19174194
+xref: PMID:19247960
+xref: PMID:19766622
+xref: PMID:19852954
+xref: PMID:20040488
+xref: PMID:20215344
+xref: PMID:20223763
+xref: PMID:20422023
+xref: PMID:20599901
+xref: PMID:21179478
+xref: PMID:21295481
+xref: PMID:21295483
+xref: PMID:21356107
+xref: PMID:21458439
+xref: PMID:21566195
+xref: PMID:21664348
+xref: PMID:21806978
+xref: PMID:21937596
+xref: PMID:22125640
+xref: PMID:22252539
+xref: PMID:22318224
+xref: PMID:22411224
+xref: PMID:22439894
+xref: PMID:22451003
+xref: PMID:22479207
+xref: PMID:22549959
+xref: PMID:22884275
+xref: PMID:22899852
+xref: PMID:23235145
+xref: PMID:23250205
+xref: PMID:23318641
+xref: PMID:23405188
+xref: PMID:23629965
+xref: PMID:23652002
+xref: PMID:24040508
+xref: PMID:24063805
+xref: PMID:24120894
+xref: PMID:24173799
+xref: PMID:24415944
+xref: PMID:24523458
+xref: PMID:24704339
+xref: PMID:24922054
+xref: PMID:25254346
+xref: PMID:25558068
+xref: PMID:25725068
+xref: PMID:25772472
+xref: PMID:25956527
+xref: PMID:26062938
+xref: PMID:26459857
+xref: PMID:26525673
+xref: PMID:26711341
+xref: PMID:26884331
+xref: PMID:27013241
+xref: PMID:27068018
+xref: PMID:27240733
+xref: PMID:27542689
+xref: PMID:27551436
+xref: PMID:27606067
+xref: PMID:27612382
+xref: PMID:27612384
+xref: PMID:28126842
+xref: PMID:28137894
+xref: PMID:28171748
+xref: PMID:28216315
+xref: PMID:28461239
+xref: PMID:28757112
+xref: PMID:28807897
+xref: PMID:28893948
+xref: PMID:29158443
+xref: PMID:29273738
+xref: PMID:29291974
+xref: PMID:29291981
+xref: PMID:29357350
+xref: PMID:30194301
+xref: PMID:30237141
+xref: PMID:30282036
+xref: PMID:30297872
+xref: PMID:30471994
+xref: PMID:30485821
+xref: PMID:30729158
+is_a: UBERON:0007567 ! regenerating anatomical structure
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9207,6 +9395,57 @@ name: cell projection
 def: "A prolongation or process extending from a cell." []
 xref: GO:0042995
 is_a: GO:0005575 ! cellular_component
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000502
+name: actin-based cell projection
+def: "A cell projection supported by an assembly of actin filaments." []
+xref: GO:0098858
+is_a: PLANA:0000501 ! cell projection
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000503
+name: cilium
+def: "A specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface and of some cytoplasmic parts. Each cilium is largely bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored to a basal body." []
+synonym: "cilia" EXACT []
+xref: GO:0005929
+xref: ISBN:9780070316607
+xref: PMID:15866156
+xref: PMID:19048075
+xref: PMID:19852954
+xref: PMID:19933103
+xref: PMID:21179478
+xref: PMID:21282632
+xref: PMID:21295481
+xref: PMID:21828097
+xref: PMID:21937596
+xref: PMID:22223737
+xref: PMID:23144623
+xref: PMID:23235145
+xref: PMID:23250205
+xref: PMID:23318641
+xref: PMID:24131630
+xref: PMID:24523458
+xref: PMID:24950970
+xref: PMID:25017721
+xref: PMID:26057828
+xref: PMID:26711341
+xref: PMID:26912790
+xref: PMID:27068018
+xref: PMID:27609598
+xref: PMID:28292427
+xref: PMID:30399335
+is_a: PLANA:0000501 ! cell projection
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000504
+name: microvillus
+def: "Thin cylindrical membrane-covered projections on the surface of an animal cell containing a core bundle of actin filaments." []
+xref: GO:0005902
+is_a: PLANA:0000501 ! cell projection
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9262,12 +9501,46 @@ is_a: PLANA:0000509 ! intracellular part
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000511
+name: acidophilic cytoplasm
+comment: term is not needed.
+is_obsolete: true
+
+[Term]
+id: PLANA:0000512
+name: basophilic cytoplasm
+comment: term is not needed.
+is_obsolete: true
+
+[Term]
 id: PLANA:0000513
 name: cytoplasmic part
 def: "Any constituent part of the cytoplasm, all of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." []
 xref: GO:0044444
 is_a: PLANA:0000509 ! intracellular part
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000514
+name: cytoplasmic vesicle part
+def: "Any constituent part of cytoplasmic vesicle, a vesicle formed of membrane or protein, found in the cytoplasm of a cell." []
+xref: GO:0044433
+is_a: PLANA:0000513 ! cytoplasmic part
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000515
+name: vacuole
+def: "A closed structure, found only in eukaryotic cells, that is completely surrounded by unit membrane and contains liquid material. Cells contain one or several vacuoles, that may have different functions from each other. Vacuoles have a diverse array of functions. They can act as a storage organelle for nutrients or waste products, as a degradative compartment, as a cost-effective way of increasing cell size, and as a homeostatic regulator controlling both turgor pressure and pH of the cytosol." []
+xref: GO:0005773
+is_a: PLANA:0000513 ! cytoplasmic part
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000516
+name: cytoskeleton organization
+comment: term is not needed.
+is_obsolete: true
 
 [Term]
 id: PLANA:0000518
@@ -9311,6 +9584,22 @@ relationship: part_of PLANA:0000520 ! membrane
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000523
+name: plasma membrane part
+def: "Any constituent part of the plasma membrane, the membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." []
+xref: GO:0044459
+is_a: PLANA:0007509 ! plasma membrane
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000524
+name: organelle membrane
+def: "A membrane that is one of the two lipid bilayers of an organelle envelope or the outermost membrane of single membrane bound organelle." []
+xref: GO:0031090
+is_a: PLANA:0000520 ! membrane
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
 id: PLANA:0000525
 name: organelle
 def: "Organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, and prokaryotic structures such as anammoxosomes and pirellulosomes. Excludes the plasma membrane." []
@@ -9335,6 +9624,15 @@ is_a: PLANA:0000518 ! intracellular organelle
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000528
+name: Golgi apparatus
+def: "A compound membranous cytoplasmic organelle of eukaryotic cells, consisting of flattened, ribosome-free vesicles arranged in a more or less regular stack. The Golgi apparatus differs from the endoplasmic reticulum in often having slightly thicker membranes, appearing in sections as a characteristic shallow semicircle so that the convex side (cis or entry face) abuts the endoplasmic reticulum, secretory vesicles emerging from the concave side (trans or exit face). In vertebrate cells there is usually one such organelle, while in invertebrates and plants, where they are known usually as dictyosomes, there may be several scattered in the cytoplasm. The Golgi apparatus processes proteins produced on the ribosomes of the rough endoplasmic reticulum; such processing includes modification of the core oligosaccharides of glycoproteins, and the sorting and packaging of proteins for transport to a variety of cellular locations. Three different regions of the Golgi are now recognized both in terms of structure and function: cis, in the vicinity of the cis face, trans, in the vicinity of the trans face, and medial, lying between the cis and trans regions." []
+xref: GO:0005794
+is_a: PLANA:0000526 ! membrane-bounded organelle
+is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
 id: PLANA:0000529
 name: nucleus
 def: "A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated. In most cells, the nucleus contains all of the cell's chromosomes except the organellar chromosomes, and is the site of RNA synthesis and processing. In some species, or in specialized cell types, RNA metabolism or DNA replication may be absent." []
@@ -9346,6 +9644,15 @@ xref: PMID:26457503
 xref: PMID:28976975
 xref: PMID:29100657
 xref: PMID:29357350
+is_a: PLANA:0000526 ! membrane-bounded organelle
+is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000530
+name: secretory vesicle
+def: "A cytoplasmic, membrane bound vesicle that is capable of fusing to the plasma membrane to release its contents into the extracellular space." []
+xref: GO:0099503
 is_a: PLANA:0000526 ! membrane-bounded organelle
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -9368,11 +9675,58 @@ relationship: part_of PLANA:0000529 ! nucleus
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000533
+name: nucleolus
+def: "A small, dense body one or more of which are present in the nucleus of eukaryotic cells. It is rich in RNA and protein, is not bounded by a limiting membrane, and is not seen during mitosis. Its prime function is the transcription of the nucleolar DNA into 45S ribosomal-precursor RNA, the processing of this RNA into 5.8S, 18S, and 28S components of ribosomal RNA, and the association of these components with 5S RNA and proteins synthesized outside the nucleolus. This association results in the formation of ribonucleoprotein precursors; these pass into the cytoplasm and mature into the 40S and 60S subunits of the ribosome." []
+xref: GO:0044428
+is_a: PLANA:0000532 ! nuclear part
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
 id: PLANA:0000534
 name: chromatin
 def: "The ordered and organized complex of DNA, protein (histones), and sometimes RNA, that forms the chromosome." []
 xref: GO:0000785
 is_a: PLANA:0000532 ! nuclear part
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000535
+name: heterochromatin
+def: "A compact and highly condensed form of chromatin." []
+xref: GO:0000792
+is_a: PLANA:0000534 ! chromatin
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000536
+name: euchromatin
+def: "A dispersed and relatively uncompacted form of chromatin." []
+xref: GO:0000791
+is_a: PLANA:0000534 ! chromatin
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000537
+name: ribosome
+def: "Organized structure of distinctive morphology and function, not bounded by a lipid bilayer membrane. Includes ribosomes, the cytoskeleton and chromosomes." []
+xref: GO:0043228
+is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
+is_a: PLANA:0000531 ! non-membrane-bounded organelle
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000538
+name: axon tract
+def: "A group of axons linking two or more neuropils and having a common origin, termination" []
+synonym: "axon bundle" EXACT []
+synonym: "axon bundles" EXACT []
+synonym: "axon tracts" EXACT []
+xref: PMID:22884275
+xref: PMID:24950970UBERON\:0001018
+xref: PMID:28137894
+xref: UBERON:0001018
+is_a: PLANA:0000501 ! cell projection
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9408,6 +9762,14 @@ relationship: part_of PLANA:0000103 ! central nervous system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000543
+name: neuron projection bundle
+def: "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses." []
+xref: CARO:0001001
+is_a: PLANA:0000037 ! obsolete definitive tissue
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
 id: PLANA:0000545
 name: afferent neuron
 def: "A neuron which conveys sensory information centrally from the periphery." []
@@ -9440,6 +9802,15 @@ relationship: part_of PLANA:0007548 ! transverse commissure
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000547
+name: commissural neuron
+def: "A neuron that has an axon which crosses the midline." []
+xref: CL:0000678
+xref: PMID:22339734
+is_a: PLANA:0000099 ! neuron
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
 id: PLANA:0000548
 name: efferent neuron
 def: "A neuron which sends impulses peripherally to activate muscles or secretory cells." []
@@ -9447,6 +9818,16 @@ synonym: "output neuron" EXACT []
 xref: CL:0000527
 is_a: PLANA:0000099 ! neuron
 relationship: part_of PLANA:0000080 ! peripheral nervous system
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000549
+name: excitatory motor neuron
+def: "A motor neuron that is capable of directly inducing muscle contraction." []
+synonym: "excitatory neuron" EXACT []
+xref: CL:0008014
+xref: PMID:25356635
+is_a: PLANA:0000553 ! motor neuron
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9461,7 +9842,7 @@ xref: WBbt:0005113
 is_a: PLANA:0000099 ! neuron
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 relationship: part_of PLANA:0000103 ! central nervous system
-relationship: part_of PLANA:0000465
+relationship: part_of PLANA:0000465 ! obsolete pharynx nerve plexus
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9502,6 +9883,14 @@ is_a: PLANA:0000099 ! neuron
 is_a: PLANA:0000105 ! secretory cell
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 relationship: part_of PLANA:0000103 ! central nervous system
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0000558
+name: sympathetic neuron
+def: "Sympathetic neurons are part of the sympathetic nervous system and are primarily adrenergic producing the neurotransmitter noradrenalin along with other neuropeptides." []
+xref: CL:0011103
+is_a: PLANA:0000099 ! neuron
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9573,6 +9962,40 @@ is_a: PLANA:0000564 ! peripheral nervous system neuron
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0000566
+name: enteric neuron
+def: "A neruon whose cell body is within an autonomic ganglion." []
+xref: CL:0007011
+is_a: PLANA:0000565 ! autonomic neuron
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0001005
+name: basal lamina of epithelium
+def: "Acellular anatomical structure that consists of a thin sheet of fibrous proteins that underlie and support the cells of an epithelium. It separates the cells of an epithelium from any underlying tissue." []
+synonym: "basal lamina" EXACT []
+synonym: "basement membrane" EXACT []
+xref: CARO:0000065
+xref: ISBN:9780070316607
+xref: PMID:18786419
+xref: PMID:19048075
+xref: PMID:21664348
+xref: PMID:21828097
+xref: PMID:22479207
+xref: PMID:23079596
+xref: PMID:23405188
+xref: PMID:23903188
+xref: PMID:25017721
+xref: PMID:26057828
+xref: PMID:26457503
+xref: PMID:27551436
+xref: PMID:29100657
+xref: PMID:30383829
+xref: PMID:30962434
+is_a: UBERON:0000476 ! acellular anatomical structure
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/basallaminaofepithelium.png {comment="Depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane from an asexual adult animal. The basal lamina is noted with a magenta bracket. Scale bar is 5um."}
+
+[Term]
 id: PLANA:0002000
 name: adenal rhabdite
 def: "Rhabdites that are located basally to the epidermis, in the mesenchyme. In Smed these are present in cells likely on their way to becoming part of the mature epidermis." []
@@ -9619,7 +10042,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0002004
 name: anterior gut branch
-def: "A branch of the triclad gut located anterior to the definitive pharynx." []
+def: "A branch of the triclad gut located anterior to the pharynx." []
 synonym: "anterior branch" EXACT []
 synonym: "anterior intestinal branch" EXACT []
 xref: PMID:18063757
@@ -10901,7 +11324,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0002087
 name: primitive gut
-def: "Four large phagocytic cells associated with the temporary embryonic pharynx." []
+def: "Four large phagocytic cells associated with the embryonic pharynx." []
 synonym: "primitive endoderm" EXACT []
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
@@ -11520,7 +11943,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0002142
 name: parenchyma
-def: "A loosely organized collection of connective tissue and cells, including neoblasts and their immediate progeny, located in the space outside of the organs between the body wall musculature and the definitive gut." []
+def: "A loosely organized collection of connective tissue and cells, including neoblasts and their immediate progeny, located in the space outside of the organs between the body wall musculature and the gut." []
 synonym: "mesenchyme" EXACT []
 xref: OCLC:16809160
 is_a: BFO:0000040 ! material entity
@@ -12442,7 +12865,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0004520
 name: embryonic pharynx radial muscle cell
-def: "Differentiated radial muscle cell present in the temporary embryonic pharynx." []
+def: "Differentiated radial muscle cell present in the embryonic pharynx." []
 synonym: "embryonic pharynx radial muscle fiber" EXACT []
 xref: PMID:16932928
 is_a: BFO:0000040 ! material entity
@@ -12464,7 +12887,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0004521
 name: embryonic pharynx epithelial cell
-def: "foxA1+ epithelial cell contained in the temporary embryonic pharynx." []
+def: "foxA1+ epithelial cell contained in the embryonic pharynx." []
 xref: PMID:20100474
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
@@ -12487,7 +12910,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 id: PLANA:0004524
 name: embryonic pharynx circular muscle cell
 def: "Differentiated muscle cell present in a circular muscle fiber of the embryonic pharynx." []
-synonym: "temporary embryonic pharynx circular muscle fiber" EXACT []
+synonym: "embryonic pharynx circular muscle fiber" EXACT []
 xref: PMID:16932928
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
@@ -12712,6 +13135,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0007507
 name: obsolete posterior compartment
+comment: replaced
 comment: replacing duplicate PLANA term
 property_value: IAO:0000125 PLANA:0000142
 is_obsolete: true
@@ -12745,12 +13169,48 @@ is_a: PLANA:0007508 ! obsolete extracellular component
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
+id: PLANA:0007512
+name: mitochondrion
+def: "A spherical to rod shaped organelle that generates the majority of a cell's supply of ATP via cellular respiration. Mitochondria have their own genome and consist of outer and inner membranes, the latter folds inward to form cristae. This folding increases the surface area of the membrane and thus increases the space available to produce ATP. The inner and outer membranes are separated by an intermembrane space, and the inner membrane encloses the matrix." []
+synonym: "mitochondria" EXACT []
+xref: PMID:21828097
+xref: PMID:22318224
+xref: PMID:26516985
+xref: PMID:29100657
+is_a: PLANA:0000526 ! membrane-bounded organelle
+is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
 id: PLANA:0007513
 name: endoplasmic reticulum
 def: "Network of interconnected, flattened, and/or tubular membrane, known as cisternae. This membrane is contiguous with the outer nuclear membrane. The endoplasmic reticulum is involved in both protein and lipid synthesis." []
 xref: PMID:30143032
 is_a: PLANA:0000526 ! membrane-bounded organelle
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0007514
+name: rough endoplasmic reticulum
+def: "Network of interconnected, flattened, and/or tubular membrane, known as cisternae. This membrane is contiguous with the outer nuclear membrane. The endoplasmic reticulum is involved in both protein and lipid synthesis." []
+xref: PMID:30143032
+is_a: PLANA:0007513 ! endoplasmic reticulum
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0007515
+name: smooth endoplasmic reticulum
+def: "Endoplamic reticulum that does not contain ribosomes, which synthesizes lipids, phospholipids, and steroids." []
+is_a: PLANA:0007513 ! endoplasmic reticulum
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0007516
+name: nuclear pore
+def: "Any of the numerous similar discrete openings in the nuclear envelope of a eukaryotic cell, where the inner and outer nuclear membranes are joined." []
+xref: GO:0005643
+is_a: PLANA:0000532 ! nuclear part
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -12920,6 +13380,14 @@ relationship: RO:0001018 PLANA:0007554 ! contained in parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0007529
+name: ganglion
+def: "A biological tissue mass of nerve cell bodies." []
+xref: UBERON:0000045
+is_a: PLANA:0000037 ! obsolete definitive tissue
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -13107,7 +13575,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0007545
 name: epidermal compartment
-def: "The outermost region of the deep-superficial axis. This anatomical compartment contains definitive epidermis, basal lamina and subepidermal nerve plexus." []
+def: "The outermost region of the deep-superficial axis. This anatomical compartment contains epidermis, basal lamina and subepidermal nerve plexus." []
 synonym: "epidermal region" EXACT []
 synonym: "epidermal surface" EXACT []
 synonym: "epidermis surface" EXACT []
@@ -13308,7 +13776,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0007556
 name: embryonic pharynx lumen
-def: "A lumen enclosed by the temporary embryonic pharynx epithelial cells through which yolk cells are transported into the embryonic gut cavity." []
+def: "A lumen enclosed by the embryonic pharynx epithelial cells through which yolk cells are transported into the embryonic gut cavity." []
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002053 ! lumen
@@ -13376,7 +13844,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0007560
 name: gastrovascular compartment
-def: "The innermost anatomical compartment of the deep-superficial axis, extending from the definitive gut lumen to the gastrodermal nerve plexus. This includes the pharynx organ and the parapharyngeal pouch." []
+def: "The innermost anatomical compartment of the deep-superficial axis, extending from the gut lumen to the gastrodermal nerve plexus. This includes the pharynx organ and the parapharyngeal pouch." []
 is_a: BSPO:0000086 ! anatomical compartment
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -13504,6 +13972,34 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 property_value: seeAlso EMAPA:16033
 property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107"}
+
+[Term]
+id: UBERON:0000464
+name: anatomical space
+namespace: uberon
+def: "Non-material anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more organism substances or anatomical structures." [http://orcid.org/0000-0001-9114-8737]
+subset: upper_level
+synonym: "anatomical spaces" RELATED PLURAL [ZFA:0001643]
+synonym: "lumen" BROAD []
+synonym: "lumen space" EXACT []
+synonym: "space" BROAD []
+xref: AAO:0010110
+xref: AEO:0000005
+xref: BILA:0000005
+xref: CARO:0000005
+xref: EHDAA2:0003005
+xref: FBbt:00007017
+xref: FMA:5897
+xref: HAO:0000005
+xref: http://linkedlifedata.com/resource/umls/id/C0524461
+xref: NCIT:C94478
+xref: TAO:0001668
+xref: TGMA:0001825
+xref: UMLS:C0524461 {source="ncithesaurus:Lumen_Space"}
+xref: VHOG:0001728
+xref: XAO:0003190
+xref: ZFA:0001643
+is_a: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0000465
@@ -13647,7 +14143,7 @@ xref: FMA:67552
 xref: galen:Cavity
 xref: MA:0002447
 xref: NCIT:C34007
-is_a: UBERON:0000466 ! immaterial anatomical entity
+is_a: UBERON:0000464 ! anatomical space
 
 [Term]
 id: UBERON:0005423
@@ -13708,6 +14204,14 @@ synonym: "junction" BROAD []
 xref: FMA:5898
 xref: http://www.snomedbrowser.com/Codes/Details/91833003
 is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0035086
+name: plane of autotomy
+namespace: uberon
+def: "An anatomical plane that bisects a zone of weakness in an appendage. When autotamy occurs, the appendage divides along this plane." [http://en.wikipedia.org/wiki/Autotomy, http://orcid.org/0000-0002-6601-2165]
+is_a: UBERON:0000466 ! immaterial anatomical entity
+property_value: IAO:0000232 "this class is intended for autotomy that bisects an appendage. Other forms of autotomy are possible: for example, a sea cucumber and autotomitize internal organs" xsd:string
 
 [Typedef]
 id: BFO:0000060
