@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-10-03/plana-base.owl
+data-version: plana/releases/2019-10-04/plana-base.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -102,9 +102,7 @@ xref: PMID:28757112
 xref: PMID:29557542
 xref: PMID:29674432
 xref: PMID:29906446
-is_a: PLANA:0000120 ! progenitor cell
-is_a: PLANA:0000121 ! stem cell
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
+is_a: PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -113,7 +111,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -197,7 +195,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -438,6 +436,8 @@ xref: PMID:26457503
 xref: PMID:28072387
 is_a: PLANA:0000015 ! non ciliated epithelial cell
 is_a: PLANA:0000033 ! epidermal progenitor cell
+is_a: PLANA:0002032 ! epidermal cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
 relationship: BFO:0000050 PLANA:0000096 ! ventral region of the epidermal compartment
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
@@ -450,7 +450,7 @@ relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
 relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000035 ! Category 3 cell
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -524,6 +524,8 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000011 ! protonephridial progenitor cell
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
 relationship: RO:0002490 PLANA:0000007 ! Stage 7
@@ -546,6 +548,8 @@ def: "Post-mitotic, ciliated epidermal cells." []
 xref: PMID:25017721
 xref: PMID:28072387
 is_a: PLANA:0000106 ! ciliated epithelial cell
+is_a: PLANA:0002032 ! epidermal cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
 relationship: BFO:0000050 PLANA:0000096 ! ventral region of the epidermal compartment
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
@@ -575,7 +579,7 @@ def: "An innervated, muscular pump that ingests yolk cells into the gut cavity. 
 synonym: "embryonic pharynx" EXACT []
 xref: ISBN:9780070316607
 xref: PMID:28072387
-is_a: PLANA:0000063 ! extraembryonic structure
+is_a: PLANA:0002120 ! extraembryonic organ
 relationship: BFO:0000050 PLANA:0000058 ! embryonic digestive system
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
@@ -654,17 +658,15 @@ xref: PMID:29674431
 xref: PMID:30399335
 xref: UBERON:0001016
 is_a: PLANA:0000114 ! anatomical system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000026
-name: definitive gut
+name: gut
 def: "The planarian triclad gut contains a central anterior gut branch connected to two posterior gut branches arranged around the definitive pharynx. Secondary gut branches extend laterally from the primary gut branches, while tertiary gut branches extend from the secondary branches. Food and waste enter and exit the definitive gut through the defintive pharynx." []
 synonym: "adult gut" EXACT []
 synonym: "blind gut" EXACT []
+synonym: "definitive gut" EXACT []
 synonym: "digestive tract" EXACT []
 synonym: "gastrovascular digestive tract" EXACT []
 synonym: "gastrovascular tract" EXACT []
@@ -828,6 +830,7 @@ xref: PMID:27542689
 xref: PMID:28072387
 xref: PMID:29674431
 is_a: PLANA:0000033 ! epidermal progenitor cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -838,7 +841,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000014 ! zeta neoblast
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -859,7 +862,7 @@ xref: OCLC:20423827
 xref: OCLC:464776945
 xref: OCLC:82522822
 xref: PMID:28072387
-is_a: PLANA:0000063 ! extraembryonic structure
+is_a: PLANA:0002120 ! extraembryonic organ
 relationship: RO:0001018 PLANA:0000041 ! aboral hemisphere
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
@@ -961,8 +964,9 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0000034
-name: definitive epidermis
+name: epidermis
 def: "A single cell layer of post-mitotic epithelial cells containing ciliated and non-ciliated cell types forming the exterior surface of the animal." []
+synonym: "definitive epidermis" EXACT []
 synonym: "epidermal layer" EXACT []
 synonym: "epidermis" EXACT []
 synonym: "epithelium" EXACT []
@@ -1031,8 +1035,8 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
+relationship: RO:0001018 PLANA:0007506 ! anterior compartment
 relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
-relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002202 PLANA:0000033 ! epidermal progenitor cell
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -1078,6 +1082,7 @@ xref: PMID:27013241
 xref: PMID:27068018
 xref: PMID:28072387
 is_a: PLANA:0000033 ! epidermal progenitor cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -1088,7 +1093,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000028 ! Category 2 cell
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -1244,6 +1249,7 @@ relationship: RO:0002490 PLANA:0000008 ! Stage 8
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
+relationship: RO:0002496 PLANA:0000007 ! Stage 7
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/eye.png {comment=""}
 
 [Term]
@@ -1295,7 +1301,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -1329,7 +1335,7 @@ name: anterior primary gut branch
 def: "The single, central gut branch of the triclad gut anterior to the definitive pharynx." []
 xref: PMID:21664348
 is_a: PLANA:0002086 ! primary gut branch
-relationship: BFO:0000050 PLANA:0000026 ! definitive gut
+relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
@@ -1452,12 +1458,15 @@ xref: PMID:30237141
 is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 relationship: RO:0001018 PLANA:0000418 ! head
+relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
 relationship: RO:0002490 PLANA:0000007 ! Stage 7
 relationship: RO:0002490 PLANA:0000008 ! Stage 8
 relationship: RO:0002490 PLANA:0000214 ! juvenile
+relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
+relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: RO:0002496 PLANA:0000006 ! Stage 6
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -1469,6 +1478,7 @@ synonym: "circular muscle fiber" EXACT []
 xref: https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000005.md
 xref: PMID:26904543
 is_a: PLANA:0000101 ! muscle cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000240 ! body wall musculature
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -1532,9 +1542,10 @@ xref: PMID:29674431
 xref: PMID:29674432
 xref: PMID:29906446
 xref: PMID:30962434
-is_a: PLANA:0000121 ! stem cell
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
+is_a: PLANA:0000429 ! neoblast
+is_a: PLANA:0002095 ! somatic cell
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
+relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! tail
@@ -1542,7 +1553,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
 relationship: RO:0002490 PLANA:0000007 ! Stage 7
@@ -1571,6 +1582,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002220 PLANA:0000053 ! distal tubule
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -1592,6 +1604,7 @@ xref: PMID:28461239
 xref: PMID:28807897
 xref: PMID:30471994
 is_a: PLANA:0000101 ! muscle cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000240 ! body wall musculature
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -1646,9 +1659,6 @@ xref: PMID:27501047
 xref: PMID:29357350
 xref: UBERON:0001007
 is_a: PLANA:0000114 ! anatomical system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -1667,6 +1677,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000011 ! protonephridial progenitor cell
 relationship: RO:0002220 PLANA:0000047 ! collecting duct
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -1680,7 +1691,7 @@ name: dorsal epidermis
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." []
 synonym: "dorsal epithelium" EXACT []
 synonym: "dorsal region of definitive epidermis" EXACT []
-intersection_of: PLANA:0000034 ! definitive epidermis
+intersection_of: PLANA:0000034 ! epidermis
 intersection_of: RO:0002180 BSPO:0000079
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -1741,7 +1752,7 @@ name: embryonic gut cell
 def: "Dispersed, phagocytic gut cells that appear during Stage 4 and ultimately generate a honeycomb-like lattice surrounding the central gut cavity in Stage 5 embryos. Early embryonic gut cell specific transcripts are expressed from Stage 4-6, and are downregulated during Stage 7." []
 xref: PMID:28072387
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: BFO:0000050 PLANA:0000058 ! embryonic digestive system
+relationship: BFO:0000050 PLANA:0002031 ! embryonic gut
 relationship: RO:0001018 PLANA:0000041 ! aboral hemisphere
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
@@ -1784,7 +1795,7 @@ xref: PMID:26904543
 xref: PMID:30471994
 xref: PMID:30962434
 is_a: PLANA:0000013 ! visceral musculature
-relationship: BFO:0000050 PLANA:0000026 ! definitive gut
+relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -1848,6 +1859,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000011 ! protonephridial progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -1873,6 +1885,7 @@ xref: PMID:27542689
 xref: PMID:29674431
 xref: PMID:29674432
 is_a: PLANA:0000119 ! terminally differentiated cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000064 ! flame bulb
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -1882,6 +1895,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
 relationship: RO:0002220 PLANA:0000087 ! proximal tubule
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -1905,7 +1919,7 @@ xref: PMID:27501047
 xref: PMID:28287248
 xref: PMID:30608231
 is_a: PLANA:0000037 ! definitive tissue
-relationship: BFO:0000050 PLANA:0000026 ! definitive gut
+relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -1982,7 +1996,6 @@ xref: ISBN:9780070316607
 xref: PMID:26904543
 xref: PMID:30962434
 is_a: PLANA:0000071 ! longitudinal muscle cell
-relationship: BFO:0000050 PLANA:0000240 ! body wall musculature
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -2169,7 +2182,6 @@ xref: https://github.com/obophenotype/planaria-ontology/blob/master/metadata/pla
 xref: ISBN:9780070316607
 xref: PMID:26904543
 is_a: PLANA:0000071 ! longitudinal muscle cell
-relationship: BFO:0000050 PLANA:0000240 ! body wall musculature
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -2226,9 +2238,6 @@ xref: PMID:27612382
 xref: PMID:29674431
 xref: UBERON:0000010
 is_a: PLANA:0000025 ! nervous system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -2256,7 +2265,7 @@ xref: PMID:21664348
 xref: PMID:23318641
 xref: PMID:24063805
 is_a: PLANA:0002086 ! primary gut branch
-relationship: BFO:0000050 PLANA:0000026 ! definitive gut
+relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! tail
@@ -2306,6 +2315,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000011 ! protonephridial progenitor cell
 relationship: RO:0002220 PLANA:0000053 ! distal tubule
 relationship: RO:0002220 PLANA:0000065 ! flame cell
@@ -2349,9 +2359,6 @@ xref: PMID:29674431
 xref: PMID:30297872
 xref: UBERON:0001008
 is_a: PLANA:0000114 ! anatomical system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -2392,11 +2399,9 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000238 ! elongate spermatid
-relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002496 PLANA:0000214 ! juvenile
 relationship: RO:0003001 PLANA:0000208 ! testis
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -2407,12 +2412,12 @@ name: yolk syncytium
 def: "Fused yolk cells surrounding blastomeres undergoing dispersed cleavage during Stages 1 and 2." []
 synonym: "syncytial yolk cell" EXACT []
 xref: PMID:15599763
-is_a: PLANA:0004518 ! extraembryonic cell
+is_a: PLANA:0002136 ! syncytium
 relationship: RO:0002490 PLANA:0000001 ! Stage 1
 relationship: RO:0002490 PLANA:0000002 ! Stage 2
 relationship: RO:0002496 PLANA:0000001 ! Stage 1
 relationship: RO:0002497 PLANA:0000002 ! Stage 2
-relationship: RO:0003001 PLANA:0000231 ! vitelline gland
+relationship: RO:0003001 PLANA:0000107 ! yolk cell
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -2449,13 +2454,12 @@ xref: PMID:28072387
 xref: PMID:28245923
 xref: PMID:29674431
 xref: PMID:30485821
-is_a: PLANA:0000120 ! progenitor cell
+is_a: PLANA:0000429 ! neoblast
 relationship: BFO:0000050 PLANA:0000124 ! visual system
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
 relationship: RO:0002490 PLANA:0000007 ! Stage 7
 relationship: RO:0002490 PLANA:0000008 ! Stage 8
@@ -2475,7 +2479,7 @@ synonym: "ventral epidermin" EXACT []
 synonym: "ventral epithelia" EXACT []
 synonym: "ventral epithelium" EXACT []
 synonym: "ventral region of definitive epidermis" EXACT []
-intersection_of: PLANA:0000034 ! definitive epidermis
+intersection_of: PLANA:0000034 ! epidermis
 intersection_of: RO:0002180 BSPO:0000084
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -2647,9 +2651,7 @@ xref: PMID:29674432
 xref: PMID:30143032
 xref: PMID:30399335
 is_a: PLANA:0000540 ! electrically signaling cell
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
+is_a: PLANA:0002095 ! somatic cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -2667,6 +2669,7 @@ xref: PMID:26114597
 xref: PMID:28072387
 xref: PMID:28461239
 is_a: PLANA:0000119 ! terminally differentiated cell
+is_a: PLANA:0002095 ! somatic cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -2705,6 +2708,7 @@ xref: PMID:28893948
 xref: PMID:30471994
 xref: PMID:30962434
 is_a: PLANA:0000539 ! electrically responsive cell
+is_a: PLANA:0002095 ! somatic cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -2799,9 +2803,6 @@ xref: PMID:30729158
 xref: PMID:30962434
 xref: UBERON:0001017
 is_a: PLANA:0000025 ! nervous system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -2864,7 +2865,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -2903,7 +2904,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2934,6 +2935,7 @@ synonym: "distal tubule cell" EXACT []
 xref: PMID:21828097
 xref: PMID:29674431
 is_a: PLANA:0000015 ! non ciliated epithelial cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000053 ! distal tubule
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -2943,6 +2945,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2973,6 +2976,7 @@ name: collecting duct epithelial cell
 def: "Nonciliated epithelial cells that assemble into collecting ducts." []
 xref: PMID:26057828
 is_a: PLANA:0000015 ! non ciliated epithelial cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000047 ! collecting duct
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -2982,7 +2986,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -2994,6 +2998,7 @@ name: terminally differentiated cell
 def: "A post-mitotic, terminally differentiated cell type found in planarian embryos, juveniles and/or adult animals." []
 xref: PMID:29674432
 is_a: PLANA:0000499 ! cell
+is_a: PLANA:0002095 ! somatic cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -3069,9 +3074,6 @@ name: visual system
 def: "The sensory system subserving the sense of vision." []
 xref: UBERON:0002104
 is_a: PLANA:0000114 ! anatomical system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -3080,9 +3082,6 @@ name: sensory system
 def: "Anatomical system that overlaps the nervous system and is responsible for receiving and processing sensory information." []
 xref: UBERON:0001032
 is_a: PLANA:0000114 ! anatomical system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -3091,8 +3090,6 @@ name: reproductive system
 def: "Anatomical system that has as its parts the organs concerned with reproduction." []
 xref: UBERON:0000990
 is_a: PLANA:0000114 ! anatomical system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -3109,7 +3106,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -3131,7 +3128,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -3145,6 +3142,7 @@ def: "piwi-1+, nkx1-1+ progenitor neoblasts required for specification of circul
 xref: PMID:29168507
 is_a: PLANA:0000019 ! muscle progenitor cell
 is_a: PLANA:0000429 ! neoblast
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000240 ! body wall musculature
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -3155,7 +3153,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -3178,9 +3176,6 @@ xref: PMID:18202849
 xref: PMID:7466176
 is_a: PLANA:0000552 ! sensory neuron
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -3200,7 +3195,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -3215,17 +3210,16 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000135
 name: female primordial germ cell
-def: "Definition forthcoming" []
+def: "Cells expressing nanos that are located ventrally in the location that the ovaries form. Primordial germ cells are present in both asexual adults and sexual hermaphrodites. This term may be redundant with oogonial stem cell." []
 xref: PMID:17390146
 is_a: PLANA:0000121 ! stem cell
 is_a: PLANA:0000229 ! female germ cell
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -3268,7 +3262,7 @@ name: Hyman vesicle
 def: "PROG-2-5 positive granules that range in size from 0.5um to 1um present in epithelia and epithelia progenitor cells. These are distinct from rhabdites." []
 xref: PMID:29100657
 is_a: PLANA:0002137 ! intracellular granule
-relationship: BFO:0000050 PLANA:0000034 ! definitive epidermis
+relationship: BFO:0000050 PLANA:0000034 ! epidermis
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/hymanvesicle.png {comment="Depcited by is an immuno electron microscopy image of a mesenchymal cell labeled with anti-PROG-2-5 immuno-gold. Large rhod-shaped granules resembling rhabdites are found in the same cell labeled with PROG-2-5+ oval-shaped granules (pseudo-colored in blue). Higher magnification of the boxed region is shown in the panel below. e, endoplasmic reticulum; m, mitochondria; n, nucleus; rh, rhabdite. Scale bar, 1 um."}
 
@@ -3322,7 +3316,7 @@ relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -3441,7 +3435,7 @@ xref: PMID:25278423
 xref: PMID:27074666
 xref: PMID:28072387
 xref: PMID:28434803
-is_a: PLANA:0000431 ! organ
+is_a: PLANA:0002089 ! reproductive organ
 relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
@@ -3635,7 +3629,7 @@ xref: PMID:27163480
 xref: PMID:28434803
 xref: PMID:28976975
 xref: UBERON:0000991
-is_a: PLANA:0000431 ! organ
+is_a: PLANA:0002089 ! reproductive organ
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -3646,13 +3640,12 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000218
 name: male primordial germ cell
-def: "Neoblasts coexpressing piwi-1 and nanos that are required for male and female gonad formation. Primordial germ cells are present in both asexual and sexual adults." []
+def: "Cells coexpressing piwi-1 and nanos that are required for male gonad formation. Primordial germ cells are present in both asexual adults and sexual hermaphrodites. This term may be redundant with spermatogonial stem cell." []
 xref: PMID:17376870
 xref: PMID:17390146
 is_a: PLANA:0000121 ! stem cell
 is_a: PLANA:0000228 ! male germ cell
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -3660,7 +3653,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -3668,9 +3661,10 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0000219
-name: male germline stem cell
+name: spermatogonial stem cell
 def: "gh4+, nanos+ cells residing at the testis periphery that self-renew and give rise to differentiating daughters that will ultimately produce haploid sperm." []
-synonym: "spermatogonial stem cell (SSC)" EXACT []
+synonym: "male germline stem cell" EXACT []
+synonym: "SSC" EXACT []
 xref: PMID:19022767
 xref: PMID:20844018
 xref: PMID:27163480
@@ -3685,8 +3679,8 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
-relationship: RO:0002202 PLANA:0000218 ! male primordial germ cell
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
+relationship: RO:0002202 PLANA:0000429 ! neoblast
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -3713,9 +3707,11 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
-relationship: RO:0002202 PLANA:0000219 ! male germline stem cell
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
+relationship: RO:0002202 PLANA:0000219 ! spermatogonial stem cell
+relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! juvenile
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -3743,7 +3739,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000220 ! spermatogonium
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
@@ -3771,7 +3767,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -3798,12 +3794,11 @@ relationship: BFO:0000050 PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
-relationship: RO:0002202 PLANA:0000135 ! female primordial germ cell
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
+relationship: RO:0002202 PLANA:0000429 ! neoblast
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -3825,7 +3820,7 @@ relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole anim
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -3933,6 +3928,7 @@ xref: PMID:27163480
 xref: PMID:28434803
 is_a: PLANA:0000427 ! multicellular anatomical structure
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
+relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -3997,7 +3993,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000221 ! spermatocyte
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
@@ -4022,7 +4018,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000237 ! round spermatid
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
@@ -4039,7 +4035,7 @@ relationship: BFO:0000050 PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000223 ! oogonial stem cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -4151,7 +4147,7 @@ xref: PMID:21828097
 xref: PMID:28072387
 xref: UBERON:0006909
 is_a: PLANA:0002053 ! lumen
-relationship: BFO:0000050 PLANA:0000026 ! definitive gut
+relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -4193,7 +4189,7 @@ id: PLANA:0000409
 name: apical surface of the epidermal compartment
 def: "The apical surface of the single layered epidermis that is in contact with the environment." []
 synonym: "apical surface of definitive epidermis" EXACT []
-intersection_of: PLANA:0000034 ! definitive epidermis
+intersection_of: PLANA:0000034 ! epidermis
 intersection_of: RO:0002180 BSPO:0000373
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/apicalepidermissurface.png {comment="Depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane from an asexual adult animal. The apical epidermis surface is noted with magenta arrows. Scale bar is 5um."}
 
@@ -4202,7 +4198,7 @@ id: PLANA:0000410
 name: basal surface of the epidermal compartment
 def: "The basal surface of the epidermal epithelium in direct contact with the basal lamina." []
 synonym: "basal surface of definitive epidermis" EXACT []
-intersection_of: PLANA:0000034 ! definitive epidermis
+intersection_of: PLANA:0000034 ! epidermis
 intersection_of: RO:0002180 BSPO:0000374
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/basalepidermissurface.png {comment="The depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane. The basal epidermis surface is noted with magenta arrows. Scale bar is 5um."}
 
@@ -4213,7 +4209,7 @@ def: "The surface of the gastrodermis in contact with the gut lumen." []
 synonym: "lumen gut surface" EXACT []
 xref: PMID:21664348
 is_a: BSPO:0000005
-relationship: BFO:0000050 PLANA:0000026 ! definitive gut
+relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -4389,9 +4385,6 @@ xref: PMID:24950970
 xref: PMID:27068018
 xref: PMID:28137894
 is_a: PLANA:0000114 ! anatomical system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -4554,11 +4547,18 @@ xref: PMID:30471994
 xref: PMID:30485821
 xref: PMID:30729158
 xref: PMID:30962434
-is_a: PLANA:0000114 ! anatomical system
+is_a: PLANA:0000120 ! progenitor cell
+is_a: PLANA:0000121 ! stem cell
+relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! ventral compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! tail
+relationship: RO:0001018 PLANA:0004527 ! copulatory region
+relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
+relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0000212 ! blastomere compartment
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
 relationship: RO:0002490 PLANA:0000006 ! Stage 6
@@ -4735,7 +4735,6 @@ xref: PMID:29291981
 xref: PMID:30143032
 xref: PMID:30194301
 is_a: PLANA:0000556 ! neurosecretory neuron
-relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 relationship: BFO:0000050 PLANA:0000465 ! pharynx nerve plexus
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -4846,7 +4845,7 @@ def: "A thin net of single nerve fibers located around the gut." []
 xref: doi.org/10.1002/jmor.1051550208
 xref: PMID:17999079
 is_a: PLANA:0000492 ! nerve plexus
-relationship: BFO:0000050 PLANA:0000026 ! definitive gut
+relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -4933,7 +4932,6 @@ synonym: "pharynx outer circular muscle fiber" EXACT []
 xref: ASIN:B000M4NK9M
 xref: ISBN:9780070316607
 is_a: PLANA:0007535 ! pharynx circular muscle cell
-relationship: BFO:0000050 PLANA:0000478 ! pharynx musculature
 relationship: BSPO:0001107 PLANA:0000476 ! pharynx outer longitudinal muscle cell
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -4953,7 +4951,6 @@ synonym: "pharyngeal inner circular muscle fiber" EXACT []
 synonym: "pharynx inner circular muscle fiber" EXACT []
 xref: ASIN:B000M4NK9M
 is_a: PLANA:0007535 ! pharynx circular muscle cell
-relationship: BFO:0000050 PLANA:0000478 ! pharynx musculature
 relationship: BSPO:0001107 PLANA:0007534 ! pharynx inner epithelium
 relationship: BSPO:0015014 PLANA:0000475 ! pharynx inner longitudinal muscle cell
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
@@ -5096,16 +5093,17 @@ xref: PMID:30194301
 is_a: PLANA:0000556 ! neurosecretory neuron
 relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
-relationship: BFO:0000050 PLANA:0000103 ! central nervous system
+relationship: BFO:0000050 PLANA:0000097 ! ventral nerve cord
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
+relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0007550 ! serotonergic neural progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -5127,6 +5125,7 @@ xref: PMID:25356635
 xref: PMID:27864883
 xref: PMID:30194301
 is_a: PLANA:0000556 ! neurosecretory neuron
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -5153,9 +5152,6 @@ name: secretory system
 def: "Anatomical system that has as its parts cells and glands devoted to the discharge of substances such as mucus." []
 xref: PMID:20865784
 is_a: PLANA:0000114 ! anatomical system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5172,9 +5168,6 @@ xref: PMID:28807897
 xref: PMID:29674431
 xref: PMID:30962434
 is_a: PLANA:0000100 ! epithelial cell
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5193,14 +5186,12 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0000487
 name: acidophilic gland cell
-def: "One of two distinct histochemical classes of gland cells, these can be found throughout the body but primarily form clusters of subepidermal marginal adhesive glands along the dorsalventral border of the animal." []
+def: "One of two distinct histochemical classes of gland cells, these can be found throughout the body but primarily form clusters of subepidermal marginal adhesive glands along the dorsoventral border of the animal." []
 synonym: "eosinophilic gland cell" EXACT []
 synonym: "erythrophilous gland cell" EXACT []
 xref: PMID:20865784
 is_a: PLANA:0000485 ! gland cell
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
+is_a: PLANA:0002095 ! somatic cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5214,9 +5205,7 @@ xref: ISBN:9780070316607
 xref: PMID:20865784
 xref: PMID:23405188
 is_a: PLANA:0000485 ! gland cell
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
+is_a: PLANA:0002095 ! somatic cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5291,28 +5280,6 @@ xref: KUPO:0000002
 xref: VHOG:0001533
 xref: WBbt:0004017
 xref: XAO:0003012
-is_a: UBERON:0000061
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
-
-[Term]
-id: PLANA:0000500
-name: cell part
-def: "Anatomical structure that is a direct part of the cell." []
-synonym: "cell component" EXACT []
-xref: AAO:0010271
-xref: BILA:0000014
-xref: C34070
-xref: CARO:0000014
-xref: FBbt:00007012
-xref: FMA:86454
-xref: GO:0044464
-xref: HAO:0000014
-xref: http://linkedlifedata.com/resource/umls/id/C1178969
-xref: NIF:Subcellular\:sao-1337158144
-xref: OpenCyc:Mx4rwQwkcZwpEbGdrcN5Y29ycA
-xref: TGMA:0001834
-xref: UBERON:0000470
-xref: UMLS:C1178969
 is_a: UBERON:0000061
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -5532,9 +5499,6 @@ xref: FMA:87653
 is_a: PLANA:0000099 ! neuron
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5552,15 +5516,11 @@ xref: PMID:22445864
 xref: PMID:24173799
 xref: PMID:25493551
 is_a: PLANA:0000550 ! interneuron
-relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 relationship: BFO:0000050 PLANA:0000465 ! pharynx nerve plexus
 relationship: BFO:0000050 PLANA:0000466 ! subepidermal nerve plexus
 relationship: BFO:0000050 PLANA:0000467 ! submuscular nerve plexus
 relationship: BFO:0000050 PLANA:0007548 ! transverse commissure
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5570,10 +5530,8 @@ def: "A neuron which sends impulses peripherally to activate muscles or secretor
 synonym: "output neuron" EXACT []
 xref: CL:0000527
 is_a: PLANA:0000099 ! neuron
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5604,9 +5562,6 @@ is_a: PLANA:0000462 ! sensory cell
 is_a: PLANA:0000545 ! afferent neuron
 is_a: PLANA:0000546 ! bipolar neuron
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5620,9 +5575,6 @@ xref: FMA:83617
 xref: WBbt:0005409
 is_a: PLANA:0000548 ! efferent neuron
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5651,9 +5603,6 @@ xref: PMID:18499291
 xref: PMID:24173799
 is_a: PLANA:0000552 ! sensory neuron
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5666,7 +5615,6 @@ xref: FMA:67287
 xref: ISBN:9780070316607
 xref: PMID:18499291
 is_a: PLANA:0000099 ! neuron
-relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 relationship: BFO:0000050 PLANA:0000466 ! subepidermal nerve plexus
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -5685,6 +5633,7 @@ name: central nervous system neuron
 def: "Any neuron that is part of a central nervous system." []
 xref: CL:2000029
 is_a: PLANA:0000099 ! neuron
+relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -5717,7 +5666,7 @@ name: adenal rhabdite
 def: "Rhabdites that are located basally to the epidermis, in the mesenchyme. In Smed these are present in cells likely on their way to becoming part of the mature epidermis." []
 xref: ISBN:9780070316607
 is_a: PLANA:0000104 ! rhabdite
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -5776,7 +5725,7 @@ xref: PMID:24063805
 xref: PMID:28287248
 xref: PMID:30194301
 is_a: PLANA:0002119 ! gut branch
-relationship: BFO:0000050 PLANA:0000026 ! definitive gut
+relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
@@ -5836,7 +5785,9 @@ is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000125 ! sensory system
 relationship: RO:0001018 PLANA:0000418 ! head
+relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -5935,6 +5886,7 @@ synonym: "Category 1 gene expressing cell" EXACT []
 xref: PMID:18786419
 xref: PMID:21894189
 xref: PMID:22439894
+is_a: PLANA:0002095 ! somatic cell
 is_a: PLANA:0003116 ! parenchymal cell
 relationship: BFO:0000050 PLANA:0002142 ! parenchyma
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
@@ -5946,7 +5898,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -6160,19 +6112,6 @@ xref: PMID:27523733
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
 relationship: BFO:0000050 PLANA:0000429 ! neoblast
 relationship: BFO:0000050 PLANA:0004517 ! blastomere
-relationship: RO:0001018 PLANA:0000041 ! aboral hemisphere
-relationship: RO:0001018 PLANA:0000060 ! embryonic wall
-relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
-relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
-relationship: RO:0001018 PLANA:0000418 ! head
-relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0000421 ! tail
-relationship: RO:0001018 PLANA:0004527 ! copulatory region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000004 ! Stage 4
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
@@ -6280,6 +6219,7 @@ synonym: "DVM" EXACT []
 xref: PMID:30471994
 xref: PMID:30962434
 is_a: PLANA:0000101 ! muscle cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000079 ! parenchymal musculature
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -6290,7 +6230,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -6305,7 +6245,7 @@ relationship: BFO:0000050 PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -6335,7 +6275,7 @@ id: PLANA:0002031
 name: embryonic gut
 def: "A cryptic digestive cavity comprised of phagocytic embryonic gut cells." []
 xref: PMID:28072387
-is_a: PLANA:0000063 ! extraembryonic structure
+is_a: PLANA:0002120 ! extraembryonic organ
 relationship: BFO:0000050 PLANA:0000058 ! embryonic digestive system
 relationship: RO:0001018 PLANA:0000041 ! aboral hemisphere
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
@@ -6364,17 +6304,7 @@ xref: PMID:29100657
 xref: PMID:29357350
 xref: PMID:30399335
 is_a: PLANA:0000100 ! epithelial cell
-relationship: BFO:0000050 PLANA:0000034 ! definitive epidermis
-relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
-relationship: RO:0001018 PLANA:0000418 ! head
-relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
-relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
-relationship: RO:0001018 PLANA:0000421 ! tail
-relationship: RO:0001018 PLANA:0004527 ! copulatory region
-relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
-relationship: RO:0001018 PLANA:0007505 ! ventral compartment
-relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
+is_a: PLANA:0002095 ! somatic cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -6428,10 +6358,8 @@ xref: CL:0000424
 xref: PMID:21566185
 xref: PMID:24173799
 is_a: PLANA:0000119 ! terminally differentiated cell
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000088 ! renal system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -6550,7 +6478,6 @@ xref: PMID:27013241
 xref: PMID:28434803
 xref: PMID:28812561
 is_a: PLANA:0000121 ! stem cell
-relationship: BFO:0000050 PLANA:0000208 ! testis
 relationship: BFO:0000050 PLANA:0000217 ! gonad
 relationship: RO:0002202 PLANA:0000429 ! neoblast
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -6586,6 +6513,7 @@ is_a: PLANA:0002032 ! epidermal cell
 relationship: BFO:0000050 PLANA:0004528 ! pharynx epithelium
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
+relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -6670,9 +6598,6 @@ xref: PMID:28216315
 is_a: PLANA:0000552 ! sensory neuron
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000125 ! sensory system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -6683,6 +6608,12 @@ xref: PMID:29674431
 xref: PMID:30962434
 is_a: PLANA:0000101 ! muscle cell
 relationship: BFO:0000050 PLANA:0000079 ! parenchymal musculature
+relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! ventral compartment of the whole animal
+relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
+relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0001018 PLANA:0007549 ! body wall musculature compartment
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -6710,8 +6641,12 @@ relationship: BFO:0000050 PLANA:0000031 ! pigment cup cell
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
+relationship: RO:0002490 PLANA:0000007 ! Stage 7
+relationship: RO:0002490 PLANA:0000008 ! Stage 8
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
+relationship: RO:0002490 PLANA:0004504 ! asexual adult
+relationship: RO:0002496 PLANA:0000007 ! Stage 7
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -6762,10 +6697,8 @@ xref: PMID:24173799
 xref: PMID:25356635
 xref: PMID:27163480
 is_a: PLANA:0000099 ! neuron
-relationship: BFO:0000050 PLANA:0000493 ! nervous system commissure
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
+relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
+relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -6774,7 +6707,7 @@ name: non-ciliated epidermis
 def: "Differentiating, immature epidermal cells lacking cilia." []
 xref: PMID:26457503
 xref: PMID:28292427
-is_a: PLANA:0000034 ! definitive epidermis
+is_a: PLANA:0000034 ! epidermis
 relationship: BFO:0000050 PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -6853,7 +6786,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -6888,6 +6821,7 @@ is_a: PLANA:0002032 ! epidermal cell
 relationship: BFO:0000050 PLANA:0004528 ! pharynx epithelium
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
+relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -7009,9 +6943,6 @@ xref: GO:0098793
 xref: PMID:24950970
 is_a: PLANA:0000099 ! neuron
 relationship: BFO:0000050 PLANA:0000025 ! nervous system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -7021,7 +6952,8 @@ def: "Terminal inflated portion of the axon, containing the specialized apparatu
 synonym: "pre-synaptic terminal" EXACT []
 xref: GO:0043195
 xref: PMID:23903188
-is_a: PLANA:0000500 ! cell part
+is_a: GO:0005575
+relationship: BFO:0000050 PLANA:0002008 ! axon
 relationship: BFO:0000050 PLANA:0002083 ! presynaptic cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -7063,6 +6995,7 @@ relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000004 ! Stage 4
 relationship: RO:0002490 PLANA:0000005 ! Stage 5
+relationship: RO:0002490 PLANA:0000006 ! Stage 6
 relationship: RO:0002496 PLANA:0000003 ! Stage 3
 relationship: RO:0002497 PLANA:0000006 ! Stage 6
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
@@ -7190,9 +7123,6 @@ xref: PMID:25404302
 xref: PMID:27606067
 xref: PMID:28757112
 is_a: PLANA:0000499 ! cell
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -7207,7 +7137,6 @@ xref: PMID:27330085
 is_a: PLANA:0000119 ! terminally differentiated cell
 is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000217 ! gonad
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -7220,11 +7149,7 @@ xref: PMID:26651295
 xref: PMID:27542689
 xref: PMID:29674432
 xref: PMID:30962434
-is_a: PLANA:0000120 ! progenitor cell
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
+is_a: PLANA:0000429 ! neoblast
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -7497,7 +7422,7 @@ id: PLANA:0002119
 name: gut branch
 def: "The triclad planarian gut is serially bifrucated into connected lumens where each bifrucation is a branch." []
 is_a: PLANA:0000037 ! definitive tissue
-relationship: BFO:0000050 PLANA:0000026 ! definitive gut
+relationship: BFO:0000050 PLANA:0000026 ! gut
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -7687,7 +7612,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -8411,6 +8336,7 @@ synonym: "somatic testis cell" EXACT []
 xref: PMID:23652002
 xref: PMID:27163480
 is_a: PLANA:0000119 ! terminally differentiated cell
+is_a: PLANA:0002096 ! somatic gonadal cell
 relationship: BFO:0000050 PLANA:0000208 ! testis
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -8419,9 +8345,10 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
+relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: RO:0002496 PLANA:0000214 ! juvenile
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -8436,7 +8363,7 @@ relationship: BFO:0000050 PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -8551,13 +8478,6 @@ name: extraembryonic cell
 def: "Post-mitotic, terminally differentiated cells which, give rise to temporary embryonic tissues." []
 xref: PMID:28072387
 is_a: PLANA:0000119 ! terminally differentiated cell
-relationship: RO:0002490 PLANA:0000003 ! Stage 3
-relationship: RO:0002490 PLANA:0000004 ! Stage 4
-relationship: RO:0002490 PLANA:0000005 ! Stage 5
-relationship: RO:0002490 PLANA:0000006 ! Stage 6
-relationship: RO:0002490 PLANA:0000007 ! Stage 7
-relationship: RO:0002490 PLANA:0000008 ! Stage 8
-relationship: RO:0002496 PLANA:0000002 ! Stage 2
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -8684,9 +8604,6 @@ name: integumental system
 def: "Connected anatomical system that forms a barrier between an animal and its environment. In vertebrates, the integumental system consists of the epidermis, dermis plus associated glands and adnexa such as hair and scales. In invertebrates, the integumental system may include cuticle." []
 xref: UBERON:0002416
 is_a: PLANA:0000114 ! anatomical system
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -8702,7 +8619,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -8726,7 +8643,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -8785,7 +8702,7 @@ relationship: BFO:0000050 PLANA:0000230 ! tuba
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -8849,14 +8766,6 @@ relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
-id: PLANA:0007508
-name: extracellular component
-def: "Anatomical structures that exist outside of cells; non-cellular." []
-xref: WBbt:0005732
-is_a: PLANA:0000500 ! cell part
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
-
-[Term]
 id: PLANA:0007509
 name: plasma membrane
 def: "The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." []
@@ -8865,7 +8774,7 @@ synonym: "cytoplasmic membrane" EXACT []
 xref: GO:0005886
 xref: PMID:20511647
 xref: PMID:27523733
-is_a: PLANA:0007511 ! extracellular organelle
+is_a: PLANA:0000520 ! membrane
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -8873,7 +8782,8 @@ id: PLANA:0007511
 name: extracellular organelle
 def: "Organized structure of distinctive morphology and function, occurring outside the cell. Includes, for example, extracellular membrane vesicles (EMVs) and the cellulosomes of anaerobic bacteria and fungi." []
 xref: GO:0043230
-is_a: PLANA:0007508 ! extracellular component
+is_a: PLANA:0000525 ! organelle
+is_a: PLANA:0007508
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9027,7 +8937,7 @@ xref: PMID:29674431
 xref: PMID:29674432
 xref: PMID:30471994
 is_a: PLANA:0000561 ! neuron associated cell (sensu Nematoda and Protostomia)
-relationship: BFO:0000050 PLANA:0000103 ! central nervous system
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000470 ! neuropil
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -9035,10 +8945,12 @@ relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
+relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
+relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
@@ -9077,6 +8989,7 @@ is_a: PLANA:0000101 ! muscle cell
 relationship: BFO:0000050 PLANA:0000478 ! pharynx musculature
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
+relationship: RO:0001018 PLANA:0007560 ! gastrovascular compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -9169,7 +9082,7 @@ relationship: RO:0001018 PLANA:0007506 ! anterior compartment
 relationship: RO:0001018 PLANA:0007545 ! epidermal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002496 PLANA:0000214 ! juvenile
+relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -9183,7 +9096,7 @@ relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002202 PLANA:0007546 ! TrpA+ neural progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -9199,6 +9112,7 @@ xref: PMID:12557210
 xref: PMID:25254346
 xref: PMID:29674431
 is_a: PLANA:0000552 ! sensory neuron
+is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007504 ! dorsal compartment
@@ -9228,14 +9142,14 @@ name: TrpA+ neural progenitor cell
 def: "piwi-1+, runt-1+, ap2+ progenitor neoblasts required for production of TrpA+ neurons." []
 xref: PMID:25254346
 is_a: PLANA:0000012 ! neural progenitor cell
+is_a: PLANA:0000429 ! neoblast
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -9246,7 +9160,7 @@ id: PLANA:0007547
 name: anterior pole progenitor cell
 def: "piwi-1+, foxD+, prep+ progenitor neoblasts required for formation of the anterior pole." []
 xref: PMID:24415944
-is_a: PLANA:0000120 ! progenitor cell
+is_a: PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -9285,9 +9199,9 @@ xref: PMID:23903188
 xref: PMID:24131630
 xref: PMID:25254346
 is_a: PLANA:0000012 ! neural progenitor cell
+is_a: PLANA:0000429 ! neoblast
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000142 ! posterior compartment of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
@@ -9296,7 +9210,7 @@ relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -9308,12 +9222,12 @@ name: klf+ sensory neuron progenitor cell
 def: "piwi-1+, klf+ progenitor neoblasts required for production of cintillo+ sensory neurons." []
 xref: PMID:25254346
 is_a: PLANA:0000012 ! neural progenitor cell
+is_a: PLANA:0000429 ! neoblast
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -9326,11 +9240,12 @@ def: "A population of piwi-2+, ston-2+, elav-2+, ptprd-9+ and msi-1+ progenitors
 synonym: "vNeoblast" EXACT []
 xref: PMID:27150006
 is_a: PLANA:0000012 ! neural progenitor cell
+is_a: PLANA:0000429 ! neoblast
 relationship: BFO:0000050 PLANA:0000025 ! nervous system
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -9350,10 +9265,9 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0007554
-name: parenchymal region
+name: parenchymal compartment
 def: "An anatomical compartment of the deep-superficial axis between the gastrodermal nerve plexus and submuscular nerve plexus." []
 synonym: "mesenchymal region" EXACT []
-synonym: "parenchymal compartment" EXACT []
 xref: ISBN:9780070316607
 xref: PMID:15866156
 xref: PMID:16311336
@@ -9440,12 +9354,12 @@ name: pax3/7+ neural progenitor cell
 def: "piwi-1+, pax3/7+ progenitor neoblasts implicated in the production of DBH+ ventral midline neurons." []
 xref: PMID:25254346
 is_a: PLANA:0000012 ! neural progenitor cell
+is_a: PLANA:0000429 ! neoblast
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0001018 PLANA:0007505 ! ventral compartment
 relationship: RO:0001018 PLANA:0007506 ! anterior compartment
-relationship: RO:0001018 PLANA:0007554 ! parenchymal region
+relationship: RO:0001018 PLANA:0007554 ! parenchymal compartment
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -9522,7 +9436,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 [Term]
 id: PLANA:0007560
 name: gastrovascular compartment
-def: "The innermost anatomical compartment of the deep-superficial axis, extending from the definitive gut lumen to the gastrodermal nerve plexus." []
+def: "The innermost anatomical compartment of the deep-superficial axis, extending from the definitive gut lumen to the gastrodermal nerve plexus. This includes the pharynx organ and the parapharyngeal pouch." []
 is_a: BSPO:0000086
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
