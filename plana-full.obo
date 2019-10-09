@@ -714,63 +714,6 @@ name: biological entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
-id: FBcv:0000000
-name: FlyBase CV
-namespace: FlyBase miscellaneous CV
-
-[Term]
-id: FBcv:0000005
-name: qualifier
-namespace: FlyBase miscellaneous CV
-def: "Term used to qualify a descriptor." [FBC:MMC]
-subset: do_not_annotate
-is_a: FBcv:0000000 ! FlyBase CV
-
-[Term]
-id: FBcv:0000038
-name: relative spatial qualifier
-namespace: spatial_qualifier
-subset: do_not_annotate
-xref: PATO:0001631
-is_a: FBcv:0000052 ! spatial qualifier
-
-[Term]
-id: FBcv:0000039
-name: anterior to
-namespace: spatial_qualifier
-xref: PATO:0001632
-is_a: FBcv:0000038 ! relative spatial qualifier
-
-[Term]
-id: FBcv:0000041
-name: dorsal to
-namespace: spatial_qualifier
-xref: PATO:0001233
-is_a: FBcv:0000038 ! relative spatial qualifier
-
-[Term]
-id: FBcv:0000045
-name: posterior to
-namespace: spatial_qualifier
-xref: PATO:0001633
-is_a: FBcv:0000038 ! relative spatial qualifier
-
-[Term]
-id: FBcv:0000049
-name: ventral to
-namespace: spatial_qualifier
-xref: PATO:0001196
-is_a: FBcv:0000038 ! relative spatial qualifier
-
-[Term]
-id: FBcv:0000052
-name: spatial qualifier
-namespace: spatial_qualifier
-def: "Qualifier that describes the spatial characteristics of a phenotype or expression pattern." [FBC:MMC]
-subset: do_not_annotate
-is_a: FBcv:0000005 ! qualifier
-
-[Term]
 id: GO:0000003
 name: reproduction
 namespace: biological_process
@@ -12717,7 +12660,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 
 [Term]
 id: PLANA:0003253
-name: meiotic telophase I
+name: meiotic telophase I spermatocyte
 def: "spermatocyte undergoing meiotic telophase I" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
@@ -14450,6 +14393,19 @@ is_transitive: true
 is_obsolete: true
 
 [Typedef]
+id: BFO:0000063
+name: precedes
+def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+subset: ro-eco
+property_value: IAO:0000111 "precedes" xsd:string
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: happens_during BFO:0000063
+holds_over_chain: part_of BFO:0000063
+is_transitive: true
+is_a: RO:0002222 ! temporally related to
+
+[Typedef]
 id: BFO:0000067
 name: contains process
 def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
@@ -14690,7 +14646,7 @@ property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "ends_at_start_of" xsd:string
 property_value: IAO:0000118 "meets" xsd:string
 property_value: RO:0002575 BFO:0000063
-is_a: precedes ! precedes
+is_a: BFO:0000063 ! precedes
 
 [Typedef]
 id: RO:0002163
@@ -14734,7 +14690,6 @@ id: RO:0002222
 name: temporally related to
 comment: A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations.
 subset: ro-eco
-property_value: http://purl.org/dc/elements/1.1/source https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1 xsd:anyURI
 property_value: http://purl.org/dc/terms/source https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1 xsd:anyURI
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -14801,7 +14756,6 @@ is_a: RO:0002384 ! has developmental potential involving
 id: RO:0002304
 name: causally upstream of, positive effect
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x increases the frequency, rate or extent of y
-property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
 property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
 property_value: RO:0004049 RO:0002411
 is_a: RO:0002411 ! causally upstream of
@@ -14811,7 +14765,6 @@ is_a: RO:0004047 ! causally upstream of or within, positive effect
 id: RO:0002305
 name: causally upstream of, negative effect
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x decreases the frequency, rate or extent of y
-property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
 property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
 property_value: RO:0004050 RO:0002411
 is_a: RO:0002411 ! causally upstream of
@@ -14951,7 +14904,7 @@ def: "p is causally upstream of q if and only if p precedes q and p and q are li
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_transitive: true
-is_a: precedes ! precedes
+is_a: BFO:0000063 ! precedes
 is_a: RO:0002418 ! causally upstream of or within
 
 [Typedef]
@@ -15149,8 +15102,8 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 holds_over_chain: part_of RO:0002497
 holds_over_chain: RO:0002286 RO:0002497
 is_a: RO:0002487 ! relation between structure and stage
+transitive_over: BFO:0000063 ! precedes
 transitive_over: part_of ! part_of
-transitive_over: precedes ! precedes
 
 [Typedef]
 id: RO:0002500
@@ -15633,7 +15586,6 @@ inverse_of: developmentally_contributes_to ! developmentally contributes to
 id: has_part
 name: has part
 name: has_part
-namespace: chebi_ontology
 namespace: external
 namespace: quality
 namespace: spatial
@@ -15651,7 +15603,6 @@ property_value: IAO:0000116 "Occurrents are not subject to change and so parthoo
 property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)\n\nA continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'." xsd:string
 property_value: IAO:0000118 "has_part" xsd:string
 property_value: RO:0001900 RO:0001901
-is_cyclic: false
 is_transitive: true
 is_a: overlaps ! overlaps
 
@@ -15829,15 +15780,11 @@ id: part_of
 name: part of
 name: part_of
 namespace: external
-namespace: protein
 namespace: quality
-namespace: relationship
 namespace: spatial
 namespace: uberon
 def: "a core relation that holds between a part and its whole" []
-synonym: "part_of" EXACT []
 xref: BFO:0000050
-xref: OBO_REL:part_of
 property_value: IAO:0000111 "is part of" xsd:string
 property_value: IAO:0000112 "my brain is part of my body (continuant parthood, two material entities)" xsd:string
 property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
@@ -15846,7 +15793,6 @@ property_value: IAO:0000116 "Everything is part of itself. Any part of any part 
 property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000118 "part_of" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/BFO
 property_value: RO:0001900 RO:0001901
 property_value: RO:0040042 BFO:0000002
 property_value: RO:0040042 BFO:0000003
@@ -15931,22 +15877,7 @@ holds_over_chain: part_of preceded_by
 holds_over_chain: starts_during preceded_by
 is_transitive: true
 is_a: RO:0002086 ! ends after
-inverse_of: precedes ! precedes
-
-[Typedef]
-id: precedes
-name: precedes
-namespace: uberon
-def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
-subset: ro-eco
-xref: BFO:0000063
-property_value: IAO:0000111 "precedes" xsd:string
-domain: BFO:0000003 ! occurrent
-range: BFO:0000003 ! occurrent
-holds_over_chain: happens_during precedes
-holds_over_chain: part_of precedes
-is_transitive: true
-is_a: RO:0002222 ! temporally related to
+inverse_of: BFO:0000063 ! precedes
 
 [Typedef]
 id: regulates
