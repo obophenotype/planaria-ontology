@@ -11,18 +11,21 @@ classes:
 
 relations: 
   has component: RO:0002180
-  
+  part of: BFO:0000050
+
 annotationProperties:
   exact_synonym: oio:hasExactSynonym
   depicted_by: foaf:depiction
   image_comment: rdfs:comment
   term_id: oboInOwl:id
+  has_obo_namespace: oboInOwl:hasOBONamespace
 
 vars:
   anatomical_entity: "'anatomical entity'"
   anatomical_space: "'anatomical space'"
   depicted_by: "'depicted_by'"
   image_comment: "'image_comment'"
+  has_obo_namespace: "'has_obo_namespace'"
 
 data_list_vars:
   def_dbxref: xsd:string
@@ -51,7 +54,10 @@ annotations:
         text: "%s"
         vars:
          - image_comment
-
+  - annotationProperty: has_obo_namespace
+    text: "%s"
+    vars:
+      - has_obo_namespace
   - annotationProperty: term_id
     text: "%s"
     vars:
@@ -68,7 +74,13 @@ def:
   xrefs: def_dbxref
 
 equivalentTo:
-  text: "%s and ('has component' some %s)"
+  text: "'part of' some %s and ('has component' some %s)"
   vars:
     - anatomical_entity
     - anatomical_space
+
+
+
+
+
+

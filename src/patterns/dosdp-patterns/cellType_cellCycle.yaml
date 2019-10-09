@@ -18,12 +18,14 @@ annotationProperties:
   depicted_by: foaf:depicted_by
   image_comment: rdfs:comment
   term_id: oboInOwl:id
+  has_obo_namespace: oboInOwl:hasOBONamespace
 
 vars:
   cell_type_entity: "'cell_type_entity'"
   cell_cycle_phase: "'cell_cycle_phase'"
   depicted_by: "'depicted_by'"
   image_comment: "'image_comment'"
+  has_obo_namespace: "'has_obo_namespace'"
 
 data_list_vars:
   def_dbxref: xsd:string
@@ -52,6 +54,12 @@ annotations:
     text: "%s"
     vars:
      - term_id
+
+  - annotationProperty: has_obo_namespace
+    text: "%s"
+    vars:
+      - has_obo_namespace
+
 
 exact_synonym:
     value: exact_syn

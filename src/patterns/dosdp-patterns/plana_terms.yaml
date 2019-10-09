@@ -13,18 +13,24 @@ annotationProperties:
 #  dbxref: oboInOwl:hasDbXref
   depicted_by: foaf:depiction
   image_comment: rdfs:comment
+  comment: rdfs:comment
+  has_obo_namespace: oboInOwl:hasOBONamespace
+  created_by: oboInOwl:created_by
 
 vars:
   parent_entity: "'parent_entity'"
   new_entity: "'new_entity'"
   depicted_by: "'depicted_by'"
   image_comment: "'image_comment'"
-#  dbxref: "'dbxref'"
+  has_obo_namespace: "'has_obo_namespace'"
+  comment: "'comment'"
+  created_by: "'created_by'"
 
 data_list_vars:
   dbxref: xsd:string
   def_dbxref: xsd:string
   exact_syn: xsd:string
+ 
 
 annotations:
   - annotationProperty: depicted_by
@@ -34,6 +40,18 @@ annotations:
         text: "%s"
         vars:
          - image_comment
+  - annotationProperty: comment
+    text: "%s"
+    vars: 
+      - comment
+  - annotationProperty: has_obo_namespace
+    text: "%s"
+    vars:
+      - has_obo_namespace
+  - annotationProperty: created_by 
+    text: "%s"
+    vars:
+      - created_by
 
 subClassOf:
     text: "%s"

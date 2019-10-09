@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-10-07/imports/uberon_import.owl
+data-version: plana/releases/2019-10-09/imports/uberon_import.owl
 ontology: plana/imports/uberon_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000105>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0000105> (life cycle stage)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0000105> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0001062> (anatomical entity)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0001062> owl:Thing)\n\n\n)
 
@@ -370,7 +370,7 @@ name: adjacent_to
 namespace: uberon
 def: "x adjacent_to y iff: x and y share a boundary" []
 xref: RO:0002220
-is_a: deep_to ! deep_to
+is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: capable_of
@@ -392,6 +392,7 @@ name: deep_to
 namespace: uberon
 def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000107
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: developmentally_contributes_to
@@ -465,7 +466,7 @@ name: immediately_deep_to
 namespace: uberon
 def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001107
-is_a: adjacent_to ! adjacent_to
+is_a: deep_to ! deep_to
 
 [Typedef]
 id: immediately_preceded_by
@@ -486,7 +487,7 @@ id: immediately_superficial_to
 name: immediately_superficial_to
 namespace: uberon
 xref: BSPO:0015014
-is_a: superficial_to ! superficial_to
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: in_lateral_side_of
@@ -532,5 +533,4 @@ name: superficial_to
 namespace: uberon
 def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000108
-is_a: adjacent_to ! adjacent_to
 
