@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-10-09/plana-full.owl
+data-version: plana/releases/2019-11-04/plana-full.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -7,9 +7,14 @@ treat-xrefs-as-genus-differentia: CARO part_of NCBITaxon:79327; CL part_of NCBIT
 ontology: plana/plana-full
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
 def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+is_a: BFO:0000001 ! entity
 disjoint_from: BFO:0000003 ! occurrent
 relationship: part_of BFO:0000002 ! continuant
 
@@ -17,13 +22,16 @@ relationship: part_of BFO:0000002 ! continuant
 id: BFO:0000003
 name: occurrent
 def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000003 ! occurrent
 
 [Term]
 id: BFO:0000004
 name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
 disjoint_from: BFO:0000031 ! generically dependent continuant
 relationship: part_of BFO:0000004 ! independent continuant
@@ -32,6 +40,7 @@ relationship: part_of BFO:0000004 ! independent continuant
 id: BFO:0000015
 name: process
 def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
+def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/083-003"}
 is_a: BFO:0000003 ! occurrent
 
 [Term]
@@ -52,6 +61,8 @@ relationship: part_of BFO:0000019 ! quality
 id: BFO:0000020
 name: specifically dependent continuant
 def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
+def: "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])" []
+def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/050-003"}
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000031 ! generically dependent continuant
 relationship: part_of BFO:0000020 ! specifically dependent continuant
@@ -60,8 +71,10 @@ relationship: part_of BFO:0000020 ! specifically dependent continuant
 id: BFO:0000031
 name: generically dependent continuant
 def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
+def: "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])" []
 is_a: BFO:0000002 ! continuant
 relationship: part_of BFO:0000031 ! generically dependent continuant
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
@@ -709,9 +722,22 @@ def: "A non-material anatomical entity of two dimensions. Anatomical boundaries 
 is_a: CARO:0000007 ! immaterial anatomical entity
 
 [Term]
+id: CARO:0000014
+name: cell part
+is_a: CARO:0000003 ! anatomical structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
+property_value: IAO:0000589 "cell part (CARO)" xsd:string
+
+[Term]
 id: CARO:0030000
 name: biological entity
 is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: CL:0000000
+name: cell
+is_a: CARO:0000003 ! anatomical structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 
 [Term]
 id: GO:0000003
@@ -1062,6 +1088,48 @@ xref: Wikipedia:Extracellular
 is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
+id: GO:0005622
+name: intracellular
+namespace: cellular_component
+def: "The living contents of a cell; the matter contained within (but not including) the plasma membrane, usually taken to exclude large vacuoles and masses of secretory or ingested material. In eukaryotes it includes the nucleus and cytoplasm." [ISBN:0198506732]
+subset: gocheck_do_not_annotate
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_plant
+synonym: "internal to cell" EXACT []
+synonym: "nucleocytoplasm" RELATED [GOC:mah]
+synonym: "protoplasm" EXACT []
+synonym: "protoplast" RELATED [GOC:mah]
+xref: Wikipedia:Intracellular
+is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0005634
+name: nucleus
+namespace: cellular_component
+def: "A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated. In most cells, the nucleus contains all of the cell's chromosomes except the organellar chromosomes, and is the site of RNA synthesis and processing. In some species, or in specialized cell types, RNA metabolism or DNA replication may be absent." [GOC:go_curators]
+subset: goslim_agr
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_chembl
+subset: goslim_flybase_ribbon
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_mouse
+subset: goslim_pir
+subset: goslim_plant
+subset: goslim_yeast
+synonym: "cell nucleus" EXACT []
+synonym: "horsetail nucleus" NARROW [GOC:al, GOC:mah, GOC:vw, PMID:15030757]
+xref: MIPS_funcat:70.10
+xref: NIF_Subcellular:sao1702920020
+xref: Wikipedia:Cell_nucleus
+is_a: GO:0043231 ! intracellular membrane-bounded organelle
+is_a: GO:0044464 ! obsolete cell part
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
 id: GO:0006793
 name: phosphorus metabolic process
 namespace: biological_process
@@ -1291,6 +1359,7 @@ alt_id: GO:0000004
 alt_id: GO:0007582
 alt_id: GO:0044699
 def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [GOC:pdt]
+def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." [GOC:go_curators, GOC:isa_complete]
 comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
@@ -1999,6 +2068,30 @@ intersection_of: positively_regulates GO:0016301 ! kinase activity
 relationship: positively_regulates GO:0016301 ! kinase activity
 
 [Term]
+id: GO:0035556
+name: intracellular signal transduction
+namespace: biological_process
+alt_id: GO:0007242
+alt_id: GO:0007243
+alt_id: GO:0023013
+alt_id: GO:0023034
+def: "The process in which a signal is passed on to downstream components within the cell, which become activated themselves to further propagate the signal and finally trigger a change in the function or state of the cell." [GOC:bf, GOC:jl, GOC:signaling, ISBN:3527303782]
+synonym: "intracellular protein kinase cascade" NARROW [GOC:signaling]
+synonym: "intracellular signal transduction pathway" NARROW []
+synonym: "intracellular signaling cascade" RELATED [GOC:signaling]
+synonym: "intracellular signaling chain" EXACT [ISBN:3527303782]
+synonym: "intracellular signaling pathway" RELATED []
+synonym: "protein kinase cascade" NARROW [GOC:signaling]
+synonym: "signal transduction via intracellular signaling cascade" RELATED []
+synonym: "signal transmission via intracellular cascade" NARROW []
+is_a: GO:0007165 ! signal transduction
+intersection_of: GO:0007165 ! signal transduction
+intersection_of: occurs_in GO:0005622 ! intracellular
+relationship: occurs_in GO:0005622 ! intracellular
+created_by: rfoulger
+creation_date: 2010-05-14T01:14:37Z
+
+[Term]
 id: GO:0038023
 name: signaling receptor activity
 namespace: molecular_function
@@ -2150,6 +2243,26 @@ xref: Wikipedia:Organelle
 is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
+id: GO:0043227
+name: membrane-bounded organelle
+namespace: cellular_component
+def: "Organized structure of distinctive morphology and function, bounded by a single or double lipid bilayer membrane. Includes the nucleus, mitochondria, plastids, vacuoles, and vesicles. Excludes the plasma membrane." [GOC:go_curators]
+synonym: "membrane-enclosed organelle" EXACT []
+xref: NIF_Subcellular:sao414196390
+is_a: GO:0043226 ! organelle
+
+[Term]
+id: GO:0043229
+name: intracellular organelle
+namespace: cellular_component
+def: "Organized structure of distinctive morphology and function, occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." [GOC:go_curators]
+subset: goslim_pir
+is_a: GO:0043226 ! organelle
+intersection_of: GO:0043226 ! organelle
+intersection_of: part_of GO:0005622 ! intracellular
+relationship: part_of GO:0005622 ! intracellular
+
+[Term]
 id: GO:0043230
 name: extracellular organelle
 namespace: cellular_component
@@ -2159,6 +2272,16 @@ is_a: GO:0043226 ! organelle
 intersection_of: GO:0043226 ! organelle
 intersection_of: part_of GO:0005576 ! extracellular region
 relationship: part_of GO:0005576 ! extracellular region
+
+[Term]
+id: GO:0043231
+name: intracellular membrane-bounded organelle
+namespace: cellular_component
+def: "Organized structure of distinctive morphology and function, bounded by a single or double lipid bilayer membrane and occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, and vesicles. Excludes the plasma membrane." [GOC:go_curators]
+subset: goslim_pir
+synonym: "intracellular membrane-enclosed organelle" EXACT []
+is_a: GO:0043227 ! membrane-bounded organelle
+is_a: GO:0043229 ! intracellular organelle
 
 [Term]
 id: GO:0043393
@@ -2278,6 +2401,23 @@ comment: Note that this term is in the subset of terms that should not be used f
 subset: gocheck_do_not_annotate
 is_obsolete: true
 consider: GO:0043226
+
+[Term]
+id: GO:0044464
+name: cell part
+name: obsolete cell part
+namespace: cellular_component
+def: "OBSOLETE. Any constituent part of a cell, the basic structural and functional unit of all organisms." [GOC:jl]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
+subset: goslim_pir
+synonym: "cellular subcomponent" EXACT [NIF_Subcellular:sao628508602]
+synonym: "protoplast" RELATED [GOC:mah]
+xref: NIF_Subcellular:sao628508602
+is_a: CARO:0000014 ! cell part
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+is_obsolete: true
+consider: CL:0000000
 
 [Term]
 id: GO:0044703
@@ -3588,6 +3728,124 @@ created_by: bf
 creation_date: 2012-02-22T11:41:00Z
 
 [Term]
+id: GO:1902531
+name: regulation of intracellular signal transduction
+namespace: biological_process
+alt_id: GO:0010627
+def: "Any process that modulates the frequency, rate or extent of intracellular signal transduction." [GOC:dph, GOC:signaling, GOC:tb, GOC:TermGenie]
+synonym: "regulation of intracellular protein kinase cascade" NARROW []
+synonym: "regulation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "regulation of intracellular signaling cascade" EXACT [GOC:TermGenie]
+synonym: "regulation of intracellular signaling chain" EXACT [GOC:TermGenie]
+synonym: "regulation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "regulation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "regulation of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+is_a: GO:0009966 ! regulation of signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0035556 ! intracellular signal transduction
+relationship: regulates GO:0035556 ! intracellular signal transduction
+created_by: bf
+creation_date: 2013-12-02T11:32:52Z
+
+[Term]
+id: GO:1902532
+name: negative regulation of intracellular signal transduction
+namespace: biological_process
+alt_id: GO:0010741
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of intracellular signal transduction." [GOC:dph, GOC:signaling, GOC:tb, GOC:TermGenie]
+synonym: "down regulation of intracellular signal transduction" EXACT [GOC:TermGenie]
+synonym: "down regulation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "down regulation of intracellular signaling cascade" NARROW [GOC:TermGenie]
+synonym: "down regulation of intracellular signaling chain" EXACT [GOC:TermGenie]
+synonym: "down regulation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "down regulation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "down regulation of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+synonym: "down-regulation of intracellular signal transduction" EXACT [GOC:TermGenie]
+synonym: "down-regulation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "down-regulation of intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "down-regulation of intracellular signaling chain" EXACT [GOC:TermGenie]
+synonym: "down-regulation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "down-regulation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "down-regulation of signal transmission via intracellular cascade" RELATED [GOC:TermGenie]
+synonym: "downregulation of intracellular signal transduction" EXACT [GOC:TermGenie]
+synonym: "downregulation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "downregulation of intracellular signaling cascade" NARROW [GOC:TermGenie]
+synonym: "downregulation of intracellular signaling chain" EXACT [GOC:TermGenie]
+synonym: "downregulation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "downregulation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "downregulation of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+synonym: "inhibition of intracellular signal transduction" NARROW [GOC:TermGenie]
+synonym: "inhibition of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "inhibition of intracellular signaling cascade" NARROW [GOC:TermGenie]
+synonym: "inhibition of intracellular signaling chain" NARROW [GOC:TermGenie]
+synonym: "inhibition of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "inhibition of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "inhibition of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+synonym: "negative regulation of intracellular protein kinase cascade" EXACT []
+synonym: "negative regulation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "negative regulation of intracellular signaling cascade" EXACT [GOC:TermGenie]
+synonym: "negative regulation of intracellular signaling chain" EXACT [GOC:TermGenie]
+synonym: "negative regulation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "negative regulation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "negative regulation of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+is_a: GO:0009968 ! negative regulation of signal transduction
+is_a: GO:1902531 ! regulation of intracellular signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0035556 ! intracellular signal transduction
+relationship: negatively_regulates GO:0035556 ! intracellular signal transduction
+created_by: bf
+creation_date: 2013-12-02T11:33:01Z
+
+[Term]
+id: GO:1902533
+name: positive regulation of intracellular signal transduction
+namespace: biological_process
+alt_id: GO:0010740
+def: "Any process that activates or increases the frequency, rate or extent of intracellular signal transduction." [GOC:BHF, GOC:dph, GOC:signaling, GOC:tb, GOC:TermGenie]
+synonym: "activation of intracellular signal transduction" NARROW [GOC:TermGenie]
+synonym: "activation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "activation of intracellular signaling cascade" NARROW [GOC:TermGenie]
+synonym: "activation of intracellular signaling chain" NARROW [GOC:TermGenie]
+synonym: "activation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "activation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "activation of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+synonym: "positive regulation of intracellular protein kinase cascade" NARROW []
+synonym: "positive regulation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "positive regulation of intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "positive regulation of intracellular signaling chain" EXACT [GOC:TermGenie]
+synonym: "positive regulation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "positive regulation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "positive regulation of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+synonym: "up regulation of intracellular signal transduction" EXACT [GOC:TermGenie]
+synonym: "up regulation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "up regulation of intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "up regulation of intracellular signaling chain" EXACT [GOC:TermGenie]
+synonym: "up regulation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "up regulation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "up regulation of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+synonym: "up-regulation of intracellular signal transduction" EXACT [GOC:TermGenie]
+synonym: "up-regulation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "up-regulation of intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "up-regulation of intracellular signaling chain" EXACT [GOC:TermGenie]
+synonym: "up-regulation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "up-regulation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "up-regulation of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+synonym: "upregulation of intracellular signal transduction" EXACT [GOC:TermGenie]
+synonym: "upregulation of intracellular signal transduction pathway" NARROW [GOC:TermGenie]
+synonym: "upregulation of intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "upregulation of intracellular signaling chain" EXACT [GOC:TermGenie]
+synonym: "upregulation of intracellular signaling pathway" RELATED [GOC:TermGenie]
+synonym: "upregulation of signal transduction via intracellular signaling cascade" RELATED [GOC:TermGenie]
+synonym: "upregulation of signal transmission via intracellular cascade" NARROW [GOC:TermGenie]
+is_a: GO:0009967 ! positive regulation of signal transduction
+is_a: GO:1902531 ! regulation of intracellular signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0035556 ! intracellular signal transduction
+relationship: positively_regulates GO:0035556 ! intracellular signal transduction
+created_by: bf
+creation_date: 2013-12-02T11:33:10Z
+
+[Term]
 id: GO:1903046
 name: meiotic cell cycle process
 namespace: biological_process
@@ -3717,11 +3975,61 @@ created_by: rfoulger
 creation_date: 2010-12-02T09:28:50Z
 
 [Term]
+id: IAO:0000027
+name: data item
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: IAO:0000030
+name: information content entity
+is_a: BFO:0000031 ! generically dependent continuant
+
+[Term]
+id: IAO:0000078
+name: curation status specification
+def: "The curation status of the term. The allowed values come from an enumerated list of predefined terms. See the specification of these instances for more detailed definitions of each enumerated value." []
+is_a: IAO:0000102 ! data about an ontology part
+property_value: editor_note "Better to represent curation as a process with parts and then relate labels to that process (in IAO meeting)" xsd:string
+property_value: IAO:0000111 "curation status specification" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "PERSON:Bill Bug" xsd:string
+property_value: IAO:0000119 GROUP:OBI:<http://purl.obolibrary.org/obo/obi> xsd:string
+property_value: IAO:0000119 "OBI_0000266" xsd:string
+
+[Term]
+id: IAO:0000102
+name: data about an ontology part
+def: "data about an ontology part is a data item about a part of an ontology, for example a term" []
+is_a: IAO:0000027 ! data item
+property_value: IAO:0000117 "Person:Alan Ruttenberg" xsd:string
+
+[Term]
+id: IAO:0000225
+name: obsolescence reason specification
+def: "The reason for which a term has been deprecated. The allowed values come from an enumerated list of predefined terms. See the specification of these instances for more detailed definitions of each enumerated value." []
+is_a: IAO:0000102 ! data about an ontology part
+property_value: editor_note "The creation of this class has been inspired in part by Werner Ceusters' paper, Applying evolutionary terminology auditing to the Gene Ontology." xsd:string
+property_value: IAO:0000111 "obsolescence reason specification" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "PERSON: Alan Ruttenberg" xsd:string
+property_value: IAO:0000117 "PERSON: Melanie Courtot" xsd:string
+
+[Term]
+id: IAO:0000409
+name: denotator type
+def: "A denotator type indicates how a term should be interpreted from an ontological perspective." []
+is_a: IAO:0000102 ! data about an ontology part
+property_value: example_of_usage "The Basic Formal Ontology ontology makes a distinction between Universals and defined classes, where the formal are \"natural kinds\" and the latter arbitrary collections of entities." xsd:string
+property_value: IAO:0000117 "Alan Ruttenberg" xsd:string
+property_value: IAO:0000119 "Barry Smith, Werner Ceusters" xsd:string
+
+[Term]
 id: PATO:0000001
 name: quality
 namespace: quality
 alt_id: PATO:0000072
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [PATOC:GVG]
+synonym: "trait" EXACT []
 is_a: BFO:0000020 ! specifically dependent continuant
 property_value: IAO:0000589 "quality (PATO)" xsd:string
 
@@ -3804,6 +4112,51 @@ xref: snap:Quality
 is_a: PATO:0000001 ! quality
 
 [Term]
+id: PATO:0001396
+name: cellular quality
+namespace: quality
+def: "A monadic quality of continuant that exists at the cellular level of organisation." [PATOC:GVG]
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001404
+name: nucleate quality
+namespace: quality
+def: "A cellular quality inhering in a bearer by virtue of bearer's number of nuclei." [PATOC:GVG]
+subset: attribute_slim
+is_a: PATO:0001396 ! cellular quality
+
+[Term]
+id: PATO:0001405
+name: anucleate
+namespace: quality
+def: "A nucleate quality inhering in a bearer by virtue of the bearer's having no nucleus." [Biology-online:Biology-online]
+subset: cell_quality
+subset: mpath_slim
+subset: value_slim
+is_a: PATO:0001404 ! nucleate quality
+
+[Term]
+id: PATO:0001406
+name: binucleate
+namespace: quality
+def: "A nucleate quality inhering in a bearer by virtue of the bearer's having two nuclei." [Biology-online:Biology-online]
+subset: cell_quality
+subset: mpath_slim
+subset: value_slim
+is_a: PATO:0001908 ! multinucleate
+
+[Term]
+id: PATO:0001407
+name: mononucleate
+namespace: quality
+def: "A nucleate quality inhering in a bearer by virtue of the bearer's having one nucleus." [Biology-online:Biology-online]
+subset: cell_quality
+subset: mpath_slim
+subset: value_slim
+is_a: PATO:0002505 ! nucleated
+
+[Term]
 id: PATO:0001633
 name: posterior to
 namespace: quality
@@ -3829,6 +4182,15 @@ synonym: "triangle-shaped" RELATED []
 is_a: PATO:0002006 ! 2-D shape
 
 [Term]
+id: PATO:0001908
+name: multinucleate
+namespace: quality
+def: "A nucleate quality inhering in a bearer by virtue of the bearer's having more than one nucleus." [PATOC:GVG]
+subset: mpath_slim
+subset: value_slim
+is_a: PATO:0002505 ! nucleated
+
+[Term]
 id: PATO:0001955
 name: cuneate
 namespace: quality
@@ -3848,6 +4210,17 @@ synonym: "cross-sectional" RELATED []
 is_a: PATO:0000052 ! shape
 
 [Term]
+id: PATO:0002505
+name: nucleated
+namespace: quality
+def: "A nucleate quality inhering in a bearer by virtue of the bearer's having one or more nucleus." [PATOC:GVG]
+subset: mpath_slim
+subset: value_slim
+is_a: PATO:0001404 ! nucleate quality
+created_by: gkoutos
+creation_date: 2013-10-21T05:44:34Z
+
+[Term]
 id: PATO:0005024
 name: longitudinal orientation
 namespace: quality
@@ -3864,8 +4237,8 @@ namespace: quality
 def: "A shape that is in the form of a plug, being tube-like and expanded on one end." [https://orcid.org/0000-0003-3162-7490]
 synonym: "plug like" EXACT []
 is_a: PATO:0000052 ! shape
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-5208-3432
 property_value: http://purl.org/dc/elements/1.1/date 2018-11-12T18:24:41Z xsd:dateTime
+created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
 id: PLANA:0000001
@@ -3874,7 +4247,7 @@ namespace: Schmidtea_mediterranea_Developmental_Stages
 def: "A stage of Smed embryonic development, 0 - 2 days post-egg capsule deposition at 20˚C. Zygote and dispersed blastomere cleavage in a yolk syncytium." []
 xref: PMID:28072387
 is_a: UBERON:0000068 ! embryo stage
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4897
 
@@ -3886,7 +4259,7 @@ def: "A stage of Smed embryonic development defined by a unique gene expression 
 synonym: "protosphere" EXACT []
 xref: PMID:28072387
 is_a: UBERON:0000068 ! embryo stage
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/Stage2.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 2 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4898
 
@@ -3897,7 +4270,7 @@ namespace: Schmidtea_mediterranea_Developmental_Stages
 def: "A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 2 - 4 days post-egg capsule deposition at 20˚C. Dispersed blastomere cleavage in the embryonic wall of nascent spheres. Yolk ingestion into the gut cavity." []
 xref: PMID:28072387
 is_a: UBERON:0000068 ! embryo stage
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/Stage3.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 3 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4899
 
@@ -3908,7 +4281,7 @@ namespace: Schmidtea_mediterranea_Developmental_Stages
 def: "A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 3 - 5 days post-egg capsule deposition at 20˚C. Dispersed blastomere cleavage in the embryonic wall. Yolk ingestion into the gut cavity. Early embryonic gut formation." []
 xref: PMID:28072387
 is_a: UBERON:0000068 ! embryo stage
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage4.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 4 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4900
 
@@ -3919,7 +4292,7 @@ namespace: Schmidtea_mediterranea_Developmental_Stages
 def: "A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 5-7 days post-egg capsule deposition at 20˚C. Organogenesis onset. Downregulation of early embryo enriched transcripts and birth of adult lineages within the blastomere population. Early embryonic gut formation continues. Yolk ingestion into the gut cavity." []
 xref: PMID:28072387
 is_a: UBERON:0000068 ! embryo stage
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage5.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4901
 
@@ -3930,7 +4303,7 @@ namespace: Schmidtea_mediterranea_Developmental_Stages
 def: "A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 7 - 9 days post-egg capsule deposition at 20˚C. Organogenesis and morphogenesis. Definitive organ formation. Temporary embryonic cell types degenerate. Embryo elongation." []
 xref: PMID:28072387
 is_a: UBERON:0000068 ! embryo stage
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage6.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 6 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4902
 
@@ -3942,7 +4315,7 @@ def: "A stage of Smed embryonic development defined by a unique gene expression 
 xref: PMID:28072387
 xref: PMID:28812561
 is_a: UBERON:0000068 ! embryo stage
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage7.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 7 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4903
 
@@ -3955,7 +4328,7 @@ synonym: "hatchling" EXACT []
 synonym: "newborn hatchling" EXACT []
 xref: PMID:28072387
 is_a: UBERON:0000068 ! embryo stage
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage8.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 8 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4904
 
@@ -4291,6 +4664,7 @@ is_a: PLANA:0002032 ! epidermal cell
 relationship: develops_from PLANA:0000035 ! Category 3 cell
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000054 ! dorsal epidermis
+relationship: part_of PLANA:0002063 ! non-ciliated epidermis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region
@@ -5559,6 +5933,7 @@ def: "Ciliated epithelial cells along the dorsal midline." []
 synonym: "racing stripe" EXACT []
 xref: PMID:17553481
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0002023 ! ciliated epithelium
 relationship: part_of PLANA:0000054 ! dorsal epidermis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
@@ -5597,7 +5972,6 @@ id: PLANA:0000058
 name: embryonic digestive system
 def: "A cryptic digestive system in Stage 3-6 embryos comprised of temporary embryonic cell types and organs, including the embryonic pharynx and primitive gut cells. Embryonic gut cells, likely produced from blastomeres, form a phagocytic tissue layer surrounding the inner gut cavity during Stages 4-6. It is not known whether the embryonic gut is temporary embryonic tissue or a definitive tissue. For convenience, the embryonic gut is currently designated as an extraembryonic structure because cell type specific markers for the embryonic gut do not stain the definitive gut in hatchlings or adult animals." []
 xref: PMID:28072387
-is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000063 ! extraembryonic structure
 relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
@@ -5755,6 +6129,7 @@ xref: PMID:27542689
 xref: PMID:29674431
 xref: PMID:29674432
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: adjacent_to PLANA:0000087 ! proximal tubule
 relationship: part_of PLANA:0000064 ! flame bulb
@@ -5820,6 +6195,7 @@ xref: PMID:28287248
 xref: PMID:29674431
 xref: PMID:29674432
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000105 ! secretory cell
 relationship: part_of PLANA:0000066 ! gastrodermis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
@@ -5844,7 +6220,7 @@ xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
-relationship: part_of PLANA:0000058 ! embryonic digestive system
+relationship: part_of PLANA:0002031 ! embryonic gut
 relationship: RO:0001018 PLANA:0000041 ! contained in aboral hemisphere
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
@@ -5901,6 +6277,7 @@ xref: PMID:28072387
 xref: PMID:29674431
 xref: PMID:29674432
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: part_of PLANA:0000066 ! gastrodermis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
@@ -5944,6 +6321,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000072
 name: mouth
 def: "The sole point of entry and exit for the Triclad planarian flatworm gut. The mouth is connected to the pharyngeal pouch to allow for exit and re-entry of the pharynx on the ventral side of the animal. The mouth contains several cell types, including epithelial cells, muscle, and secretory cells." []
+synonym: "anus" EXACT []
 synonym: "Manus" EXACT []
 synonym: "manus" EXACT []
 xref: ISBN:9780070316607
@@ -6007,10 +6385,10 @@ is_a: PLANA:0000122 ! gamete
 is_a: PLANA:0000229 ! female germ cell
 relationship: develops_from PLANA:0000239 ! oogonial cell
 relationship: part_of PLANA:0000204 ! ovary
+relationship: produced_by PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
-relationship: RO:0003001 PLANA:0000204 ! produced by ovary
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4973
 
@@ -6049,6 +6427,7 @@ xref: PMID:29547123
 xref: PMID:30143032
 xref: PMID:30194301
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000113 ! tissue
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000036 ! eye
@@ -6180,7 +6559,6 @@ xref: PMID:21664348
 xref: PMID:23318641
 xref: PMID:24063805
 is_a: BFO:0000040 ! material entity
-is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0002086 ! primary gut branch
 relationship: develops_from PLANA:0000039 ! gamma neoblast
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
@@ -6203,7 +6581,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0004518 ! extraembryonic cell
 relationship: develops_from PLANA:0004517 ! blastomere
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
-relationship: part_of PLANA:0000058 ! embryonic digestive system
+relationship: part_of PLANA:0002087 ! primitive gut
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
@@ -6319,6 +6697,7 @@ is_a: PLANA:0000122 ! gamete
 is_a: PLANA:0000228 ! male germ cell
 relationship: develops_from PLANA:0000238 ! elongate spermatid
 relationship: part_of PLANA:0000208 ! testis
+relationship: produced_by PLANA:0000208 ! testis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region
@@ -6326,7 +6705,6 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0003001 PLANA:0000208 ! produced by testis
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4886
 
@@ -6345,10 +6723,10 @@ xref: PMID:15599763
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002136 ! syncytium
 relationship: existence_starts_during_or_after PLANA:0000001 ! Stage 1
+relationship: produced_by PLANA:0000107 ! yolk cell
 relationship: RO:0002490 PLANA:0000001 ! existence overlaps Stage 1
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002497 PLANA:0000002 ! existence ends during or before Stage 2
-relationship: RO:0003001 PLANA:0000107 ! produced by yolk cell
 relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4969
@@ -6408,7 +6786,7 @@ synonym: "ventral epidermin" EXACT []
 synonym: "ventral epithelia" EXACT []
 synonym: "ventral epithelium" EXACT []
 synonym: "ventral region of epidermis" EXACT []
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 intersection_of: has_component BSPO:0000084 ! ventral region
 intersection_of: part_of PLANA:0000034 ! epidermis
 relationship: has_component BSPO:0000084 ! ventral region
@@ -6749,14 +7127,6 @@ name: rhabdite
 def: "Straight or curved rod-like structures within the epidermal cells, oriented with long axis at right angles to the epidermal surface, that are discharged into mucous secretions." []
 xref: OCLC:16809160
 is_a: PLANA:0000430 ! epithelial cell component
-relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
-relationship: part_of PLANA:0000054 ! dorsal epidermis
-relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
-relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
-relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4853
 
@@ -6798,6 +7168,7 @@ is_a: PLANA:0000119 ! terminally differentiated cell
 is_a: PLANA:0000215 ! reproductive system product
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000060 ! embryonic wall
+relationship: produced_by PLANA:0000231 ! vitelline gland
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region
@@ -6807,13 +7178,12 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0003001 PLANA:0000231 ! produced by vitelline gland
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4968
 
 [Term]
 id: PLANA:0000109
-name: anatomical compartment subdivision feature
+name: obsolete anatomical compartment subdivision feature
 comment: extra layer of complexity not needed upon further examination
 is_obsolete: true
 
@@ -6832,6 +7202,7 @@ synonym: "proximal tubule cell" EXACT []
 xref: PMID:21828097
 xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000106 ! ciliated epithelial cell
 relationship: part_of PLANA:0000087 ! proximal tubule
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
@@ -6881,6 +7252,7 @@ synonym: "distal tubule cell" EXACT []
 xref: PMID:21828097
 xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000015 ! non ciliated epithelial cell
 relationship: part_of PLANA:0000053 ! distal tubule
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
@@ -6999,9 +7371,9 @@ xref: PMID:28434803
 is_a: PLANA:0000215 ! reproductive system product
 is_a: PLANA:0000227 ! germ cell
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
+relationship: produced_by PLANA:0000217 ! gonad
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0003001 PLANA:0000217 ! produced by gonad
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4611
 
@@ -7102,7 +7474,6 @@ xref: PMID:29168507
 is_a: PLANA:0000019 ! muscle progenitor cell
 is_a: PLANA:0000429 ! neoblast
 is_a: PLANA:0002095 ! somatic cell
-relationship: part_of PLANA:0000240 ! body wall musculature
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4498
 
@@ -7139,7 +7510,6 @@ def: "piwi-1+, myoD+, snail-1+ progenitor neoblasts required for specification a
 xref: PMID:29168507
 is_a: PLANA:0000019 ! muscle progenitor cell
 is_a: PLANA:0000429 ! neoblast
-relationship: part_of PLANA:0000240 ! body wall musculature
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4661
 
@@ -7201,7 +7571,6 @@ def: "PROG-2-5 positive granules that range in size from 0.5um to 1um present in
 xref: PMID:29100657
 is_a: BFO:0000002 ! continuant
 is_a: PLANA:0002137 ! intracellular granule
-relationship: part_of PLANA:0000034 ! epidermis
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/hymanvesicle.png {comment="Depcited by is an immuno electron microscopy image of a mesenchymal cell labeled with anti-PROG-2-5 immuno-gold. Large rhod-shaped granules resembling rhabdites are found in the same cell labeled with PROG-2-5+ oval-shaped granules (pseudo-colored in blue). Higher magnification of the boxed region is shown in the panel below. e, endoplasmic reticulum; m, mitochondria; n, nucleus; rh, rhabdite. Scale bar, 1 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4636
@@ -7279,6 +7648,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000203
 name: gonopore
 def: "The gonopore, a component of the copulatory apparatus, is an opening located on the ventral side of the animal posterior to the pharynx. The gonopore is the sole point of exit and entry for the reproductive system, allowing from reciprocal exchange of sperm during copulation and egg capsule laying." []
+synonym: "common gonopore" EXACT []
 synonym: "genital pore" EXACT []
 xref: https://doi.org/10.1101/279364
 xref: ISBN:9780070316607
@@ -7358,18 +7728,13 @@ xref: PMID:27149082
 xref: PMID:27163480
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000431 ! organ
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
-relationship: part_of PLANA:0000126 ! reproductive system
+is_a: PLANA:0002089 ! reproductive organ
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4748
 
@@ -7418,16 +7783,11 @@ xref: PMID:27304889
 xref: PMID:28072387
 xref: PMID:28434803
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000431 ! organ
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
-relationship: part_of PLANA:0000126 ! reproductive system
+is_a: PLANA:0002089 ! reproductive organ
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4887
 
@@ -7528,7 +7888,7 @@ name: reproductive system product
 def: "Products of the reproductive system include gametes, zygotes, yolk cells and egg capsules." []
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000061 ! anatomical structure
-relationship: RO:0003001 PLANA:0000126 ! produced by reproductive system
+relationship: produced_by PLANA:0000126 ! reproductive system
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4852
@@ -7553,7 +7913,7 @@ xref: PMID:28072387
 xref: PMID:28434803
 xref: PMID:28812561
 is_a: PLANA:0000215 ! reproductive system product
-relationship: RO:0003001 PLANA:0004503 ! produced by adult hermaphrodite
+relationship: produced_by PLANA:0004503 ! adult hermaphrodite
 property_value: foaf:depiction urn:dosdp:depicted:by {comment="Depicted by field shows a light microscopy image of egg capsules with a scale bar of 3mm"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4541
 
@@ -7834,15 +8194,10 @@ xref: PMID:27149082
 xref: PMID:27163480
 xref: PMID:28434803
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000431 ! organ
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
-relationship: part_of PLANA:0000126 ! reproductive system
+is_a: PLANA:0002089 ! reproductive organ
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4945
 
@@ -7871,12 +8226,12 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000113 ! tissue
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000126 ! reproductive system
+relationship: produces PLANA:0000107 ! yolk cell
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0003000 PLANA:0000107 ! produces yolk cell
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4959
@@ -7918,14 +8273,10 @@ xref: PMID:20967238
 xref: PMID:22074376
 xref: PMID:25278423
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000431 ! organ
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
+is_a: PLANA:0002089 ! reproductive organ
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4504
 
@@ -7936,14 +8287,10 @@ def: "Glandular pouches adjoining the sperm ducts which produce seminal fluid." 
 xref: PMID:19022767
 xref: PMID:22074376
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000431 ! organ
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
+is_a: PLANA:0002089 ! reproductive organ
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4873
 
@@ -8140,6 +8487,7 @@ xref: PMID:21828097
 xref: PMID:28072387
 xref: UBERON:0006909
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0002053 ! lumen
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000026 ! gut
@@ -8168,9 +8516,11 @@ xref: PMID:17670787
 xref: PMID:29674431
 xref: PMID:30399335
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
-relationship: part_of PLANA:0000049 ! digestive system
+relationship: part_of PLANA:0000023 ! embryonic pharynx
+relationship: part_of PLANA:0000072 ! mouth
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
@@ -8209,7 +8559,7 @@ id: PLANA:0000409
 name: apical surface of the epidermis
 def: "The apical surface of the single layered epidermis that is in contact with the environment." []
 synonym: "apical surface of epidermis" EXACT []
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 intersection_of: has_component BSPO:0000373 ! apical surface
 intersection_of: part_of PLANA:0000034 ! epidermis
 relationship: has_component BSPO:0000373 ! apical surface
@@ -8221,7 +8571,7 @@ id: PLANA:0000410
 name: basal surface of the epidermis
 def: "The basal surface of the epidermis in direct contact with the basal lamina." []
 synonym: "basal surface of epidermis" EXACT []
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 intersection_of: has_component BSPO:0000374 ! basal surface
 intersection_of: part_of PLANA:0000034 ! epidermis
 relationship: has_component BSPO:0000374 ! basal surface
@@ -8315,6 +8665,7 @@ name: head
 def: "The head is the anterior-most division of the body [GO]. A three dimensional compartment bounded by the anterior margin or the head and the posterior boundary of the cephalic ganglia (brain)." []
 xref: UBERON:0000033
 is_a: PLANA:0000102 ! anatomical region
+relationship: anterior_to PLANA:0000419 ! prepharyngeal region
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -8332,6 +8683,7 @@ synonym: "pre-pharyngeal region" EXACT []
 synonym: "pre-pharynx region" EXACT []
 xref: OCLC:16809160
 is_a: PLANA:0000102 ! anatomical region
+relationship: anterior_to PLANA:0000420 ! parapharyngeal region
 relationship: posterior_to PLANA:0000418 ! head
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -8356,6 +8708,8 @@ xref: PMID:28807897
 xref: PMID:29674431
 xref: PMID:30143032
 is_a: PLANA:0000102 ! anatomical region
+relationship: anterior_to PLANA:0000421 ! tail
+relationship: anterior_to PLANA:0004527 ! copulatory region
 relationship: posterior_to PLANA:0000419 ! prepharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -8407,7 +8761,7 @@ replaced_by: UBERON:0000465
 
 [Term]
 id: PLANA:0000425
-name: definitive anatomical structure
+name: obsolete definitive anatomical structure
 comment: extra layer of complexity not needed upon further examination
 is_obsolete: true
 
@@ -8737,9 +9091,9 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000460
 name: anterior commissure
 def: "A bundle of nerve fibers connecting the two cephalic ganglia." []
+synonym: "anterior brain commissure" EXACT []
 xref: UBERON:0000935
 is_a: PLANA:0000494 ! brain commissure
-relationship: part_of PLANA:0000418 ! head
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -8815,7 +9169,6 @@ xref: PMID:29291981
 xref: PMID:30143032
 xref: PMID:30194301
 is_a: PLANA:0000556 ! neurosecretory neuron
-relationship: part_of PLANA:0000465 ! obsolete pharynx nerve plexus
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -9027,7 +9380,6 @@ synonym: "pharyngeal inner longitudinal muscle fiber" EXACT []
 synonym: "pharynx inner longitudinal muscle fiber" EXACT []
 xref: ASIN:B000M4NK9M
 xref: ISBN:9780070316607
-is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000241 ! pharynx longitudinal muscle cell
 relationship: immediately_deep_to PLANA:0000474 ! pharynx inner circular muscle cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -9041,7 +9393,6 @@ synonym: "pharyngeal outer longitudinal muscle cell" EXACT []
 synonym: "pharyngeal outer longitudinal muscle fiber" EXACT []
 synonym: "pharynx outer longitudinal muscle fiber" EXACT []
 xref: ASIN:B000M4NK9M
-is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000241 ! pharynx longitudinal muscle cell
 relationship: immediately_deep_to PLANA:0000472 ! pharynx outer epithelium
 relationship: immediately_superficial_to PLANA:0000473 ! pharynx outer circular muscle cell
@@ -9233,7 +9584,6 @@ def: "The opening by which the gland cells secrete mucus to the exterior of the 
 synonym: "pore" EXACT []
 xref: ISBN:9780070316607
 xref: PMID:20865784
-is_a: BFO:0000002 ! continuant
 is_a: PLANA:0002079 ! pore
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -9331,7 +9681,7 @@ name: brain commissure
 def: "any of the nerve fiber tracts that span the longitudinal fissure between the cerebral and/or cerebellar hemispheres of the brain" []
 xref: UBERON:0005970
 is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000493 ! obsolete nervous system commissure
+is_a: PLANA:0002025 ! commissure
 relationship: part_of PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region
@@ -9961,7 +10311,6 @@ xref: WBbt:0005113
 is_a: PLANA:0000099 ! neuron
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 relationship: part_of PLANA:0000103 ! central nervous system
-relationship: part_of PLANA:0000465 ! obsolete pharynx nerve plexus
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4642
 
@@ -10123,7 +10472,6 @@ xref: PMID:27551436
 xref: PMID:29100657
 xref: PMID:30383829
 xref: PMID:30962434
-is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: immediately_deep_to PLANA:0000034 ! epidermis
 relationship: part_of PLANA:0004529 ! integumental system
@@ -10132,7 +10480,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 
 [Term]
 id: PLANA:000109
-name: anatomical compartment subdivision feature
+name: obsolete anatomical compartment subdivision feature
 is_obsolete: true
 
 [Term]
@@ -10141,6 +10489,9 @@ name: adenal rhabdite
 def: "Rhabdites that are located basally to the epidermis, in the mesenchyme. In Smed these are present in cells likely on their way to becoming part of the mature epidermis." []
 xref: ISBN:9780070316607
 is_a: PLANA:0000104 ! rhabdite
+relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
+relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4409
 
@@ -10305,7 +10656,7 @@ xref: GO:0005930
 xref: PMID:23144623
 xref: PMID:26057828
 xref: PMID:26912790
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
 relationship: part_of PLANA:0002024 ! cilium
 relationship: part_of PLANA:0002040 ! flagellum
@@ -10321,7 +10672,7 @@ xref: ISBN:9780070316607
 xref: PMID:21282632
 xref: PMID:21828097
 xref: PMID:21937596
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
 relationship: part_of PLANA:0002024 ! cilium
 relationship: part_of PLANA:0002040 ! flagellum
@@ -10337,7 +10688,7 @@ xref: PMID:16033796
 xref: PMID:26618653
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000113 ! tissue
-relationship: part_of PLANA:0000044 ! cephalic ganglia
+relationship: part_of PLANA:0002011 ! brain visual center
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region
 relationship: RO:0001018 PLANA:0000418 ! contained in head
@@ -10351,6 +10702,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0002012
 name: bulbar cavity
 def: "An enlarged portion of the seminal vesicle, comprised of secretory epithelial cells, that connects to the ejaculatory duct within the penis papilla." []
+synonym: "bulbar lumen" EXACT []
 xref: https://doi.org/10.1101/279364
 xref: ISBN:9780070316607
 is_a: BFO:0000040 ! material entity
@@ -10601,21 +10953,7 @@ xref: PMID:24367277
 xref: PMID:24903754
 xref: PMID:25017721
 xref: PMID:27523733
-is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
-relationship: part_of PLANA:0000429 ! neoblast
-relationship: part_of PLANA:0004517 ! blastomere
-relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
-relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
-relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
-relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
-relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
-relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
-relationship: specific_to PLANA:0000429 ! neoblast
-relationship: specific_to PLANA:0004517 ! blastomere
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4488
 
@@ -10816,6 +11154,9 @@ name: epidermal rhabdite
 def: "Rhabdites located within epidermal cells." []
 xref: ISBN:9780070316607
 is_a: PLANA:0000104 ! rhabdite
+relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
+relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4568
 
@@ -10841,7 +11182,7 @@ xref: PMID:25356635
 xref: PMID:26017970
 xref: PMID:27240733
 xref: PMID:8812261
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 is_a: GO:0005575 ! cellular_component
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0002058 ! melanosome
@@ -10907,7 +11248,7 @@ name: flagellum
 def: "Planarian undulipodia consisting of spermatazoa cell posterior protrusions. Planarian spermatozoa contain two flagella and are composed of 9 + 1 axonemal microtubule arrangements in their flagella (markedly different from the 9 + 2 structures generally observed in sperm of other animals)." []
 xref: PMID:29095551
 xref: PMID:4190073
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000090 ! sperm
 relationship: specific_to PLANA:0000090 ! sperm
@@ -10929,12 +11270,13 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0002042
 name: genital atrium
 def: "A chamber where egg capsules are formed. One or more zygotes and yolk cells produced by the vitelline glands collect in the genital atrium; glands surrounding the genital atrium produce the egg capsule shell." []
+synonym: "atrium" EXACT []
 synonym: "female antrum" EXACT []
 xref: PMID:22074376
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
-relationship: part_of PLANA:0000232 ! copulatory apparatus
+relationship: part_of PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -11158,6 +11500,7 @@ name: melanosome
 def: "A tissue-specific, membrane-bounded cytoplasmic organelle within which melanin pigments are synthesized and stored. Melanosomes are synthesized in melanocyte cells." []
 xref: GO:0042470
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000031 ! pigment cup cell
@@ -11181,10 +11524,10 @@ xref: PMID:22653920
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: part_of PLANA:0000484 ! secretory system
+relationship: produced_by PLANA:0000105 ! secretory cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
-relationship: RO:0003001 PLANA:0000105 ! produced by secretory cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4699
 
@@ -11194,7 +11537,7 @@ name: nephridiopore
 def: "The external opening and terminus of a protonephridium made by a terminal cell." []
 xref: ISBN:9780070316607
 xref: PMID:21828097
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0002079 ! pore
 relationship: part_of PLANA:0000065 ! flame cell
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
@@ -11597,6 +11940,7 @@ xref: PMID:16033796
 xref: PMID:21852957
 xref: PMID:26017970
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000113 ! tissue
 relationship: part_of PLANA:0000036 ! eye
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
@@ -11623,6 +11967,7 @@ xref: PMID:25772472
 xref: PMID:26618653
 xref: PMID:27800171
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000501 ! cell projection
 relationship: part_of PLANA:0000017 ! photoreceptor neuron
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region
@@ -11714,7 +12059,7 @@ xref: ISBN:9780070316607
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: part_of PLANA:0000216 ! egg capsule
-relationship: RO:0003001 PLANA:0000224 ! produced by cement gland
+relationship: produced_by PLANA:0000224 ! cement gland
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4905
@@ -11740,7 +12085,6 @@ xref: PMID:21282632
 is_a: BFO:0000002 ! continuant
 is_a: PLANA:0000507 ! cell-cell junction
 relationship: part_of PLANA:0000099 ! neuron
-relationship: RO:0000056 GO:0007154 ! participates in cell communication
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4910
 
@@ -11921,6 +12265,7 @@ name: Xins cell
 def: "A sorted cell population of irradiation-insensitive cells that contains a variety of post-mitotic, differentiated cell types." []
 synonym: "Xins" EXACT []
 synonym: "Xins cell population" EXACT []
+synonym: "Xins cells" EXACT []
 xref: PMID:16872450
 xref: PMID:17670787
 xref: PMID:18456843
@@ -11997,6 +12342,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0002119
 name: gut branch
 def: "The triclad planarian gut is serially bifrucated into connected lumens where each bifrucation is a branch." []
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0000113 ! tissue
 relationship: part_of PLANA:0000026 ! gut
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -12229,6 +12575,7 @@ synonym: "ventral ciliated cell" EXACT []
 synonym: "ventral epithelial cell" EXACT []
 synonym: "ventral motile ciliated cell" EXACT []
 synonym: "ventral multiciliated cell" EXACT []
+is_a: CARO:0000000 ! anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -12244,6 +12591,7 @@ name: eye cell
 def: "cell which is part of the eye" [PMID:29357350]
 synonym: "photoreceptor cell" EXACT []
 synonym: "photosensitive cell" EXACT []
+is_a: CARO:0000000 ! anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -12259,6 +12607,7 @@ id: PLANA:0003105
 name: dorsal epidermis cell
 def: "cell which is part of the dorsal epidermis" [PMID:22479207]
 synonym: "dorsal epithelial cell" EXACT []
+is_a: CARO:0000000 ! anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -12281,6 +12630,7 @@ name: gastrodermal cell
 def: "cell which is part of the gastrodermis" [PMID:19174194, PMID:22479207, PMID:27122174]
 synonym: "gut cell" EXACT []
 synonym: "intestinal cell" EXACT []
+is_a: CARO:0000000 ! anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -12325,6 +12675,7 @@ def: "pigment granule which is part of the eumelanin" [PMID:25356635, PMID:26017
 synonym: "melanin" EXACT []
 synonym: "melanosome" EXACT []
 synonym: "photoreceptor pigment" EXACT []
+is_a: CARO:0000000 ! anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -12766,7 +13117,7 @@ id: PLANA:0003400
 name: protonephridial lumen
 def: "lumen which is part of the protonephridia" []
 xref: PMID:26057828
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -12774,7 +13125,6 @@ id: PLANA:0003401
 name: testis lumen
 def: "lumen which is part of the testis" []
 xref: PMID:17390146
-is_a: BFO:0000002 ! continuant
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -12782,7 +13132,6 @@ id: PLANA:0003402
 name: ovary lumen
 def: "lumen which is part of the ovary" []
 xref: PMID:19247960
-is_a: BFO:0000002 ! continuant
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -12791,13 +13140,14 @@ name: flame cell lumen
 def: "lumen which is part of the flame cell" []
 synonym: "flame cell barrel lumen" EXACT []
 xref: PMID:21828097
-is_a: BFO:0000002 ! continuant
+is_a: CARO:0000000 ! anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003500
 name: cephalic ganglia progenitor cell
 def: "A progenitor cell that gives rise to one or more of the cell type(s) in the nervous system." []
+synonym: "brain progenitor" EXACT []
 synonym: "brain progentitor cell" EXACT []
 xref: PMID:26525673
 is_a: CARO:0000000 ! anatomical entity
@@ -12905,6 +13255,512 @@ id: PLANA:0003610
 name: wedge fragment
 def: "A piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003700
+name: dorsal region of head fragment
+def: "The dorsal region of a fragment derived from a prepharyngeal amputation encompassing the head." []
+synonym: "dorsal region of head fragment" EXACT []
+is_a: PLANA:0003701 ! ventral region of head fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003600 ! head fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003701
+name: ventral region of head fragment
+def: "The ventral region of a fragment derived from a prepharyngeal amputation encompassing the head." []
+synonym: "ventral region of head fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003600 ! head fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003600 ! head fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003702
+name: anterior region of head fragment
+def: "The anterior region of a fragment derived from a prepharyngeal amputation encompassing the head." []
+synonym: "anterior region of head fragment" EXACT []
+is_a: PLANA:0003703 ! posterior region of head fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003600 ! head fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003703
+name: posterior region of head fragment
+def: "The posterior region of a fragment derived from a prepharyngeal amputation encompassing the head." []
+synonym: "posterior region of head fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003600 ! head fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003600 ! head fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003704
+name: dorsal region of trunk fragment
+def: "The dorsal region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
+synonym: "dorsal region of trunk fragment" EXACT []
+is_a: PLANA:0003705 ! ventral region of trunk fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003601 ! trunk fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003705
+name: ventral region of trunk fragment
+def: "The ventral region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
+synonym: "ventral region of trunk fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003601 ! trunk fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003601 ! trunk fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003706
+name: anterior region of trunk fragment
+def: "The anterior region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
+synonym: "anterior region of trunk fragment" EXACT []
+is_a: PLANA:0003707 ! posterior region of trunk fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003601 ! trunk fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003707
+name: posterior region of trunk fragment
+def: "The posterior region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
+synonym: "posterior region of trunk fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003601 ! trunk fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003601 ! trunk fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003708
+name: dorsal region of tail fragment
+def: "The dorsal region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
+synonym: "dorsal region of tail fragment" EXACT []
+is_a: PLANA:0003709 ! ventral region of tail fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003602 ! tail fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003709
+name: ventral region of tail fragment
+def: "The ventral region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
+synonym: "ventral region of tail fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003602 ! tail fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003602 ! tail fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003710
+name: anterior region of tail fragment
+def: "The anterior region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
+synonym: "anterior region of tail fragment" EXACT []
+is_a: PLANA:0003711 ! posterior region of tail fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003602 ! tail fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003711
+name: posterior region of tail fragment
+def: "The posterior region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
+synonym: "posterior region of tail fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003602 ! tail fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003602 ! tail fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003712
+name: dorsal region of prepharyngeal fragment
+def: "The dorsal region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
+synonym: "dorsal region of prepharyngeal fragment" EXACT []
+is_a: PLANA:0003713 ! ventral region of prepharyngeal fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003603 ! prepharyngeal fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003713
+name: ventral region of prepharyngeal fragment
+def: "The ventral region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
+synonym: "ventral region of prepharyngeal fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003603 ! prepharyngeal fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003603 ! prepharyngeal fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003714
+name: anterior region of prepharyngeal fragment
+def: "The anterior region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
+synonym: "anterior region of prepharyngeal fragment" EXACT []
+is_a: PLANA:0003715 ! posterior region of prepharyngeal fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003603 ! prepharyngeal fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003715
+name: posterior region of prepharyngeal fragment
+def: "The posterior region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
+synonym: "posterior region of prepharyngeal fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003603 ! prepharyngeal fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003603 ! prepharyngeal fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003716
+name: dorsal region of postpharyngeal fragment
+def: "The dorsal region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
+synonym: "dorsal region of postpharyngeal fragment" EXACT []
+is_a: PLANA:0003717 ! ventral region of postpharyngeal fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003604 ! postpharyngeal fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003717
+name: ventral region of postpharyngeal fragment
+def: "The ventral region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
+synonym: "ventral region of postpharyngeal fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003604 ! postpharyngeal fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003604 ! postpharyngeal fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003718
+name: anterior region of postpharyngeal fragment
+def: "The anterior region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
+synonym: "anterior region of postpharyngeal fragment" EXACT []
+is_a: PLANA:0003719 ! posterior region of postpharyngeal fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003604 ! postpharyngeal fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003719
+name: posterior region of postpharyngeal fragment
+def: "The posterior region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
+synonym: "posterior region of postpharyngeal fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003604 ! postpharyngeal fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003604 ! postpharyngeal fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003720
+name: dorsal region of anterior fragment
+def: "The dorsal region of a fragment encompassing all or part of the anterior region of the animal." []
+synonym: "dorsal region of anterior fragment" EXACT []
+is_a: PLANA:0003721 ! ventral region of anterior fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003605 ! anterior fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003721
+name: ventral region of anterior fragment
+def: "The ventral region of a fragment encompassing all or part of the anterior region of the animal." []
+synonym: "ventral region of anterior fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003605 ! anterior fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003605 ! anterior fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003722
+name: anterior region of anterior fragment
+def: "The anterior region of a fragment encompassing all or part of the anterior region of the animal." []
+synonym: "anterior region of anterior fragment" EXACT []
+is_a: PLANA:0003723 ! posterior region of anterior fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003605 ! anterior fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003723
+name: posterior region of anterior fragment
+def: "The posterior region of a fragment encompassing all or part of the anterior region of the animal." []
+synonym: "posterior region of anterior fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003605 ! anterior fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003605 ! anterior fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003724
+name: dorsal region of posterior fragment
+def: "The dorsal region of a fragment encompassing all or part of the posterior region of the animal." []
+synonym: "dorsal region of posterior fragment" EXACT []
+is_a: PLANA:0003725 ! ventral region of posterior fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003606 ! posterior fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003725
+name: ventral region of posterior fragment
+def: "The ventral region of a fragment encompassing all or part of the posterior region of the animal." []
+synonym: "ventral region of posterior fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003606 ! posterior fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003606 ! posterior fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003726
+name: anterior region of posterior fragment
+def: "The anterior region of a fragment encompassing all or part of the posterior region of the animal." []
+synonym: "anterior region of posterior fragment" EXACT []
+is_a: PLANA:0003727 ! posterior region of posterior fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003606 ! posterior fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003727
+name: posterior region of posterior fragment
+def: "The posterior region of a fragment encompassing all or part of the posterior region of the animal." []
+synonym: "posterior region of posterior fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003606 ! posterior fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003606 ! posterior fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003728
+name: dorsal region of lateral fragment
+def: "The dorsal region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
+synonym: "dorsal region of lateral fragment" EXACT []
+is_a: PLANA:0003729 ! ventral region of lateral fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003607 ! lateral fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003729
+name: ventral region of lateral fragment
+def: "The ventral region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
+synonym: "ventral region of lateral fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003607 ! lateral fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003607 ! lateral fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003730
+name: anterior region of lateral fragment
+def: "The anterior region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
+synonym: "anterior region of lateral fragment" EXACT []
+is_a: PLANA:0003731 ! posterior region of lateral fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003607 ! lateral fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003731
+name: posterior region of lateral fragment
+def: "The posterior region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
+synonym: "posterior region of lateral fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003607 ! lateral fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003607 ! lateral fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003732
+name: dorsal region of longitudinal fragment
+def: "The dorsal region of a fragment derived from an amputation parallel to the midline." []
+synonym: "dorsal region of longitudinal fragment" EXACT []
+is_a: PLANA:0003733 ! ventral region of longitudinal fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003608 ! longitudinal fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003733
+name: ventral region of longitudinal fragment
+def: "The ventral region of a fragment derived from an amputation parallel to the midline." []
+synonym: "ventral region of longitudinal fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003608 ! longitudinal fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003608 ! longitudinal fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003734
+name: anterior region of longitudinal fragment
+def: "The anterior region of a fragment derived from an amputation parallel to the midline." []
+synonym: "anterior region of longitudinal fragment" EXACT []
+is_a: PLANA:0003735 ! posterior region of longitudinal fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003608 ! longitudinal fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003735
+name: posterior region of longitudinal fragment
+def: "The posterior region of a fragment derived from an amputation parallel to the midline." []
+synonym: "posterior region of longitudinal fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003608 ! longitudinal fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003608 ! longitudinal fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003736
+name: dorsal region of plug fragment
+def: "The dorsal region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+synonym: "dorsal region of plug fragment" EXACT []
+is_a: PLANA:0003737 ! ventral region of plug fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003609 ! plug fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003737
+name: ventral region of plug fragment
+def: "The ventral region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+synonym: "ventral region of plug fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003609 ! plug fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003609 ! plug fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003738
+name: anterior region of plug fragment
+def: "The anterior region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+synonym: "anterior region of plug fragment" EXACT []
+is_a: PLANA:0003739 ! posterior region of plug fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003609 ! plug fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003739
+name: posterior region of plug fragment
+def: "The posterior region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+synonym: "posterior region of plug fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003609 ! plug fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003609 ! plug fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003740
+name: dorsal region of plug fragment
+def: "The dorsal region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+synonym: "dorsal region of wedge fragment" EXACT []
+is_a: PLANA:0003741 ! ventral region of plug fragment
+intersection_of: has_component PLANA:0000141 ! dorsal region
+intersection_of: part_of PLANA:0003610 ! wedge fragment
+relationship: has_component PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003741
+name: ventral region of plug fragment
+def: "The ventral region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+synonym: "ventral region of wedge fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component PLANA:0000143 ! ventral region
+intersection_of: part_of PLANA:0003610 ! wedge fragment
+relationship: has_component PLANA:0000143 ! ventral region
+relationship: part_of PLANA:0003610 ! wedge fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003742
+name: anterior region of wedge fragment
+def: "The anterior region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+synonym: "anterior region of wedge fragment" EXACT []
+is_a: PLANA:0003743 ! posterior region of wedge fragment
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0003610 ! wedge fragment
+relationship: has_component BSPO:0000071 ! anterior region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003743
+name: posterior region of wedge fragment
+def: "The posterior region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+synonym: "posterior region of wedge fragment" EXACT []
+is_a: BFO:0000002 ! continuant
+intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: part_of PLANA:0003610 ! wedge fragment
+relationship: has_component BSPO:0000072 ! posterior region
+relationship: part_of PLANA:0003610 ! wedge fragment
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0004503
@@ -13359,7 +14215,7 @@ replaced_by: PLANA:0000141
 
 [Term]
 id: PLANA:0007505
-name: ventral compartment
+name: obsolete ventral compartment
 comment: now using patterned term ventral region PLANA:0000143
 is_obsolete: true
 
@@ -13404,7 +14260,6 @@ name: extracellular organelle
 def: "Organized structure of distinctive morphology and function, occurring outside the cell. Includes, for example, extracellular membrane vesicles (EMVs) and the cellulosomes of anaerobic bacteria and fungi." []
 xref: GO:0043230
 is_a: PLANA:0000525 ! organelle
-is_a: PLANA:0007508 ! obsolete extracellular component
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4579
 
@@ -13834,7 +14689,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 
 [Term]
 id: PLANA:0007545
-name: epidermal compartment
+name: obsolete epidermal compartment
 comment: no longer designating mediolateral regions using the contained_in object property
 is_obsolete: true
 
@@ -13874,7 +14729,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 
 [Term]
 id: PLANA:0007549
-name: body wall musculature compartment
+name: obsolete body wall musculature compartment
 comment: no longer designating mediolateral regions using the contained_in object property
 is_obsolete: true
 
@@ -13930,7 +14785,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 
 [Term]
 id: PLANA:0007554
-name: parenchymal compartment
+name: obsolete parenchymal compartment
 comment: no longer designating mediolateral regions using the contained_in object property
 is_obsolete: true
 
@@ -13951,6 +14806,7 @@ name: embryonic pharynx lumen
 def: "A lumen enclosed by the embryonic pharynx epithelial cells through which yolk cells are transported into the embryonic gut cavity." []
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
 is_a: PLANA:0002053 ! lumen
 relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: immediately_deep_to PLANA:0004516 ! embryonic pharynx lumen epithelial surface
@@ -14019,9 +14875,13 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 
 [Term]
 id: PLANA:0007560
-name: gastrovascular compartment
+name: obsolete gastrovascular compartment
 comment: no longer designating mediolateral regions using the contained_in object property
 is_obsolete: true
+
+[Term]
+id: Subset
+is_a: IAO:0000102 ! data about an ontology part
 
 [Term]
 id: UBERON:0000015
@@ -14064,7 +14924,6 @@ xref: TGMA:0001823
 xref: VHOG:0001759
 xref: XAO:0003000
 xref: ZFA:0000037
-is_a: BFO:0000002 ! continuant
 is_a: UBERON:0000465 ! material anatomical entity
 relationship: existence_starts_during_or_after UBERON:0000106 ! zygote stage
 
@@ -14112,7 +14971,7 @@ xref: WBls:0000002
 xref: XAO:1000000
 xref: ZFS:0000000
 xref: ZFS:0100000
-property_value: IAO:0000116 "this class represents a proper part of the life cycle of an organism. The class 'life cycle' should not be placed here" xsd:string
+property_value: editor_note "this class represents a proper part of the life cycle of an organism. The class 'life cycle' should not be placed here" xsd:string
 property_value: UBPROP:0000012 "the WBls class 'all stages' belongs here as it is the superclass of other WBls stages" xsd:string
 property_value: UBPROP:0000012 "we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage" xsd:string
 
@@ -14253,7 +15112,7 @@ xref: VHOG:0001758
 xref: XAO:0003013
 xref: ZFA:0001308
 is_a: UBERON:0000061 ! anatomical structure
-property_value: IAO:0000116 "Reflects CARO2. todo - check the inclusion of FMA 'cardinal body part here', and check child terms for consistency" xsd:string
+property_value: editor_note "Reflects CARO2. todo - check the inclusion of FMA 'cardinal body part here', and check child terms for consistency" xsd:string
 
 [Term]
 id: UBERON:0000476
@@ -14301,6 +15160,7 @@ xref: UMLS:C1515976 {source="ncithesaurus:Anatomic_Structure_System_or_Substance
 xref: WBbt:0000100
 xref: XAO:0000000
 xref: ZFA:0100000
+is_a: BFO:0000004 ! independent continuant
 
 [Term]
 id: UBERON:0002553
@@ -14362,8 +15222,8 @@ xref: TAO:0005147
 xref: XAO:0004059
 xref: ZFA:0005147
 is_a: UBERON:0000061 ! anatomical structure
-property_value: IAO:0000116 "we define this in terms of active participation in regeneration, rather that capabilities. In this sense it is different from the AEO structure." xsd:string
-property_value: UBPROP:0000001 "A portion of tissue that is regrowing after damage or amputation.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005147", ontology="TAO", source="ZFIN:curator"}
+property_value: editor_note "we define this in terms of active participation in regeneration, rather that capabilities. In this sense it is different from the AEO structure." xsd:string
+property_value: external_definition "A portion of tissue that is regrowing after damage or amputation.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005147", ontology="TAO", source="ZFIN:curator"}
 
 [Term]
 id: UBERON:0007651
@@ -14383,7 +15243,7 @@ name: plane of autotomy
 namespace: uberon
 def: "An anatomical plane that bisects a zone of weakness in an appendage. When autotamy occurs, the appendage divides along this plane." [http://en.wikipedia.org/wiki/Autotomy, http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0000466 ! immaterial anatomical entity
-property_value: IAO:0000232 "this class is intended for autotomy that bisects an appendage. Other forms of autotomy are possible: for example, a sea cucumber and autotomitize internal organs" xsd:string
+property_value: curator_notes "this class is intended for autotomy that bisects an appendage. Other forms of autotomy are possible: for example, a sea cucumber and autotomitize internal organs" xsd:string
 
 [Typedef]
 id: BFO:0000060
@@ -14393,44 +15253,36 @@ is_transitive: true
 is_obsolete: true
 
 [Typedef]
-id: BFO:0000063
-name: precedes
-def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
-subset: ro-eco
-property_value: IAO:0000111 "precedes" xsd:string
-domain: BFO:0000003 ! occurrent
-range: BFO:0000003 ! occurrent
-holds_over_chain: happens_during BFO:0000063
-holds_over_chain: part_of BFO:0000063
-is_transitive: true
-is_a: RO:0002222 ! temporally related to
-
-[Typedef]
-id: BFO:0000067
-name: contains process
-def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
-comment: Paraphrase of definition: a relation between an independent continuant and a process, in which the process takes place entirely within the independent continuant
-property_value: IAO:0000111 "site of" xsd:string
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
-
-[Typedef]
 id: IAO:0000136
 name: is about
 def: "is_about is a (currently) primitive relation that relates an information artifact to an entity." []
-property_value: IAO:0000112 "This document is about information artifacts and their representations" xsd:string
+property_value: editor_note "7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of \"mentions\" relation. Weaken the is_about relationship to be primitive. \n\nWe will try to build it back up by elaborating the various subproperties that are more precisely defined.\n\nSome currently missing phenomena that should be considered \"about\" are predications - \"The only person who knows the answer is sitting beside me\" , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic." xsd:string
+property_value: example_of_usage "This document is about information artifacts and their representations" xsd:string
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of \"mentions\" relation. Weaken the is_about relationship to be primitive. \n\nWe will try to build it back up by elaborating the various subproperties that are more precisely defined.\n\nSome currently missing phenomena that should be considered \"about\" are predications - \"The only person who knows the answer is sitting beside me\" , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic." xsd:string
 property_value: IAO:0000117 "person:Alan Ruttenberg" xsd:string
 property_value: IAO:0000119 "Smith, Ceusters, Ruttenberg, 2000 years of philosophy" xsd:string
+
+[Typedef]
+id: RO:0000052
+name: inheres in
+def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
+property_value: editor_note "A dependent inheres in its bearer at all times for which the dependent exists." xsd:string
+property_value: example_of_usage "this fragility inheres in this vase" xsd:string
+property_value: example_of_usage "this red color inheres in this apple" xsd:string
+property_value: IAO:0000111 "inheres in" xsd:string
+property_value: IAO:0000118 "inheres_in" xsd:string
+property_value: RO:0001900 RO:0001901
+is_a: RO:0002314 ! inheres in part of
+inverse_of: bearer_of ! bearer of
 
 [Typedef]
 id: RO:0000056
 name: participates in
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
+property_value: example_of_usage "this blood clot participates in this blood coagulation" xsd:string
+property_value: example_of_usage "this input material (or this output material) participates in this process" xsd:string
+property_value: example_of_usage "this investigator participates in this investigation" xsd:string
 property_value: IAO:0000111 "participates in" xsd:string
-property_value: IAO:0000112 "this blood clot participates in this blood coagulation" xsd:string
-property_value: IAO:0000112 "this input material (or this output material) participates in this process" xsd:string
-property_value: IAO:0000112 "this investigator participates in this investigation" xsd:string
 property_value: IAO:0000118 "participates_in" xsd:string
 domain: BFO:0000002 ! continuant
 range: BFO:0000003 ! occurrent
@@ -14440,12 +15292,12 @@ inverse_of: RO:0000057 ! has participant
 id: RO:0000057
 name: has participant
 def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
-property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:has_participant xsd:string
+property_value: dc-source http://www.obofoundry.org/ro/#OBO_REL:has_participant xsd:string
+property_value: editor_note "Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time." xsd:string
+property_value: example_of_usage "this blood coagulation has participant this blood clot" xsd:string
+property_value: example_of_usage "this investigation has participant this investigator" xsd:string
+property_value: example_of_usage "this process has participant this input material (or this output material)" xsd:string
 property_value: IAO:0000111 "has participant" xsd:string
-property_value: IAO:0000112 "this blood coagulation has participant this blood clot" xsd:string
-property_value: IAO:0000112 "this investigation has participant this investigator" xsd:string
-property_value: IAO:0000112 "this process has participant this input material (or this output material)" xsd:string
-property_value: IAO:0000116 "Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time." xsd:string
 property_value: IAO:0000118 "has_participant" xsd:string
 domain: BFO:0000003 ! occurrent
 range: BFO:0000002 ! continuant
@@ -14456,12 +15308,12 @@ id: RO:0001000
 name: derives from
 def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
 subset: ro-eco
-property_value: IAO:0000112 "this cell derives from this parent cell (cell division)" xsd:string
-property_value: IAO:0000112 "this nucleus derives from this parent nucleus (nuclear division)" xsd:string
+property_value: curator_notes "This relation is taken from the RO2005 version of RO. It may be obsoleted and replaced by relations with different definitions. See also the 'develops from' family of relations." xsd:string
+property_value: editor_note "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops from'." xsd:string
+property_value: example_of_usage "this cell derives from this parent cell (cell division)" xsd:string
+property_value: example_of_usage "this nucleus derives from this parent nucleus (nuclear division)" xsd:string
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops from'." xsd:string
 property_value: IAO:0000118 "derives_from" xsd:string
-property_value: IAO:0000232 "This relation is taken from the RO2005 version of RO. It may be obsoleted and replaced by relations with different definitions. See also the 'develops from' family of relations." xsd:string
 inverse_of: RO:0001001 ! derives into
 
 [Typedef]
@@ -14469,32 +15321,25 @@ id: RO:0001001
 name: derives into
 def: "a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
 subset: ro-eco
-property_value: IAO:0000112 "this parent cell derives into this cell (cell division)" xsd:string
-property_value: IAO:0000112 "this parent nucleus derives into this nucleus (nuclear division)" xsd:string
+property_value: editor_note "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops into'. To avoid making statements about a future that may not come to pass, it is often better to use the backward-looking 'derives from' rather than the forward-looking 'derives into'." xsd:string
+property_value: example_of_usage "this parent cell derives into this cell (cell division)" xsd:string
+property_value: example_of_usage "this parent nucleus derives into this nucleus (nuclear division)" xsd:string
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops into'. To avoid making statements about a future that may not come to pass, it is often better to use the backward-looking 'derives from' rather than the forward-looking 'derives into'." xsd:string
 property_value: IAO:0000118 "derives_into" xsd:string
 
 [Typedef]
 id: RO:0001018
 name: contained in
 subset: ro-eco
+property_value: editor_note "Containment is location not involving parthood, and arises only where some immaterial continuant is involved." xsd:string
+property_value: editor_note "Containment obtains in each case between material and immaterial continuants, for instance: lung contained_in thoracic cavity; bladder contained_in pelvic cavity. Hence containment is not a transitive relation.    If c part_of c1 at t then we have also, by our definition and by the axioms of mereology applied to spatial regions, c located_in c1 at t. Thus, many examples of instance-level location relations for continuants are in fact cases of instance-level parthood. For material continuants location and parthood coincide. Containment is location not involving parthood, and arises only where some immaterial continuant is involved. To understand this relation, we first define overlap for continuants as follows:    c1 overlap c2 at t =def for some c, c part_of c1 at t and c part_of c2 at t. The containment relation on the instance level can then be defined (see definition):" xsd:string
+property_value: editor_note "Intended meaning:\ndomain: material entity\nrange: spatial region or site (immaterial continuant)\n        " xsd:string
 property_value: IAO:0000111 "contained in" xsd:string
-property_value: IAO:0000116 "Containment is location not involving parthood, and arises only where some immaterial continuant is involved." xsd:string
-property_value: IAO:0000116 "Containment obtains in each case between material and immaterial continuants, for instance: lung contained_in thoracic cavity; bladder contained_in pelvic cavity. Hence containment is not a transitive relation.    If c part_of c1 at t then we have also, by our definition and by the axioms of mereology applied to spatial regions, c located_in c1 at t. Thus, many examples of instance-level location relations for continuants are in fact cases of instance-level parthood. For material continuants location and parthood coincide. Containment is location not involving parthood, and arises only where some immaterial continuant is involved. To understand this relation, we first define overlap for continuants as follows:    c1 overlap c2 at t =def for some c, c part_of c1 at t and c part_of c2 at t. The containment relation on the instance level can then be defined (see definition):" xsd:string
-property_value: IAO:0000116 "Intended meaning:\ndomain: material entity\nrange: spatial region or site (immaterial continuant)\n        " xsd:string
 property_value: IAO:0000118 "contained_in" xsd:string
 property_value: RO:0001900 RO:0001901
 domain: BFO:0000040 ! material entity
 range: BFO:0000004 ! independent continuant
-inverse_of: RO:0001019 ! contains
-
-[Typedef]
-id: RO:0001019
-name: contains
-subset: ro-eco
-property_value: IAO:0000111 "contains" xsd:string
-property_value: RO:0001900 RO:0001901
+inverse_of: contains ! contains
 
 [Typedef]
 id: RO:0002013
@@ -14546,7 +15391,7 @@ creation_date: 2017-05-24T09:49:21Z
 [Typedef]
 id: RO:0002019
 name: has ligand
-def: "A relationship that holds between between a receptor and an chemical entity, typically a small molecule or peptide, that carries information between cells or compartments of a cell and which binds the receptor and regulates its effector function." []
+def: "A relationship that holds between between a receptor and an chemical entity, typically a small molecule or peptide, that carries information between cells or compartments of a cell and which binds the receptor and regulates its effector function." [GOC:dos]
 domain: GO:0004872
 is_a: RO:0002233 ! has input
 created_by: dos
@@ -14646,19 +15491,19 @@ property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "ends_at_start_of" xsd:string
 property_value: IAO:0000118 "meets" xsd:string
 property_value: RO:0002575 BFO:0000063
-is_a: BFO:0000063 ! precedes
+is_a: precedes ! precedes
 
 [Typedef]
 id: RO:0002163
 name: spatially disjoint from
 def: "A is spatially_disjoint_from B if and only if they have no parts in common" []
 subset: ro-eco
-property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Part-disjointness-Design-Pattern xsd:anyURI
+property_value: curator_notes "Note that it would be possible to use the relation to label the relationship between a near infinite number of structures - between the rings of saturn and my left earlobe. The intent is that this is used for parsiomoniously for disambiguation purposes - for example, between siblings in a jointly exhaustive pairwise disjointness hierarchy" xsd:string
+property_value: editor_note "There are two ways to encode this as a shortcut relation. The other possibility to use an annotation assertion between two classes, and expand this to a disjointness axiom. " xsd:string
+property_value: foaf-page https://github.com/obophenotype/uberon/wiki/Part-disjointness-Design-Pattern xsd:anyURI
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "There are two ways to encode this as a shortcut relation. The other possibility to use an annotation assertion between two classes, and expand this to a disjointness axiom. " xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
-property_value: IAO:0000232 "Note that it would be possible to use the relation to label the relationship between a near infinite number of structures - between the rings of saturn and my left earlobe. The intent is that this is used for parsiomoniously for disambiguation purposes - for example, between siblings in a jointly exhaustive pairwise disjointness hierarchy" xsd:string
 property_value: RO:0001900 RO:0001901
 is_a: RO:0002323 ! mereotopologically related to
 expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
@@ -14667,19 +15512,21 @@ expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
 id: RO:0002217
 name: actively participates in
 def: "x actively participates in y if and only if x participates in y and x realizes some active role" []
+property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "agent in" xsd:string
 is_a: RO:0000056 ! participates in
-inverse_of: RO:0002218 ! obsolete has active participant
+inverse_of: RO:0002218 ! has active participant
 
 [Typedef]
 id: RO:0002218
+name: has active participant
 name: obsolete has active participant
 def: "x has participant y if and only if x realizes some active role that inheres in y" []
 subset: ro-eco
-property_value: IAO:0000112 "'heart development' has active participant some Shh protein" xsd:string
+property_value: editor_note "This may be obsoleted and replaced by the original 'has agent' relation" xsd:string
+property_value: example_of_usage "'heart development' has active participant some Shh protein" xsd:string
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "This may be obsoleted and replaced by the original 'has agent' relation" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "has agent" xsd:string
 is_a: RO:0000057 ! has participant
@@ -14690,17 +15537,19 @@ id: RO:0002222
 name: temporally related to
 comment: A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations.
 subset: ro-eco
+property_value: curator_notes "Do not use this relation directly. It is ended as a grouping for relations between occurrents involving the relative timing of their starts and ends." xsd:string
+property_value: dc-source https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1 xsd:anyURI
 property_value: http://purl.org/dc/terms/source https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1 xsd:anyURI
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Allen%27s_interval_algebra
-property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for relations between occurrents involving the relative timing of their starts and ends." xsd:string
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 
 [Typedef]
 id: RO:0002233
 name: has input
+def: "p has direct input c iff c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
 def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
 subset: ro-eco
 property_value: IAO:0000114 IAO:0000125
@@ -14712,24 +15561,11 @@ is_a: RO:0000057 ! has participant
 inverse_of: input_of ! input of
 
 [Typedef]
-id: RO:0002258
-name: developmentally preceded by
-def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
-comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "false" xsd:boolean
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "In general you should not use this relation to make assertions - use one of the more specific relations below this one" xsd:string
-domain: BFO:0000002 ! continuant
-range: BFO:0000002 ! continuant
-is_a: RO:0002324 ! developmentally related to
-inverse_of: RO:0002286 ! developmentally succeeded by
-
-[Typedef]
 id: RO:0002263
 name: acts upstream of
 def: "c acts upstream of p if and only if c enables some f that is involved in p' and p' occurs chronologically before p, is not part of p, and affects the execution of p. c is a material entity and f, p, p' are processes." []
-property_value: IAO:0000112 "A faulty traffic light (material entity) whose malfunctioning (a process) is causally upstream of a traffic collision (a process): the traffic light acts upstream of the collision." xsd:string
+def: "c involved in regulation of p if c enables  'p' and p' causally upstream of p" []
+property_value: example_of_usage "A faulty traffic light (material entity) whose malfunctioning (a process) is causally upstream of a traffic collision (a process): the traffic light acts upstream of the collision." xsd:string
 property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of
 holds_over_chain: RO:0002327 RO:0002411
 is_a: RO:0002264 ! acts upstream of or within
@@ -14737,12 +15573,13 @@ is_a: RO:0002264 ! acts upstream of or within
 [Typedef]
 id: RO:0002264
 name: acts upstream of or within
+def: "c acts upstream of or within p if c is enables 'p' and p' causally upstream of or within p" []
 def: "c acts upstream of or within p if c is enables f, and f is causally upstream of or within p. c is a material entity and p is an process." []
 synonym: "affects" RELATED []
-property_value: IAO:0000112 "A gene product that has some activity, where that activity may be a part of a pathway or upstream of the pathway." xsd:string
+property_value: example_of_usage "A gene product that has some activity, where that activity may be a part of a pathway or upstream of the pathway." xsd:string
 property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of_or_within
 holds_over_chain: RO:0002327 RO:0002418
-is_a: RO:0002500 ! causal agent in process
+is_a: RO:0002500 ! causal agent in
 
 [Typedef]
 id: RO:0002286
@@ -14756,6 +15593,7 @@ is_a: RO:0002384 ! has developmental potential involving
 id: RO:0002304
 name: causally upstream of, positive effect
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x increases the frequency, rate or extent of y
+property_value: dc-creator "cjm" xsd:string
 property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
 property_value: RO:0004049 RO:0002411
 is_a: RO:0002411 ! causally upstream of
@@ -14765,38 +15603,65 @@ is_a: RO:0004047 ! causally upstream of or within, positive effect
 id: RO:0002305
 name: causally upstream of, negative effect
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x decreases the frequency, rate or extent of y
+property_value: dc-creator "cjm" xsd:string
 property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
 property_value: RO:0004050 RO:0002411
 is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004046 ! causally upstream of or within, negative effect
 
 [Typedef]
+id: RO:0002314
+name: inheres in part of
+def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
+property_value: editor_note "Because part_of is transitive, inheres in is a sub-relation of inheres in part of" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
+property_value: RO:0001900 RO:0001901
+property_value: seeAlso "defining-property-chains-involving-reflexivity"
+holds_over_chain: RO:0000052 part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
+is_a: RO:0002502 ! depends on
+transitive_over: part_of ! part_of
+
+[Typedef]
 id: RO:0002323
 name: mereotopologically related to
 def: "A mereological relationship or a topological relationship" []
+property_value: curator_notes "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships" xsd:string
 property_value: RO:0001900 RO:0001901
 
 [Typedef]
 id: RO:0002324
 name: developmentally related to
 def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
+property_value: curator_notes "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving organismal development" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving organismal development" xsd:string
+
+[Typedef]
+id: RO:0002326
+name: contributes to
+property_value: curator_notes "In the context of the Gene Ontology, contributes_to may be used only with classes from the molecular function ontology. " xsd:string
+property_value: editor_note "We would like to say\n\nif and only if\n exists c', p'\n  c part_of c' and c' capable_of p\n   and\n  c capable_of p' and p' part_of p\nthen\n c contributes_to p\n\nHowever, this is not possible in OWL. We instead make this relation a sub-relation of the two chains, which gives us the inference in the one direction." xsd:string
+property_value: example_of_usage "ATP citrate lyase (ACL) in Arabidopsis: it is a heterooctamer, composed of two types of subunits, ACLA and ACLB in a A(4)B(4) stoichiometry. Neither of the subunits expressed alone give ACL activity, but co-expression results in ACL activity. Both subunits contribute_to the ATP citrate lyase activity." xsd:string
+property_value: example_of_usage "eIF2: has three subunits (alpha, beta, gamma); one binds GTP; one binds RNA; the whole complex binds the ribosome (all three subunits are required for ribosome binding). So one subunit is annotated to GTP binding and one to RNA binding without qualifiers, and all three stand in the contributes_to relationship to \"ribosome binding\". And all three are part_of an eIF2 complex" xsd:string
+property_value: example_of_usage "Subunits of nuclear RNA polymerases: none of the individual subunits have RNA polymerase activity, yet all of these subunits contribute_to DNA-dependent RNA polymerase activity." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.geneontology.org/GO.annotation.conventions.shtml#contributes_to xsd:string
+is_a: capable_of_part_of ! capable of part of
+is_a: part_of_structure_that_is_capable_of ! part of structure that is capable of
 
 [Typedef]
 id: RO:0002327
 name: enables
-property_value: IAO:0000112 "a particular instances of akt-2 enables some instance of protein kinase activity" xsd:string
+property_value: curator_notes "This relation differs from the parent relation 'capable of' in that the parent is weaker and only expresses a capability that may not be actually realized, whereas this relation is always realized." xsd:string
+property_value: curator_notes "This relation is currently used experimentally by the Gene Ontology Consortium. It may not be stable and may be obsoleted at some future time." xsd:string
+property_value: example_of_usage "a particular instances of akt-2 enables some instance of protein kinase activity" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "catalyzes" xsd:string
 property_value: IAO:0000118 "executes" xsd:string
 property_value: IAO:0000118 "has" xsd:string
 property_value: IAO:0000118 "is catalyzing" xsd:string
 property_value: IAO:0000118 "is executing" xsd:string
-property_value: IAO:0000232 "This relation differs from the parent relation 'capable of' in that the parent is weaker and only expresses a capability that may not be actually realized, whereas this relation is always realized." xsd:string
-property_value: IAO:0000232 "This relation is currently used experimentally by the Gene Ontology Consortium. It may not be stable and may be obsoleted at some future time." xsd:string
 is_a: capable_of ! capable of
 inverse_of: RO:0002333 ! enabled by
 transitive_over: has_part ! has part
@@ -14862,14 +15727,6 @@ range: CARO:0000000 ! anatomical entity
 is_a: RO:0002324 ! developmentally related to
 
 [Typedef]
-id: RO:0002388
-name: has potential to directly develop into
-def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-is_a: has_potential_to_develop_into ! has potential to develop into
-
-[Typedef]
 id: RO:0002404
 name: causally downstream of
 def: "inverse of upstream of" []
@@ -14892,10 +15749,11 @@ inverse_of: RO:0002412 ! immediately causally upstream of
 id: RO:0002410
 name: causally related to
 def: "This relation groups causal relations between material entities and causal relations between processes" []
+property_value: curator_notes "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+property_value: editor_note "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate? \n * Is the causal relation regulatory?\n * Is the influence positive or negative\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
 property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000116 "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate? \n * Is the causal relation regulatory?\n * Is the influence positive or negative\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+is_a: RO:0002609 ! related via dependence to
 
 [Typedef]
 id: RO:0002411
@@ -14904,7 +15762,7 @@ def: "p is causally upstream of q if and only if p precedes q and p and q are li
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_transitive: true
-is_a: BFO:0000063 ! precedes
+is_a: precedes ! precedes
 is_a: RO:0002418 ! causally upstream of or within
 
 [Typedef]
@@ -14922,7 +15780,7 @@ id: RO:0002418
 name: causally upstream of or within
 def: "p 'causally upstream or within' q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q." []
 synonym: "affects" RELATED []
-property_value: IAO:0000116 "We would like to make this disjoint with 'preceded by', but this is prohibited in OWL2" xsd:string
+property_value: editor_note "We would like to make this disjoint with 'preceded by', but this is prohibited in OWL2" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "influences (processual)" xsd:string
 is_transitive: true
@@ -14942,6 +15800,7 @@ is_a: RO:0002501 ! causal relation between processes
 [Typedef]
 id: RO:0002428
 name: involved in regulation of
+def: "c involved in regulation of p if c is involved in some 'p' and p' regulates some p" []
 def: "c involved in regulation of p if c is involved in some p' and p' regulates some p" []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 holds_over_chain: RO:0002327 regulates
@@ -14973,19 +15832,21 @@ is_a: RO:0002428 ! involved in regulation of
 id: RO:0002431
 name: involved in or involved in regulation of
 def: "c involved in or regulates p if and only if either (i) c is involved in p or (ii) c is involved in regulation of p" []
-property_value: IAO:0000116 "OWL does not allow defining object properties via a Union" xsd:string
+property_value: editor_note "OWL does not allow defining object properties via a Union" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "involved in or reguates" xsd:string
 is_a: functionally_related_to ! functionally related to
 is_a: RO:0002264 ! acts upstream of or within
-is_a: RO:0002500 ! causal agent in process
+is_a: RO:0002500 ! causal agent in
 
 [Typedef]
 id: RO:0002432
+name: enables activity in
 name: is active in
+def: "c executes activity in d if and only if c enables p and p occurs_in d" []
 def: "c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure." [GOC:cjm, GOC:dos]
 synonym: "enables activity in" EXACT []
-property_value: IAO:0000112 "A protein that enables activity in a cytosol." xsd:string
+property_value: example_of_usage "A protein that enables activity in a cytosol." xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "executes activity in" xsd:string
 holds_over_chain: RO:0002327 occurs_in {http://purl.obolibrary.org/obo/RO_0002581="true"}
@@ -14998,11 +15859,11 @@ name: interacts with
 def: "A relationship that holds between two entities in which the processes executed by the two entities are causally connected." []
 subset: ro-eco
 synonym: "in pairwise interaction with" EXACT []
-property_value: http://xmlns.com/foaf/0.1/page https://github.com/oborel/obo-relations/wiki/InteractionRelations xsd:anyURI
-property_value: IAO:0000116 "Considering relabeling as 'pairwise interacts with'" xsd:anyURI
-property_value: IAO:0000116 "This relation and all sub-relations can be applied to either (1) pairs of entities that are interacting at any moment of time (2) populations or species of entity whose members have the disposition to interact (3) classes whose members have the disposition to interact." xsd:string
+property_value: curator_notes "Note that this relationship type, and sub-relationship types may be redundant with process terms from other ontologies. For example, the symbiotic relationship hierarchy parallels GO. The relations are provided as a convenient shortcut. Consider using the more expressive processual form to capture your data. In the future, these relations will be linked to their cognate processes through rules." xsd:string
+property_value: editor_note "Considering relabeling as 'pairwise interacts with'" xsd:anyURI
+property_value: editor_note "This relation and all sub-relations can be applied to either (1) pairs of entities that are interacting at any moment of time (2) populations or species of entity whose members have the disposition to interact (3) classes whose members have the disposition to interact." xsd:string
+property_value: foaf-page https://github.com/oborel/obo-relations/wiki/InteractionRelations xsd:anyURI
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "Note that this relationship type, and sub-relationship types may be redundant with process terms from other ontologies. For example, the symbiotic relationship hierarchy parallels GO. The relations are provided as a convenient shortcut. Consider using the more expressive processual form to capture your data. In the future, these relations will be linked to their cognate processes through rules." xsd:string
 property_value: seeAlso http://purl.obolibrary.org/obo/MI_0914 xsd:anyURI
 domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
@@ -15011,6 +15872,7 @@ is_symmetric: true
 [Typedef]
 id: RO:0002436
 name: molecularly interacts with
+def: "An interaction relationship in which the two partners are molecular entities and are executing molecular processes that are directly causally connected." []
 def: "An interaction relationship in which the two partners are molecular entities that directly physically interact with each other for example via a stable binding interaction or a brief interaction during which one modifies the other." []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "binds" xsd:string
@@ -15023,7 +15885,7 @@ is_a: RO:0002434 ! interacts with
 [Typedef]
 id: RO:0002447
 name: phosphorylates
-property_value: IAO:0000116 "Axiomatization to GO to be added later" xsd:string
+property_value: editor_note "Axiomatization to GO to be added later" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "An interaction relation between x and y in which x catalyzes a reaction in which a phosphate group is added to y." xsd:string
 is_a: RO:0002436 ! molecularly interacts with
@@ -15031,6 +15893,8 @@ is_a: RO:0002436 ! molecularly interacts with
 [Typedef]
 id: RO:0002448
 name: activity directly regulates activity of
+name: molecularly controls
+def: "Holds between molecular entities a and b when the execution of a activates or inhibits the activity of b" []
 def: "Holds between molecular entities A and B where A can physically interact with B and in doing so regulates a process that B is capable of.  For example, A and B may be gene products and binding of B by A regulates the kinase activity of B." []
 synonym: "molecularly controls" EXACT []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -15040,26 +15904,32 @@ is_a: RO:0002566 ! causally influences
 [Typedef]
 id: RO:0002449
 name: activity directly negatively regulates activity of
+name: molecularly decreases activity of
 def: "Holds between molecular entities A and B where A can physically interact with B and in doing so negatively regulates a process that B is capable of.  For example, A and B may be gene products and binding of B by A negatively regulates the kinase activity of B." []
+def: "Holds between molecules a and b if and only if a executes a process that directly diminishes a process executed by b." []
 synonym: "molecularly decreases activity of" EXACT []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "inhibits" xsd:string
-is_a: RO:0002448 ! activity directly regulates activity of
+is_a: RO:0002448 ! molecularly controls
 
 [Typedef]
 id: RO:0002450
 name: activity directly positively regulates activity of
+name: molecularly increases activity of
 def: "Holds between molecular entities A and B where A can physically interact with B and in doing so positively regulates a process that B is capable of.  For example, A and B may be gene products and binding of B by A positively regulates the kinase activity of B." []
+def: "Holds between molecules a and b if and only if a executes a process that directly activates a process executed by b." []
 synonym: "molecularly increases activity of" EXACT []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "activates" xsd:string
-is_a: RO:0002448 ! activity directly regulates activity of
+is_a: RO:0002448 ! molecularly controls
 
 [Typedef]
 id: RO:0002464
+name: helper property
 name: helper property (not for use in curation)
+property_value: curator_notes "This property or its subproperties is not to be used directly. These properties exist as helper properties that are used to support OWL reasoning." xsd:string
+property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "This property or its subproperties is not to be used directly. These properties exist as helper properties that are used to support OWL reasoning." xsd:string
 
 [Typedef]
 id: RO:0002479
@@ -15080,8 +15950,8 @@ is_a: RO:0002564 ! molecular interaction relation helper property
 [Typedef]
 id: RO:0002487
 name: relation between structure and stage
+property_value: curator_notes "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, typically connecting an anatomical entity to a biological process or developmental stage." xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, typically connecting an anatomical entity to a biological process or developmental stage." xsd:string
 domain: BFO:0000002 ! continuant
 range: BFO:0000003 ! occurrent
 
@@ -15102,35 +15972,42 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 holds_over_chain: part_of RO:0002497
 holds_over_chain: RO:0002286 RO:0002497
 is_a: RO:0002487 ! relation between structure and stage
-transitive_over: BFO:0000063 ! precedes
 transitive_over: part_of ! part_of
+transitive_over: precedes ! precedes
 
 [Typedef]
 id: RO:0002500
+name: causal agent in
 name: causal agent in process
 def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 is_a: RO:0002595 ! causal relation between material entity and a process
-inverse_of: RO:0002608 ! process has causal agent
+inverse_of: RO:0002608 ! has causal agent
 
 [Typedef]
 id: RO:0002501
 name: causal relation between processes
 def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." []
+property_value: curator_notes "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
-property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
+id: RO:0002502
+name: depends on
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: seeAlso BFO:0000169
+
+[Typedef]
 id: RO:0002506
 name: causal relation between material entities
-property_value: IAO:0000116 "The intent is that the process branch of the causal property hierarchy is primary (causal relations hold between occurrents/processes), and that the material branch is defined in terms of the process branch" xsd:string
+property_value: curator_notes "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+property_value: editor_note "The intent is that the process branch of the causal property hierarchy is primary (causal relations hold between occurrents/processes), and that the material branch is defined in terms of the process branch" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
-property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
 is_a: RO:0002410 ! causally related to
@@ -15147,7 +16024,7 @@ inverse_of: RO:0002566 ! causally influences
 [Typedef]
 id: RO:0002563
 name: interaction relation helper property
-property_value: http://xmlns.com/foaf/0.1/page https://github.com/oborel/obo-relations/wiki/InteractionRelations xsd:anyURI
+property_value: foaf-page https://github.com/oborel/obo-relations/wiki/InteractionRelations xsd:anyURI
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:N-Ary_Relation_Pattern_%28OWL_2%29
 is_a: RO:0002464 ! helper property (not for use in curation)
@@ -15182,7 +16059,7 @@ is_a: RO:0002412 ! immediately causally upstream of
 id: RO:0002584
 name: has part structure that is capable of
 def: "s 'has part structure that is capable of' p if and only if there exists some part x such that s 'has part' x and x 'capable of' p" []
-property_value: IAO:0000112 "gland SubClassOf 'has part structure that is capable of' some 'secretion by cell'" xsd:string
+property_value: example_of_usage "gland SubClassOf 'has part structure that is capable of' some 'secretion by cell'" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 holds_over_chain: has_part capable_of
 is_a: functionally_related_to ! functionally related to
@@ -15192,7 +16069,7 @@ is_a: RO:0002595 ! causal relation between material entity and a process
 id: RO:0002595
 name: causal relation between material entity and a process
 def: "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." []
-property_value: IAO:0000116 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+property_value: editor_note "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 domain: BFO:0000040 ! material entity
@@ -15203,10 +16080,10 @@ is_a: RO:0002410 ! causally related to
 id: RO:0002596
 name: capable of regulating
 def: "Holds between c and p if and only if c is capable of some activity a, and a regulates p." []
-property_value: IAO:0000112 "pyrethroid -> growth" xsd:string
+property_value: example_of_usage "pyrethroid -> growth" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 holds_over_chain: capable_of regulates
-is_a: RO:0002500 ! causal agent in process
+is_a: RO:0002500 ! causal agent in
 
 [Typedef]
 id: RO:0002597
@@ -15220,22 +16097,33 @@ is_a: RO:0002596 ! capable of regulating
 id: RO:0002598
 name: capable of positively regulating
 def: "Holds between c and p if and only if c is capable of some activity a, and a positively regulates p." []
-property_value: IAO:0000112 "renin -> arteriolar smooth muscle contraction" xsd:string
+property_value: example_of_usage "renin -> arteriolar smooth muscle contraction" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 holds_over_chain: capable_of positively_regulates
 is_a: RO:0002596 ! capable of regulating
 
 [Typedef]
 id: RO:0002608
+name: has causal agent
 name: process has causal agent
 def: "Inverse of 'causal agent in process'" []
+def: "Inverse of 'causal agent in'" []
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002609
+name: obsolete related via dependence to
+name: related via dependence to
+def: "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
+property_value: curator_notes "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+is_obsolete: true
 
 [Typedef]
 id: RO:0002629
 name: directly positively regulates
 def: "Process(P1) directly postively regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2." []
+def: "Process(P1) directly regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2." []
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "directly positively regulates (process to process)" xsd:string
 property_value: RO:0004049 RO:0002578
@@ -15246,33 +16134,12 @@ is_a: RO:0002578 ! directly regulates
 id: RO:0002630
 name: directly negatively regulates
 def: "Process(P1) directly negatively regulates process(P2) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P1 directly negatively regulates P2." []
+def: "Process(P1) directly regulates process(P2) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P1 directly negatively regulates P2." []
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "directly negatively regulates (process to process)" xsd:string
 property_value: RO:0004050 RO:0002578
 is_a: negatively_regulates ! negatively regulates
 is_a: RO:0002578 ! directly regulates
-
-[Typedef]
-id: RO:0003000
-name: produces
-def: "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix." []
-comment: Note that this definition doesn't quite distinguish the output of a transformation process from a production process, which is related to the identity/granularity issue.
-subset: ro-eco
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Melissa Haendel" xsd:string
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
-inverse_of: RO:0003001 ! produced by
-
-[Typedef]
-id: RO:0003001
-name: produced by
-def: "a produced_by b iff some process that occurs_in b has_output a." []
-subset: ro-eco
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Melissa Haendel" xsd:string
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
 
 [Typedef]
 id: RO:0004031
@@ -15351,19 +16218,18 @@ namespace: uberon
 def: "x adjacent to y if and only if x and y share a boundary." []
 def: "x adjacent_to y iff: x and y share a boundary" []
 xref: RO:0002220
-property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string {http://www.w3.org/2000/01/rdf-schema#seeAlso="issuecomment-218584934"}
-property_value: IAO:0000112 "The epidermis layer of a vertebrate is adjacent to the dermis." xsd:string
-property_value: IAO:0000112 "The plasma membrane of a cell is adjacent to the cytoplasm, and also to the cell lumen which the cytoplasm occupies." xsd:string
-property_value: IAO:0000112 "The skin of the forelimb is adjacent to the skin of the torso if these are considered anatomical subdivisions with a defined border. Otherwise a relation such as continuous_with would be used." xsd:string
+property_value: editor_note "This relation acts as a join point with BSPO" xsd:string
+property_value: example_of_usage "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string {http://www.w3.org/2000/01/rdf-schema#seeAlso="issuecomment-218584934"}
+property_value: example_of_usage "The epidermis layer of a vertebrate is adjacent to the dermis." xsd:string
+property_value: example_of_usage "The plasma membrane of a cell is adjacent to the cytoplasm, and also to the cell lumen which the cytoplasm occupies." xsd:string
+property_value: example_of_usage "The skin of the forelimb is adjacent to the skin of the torso if these are considered anatomical subdivisions with a defined border. Otherwise a relation such as continuous_with would be used." xsd:string
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "This relation acts as a join point with BSPO" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: RO:0001900 RO:0001901
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000004 ! independent continuant
 is_symmetric: true
 is_a: RO:0002163 ! spatially disjoint from
-is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: anterior_to
@@ -15387,19 +16253,35 @@ domain: BSPO:0000010 ! anatomical axis
 range: BSPO:0000010 ! anatomical axis
 
 [Typedef]
+id: bearer_of
+name: bearer of
+namespace: uberon
+def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
+xref: RO:0000053
+property_value: editor_note "A bearer can have many dependents, and its dependents can exist for different periods of time, but none of its dependents can exist when the bearer does not exist." xsd:string
+property_value: example_of_usage "this apple is bearer of this red color" xsd:string
+property_value: example_of_usage "this vase is bearer of this fragility" xsd:string
+property_value: IAO:0000111 "bearer of" xsd:string
+property_value: IAO:0000118 "bearer_of" xsd:string
+property_value: IAO:0000118 "is bearer of" xsd:string
+property_value: RO:0001900 RO:0001901
+range: BFO:0000020 ! specifically dependent continuant
+
+[Typedef]
 id: capable_of
 name: capable of
 namespace: uberon
 def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process. " []
 subset: ro-eco
 xref: RO:0002215
-property_value: IAO:0000112 "mechanosensory neuron capable of detection of mechanical stimulus involved in sensory perception (GO:0050974)" xsd:string
-property_value: IAO:0000112 "osteoclast SubClassOf 'capable of' some 'bone resorption'" xsd:string
+property_value: curator_notes "For compatibility with BFO, this relation has a shortcut definition in which the expression \"capable of some P\" expands to \"bearer_of (some realized_by only P)\"." xsd:string
+property_value: example_of_usage "mechanosensory neuron capable of detection of mechanical stimulus involved in sensory perception (GO:0050974)" xsd:string
+property_value: example_of_usage "osteoclast SubClassOf 'capable of' some 'bone resorption'" xsd:string
+property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "has function realized in" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20123131
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/21208450
-property_value: IAO:0000232 "For compatibility with BFO, this relation has a shortcut definition in which the expression \"capable of some P\" expands to \"bearer_of (some realized_by only P)\"." xsd:string
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000015 ! process
 is_a: capable_of_part_of ! capable of part of
@@ -15412,13 +16294,60 @@ name: capable of part of
 namespace: uberon
 def: "c stands in this relationship to p if and only if there exists some p' such that c is capable_of p', and p' is part_of p." []
 xref: RO:0002216
+property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "has function in" xsd:string
 property_value: seeAlso "defining-property-chains-involving-reflexivity"
 holds_over_chain: capable_of part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
 is_a: functionally_related_to ! functionally related to
-is_a: RO:0002500 ! causal agent in process
+is_a: RO:0002500 ! causal agent in
 expand_expression_to: "RO_0000053 some (RO_0000054 only (BFO_0000050 some ?Y))" []
+
+[Typedef]
+id: contains
+name: contains
+namespace: uberon
+subset: ro-eco
+xref: RO:0001019
+property_value: IAO:0000111 "contains" xsd:string
+property_value: RO:0001900 RO:0001901
+
+[Typedef]
+id: contains_process
+name: contains process
+namespace: uberon
+def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
+comment: Paraphrase of definition: a relation between an independent continuant and a process, in which the process takes place entirely within the independent continuant
+xref: BFO:0000067
+property_value: IAO:0000111 "site of" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
+
+[Typedef]
+id: curator_notes
+name: curator note
+name: curator notes
+namespace: uberon
+def: "An administrative note of use for a curator but of no use for a user" []
+xref: IAO:0000232
+property_value: IAO:0000111 "curator note" xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "PERSON:Alan Ruttenberg" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
+is_metadata_tag: true
+
+[Typedef]
+id: dc-creator
+name: creator
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/creator
+is_metadata_tag: true
+
+[Typedef]
+id: dc-source
+name: derived from resource
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/source
+is_metadata_tag: true
 
 [Typedef]
 id: deep_to
@@ -15448,6 +16377,22 @@ is_a: has_potential_to_developmentally_contribute_to ! has potential to developm
 is_a: RO:0002286 ! developmentally succeeded by
 
 [Typedef]
+id: developmentally_preceded_by
+name: developmentally preceded by
+namespace: uberon
+def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
+comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
+xref: RO:0002258
+property_value: curator_notes "In general you should not use this relation to make assertions - use one of the more specific relations below this one" xsd:string
+property_value: editor_note "false" xsd:boolean
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+domain: BFO:0000002 ! continuant
+range: BFO:0000002 ! continuant
+is_a: RO:0002324 ! developmentally related to
+inverse_of: RO:0002286 ! developmentally succeeded by
+
+[Typedef]
 id: develops_from
 name: develops from
 name: develops_from
@@ -15462,10 +16407,12 @@ property_value: IAO:0000117 "Melissa Haendel" xsd:string
 property_value: IAO:0000117 "Terry Meehan" xsd:string
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000004 ! independent continuant
+holds_over_chain: part_of develops_from
 is_transitive: true
+is_a: developmentally_preceded_by ! developmentally preceded by
 is_a: has_developmental_contribution_from ! has developmental contribution from
-is_a: RO:0002258 ! developmentally preceded by
 inverse_of: develops_into ! develops_into
+transitive_over: part_of ! part_of
 
 [Typedef]
 id: develops_into
@@ -15481,8 +16428,8 @@ property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000117 "Terry Meehan" xsd:string
 is_transitive: true
 is_a: has_potential_to_develop_into ! has potential to develop into
+is_a: has_potential_to_directly_develop_into ! has potential to directly develop into
 is_a: RO:0002286 ! developmentally succeeded by
-is_a: RO:0002388 ! has potential to directly develop into
 
 [Typedef]
 id: dorsal_to
@@ -15494,6 +16441,19 @@ property_value: seeAlso FBcv:0000041
 property_value: seeAlso FBql:00005865
 is_transitive: true
 inverse_of: ventral_to ! ventral to
+
+[Typedef]
+id: editor_note
+name: editor note
+namespace: uberon
+def: "An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology." []
+xref: IAO:0000116
+property_value: IAO:0000111 "editor note" xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "PERSON:Daniel Schober" xsd:string
+property_value: IAO:0000119 GROUP:OBI:<http://purl.obfoundry.org/obo/obi> xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
+is_metadata_tag: true
 
 [Typedef]
 id: ends_during
@@ -15509,6 +16469,18 @@ property_value: IAO:0000118 "overlaps" xsd:string
 is_a: RO:0002222 ! temporally related to
 
 [Typedef]
+id: example_of_usage
+name: example of usage
+namespace: uberon
+def: "A phrase describing how a class name should be used. May also include other kinds of examples that facilitate immediate understanding of a class semantics, such as widely known prototypical subclasses or instances of the class. Although essential for high level terms, examples for low level terms (e.g., Affymetrix HU133 array) are not" []
+xref: IAO:0000112
+property_value: IAO:0000111 "example" xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "PERSON:Daniel Schober" xsd:string
+property_value: IAO:0000119 GROUP:OBI:<http://purl.obolibrary.org/obo/obi> xsd:string
+is_metadata_tag: true
+
+[Typedef]
 id: existence_starts_during_or_after
 name: existence starts during or after
 namespace: uberon
@@ -15516,11 +16488,20 @@ def: "x existence starts during or after y if and only if the time point at whic
 comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
 xref: RO:0002496
 property_value: IAO:0000117 "Chris Mungall" xsd:string
+holds_over_chain: developmentally_preceded_by existence_starts_during_or_after
 holds_over_chain: part_of existence_starts_during_or_after
-holds_over_chain: RO:0002258 existence_starts_during_or_after
 is_a: RO:0002487 ! relation between structure and stage
 transitive_over: part_of ! part_of
 transitive_over: preceded_by ! preceded_by
+
+[Typedef]
+id: external_definition
+name: external_definition
+namespace: uberon
+def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000001
+is_metadata_tag: true
 
 [Typedef]
 id: finishes_axis
@@ -15532,13 +16513,20 @@ domain: BSPO:0000054 ! anatomical side
 range: BSPO:0000010 ! anatomical axis
 
 [Typedef]
+id: foaf-page
+name: page
+namespace: uberon
+xref: http://xmlns.com/foaf/0.1/page
+is_metadata_tag: true
+
+[Typedef]
 id: functionally_related_to
 name: functionally related to
 namespace: uberon
 def: "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." []
 xref: RO:0002328
+property_value: curator_notes "This is a grouping relation that collects relations used for the purpose of connecting structure and function" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "This is a grouping relation that collects relations used for the purpose of connecting structure and function" xsd:string
 
 [Typedef]
 id: happens_during
@@ -15560,9 +16548,9 @@ namespace: uberon
 def: "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
 subset: ro-eco
 xref: RO:0002180
+property_value: curator_notes "For use in recording has_part with a cardinality constraint, because OWL does not permit cardinality constraints to be used in combination with transitive object properties. In situations where you would want to say something like 'has part exactly 5 digit, you would instead use has_component exactly 5 digit." xsd:string
+property_value: editor_note "The definition of 'has component' is still under discussion. The challenge is in providing a definition that does not imply transitivity." xsd:string
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "The definition of 'has component' is still under discussion. The challenge is in providing a definition that does not imply transitivity." xsd:string
-property_value: IAO:0000232 "For use in recording has_part with a cardinality constraint, because OWL does not permit cardinality constraints to be used in combination with transitive object properties. In situations where you would want to say something like 'has part exactly 5 digit, you would instead use has_component exactly 5 digit." xsd:string
 property_value: RO:0001900 RO:0001901
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:Componency
 is_a: has_part ! has part
@@ -15573,19 +16561,23 @@ name: has developmental contribution from
 namespace: uberon
 def: "x has developmental contribution from y iff x has some part z such that z develops from y" []
 xref: RO:0002254
-property_value: IAO:0000112 "Mammalian thymus has developmental contribution from some pharyngeal pouch 3; Mammalian thymus has developmental contribution from some pharyngeal pouch 4 [Kardong]" xsd:string
+property_value: example_of_usage "Mammalian thymus has developmental contribution from some pharyngeal pouch 3; Mammalian thymus has developmental contribution from some pharyngeal pouch 4 [Kardong]" xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
+domain: BFO:0000004 ! independent continuant
 domain: CARO:0000000 ! anatomical entity
 range: CARO:0000000 ! anatomical entity
+range: CARO:0000003 ! anatomical structure
 holds_over_chain: has_part develops_from
-is_a: RO:0002258 ! developmentally preceded by
+is_transitive: true
+is_a: developmentally_preceded_by ! developmentally preceded by
 inverse_of: developmentally_contributes_to ! developmentally contributes to
 
 [Typedef]
 id: has_part
 name: has part
 name: has_part
+namespace: chebi_ontology
 namespace: external
 namespace: quality
 namespace: spatial
@@ -15594,15 +16586,16 @@ def: "a core relation that holds between a whole and its part" []
 def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
 comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
 xref: BFO:0000051
+property_value: editor_note "Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part." xsd:string
+property_value: editor_note "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
+property_value: editor_note "Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)\n\nA continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'." xsd:string
+property_value: example_of_usage "my body has part my brain (continuant parthood, two material entities)" xsd:string
+property_value: example_of_usage "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)" xsd:string
+property_value: example_of_usage "this year has part this day (occurrent parthood)" xsd:string
 property_value: IAO:0000111 "has part" xsd:string
-property_value: IAO:0000112 "my body has part my brain (continuant parthood, two material entities)" xsd:string
-property_value: IAO:0000112 "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)" xsd:string
-property_value: IAO:0000112 "this year has part this day (occurrent parthood)" xsd:string
-property_value: IAO:0000116 "Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part." xsd:string
-property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
-property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)\n\nA continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'." xsd:string
 property_value: IAO:0000118 "has_part" xsd:string
 property_value: RO:0001900 RO:0001901
+is_cyclic: false
 is_transitive: true
 is_a: overlaps ! overlaps
 
@@ -15625,6 +16618,16 @@ xref: RO:0002385
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: has_potential_to_directly_develop_into
+name: has potential to directly develop into
+namespace: uberon
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+xref: RO:0002388
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: has_potential_to_develop_into ! has potential to develop into
 
 [Typedef]
 id: immediately_deep_to
@@ -15650,10 +16653,10 @@ synonym: "is directly preceded by" EXACT []
 synonym: "is immediately preceded by" EXACT [SIO:000251]
 synonym: "starts_at_end_of" EXACT []
 xref: RO:0002087
+property_value: external_definition "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]." xsd:string {source="SIO:000251"}
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "starts_at_end_of" xsd:string
 property_value: seeAlso SIO:000251
-property_value: UBPROP:0000001 "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]." xsd:string {source="SIO:000251"}
 is_a: preceded_by ! preceded_by
 inverse_of: RO:0002090 ! immediately precedes
 
@@ -15665,7 +16668,6 @@ namespace: spatial
 namespace: uberon
 def: "x immediately superficial to y iff x superficial to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0015014
-is_a: adjacent_to ! adjacent_to
 is_a: superficial_to ! superficial_to
 
 [Typedef]
@@ -15708,6 +16710,7 @@ name: negatively regulates
 namespace: external
 def: "Process(P1) negatively regulates process(P2) iff: P1 terminates P2, or P1 descreases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
 xref: RO:0002212
+property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "negatively regulates (process to process)" xsd:string
@@ -15731,7 +16734,7 @@ property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 domain: BFO:0000003 ! occurrent
 range: BFO:0000004 ! independent continuant
 holds_over_chain: part_of occurs_in
-inverse_of: BFO:0000067 ! contains process
+inverse_of: contains_process ! contains process
 transitive_over: part_of ! part_of
 
 [Typedef]
@@ -15755,6 +16758,8 @@ range: BSPO:0000400 ! anatomical plane
 id: overlaps
 name: overlaps
 namespace: spatial
+namespace: uberon
+def: "A overlaps B if they share some part in common." []
 def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
 def: "x overlaps y iff they have some part in common." [BSPO:cjm]
 comment: "(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))" CLIF []
@@ -15767,6 +16772,7 @@ holds_over_chain: has_part part_of {http://purl.obolibrary.org/obo/RO_0002582="t
 holds_over_chain: part_of part_of
 is_a: RO:0002323 ! mereotopologically related to
 transitive_over: part_of ! part_of
+expand_expression_to: "BFO_0000051 some (BFO_0000050 some ?Y)" []
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 
 [Typedef]
@@ -15785,13 +16791,13 @@ namespace: spatial
 namespace: uberon
 def: "a core relation that holds between a part and its whole" []
 xref: BFO:0000050
+property_value: editor_note "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: editor_note "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
+property_value: editor_note "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
+property_value: example_of_usage "my brain is part of my body (continuant parthood, two material entities)" xsd:string
+property_value: example_of_usage "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
+property_value: example_of_usage "this day is part of this year (occurrent parthood)" xsd:string
 property_value: IAO:0000111 "is part of" xsd:string
-property_value: IAO:0000112 "my brain is part of my body (continuant parthood, two material entities)" xsd:string
-property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
-property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
-property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
-property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
-property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000118 "part_of" xsd:string
 property_value: RO:0001900 RO:0001901
 property_value: RO:0040042 BFO:0000002
@@ -15865,9 +16871,9 @@ subset: ro-eco
 synonym: "is preceded by" EXACT [SIO:000249]
 synonym: "takes place after" EXACT [Allen:precedes]
 xref: BFO:0000062
-property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:preceded_by xsd:string
+property_value: dc-source http://www.obofoundry.org/ro/#OBO_REL:preceded_by xsd:string
+property_value: editor_note "An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other." xsd:string
 property_value: IAO:0000111 "preceded by" xsd:string
-property_value: IAO:0000116 "An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other." xsd:string
 property_value: IAO:0000118 "is preceded by" xsd:string
 property_value: IAO:0000118 "preceded_by" xsd:string
 domain: BFO:0000003 ! occurrent
@@ -15877,7 +16883,49 @@ holds_over_chain: part_of preceded_by
 holds_over_chain: starts_during preceded_by
 is_transitive: true
 is_a: RO:0002086 ! ends after
-inverse_of: BFO:0000063 ! precedes
+inverse_of: precedes ! precedes
+
+[Typedef]
+id: precedes
+name: precedes
+namespace: uberon
+def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+subset: ro-eco
+xref: BFO:0000063
+property_value: IAO:0000111 "precedes" xsd:string
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: happens_during precedes
+holds_over_chain: part_of precedes
+is_transitive: true
+is_a: RO:0002222 ! temporally related to
+
+[Typedef]
+id: produced_by
+name: produced by
+name: produced_by
+namespace: uberon
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+subset: ro-eco
+xref: RO:0003001
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+
+[Typedef]
+id: produces
+name: produces
+namespace: uberon
+def: "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix." []
+comment: Note that this definition doesn't quite distinguish the output of a transformation process from a production process, which is related to the identity/granularity issue.
+subset: ro-eco
+xref: RO:0003000
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+inverse_of: produced_by ! produced_by
 
 [Typedef]
 id: regulates
@@ -15885,14 +16933,14 @@ name: regulates
 namespace: external
 def: "process(P1) regulates process(P2) iff: P1 results in the initiation or termination of P2 OR affects the frequency of its initiation or termination OR affects the magnitude or rate of output of P2." []
 xref: RO:0002211
+property_value: curator_notes "Regulation precludes parthood; the regulatory process may not be within the regulated process." xsd:string
+property_value: editor_note "We use 'regulates' here to specifically imply control. However, many colloquial usages of the term correctly correspond to the weaker relation of 'causally upstream of or within' (aka influences). Consider relabeling to make things more explicit" xsd:string
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "We use 'regulates' here to specifically imply control. However, many colloquial usages of the term correctly correspond to the weaker relation of 'causally upstream of or within' (aka influences). Consider relabeling to make things more explicit" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000117 "David Hill" xsd:string
 property_value: IAO:0000117 "Tanya Berardini" xsd:string
 property_value: IAO:0000119 "GO" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
-property_value: IAO:0000232 "Regulation precludes parthood; the regulatory process may not be within the regulated process." xsd:string
 property_value: IAO:0000589 "regulates (processual)" xsd:string
 property_value: IAO:0000600 "false" xsd:boolean
 domain: BFO:0000015 ! process
@@ -15941,6 +16989,7 @@ def: "Near the outer surface of the organism. Thus, skin is superficial to the m
 def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [BSPO:cjm]
 xref: BSPO:0000108
 is_transitive: true
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: surface_of

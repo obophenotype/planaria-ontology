@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/plana/imports/uberon_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2019-10-09/imports/uberon_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2019-11-04/imports/uberon_import.owl"/>
     </owl:Ontology>
     
 
@@ -236,6 +236,7 @@
     <!-- http://purl.obolibrary.org/obo/BSPO_0000108 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000108">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Near the outer surface of the organism. Thus, skin is superficial to the muscle layer.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:0000108</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
@@ -296,7 +297,7 @@
     <!-- http://purl.obolibrary.org/obo/BSPO_0015014 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0015014">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000108"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:0015014</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immediately_superficial_to</oboInOwl:id>
@@ -406,7 +407,6 @@
     <!-- http://purl.obolibrary.org/obo/RO_0002220 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002220">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000108"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x adjacent_to y iff: x and y share a boundary</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002220</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>

@@ -14,7 +14,7 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/plana/plana-base.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2019-10-09/plana-base.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2019-11-04/plana-base.owl"/>
         <oboInOwl:default-namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:default-namespace>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2</oboInOwl:hasOBOFormatVersion>
         <oboInOwl:treat-xrefs-as-genus-differentia>CARO part_of NCBITaxon:79327; CL part_of NCBITaxon:79327</oboInOwl:treat-xrefs-as-genus-differentia>
@@ -441,6 +441,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BSPO_0000096 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000096"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BSPO_0000099 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000099"/>
@@ -464,12 +470,6 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/PLANA_0007536">
         <oboInOwl:shorthand>specific_to</oboInOwl:shorthand>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0000056 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000056"/>
     
 
 
@@ -802,12 +802,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0007154 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0007154"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GO_0048856 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0048856"/>
@@ -866,6 +860,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000116"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage of Smed embryonic development, 0 - 2 days post-egg capsule deposition at 20˚C. Zygote and dispersed blastomere cleavage in a yolk syncytium.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4897</oboInOwl:created_by>
@@ -898,6 +898,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000116"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 2 - 3 days post-egg capsule deposition at 20˚C. Sphere formation. A fraction of the blastomeres differentiate into temporary embryonic tissues that provide form and function to the embryo. Undifferentiated blastomeres remain in the embryonic wall.</obo:IAO_0000115>
@@ -934,6 +940,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000116"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 2 - 4 days post-egg capsule deposition at 20˚C. Dispersed blastomere cleavage in the embryonic wall of nascent spheres. Yolk ingestion into the gut cavity.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="http://purl.obolibrary.org/obo/plana/images/Stage3.png"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4899</oboInOwl:created_by>
@@ -966,6 +978,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000116"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 3 - 5 days post-egg capsule deposition at 20˚C. Dispersed blastomere cleavage in the embryonic wall. Yolk ingestion into the gut cavity. Early embryonic gut formation.</obo:IAO_0000115>
@@ -1002,6 +1020,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000116"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 5-7 days post-egg capsule deposition at 20˚C. Organogenesis onset. Downregulation of early embryo enriched transcripts and birth of adult lineages within the blastomere population. Early embryonic gut formation continues. Yolk ingestion into the gut cavity.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="http://purl.obolibrary.org/obo/plana/images/stage5.png"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4901</oboInOwl:created_by>
@@ -1034,6 +1058,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000116"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 7 - 9 days post-egg capsule deposition at 20˚C. Organogenesis and morphogenesis. Definitive organ formation. Temporary embryonic cell types degenerate. Embryo elongation.</obo:IAO_0000115>
@@ -1070,6 +1100,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000116"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 9 - 11 days post-egg capsule deposition at 20˚C. Organogenesis and organ maturation continues. Embryos elongated. Eyes just visible. Onset of gliding motility.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="http://purl.obolibrary.org/obo/plana/images/stage7.png"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4903</oboInOwl:created_by>
@@ -1103,6 +1139,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000116"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stage of Smed embryonic development defined by a unique gene expression signature and morphology, 13 - 15 days post-egg capsule deposition at 20˚C. Organogenesis and organ maturation continues. Hatching.</obo:IAO_0000115>
@@ -1957,6 +1999,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000096"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002063"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6448,7 +6496,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000058"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002031"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6909,6 +6957,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30471994</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30485821</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manus</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anus</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">manus</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
@@ -7636,7 +7685,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000058"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002087"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -8860,60 +8909,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000104">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000430"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000054"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000096"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000007"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000008"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000214"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004503"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004504"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002496"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Straight or curved rod-like structures within the epidermal cells, oriented with long axis at right angles to the epidermal surface, that are discharged into mucous secretions.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4853</oboInOwl:created_by>
@@ -10081,7 +10076,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000240"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000428"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -10251,7 +10246,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000240"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000428"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -10536,12 +10531,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000138">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002137"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000034"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
@@ -10879,6 +10868,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28072387</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28434803</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://doi.org/10.1101/279364</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">common gonopore</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genital pore</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
@@ -10998,7 +10988,7 @@
     <!-- http://purl.obolibrary.org/obo/PLANA_0000205 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000205">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000431"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002089"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -11189,7 +11179,7 @@
     <!-- http://purl.obolibrary.org/obo/PLANA_0000207 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000207">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000431"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002089"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -12494,7 +12484,7 @@
     <!-- http://purl.obolibrary.org/obo/PLANA_0000230 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000230">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000431"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002089"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -12765,7 +12755,7 @@
     <!-- http://purl.obolibrary.org/obo/PLANA_0000233 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000233">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000431"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002089"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -12840,7 +12830,7 @@
     <!-- http://purl.obolibrary.org/obo/PLANA_0000234 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000234">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000431"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002089"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -13610,7 +13600,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000049"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000072"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -14121,6 +14117,12 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000102"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000096"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000419"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000007"/>
             </owl:Restriction>
@@ -14179,6 +14181,12 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000102"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000096"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000420"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000099"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
@@ -14231,6 +14239,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000420">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000102"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000096"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000421"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000096"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004527"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000099"/>
@@ -14998,7 +15018,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000044"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -15035,7 +15055,7 @@
         <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4427</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000935</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior brain commissure</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior commissure</rdfs:label>
@@ -15184,12 +15204,6 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000465"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000214"/>
             </owl:Restriction>
@@ -15316,12 +15330,6 @@
         <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
     </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PLANA_0000465 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000465"/>
     
 
 
@@ -16857,16 +16865,10 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/PLANA_0000493 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000493"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/PLANA_0000494 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000494">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000493"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002025"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -18264,12 +18266,6 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000465"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000466"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -18437,12 +18433,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000103"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000465"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Most generally any neuron which is not motor or sensory. Interneurons may also refer to neurons whose axons remain within a particular brain region as contrasted with projection neurons which have axons projecting to other brain regions.</obo:IAO_0000115>
@@ -19539,6 +19529,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000140"/>
             </owl:Restriction>
@@ -19643,7 +19639,7 @@
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4459</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:9780070316607</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://doi.org/10.1101/279364</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bulbar lumen</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bulbar cavity</rdfs:label>
@@ -20171,84 +20167,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0002020">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000531"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000429"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004517"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000429"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007536"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004517"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000003"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000004"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000005"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000007"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000008"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000214"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004503"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004504"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A membrane-less, cytoplasmic ribonucleoprotein granule present in neoblasts and germ cells implicated in post-transcriptional regulation. The RNA helicase DHH1/RCK, Tudor, SmB, methylated substrates of PRMT5, PIWI-3 and Germinal Histone H4 localize to chromatoid bodies in neoblasts.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4488</oboInOwl:created_by>
@@ -21316,7 +21234,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000232"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000126"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -21359,6 +21277,7 @@
         <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4621</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22074376</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">atrium</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female antrum</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
@@ -24067,12 +23986,6 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000099"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007154"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The junction between a nerve fiber of one neuron and another neuron, muscle fiber or glial cell. As the nerve fiber approaches the synapse it enlarges into a specialized structure, the presynaptic nerve ending, which contains mitochondria and synaptic vesicles. At the tip of the nerve ending is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic nerve ending secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4910</oboInOwl:created_by>
@@ -24585,6 +24498,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30194301</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xins</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xins cell population</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xins cells</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xins cell</rdfs:label>
@@ -28733,6 +28647,7 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A progenitor cell that gives rise to one or more of the cell type(s) in the nervous system.</obo:IAO_0000115>
         <obo:foaf_depicted_by rdf:resource="urn:dosdp:depicted_by"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26525673</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brain progenitor</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brain progentitor cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:id>
@@ -29272,6 +29187,1722 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003610"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depicted_by"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003700 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003700">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003600"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from a prepharyngeal amputation encompassing the head.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of head fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of head fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003700"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from a prepharyngeal amputation encompassing the head.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003700"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003701 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003701">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003600"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from a prepharyngeal amputation encompassing the head.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of head fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of head fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003701"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from a prepharyngeal amputation encompassing the head.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003701"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003702 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003702">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003600"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from a prepharyngeal amputation encompassing the head.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of head fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of head fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003702"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from a prepharyngeal amputation encompassing the head.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003702"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003703 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003703">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003600"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from a prepharyngeal amputation encompassing the head.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of head fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of head fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003703"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from a prepharyngeal amputation encompassing the head.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003703"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003704 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003704">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003601"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of trunk fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of trunk fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003704"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003704"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003705 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003705">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003601"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of trunk fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of trunk fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003705"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003705"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003706 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003706">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003601"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of trunk fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of trunk fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003706"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003706"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003707 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003707">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003601"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of trunk fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of trunk fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003707"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003707"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003708 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003708">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003602"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from a postpharyngeal amputation encompassing the tail.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of tail fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of tail fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003708"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from a postpharyngeal amputation encompassing the tail.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003708"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003709 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003709">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003602"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from a postpharyngeal amputation encompassing the tail.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of tail fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of tail fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003709"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from a postpharyngeal amputation encompassing the tail.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003709"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003710 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003710">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003602"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from a postpharyngeal amputation encompassing the tail.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of tail fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of tail fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003710"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from a postpharyngeal amputation encompassing the tail.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003710"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003711 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003711">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003602"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from a postpharyngeal amputation encompassing the tail.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of tail fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of tail fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003711"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from a postpharyngeal amputation encompassing the tail.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003711"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003712 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003712">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003603"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of prepharyngeal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of prepharyngeal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003712"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003712"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003713 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003713">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003603"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of prepharyngeal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of prepharyngeal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003713"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003713"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003714 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003714">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003603"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of prepharyngeal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of prepharyngeal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003714"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003714"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003715 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003715">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003603"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of prepharyngeal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of prepharyngeal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003715"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003715"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003716 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003716">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003604"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of postpharyngeal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of postpharyngeal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003716"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003716"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003717 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003717">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003604"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of postpharyngeal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of postpharyngeal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003717"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003717"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003718 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003718">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003604"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of postpharyngeal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of postpharyngeal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003718"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003718"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003719 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003719">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003604"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of postpharyngeal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of postpharyngeal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003719"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003719"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003720 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003720">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003605"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment encompassing all or part of the anterior region of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of anterior fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of anterior fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003720"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment encompassing all or part of the anterior region of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003720"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003721 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003721">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003605"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment encompassing all or part of the anterior region of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of anterior fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of anterior fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003721"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment encompassing all or part of the anterior region of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003721"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003722 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003722">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003605"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment encompassing all or part of the anterior region of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of anterior fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of anterior fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003722"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment encompassing all or part of the anterior region of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003722"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003723 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003723">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003605"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment encompassing all or part of the anterior region of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of anterior fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of anterior fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003723"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment encompassing all or part of the anterior region of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003723"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003724 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003724">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003606"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment encompassing all or part of the posterior region of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of posterior fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of posterior fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003724"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment encompassing all or part of the posterior region of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003724"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003725 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003725">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003606"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment encompassing all or part of the posterior region of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of posterior fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of posterior fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003725"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment encompassing all or part of the posterior region of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003725"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003726 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003726">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003606"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment encompassing all or part of the posterior region of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of posterior fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of posterior fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003726"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment encompassing all or part of the posterior region of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003726"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003727 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003727">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003606"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment encompassing all or part of the posterior region of the animal.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of posterior fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of posterior fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003727"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment encompassing all or part of the posterior region of the animal.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003727"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003728 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003728">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003607"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of lateral fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of lateral fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003728"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003728"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003729 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003729">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003607"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of lateral fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of lateral fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003729"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003729"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003730 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003730">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003607"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of lateral fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of lateral fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003730"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003730"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003731 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003731">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003607"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of lateral fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of lateral fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003731"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003731"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003732 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003732">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003608"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from an amputation parallel to the midline.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of longitudinal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of longitudinal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003732"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment derived from an amputation parallel to the midline.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003732"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003733 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003733">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003608"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from an amputation parallel to the midline.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of longitudinal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of longitudinal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003733"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment derived from an amputation parallel to the midline.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003733"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003734 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003734">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003608"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from an amputation parallel to the midline.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of longitudinal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of longitudinal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003734"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment derived from an amputation parallel to the midline.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003734"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003735 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003735">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003608"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from an amputation parallel to the midline.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of longitudinal fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of longitudinal fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003735"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment derived from an amputation parallel to the midline.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003735"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003736 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003736">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003609"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of plug fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of plug fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003736"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003736"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003737 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003737">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003609"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of plug fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of plug fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003737"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003737"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003738 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003738">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003609"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of plug fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of plug fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003738"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003738"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003739 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003739">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003609"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of plug fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of plug fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003739"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003739"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003740 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003740">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003610"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of wedge fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of plug fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003740"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003740"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003741 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003741">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003610"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of wedge fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral region of plug fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003741"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003741"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003742 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003742">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003610"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of wedge fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of wedge fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003742"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003742"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PLANA_0003743 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0003743">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003610"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of wedge fragment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior region of wedge fragment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003743"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003743"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
     </owl:Axiom>
@@ -31109,12 +32740,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/PLANA_0007508 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0007508"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/PLANA_0007509 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0007509">
@@ -31150,7 +32775,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0007511">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000525"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0007508"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organized structure of distinctive morphology and function, occurring outside the cell. Includes, for example, extracellular membrane vesicles (EMVs) and the cellulosomes of anaerobic bacteria and fungi.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4579</oboInOwl:created_by>

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-10-09/plana-base.owl
+data-version: plana/releases/2019-11-04/plana-base.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -14,6 +14,7 @@ def: "A stage of Smed embryonic development, 0 - 2 days post-egg capsule deposit
 xref: PMID:28072387
 is_a: UBERON:0000068
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4897
 
@@ -26,6 +27,7 @@ synonym: "protosphere" EXACT []
 xref: PMID:28072387
 is_a: UBERON:0000068
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/Stage2.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 2 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4898
 
@@ -37,6 +39,7 @@ def: "A stage of Smed embryonic development defined by a unique gene expression 
 xref: PMID:28072387
 is_a: UBERON:0000068
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/Stage3.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 3 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4899
 
@@ -48,6 +51,7 @@ def: "A stage of Smed embryonic development defined by a unique gene expression 
 xref: PMID:28072387
 is_a: UBERON:0000068
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage4.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 4 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4900
 
@@ -59,6 +63,7 @@ def: "A stage of Smed embryonic development defined by a unique gene expression 
 xref: PMID:28072387
 is_a: UBERON:0000068
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage5.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4901
 
@@ -70,6 +75,7 @@ def: "A stage of Smed embryonic development defined by a unique gene expression 
 xref: PMID:28072387
 is_a: UBERON:0000068
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage6.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 6 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4902
 
@@ -82,6 +88,7 @@ xref: PMID:28072387
 xref: PMID:28812561
 is_a: UBERON:0000068
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage7.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 7 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4903
 
@@ -95,6 +102,7 @@ synonym: "newborn hatchling" EXACT []
 xref: PMID:28072387
 is_a: UBERON:0000068
 relationship: specific_to PLANA:0000027 ! Smed sexual biotype
+relationship: specific_to PLANA:0000116 ! embryo
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/stage8.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 8 embryo. Scale bar = 100um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4904
 
@@ -459,6 +467,7 @@ is_a: PLANA:0002032 ! epidermal cell
 is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
 relationship: BFO:0000050 PLANA:0000096 ! ventral epidermis
+relationship: BFO:0000050 PLANA:0002063 ! non-ciliated epidermis
 relationship: RO:0001018 PLANA:0000140 ! anterior region
 relationship: RO:0001018 PLANA:0000141 ! dorsal region
 relationship: RO:0001018 PLANA:0000142 ! posterior region
@@ -2000,7 +2009,7 @@ name: embryonic gut cavity
 def: "Cavity encompassed by the embryonic digestive tract, prior to formation of the branched defintive gut." []
 xref: PMID:28072387
 is_a: UBERON:0002553
-relationship: BFO:0000050 PLANA:0000058 ! embryonic digestive system
+relationship: BFO:0000050 PLANA:0002031 ! embryonic gut
 relationship: RO:0001018 PLANA:0000041 ! aboral hemisphere
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
@@ -2101,6 +2110,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000072
 name: mouth
 def: "The sole point of entry and exit for the Triclad planarian flatworm gut. The mouth is connected to the pharyngeal pouch to allow for exit and re-entry of the pharynx on the ventral side of the animal. The mouth contains several cell types, including epithelial cells, muscle, and secretory cells." []
+synonym: "anus" EXACT []
 synonym: "Manus" EXACT []
 synonym: "manus" EXACT []
 xref: ISBN:9780070316607
@@ -2351,7 +2361,7 @@ name: primitive gut cell
 def: "A phagocytic cell closely associated with the embryonic pharynx." []
 xref: PMID:28072387
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: BFO:0000050 PLANA:0000058 ! embryonic digestive system
+relationship: BFO:0000050 PLANA:0002087 ! primitive gut
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0002202 PLANA:0004517 ! blastomere
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
@@ -2889,15 +2899,6 @@ name: rhabdite
 def: "Straight or curved rod-like structures within the epidermal cells, oriented with long axis at right angles to the epidermal surface, that are discharged into mucous secretions." []
 xref: OCLC:16809160
 is_a: PLANA:0000430 ! epithelial cell component
-relationship: BFO:0000050 PLANA:0000054 ! dorsal epidermis
-relationship: BFO:0000050 PLANA:0000096 ! ventral epidermis
-relationship: RO:0002490 PLANA:0000006 ! Stage 6
-relationship: RO:0002490 PLANA:0000007 ! Stage 7
-relationship: RO:0002490 PLANA:0000008 ! Stage 8
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
-relationship: RO:0002496 PLANA:0000006 ! Stage 6
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4853
 
@@ -3226,7 +3227,7 @@ xref: PMID:29168507
 is_a: PLANA:0000019 ! muscle progenitor cell
 is_a: PLANA:0000429 ! neoblast
 is_a: PLANA:0002095 ! somatic cell
-relationship: BFO:0000050 PLANA:0000240 ! body wall musculature
+relationship: BFO:0000050 PLANA:0000428 ! musculature system
 relationship: RO:0001018 PLANA:0000140 ! anterior region
 relationship: RO:0001018 PLANA:0000141 ! dorsal region
 relationship: RO:0001018 PLANA:0000142 ! posterior region
@@ -3270,7 +3271,7 @@ def: "piwi-1+, myoD+, snail-1+ progenitor neoblasts required for specification a
 xref: PMID:29168507
 is_a: PLANA:0000019 ! muscle progenitor cell
 is_a: PLANA:0000429 ! neoblast
-relationship: BFO:0000050 PLANA:0000240 ! body wall musculature
+relationship: BFO:0000050 PLANA:0000428 ! musculature system
 relationship: RO:0001018 PLANA:0000140 ! anterior region
 relationship: RO:0001018 PLANA:0000141 ! dorsal region
 relationship: RO:0001018 PLANA:0000142 ! posterior region
@@ -3349,7 +3350,6 @@ name: Hyman vesicle
 def: "PROG-2-5 positive granules that range in size from 0.5um to 1um present in epithelia and epithelia progenitor cells. These are distinct from rhabdites." []
 xref: PMID:29100657
 is_a: PLANA:0002137 ! intracellular granule
-relationship: BFO:0000050 PLANA:0000034 ! epidermis
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/hymanvesicle.png {comment="Depcited by is an immuno electron microscopy image of a mesenchymal cell labeled with anti-PROG-2-5 immuno-gold. Large rhod-shaped granules resembling rhabdites are found in the same cell labeled with PROG-2-5+ oval-shaped granules (pseudo-colored in blue). Higher magnification of the boxed region is shown in the panel below. e, endoplasmic reticulum; m, mitochondria; n, nucleus; rh, rhabdite. Scale bar, 1 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4636
@@ -3415,6 +3415,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000203
 name: gonopore
 def: "The gonopore, a component of the copulatory apparatus, is an opening located on the ventral side of the animal posterior to the pharynx. The gonopore is the sole point of exit and entry for the reproductive system, allowing from reciprocal exchange of sperm during copulation and egg capsule laying." []
+synonym: "common gonopore" EXACT []
 synonym: "genital pore" EXACT []
 xref: https://doi.org/10.1101/279364
 xref: ISBN:9780070316607
@@ -3496,7 +3497,7 @@ xref: PMID:25278423
 xref: PMID:27149082
 xref: PMID:27163480
 xref: PMID:28072387
-is_a: PLANA:0000431 ! organ
+is_a: PLANA:0002089 ! reproductive organ
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000140 ! anterior region
 relationship: RO:0001018 PLANA:0000142 ! posterior region
@@ -3558,7 +3559,7 @@ xref: PMID:27149082
 xref: PMID:27304889
 xref: PMID:28072387
 xref: PMID:28434803
-is_a: PLANA:0000431 ! organ
+is_a: PLANA:0002089 ! reproductive organ
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
@@ -3947,7 +3948,7 @@ xref: PMID:25278423
 xref: PMID:27149082
 xref: PMID:27163480
 xref: PMID:28434803
-is_a: PLANA:0000431 ! organ
+is_a: PLANA:0002089 ! reproductive organ
 relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000140 ! anterior region
 relationship: RO:0001018 PLANA:0000143 ! ventral region
@@ -4033,7 +4034,7 @@ xref: ISBN:9780070316607
 xref: PMID:20967238
 xref: PMID:22074376
 xref: PMID:25278423
-is_a: PLANA:0000431 ! organ
+is_a: PLANA:0002089 ! reproductive organ
 relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! posterior region
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
@@ -4050,7 +4051,7 @@ name: seminal vesicle
 def: "Glandular pouches adjoining the sperm ducts which produce seminal fluid." []
 xref: PMID:19022767
 xref: PMID:22074376
-is_a: PLANA:0000431 ! organ
+is_a: PLANA:0002089 ! reproductive organ
 relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! posterior region
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
@@ -4263,7 +4264,8 @@ xref: PMID:17670787
 xref: PMID:29674431
 xref: PMID:30399335
 is_a: UBERON:0002553
-relationship: BFO:0000050 PLANA:0000049 ! digestive system
+relationship: BFO:0000050 PLANA:0000023 ! embryonic pharynx
+relationship: BFO:0000050 PLANA:0000072 ! mouth
 relationship: RO:0001018 PLANA:0000076 ! oral hemisphere
 relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000003 ! Stage 3
@@ -4396,6 +4398,7 @@ name: head
 def: "The head is the anterior-most division of the body [GO]. A three dimensional compartment bounded by the anterior margin or the head and the posterior boundary of the cephalic ganglia (brain)." []
 xref: UBERON:0000033
 is_a: PLANA:0000102 ! anatomical region
+relationship: BSPO:0000096 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0002490 PLANA:0000007 ! Stage 7
 relationship: RO:0002490 PLANA:0000008 ! Stage 8
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -4413,6 +4416,7 @@ synonym: "pre-pharyngeal region" EXACT []
 synonym: "pre-pharynx region" EXACT []
 xref: OCLC:16809160
 is_a: PLANA:0000102 ! anatomical region
+relationship: BSPO:0000096 PLANA:0000420 ! parapharyngeal region
 relationship: BSPO:0000099 PLANA:0000418 ! head
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -4437,6 +4441,8 @@ xref: PMID:28807897
 xref: PMID:29674431
 xref: PMID:30143032
 is_a: PLANA:0000102 ! anatomical region
+relationship: BSPO:0000096 PLANA:0000421 ! tail
+relationship: BSPO:0000096 PLANA:0004527 ! copulatory region
 relationship: BSPO:0000099 PLANA:0000419 ! prepharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -4784,9 +4790,10 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000460
 name: anterior commissure
 def: "A bundle of nerve fibers connecting the two cephalic ganglia." []
+synonym: "anterior brain commissure" EXACT []
 xref: UBERON:0000935
 is_a: PLANA:0000494 ! brain commissure
-relationship: BFO:0000050 PLANA:0000418 ! head
+relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000140 ! anterior region
 relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -4864,7 +4871,6 @@ xref: PMID:30143032
 xref: PMID:30194301
 is_a: PLANA:0000556 ! neurosecretory neuron
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: BFO:0000050 PLANA:0000465
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -5365,7 +5371,7 @@ id: PLANA:0000494
 name: brain commissure
 def: "any of the nerve fiber tracts that span the longitudinal fissure between the cerebral and/or cerebellar hemispheres of the brain" []
 xref: UBERON:0005970
-is_a: PLANA:0000493
+is_a: PLANA:0002025 ! commissure
 relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
 relationship: RO:0001018 PLANA:0000140 ! anterior region
@@ -5895,7 +5901,6 @@ xref: PMID:24173799
 xref: PMID:25493551
 is_a: PLANA:0000550 ! interneuron
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: BFO:0000050 PLANA:0000465
 relationship: BFO:0000050 PLANA:0000466 ! subepidermal nerve plexus
 relationship: BFO:0000050 PLANA:0000467 ! submuscular nerve plexus
 relationship: BFO:0000050 PLANA:0007548 ! transverse commissure
@@ -5951,7 +5956,6 @@ xref: WBbt:0005113
 is_a: PLANA:0000099 ! neuron
 relationship: BFO:0000050 PLANA:0000080 ! peripheral nervous system
 relationship: BFO:0000050 PLANA:0000103 ! central nervous system
-relationship: BFO:0000050 PLANA:0000465
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4642
 
@@ -6326,6 +6330,7 @@ xref: PMID:16033796
 xref: PMID:26618653
 is_a: PLANA:0000113 ! tissue
 relationship: BFO:0000050 PLANA:0000044 ! cephalic ganglia
+relationship: BFO:0000050 PLANA:0002011 ! brain visual center
 relationship: RO:0001018 PLANA:0000140 ! anterior region
 relationship: RO:0001018 PLANA:0000143 ! ventral region
 relationship: RO:0001018 PLANA:0000418 ! head
@@ -6339,6 +6344,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0002012
 name: bulbar cavity
 def: "An enlarged portion of the seminal vesicle, comprised of secretory epithelial cells, that connects to the ejaculatory duct within the penis papilla." []
+synonym: "bulbar lumen" EXACT []
 xref: https://doi.org/10.1101/279364
 xref: ISBN:9780070316607
 is_a: UBERON:0002553
@@ -6590,19 +6596,6 @@ xref: PMID:24903754
 xref: PMID:25017721
 xref: PMID:27523733
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
-relationship: BFO:0000050 PLANA:0000429 ! neoblast
-relationship: BFO:0000050 PLANA:0004517 ! blastomere
-relationship: RO:0002490 PLANA:0000003 ! Stage 3
-relationship: RO:0002490 PLANA:0000004 ! Stage 4
-relationship: RO:0002490 PLANA:0000005 ! Stage 5
-relationship: RO:0002490 PLANA:0000006 ! Stage 6
-relationship: RO:0002490 PLANA:0000007 ! Stage 7
-relationship: RO:0002490 PLANA:0000008 ! Stage 8
-relationship: RO:0002490 PLANA:0000214 ! juvenile
-relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! asexual adult
-relationship: specific_to PLANA:0000429 ! neoblast
-relationship: specific_to PLANA:0004517 ! blastomere
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4488
 
@@ -6918,10 +6911,11 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0002042
 name: genital atrium
 def: "A chamber where egg capsules are formed. One or more zygotes and yolk cells produced by the vitelline glands collect in the genital atrium; glands surrounding the genital atrium produce the egg capsule shell." []
+synonym: "atrium" EXACT []
 synonym: "female antrum" EXACT []
 xref: PMID:22074376
 is_a: UBERON:0002553
-relationship: BFO:0000050 PLANA:0000232 ! copulatory apparatus
+relationship: BFO:0000050 PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000142 ! posterior region
 relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -7730,7 +7724,6 @@ xref: PMID:18287199
 xref: PMID:21282632
 is_a: PLANA:0000507 ! cell-cell junction
 relationship: BFO:0000050 PLANA:0000099 ! neuron
-relationship: RO:0000056 GO:0007154
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4910
 
@@ -7911,6 +7904,7 @@ name: Xins cell
 def: "A sorted cell population of irradiation-insensitive cells that contains a variety of post-mitotic, differentiated cell types." []
 synonym: "Xins" EXACT []
 synonym: "Xins cell population" EXACT []
+synonym: "Xins cells" EXACT []
 xref: PMID:16872450
 xref: PMID:17670787
 xref: PMID:18456843
@@ -8779,6 +8773,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0003500
 name: cephalic ganglia progenitor cell
 def: "A progenitor cell that gives rise to one or more of the cell type(s) in the nervous system." []
+synonym: "brain progenitor" EXACT []
 synonym: "brain progentitor cell" EXACT []
 xref: PMID:26525673
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -8882,6 +8877,402 @@ id: PLANA:0003610
 name: wedge fragment
 def: "A piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003700
+name: dorsal region of head fragment
+def: "The dorsal region of a fragment derived from a prepharyngeal amputation encompassing the head." []
+synonym: "dorsal region of head fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003600 ! head fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003701
+name: ventral region of head fragment
+def: "The ventral region of a fragment derived from a prepharyngeal amputation encompassing the head." []
+synonym: "ventral region of head fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003600 ! head fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003702
+name: anterior region of head fragment
+def: "The anterior region of a fragment derived from a prepharyngeal amputation encompassing the head." []
+synonym: "anterior region of head fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003600 ! head fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003703
+name: posterior region of head fragment
+def: "The posterior region of a fragment derived from a prepharyngeal amputation encompassing the head." []
+synonym: "posterior region of head fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003600 ! head fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003704
+name: dorsal region of trunk fragment
+def: "The dorsal region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
+synonym: "dorsal region of trunk fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003601 ! trunk fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003705
+name: ventral region of trunk fragment
+def: "The ventral region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
+synonym: "ventral region of trunk fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003601 ! trunk fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003706
+name: anterior region of trunk fragment
+def: "The anterior region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
+synonym: "anterior region of trunk fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003601 ! trunk fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003707
+name: posterior region of trunk fragment
+def: "The posterior region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
+synonym: "posterior region of trunk fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003601 ! trunk fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003708
+name: dorsal region of tail fragment
+def: "The dorsal region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
+synonym: "dorsal region of tail fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003602 ! tail fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003709
+name: ventral region of tail fragment
+def: "The ventral region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
+synonym: "ventral region of tail fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003602 ! tail fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003710
+name: anterior region of tail fragment
+def: "The anterior region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
+synonym: "anterior region of tail fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003602 ! tail fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003711
+name: posterior region of tail fragment
+def: "The posterior region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
+synonym: "posterior region of tail fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003602 ! tail fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003712
+name: dorsal region of prepharyngeal fragment
+def: "The dorsal region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
+synonym: "dorsal region of prepharyngeal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003603 ! prepharyngeal fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003713
+name: ventral region of prepharyngeal fragment
+def: "The ventral region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
+synonym: "ventral region of prepharyngeal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003603 ! prepharyngeal fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003714
+name: anterior region of prepharyngeal fragment
+def: "The anterior region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
+synonym: "anterior region of prepharyngeal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003603 ! prepharyngeal fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003715
+name: posterior region of prepharyngeal fragment
+def: "The posterior region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
+synonym: "posterior region of prepharyngeal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003603 ! prepharyngeal fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003716
+name: dorsal region of postpharyngeal fragment
+def: "The dorsal region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
+synonym: "dorsal region of postpharyngeal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003604 ! postpharyngeal fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003717
+name: ventral region of postpharyngeal fragment
+def: "The ventral region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
+synonym: "ventral region of postpharyngeal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003604 ! postpharyngeal fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003718
+name: anterior region of postpharyngeal fragment
+def: "The anterior region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
+synonym: "anterior region of postpharyngeal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003604 ! postpharyngeal fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003719
+name: posterior region of postpharyngeal fragment
+def: "The posterior region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
+synonym: "posterior region of postpharyngeal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003604 ! postpharyngeal fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003720
+name: dorsal region of anterior fragment
+def: "The dorsal region of a fragment encompassing all or part of the anterior region of the animal." []
+synonym: "dorsal region of anterior fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003605 ! anterior fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003721
+name: ventral region of anterior fragment
+def: "The ventral region of a fragment encompassing all or part of the anterior region of the animal." []
+synonym: "ventral region of anterior fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003605 ! anterior fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003722
+name: anterior region of anterior fragment
+def: "The anterior region of a fragment encompassing all or part of the anterior region of the animal." []
+synonym: "anterior region of anterior fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003605 ! anterior fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003723
+name: posterior region of anterior fragment
+def: "The posterior region of a fragment encompassing all or part of the anterior region of the animal." []
+synonym: "posterior region of anterior fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003605 ! anterior fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003724
+name: dorsal region of posterior fragment
+def: "The dorsal region of a fragment encompassing all or part of the posterior region of the animal." []
+synonym: "dorsal region of posterior fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003606 ! posterior fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003725
+name: ventral region of posterior fragment
+def: "The ventral region of a fragment encompassing all or part of the posterior region of the animal." []
+synonym: "ventral region of posterior fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003606 ! posterior fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003726
+name: anterior region of posterior fragment
+def: "The anterior region of a fragment encompassing all or part of the posterior region of the animal." []
+synonym: "anterior region of posterior fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003606 ! posterior fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003727
+name: posterior region of posterior fragment
+def: "The posterior region of a fragment encompassing all or part of the posterior region of the animal." []
+synonym: "posterior region of posterior fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003606 ! posterior fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003728
+name: dorsal region of lateral fragment
+def: "The dorsal region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
+synonym: "dorsal region of lateral fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003607 ! lateral fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003729
+name: ventral region of lateral fragment
+def: "The ventral region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
+synonym: "ventral region of lateral fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003607 ! lateral fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003730
+name: anterior region of lateral fragment
+def: "The anterior region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
+synonym: "anterior region of lateral fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003607 ! lateral fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003731
+name: posterior region of lateral fragment
+def: "The posterior region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
+synonym: "posterior region of lateral fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003607 ! lateral fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003732
+name: dorsal region of longitudinal fragment
+def: "The dorsal region of a fragment derived from an amputation parallel to the midline." []
+synonym: "dorsal region of longitudinal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003608 ! longitudinal fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003733
+name: ventral region of longitudinal fragment
+def: "The ventral region of a fragment derived from an amputation parallel to the midline." []
+synonym: "ventral region of longitudinal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003608 ! longitudinal fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003734
+name: anterior region of longitudinal fragment
+def: "The anterior region of a fragment derived from an amputation parallel to the midline." []
+synonym: "anterior region of longitudinal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003608 ! longitudinal fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003735
+name: posterior region of longitudinal fragment
+def: "The posterior region of a fragment derived from an amputation parallel to the midline." []
+synonym: "posterior region of longitudinal fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003608 ! longitudinal fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003736
+name: dorsal region of plug fragment
+def: "The dorsal region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+synonym: "dorsal region of plug fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003609 ! plug fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003737
+name: ventral region of plug fragment
+def: "The ventral region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+synonym: "ventral region of plug fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003609 ! plug fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003738
+name: anterior region of plug fragment
+def: "The anterior region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+synonym: "anterior region of plug fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003609 ! plug fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003739
+name: posterior region of plug fragment
+def: "The posterior region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+synonym: "posterior region of plug fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003609 ! plug fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003740
+name: dorsal region of plug fragment
+def: "The dorsal region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+synonym: "dorsal region of wedge fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003610 ! wedge fragment
+intersection_of: RO:0002180 PLANA:0000141 ! dorsal region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003741
+name: ventral region of plug fragment
+def: "The ventral region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+synonym: "ventral region of wedge fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003610 ! wedge fragment
+intersection_of: RO:0002180 PLANA:0000143 ! ventral region
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003742
+name: anterior region of wedge fragment
+def: "The anterior region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+synonym: "anterior region of wedge fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003610 ! wedge fragment
+intersection_of: RO:0002180 BSPO:0000071
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+
+[Term]
+id: PLANA:0003743
+name: posterior region of wedge fragment
+def: "The posterior region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+synonym: "posterior region of wedge fragment" EXACT []
+intersection_of: BFO:0000050 PLANA:0003610 ! wedge fragment
+intersection_of: RO:0002180 BSPO:0000072
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0004503
@@ -9333,7 +9724,6 @@ name: extracellular organelle
 def: "Organized structure of distinctive morphology and function, occurring outside the cell. Includes, for example, extracellular membrane vesicles (EMVs) and the cellulosomes of anaerobic bacteria and fungi." []
 xref: GO:0043230
 is_a: PLANA:0000525 ! organelle
-is_a: PLANA:0007508
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4579
 
