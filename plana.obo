@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2019-11-04
+data-version: releases/2019-11-05
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -16229,6 +16229,7 @@ property_value: RO:0001900 RO:0001901
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000004 ! independent continuant
 is_symmetric: true
+is_a: deep_to ! deep to
 is_a: RO:0002163 ! spatially disjoint from
 
 [Typedef]
@@ -16359,7 +16360,6 @@ def: "Further away from the surface of the organism. Thus, the muscular layer is
 def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000107
 is_transitive: true
-is_a: adjacent_to ! adjacent_to
 inverse_of: superficial_to ! superficial_to
 
 [Typedef]
@@ -16638,6 +16638,7 @@ namespace: uberon
 def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
 def: "x immediately deep to y iff x deep_to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0001107
+is_a: adjacent_to ! adjacent_to
 is_a: deep_to ! deep to
 inverse_of: immediately_superficial_to ! immediately superficial to
 

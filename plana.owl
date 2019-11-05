@@ -22,7 +22,7 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/plana.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2019-11-04"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2019-11-05"/>
         <oboInOwl:default-namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:default-namespace>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2</oboInOwl:hasOBOFormatVersion>
         <oboInOwl:treat-xrefs-as-genus-differentia>CARO part_of NCBITaxon:79327; CL part_of NCBITaxon:79327</oboInOwl:treat-xrefs-as-genus-differentia>
@@ -1449,7 +1449,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/BSPO_0000107 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000107">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000108"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines.</obo:IAO_0000115>
@@ -1559,6 +1558,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0001107">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000107"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0015014"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relation holds when both the deep_to and ajdacent_to relationship similarly hold.</obo:IAO_0000115>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x immediately deep to y iff x deep_to y and x is contiguous with y.</obo:IAO_0000115>
@@ -2546,6 +2546,7 @@ range: spatial region or site (immaterial continuant)
     <!-- http://purl.obolibrary.org/obo/RO_0002220 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002220">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000107"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002163"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
