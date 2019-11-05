@@ -11,7 +11,7 @@ For new term requests, please provide the following information:
 
 ## Preferred term label
 
-(e.g., cephalic ganglion)
+(e.g., cephalic ganglia)
 
 ## Synonyms
 
