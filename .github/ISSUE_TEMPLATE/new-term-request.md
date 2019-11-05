@@ -1,7 +1,7 @@
 ---
 name: New Term Request
-about: New Term Request
-title: ''
+about: Use this form for submitting information about your new term request
+title: 'New Term Request: [ enter your new name here ]'
 labels: ''
 assignees: ''
 
