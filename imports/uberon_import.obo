@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-11-13/imports/uberon_import.owl
+data-version: plana/releases/2019-11-15/imports/uberon_import.owl
 ontology: plana/imports/uberon_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000105>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0000105> (life cycle stage)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0000105> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0001062> (anatomical entity)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0001062> owl:Thing)\n\n\n)
 
@@ -207,7 +207,7 @@ synonym: "cardinal body part" RELATED [FMA:7153]
 xref: AAO:0010053
 xref: AEO:0000032
 xref: BILA:0000032
-xref: BIRNLEX:7
+xref: birnlex:7
 xref: Body:part
 xref: CALOHA:TS-2084
 xref: CARO:0000032
@@ -264,7 +264,7 @@ subset: upper_level
 xref: AAO:0010841
 xref: AEO:0000000
 xref: BILA:0000000
-xref: BIRNLEX:6
+xref: birnlex:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
@@ -288,7 +288,7 @@ namespace: uberon
 def: "Anatomical space which contains portions of one or more body substances and is bounded by the internal surface of one maximally connected anatomical structure. Examples: cranial cavity, pharyngeal recess space, nasal cavity, tooth socket, cavity of serous sac, lumen of stomach, lumen of artery, fornix of vagina." [FMA:67552]
 subset: upper_level
 synonym: "cavity" BROAD []
-xref: BIRNLEX:1011
+xref: birnlex:1011
 xref: EMAPA:37442 {source="MA:th"}
 xref: FMA:67552
 xref: galen:Cavity
@@ -360,7 +360,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: UBERON:0035086
 name: plane of autotomy
 namespace: uberon
-def: "An anatomical plane that bisects a zone of weakness in an appendage. When autotamy occurs, the appendage divides along this plane." [http://en.wikipedia.org/wiki/Autotomy, http://orcid.org/0000-0002-6601-2165]
+def: "An anatomical plane that bisects a zone of weakness in an appendage. When autotamy occurs, the appendage divides along this plane." [http://orcid.org/0000-0002-6601-2165, https://en.wikipedia.org/wiki/Autotomy]
 is_a: UBERON:0000466 ! immaterial anatomical entity
 property_value: IAO:0000232 "this class is intended for autotomy that bisects an appendage. Other forms of autotomy are possible: for example, a sea cucumber and autotomitize internal organs" xsd:string
 
@@ -370,7 +370,7 @@ name: adjacent_to
 namespace: uberon
 def: "x adjacent_to y iff: x and y share a boundary" []
 xref: RO:0002220
-is_a: superficial_to ! superficial_to
+is_a: deep_to ! deep_to
 
 [Typedef]
 id: capable_of
@@ -392,7 +392,6 @@ name: deep_to
 namespace: uberon
 def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000107
-is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: developmentally_contributes_to
@@ -466,7 +465,7 @@ name: immediately_deep_to
 namespace: uberon
 def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001107
-is_a: deep_to ! deep_to
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: immediately_preceded_by
@@ -487,7 +486,7 @@ id: immediately_superficial_to
 name: immediately_superficial_to
 namespace: uberon
 xref: BSPO:0015014
-is_a: adjacent_to ! adjacent_to
+is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: in_lateral_side_of
@@ -533,4 +532,5 @@ name: superficial_to
 namespace: uberon
 def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000108
+is_a: adjacent_to ! adjacent_to
 

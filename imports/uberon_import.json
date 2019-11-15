@@ -5,7 +5,7 @@
       "meta" : {
         "definition" : {
           "val" : "An anatomical plane that bisects a zone of weakness in an appendage. When autotamy occurs, the appendage divides along this plane.",
-          "xrefs" : [ "http://en.wikipedia.org/wiki/Autotomy", "http://orcid.org/0000-0002-6601-2165" ]
+          "xrefs" : [ "http://orcid.org/0000-0002-6601-2165", "https://en.wikipedia.org/wiki/Autotomy" ]
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -824,11 +824,11 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
           "val" : "immediately_preceded_by"
         }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "http://semanticscience.org/resource/SIO_000251"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
-        }, {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
-          "val" : "http://purl.obolibrary.org/obo/SIO_000251"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]."
@@ -874,8 +874,6 @@
           "val" : "TAO:0100000"
         }, {
           "val" : "HAO:0000000"
-        }, {
-          "val" : "BIRNLEX:6"
         }, {
           "val" : "FBbt:10000000"
         }, {
@@ -944,8 +942,6 @@
           "val" : "galen:BodyPart"
         }, {
           "val" : "TGMA:0001840"
-        }, {
-          "val" : "BIRNLEX:7"
         }, {
           "val" : "ZFA:0001308"
         }, {
@@ -1202,17 +1198,15 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
         "xrefs" : [ {
-          "val" : "galen:Cavity"
-        }, {
           "val" : "EMAPA:37442"
+        }, {
+          "val" : "galen:Cavity"
         }, {
           "val" : "MA:0002447"
         }, {
           "val" : "FMA:67552"
         }, {
           "val" : "NCIT:C34007"
-        }, {
-          "val" : "BIRNLEX:1011"
         } ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
@@ -1252,10 +1246,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000466"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/BSPO_0015014",
-      "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/RO_0002220"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0002180",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000051"
@@ -1276,9 +1266,21 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000061"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/BSPO_0001107",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002220"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000061",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002496",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000106"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/BSPO_0015014",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/BSPO_0000108"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/BSPO_0000108",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002220"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000476",
       "pred" : "is_a",
@@ -1291,10 +1293,6 @@
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0007651",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000061"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/BSPO_0000107",
-      "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/RO_0002220"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000068",
       "pred" : "is_a",
@@ -1346,10 +1344,6 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0002220",
       "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/BSPO_0000108"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/BSPO_0001107",
-      "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/BSPO_0000107"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000106",
@@ -1365,7 +1359,7 @@
       "subsets" : [ ],
       "xrefs" : [ ],
       "basicPropertyValues" : [ ],
-      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-11-13/imports/uberon_import.owl"
+      "version" : "http://purl.obolibrary.org/obo/plana/releases/2019-11-15/imports/uberon_import.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ ],

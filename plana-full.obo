@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-11-13/plana-full.owl
+data-version: plana/releases/2019-11-15/plana-full.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -5586,7 +5586,7 @@ synonym: "body periphery" EXACT []
 synonym: "D/V boundary" EXACT []
 synonym: "dorsal ventral boundary" EXACT []
 synonym: "dorsal-ventral boundary" EXACT []
-synonym: "dorsal/ventral compartment boundary of whole animal" EXACT []
+synonym: "dorsal/ventral compartment boundary of whole organism" EXACT []
 synonym: "dorsoventral margin" EXACT []
 synonym: "DV border" EXACT []
 synonym: "DV boundary" EXACT []
@@ -7578,7 +7578,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000140
 name: anterior region of the whole animal
 def: "Compartment along the anteroposterior axis closer to the head rather than the tail, from the head margin to the esophagus." [OCLC:16809160]
-synonym: "anterior region of whole animal" EXACT []
+synonym: "anterior region of whole organism" EXACT []
 is_a: BFO:0000002 ! continuant
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0000136 ! whole organism
@@ -7590,7 +7590,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 id: PLANA:0000141
 name: dorsal region of the whole animal
 def: "Three dimensional compartment along the dorsoventral axis that is above the anteroposterior axis, containing the eyes." []
-synonym: "dorsal region of whole animal" EXACT []
+synonym: "dorsal region of whole organism" EXACT []
 is_a: PLANA:0000143 ! ventral region of the whole animal
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0000136 ! whole organism
@@ -7601,7 +7601,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 id: PLANA:0000142
 name: posterior compartment of the whole animal
 def: "Three dimensional compartment along the anteroposterior axis that is closer to the tail rather than the head, from the anterior boundary of the pharyngeal pouch to the tip of the tail." []
-synonym: "posterior compartment of whole animal" EXACT []
+synonym: "posterior compartment of whole organism" EXACT []
 is_a: BFO:0000002 ! continuant
 intersection_of: has_component BSPO:0000090 ! posterior compartment
 intersection_of: part_of PLANA:0000136 ! whole organism
@@ -7613,7 +7613,7 @@ property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 id: PLANA:0000143
 name: ventral region of the whole animal
 def: "Compartment along the dorsoventral axis that is below the anteroposterior axis." []
-synonym: "ventral region of whole animal" EXACT []
+synonym: "ventral region of whole organism" EXACT []
 is_a: BFO:0000002 ! continuant
 intersection_of: has_component BSPO:0000084 ! ventral region
 intersection_of: part_of PLANA:0000136 ! whole organism
@@ -12682,7 +12682,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0003115
 name: ommochrome pigment granule
-def: "pigment granule which is part of the ommochrome pigment" []
+def: "pigment granule which is part of the ommochrome pigment cell" []
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
@@ -13135,7 +13135,7 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0003400
 name: protonephridial lumen
-def: "http://purl.obolibrary.org/obo/PLANA_0002053 which is part of the protonephridia" []
+def: "lumen which is part of the protonephridia" []
 xref: PMID:26057828
 is_a: CARO:0000000 ! anatomical entity
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
@@ -13143,21 +13143,21 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 [Term]
 id: PLANA:0003401
 name: testis lumen
-def: "http://purl.obolibrary.org/obo/PLANA_0002053 which is part of the testis" []
+def: "lumen which is part of the testis" []
 xref: PMID:17390146
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003402
 name: ovary lumen
-def: "http://purl.obolibrary.org/obo/PLANA_0002053 which is part of the ovary" []
+def: "lumen which is part of the ovary" []
 xref: PMID:19247960
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
 
 [Term]
 id: PLANA:0003403
 name: flame cell lumen
-def: "http://purl.obolibrary.org/obo/PLANA_0002053 which is part of the flame cell" []
+def: "lumen which is part of the flame cell" []
 synonym: "flame cell barrel lumen" EXACT []
 xref: PMID:21828097
 is_a: CARO:0000000 ! anatomical entity
@@ -14216,17 +14216,15 @@ is_obsolete: true
 
 [Term]
 id: PLANA:0007503
-name: head margin
 name: sagittal plane of the whole animal
 def: "Anatomical plane which divides the body into right and left parts. This plane passes through the midline at the midline but does not always the midline." []
-def: "Peripheral region of the head." []
-synonym: "sagittal plane of whole animal" EXACT []
-is_a: PLANA:0000043 ! dorsal ventral margin of the whole animal
+synonym: "sagittal plane of whole organism" EXACT []
+is_a: BFO:0000002 ! continuant
 intersection_of: has_component BSPO:0000417 ! sagittal plane
 intersection_of: part_of PLANA:0000136 ! whole organism
 relationship: has_component BSPO:0000417 ! sagittal plane
+relationship: part_of PLANA:0000136 ! whole organism
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
-created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-5004
 
 [Term]
 id: PLANA:0007504
@@ -14349,7 +14347,7 @@ id: PLANA:0007519
 name: anterior-posterior axis of the whole animal
 def: "Axis that runs along the long axis of the animal from anterior (head) to posterior (tail). It is perpendicular to the dorsoventral axis and as such, it splits dorsal and ventral regions of the animal to either side." []
 synonym: "anterior-posterior axis" EXACT []
-synonym: "anterior-posterior axis of whole animal" EXACT []
+synonym: "anterior-posterior axis of whole organism" EXACT []
 synonym: "body axis" EXACT []
 synonym: "longitudinal axis" EXACT []
 synonym: "main body axis" EXACT []
@@ -14366,7 +14364,7 @@ name: dorsal-ventral axis of the whole animal
 def: "Axis that runs along the short axis of the animal, perpendicular to the anteroposterior axis, running from the dorsal (back) side of the animal to the ventral (belly) side of the animal. This axis splits anterior and posterior regions of the animal to either side." []
 synonym: "D/V axis" EXACT []
 synonym: "dorsal-ventral axis" EXACT []
-synonym: "dorsal-ventral axis of whole animal" EXACT []
+synonym: "dorsal-ventral axis of whole organism" EXACT []
 synonym: "DV axis" EXACT []
 is_a: BFO:0000002 ! continuant
 intersection_of: has_component BSPO:0000016 ! dorsal-ventral axis
@@ -14381,7 +14379,7 @@ name: left-right axis of the whole animal
 def: "Axis perpendicular to both the anteroposterior and dorsoventral axis that runs from the left side of the animal, through the medial region (center) and out to the right side." []
 synonym: "dextro-sinister axis" EXACT []
 synonym: "left-right axis" EXACT []
-synonym: "left-right axis of whole animal" EXACT []
+synonym: "left-right axis of whole organism" EXACT []
 is_a: BFO:0000002 ! continuant
 intersection_of: has_component BSPO:0000017 ! left-right axis
 intersection_of: part_of PLANA:0000136 ! whole organism
@@ -14394,7 +14392,7 @@ id: PLANA:0007522
 name: medial-lateral axis of the whole animal
 def: "Axis that runs from the center of the body, starting at the anteroposterior axis and out to the lateral (left, right, dorsal or ventral) surface of the animal." []
 synonym: "medial-lateral axis" EXACT []
-synonym: "medial-lateral axis of whole animal" EXACT []
+synonym: "medial-lateral axis of whole organism" EXACT []
 synonym: "mediolateral" EXACT []
 synonym: "mediolateral axis" EXACT []
 is_a: BFO:0000002 ! continuant
@@ -14409,7 +14407,7 @@ id: PLANA:0007523
 name: proximal-distal axis of the whole animal
 def: "Axis that starts at the distal part of an appendage, closest to the body, and runs to the proximal part of an appendage, farthest from the body." []
 synonym: "proximal-distal axis" EXACT []
-synonym: "proximal-distal axis of whole animal" EXACT []
+synonym: "proximal-distal axis of whole organism" EXACT []
 is_a: BFO:0000002 ! continuant
 intersection_of: has_component BSPO:0000015 ! proximal-distal axis
 intersection_of: part_of PLANA:0000136 ! whole organism
@@ -14902,6 +14900,14 @@ comment: no longer designating mediolateral regions using the contained_in objec
 is_obsolete: true
 
 [Term]
+id: PLANA:0007561
+name: head margin
+def: "Peripheral region of the head." []
+is_a: PLANA:0000043 ! dorsal ventral margin of the whole animal
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-5004
+
+[Term]
 id: Subset
 is_a: IAO:0000102 ! data about an ontology part
 
@@ -15109,7 +15115,7 @@ synonym: "cardinal body part" RELATED [FMA:7153]
 xref: AAO:0010053
 xref: AEO:0000032
 xref: BILA:0000032
-xref: BIRNLEX:7
+xref: birnlex:7
 xref: Body:part
 xref: CALOHA:TS-2084
 xref: CARO:0000032
@@ -15167,6 +15173,7 @@ xref: AAO:0010841
 xref: AEO:0000000
 xref: BILA:0000000
 xref: BIRNLEX:6
+xref: birnlex:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
@@ -15191,7 +15198,7 @@ namespace: uberon
 def: "Anatomical space which contains portions of one or more body substances and is bounded by the internal surface of one maximally connected anatomical structure. Examples: cranial cavity, pharyngeal recess space, nasal cavity, tooth socket, cavity of serous sac, lumen of stomach, lumen of artery, fornix of vagina." [FMA:67552]
 subset: upper_level
 synonym: "cavity" BROAD []
-xref: BIRNLEX:1011
+xref: birnlex:1011
 xref: EMAPA:37442 {source="MA:th"}
 xref: FMA:67552
 xref: galen:Cavity
@@ -15263,7 +15270,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: UBERON:0035086
 name: plane of autotomy
 namespace: uberon
-def: "An anatomical plane that bisects a zone of weakness in an appendage. When autotamy occurs, the appendage divides along this plane." [http://en.wikipedia.org/wiki/Autotomy, http://orcid.org/0000-0002-6601-2165]
+def: "An anatomical plane that bisects a zone of weakness in an appendage. When autotamy occurs, the appendage divides along this plane." [http://orcid.org/0000-0002-6601-2165, https://en.wikipedia.org/wiki/Autotomy]
 is_a: UBERON:0000466 ! immaterial anatomical entity
 property_value: curator_notes "this class is intended for autotomy that bisects an appendage. Other forms of autotomy are possible: for example, a sea cucumber and autotomitize internal organs" xsd:string
 
@@ -16251,8 +16258,8 @@ property_value: RO:0001900 RO:0001901
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000004 ! independent continuant
 is_symmetric: true
+is_a: deep_to ! deep to
 is_a: RO:0002163 ! spatially disjoint from
-is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: anterior_to
@@ -16382,7 +16389,6 @@ def: "Further away from the surface of the organism. Thus, the muscular layer is
 def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000107
 is_transitive: true
-is_a: adjacent_to ! adjacent_to
 inverse_of: superficial_to ! superficial_to
 
 [Typedef]
@@ -16661,6 +16667,7 @@ namespace: uberon
 def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
 def: "x immediately deep to y iff x deep_to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0001107
+is_a: adjacent_to ! adjacent_to
 is_a: deep_to ! deep to
 inverse_of: immediately_superficial_to ! immediately superficial to
 
@@ -16680,6 +16687,7 @@ property_value: external_definition "A non-transitive temporal relation in which
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "starts_at_end_of" xsd:string
 property_value: seeAlso SIO:000251
+property_value: seeAlso SIO:000251
 is_a: preceded_by ! preceded_by
 inverse_of: RO:0002090 ! immediately precedes
 
@@ -16691,7 +16699,6 @@ namespace: spatial
 namespace: uberon
 def: "x immediately superficial to y iff x superficial to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0015014
-is_a: adjacent_to ! adjacent_to
 is_a: superficial_to ! superficial_to
 
 [Typedef]
@@ -17013,6 +17020,7 @@ def: "Near the outer surface of the organism. Thus, skin is superficial to the m
 def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [BSPO:cjm]
 xref: BSPO:0000108
 is_transitive: true
+is_a: adjacent_to ! adjacent_to
 
 [Typedef]
 id: surface_of
