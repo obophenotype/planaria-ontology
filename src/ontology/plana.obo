@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2020-02-17
+data-version: releases/2020-02-18
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -9172,9 +9172,29 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 
 [Term]
 id: PLANA:0000465
-name: obsolete pharynx nerve plexus
-comment: causes problems with is a and part of relationships for inner and outer pharynx nerve plexus in that both are true. 
-is_obsolete: true
+name: pharynx nerve plexus
+def: "Plexus of nerves located in the pharynx comprised of inner and outer wall rings." []
+synonym: "nerve ganglia of pharynx" EXACT []
+synonym: "neural plexus of the pharynx" EXACT []
+synonym: "pharyngeal nerve plexus" EXACT []
+synonym: "pharyngeal nerve ring" EXACT []
+synonym: "pharyngeal nervous system" EXACT []
+synonym: "pharyngeal neural plexus" EXACT []
+synonym: "pharynx nerve ring" EXACT []
+xref: PMID:16033796
+xref: PMID:17905225
+xref: PMID:20967238
+xref: PMID:23250205
+xref: PMID:23297191
+is_a: BFO:0000040 ! material entity
+is_a: PLANA:0000492 ! nerve plexus
+relationship: part_of PLANA:0000016 ! pharynx
+relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
+relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
+relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4780
 
 [Term]
 id: PLANA:0000466
@@ -9420,14 +9440,8 @@ synonym: "inner pharyngeal nerve ring" EXACT []
 synonym: "inner pharynx nerve ring" EXACT []
 synonym: "pharynx inner nerve plexus" EXACT []
 xref: ISBN:9780070316607
-is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000492 ! nerve plexus
-relationship: part_of PLANA:0000016 ! pharynx
+is_a: PLANA:0000465 ! pharynx nerve plexus
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
-relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4775
 
@@ -9440,14 +9454,8 @@ synonym: "outer pharynx nerve plexus" EXACT []
 synonym: "outer pharynx nerve ring" EXACT []
 xref: doi:10.1002/jmor.1051550208
 xref: PMID:27612384
-is_a: BFO:0000040 ! material entity
-is_a: PLANA:0000492 ! nerve plexus
-relationship: part_of PLANA:0000016 ! pharynx
+is_a: PLANA:0000465 ! pharynx nerve plexus
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior compartment of the whole animal
-relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
-relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
-relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
-relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4787
 

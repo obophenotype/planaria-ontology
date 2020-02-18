@@ -21,7 +21,7 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/plana/plana-full.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2020-02-17/plana-full.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2020-02-18/plana-full.owl"/>
         <oboInOwl:default-namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:default-namespace>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2</oboInOwl:hasOBOFormatVersion>
         <oboInOwl:treat-xrefs-as-genus-differentia>CARO part_of NCBITaxon:79327; CL part_of NCBITaxon:79327</oboInOwl:treat-xrefs-as-genus-differentia>
@@ -28689,11 +28689,69 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/PLANA_0000465 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000465">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">causes problems with is a and part of relationships for inner and outer pharynx nerve plexus in that both are true. </rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete pharynx nerve plexus</rdfs:label>
-        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000492"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000016"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000420"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000214"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004503"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004504"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plexus of nerves located in the pharynx comprised of inner and outer wall rings.</obo:IAO_0000115>
+        <obo:foaf_depiction rdf:resource="urn:dosdp:depicted_by"/>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4780</oboInOwl:created_by>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16033796</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17905225</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20967238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23250205</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23297191</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nerve ganglia of pharynx</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neural plexus of the pharynx</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharyngeal nerve plexus</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharyngeal nerve ring</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharyngeal nervous system</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharyngeal neural plexus</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharynx nerve ring</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharynx nerve plexus</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000465"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plexus of nerves located in the pharynx comprised of inner and outer wall rings.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000465"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
+        <owl:annotatedTarget rdf:resource="urn:dosdp:depicted_by"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Axiom>
     
 
 
@@ -29473,42 +29531,11 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/PLANA_0000479 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000479">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000492"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000016"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000465"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000420"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000214"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004503"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004504"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ring of the pharynx nerve plexus that is proximal to the lumen.</obo:IAO_0000115>
@@ -29540,42 +29567,11 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/PLANA_0000480 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0000480">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000492"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000016"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000465"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000420"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000214"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004503"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004504"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ring of the pharynx nerve plexus that is proximal to the exterior surface.</obo:IAO_0000115>
