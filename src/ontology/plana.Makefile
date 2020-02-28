@@ -22,6 +22,17 @@ imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
 .PRECIOUS: imports/uberon_import.owl
 
 
+##################################################
+### Generating csv of terms with depicted by ######
+##################################################
+
+ASSETS += $(ONT).depictedby.csv
+
+$(ONT).depictedby.csv:
+	$(ROBOT) query -use-graphs true -f csv -i $(ONT).owl --query ../sparql/plana_depictedby.sparql $@ && perl -pi -e 's/\r//' $@ && cp $@ ../..
+
+
+
 
 #########################################
 ### Generating all ROBOT templates ######

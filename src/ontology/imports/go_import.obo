@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2019-11-15/imports/go_import.owl
+data-version: plana/releases/2020-02-18/imports/go_import.owl
 ontology: plana/imports/go_import
 
 [Term]
@@ -178,6 +178,7 @@ namespace: biological_process
 alt_id: GO:0007067
 def: "Progression through the phases of the mitotic cell cycle, the most common eukaryotic cell cycle, which canonically comprises four successive phases called G1, S, G2, and M and includes replication of the genome and the subsequent segregation of chromosomes into daughter cells. In some variant cell cycles nuclear replication or nuclear division may not be followed by cell division, or G1 and G2 phases may be absent." [GOC:mah, ISBN:0815316194, Reactome:69278]
 subset: goslim_chembl
+subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_yeast
 synonym: "mitosis" RELATED []
@@ -374,6 +375,7 @@ subset: goslim_agr
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
+subset: goslim_drosophila
 subset: goslim_flybase_ribbon
 subset: goslim_generic
 subset: goslim_metagenomics
@@ -416,7 +418,7 @@ def: "A process that is carried out at the cellular level which results in the a
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_pir
-synonym: "organelle organisation" EXACT [GOC:curators]
+synonym: "organelle organisation" EXACT []
 synonym: "organelle organization and biogenesis" RELATED [GOC:dph, GOC:jl, GOC:mah]
 synonym: "single organism organelle organization" EXACT [GOC:TermGenie]
 synonym: "single-organism organelle organization" RELATED []
@@ -946,6 +948,7 @@ namespace: molecular_function
 def: "Catalysis of the transfer of a phosphate group, usually from ATP, to a substrate molecule." [ISBN:0198506732]
 comment: Note that this term encompasses all activities that transfer a single phosphate group; although ATP is by far the most common phosphate donor, reactions using other phosphate donors are included in this term.
 subset: goslim_chembl
+subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_plant
@@ -1057,7 +1060,7 @@ id: GO:0022412
 name: cellular process involved in reproduction in multicellular organism
 namespace: biological_process
 def: "A process, occurring at the cellular level, that is involved in the reproductive function of a multicellular organism." [GOC:isa_complete]
-synonym: "reproductive cellular process in multicellular organism" EXACT [GOC:curators]
+synonym: "reproductive cellular process in multicellular organism" EXACT []
 is_a: GO:0009987 ! cellular process
 is_a: GO:0022414 ! reproductive process
 intersection_of: GO:0009987 ! cellular process
@@ -1333,6 +1336,7 @@ alt_id: GO:0007243
 alt_id: GO:0023013
 alt_id: GO:0023034
 def: "The process in which a signal is passed on to downstream components within the cell, which become activated themselves to further propagate the signal and finally trigger a change in the function or state of the cell." [GOC:bf, GOC:jl, GOC:signaling, ISBN:3527303782]
+subset: goslim_drosophila
 synonym: "intracellular protein kinase cascade" NARROW [GOC:signaling]
 synonym: "intracellular signal transduction pathway" NARROW []
 synonym: "intracellular signaling cascade" RELATED [GOC:signaling]
@@ -1357,6 +1361,7 @@ alt_id: GO:0019041
 def: "Receiving a signal and transmitting it in the cell to initiate a change in cell activity. A signal is a physical entity or change in state that is used to transfer information in order to trigger a response." [GOC:bf, GOC:signaling]
 subset: goslim_agr
 subset: goslim_chembl
+subset: goslim_drosophila
 subset: goslim_flybase_ribbon
 subset: goslim_metagenomics
 subset: goslim_mouse
@@ -1909,6 +1914,7 @@ alt_id: GO:0071884
 def: "The activity of a gene product that interacts with a receptor to effect a change in the activity of the receptor. Ligands may be produced by the same, or different, cell that expresses the receptor. Ligands may diffuse extracellularly from their point of origin to the receiving cell, or remain attached to an adjacent cell surface (e.g. Notch ligands)." [GOC:kv, GOC:molecular_function_refactoring, GOC:pdt]
 comment: Definition discussed in https://github.com/geneontology/go-ontology/issues/14220
 subset: goslim_chembl
+subset: goslim_drosophila
 synonym: "receptor agonist activity" BROAD [GOC:molecular_function_refactoring]
 synonym: "signaling molecule" EXACT []
 synonym: "signaling receptor ligand activity" EXACT []
@@ -1977,7 +1983,7 @@ synonym: "up-regulation of cellular process" EXACT []
 synonym: "upregulation of cellular process" EXACT []
 is_a: GO:0048518 ! positive regulation of biological process
 is_a: GO:0050794 ! regulation of cellular process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: positively_regulates GO:0009987 ! cellular process
 relationship: positively_regulates GO:0009987 ! cellular process
 
@@ -2050,8 +2056,8 @@ id: GO:0048609
 name: multicellular organismal reproductive process
 namespace: biological_process
 def: "The process, occurring above the cellular level, that is pertinent to the reproductive function of a multicellular organism. This includes the integrated processes at the level of tissues and organs." [GOC:dph, GOC:jid, GOC:tb]
-synonym: "organismal reproductive process" BROAD [GOC:curators]
-synonym: "reproductive process in a multicellular organism" EXACT [GOC:curators]
+synonym: "organismal reproductive process" BROAD []
+synonym: "reproductive process in a multicellular organism" EXACT []
 is_a: GO:0022414 ! reproductive process
 relationship: part_of GO:0032504 ! multicellular organism reproduction
 
@@ -2116,7 +2122,7 @@ alt_id: GO:0051244
 def: "Any process that modulates the frequency, rate or extent of a cellular process, any of those that are carried out at the cellular level, but are not necessarily restricted to a single cell. For example, cell communication occurs among more than one cell, but occurs at the cellular level." [GOC:go_curators]
 synonym: "regulation of cellular physiological process" EXACT []
 is_a: GO:0050789 ! regulation of biological process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: regulates GO:0009987 ! cellular process
 relationship: regulates GO:0009987 ! cellular process
 
@@ -2215,7 +2221,7 @@ namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of cell structures, including the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." [GOC:ai]
 synonym: "regulation of cell organisation" RELATED [GOC:mah]
 synonym: "regulation of cell organization" RELATED [GOC:mah]
-synonym: "regulation of cellular component organisation" EXACT [GOC:curators]
+synonym: "regulation of cellular component organisation" EXACT []
 synonym: "regulation of cellular component organization and biogenesis" RELATED [GOC:mah]
 is_a: GO:0050794 ! regulation of cellular process
 intersection_of: GO:0008150 ! biological_process
@@ -2316,6 +2322,7 @@ namespace: biological_process
 def: "The process resulting in division and partitioning of components of a cell to form more cells; may or may not be accompanied by the physical separation of a cell into distinct, individually membrane-bounded daughter cells." [GOC:di, GOC:go_curators, GOC:pr]
 comment: Note that this term differs from 'cytokinesis ; GO:0000910' in that cytokinesis does not include nuclear division.
 subset: goslim_chembl
+subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_pir
 xref: Wikipedia:Cell_division
@@ -2371,6 +2378,7 @@ name: meiotic cell cycle
 namespace: biological_process
 alt_id: GO:0007126
 def: "Progression through the phases of the meiotic cell cycle, in which canonically a cell replicates to produce four offspring with half the chromosomal content of the progenitor cell via two nuclear divisions." [GOC:ai]
+subset: goslim_drosophila
 subset: goslim_yeast
 synonym: "meiosis" RELATED []
 xref: Wikipedia:Meiosis
@@ -2389,6 +2397,7 @@ comment: Note that this term should not be used for direct annotation. If you ar
 subset: gocheck_do_not_annotate
 xref: Wikipedia:Anaphase
 is_a: GO:0022403 ! cell cycle phase
+relationship: part_of GO:0000279 ! M phase
 
 [Term]
 id: GO:0051323
@@ -2878,7 +2887,6 @@ id: GO:0140013
 name: meiotic nuclear division
 namespace: biological_process
 def: "One of the two nuclear divisions that occur as part of the meiotic cell cycle." [PMID:9334324]
-subset: goslim_pombe
 is_a: GO:0000280 ! nuclear division
 is_a: GO:1903046 ! meiotic cell cycle process
 intersection_of: GO:0000280 ! nuclear division
@@ -3105,6 +3113,7 @@ name: meiotic cell cycle process
 namespace: biological_process
 def: "A process that is part of the meiotic cell cycle." [GO_REF:0000060, GOC:mtg_cell_cycle, GOC:TermGenie]
 subset: gocheck_do_not_annotate
+subset: goslim_pombe
 is_a: GO:0022402 ! cell cycle process
 is_a: GO:0022414 ! reproductive process
 intersection_of: GO:0009987 ! cellular process
