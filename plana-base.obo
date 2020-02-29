@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2020-02-18/plana-base.owl
+data-version: plana/releases/2020-02-29/plana-base.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -181,7 +181,7 @@ xref: PMID:26904543
 xref: PMID:30471994
 is_a: PLANA:0000431 ! organ
 relationship: BFO:0000050 PLANA:0000428 ! musculature system
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/visceralmusculature.png {comment="Image is an electron micrograph depicting the visceral musculature (arrowheads) that lies beneath the gut. The gut is identifiable by the collection of darkly stained lipid droplets in the top right corner and the white of the lumen at the top of the image. Scale bar is 10um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4955
 
 [Term]
@@ -237,7 +237,7 @@ id: PLANA:0000015
 name: non ciliated epithelial cell
 def: "An epithelial cell lacking cilia." []
 is_a: PLANA:0000100 ! epithelial cell
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/nonciliatedepithelialcell.png {comment="Image is an electron micrograph of the dorsal side of the animal where there is a transition from nonciliated epidermal cells to ciliated ones. On the left side of the image are the ciliated cells and on the right are the nonciliated. A few nonciliated have been marked with arrowheads. Scale bar is 10um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4718
 
 [Term]
@@ -633,7 +633,7 @@ synonym: "asexual biotype" EXACT []
 xref: PMID:11972158
 xref: PMID:28812561
 is_a: PLANA:0000021 ! biotype
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/smedasexualbiotype.png {comment="Depicted by field contains light micrscope image of asexual and sexual biotypes of Schmidtea meditteranea with their respective karyotypes. Note that the asexual bioptype has a chromosome inversion compared to the sexual."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/asexualadult.png {comment="Image is an scanning electron micrograph of the dorsal side of an entire animal. This is an adult asexual Schmidtea mediterranea. Anterior is to the right and posterior is to the left. Scale bar is 500um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4880
 
 [Term]
@@ -1082,7 +1082,7 @@ relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: RO:0002496 PLANA:0000005 ! Stage 5
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction urn:dosdp:depicted:by {comment="Image is an electron micrograph depicting the dorsal epidermis (arrowheads). Also visible in this micrograph, immediately deep to the epidermis is the basal lamina and beneath that is a photoreceptor. Scale bar is 10 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4569
 
 [Term]
@@ -1139,7 +1139,7 @@ relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: RO:0002496 PLANA:0000005 ! Stage 5
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/epidermis.png {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4463
 
 [Term]
@@ -1525,7 +1525,7 @@ relationship: RO:0002202 PLANA:0000130 ! circular muscle progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/circularmusclecell.png {comment="Image is an electron micrograph depicting the body wall musculature beneath the dorsal epidermis. The first layer of muscle cells beneath the basal lamina (BL), circular muscle, have been colored and labeled with arrowheads. Circular muscle = magenta; longitudinal muscle = green; diagonal muscle = red. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4497
 
 [Term]
@@ -1618,7 +1618,7 @@ relationship: RO:0002220 PLANA:0000053 ! distal tubule
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/collectingduct.png {comment="Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same. In the diagram, terminal flame cells and their corresponding cilia are in blues, the proximal tubule is in reds, the distal tubule is in greens while thecollecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/collectingduct.png {comment="Image is an electron micrograph depicting a collecting duct (arrowheads) passing through the basal lamina (BL). Dorsal is up and the scale bar is 5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4500
 
 [Term]
@@ -1650,7 +1650,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/diagonalmusclecell.png {comment="Image is an electron micrograph depicting the body wall musculature beneath the dorsal epidermis. The third layer of cells beneath the basement membrane, diagonal muscle cells, have been colored and labeled with arrowheads. Circular muscle = magenta; longitudinal muscle = green; diagonal muscle = red. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4517
 
 [Term]
@@ -1747,7 +1747,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalstripe.png {comment="Image is an electron micrograph showing the dorsal side of the head of an adult worm. Arrowheads mark where the ciliated cells of the dorsal stripe can be seen. Anterior is up and scale bar is 100um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4533
 
 [Term]
@@ -1846,7 +1846,7 @@ relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: RO:0002496 PLANA:0000007 ! Stage 7
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/entericmusculature.png {comment="Image is an electron micrograph depicting the enteric musculature (arrowheads) surrounding the gut, which extends across the top of the image. These cells are very small compared to the layer of medial muscle underneath them. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4564
 
 [Term]
@@ -1903,7 +1903,7 @@ relationship: RO:0002202 PLANA:0000011 ! protonephridial progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/flamebulb.png {comment="Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same (bottom). In the diagram, terminal flame cells and their corresponding cilia (flame bulb) are in blues, the proximal tubule is in reds, the distal tubule is in greens while thecollecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/flamebulb.png {comment="Image is an electron micrograph depicting a flame cell (outlined), which is a part of the flame bulb. \"N\" marks this cell's nucleus and the cilia are noted by an arrowhead. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4594
 
 [Term]
@@ -1939,7 +1939,7 @@ relationship: RO:0002220 PLANA:0000087 ! proximal tubule
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/flamecell.png {comment="Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same. In the diagram, terminal flame cells and their corresponding cilia are in blues, the proximal tubule is in reds, the distal tubule is in greens while thecollecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/flamecell.png {comment="Image is an electron micrograph depicting a flame cell (outlined), which is a part of the flame bulb. \"N\" marks this cell's nucleus and the cilia are noted by an arrowhead. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4595
 
 [Term]
@@ -2002,7 +2002,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/gobletcell.png {comment="Image is an electron micrograph showing part of the gastrodermis. A goblet cell, a type of gastrodermal cell is labeled with arrowheads. Note the large, dark mucus granules contained in the cell body. The lumen of the gut can be seen on the right side of the image and has been labeled with \"L.\" Scale bar is 1 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4628
 
 [Term]
@@ -2105,7 +2105,7 @@ xref: PMID:28807897
 xref: PMID:30471994
 is_a: PLANA:0000101 ! muscle cell
 relationship: BFO:0000050 PLANA:0000240 ! body wall musculature
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/longitudinalmusclecell.png {comment="Image is an electron micrograph depicting the body wall musculature beneath the dorsal epidermis. The longitudinal muscle cells (arrowheads) sit behind both the circular muscle and the diagonal muscle. Circular muscle = magenta; longitudinal muscle = green; diagonal muscle = red. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4660
 
 [Term]
@@ -2149,7 +2149,7 @@ relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: RO:0002496 PLANA:0000006 ! Stage 6
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/mouth.png {comment="Image is an electron micrograph of the mouth (arrowheads), which is located on the ventral side of the animal. Note the heavily ciliated pharynx that is peeking out. Scale bar is 10um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4698
 
 [Term]
@@ -2295,7 +2295,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/parenchymalmusculature.png {comment="The depicted by field is a hemotoxylin and eosin stained sagittal section with the dorsal side up and anterior to the right. The parenchymal musculature, or dorsal ventral muscle fibers are the periodic vertical strands apparent in the middle of the image. Scale bar is 200um."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/parenchymalmusculature.png {comment="Image is an electron micrograph of the parenchyma. Three muscle cells have been notated with an arrowhead. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4759
 
 [Term]
@@ -2403,7 +2403,7 @@ relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: RO:0002496 PLANA:0000006 ! Stage 6
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/proximaltubule.png {comment="Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same. In the diagram, terminal flame cells and their corresponding cilia are in blues, the proximal tubule is in reds, the distal tubule is in greens while thecollecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/proximaltubule.png {comment="Image is an electron micrograph depicting a proximal tubule (arrowheads) of the protonephridia structure. Note the cilia and the characteristic way the cell membrane connects with other proximal tubule epithelial cells. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4840
 
 [Term]
@@ -2795,7 +2795,7 @@ xref: PMID:30471994
 xref: PMID:30962434
 is_a: PLANA:0000539 ! electrically responsive cell
 is_a: PLANA:0002095 ! somatic cell
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/musclecell.png {comment="Image is an electron micrograph depicting a muscle cell (arrowheads) cut in a transverse orientation with respect to the fiber length. Note the texture of the cytoplasm that comes from the organization of myofibrils. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4702
 
 [Term]
@@ -2900,7 +2900,7 @@ name: rhabdite
 def: "Straight or curved rod-like structures within the epidermal cells, oriented with long axis at right angles to the epidermal surface, that are discharged into mucous secretions." []
 xref: OCLC:16809160
 is_a: PLANA:0000430 ! epithelial cell component
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/rhabdite.png {comment="Image is an electron micrograph depicting the epidermis. Inside of the epidermal cells, rhabdites (arrowheads) can be seen in various stages of expansion. Scale bar is 5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4853
 
 [Term]
@@ -2909,7 +2909,7 @@ name: secretory cell
 def: "A cell that specializes in controlled release of one or more substances." []
 xref: CL:0000151
 is_a: PLANA:0000119 ! terminally differentiated cell
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/secretorycell.png {comment="Image is an electron micrograph of a viscid gland cell (arrowheads) passing across the basal lamina (BL). This cell secretes a specialized type of mucus. The secretory duct transports mucus to the outside of the animal, through the secretory pore. Ventral is down and scale bar is 5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4868
 
 [Term]
@@ -2982,7 +2982,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/proximaltubuleepithelialcell.png {comment="Image is an electron micrograph of a proximal tubule epithelial cell (arrowheads). N = nucleus. Note the way the cell is wrapped around the cilia, creating the lumen in the middle. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4841
 
 [Term]
@@ -3025,7 +3025,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment="Depicted by field contains a diagram representing the protonephrida unit (top) as well as a 3D rendering of confocal data depicting the same. In the diagram, terminal flame cells and their corresponding cilia are in blues, the proximal tubule is in reds, the distal tubule is in greens while thecollecting duct is in purple. In the 3D rendering below the cilia (AcTub) are in blue, portions of the proximal tubule (slc6a-13) are in red while the distal tubule (slc6a-12) is in green."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/distaltubuleepithelialcell.png {comment="Image is an electron micrograph showing a cell (outlined) that is part of the collecting duct. Note how much more stained this cell is, compared to the surrounding ones. Also note the visible lumen of the collecting duct inside the cell where it is white and wrinkled. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4525
 
 [Term]
@@ -3066,7 +3066,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/collectingduct.png {comment="Image is an electron micrograph showing a cell (outlined) that is part of the collecting duct. Note how much more stained this cell is, compared to the surrounding ones. Also note the visible lumen of the collecting duct inside the cell where it is white and wrinkled. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4501
 
 [Term]
@@ -3352,7 +3352,7 @@ def: "PROG-2-5 positive granules that range in size from 0.5um to 1um present in
 xref: PMID:29100657
 is_a: PLANA:0002137 ! intracellular granule
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/hymanvesicle.png {comment="Depcited by is an immuno electron microscopy image of a mesenchymal cell labeled with anti-PROG-2-5 immuno-gold. Large rhod-shaped granules resembling rhabdites are found in the same cell labeled with PROG-2-5+ oval-shaped granules (pseudo-colored in blue). Higher magnification of the boxed region is shown in the panel below. e, endoplasmic reticulum; m, mitochondria; n, nucleus; rh, rhabdite. Scale bar, 1 um."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/hymanvesicle.png {comment="Image is an immunoelectron micrograph depicting hyman vesicles in the apical side of an epidermal cell. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4636
 
 [Term]
@@ -4179,7 +4179,7 @@ relationship: RO:0002490 PLANA:0000008 ! Stage 8
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/bodywallmusculature.png {comment="http://purl.obolibrary.org/obo/Image is an electron micrograph of the dorsal epidermis, basal lamina (BL), and underlying body wall musculature. Three types of muscle cells have been color coded form superficial to deep_ Circular muscle = magenta; longitudinal muscle = green; diagonal muscle = red. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4454
 
 [Term]
@@ -4195,7 +4195,7 @@ relationship: BFO:0000050 PLANA:0000478 ! pharynx musculature
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxlongitudinalmusclecell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The inner longitudinal muscle (arrowheads) is immediately deep to the inner circular muscle of the pharynx. Magenta = circular; green = longitudinal; red = radial. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4776
 
 [Term]
@@ -4348,7 +4348,7 @@ relationship: BFO:0000050 PLANA:0007534 ! pharynx inner epithelium
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxlumenepithelialsurface.png {comment="The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the pharynx and surrounding tissues. The pharynx lumenepithelial surface is marked by black arrows. Scale bar is 200um."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxinnerepitheliumsurface.png {comment="Image is an electron micrograph of a transverse section through the pharynx. An epidermal cell, a part of the inner epithelial layer, has been marked with arrowheads. Immediately deep to the inner epithelial layer of the pharynx is musculature that has been colored. Magenta = circular; blue = longitudinal; yellow = radial. Scale bar is 5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4773
 
 [Term]
@@ -4367,7 +4367,7 @@ relationship: BFO:0000050 PLANA:0000472 ! pharynx outer epithelium
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxouterepithelialsurface.png {comment="The depicted by field is a hemotoxylin and eosin stained coronal section encompassing the pharynx and surrounding tissues. The pharynx outer epithelial surface is marked by black arrows. Scale bar is 200um."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxouterepithelium.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The pharynx pouch cavity is at the top. The outer epithelium has been labeled with arrowheads. Immediately deep to the outer epithelial layer of the pharynx is musculature that has been colored. Red = circular; blue = longitudinal. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4785
 
 [Term]
@@ -4697,7 +4697,7 @@ relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: RO:0002496 PLANA:0000005 ! Stage 5
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/neoblast.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic telophase (outlined). The condensed chromatin is visible toward the left side of the cell and has been outlined by the nuclear envelope. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4705
 
 [Term]
@@ -5084,7 +5084,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxoutercircularmusclecell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The pharynx pouch cavity is at the top. The outer circular muscle (arrowheads) is immediately deep to the outer longitudinal muscle of the pharynx. Red = circular; blue = longitudinal. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4782
 
 [Term]
@@ -5104,7 +5104,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxinnercircularmusclecell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The pharynx lumen it to the left. The inner circular muscle (arrowheads) is immediately deep to the inner epithelial layer of the pharynx. Magenta = circular; green = longitudinal; red = radial. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4770
 
 [Term]
@@ -5123,7 +5123,7 @@ relationship: BSPO:0001107 PLANA:0000474 ! pharynx inner circular muscle cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxinnerlongitudinalmusclecell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The inner longitudinal muscle (arrowheads) is immediately deep to the inner circular muscle of the pharynx. Magenta = circular; green = longitudinal; red = radial. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4774
 
 [Term]
@@ -5141,7 +5141,7 @@ relationship: BSPO:0015014 PLANA:0000473 ! pharynx outer circular muscle cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxouterlongitudinalmusclecell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The pharynx pouch cavity is at the top. The outer longitudinal muscle (arrowheads) is immediately deep to the outer epithelium of the pharynx. Red = circular; blue = longitudinal. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4786
 
 [Term]
@@ -5162,7 +5162,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxradialmusclecell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. Immediately deep to the inner epithelial layer of the pharynx is musculature that has been colored. Magenta = circular; blue = longitudinal; yellow = radial. Scale bar is 5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4794
 
 [Term]
@@ -5202,7 +5202,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxinnernerveplexus.png {comment="Image is an electron micrograph of a transverse section through the pharynx. Neuronal cells/tissue are marked with arrowheads. The inner nerve plexus is immediately deep to the inner longitudinal musculature. Magenta = circular; blue = longitudinal; yellow = radial. Scale bar is 5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4775
 
 [Term]
@@ -5222,7 +5222,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxouternerveplexus.png {comment="Image is an electron micrograph of a transverse section through the pharynx.The pharynx pouch cavity is at the top.  The outer nerve plexus (arrowheads) is immediately deep to the outer circular muscle of the pharynx. Red = circular; blue = longitudinal. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4787
 
 [Term]
@@ -5322,7 +5322,7 @@ xref: PMID:28807897
 xref: PMID:29674431
 xref: PMID:30962434
 is_a: PLANA:0000100 ! epithelial cell
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/glandcell.png {comment="Image is an electron micrograph depicting a portion of a gland cell (arrowheads). Note the nucleus surrounded by endoplasmic reticulum and the dark mucus granules that fill the long cytoplasmic projection. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4625
 
 [Term]
@@ -5336,7 +5336,7 @@ is_a: PLANA:0002079 ! pore
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/secretorypore.png {comment="Image is an electron micrograph of a viscid gland cell passing across the basal lamina (BL). This cell secretes a specialized type of mucus. The secretory duct transports mucus to the outside of the animal, through the secretory pore (arrowhead). Ventral is down and scale bar is 5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4871
 
 [Term]
@@ -5520,6 +5520,7 @@ name: cell
 def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." []
 comment: The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one).
 xref: CALOHA:TS-2035
+xref: CL:0000000
 xref: FMA:68646
 xref: GO:0005623
 xref: KUPO:0000002
@@ -5554,7 +5555,7 @@ name: microvillus
 def: "Thin cylindrical membrane-covered projections on the surface of an animal cell containing a core bundle of actin filaments." []
 xref: GO:0005902
 is_a: PLANA:0000502 ! actin-based cell projection
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/microvillus.png {comment="Image is an electron micrograph depicting a portion of the outer epithelium of the pharynx. Microvilli  on the left hand of the image have been labeled with arrowheads. To the right of the microvilli are larger cilia. Note the difference in width and length. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4978
 
 [Term]
@@ -5574,7 +5575,7 @@ xref: GO:0030054
 xref: PMID:20511647
 xref: PMID:21458439
 is_a: PLANA:0000505 ! cell-cell contact zone
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/celljunction.png {comment="Image is an electron micrograph of two outer epidermal cells of the pharynx. There is an adherens junction (arrowheads) between two cells. Scale bar is 0.5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4468
 
 [Term]
@@ -5583,7 +5584,7 @@ name: cell-cell junction
 def: "A cell junction that forms a connection between two or more cells in a multicellular organism; excludes direct cytoplasmic junctions such as ring canals." []
 xref: GO:0005911
 is_a: PLANA:0000506 ! cell junction
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/cell-celljunction.png {comment="Image is an electron micrograph of two outer epidermal cells of the pharynx. There is an adherens junction (arrowheads) between two cells. Scale bar is 0.5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4473
 
 [Term]
@@ -5592,7 +5593,7 @@ name: cell-cell adhesion
 def: "The attachment of one cell to another cell via adhesion molecules." []
 xref: GO:0098609
 is_a: PLANA:0000505 ! cell-cell contact zone
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/cell-celladhesion.png {comment="Image is an electron micrograph of two outer epidermal cells of the pharynx. There is an adherens junction (arrowheads) between two cells. Scale bar is 0.5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4471
 
 [Term]
@@ -5612,7 +5613,7 @@ xref: GO:0005737
 xref: PMID:16890156
 xref: PMID:28976975
 is_a: PLANA:0000509 ! intracellular part
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/cytoplasm.png {comment="Image is an electron micrograph depicting a portion of a cell. Outside of the nucleus (N), the arrowheads mark areas of cytoplasm, which appears as a mottled gray filling. Scale bar is 0.5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4508
 
 [Term]
@@ -5744,7 +5745,7 @@ def: "A compound membranous cytoplasmic organelle of eukaryotic cells, consistin
 xref: GO:0005794
 is_a: PLANA:0000526 ! membrane-bounded organelle
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/golgiapparatus.png {comment="Image is an electron micrograph showing golgi bodies (arrowheads). Many secretory vesicles can be seen, as well as rough endoplasmic reticulum on the right side of the micrograph. Scale bar is 0.2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4981
 
 [Term]
@@ -5761,7 +5762,7 @@ xref: PMID:29100657
 xref: PMID:29357350
 is_a: PLANA:0000526 ! membrane-bounded organelle
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/nucleus.png {comment="Image is an electron micrograph of several nuclei (N) close to and a part of the dorsal epidermis. Note how the epidermal cell nuclei appear more wrinkled and have stained differently than the cells lying beneath the basal lamina (BL). Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4728
 
 [Term]
@@ -5770,7 +5771,7 @@ name: secretory vesicle
 def: "A cytoplasmic, membrane bound vesicle that is capable of fusing to the plasma membrane to release its contents into the extracellular space." []
 xref: GO:0099503
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/secretoryvesicle.png {comment="Image is an electron micrograph depicting two golgi bodies and accompanying secratory vesicles. A few have been labeled with arrowheads. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4984
 
 [Term]
@@ -5799,7 +5800,7 @@ def: "A small, dense body one or more of which are present in the nucleus of euk
 xref: GO:0044428
 is_a: PLANA:0000532 ! nuclear part
 relationship: BFO:0000050 PLANA:0000529 ! nucleus
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/nucleolus.png {comment="Image is an electron micrograph depicting a nucleus. Inside, the nucleolus has been labeled with arrowheads. Scale bar is 1 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4985
 
 [Term]
@@ -5808,7 +5809,7 @@ name: chromatin
 def: "The ordered and organized complex of DNA, protein (histones), and sometimes RNA, that forms the chromosome." []
 xref: GO:0000785
 is_a: PLANA:0000532 ! nuclear part
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/chromatin.png {comment="Image is an electron micrograph showing a mitotic cell with condensed chromatin (arrowhead). Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4487
 
 [Term]
@@ -5837,7 +5838,7 @@ name: ribosome
 def: "Organized structure of distinctive morphology and function, not bounded by a lipid bilayer membrane. Includes ribosomes, the cytoskeleton and chromosomes." []
 xref: GO:0043228
 is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/ribosome.png {comment="Image is an electron micrograph depicting ribosomes (arrowheads) in two separate cells. They can be seen as small dots in the cytoplasm and associating with the rough endoplasmic reticulum in the cell in the bottom of the micrograph. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4988
 
 [Term]
@@ -6153,7 +6154,7 @@ xref: PMID:30962434
 is_a: UBERON:0000476
 relationship: BFO:0000050 PLANA:0004529 ! integumental system
 relationship: BSPO:0001107 PLANA:0000034 ! epidermis
-property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/basallaminaofepithelium.png {comment="Depicted by field is an electron micrograph of the dorsal epidermis in a transverse plane from an asexual adult animal. The basal lamina is noted with a magenta bracket. Scale bar is 5um."}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/basallamina.png {comment="Image is an electron micrograph showing the dorsal epidermis. Epidermal cells can be seen above (superfical to) the basal lamina (BL) and the body wall musculature can be seen below. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4995
 
 [Term]
@@ -6165,7 +6166,7 @@ is_a: PLANA:0000104 ! rhabdite
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/adenalrhabdite.png {comment="Image is an electron micrograph showing the dorsal epidermis and underlying basal lamina at the top. Adenal rhabdites are marked with \"Rh\" and can be seen in cells underneath or medial to the basal lamina. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4409
 
 [Term]
@@ -6176,7 +6177,7 @@ xref: GO:0005912
 xref: PMID:26556349
 is_a: PLANA:0000506 ! cell junction
 relationship: BFO:0000050 PLANA:0000508 ! cell-cell adhesion
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/adherensjunction.png {comment="Image is an electron micrograph of two outer epidermal cells of the pharynx. There is an adherens junction (arrowheads) between two cells. Scale bar is 0.5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4410
 
 [Term]
@@ -6193,7 +6194,7 @@ relationship: RO:0001018 PLANA:0002054 ! marginal adhesive zone
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/adhesivepapilla.png {comment="Image is an electron micrograph of the outside of an animal at the marginal adhesive zone. The adhesive papilla (arrowheads) are colored in blue and surround each secretory pore (yellow). Mucus and cilia are both green. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4413
 
 [Term]
@@ -6291,7 +6292,7 @@ relationship: RO:0001018 PLANA:0000418 ! head
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/auricles.png {comment="Image is a scanning electron micrograph of the dorsal side of the head of an adult worm. The auricles (arrowheads) appear as a short groove on each side of the head. Anteror is down and scale bar is 100um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4442
 
 [Term]
@@ -6318,7 +6319,7 @@ xref: PMID:28495872
 is_a: PLANA:0000501 ! cell projection
 relationship: BFO:0000050 PLANA:0002061 ! neurite
 relationship: specific_to PLANA:0000099 ! neuron
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/axon.png {comment="Image is an electron micrograph showing a cross section of an axon (arrowheads), right underneath or medial to the dorsal body wall musculature. Dorsal is up and the scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4444
 
 [Term]
@@ -6332,7 +6333,7 @@ xref: PMID:26912790
 is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
 relationship: BFO:0000050 PLANA:0002024 ! cilium
 relationship: BFO:0000050 PLANA:0002040 ! flagellum
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/axoneme.png {comment="Image is an electron micrograph of several cilia where a cross-section reveals the axoneme with a 9+2 arrangement of microtubles. Arrowheads denote microtubules. Scale bar is 100nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4445
 
 [Term]
@@ -6347,7 +6348,7 @@ xref: PMID:21937596
 is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
 relationship: BFO:0000050 PLANA:0002024 ! cilium
 relationship: BFO:0000050 PLANA:0002040 ! flagellum
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/basalbody.png {comment="Image is an electron micrograph showing a cross-section of a cilium, revealing the basal body (arrowhead). Scale bar is 0.5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4446
 
 [Term]
@@ -6625,7 +6626,7 @@ xref: PMID:24903754
 xref: PMID:25017721
 xref: PMID:27523733
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/chromatoidbody.png {comment="Image is an electron micrograph showing a chromatoid body (arrowhead) next to the cell's nucleus (N) which takes up the bottom left corner. Scale bar is 200nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4488
 
 [Term]
@@ -6641,7 +6642,7 @@ xref: PMID:30143032
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
 is_a: PLANA:0000532 ! nuclear part
 relationship: BFO:0000050 PLANA:0000529 ! nucleus
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/chromosome.png {comment="Image is an electron micrograph showing a mitotic cell. An arrowhead marks the long arm of a chromosome. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4490
 
 [Term]
@@ -6652,7 +6653,7 @@ xref: NCIT:C13355
 xref: PMID:25404302
 is_a: PLANA:0000532 ! nuclear part
 relationship: BFO:0000050 PLANA:0002021 ! chromosome
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/chromosomearm.png {comment="Image is an electron micrograph showing a mitotic cell. An arrowhead marks the long arm of a chromosome. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4491
 
 [Term]
@@ -6665,7 +6666,7 @@ xref: PMID:28216315
 xref: PMID:28292427
 xref: UBERON:0007601
 is_a: PLANA:0002118 ! epithelium
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/ciliatedepithelialcell.png {comment="Image is an electron micrograph of an outer epidermal cell of the pharynx. These cells are heavily ciliated. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4494
 
 [Term]
@@ -6675,7 +6676,7 @@ def: "A specialized eukaryotic organelle that consists of a filiform extrusion o
 xref: GO:0005929
 is_a: PLANA:0000501 ! cell projection
 relationship: BFO:0000050 PLANA:0000106 ! ciliated epithelial cell
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/cilium.png {comment="Image is an electron micrograph depicting several cilia (arrowheads) emerging from a ventral epidermis cell. Scale bar is 0.5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4495
 
 [Term]
@@ -6742,7 +6743,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsal-ventralmusclecell.png {comment="Image is an electron micrograph depicting multiple dorsal-ventral muscle cells (arrowheads).  The ventral epidermis is at the bottom of this image. Scale bar is 10um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4536
 
 [Term]
@@ -6816,7 +6817,7 @@ xref: PMID:29357350
 xref: PMID:30399335
 is_a: PLANA:0000100 ! epithelial cell
 is_a: PLANA:0002095 ! somatic cell
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/epidermalcell.png {comment="Image is an electron micrograph depicting the dorsal epidermis. A single cell has been labeled with arrowheads. Immediately deep to the epidermis is the basal lamina, labeled with \"BL.\" Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4565
 
 [Term]
@@ -6828,7 +6829,7 @@ is_a: PLANA:0000104 ! rhabdite
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/epidermalrhabdite.png {comment="Image is an electron micrograph depicting the epidermis.  Rhabdites (arrowheads) can be seen in various stages of expansion inside of the epidermal cells. Scale bar is 5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4568
 
 [Term]
@@ -6838,7 +6839,7 @@ def: "The lipid bilayer surrounding the endoplasmic reticulum." []
 xref: GO:0005789
 is_a: PLANA:0000521 ! bounding membrane of organelle
 relationship: BFO:0000050 PLANA:0007513 ! endoplasmic reticulum
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/ermembrane.png {comment="Image is an electron micrograph depicting (rough) endoplasmic reticulum adjacent tp the nucleus (N). The arrowheads mark the ER membrane. Note the ribosomes (small dots) that can be seen both in the cytoplasm and lining the ER membrane. Scale bar is 0.2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4573
 
 [Term]
@@ -6874,7 +6875,7 @@ xref: PMID:24173799
 is_a: PLANA:0000119 ! terminally differentiated cell
 is_a: PLANA:0002095 ! somatic cell
 relationship: BFO:0000050 PLANA:0000088 ! renal system
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/excretorycell.png {comment="Image is an electron micrograph showing a cell that is part of the collecting duct. An arrowhead marks the nucleus of this cell. Note the visible lumen of the collecting duct extending out and passing through the basal lamina. This cell is involved in excretion. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4576
 
 [Term]
@@ -6892,7 +6893,7 @@ is_a: UBERON:0000476
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/extracellularmatrix.png {comment="Image is an electron micrograph showing the extracellular matrix (arrowheads) between two cells. Scale bar is 0.2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4578
 
 [Term]
@@ -7016,7 +7017,7 @@ def: "Cytoplasmic bead-like structures of animal cells, visible by electron micr
 xref: GO:0042587
 xref: PMID:30608231
 is_a: PLANA:0002137 ! intracellular granule
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/glycogengranule.png {comment="Image is an electron micrograph depicting glycogen granules (arrowheads) within the cytoplasm of a cell. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4627
 
 [Term]
@@ -7042,7 +7043,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxinnerepidermalcell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The phayrnx lumen is to the bottom left. An epidermal cell, a part of the inner epithelial layer, has been marked with arrowheads. Immediately deep to the inner epithelial layer of the pharynx is musculature that has been colored. Magenta = circular; blue = longitudinal; yellow = radial. Scale bar is 5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4771
 
 [Term]
@@ -7058,7 +7059,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/innerzoneofglandcells.png {comment="Image is an electron micrograph depicting a transverse section through the pharynx. Arrowheads label the inner zone of gland cells. They can be identified by the mucus granules the cell body is filled with. Scale bar is 5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4639
 
 [Term]
@@ -7095,7 +7096,7 @@ xref: GO:0005811
 xref: https://doi.org/10.1101/279364
 xref: PMID:30608231
 is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/lipiddroplet.png {comment="Image is an electron micrograph depicting two lipid droplets (arrowheads) within two different cells. Note the mostly round shape of the droplets. Often, mitochondria can be seen clumped around lipids. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4657
 
 [Term]
@@ -7117,7 +7118,7 @@ is_a: BSPO:0000086
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/marginaladhesivezone.png {comment="Image is an electron micrograph depicting the lateral dorsoventral boundary. Several adhesion gland cells have been labeled with arrowheads to visualize the line of the marginal adhesive zone. Scale bar is 10um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4667
 
 [Term]
@@ -7149,7 +7150,7 @@ relationship: RO:0001018 PLANA:0000143 ! ventral region of the whole animal
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/medialmusclecell.png {comment="Image is an electron micrograph depicting multiple medial dorsal-ventral muscle cells (arrowheads). At the bottom of this image is the ventral epidermi, to the left is the dark staining of the gut tissue. Scale bar is 10um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4670
 
 [Term]
@@ -7196,7 +7197,7 @@ relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: RO:0003001 PLANA:0000105 ! secretory cell
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/mucus.png {comment="Image is an electron micrograph of the outside of an animal at the marginal adhesive zone. The adhesive papilla are colored in blue and surround each secretory pore (yellow). Mucus (arrowheads) and cilia are both green. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4699
 
 [Term]
@@ -7207,7 +7208,7 @@ xref: ISBN:9780070316607
 xref: PMID:21828097
 is_a: PLANA:0002079 ! pore
 relationship: BFO:0000050 PLANA:0000065 ! flame cell
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/nephridiopore.png {comment="Image is an electron micrograph depicting a collecting duct (arrowheads) passing through the basal lamina (BL). Dorsal is up and the scale bar is 5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4706
 
 [Term]
@@ -7270,7 +7271,7 @@ def: "The double lipid bilayer enclosing the nucleus and separating its contents
 xref: GO:0005635
 xref: https://doi.org/10.1101/279364
 is_a: PLANA:0000520 ! membrane
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/nuclearenvelope.png {comment="Image is an electron micrograph depicting the nuclear envelope (arrowheads). The nucleus takes up the top left corner of the image and the nuclear envelope encloses it. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4722
 
 [Term]
@@ -7281,7 +7282,7 @@ synonym: "inner leaflet" EXACT []
 xref: GO:0005637
 is_a: PLANA:0000522 ! membrane part
 relationship: BFO:0000050 PLANA:0002064 ! nuclear envelope
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/nuclearinnermembrane.png {comment="Image is an electron micrograph depicting the nuclear envelope. The nucleus takes up the top left corner of the image and the inner nuclear membrane has been labeled with arrowheads. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4723
 
 [Term]
@@ -7301,7 +7302,7 @@ synonym: "outer leaflet" EXACT []
 xref: GO:0005640
 is_a: PLANA:0000522 ! membrane part
 relationship: BFO:0000050 PLANA:0002064 ! nuclear envelope
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/nuclearoutermembrane.png {comment="Image is an electron micrograph depicting the nuclear envelope. The nucleus takes up the top left corner of the image and the outer nuclear membrane has been labeled with arrowheads. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4725
 
 [Term]
@@ -7369,7 +7370,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxouterepidermalcell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The pharynx pouch cavity is at the top. An epidermal cell, a part of the outer epithelium, has been labeled with arrowheads. Immediately deep to the outer epithelial layer of the pharynx is musculature that has been colored. Red = circular; blue = longitudinal. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4783
 
 [Term]
@@ -7395,7 +7396,7 @@ relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
 relationship: specific_to PLANA:0000016 ! pharynx
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxtip.png {comment="Image is an electron micrograph of the tip of the pharynx. Many gland cells can be seen inside, filled with mucus. Scale bar is 5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4795
 
 [Term]
@@ -7662,7 +7663,7 @@ relationship: BFO:0000050 PLANA:0000484 ! secretory system
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/secretoryduct.png {comment="Image is an electron micrograph of a viscid gland cell passing across the basal lamina (BL). This cell secretes a specialized type of mucus. The secretory duct (arrowhead) transports mucus to the outside of the animal, through the secretory pore. Ventral is down and scale bar is 5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4869
 
 [Term]
@@ -7826,7 +7827,7 @@ def: "A cell-cell junction  in invertebrates that seals cells together in an epi
 xref: GO:0070160
 is_a: PLANA:0000507 ! cell-cell junction
 relationship: BFO:0000050 PLANA:0002118 ! epithelium
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/septatejunction.png {comment="Image is an electron micrograph depicting the inner epithelium of the pharynx. Septate junctions (arrowheads) can be clearly seen between cells. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4938
 
 [Term]
@@ -7889,6 +7890,7 @@ xref: PMID:29557542
 xref: PMID:29674432
 xref: PMID:29906446
 xref: PMID:30194301
+is_a: PLANA:0000499 ! cell
 is_a: PLANA:0002138 ! FACS sorted cell population
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4964
@@ -7898,6 +7900,7 @@ id: PLANA:0002110
 name: X1(FS) cell
 def: "A heterogeneous sorted cell population of unstained planarian cells with similar size and complexity to irradiation-sensitive, cycling cells contained in the X1 gate. Unlike X1 cells, X1(FS) cells are amenable to cell transplantation." []
 xref: PMID:21566185
+is_a: PLANA:0000499 ! cell
 is_a: PLANA:0002138 ! FACS sorted cell population
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4965
@@ -7923,6 +7926,7 @@ xref: PMID:27606067
 xref: PMID:27864883
 xref: PMID:28137894
 xref: PMID:29674432
+is_a: PLANA:0000499 ! cell
 is_a: PLANA:0002138 ! FACS sorted cell population
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4966
@@ -7958,6 +7962,7 @@ xref: PMID:29100657
 xref: PMID:29674432
 xref: PMID:29906446
 xref: PMID:30194301
+is_a: PLANA:0000499 ! cell
 is_a: PLANA:0002138 ! FACS sorted cell population
 property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4967
@@ -8002,7 +8007,7 @@ name: epithelium
 def: "The avascular cellular layers that cover body surfaces and cavities and may form glands." []
 xref: NCIT:C12710
 is_a: PLANA:0000113 ! tissue
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/epithelium.png {comment="Image is an electron micrograph of a transverse section of a planarian through the pharyngeal region depicting 3 different epithelial layers (arrowheads). At the top is the dorsal epidermis, in the middle is the epithelium of the pharyngeal pouch, and at the bottom of the image, the outer epithelium of the pharynx. Scale bar is 5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4572
 
 [Term]
@@ -8156,7 +8161,7 @@ def: "Cytoplasmic part which forms a distinctive granular particle, which may or
 xref: MICRO:0000215
 is_a: PLANA:0000519 ! intracellular non-membrane-bounded organelle
 is_a: PLANA:0000531 ! non-membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/intracellulargranule.png {comment="Image is an electron micrograph depicting a cell with many intracellular granules (arrowheads) visible in the cytoplasm. The scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4644
 
 [Term]
@@ -8189,7 +8194,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxpouchepithelium.png {comment="Image is an electron micrograph of a transverse slice through the parapharyngeal region. It includes the dorsal epidermis, pharynx pouch epithelium (arrowheads), and a portion of the pharynx. Dorsal is up and the lumen of the pouch is visible as the white stripe in the middle of the micrograph. Scale bar is 5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4792
 
 [Term]
@@ -8395,26 +8400,26 @@ property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depict
 id: PLANA:0003203
 name: prophase neoblast
 def: "neoblast undergoing mitotic prophase" []
-property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/mitoticprophase.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic prophase (outlined). Note the difference in appearance compared to neighboring cells, nuclei labeled \"N.\" Scale bar is 2 um."}
 
 [Term]
 id: PLANA:0003204
 name: metaphase neoblast
 def: "neoblast undergoing mitotic metaphase" []
 synonym: "M phase neoblast" EXACT []
-property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/metaphaseneoblast.png {comment="Image is an electron micrograph depicting cells in the mesenchyme, near the regeneration blastema. In the middle of the image, outlined, a cell is undergoing mitotic metaphase. This cell's chromosomes can be seen in a vertical arrangement. Scale bar is 2um."}
 
 [Term]
 id: PLANA:0003205
 name: anaphase neoblast
 def: "neoblast undergoing mitotic anaphase" []
-property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/anaphaseneoblast.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic anaphase. The entire cell has been outlined and the condensed chromatin is visible inside. Scale bar is 2um."}
 
 [Term]
 id: PLANA:0003206
 name: telophase neoblast
 def: "neoblast undergoing mitotic telophase" []
-property_value: http://purl.obolibrary.org/obo/foaf_depicted_by urn:dosdp:depicted:by {comment=""}
+property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/mitotictelophase.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic telophase (outlined). The condensed chromatin is visible inside and has been partially outlined by the nuclear envelope. Scale bar is 1um."}
 
 [Term]
 id: PLANA:0003207
@@ -9634,7 +9639,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxepithelium.png {comment="Image is an electron micrograph of a transverse section through the pharynx. Outlined, is the outer epithium, which is an \"insunk\" epithelium where the nuclei are set back medially away from the epithelium surface. Here, just the surface is outlined.. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4769
 
 [Term]
@@ -9770,7 +9775,7 @@ xref: GO:0005886
 xref: PMID:20511647
 xref: PMID:27523733
 is_a: PLANA:0000520 ! membrane
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/plasmamembrane.png {comment="Image is an electron micrograph showing several cells. Arrowheads label the plasma membrane, the boundary between cells. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4801
 
 [Term]
@@ -9792,7 +9797,7 @@ xref: PMID:22318224
 xref: PMID:26516985
 xref: PMID:29100657
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/mitochondrion.png {comment="Image is an electron micrograph depicting a couple different cells. A few mitochondria have been labeled with arrowheads. Note the variation in shape from spherical to rod-like. This is dependent on cutting orientation at fission/fusion state of the mitochondria. Scale bar is 1 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4996
 
 [Term]
@@ -9802,7 +9807,7 @@ def: "Network of interconnected, flattened, and/or tubular membrane, known as ci
 xref: PMID:30143032
 is_a: PLANA:0000526 ! membrane-bounded organelle
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/endoplasmiceeticulum.png {comment="Image is an electron micrograph depicting endoplasmic reticulum (magenta) in multiple cells. Scale bar is 0.5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4562
 
 [Term]
@@ -9811,7 +9816,7 @@ name: rough endoplasmic reticulum
 def: "Network of interconnected, flattened, and/or tubular membrane, known as cisternae. This membrane is contiguous with the outer nuclear membrane. The endoplasmic reticulum is involved in both protein and lipid synthesis." []
 xref: PMID:30143032
 is_a: PLANA:0007513 ! endoplasmic reticulum
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/roughendoplasmicreticulum.png {comment="Image is an electron micrograph depicting the rough endoplasmic reticulum (arrowheads) of a cell. Ribosomes can be seen associating with the ER membrane creating a rough ER, as well as  free within the cytoplasm of the cell. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4997
 
 [Term]
@@ -9819,7 +9824,7 @@ id: PLANA:0007515
 name: smooth endoplasmic reticulum
 def: "Endoplamic reticulum that does not contain ribosomes, which synthesizes lipids, phospholipids, and steroids." []
 is_a: PLANA:0007513 ! endoplasmic reticulum
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/smoothendoplasmicreticulum.png {comment="Image is an electron micrograph depicting smooth ER (arrowheads) in a cell, next to the nucleus (N). Ribosomes can be seen within the cytoplasm, but not associating with the ER membrane. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4998
 
 [Term]
@@ -9830,7 +9835,7 @@ xref: GO:0005643
 is_a: PLANA:0000532 ! nuclear part
 is_a: PLANA:0002079 ! pore
 relationship: BFO:0000050 PLANA:0000529 ! nucleus
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/nuclearpore.png {comment="Image is an electron micrograph depicting the nuclear envelope. The nucleus takes up the top left corner of the image and two nuclear pores have been labeled with arrowheads. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4999
 
 [Term]
@@ -9841,7 +9846,7 @@ xref: ISBN:0-71677033-4
 xref: PMID:4853064
 is_a: PLANA:0000526 ! membrane-bounded organelle
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/lysosome.png {comment="Image is an electron micrograph depicting two lysosomes (arrowheads) within a cell. The nucleus sits in the bottom left corner. Lysosomes can sometimes be identified by the swirling material they are breaking down inside. Scale bar is 0.5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4664
 
 [Term]
@@ -9995,7 +10000,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/glialcell.png {comment="Image is an electron micrograph depicting a section of the ventral nerve cord. The arrowheads point at a likely glial cell. Note the difference in darkness of cytoplasm in the cell body of  the glial cell compared to the surrounding axons. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4626
 
 [Term]
@@ -10031,7 +10036,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxinnerepithelium.png {comment="Image is an electron micrograph of a transverse section through the pharynx. An epidermal cell, a part of the inner epithelial layer, has been marked with arrowheads. Immediately deep to the inner epithelial layer of the pharynx is musculature that has been colored. Magenta = circular; blue = longitudinal; yellow = radial. Scale bar is 5 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4772
 
 [Term]
@@ -10049,7 +10054,7 @@ relationship: RO:0001018 PLANA:0000420 ! parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxcircularmusclecell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The pharynx lumen it to the left. The inner circular muscle (arrowheads) is immediately deep to the inner epithelial layer of the pharynx. Magenta = circular; green = longitudinal; red = radial. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4767
 
 [Term]
@@ -10073,7 +10078,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/adhesiongland.png {comment="Image is an electron micrograph showing the multicellular total adhesion gland structure (outlined) embedded in the epidermis. Note that the gland cells cross the basal lamina into the epithelium. Ventral is up and scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4411
 
 [Term]
@@ -10095,7 +10100,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anchorcell.png {comment="Image is an electron micrograph showing the total multicellualr adhesion gland structure. The anchor cell has been outlined, though mucus-filled projections of gland cells can be seen densely packed inside. Nucleus is that of the anchor cell. Ventral is up and scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4426
 
 [Term]
@@ -10117,7 +10122,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/viscidglandcell.png {comment="Image is an electron micrograph showing the whole adhesion gland structure, specifically outlining a single cell (viscid gland cell) associated with this multicelluar structure. Ventral is up and scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4956
 
 [Term]
@@ -10139,7 +10144,7 @@ relationship: RO:0001018 PLANA:0004527 ! copulatory region
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
-property_value: foaf:depiction urn:dosdp:depicted:by {comment=""}
+property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/releasingglandcell.png {comment="Image is an electron micrograph showing the whole adhesion gland structure. Arrowheads mark releasing gland cells which are associated with this multicelluar structure. The releasing gland cells have very small excretory particles compared to the neighboring viscid gland. Ventral is up and scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4847
 
 [Term]
