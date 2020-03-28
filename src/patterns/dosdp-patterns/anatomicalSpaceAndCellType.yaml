@@ -1,0 +1,73 @@
+pattern_name: anatomicalSpacecAndCEllType.yaml 
+pattern_iri: https://tobedetermined 
+description: "An anatomical space, region, axis, or surface of cell entity."
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+
+classes:
+  anatomical space: CARO:0000000
+  cell_entity: PLANA:0000499
+
+relations: 
+  has component: RO:0002180
+  part of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  depicted_by: foaf:depiction
+  image_comment: rdfs:comment
+  has_obo_namespace: oboInOwl:hasOBONamespace
+
+vars:
+  cell_entity: "'cell_entity'"
+  anatomical_space: "'anatomical space'"
+  depicted_by: "'depicted_by'"
+  image_comment: "'image_comment'"
+  has_obo_namespace: "'has_obo_namespace'"
+
+data_list_vars:
+  def_dbxref: xsd:string
+  exact_syn: xsd:string
+
+
+name:
+  text: "%s of %s"
+  vars:
+   - anatomical_space
+   - cell_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "%s of %s"
+    vars:
+     - anatomical_space
+     - cell_entity
+
+  - annotationProperty: depicted_by
+    var: depicted_by
+    annotations: 
+      - annotationProperty: image_comment
+        text: "%s"
+        vars:
+         - image_comment
+  - annotationProperty: has_obo_namespace
+    text: "%s"
+    vars:
+      - has_obo_namespace
+
+exact_synonym:
+    value: exact_syn
+  
+def:
+  text: "%s of %s"
+  vars:
+    - anatomical_space
+    - cell_entity
+  xrefs: def_dbxref
+
+equivalentTo:
+  text: "'part of' some %s and ('has component' some %s)"
+  vars:
+    - cell_entity
+    - anatomical_space
