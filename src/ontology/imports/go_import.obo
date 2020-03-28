@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2020-02-29/imports/go_import.owl
+data-version: plana/releases/2020-03-28/imports/go_import.owl
 ontology: plana/imports/go_import
 
 [Term]
@@ -28,7 +28,6 @@ def: "The cell cycle 'gap' phase which is the interval between the completion of
 comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
 subset: gocheck_do_not_annotate
 synonym: "G1 phase of mitotic cell cycle" EXACT []
-xref: MIPS_funcat:10.03.01.01.01
 is_a: GO:0051318 ! G1 phase
 relationship: part_of GO:0051329 ! mitotic interphase
 
@@ -41,7 +40,6 @@ comment: Note that this term should not be used for direct annotation. If you ar
 subset: gocheck_do_not_annotate
 synonym: "S phase of mitotic cell cycle" EXACT []
 synonym: "S-phase of mitotic cell cycle" EXACT []
-xref: MIPS_funcat:10.03.01.01.05
 is_a: GO:0051320 ! S phase
 relationship: part_of GO:0051329 ! mitotic interphase
 
@@ -53,7 +51,6 @@ def: "The cell cycle 'gap' phase which is the interval between the completion of
 comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
 subset: gocheck_do_not_annotate
 synonym: "G2 phase of mitotic cell cycle" EXACT []
-xref: MIPS_funcat:10.03.01.01.07
 is_a: GO:0051319 ! G2 phase
 relationship: part_of GO:0051329 ! mitotic interphase
 
@@ -182,8 +179,6 @@ subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_yeast
 synonym: "mitosis" RELATED []
-xref: MIPS_funcat:10.03.01
-xref: MIPS_funcat:10.03.01.01
 xref: Wikipedia:Mitosis
 is_a: GO:0007049 ! cell cycle
 intersection_of: GO:0007049 ! cell cycle
@@ -208,8 +203,6 @@ namespace: biological_process
 def: "The division of a cell nucleus into two nuclei, with DNA and other nuclear contents distributed between the daughter nuclei." [GOC:mah]
 subset: goslim_pir
 synonym: "karyokinesis" RELATED []
-xref: MIPS_funcat:10.03.04
-xref: MIPS_funcat:10.03.04.07
 is_a: GO:0048285 ! organelle fission
 
 [Term]
@@ -301,8 +294,6 @@ subset: goslim_pir
 subset: goslim_plant
 synonym: "glycoprotein binding" NARROW []
 synonym: "protein amino acid binding" EXACT []
-xref: MIPS_funcat:16.01
-xref: MIPS_funcat:18.01.07
 xref: Reactome:R-HSA-170835 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3"
 xref: Reactome:R-HSA-170846 "TGFBR2 recruits TGFBR1"
 is_a: GO:0005488 ! binding
@@ -345,7 +336,6 @@ subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
 synonym: "extracellular" EXACT []
-xref: MIPS_funcat:70.27
 xref: Wikipedia:Extracellular
 is_a: GO:0110165 ! cellular anatomical entity
 
@@ -385,7 +375,6 @@ subset: goslim_plant
 subset: goslim_yeast
 synonym: "cell nucleus" EXACT []
 synonym: "horsetail nucleus" NARROW [GOC:al, GOC:mah, GOC:vw, PMID:15030757]
-xref: MIPS_funcat:70.10
 xref: NIF_Subcellular:sao1702920020
 xref: Wikipedia:Cell_nucleus
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
@@ -406,7 +395,6 @@ namespace: biological_process
 def: "The chemical reactions and pathways involving the phosphate group, the anion or salt of any phosphoric acid." [GOC:ai]
 synonym: "phosphate metabolic process" RELATED []
 synonym: "phosphate metabolism" EXACT []
-xref: MIPS_funcat:01.04
 is_a: GO:0006793 ! phosphorus metabolic process
 
 [Term]
@@ -441,8 +429,6 @@ subset: goslim_generic
 subset: goslim_pir
 subset: goslim_plant
 synonym: "cell-division cycle" EXACT []
-xref: MIPS_funcat:10
-xref: MIPS_funcat:10.03
 xref: Wikipedia:Cell_cycle
 is_a: GO:0009987 ! cellular process
 
@@ -566,7 +552,6 @@ synonym: "signaling cascade" NARROW []
 synonym: "signaling pathway" RELATED []
 synonym: "signalling cascade" NARROW []
 synonym: "signalling pathway" RELATED [GOC:mah]
-xref: MIPS_funcat:30
 xref: Wikipedia:Signal_transduction
 is_a: GO:0009987 ! cellular process
 is_a: GO:0050794 ! regulation of cellular process
@@ -582,7 +567,6 @@ def: "The biological process whose specific outcome is the progression of a mult
 comment: Note that this term was 'developmental process'.
 subset: goslim_chembl
 subset: goslim_plant
-xref: MIPS_funcat:41
 is_a: GO:0032501 ! multicellular organismal process
 is_a: GO:0048856 ! anatomical structure development
 
@@ -593,7 +577,6 @@ namespace: biological_process
 def: "The union of male and female gametes to form a zygote." [GOC:ems, GOC:mtg_sensu]
 synonym: "zygote biosynthesis" RELATED []
 synonym: "zygote formation" RELATED []
-xref: MIPS_funcat:41.05.01
 is_a: GO:0009566 ! fertilization
 property_value: RO:0002161 NCBITaxon:58024
 
@@ -657,7 +640,6 @@ synonym: "metabolism" EXACT []
 synonym: "metabolism resulting in cell growth" NARROW []
 synonym: "multicellular organism metabolic process" NARROW []
 synonym: "single-organism metabolic process" RELATED []
-xref: MIPS_funcat:01
 xref: Wikipedia:Metabolism
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
@@ -938,8 +920,6 @@ synonym: "cellular component organisation at cellular level" EXACT [GOC:mah]
 synonym: "cellular component organisation in other organism" EXACT [GOC:mah]
 synonym: "cellular component organization at cellular level" EXACT []
 synonym: "cellular component organization in other organism" EXACT []
-xref: MIPS_funcat:42
-is_a: GO:0009987 ! cellular process
 is_a: GO:0071840 ! cellular component organization or biogenesis
 
 [Term]
@@ -1152,7 +1132,6 @@ id: GO:0030545
 name: receptor regulator activity
 namespace: molecular_function
 def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is changed." [GOC:ceb]
-xref: MIPS_funcat:18.02.07
 is_a: GO:0098772 ! molecular function regulator
 
 [Term]
@@ -1466,7 +1445,6 @@ synonym: "up-regulation of enzyme activity" EXACT []
 synonym: "up-regulation of metalloenzyme activity" NARROW []
 synonym: "upregulation of enzyme activity" EXACT []
 synonym: "upregulation of metalloenzyme activity" NARROW []
-xref: MIPS_funcat:18.02.01.01
 is_a: GO:0044093 ! positive regulation of molecular function
 is_a: GO:0050790 ! regulation of catalytic activity
 intersection_of: GO:0008150 ! biological_process
@@ -1915,7 +1893,6 @@ name: receptor ligand activity
 namespace: molecular_function
 alt_id: GO:0071884
 def: "The activity of a gene product that interacts with a receptor to effect a change in the activity of the receptor. Ligands may be produced by the same, or different, cell that expresses the receptor. Ligands may diffuse extracellularly from their point of origin to the receiving cell, or remain attached to an adjacent cell surface (e.g. Notch ligands)." [GOC:kv, GOC:molecular_function_refactoring, GOC:pdt]
-comment: Definition discussed in https://github.com/geneontology/go-ontology/issues/14220
 subset: goslim_chembl
 subset: goslim_drosophila
 synonym: "receptor agonist activity" BROAD [GOC:molecular_function_refactoring]
@@ -1925,6 +1902,7 @@ synonym: "vitamin D receptor activator activity" NARROW []
 is_a: GO:0005102 ! signaling receptor binding
 is_a: GO:0030546 ! signaling receptor activator activity
 relationship: part_of GO:0007165 ! signal transduction
+property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/14220 xsd:anyURI
 created_by: midori
 creation_date: 2010-09-13T04:51:59Z
 
@@ -2100,7 +2078,6 @@ def: "Any process that modulates the activity of an enzyme." [GOC:ai, GOC:ebc, G
 subset: goslim_chembl
 synonym: "regulation of enzyme activity" EXACT []
 synonym: "regulation of metalloenzyme activity" NARROW []
-xref: MIPS_funcat:18.02.01
 is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0003824 ! catalytic activity
@@ -2141,7 +2118,6 @@ subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
 synonym: "physiological response to stimulus" EXACT []
-xref: MIPS_funcat:34.11
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -2794,7 +2770,7 @@ subset: goslim_metagenomics
 synonym: "cellular component organisation or biogenesis" EXACT [GOC:mah]
 synonym: "cellular component organisation or biogenesis at cellular level" EXACT [GOC:mah]
 synonym: "cellular component organization or biogenesis at cellular level" EXACT []
-is_a: GO:0008150 ! biological_process
+is_a: GO:0009987 ! cellular process
 created_by: midori
 creation_date: 2010-09-10T01:39:16Z
 
@@ -3302,4 +3278,12 @@ id: starts_during
 name: starts_during
 namespace: external
 xref: RO:0002091
+
+[Typedef]
+id: term_tracker_item
+name: term tracker item
+namespace: external
+xref: IAO:0000233
+is_metadata_tag: true
+is_class_level: true
 

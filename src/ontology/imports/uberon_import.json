@@ -630,6 +630,34 @@
       "id" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
       "lbl" : "plural term"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002161",
+      "meta" : {
+        "definition" : {
+          "val" : "S never_in_taxon T iff: S SubClassOf in_taxon only not T",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/pubmed/20973947" ]
+        },
+        "xrefs" : [ {
+          "val" : "RO:0002161"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#is_class_level",
+          "val" : "true"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "never_in_taxon"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000425",
+          "val" : "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
+          "val" : "true"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        } ]
+      },
+      "lbl" : "never_in_taxon"
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#consider",
       "lbl" : "consider"
     }, {
@@ -1357,9 +1385,9 @@
         }, {
           "val" : "FBdv:00005288"
         }, {
-          "val" : "XAO:1000001"
-        }, {
           "val" : "EHDAA:27"
+        }, {
+          "val" : "XAO:1000001"
         }, {
           "val" : "ZFS:0000001"
         }, {
@@ -1756,6 +1784,10 @@
       },
       "lbl" : "contains process"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000425",
+      "type" : "PROPERTY",
+      "lbl" : "expand assertion to"
+    }, {
       "id" : "http://purl.org/dc/elements/1.1/contributor",
       "meta" : {
         "basicPropertyValues" : [ {
@@ -2001,7 +2033,7 @@
       "subsets" : [ ],
       "xrefs" : [ ],
       "basicPropertyValues" : [ ],
-      "version" : "http://purl.obolibrary.org/obo/plana/releases/2020-02-29/imports/uberon_import.owl"
+      "version" : "http://purl.obolibrary.org/obo/plana/releases/2020-03-28/imports/uberon_import.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ ],
