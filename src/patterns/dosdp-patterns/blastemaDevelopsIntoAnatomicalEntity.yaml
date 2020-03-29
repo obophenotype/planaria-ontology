@@ -1,0 +1,77 @@
+pattern_name: blastemaDevelopsIntoAnatomicalEntity.yaml 
+pattern_iri: https://tobedetermined 
+description: "blastema is regenerating structure that develops into anatomical entity, head blastema"
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+
+classes:
+  anatomical_entity: UBERON:0001062
+  blastema_entity: PLANA:0000495
+
+relations:
+  develops into: RO:0002203
+
+  
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  depicted_by: foaf:depicted_by
+  image_comment: rdfs:comment
+  term_id: oboInOwl:id
+  has_obo_namespace: oboInOwl:hasOBONamespace
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+  blastema_entity: "'blastema_entity'"
+  depicted_by: "'depicted_by'"
+  image_comment: "'image_comment'"
+  has_obo_namespace: "'has_obo_namespace'"
+
+data_list_vars:
+  def_dbxref: xsd:string
+  exact_syns: xsd:string
+
+data_vars:
+  term_id: "'term_id'" 
+
+name:
+  text: "%s %s"
+  vars:
+   - anatomical_entity
+   - blastema_entity
+
+annotations:
+
+  - annotationProperty: depicted_by
+    var: depicted_by
+    annotations: 
+      - annotationProperty: image_comment
+        text: "%s"
+        vars:
+         - image_comment
+
+  - annotationProperty: term_id
+    text: "%s"
+    vars:
+     - term_id
+  
+  - annotationProperty: has_obo_namespace
+    text: "%s"
+    vars:
+      - has_obo_namespace
+
+exact_synonym:
+    value: exact_syns
+  
+def:
+  text: "%s which develops into %s"
+  vars:
+    - blastema_entity
+    - anatomical_entity
+  xrefs: def_dbxref
+
+subClassOf:
+  text: "%s and ('develops into' some %s)"
+  vars:
+    - blastema_entity
+    - anatomical_entity
