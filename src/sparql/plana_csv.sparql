@@ -1,0 +1,9 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?term ?label ?definition
+WHERE {
+ {
+   ?term rdfs:label ?label .
+   ?term <http://purl.obolibrary.org/obo/IAO_0000115> ?definition .
+ }
+ FILTER(isIRI(?term) && regex(str(?term), "PLANA_"))
+}
