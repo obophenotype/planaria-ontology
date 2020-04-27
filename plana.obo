@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2020-04-23
+data-version: releases/2020-04-27
 subsetdef: attribute_slim ""
 subsetdef: cell_quality ""
 subsetdef: gocheck_do_not_annotate ""
@@ -1047,6 +1047,7 @@ namespace: cellular_component
 alt_id: GO:0008372
 def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao1337158144]
 comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
+comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -1184,6 +1185,7 @@ alt_id: GO:0007582
 alt_id: GO:0044699
 def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [GOC:pdt]
 comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
+comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -2550,7 +2552,6 @@ xref: PMID:30399335
 xref: UBERON:0001016
 is_a: PLANA:0000114 ! anatomical system
 relationship: part_of PLANA:0007564 ! sexual organism
-relationship: part_of PLANA:0007565 ! asexual organism
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -4731,6 +4732,7 @@ xref: PMID:30729158
 xref: PMID:30962434
 xref: UBERON:0001017
 is_a: PLANA:0000025 ! nervous system
+relationship: part_of PLANA:0007565 ! asexual organism
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -7809,6 +7811,7 @@ synonym: "output neuron" EXACT []
 xref: CL:0000527
 is_a: PLANA:0000099 ! neuron
 relationship: part_of PLANA:0000080 ! peripheral nervous system
+relationship: part_of PLANA:0007565 ! asexual organism
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -7941,6 +7944,7 @@ xref: PMID:26711341
 xref: PMID:29184198
 is_a: PLANA:0000099 ! neuron
 relationship: part_of PLANA:0000080 ! peripheral nervous system
+relationship: part_of PLANA:0007565 ! asexual organism
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9265,6 +9269,7 @@ xref: PMID:24950970
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000499 ! cell
 relationship: part_of PLANA:0000025 ! nervous system
+relationship: part_of PLANA:0007565 ! asexual organism
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -9292,6 +9297,7 @@ xref: GO:0098793
 xref: PMID:24950970
 is_a: PLANA:0000099 ! neuron
 relationship: part_of PLANA:0000025 ! nervous system
+relationship: part_of PLANA:0007565 ! asexual organism
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9993,6 +9999,16 @@ intersection_of: part_of PLANA:0000421 ! tail
 relationship: has_component BSPO:0000079 ! dorsal region
 relationship: part_of PLANA:0000421 ! tail
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionoftail.png {comment="Illustration of the dorsal region of the tail (in green)."}
+
+[Term]
+id: PLANA:0003001
+name: lateral region of the whole animal
+def: "The lateral region of the medio-lateral axis of the whole animal." []
+synonym: "lateral region of whole organism" EXACT []
+intersection_of: has_component BSPO:0000082 ! lateral region
+intersection_of: part_of PLANA:0000136 ! whole organism
+relationship: has_component BSPO:0000082 ! lateral region
+relationship: part_of PLANA:0000136 ! whole organism
 
 [Term]
 id: PLANA:0003100
@@ -12068,6 +12084,7 @@ xref: PMID:25254346
 is_a: PLANA:0000012 ! neural progenitor cell
 is_a: PLANA:0000429 ! neoblast
 relationship: part_of PLANA:0000080 ! peripheral nervous system
+relationship: part_of PLANA:0007565 ! asexual organism
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -12089,6 +12106,7 @@ xref: PMID:17999079
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000113 ! tissue
 relationship: part_of PLANA:0000080 ! peripheral nervous system
+relationship: part_of PLANA:0007565 ! asexual organism
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
