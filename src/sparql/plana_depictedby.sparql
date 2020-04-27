@@ -1,9 +1,15 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT DISTINCT ?term ?label ?depictedby
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX depiction: <http://purl.obolibrary.org/obo/foaf_depiction>
+SELECT DISTINCT ?term ?label ?depictedby ?comment
 WHERE {
  {
    ?term rdfs:label ?label .
-   ?term <http://purl.obolibrary.org/obo/foaf_depiction> ?depictedby .
+   ?term depiction: ?depictedby .
+  ?annotation owl:annotatedSource ?term ;
+                    owl:annotatedProperty depiction: ;
+                    rdfs:comment ?comment .
+
  }
  FILTER(isIRI(?term) && regex(str(?term), "PLANA_")) .
  FILTER(regex(str(?depictedby), "png")) .
