@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2020-04-27
+data-version: releases/2020-05-04
 subsetdef: attribute_slim ""
 subsetdef: cell_quality ""
 subsetdef: gocheck_do_not_annotate ""
@@ -1202,6 +1202,7 @@ synonym: "single-organism process" RELATED []
 xref: Wikipedia:Biological_process
 is_a: BFO:0000015 ! process
 created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T15:05:24Z
 
 [Term]
@@ -1219,7 +1220,7 @@ synonym: "cellular physiological process" EXACT []
 synonym: "single-organism cellular process" RELATED []
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
-created_by: janelomax
+created_by: jl
 creation_date: 2012-12-11T16:56:55Z
 
 [Term]
@@ -1287,7 +1288,7 @@ intersection_of: GO:0008150 ! biological_process
 intersection_of: part_of GO:0000003 ! reproduction
 disjoint_from: GO:0044848 ! biological phase
 relationship: part_of GO:0000003 ! reproduction
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T15:56:06Z
 
 [Term]
@@ -1304,7 +1305,7 @@ synonym: "development" NARROW []
 synonym: "single-organism developmental process" RELATED []
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
-created_by: janelomax
+created_by: jl
 creation_date: 2012-12-19T12:21:31Z
 
 [Term]
@@ -1326,7 +1327,7 @@ comment: Note that phases are is_a disjoint from other biological processes. hap
 subset: gocheck_do_not_manually_annotate
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0071840 ! cellular component organization or biogenesis
-created_by: janelomax
+created_by: jl
 creation_date: 2014-07-16T13:12:40Z
 
 [Term]
@@ -1553,7 +1554,7 @@ synonym: "cellular component organisation or biogenesis" EXACT [GOC:mah]
 synonym: "cellular component organisation or biogenesis at cellular level" EXACT [GOC:mah]
 synonym: "cellular component organization or biogenesis at cellular level" EXACT []
 is_a: GO:0009987 ! cellular process
-created_by: midori
+created_by: mah
 creation_date: 2010-09-10T01:39:16Z
 
 [Term]
@@ -2052,6 +2053,10 @@ id: PLANA:0000011
 name: protonephridial progenitor cell
 def: "Neoblasts and post-mitotic, differentiating daughters coexpressing POU2-3, six1/2-2, Sal1, Eya and Osr,required for maintenance and regeneration of protonephridial cell types." [PMID:24523458, PMID:28072387]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000020 ! protonephridia
+relationship: develops_into PLANA:0000020 ! protonephridia
 
 [Term]
 id: PLANA:0000012
@@ -2062,6 +2067,10 @@ synonym: "neural precursor cell" EXACT []
 synonym: "neural progenitor cell" EXACT []
 synonym: "neuronal progenitor" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000025 ! nervous system
+relationship: develops_into PLANA:0000025 ! nervous system
 
 [Term]
 id: PLANA:0000013
@@ -2856,6 +2865,10 @@ name: epidermal progenitor cell
 def: "Mitotically active zeta neoblasts and their post-mitotic descendants which undergo progressive differentiation and outward directed movement through the mesenchyme prior to incorporation into the epidermis, where terminal differentiation occurs." [PMID:27150006, PMID:27606067, PMID:29674432, PMID:30282036]
 synonym: "epithelial progenitor" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000032 ! dorsal midline
+relationship: develops_into PLANA:0000032 ! dorsal midline
 
 [Term]
 id: PLANA:0000034
@@ -4804,6 +4817,10 @@ id: PLANA:0000110
 name: pharynx progenitor cell
 def: "foxA1+ neoblasts and their post-mitotic, differentiating daughters required for maintenance and regeneration of the pharynx." [PMID:24737865, PMID:25254346]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000016 ! pharynx
+relationship: develops_into PLANA:0000016 ! pharynx
 
 [Term]
 id: PLANA:0000111
@@ -10142,21 +10159,37 @@ def: "cell which is part of the prepharyngeal region" []
 id: PLANA:0003200
 name: G1 phase neoblast
 def: "neoblast undergoing mitotic G1 phase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003201
 name: S phase neoblast
 def: "neoblast undergoing mitotic S phase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003202
 name: G2 phase neoblast
 def: "neoblast undergoing mitotic G2 phase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003203
 name: prophase neoblast
 def: "neoblast undergoing mitotic prophase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/mitoticprophase.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic prophase (outlined). Note the difference in appearance compared to neighboring cells, nuclei labeled \"N.\" Scale bar is 2 um."}
 
 [Term]
@@ -10164,279 +10197,499 @@ id: PLANA:0003204
 name: metaphase neoblast
 def: "neoblast undergoing mitotic metaphase" []
 synonym: "M phase neoblast" EXACT []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/metaphaseneoblast.png {comment="Image is an electron micrograph depicting cells in the mesenchyme, near the regeneration blastema. In the middle of the image, outlined, a cell is undergoing mitotic metaphase. This cell's chromosomes can be seen in a vertical arrangement. Scale bar is 2um."}
 
 [Term]
 id: PLANA:0003205
 name: anaphase neoblast
 def: "neoblast undergoing mitotic anaphase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/anaphaseneoblast.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic anaphase. The entire cell has been outlined and the condensed chromatin is visible inside. Scale bar is 2um."}
 
 [Term]
 id: PLANA:0003206
 name: telophase neoblast
 def: "neoblast undergoing mitotic telophase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/mitotictelophase.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic telophase (outlined). The condensed chromatin is visible inside and has been partially outlined by the nuclear envelope. Scale bar is 1um."}
 
 [Term]
 id: PLANA:0003207
 name: G1 phase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic G1 phase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003208
 name: S phase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic S phase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003209
 name: G2 phase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic G2 phase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003210
 name: prophase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic prophase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003211
 name: metaphase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic metaphase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003212
 name: anaphase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic anaphase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003213
 name: telophase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic telophase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003214
 name: G1 phase oogonial stem cell
 def: "oogonial stem cell undergoing mitotic G1 phase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003215
 name: S phase oogonial stem cell
 def: "oogonial stem cell undergoing mitotic S phase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003216
 name: G2 phase  oogonial stem cell
 def: "oogonial stem cell undergoing mitotic G2 phase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003217
 name: prophase  oogonial stem cell
 def: "oogonial stem cell undergoing mitotic prophase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003218
 name: metaphase oogonial stem cell
 def: "oogonial stem cell undergoing mitotic metaphase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003219
 name: anaphase oogonial stem cell
 def: "oogonial stem cell undergoing mitotic anaphase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003220
 name: telophase  oogonial stem cell
 def: "oogonial stem cell undergoing mitotic telophase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003221
 name: G1 phase spermatogonium
 def: "spermatogonium undergoing mitotic G1 phase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003222
 name: S phase spermatogonium
 def: "spermatogonium undergoing mitotic S phase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003223
 name: G2 phase spermatogonium
 def: "spermatogonium undergoing mitotic G2 phase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003224
 name: prophase spermatogonium
 def: "spermatogonium undergoing mitotic prophase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003225
 name: metaphase spermatogonia
 def: "spermatogonium undergoing mitotic metaphase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003226
 name: anaphase spermatogonia
 def: "spermatogonium undergoing mitotic anaphase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003227
 name: telophase spermatogonium
 def: "spermatogonium undergoing mitotic telophase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003228
 name: G1 phase oogonial cell
 def: "oogonial cell undergoing mitotic G1 phase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003229
 name: S phase oogonial cell
 def: "oogonial cell undergoing mitotic S phase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003230
 name: G2 phase oogonial cell
 def: "oogonial cell undergoing mitotic G2 phase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003231
 name: prophase oogonial cell
 def: "oogonial cell undergoing mitotic prophase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003232
 name: metaphase oogonial cell
 def: "oogonial cell undergoing mitotic metaphase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003233
 name: anaphase oogonial cell
 def: "oogonial cell undergoing mitotic anaphase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003234
 name: telophase oogonial cell
 def: "oogonial cell undergoing mitotic telophase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003235
 name: G1 phase germ cell cyst
 def: "germ cell cyst undergoing mitotic G1 phase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003236
 name: S phase germ cell cyst
 def: "germ cell cyst undergoing mitotic S phase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003237
 name: G2 phase germ cell cyst
 def: "germ cell cyst undergoing mitotic G2 phase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003238
 name: prophase germ cell cyst
 def: "germ cell cyst undergoing mitotic prophase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003239
 name: metaphase germ cell cyst
 def: "germ cell cyst undergoing mitotic metaphase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003240
 name: anaphase germ cell cyst
 def: "germ cell cyst undergoing mitotic anaphase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003241
 name: telophase germ cell cyst
 def: "germ cell cyst undergoing mitotic telophase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003242
 name: meiotic S phase spermatocyte
 def: "spermatocyte undergoing meiotic S phase" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0051332 ! meiotic S phase
+relationship: contains_process GO:0051332 ! meiotic S phase
 
 [Term]
 id: PLANA:0003243
 name: meiotic G1 phase spermatocyte
 def: "spermatocyte undergoing meiotic G1 phase" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0051330 ! meiotic G1 phase
+relationship: contains_process GO:0051330 ! meiotic G1 phase
 
 [Term]
 id: PLANA:0003244
 name: meiotic G2 phase spermatocyte
 def: "spermatocyte undergoing meiotic G2 phase" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0051331 ! meiotic G2 phase
+relationship: contains_process GO:0051331 ! meiotic G2 phase
 
 [Term]
 id: PLANA:0003245
 name: meiotic prophase I spermatocyte
 def: "spermatocyte undergoing meiotic prophase I" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007128 ! meiotic prophase I
+relationship: contains_process GO:0007128 ! meiotic prophase I
 
 [Term]
 id: PLANA:0003246
 name: leptotene stage spermatocyte
 def: "spermatocyte undergoing leptotene" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000237 ! leptotene
+relationship: contains_process GO:0000237 ! leptotene
 
 [Term]
 id: PLANA:0003247
 name: zygotene stage spermatocyte
 def: "spermatocyte undergoing zygotene" [https://doi.org/10.1101/279364]
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000238 ! zygotene
+relationship: contains_process GO:0000238 ! zygotene
 
 [Term]
 id: PLANA:0003248
 name: pachytene stage spermatocyte
 def: "spermatocyte undergoing pachytene" [https://doi.org/10.1101/279364]
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000239 ! pachytene
+relationship: contains_process GO:0000239 ! pachytene
 
 [Term]
 id: PLANA:0003249
 name: diplotene stage spermatocyte
 def: "spermatocyte undergoing diplotene" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000240 ! diplotene
+relationship: contains_process GO:0000240 ! diplotene
 
 [Term]
 id: PLANA:0003250
 name: diakinesis stage spermatocyte
 def: "spermatocyte undergoing diakinesis" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000241 ! diakinesis
+relationship: contains_process GO:0000241 ! diakinesis
 
 [Term]
 id: PLANA:0003251
 name: meiotic metaphase 1 stage spermatocyte
 def: "spermatocyte undergoing meiotic metaphase I" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007132 ! meiotic metaphase I
+relationship: contains_process GO:0007132 ! meiotic metaphase I
 
 [Term]
 id: PLANA:0003252
 name: meiotic anaphase I stage spermatocyte
 def: "spermatocyte undergoing meiotic anaphase I" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007133 ! meiotic anaphase I
+relationship: contains_process GO:0007133 ! meiotic anaphase I
 
 [Term]
 id: PLANA:0003253
 name: meiotic telophase I spermatocyte
 def: "spermatocyte undergoing meiotic telophase I" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007134 ! meiotic telophase I
+relationship: contains_process GO:0007134 ! meiotic telophase I
 
 [Term]
 id: PLANA:0003254
 name: meiosis II stage spermatocyte
 def: "spermatocyte undergoing meiosis II cell cycle phase" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0098765 ! meiosis II cell cycle phase
+relationship: contains_process GO:0098765 ! meiosis II cell cycle phase
 
 [Term]
 id: PLANA:0003255
 name: meiotic prophase II spermatocyte
 def: "spermatocyte undergoing meiotic prophase II" []
+is_a: PLANA:0003254 ! meiosis II stage spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007136 ! meiotic prophase II
+relationship: contains_process GO:0007136 ! meiotic prophase II
 
 [Term]
 id: PLANA:0003256
 name: meiotic metaphase 2 spermatocyte
 def: "spermatocyte undergoing meiotic metaphase II" []
+is_a: PLANA:0003254 ! meiosis II stage spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007137 ! meiotic metaphase II
+relationship: contains_process GO:0007137 ! meiotic metaphase II
 
 [Term]
 id: PLANA:0003257
 name: meiotic anaphase II spermatocyte
 def: "spermatocyte undergoing meiotic anaphase II" []
+is_a: PLANA:0003254 ! meiosis II stage spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007138 ! meiotic anaphase II
+relationship: contains_process GO:0007138 ! meiotic anaphase II
 
 [Term]
 id: PLANA:0003258
 name: meiotic telophase II spermatocyte
 def: "spermatocyte undergoing meiotic telophase II" []
+is_a: PLANA:0003254 ! meiosis II stage spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007139 ! meiotic telophase II
+relationship: contains_process GO:0007139 ! meiotic telophase II
 
 [Term]
 id: PLANA:0003300
@@ -10449,6 +10702,10 @@ synonym: "brain rudiment" EXACT []
 synonym: "cephalic ganglia primordia" EXACT []
 synonym: "cephalic ganglia primordium" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000044 ! cephalic ganglia
+relationship: develops_into PLANA:0000044 ! cephalic ganglia
 
 [Term]
 id: PLANA:0003301
@@ -10456,12 +10713,20 @@ name: eye primordium
 def: "This primordium develops into eye" [PMID:22884275]
 synonym: "eye aggregate" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000036 ! eye
+relationship: develops_into PLANA:0000036 ! eye
 
 [Term]
 id: PLANA:0003302
 name: pharynx primordium
 def: "This primordium develops into pharynx" [PMID:18202849, PMID:21282632, PMID:25254346, PMID:26556349, PMID:27074666]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000016 ! pharynx
+relationship: develops_into PLANA:0000016 ! pharynx
 
 [Term]
 id: PLANA:0003303
@@ -10469,47 +10734,77 @@ name: pigment cup primordium
 def: "This primordium develops into optic cup" [PMID:21852957]
 synonym: "optic cup primordium" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000075 ! optic cup
+relationship: develops_into PLANA:0000075 ! optic cup
 
 [Term]
 id: PLANA:0003304
 name: testis primordium
 def: "This primordium develops into testis" [PMID:23652002]
-is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0003305 ! gonad primoridium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000208 ! testis
+relationship: develops_into PLANA:0000208 ! testis
 
 [Term]
 id: PLANA:0003305
 name: gonad primoridium
 def: "This primordium develops into gonad" []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000217 ! gonad
+relationship: develops_into PLANA:0000217 ! gonad
 
 [Term]
 id: PLANA:0003306
 name: ovary primordium
 def: "This primordium develops into ovary" []
-is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0003305 ! gonad primoridium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000204 ! ovary
+relationship: develops_into PLANA:0000204 ! ovary
 
 [Term]
 id: PLANA:0003400
 name: protonephridial lumen
 def: "lumen which is part of the protonephridia" [PMID:26057828]
+is_a: PLANA:0002053 ! lumen
+intersection_of: PLANA:0002053 ! lumen
+intersection_of: part_of PLANA:0000020 ! protonephridia
+relationship: part_of PLANA:0000020 ! protonephridia
 
 [Term]
 id: PLANA:0003401
 name: testis lumen
 def: "lumen which is part of the testis" [PMID:17390146]
 is_a: BFO:0000004 ! independent continuant
+is_a: PLANA:0002053 ! lumen
+intersection_of: PLANA:0002053 ! lumen
+intersection_of: part_of PLANA:0000208 ! testis
+relationship: part_of PLANA:0000208 ! testis
 
 [Term]
 id: PLANA:0003402
 name: ovary lumen
 def: "lumen which is part of the ovary" [PMID:19247960]
 is_a: BFO:0000004 ! independent continuant
+is_a: PLANA:0002053 ! lumen
+intersection_of: PLANA:0002053 ! lumen
+intersection_of: part_of PLANA:0000204 ! ovary
+relationship: part_of PLANA:0000204 ! ovary
 
 [Term]
 id: PLANA:0003403
 name: flame cell lumen
 def: "lumen which is part of the flame cell" [PMID:21828097]
 synonym: "flame cell barrel lumen" EXACT []
+is_a: PLANA:0003400 ! protonephridial lumen
+intersection_of: PLANA:0002053 ! lumen
+intersection_of: part_of PLANA:0000065 ! flame cell
+relationship: part_of PLANA:0000065 ! flame cell
 
 [Term]
 id: PLANA:0003500
@@ -10518,12 +10813,19 @@ def: "A progenitor cell that gives rise to one or more of the cell type(s) in th
 synonym: "brain progenitor" EXACT []
 synonym: "brain progentitor cell" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000044 ! cephalic ganglia
+relationship: develops_into PLANA:0000044 ! cephalic ganglia
 
 [Term]
 id: PLANA:0003501
 name: dorsal epidermis progenitor cell
 def: "A progenitor cell that gives rise to one or more of the cell type(s) in the dorsal epidermis." [PMID:28292427]
-is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0003503 ! ventral epidermis progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000054 ! dorsal region of the epidermis
+relationship: develops_into PLANA:0000054 ! dorsal region of the epidermis
 
 [Term]
 id: PLANA:0003502
@@ -10531,24 +10833,40 @@ name: optic cup progenitor cell
 def: "A progenitor cell that gives rise to optic cup cells of the eye." [PMID:21852957]
 synonym: "optic cup trail cell" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000075 ! optic cup
+relationship: develops_into PLANA:0000075 ! optic cup
 
 [Term]
 id: PLANA:0003503
 name: ventral epidermis progenitor cell
 def: "A progenitor cell that gives rise to one or more of the cell type(s) in the epidermis." [PMID:28292427]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000096 ! ventral epidermis
+relationship: develops_into PLANA:0000096 ! ventral epidermis
 
 [Term]
 id: PLANA:0003504
 name: testis somatic gonadal cell progenitor cell
 def: "This progenitor cell develops into testis somatic gonadal cell" [PMID: 23652002]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0004506 ! testis somatic gonadal cell
+relationship: develops_into PLANA:0004506 ! testis somatic gonadal cell
 
 [Term]
 id: PLANA:0003600
 name: head fragment
 def: "A fragment derived from a prepharyngeal amputation encompassing the head." []
 synonym: "head piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0000418 ! derives from head
+relationship: RO:0001000 PLANA:0000418 ! derives from head
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/headfragment.png {comment="A fragment derived from a prepharyngeal amputation encompassing the head."}
 
 [Term]
@@ -10556,6 +10874,10 @@ id: PLANA:0003601
 name: trunk fragment
 def: "A fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
 synonym: "trunk piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0000420 ! derives from parapharyngeal region
+relationship: RO:0001000 PLANA:0000420 ! derives from parapharyngeal region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/trunkfragment.png {comment="Illustration of a trunk fragment (in green)."}
 
 [Term]
@@ -10563,6 +10885,10 @@ id: PLANA:0003602
 name: tail fragment
 def: "A fragment derived from a postpharyngeal amputation encompassing the tail." []
 synonym: "tail piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0000421 ! derives from tail
+relationship: RO:0001000 PLANA:0000421 ! derives from tail
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/tailfragment.png {comment="A fragment derived from a postpharyngeal amputation encompassing the tail."}
 
 [Term]
@@ -10571,6 +10897,10 @@ name: prepharyngeal fragment
 def: "A fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
 synonym: "neck fragment" EXACT []
 synonym: "neck piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0000419 ! derives from prepharyngeal region
+relationship: RO:0001000 PLANA:0000419 ! derives from prepharyngeal region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/prepharyngealfragment.png {comment="Illustration of a prepharyngeal fragment (in green)."}
 
 [Term]
@@ -10580,18 +10910,30 @@ def: "A fragment derived from two postpharyngeal amputations, removing the anter
 synonym: "post-pharyngeal fragment" EXACT []
 synonym: "post-pharyngeal piece" EXACT []
 synonym: "postpharyngeal piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0002113 ! derives from post-pharyngeal region
+relationship: RO:0001000 PLANA:0002113 ! derives from post-pharyngeal region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/postpharyngealfragment.png {comment="Illustration of a postpharyngeal fragment (in green)."}
 
 [Term]
 id: PLANA:0003605
 name: anterior fragment
 def: "A fragment encompassing all or part of the anterior region of the animal." []
+is_a: PLANA:0003606 ! posterior fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 BSPO:0000071 ! derives from anterior region
+relationship: RO:0001000 BSPO:0000071 ! derives from anterior region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/anteriorfragment.png {comment="A fragment encompassing all or part of the anterior region of the animal."}
 
 [Term]
 id: PLANA:0003606
 name: posterior fragment
 def: "A fragment encompassing all or part of the posterior region of the animal." []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 BSPO:0000072 ! derives from posterior region
+relationship: RO:0001000 BSPO:0000072 ! derives from posterior region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/posteriorfragment.png {comment="Illustration of an example of a posterior fragment (in green)."}
 
 [Term]
@@ -10602,24 +10944,40 @@ synonym: "edge fragment" EXACT []
 synonym: "longitudinal fragment" EXACT []
 synonym: "sagittal fragment" EXACT []
 synonym: "side fragment" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 BSPO:0000066 ! derives from lateral side
+relationship: RO:0001000 BSPO:0000066 ! derives from lateral side
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/lateralfragment.png {comment="http://purl.obolibrary.org/obo/A fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region. [SMR_ a fragment that encompasses the side of the animal, not necessarily longituduinal, or parallel to the midline]"}
 
 [Term]
 id: PLANA:0003608
 name: longitudinal fragment
 def: "a fragment derived from an amputation parallel to the midline." []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0002129 ! derives from longitudinal region
+relationship: RO:0001000 PLANA:0002129 ! derives from longitudinal region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/longitudinalfragment.png {comment="a fragment derived from an amputation parallel to the midline."}
 
 [Term]
 id: PLANA:0003609
 name: plug fragment
 def: "A 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PATO:0040012 ! derives from plug shaped
+relationship: RO:0001000 PATO:0040012 ! derives from plug shaped
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/plugfragment.png {comment="Illustration of an example plug fragment in green."}
 
 [Term]
 id: PLANA:0003610
 name: wedge fragment
 def: "A piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PATO:0001955 ! derives from cuneate
+relationship: RO:0001000 PATO:0001955 ! derives from cuneate
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/wedgefragment.png {comment="Illustration of an example wedge fragment in green."}
 
 [Term]
@@ -10848,9 +11206,9 @@ name: dorsal region of anterior fragment
 def: "The dorsal region of a fragment encompassing all or part of the anterior region of the animal." []
 synonym: "dorsal region of anterior fragment" EXACT []
 is_a: PLANA:0003721 ! ventral region of anterior fragment
+is_a: PLANA:0003724 ! dorsal region of posterior fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003605 ! anterior fragment
-relationship: has_component BSPO:0000079 ! dorsal region
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionofanteriorfragment.png {comment="Illustration of the dorsal region of an anterior fragment (green)."}
 
 [Term]
@@ -10858,9 +11216,9 @@ id: PLANA:0003721
 name: ventral region of anterior fragment
 def: "The ventral region of a fragment encompassing all or part of the anterior region of the animal." []
 synonym: "ventral region of anterior fragment" EXACT []
+is_a: PLANA:0003725 ! ventral region of posterior fragment
 intersection_of: has_component BSPO:0000084 ! ventral region
 intersection_of: part_of PLANA:0003605 ! anterior fragment
-relationship: has_component BSPO:0000084 ! ventral region
 relationship: part_of PLANA:0003605 ! anterior fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/ventralregionofanteriorfragment.png {comment="Illustration of the ventral region of an anterior fragment (green)."}
 
@@ -10870,9 +11228,9 @@ name: anterior region of anterior fragment
 def: "The anterior region of a fragment encompassing all or part of the anterior region of the animal." []
 synonym: "anterior region of anterior fragment" EXACT []
 is_a: PLANA:0003723 ! posterior region of anterior fragment
+is_a: PLANA:0003726 ! anterior region of posterior fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003605 ! anterior fragment
-relationship: has_component BSPO:0000071 ! anterior region
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionofanteriorfragment.png {comment="Illustration of the anterior region of an anterior fragment (green)."}
 
 [Term]
@@ -10880,9 +11238,9 @@ id: PLANA:0003723
 name: posterior region of anterior fragment
 def: "The posterior region of a fragment encompassing all or part of the anterior region of the animal." []
 synonym: "posterior region of anterior fragment" EXACT []
+is_a: PLANA:0003727 ! posterior region of posterior fragment
 intersection_of: has_component BSPO:0000072 ! posterior region
 intersection_of: part_of PLANA:0003605 ! anterior fragment
-relationship: has_component BSPO:0000072 ! posterior region
 relationship: part_of PLANA:0003605 ! anterior fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/posteriorregionofanteriorfragment.png {comment="Illustration of the posterior region of an anterior fragment (green)."}
 
@@ -11132,12 +11490,20 @@ id: PLANA:0003900
 name: head blastema
 def: "blastema which develops into head" []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000495 ! blastema
+intersection_of: PLANA:0000495 ! blastema
+intersection_of: develops_into PLANA:0000418 ! head
+relationship: develops_into PLANA:0000418 ! head
 
 [Term]
 id: PLANA:0003901
 name: tail blastema
 def: "blastema which develops into tail" []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000495 ! blastema
+intersection_of: PLANA:0000495 ! blastema
+intersection_of: develops_into PLANA:0000421 ! tail
+relationship: develops_into PLANA:0000421 ! tail
 
 [Term]
 id: PLANA:0004503
