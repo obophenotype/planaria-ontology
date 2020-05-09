@@ -21,7 +21,7 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/plana/plana-full.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2020-05-04/plana-full.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2020-05-09/plana-full.owl"/>
         <oboInOwl:default-namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:default-namespace>
         <oboInOwl:hasOBOFormatVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2</oboInOwl:hasOBOFormatVersion>
         <oboInOwl:treat-xrefs-as-genus-differentia>CARO part_of NCBITaxon:79327; CL part_of NCBITaxon:79327</oboInOwl:treat-xrefs-as-genus-differentia>
@@ -1305,28 +1305,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BSPO_0000105 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000105">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000126"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <obo:IAO_0000115>On the same side as. For example, the left arm is ipsilateral to the left leg.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>BSPO:0000105</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>ipsilateral_to</oboInOwl:id>
-        <oboInOwl:shorthand>ipsilateral_to</oboInOwl:shorthand>
-        <rdfs:label>ipsilateral to</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/FBql_00005850"/>
-    </owl:ObjectProperty>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000105"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>On the same side as. For example, the left arm is ipsilateral to the left leg.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BSPO_0000107 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000107">
@@ -1371,7 +1349,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/BSPO_0000113 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000113">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000105"/>
         <obo:IAO_0000115>Direcly opposite to. i.e. on the opposite side through the axis.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BSPO:0000113</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
@@ -1384,27 +1361,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Direcly opposite to. i.e. on the opposite side through the axis.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BSPO_0000126 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000126">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        <obo:IAO_0000115>X in lateral side of Y &lt;=&gt; if X is in left side of Y or X is in right side of Y. X is often, but not always a paired structure</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>BSPO:0000126</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>in_lateral_side_of</oboInOwl:id>
-        <oboInOwl:shorthand>in_lateral_side_of</oboInOwl:shorthand>
-        <rdfs:label>in lateral side of</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern</rdfs:seeAlso>
-    </owl:ObjectProperty>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000126"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>X in lateral side of Y &lt;=&gt; if X is in left side of Y or X is in right side of Y. X is often, but not always a paired structure</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:cjm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -4268,8 +4224,8 @@ For example, A and B may be gene products and binding of B by A positively regul
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000027"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000030"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000079"/>
         <obo:IAO_0000115>Anatomical region that overlaps the anterior and dorsal regions of a body or body part.</obo:IAO_0000115>
         <oboInOwl:created_by>Melissa  Haendel</oboInOwl:created_by>
         <oboInOwl:creation_date>2009-06-15T01:01:38Z</oboInOwl:creation_date>
@@ -4305,8 +4261,8 @@ For example, A and B may be gene products and binding of B by A positively regul
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000035"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000084"/>
         <obo:IAO_0000115>Anatomical region that overlaps the anterior and ventral regions of a body or body part.</obo:IAO_0000115>
         <oboInOwl:created_by>Melissa  Haendel</oboInOwl:created_by>
         <oboInOwl:creation_date>2009-06-15T01:04:59Z</oboInOwl:creation_date>
@@ -4379,8 +4335,8 @@ For example, A and B may be gene products and binding of B by A positively regul
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000028"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000082"/>
         <obo:IAO_0000115>Anatomical region that overlaps the anterior and lateral regions of a body or body part.</obo:IAO_0000115>
         <oboInOwl:created_by>Melissa  Haendel</oboInOwl:created_by>
         <oboInOwl:creation_date>2009-06-15T01:07:18Z</oboInOwl:creation_date>
@@ -4416,7 +4372,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000035"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000079"/>
         <obo:IAO_0000115>Anatomical region that overlaps the posterior and dorsal regions of the body or body part.</obo:IAO_0000115>
         <oboInOwl:created_by>Melissa  Haendel</oboInOwl:created_by>
@@ -4495,7 +4451,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BSPO_0000055">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000054"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000096"/>
@@ -4577,7 +4532,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BSPO_0000057">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000054"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000074"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000113"/>
@@ -4639,7 +4593,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BSPO_0000063">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000054"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000084"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000098"/>
@@ -4751,7 +4704,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000070"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
@@ -4823,7 +4776,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000074"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000070"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
@@ -4895,7 +4848,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000084"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000070"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
@@ -4936,7 +4889,7 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000079"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000085"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000082"/>
         <obo:IAO_0000115>Anatomical region that overlaps the dorsal and lateral regions of a body or body part.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>FBql:00005845</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>dorsolateral region</oboInOwl:hasExactSynonym>
@@ -8906,6 +8859,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000096"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002063"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -8925,6 +8884,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -9244,6 +9209,12 @@ Previous. An information content entity is a non-realizable information entity t
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000096"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000140"/>
             </owl:Restriction>
@@ -9258,6 +9229,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -9577,6 +9554,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -9830,6 +9813,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -10228,7 +10217,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000038"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000030"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -10317,6 +10311,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -10505,6 +10505,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -11035,6 +11041,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -11179,6 +11191,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -11344,6 +11362,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -11627,6 +11651,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -11920,8 +11950,14 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000096"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000034"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="http://purl.obolibrary.org/obo/plana/images/dorsalepidermis.png"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal epithelium</oboInOwl:hasExactSynonym>
@@ -12728,6 +12764,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -12832,6 +12874,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -13017,6 +13065,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -13116,6 +13170,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -13621,6 +13681,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -13718,6 +13784,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -15171,6 +15243,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000419"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -16459,7 +16537,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000136"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -17813,6 +17896,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004527"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -18105,6 +18194,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0004527"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -18381,6 +18476,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -18632,6 +18733,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000420"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -18710,6 +18817,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -18931,6 +19044,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -19732,6 +19851,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -20498,6 +20623,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -20580,6 +20711,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -21267,6 +21404,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -23564,6 +23707,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -24068,6 +24217,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000418"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -24176,6 +24331,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000141"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -24736,6 +24897,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -25904,6 +26071,12 @@ Previous. An information content entity is a non-realizable information entity t
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000214"/>
             </owl:Restriction>
@@ -26389,6 +26562,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -28409,6 +28588,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000420"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -28524,6 +28709,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -31434,7 +31625,8 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003503"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000120"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002203"/>
@@ -31762,7 +31954,7 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003606"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002128"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
@@ -31985,7 +32177,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003701"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003600"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32068,7 +32265,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003703"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003600"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32151,7 +32353,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003705"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003601"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32234,7 +32441,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003707"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003601"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32317,7 +32529,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003709"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003602"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32400,7 +32617,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003711"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003602"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32483,7 +32705,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003713"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003603"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32566,7 +32793,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003715"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003603"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32649,7 +32881,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003717"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003604"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32732,7 +32969,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003719"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003604"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -32815,8 +33057,18 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003721"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003724"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003605"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000079"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dorsal region of a fragment encompassing all or part of the anterior region of the animal.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="http://purl.obolibrary.org/obo/plana/images/dorsalregionofanteriorfragment.png"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal region of anterior fragment</oboInOwl:hasExactSynonym>
@@ -32849,11 +33101,16 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003725"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003605"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000084"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ventral region of a fragment encompassing all or part of the anterior region of the animal.</obo:IAO_0000115>
@@ -32888,8 +33145,18 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003723"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003726"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003605"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000071"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterior region of a fragment encompassing all or part of the anterior region of the animal.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="http://purl.obolibrary.org/obo/plana/images/anteriorregionofanteriorfragment.png"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of anterior fragment</oboInOwl:hasExactSynonym>
@@ -32922,11 +33189,16 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003727"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003605"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000072"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The posterior region of a fragment encompassing all or part of the anterior region of the animal.</obo:IAO_0000115>
@@ -32961,7 +33233,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003725"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33044,7 +33321,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003727"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33127,7 +33409,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003729"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003607"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33210,7 +33497,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003731"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003607"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33293,7 +33585,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003733"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003608"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33376,7 +33673,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003735"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003608"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33459,7 +33761,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003737"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003609"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33542,7 +33849,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003739"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003609"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33625,7 +33937,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003741"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003610"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33708,7 +34025,12 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003743"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003610"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
@@ -33791,8 +34113,14 @@ Previous. An information content entity is a non-realizable information entity t
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000140"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003801"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of photoreceptor neuron</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior region of photoreceptor neuron</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planarian_Anatomy</oboInOwl:hasOBONamespace>
@@ -35111,6 +35439,12 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000419"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -36180,6 +36514,12 @@ Previous. An information content entity is a non-realizable information entity t
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001018"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

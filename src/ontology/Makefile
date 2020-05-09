@@ -278,7 +278,7 @@ mirror/pato.owl: mirror/pato.trigger
 mirror/bspo.trigger: $(SRC)
 
 mirror/bspo.owl: mirror/bspo.trigger
-	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/bspo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://gist.githubusercontent.com/srobb1/a95fe7d11164eb638c8f54f888cf4901/raw/ca513ae30063b6e45b9aebcfc882cf262a824e5b/bspo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 .PRECIOUS: mirror/%.owl
 
@@ -414,7 +414,7 @@ $(PATTERNDIR)/definitions.owl: prepare_patterns update_patterns dosdp_patterns_d
 
 individual_patterns_names_default := $(strip $(patsubst %.tsv,%, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv))))
 dosdp_patterns_default: $(SRC) all_imports .FORCE
-	@if [ $(PAT) = true ] && [ "${individual_patterns_names_default}" ]; then $(DOSDPT) generate --catalog=catalog-v001.xml --infile=$(PATTERNDIR)/data/default/ --template=$(PATTERNDIR)/dosdp-patterns --batch-patterns="$(individual_patterns_names_default)" --ontology=$< --obo-prefixes=true  --outfile=$(PATTERNDIR)/data/default; fi
+	@if [ $(PAT) = true ] && [ "${individual_patterns_names_default}" ]; then $(DOSDPT) generate --catalog=catalog-v001.xml --infile=$(PATTERNDIR)/data/default/ --template=$(PATTERNDIR)/dosdp-patterns --batch-patterns="$(individual_patterns_names_default)" --ontology=$< --obo-prefixes=true --outfile=$(PATTERNDIR)/data/default; fi
 
 
 
