@@ -1,0 +1,13 @@
+sh getSheets.sh
+
+#check the resulting tsv for changes
+
+for i in *tsv ; do diff $i ../data/default/$i ; done
+
+# if all is good:
+# cp *tsv ../data/default/.
+# rm *tsv
+
+# main term management
+# cd ../default/data
+# perl ../../format_plana_terms.pl ../../getGoogleSheets/term_management/plana_terms.tsv
