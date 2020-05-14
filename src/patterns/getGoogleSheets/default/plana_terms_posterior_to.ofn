@@ -1,0 +1,40 @@
+Prefix(:=<urn:unnamed:ontology#ont17#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<urn:unnamed:ontology#ont17>
+
+Declaration(Class(<http://purl.obolibrary.org/obo/PLANA_0000418>))
+Declaration(Class(<http://purl.obolibrary.org/obo/PLANA_0000419>))
+Declaration(Class(<http://purl.obolibrary.org/obo/PLANA_0000420>))
+Declaration(Class(<http://purl.obolibrary.org/obo/PLANA_0000421>))
+Declaration(Class(<http://purl.obolibrary.org/obo/PLANA_0004527>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BSPO_0000099>))
+
+############################
+#   Classes
+############################
+
+# Class: <http://purl.obolibrary.org/obo/PLANA_0000419> (<http://purl.obolibrary.org/obo/PLANA_0000419>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/PLANA_0000419> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BSPO_0000099> <http://purl.obolibrary.org/obo/PLANA_0000418>))
+
+# Class: <http://purl.obolibrary.org/obo/PLANA_0000420> (<http://purl.obolibrary.org/obo/PLANA_0000420>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/PLANA_0000420> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BSPO_0000099> <http://purl.obolibrary.org/obo/PLANA_0000419>))
+
+# Class: <http://purl.obolibrary.org/obo/PLANA_0000421> (<http://purl.obolibrary.org/obo/PLANA_0000421>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/PLANA_0000421> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BSPO_0000099> <http://purl.obolibrary.org/obo/PLANA_0000420>))
+SubClassOf(<http://purl.obolibrary.org/obo/PLANA_0000421> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BSPO_0000099> <http://purl.obolibrary.org/obo/PLANA_0004527>))
+
+# Class: <http://purl.obolibrary.org/obo/PLANA_0004527> (<http://purl.obolibrary.org/obo/PLANA_0004527>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/PLANA_0004527> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BSPO_0000099> <http://purl.obolibrary.org/obo/PLANA_0000420>))
+
+
+)

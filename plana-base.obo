@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2020-05-09/plana-base.owl
+data-version: plana/releases/2020-05-14/plana-base.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -2247,6 +2247,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000081
 name: pharynx pouch
 def: "An epithelial structure housing the pharynx, connected to the esophagus and mouth." [OCLC:16809160]
+synonym: "pharyngeal pocket" EXACT []
 synonym: "pharyngeal pouch" EXACT []
 xref: OCLC:16809160
 is_a: PLANA:0000113 ! tissue
@@ -4270,6 +4271,7 @@ xref: PMID:29674431
 is_a: PLANA:0000102 ! anatomical region
 relationship: BSPO:0000096 PLANA:0000420 ! parapharyngeal region
 relationship: BSPO:0000099 PLANA:0000418 ! head
+relationship: RO:0001018 PLANA:0000140 ! anterior region of the whole animal
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -4309,6 +4311,7 @@ def: "Caudal region, beginning at the mouth and ending at posterior pole." []
 is_a: PLANA:0000102 ! anatomical region
 relationship: BSPO:0000099 PLANA:0000420 ! parapharyngeal region
 relationship: BSPO:0000099 PLANA:0004527 ! copulatory region
+relationship: RO:0001018 PLANA:0000142 ! posterior region of the whole animal
 relationship: RO:0002490 PLANA:0000007 ! Stage 7
 relationship: RO:0002490 PLANA:0000008 ! Stage 8
 relationship: RO:0002490 PLANA:0000214 ! juvenile
@@ -5456,6 +5459,7 @@ name: cytoplasmic part
 def: "Any constituent part of the cytoplasm, all of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." [GO:0044444]
 xref: GO:0044444
 is_a: PLANA:0000509 ! intracellular part
+relationship: BFO:0000050 PLANA:0000510 ! cytoplasm
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -5628,6 +5632,7 @@ name: chromatin
 def: "The ordered and organized complex of DNA, protein (histones), and sometimes RNA, that forms the chromosome." [GO:0000785]
 xref: GO:0000785
 is_a: PLANA:0000532 ! nuclear part
+relationship: BFO:0000050 PLANA:0000529 ! nucleus
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/chromatin.png {comment="Image is an electron micrograph showing a mitotic cell with condensed chromatin (arrowhead). Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -5980,8 +5985,11 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0002000
 name: adenal rhabdite
 def: "Rhabdites that are located basally to the epidermis, in the mesenchyme. In Smed these are present in cells likely on their way to becoming part of the mature epidermis." [ISBN:9780070316607]
+comment: http://purl.obolibrary.org/obo/part_of 'dorsal epidermis progenitor cell' (PLANA_0003501), 'ventral epidermis progenitor cell' (PLANA:0003503)because EM data we can see immature adenal rhbadites in cells just underneath the basal lamina dorsally and ventrally.
 xref: ISBN:9780070316607
 is_a: PLANA:0000104 ! rhabdite
+relationship: BFO:0000050 PLANA:0003501 ! dorsal epidermis progenitor cell
+relationship: BFO:0000050 PLANA:0003503 ! ventral epidermis progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -6457,7 +6465,7 @@ name: chromosome arm
 def: "Under the microscope chromosomes appear as thin, thread-like structures. They all have a short arm and long arm separated by a primary constriction called the centromere. The short arm is designated as p and the long arm as q." [NCIT:C13355]
 xref: NCIT:C13355
 xref: PMID:25404302
-is_a: PLANA:0000532 ! nuclear part
+is_a: PLANA:0002121 ! chromosome part
 relationship: BFO:0000050 PLANA:0002021 ! chromosome
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/chromosomearm.png {comment="Image is an electron micrograph showing a mitotic cell. An arrowhead marks the long arm of a chromosome. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -6621,8 +6629,11 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0002033
 name: epidermal rhabdite
 def: "Rhabdites located within epidermal cells." [ISBN:9780070316607]
+comment: http://purl.obolibrary.org/obo/part of 'dorsal epidermal cell' (PLANA_0003105) and 'ventral epidermal cell' (PLANA:0003101) added because we see rhabdites in both in EM data
 xref: ISBN:9780070316607
 is_a: PLANA:0000104 ! rhabdite
+relationship: BFO:0000050 PLANA:0003101 ! ventral epidermis cell
+relationship: BFO:0000050 PLANA:0003105 ! dorsal epidermis cell
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! asexual adult
@@ -7063,6 +7074,7 @@ name: nuclear lumen
 def: "The volume enclosed by the nuclear inner membrane." [GO:0031981]
 xref: GO:0031981
 is_a: PLANA:0000532 ! nuclear part
+relationship: BFO:0000050 PLANA:0000529 ! nucleus
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -7083,6 +7095,7 @@ def: "The portion of the nuclear lumen proximal to the inner nuclear membrane." 
 xref: GO:0034399
 xref: PMID:25404302
 is_a: PLANA:0000532 ! nuclear part
+relationship: BFO:0000050 PLANA:0000529 ! nucleus
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -7531,7 +7544,6 @@ id: PLANA:0002104
 name: tail tip
 def: "The posterior-medial region of the tail margin." []
 is_a: PLANA:0000102 ! anatomical region
-relationship: RO:0001018 PLANA:0000142 ! posterior region of the whole animal
 relationship: RO:0001018 PLANA:0000421 ! tail
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
@@ -7547,7 +7559,7 @@ xref: GO:0000781
 xref: https://doi.org/10.1101/279364
 xref: PMID:22371573
 xref: PMID:25404302
-is_a: PLANA:0002121 ! chromosome_part
+is_a: PLANA:0002121 ! chromosome part
 relationship: BFO:0000050 PLANA:0002022 ! chromosome arm
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -7756,7 +7768,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 
 [Term]
 id: PLANA:0002121
-name: chromosome_part
+name: chromosome part
 def: "This is a manufactured term, that serves the purpose of allow the parts of a chromosome to have an is_a path to the root." [SO:0000830]
 xref: SO:0000830
 is_a: PLANA:0000532 ! nuclear part
@@ -7776,7 +7788,7 @@ name: chromosomal_structural_element
 def: "structural element of a chromosome, for example, a telomere and a centromere" [SO:0000628]
 synonym: "chromosomal structural element" EXACT []
 xref: SO:0000628
-is_a: PLANA:0002121 ! chromosome_part
+is_a: PLANA:0002121 ! chromosome part
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -8497,43 +8509,60 @@ intersection_of: BFO:0000067 GO:0007139
 [Term]
 id: PLANA:0003300
 name: cephalic ganglia primordium
-def: "This primordium develops into cephalic ganglia" [PMID:16033796, PMID:17553481, PMID:17905225, PMID:19174194, PMID:21806978, PMID:22339734, PMID:23318635, PMID:25772472, PMID:26525673]
+def: "This primordium develops into cephalic ganglia" []
 synonym: "brain primordia" EXACT []
 synonym: "brain primordium" EXACT []
 synonym: "brain primoridia" EXACT []
 synonym: "brain rudiment" EXACT []
 synonym: "cephalic ganglia primordia" EXACT []
 synonym: "cephalic ganglia primordium" EXACT []
+xref: PMID:16033796
+xref: PMID:17553481
+xref: PMID:17905225
+xref: PMID:19174194
+xref: PMID:21806978
+xref: PMID:22339734
+xref: PMID:23318635
+xref: PMID:25772472
+xref: PMID:26525673
 intersection_of: PLANA:0000131 ! primordium
 intersection_of: RO:0002203 PLANA:0000044 ! cephalic ganglia
 
 [Term]
 id: PLANA:0003301
 name: eye primordium
-def: "This primordium develops into eye" [PMID:22884275]
+def: "This primordium develops into eye" []
 synonym: "eye aggregate" EXACT []
+xref: PMID:22884275
 intersection_of: PLANA:0000131 ! primordium
 intersection_of: RO:0002203 PLANA:0000036 ! eye
 
 [Term]
 id: PLANA:0003302
 name: pharynx primordium
-def: "This primordium develops into pharynx" [PMID:18202849, PMID:21282632, PMID:25254346, PMID:26556349, PMID:27074666]
+def: "This primordium develops into pharynx" []
+xref: PMID:18202849
+xref: PMID:21282632
+xref: PMID:25254346
+xref: PMID:26556349
+xref: PMID:27074666
 intersection_of: PLANA:0000131 ! primordium
 intersection_of: RO:0002203 PLANA:0000016 ! pharynx
 
 [Term]
 id: PLANA:0003303
 name: pigment cup primordium
-def: "This primordium develops into optic cup" [PMID:21852957]
+def: "This primordium develops into optic cup" []
 synonym: "optic cup primordium" EXACT []
+xref: PMID:21852957
 intersection_of: PLANA:0000131 ! primordium
 intersection_of: RO:0002203 PLANA:0000075 ! optic cup
 
 [Term]
 id: PLANA:0003304
 name: testis primordium
-def: "This primordium develops into testis" [PMID:23652002]
+def: "This primordium develops into testis" []
+xref: PMID:23652002
 intersection_of: PLANA:0000131 ! primordium
 intersection_of: RO:0002203 PLANA:0000208 ! testis
 
@@ -9393,6 +9422,7 @@ def: "Portion of the sexual biotype body plan immediately posterior to the parap
 xref: PMID:22074376
 is_a: PLANA:0000102 ! anatomical region
 relationship: BSPO:0000099 PLANA:0000420 ! parapharyngeal region
+relationship: RO:0001018 PLANA:0000142 ! posterior region of the whole animal
 relationship: RO:0002490 PLANA:0000214 ! juvenile
 relationship: RO:0002490 PLANA:0004503 ! adult hermaphrodite
 relationship: RO:0002496 PLANA:0000214 ! juvenile
@@ -9727,6 +9757,7 @@ xref: PMID:26062938
 xref: PMID:27074666
 xref: PMID:30485821
 is_a: PLANA:0000102 ! anatomical region
+relationship: RO:0001018 PLANA:0000030 ! midline
 relationship: RO:0001018 PLANA:0002104 ! tail tip
 relationship: RO:0002490 PLANA:0000007 ! Stage 7
 relationship: RO:0002490 PLANA:0000008 ! Stage 8

@@ -278,7 +278,7 @@ mirror/pato.owl: mirror/pato.trigger
 mirror/bspo.trigger: $(SRC)
 
 mirror/bspo.owl: mirror/bspo.trigger
-	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://gist.githubusercontent.com/srobb1/a95fe7d11164eb638c8f54f888cf4901/raw/ca513ae30063b6e45b9aebcfc882cf262a824e5b/bspo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/bspo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 .PRECIOUS: mirror/%.owl
 
