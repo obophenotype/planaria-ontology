@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2020-04-27
+data-version: releases/2020-05-29
 subsetdef: attribute_slim ""
 subsetdef: cell_quality ""
 subsetdef: gocheck_do_not_annotate ""
@@ -300,8 +300,8 @@ name: antero-dorsal region
 namespace: spatial
 def: "Anatomical region that overlaps the anterior and dorsal regions of a body or body part." [BSPO:wd]
 synonym: "anterodorsal region " EXACT []
-is_a: BSPO:0000027 ! antero-ventral region
-is_a: BSPO:0000030 ! postero-dorsal region
+is_a: BSPO:0000071 ! anterior region
+is_a: BSPO:0000079 ! dorsal region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000055 ! anterior side
 intersection_of: overlaps BSPO:0000063 ! dorsal side
@@ -314,8 +314,8 @@ name: antero-ventral region
 namespace: spatial
 def: "Anatomical region that overlaps the anterior and ventral regions of a body or body part." [BSPO:wd]
 synonym: "anteroventral region " EXACT []
-is_a: BSPO:0000035 ! postero-ventral region
 is_a: BSPO:0000071 ! anterior region
+is_a: BSPO:0000084 ! ventral region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000055 ! anterior side
 intersection_of: overlaps BSPO:0000068 ! ventral side
@@ -342,8 +342,8 @@ name: antero-lateral region
 namespace: spatial
 def: "Anatomical region that overlaps the anterior and lateral regions of a body or body part." [BSPO:wd]
 synonym: "anterolateral region" EXACT []
-is_a: BSPO:0000028 ! postero-lateral region
 is_a: BSPO:0000071 ! anterior region
+is_a: BSPO:0000082 ! lateral region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000055 ! anterior side
 intersection_of: overlaps BSPO:0000066 ! lateral side
@@ -356,7 +356,7 @@ name: postero-dorsal region
 namespace: spatial
 def: "Anatomical region that overlaps the posterior and dorsal regions of the body or body part." [BSPO:wd]
 synonym: "posterodorsal region" EXACT []
-is_a: BSPO:0000035 ! postero-ventral region
+is_a: BSPO:0000072 ! posterior region
 is_a: BSPO:0000079 ! dorsal region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000056 ! posterior side
@@ -396,7 +396,6 @@ synonym: "rostral" EXACT []
 xref: FBcv:0000053
 xref: FBql:00005848
 is_a: BSPO:0000054 ! anatomical side
-is_a: BSPO:0000072 ! posterior region
 relationship: anterior_to BSPO:0000056 ! posterior side
 relationship: opposite_to BSPO:0000056 ! posterior side
 relationship: starts_axis BSPO:0000013 ! anterior-posterior axis
@@ -423,7 +422,6 @@ synonym: "apical" EXACT []
 xref: FBcv:0000054
 xref: FBql:00005854
 is_a: BSPO:0000054 ! anatomical side
-is_a: BSPO:0000074 ! basal region
 relationship: opposite_to BSPO:0000058 ! basal side
 relationship: starts_axis BSPO:0000014 ! apical-basal axis relative to substrate
 
@@ -448,7 +446,6 @@ synonym: "dorsal" EXACT []
 xref: FBcv:0000059
 xref: FBql:00005842
 is_a: BSPO:0000054 ! anatomical side
-is_a: BSPO:0000084 ! ventral region
 relationship: dorsal_to BSPO:0000066 ! lateral side
 relationship: opposite_to BSPO:0000068 ! ventral side
 relationship: starts_axis BSPO:0000016 ! dorsal-ventral axis
@@ -488,7 +485,7 @@ name: anterior region
 namespace: spatial
 def: "Anatomical region anteriorly located on the body or body part." [BSPO:wd]
 xref: FBql:00005848
-is_a: BSPO:0000072 ! posterior region
+is_a: BSPO:0000070 ! anatomical region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000055 ! anterior side
 relationship: overlaps BSPO:0000055 ! anterior side
@@ -510,7 +507,7 @@ name: apical region
 namespace: spatial
 def: "Anatomical region located on the apical end on the body or body part." [BSPO:wd]
 xref: FBql:00005854
-is_a: BSPO:0000074 ! basal region
+is_a: BSPO:0000070 ! anatomical region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000057 ! apical side
 relationship: overlaps BSPO:0000057 ! apical side
@@ -532,7 +529,7 @@ name: dorsal region
 namespace: spatial
 def: "Anatomical region dorsally located on the body or body part." [BSPO:wd]
 xref: FBql:00005842
-is_a: BSPO:0000084 ! ventral region
+is_a: BSPO:0000070 ! anatomical region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000063 ! dorsal side
 relationship: overlaps BSPO:0000063 ! dorsal side
@@ -545,7 +542,7 @@ def: "Anatomical region that overlaps the dorsal and lateral regions of a body o
 synonym: "dorsolateral region" EXACT []
 xref: FBql:00005845
 is_a: BSPO:0000079 ! dorsal region
-is_a: BSPO:0000085 ! ventro-lateral region
+is_a: BSPO:0000082 ! lateral region
 intersection_of: BSPO:0000070 ! anatomical region
 intersection_of: overlaps BSPO:0000063 ! dorsal side
 intersection_of: overlaps BSPO:0000066 ! lateral side
@@ -1202,6 +1199,7 @@ synonym: "single-organism process" RELATED []
 xref: Wikipedia:Biological_process
 is_a: BFO:0000015 ! process
 created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T15:05:24Z
 
 [Term]
@@ -1219,7 +1217,7 @@ synonym: "cellular physiological process" EXACT []
 synonym: "single-organism cellular process" RELATED []
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
-created_by: janelomax
+created_by: jl
 creation_date: 2012-12-11T16:56:55Z
 
 [Term]
@@ -1287,7 +1285,7 @@ intersection_of: GO:0008150 ! biological_process
 intersection_of: part_of GO:0000003 ! reproduction
 disjoint_from: GO:0044848 ! biological phase
 relationship: part_of GO:0000003 ! reproduction
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T15:56:06Z
 
 [Term]
@@ -1304,7 +1302,7 @@ synonym: "development" NARROW []
 synonym: "single-organism developmental process" RELATED []
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
-created_by: janelomax
+created_by: jl
 creation_date: 2012-12-19T12:21:31Z
 
 [Term]
@@ -1326,7 +1324,7 @@ comment: Note that phases are is_a disjoint from other biological processes. hap
 subset: gocheck_do_not_manually_annotate
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0071840 ! cellular component organization or biogenesis
-created_by: janelomax
+created_by: jl
 creation_date: 2014-07-16T13:12:40Z
 
 [Term]
@@ -1553,7 +1551,7 @@ synonym: "cellular component organisation or biogenesis" EXACT [GOC:mah]
 synonym: "cellular component organisation or biogenesis at cellular level" EXACT [GOC:mah]
 synonym: "cellular component organization or biogenesis at cellular level" EXACT []
 is_a: GO:0009987 ! cellular process
-created_by: midori
+created_by: mah
 creation_date: 2010-09-10T01:39:16Z
 
 [Term]
@@ -2052,6 +2050,10 @@ id: PLANA:0000011
 name: protonephridial progenitor cell
 def: "Neoblasts and post-mitotic, differentiating daughters coexpressing POU2-3, six1/2-2, Sal1, Eya and Osr,required for maintenance and regeneration of protonephridial cell types." [PMID:24523458, PMID:28072387]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000020 ! protonephridia
+relationship: develops_into PLANA:0000020 ! protonephridia
 
 [Term]
 id: PLANA:0000012
@@ -2062,6 +2064,10 @@ synonym: "neural precursor cell" EXACT []
 synonym: "neural progenitor cell" EXACT []
 synonym: "neuronal progenitor" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000025 ! nervous system
+relationship: develops_into PLANA:0000025 ! nervous system
 
 [Term]
 id: PLANA:0000013
@@ -2340,10 +2346,12 @@ is_a: PLANA:0002032 ! epidermal cell
 relationship: develops_from PLANA:0000035 ! Category 3 cell
 relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000054 ! dorsal region of the epidermis
+relationship: part_of PLANA:0000096 ! ventral epidermis
 relationship: part_of PLANA:0002063 ! non-ciliated epidermis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -2448,9 +2456,11 @@ is_a: PLANA:0002032 ! epidermal cell
 relationship: develops_from PLANA:0000018 ! Category 4 cell
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000054 ! dorsal region of the epidermis
+relationship: part_of PLANA:0000096 ! ventral epidermis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -2664,6 +2674,7 @@ relationship: part_of PLANA:0000049 ! digestive system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -2734,6 +2745,7 @@ relationship: part_of PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -2844,10 +2856,10 @@ id: PLANA:0000032
 name: dorsal midline
 def: "The median line/plane of bilateral symmetry along the anteroposterior axis on the dorsal surface of the animal." []
 synonym: "dorsal region of midline" EXACT []
-is_a: PLANA:0000038 ! ventral midline
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0000030 ! midline
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0000030 ! midline
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalmidline.png {comment="Illustration of the dorsal midline (in green)."}
 
 [Term]
@@ -2856,6 +2868,10 @@ name: epidermal progenitor cell
 def: "Mitotically active zeta neoblasts and their post-mitotic descendants which undergo progressive differentiation and outward directed movement through the mesenchyme prior to incorporation into the epidermis, where terminal differentiation occurs." [PMID:27150006, PMID:27606067, PMID:29674432, PMID:30282036]
 synonym: "epithelial progenitor" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000032 ! dorsal midline
+relationship: develops_into PLANA:0000032 ! dorsal midline
 
 [Term]
 id: PLANA:0000034
@@ -2929,6 +2945,7 @@ relationship: part_of PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -2985,6 +3002,7 @@ relationship: part_of PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -3223,6 +3241,7 @@ is_a: PLANA:0002086 ! primary gut branch
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -3343,6 +3362,7 @@ relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000103 ! central nervous system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -3366,6 +3386,7 @@ relationship: part_of PLANA:0000240 ! body wall musculature
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -3474,6 +3495,7 @@ relationship: part_of PLANA:0000240 ! body wall musculature
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -3570,10 +3592,11 @@ name: dorsal region of the epidermis
 def: "Single cell layer of dorsal, post-mitotic, epithelial cells containing the dorsal stripe." [ISBN:9780070316607, PMID:17942485, PMID:19048075, PMID:19852954, PMID:20599901, PMID:20844018, PMID:22385657, PMID:22479207, PMID:26457503, PMID:27612382, PMID:28292427]
 synonym: "dorsal epithelium" EXACT []
 synonym: "dorsal region of epidermis" EXACT []
-is_a: PLANA:0000096 ! ventral epidermis
+is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000141 ! dorsal region of the whole animal
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0000034 ! epidermis
+relationship: part_of PLANA:0000034 ! epidermis
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalepidermis.png {comment="Image is an electron micrograph depicting the dorsal epidermis (arrowheads). Also visible in this micrograph, immediately deep to the epidermis is the basal lamina and beneath that is a photoreceptor. Scale bar is 10 um."}
 
 [Term]
@@ -3814,6 +3837,7 @@ relationship: part_of PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -3842,6 +3866,7 @@ relationship: part_of PLANA:0000066 ! gastrodermis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -3888,6 +3913,7 @@ relationship: develops_from PLANA:0000134 ! longitudinal muscle progenitor cell
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -3919,6 +3945,7 @@ relationship: part_of PLANA:0000066 ! gastrodermis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4102,6 +4129,7 @@ relationship: develops_from PLANA:0000134 ! longitudinal muscle progenitor cell
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4127,6 +4155,7 @@ relationship: part_of PLANA:0000428 ! musculature system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -4158,6 +4187,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000081
 name: pharynx pouch
 def: "An epithelial structure housing the pharynx, connected to the esophagus and mouth." [OCLC:16809160]
+synonym: "pharyngeal pocket" EXACT []
 synonym: "pharyngeal pouch" EXACT []
 xref: OCLC:16809160
 is_a: BFO:0000040 ! material entity
@@ -4785,6 +4815,7 @@ relationship: produced_by PLANA:0000231 ! vitelline gland
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -4804,6 +4835,10 @@ id: PLANA:0000110
 name: pharynx progenitor cell
 def: "foxA1+ neoblasts and their post-mitotic, differentiating daughters required for maintenance and regeneration of the pharynx." [PMID:24737865, PMID:25254346]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000016 ! pharynx
+relationship: develops_into PLANA:0000016 ! pharynx
 
 [Term]
 id: PLANA:0000111
@@ -5181,10 +5216,10 @@ id: PLANA:0000141
 name: dorsal region of the whole animal
 def: "Three dimensional compartment along the dorsoventral axis that is above the anteroposterior axis, containing the eyes." []
 synonym: "dorsal region of whole organism" EXACT []
-is_a: PLANA:0000143 ! ventral region of the whole animal
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0000136 ! whole organism
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0000136 ! whole organism
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionofthewholeanimal.png {comment="Illustration of the dorsal region of the whole animal (in green)."}
 
 [Term]
@@ -5688,6 +5723,7 @@ relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -5805,6 +5841,7 @@ is_a: PLANA:0002090 ! reproductive structure
 relationship: part_of PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -5921,6 +5958,7 @@ relationship: part_of PLANA:0000428 ! musculature system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -6006,6 +6044,7 @@ relationship: immediately_deep_to PLANA:0000412 ! pharynx inner epithelium surfa
 relationship: part_of PLANA:0000016 ! pharynx
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6032,6 +6071,7 @@ relationship: part_of PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -6084,6 +6124,7 @@ is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of PLANA:0000081 ! pharynx pouch
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -6238,10 +6279,11 @@ xref: PMID:28287248
 xref: PMID:28893948
 xref: PMID:29547123
 xref: PMID:29674431
-is_a: BFO:0000004 ! independent continuant
+is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000102 ! anatomical region
 relationship: anterior_to PLANA:0000420 ! parapharyngeal region
 relationship: posterior_to PLANA:0000418 ! head
+relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -6279,9 +6321,10 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000421
 name: tail
 def: "Caudal region, beginning at the mouth and ending at posterior pole." []
-is_a: BFO:0000004 ! independent continuant
+is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000102 ! anatomical region
 relationship: posterior_to PLANA:0004527 ! copulatory region
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -6526,6 +6569,7 @@ relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -6791,6 +6835,7 @@ relationship: part_of PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -6811,6 +6856,7 @@ relationship: part_of PLANA:0000428 ! musculature system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7059,6 +7105,7 @@ relationship: part_of PLANA:0000097 ! ventral nerve cord
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -7501,6 +7548,7 @@ name: cytoplasmic part
 def: "Any constituent part of the cytoplasm, all of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." [GO:0044444]
 xref: GO:0044444
 is_a: PLANA:0000509 ! intracellular part
+relationship: part_of PLANA:0000510 ! cytoplasm
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -8020,9 +8068,12 @@ is_obsolete: true
 id: PLANA:0002000
 name: adenal rhabdite
 def: "Rhabdites that are located basally to the epidermis, in the mesenchyme. In Smed these are present in cells likely on their way to becoming part of the mature epidermis." [ISBN:9780070316607]
+comment: http://purl.obolibrary.org/obo/part_of 'dorsal epidermis progenitor cell' (PLANA_0003501), 'ventral epidermis progenitor cell' (PLANA:0003503)because EM data we can see immature adenal rhbadites in cells just underneath the basal lamina dorsally and ventrally.
 xref: ISBN:9780070316607
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000104 ! rhabdite
+relationship: part_of PLANA:0003501 ! dorsal epidermis progenitor cell
+relationship: part_of PLANA:0003503 ! ventral epidermis progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -8089,6 +8140,7 @@ is_a: PLANA:0002119 ! gut branch
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -8257,6 +8309,7 @@ is_a: PLANA:0003116 ! parenchymal cell
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -8397,6 +8450,7 @@ relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -8498,8 +8552,7 @@ name: chromosome arm
 def: "Under the microscope chromosomes appear as thin, thread-like structures. They all have a short arm and long arm separated by a primary constriction called the centromere. The short arm is designated as p and the long arm as q." [NCIT:C13355]
 xref: NCIT:C13355
 xref: PMID:25404302
-is_a: PLANA:0000532 ! nuclear part
-relationship: part_of PLANA:0002021 ! chromosome
+is_a: PLANA:0002121 ! chromosome part
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/chromosomearm.png {comment="Image is an electron micrograph showing a mitotic cell. An arrowhead marks the long arm of a chromosome. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -8577,6 +8630,7 @@ relationship: part_of PLANA:0000079 ! parenchymal musculature
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -8663,9 +8717,12 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0002033
 name: epidermal rhabdite
 def: "Rhabdites located within epidermal cells." [ISBN:9780070316607]
+comment: http://purl.obolibrary.org/obo/part of 'dorsal epidermal cell' (PLANA_0003105) and 'ventral epidermal cell' (PLANA:0003101) added because we see rhabdites in both in EM data
 xref: ISBN:9780070316607
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000104 ! rhabdite
+relationship: part_of PLANA:0003101 ! ventral epidermis cell
+relationship: part_of PLANA:0003105 ! dorsal epidermis cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -8970,6 +9027,7 @@ relationship: part_of PLANA:0000079 ! parenchymal musculature
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -9130,6 +9188,7 @@ is_a: PLANA:0002075 ! pigment cell
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -9577,7 +9636,6 @@ name: tail tip
 def: "The posterior-medial region of the tail margin." []
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000102 ! anatomical region
-relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -9593,7 +9651,7 @@ xref: GO:0000781
 xref: https://doi.org/10.1101/279364
 xref: PMID:22371573
 xref: PMID:25404302
-is_a: PLANA:0002121 ! chromosome_part
+is_a: PLANA:0002121 ! chromosome part
 relationship: part_of PLANA:0002022 ! chromosome arm
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -9804,7 +9862,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 
 [Term]
 id: PLANA:0002121
-name: chromosome_part
+name: chromosome part
 def: "This is a manufactured term, that serves the purpose of allow the parts of a chromosome to have an is_a path to the root." [SO:0000830]
 xref: SO:0000830
 is_a: PLANA:0000532 ! nuclear part
@@ -9824,7 +9882,7 @@ name: chromosomal_structural_element
 def: "structural element of a chromosome, for example, a telomere and a centromere" [SO:0000628]
 synonym: "chromosomal structural element" EXACT []
 xref: SO:0000628
-is_a: PLANA:0002121 ! chromosome_part
+is_a: PLANA:0002121 ! chromosome part
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9947,6 +10005,7 @@ is_a: PLANA:0002118 ! epithelium
 relationship: part_of PLANA:0000081 ! pharynx pouch
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
@@ -9979,6 +10038,7 @@ is_a: PLANA:0000113 ! tissue
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -10009,6 +10069,28 @@ intersection_of: has_component BSPO:0000082 ! lateral region
 intersection_of: part_of PLANA:0000136 ! whole organism
 relationship: has_component BSPO:0000082 ! lateral region
 relationship: part_of PLANA:0000136 ! whole organism
+
+[Term]
+id: PLANA:0003002
+name: anterior region of the eye
+def: "The anterior region of the eye." []
+synonym: "anterior region of eye" EXACT []
+is_a: BFO:0000004 ! independent continuant
+is_a: PLANA:0000140 ! anterior region of the whole animal
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0000036 ! eye
+relationship: part_of PLANA:0000036 ! eye
+
+[Term]
+id: PLANA:0003003
+name: posterior region of the eye
+def: "The posterior region of the eye." []
+synonym: "posterior compartment of eye" EXACT []
+is_a: BFO:0000004 ! independent continuant
+is_a: PLANA:0000142 ! posterior region of the whole animal
+intersection_of: has_component BSPO:0000090 ! posterior compartment
+intersection_of: part_of PLANA:0000036 ! eye
+relationship: part_of PLANA:0000036 ! eye
 
 [Term]
 id: PLANA:0003100
@@ -10142,21 +10224,37 @@ def: "cell which is part of the prepharyngeal region" []
 id: PLANA:0003200
 name: G1 phase neoblast
 def: "neoblast undergoing mitotic G1 phase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003201
 name: S phase neoblast
 def: "neoblast undergoing mitotic S phase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003202
 name: G2 phase neoblast
 def: "neoblast undergoing mitotic G2 phase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003203
 name: prophase neoblast
 def: "neoblast undergoing mitotic prophase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/mitoticprophase.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic prophase (outlined). Note the difference in appearance compared to neighboring cells, nuclei labeled \"N.\" Scale bar is 2 um."}
 
 [Term]
@@ -10164,352 +10262,631 @@ id: PLANA:0003204
 name: metaphase neoblast
 def: "neoblast undergoing mitotic metaphase" []
 synonym: "M phase neoblast" EXACT []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/metaphaseneoblast.png {comment="Image is an electron micrograph depicting cells in the mesenchyme, near the regeneration blastema. In the middle of the image, outlined, a cell is undergoing mitotic metaphase. This cell's chromosomes can be seen in a vertical arrangement. Scale bar is 2um."}
 
 [Term]
 id: PLANA:0003205
 name: anaphase neoblast
 def: "neoblast undergoing mitotic anaphase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/anaphaseneoblast.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic anaphase. The entire cell has been outlined and the condensed chromatin is visible inside. Scale bar is 2um."}
 
 [Term]
 id: PLANA:0003206
 name: telophase neoblast
 def: "neoblast undergoing mitotic telophase" []
+is_a: PLANA:0000429 ! neoblast
+intersection_of: PLANA:0000429 ! neoblast
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/mitotictelophase.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic telophase (outlined). The condensed chromatin is visible inside and has been partially outlined by the nuclear envelope. Scale bar is 1um."}
 
 [Term]
 id: PLANA:0003207
 name: G1 phase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic G1 phase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003208
 name: S phase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic S phase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003209
 name: G2 phase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic G2 phase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003210
 name: prophase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic prophase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003211
 name: metaphase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic metaphase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003212
 name: anaphase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic anaphase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003213
 name: telophase spermatogonial stem cell
 def: "spermatogonial stem cell undergoing mitotic telophase" []
+is_a: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: PLANA:0000219 ! spermatogonial stem cell
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003214
 name: G1 phase oogonial stem cell
 def: "oogonial stem cell undergoing mitotic G1 phase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003215
 name: S phase oogonial stem cell
 def: "oogonial stem cell undergoing mitotic S phase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003216
 name: G2 phase  oogonial stem cell
 def: "oogonial stem cell undergoing mitotic G2 phase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003217
 name: prophase  oogonial stem cell
 def: "oogonial stem cell undergoing mitotic prophase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003218
 name: metaphase oogonial stem cell
 def: "oogonial stem cell undergoing mitotic metaphase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003219
 name: anaphase oogonial stem cell
 def: "oogonial stem cell undergoing mitotic anaphase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003220
 name: telophase  oogonial stem cell
 def: "oogonial stem cell undergoing mitotic telophase" []
+is_a: PLANA:0000223 ! oogonial stem cell
+intersection_of: PLANA:0000223 ! oogonial stem cell
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003221
 name: G1 phase spermatogonium
 def: "spermatogonium undergoing mitotic G1 phase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003222
 name: S phase spermatogonium
 def: "spermatogonium undergoing mitotic S phase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003223
 name: G2 phase spermatogonium
 def: "spermatogonium undergoing mitotic G2 phase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003224
 name: prophase spermatogonium
 def: "spermatogonium undergoing mitotic prophase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003225
 name: metaphase spermatogonia
 def: "spermatogonium undergoing mitotic metaphase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003226
 name: anaphase spermatogonia
 def: "spermatogonium undergoing mitotic anaphase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003227
 name: telophase spermatogonium
 def: "spermatogonium undergoing mitotic telophase" []
+is_a: PLANA:0000220 ! spermatogonium
+intersection_of: PLANA:0000220 ! spermatogonium
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003228
 name: G1 phase oogonial cell
 def: "oogonial cell undergoing mitotic G1 phase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003229
 name: S phase oogonial cell
 def: "oogonial cell undergoing mitotic S phase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003230
 name: G2 phase oogonial cell
 def: "oogonial cell undergoing mitotic G2 phase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003231
 name: prophase oogonial cell
 def: "oogonial cell undergoing mitotic prophase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003232
 name: metaphase oogonial cell
 def: "oogonial cell undergoing mitotic metaphase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003233
 name: anaphase oogonial cell
 def: "oogonial cell undergoing mitotic anaphase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003234
 name: telophase oogonial cell
 def: "oogonial cell undergoing mitotic telophase" []
+is_a: PLANA:0000239 ! oogonial cell
+intersection_of: PLANA:0000239 ! oogonial cell
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003235
 name: G1 phase germ cell cyst
 def: "germ cell cyst undergoing mitotic G1 phase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000080 ! mitotic G1 phase
+relationship: contains_process GO:0000080 ! mitotic G1 phase
 
 [Term]
 id: PLANA:0003236
 name: S phase germ cell cyst
 def: "germ cell cyst undergoing mitotic S phase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000084 ! mitotic S phase
+relationship: contains_process GO:0000084 ! mitotic S phase
 
 [Term]
 id: PLANA:0003237
 name: G2 phase germ cell cyst
 def: "germ cell cyst undergoing mitotic G2 phase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000085 ! mitotic G2 phase
+relationship: contains_process GO:0000085 ! mitotic G2 phase
 
 [Term]
 id: PLANA:0003238
 name: prophase germ cell cyst
 def: "germ cell cyst undergoing mitotic prophase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000088 ! mitotic prophase
+relationship: contains_process GO:0000088 ! mitotic prophase
 
 [Term]
 id: PLANA:0003239
 name: metaphase germ cell cyst
 def: "germ cell cyst undergoing mitotic metaphase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000089 ! mitotic metaphase
+relationship: contains_process GO:0000089 ! mitotic metaphase
 
 [Term]
 id: PLANA:0003240
 name: anaphase germ cell cyst
 def: "germ cell cyst undergoing mitotic anaphase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000090 ! mitotic anaphase
+relationship: contains_process GO:0000090 ! mitotic anaphase
 
 [Term]
 id: PLANA:0003241
 name: telophase germ cell cyst
 def: "germ cell cyst undergoing mitotic telophase" []
+is_a: PLANA:0002043 ! germ cell cyst
+intersection_of: PLANA:0002043 ! germ cell cyst
+intersection_of: contains_process GO:0000093 ! mitotic telophase
+relationship: contains_process GO:0000093 ! mitotic telophase
 
 [Term]
 id: PLANA:0003242
 name: meiotic S phase spermatocyte
 def: "spermatocyte undergoing meiotic S phase" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0051332 ! meiotic S phase
+relationship: contains_process GO:0051332 ! meiotic S phase
 
 [Term]
 id: PLANA:0003243
 name: meiotic G1 phase spermatocyte
 def: "spermatocyte undergoing meiotic G1 phase" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0051330 ! meiotic G1 phase
+relationship: contains_process GO:0051330 ! meiotic G1 phase
 
 [Term]
 id: PLANA:0003244
 name: meiotic G2 phase spermatocyte
 def: "spermatocyte undergoing meiotic G2 phase" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0051331 ! meiotic G2 phase
+relationship: contains_process GO:0051331 ! meiotic G2 phase
 
 [Term]
 id: PLANA:0003245
 name: meiotic prophase I spermatocyte
 def: "spermatocyte undergoing meiotic prophase I" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007128 ! meiotic prophase I
+relationship: contains_process GO:0007128 ! meiotic prophase I
 
 [Term]
 id: PLANA:0003246
 name: leptotene stage spermatocyte
 def: "spermatocyte undergoing leptotene" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000237 ! leptotene
+relationship: contains_process GO:0000237 ! leptotene
 
 [Term]
 id: PLANA:0003247
 name: zygotene stage spermatocyte
 def: "spermatocyte undergoing zygotene" [https://doi.org/10.1101/279364]
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000238 ! zygotene
+relationship: contains_process GO:0000238 ! zygotene
 
 [Term]
 id: PLANA:0003248
 name: pachytene stage spermatocyte
 def: "spermatocyte undergoing pachytene" [https://doi.org/10.1101/279364]
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000239 ! pachytene
+relationship: contains_process GO:0000239 ! pachytene
 
 [Term]
 id: PLANA:0003249
 name: diplotene stage spermatocyte
 def: "spermatocyte undergoing diplotene" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000240 ! diplotene
+relationship: contains_process GO:0000240 ! diplotene
 
 [Term]
 id: PLANA:0003250
 name: diakinesis stage spermatocyte
 def: "spermatocyte undergoing diakinesis" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0000241 ! diakinesis
+relationship: contains_process GO:0000241 ! diakinesis
 
 [Term]
 id: PLANA:0003251
 name: meiotic metaphase 1 stage spermatocyte
 def: "spermatocyte undergoing meiotic metaphase I" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007132 ! meiotic metaphase I
+relationship: contains_process GO:0007132 ! meiotic metaphase I
 
 [Term]
 id: PLANA:0003252
 name: meiotic anaphase I stage spermatocyte
 def: "spermatocyte undergoing meiotic anaphase I" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007133 ! meiotic anaphase I
+relationship: contains_process GO:0007133 ! meiotic anaphase I
 
 [Term]
 id: PLANA:0003253
 name: meiotic telophase I spermatocyte
 def: "spermatocyte undergoing meiotic telophase I" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007134 ! meiotic telophase I
+relationship: contains_process GO:0007134 ! meiotic telophase I
 
 [Term]
 id: PLANA:0003254
 name: meiosis II stage spermatocyte
 def: "spermatocyte undergoing meiosis II cell cycle phase" []
+is_a: PLANA:0000221 ! spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0098765 ! meiosis II cell cycle phase
+relationship: contains_process GO:0098765 ! meiosis II cell cycle phase
 
 [Term]
 id: PLANA:0003255
 name: meiotic prophase II spermatocyte
 def: "spermatocyte undergoing meiotic prophase II" []
+is_a: PLANA:0003254 ! meiosis II stage spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007136 ! meiotic prophase II
+relationship: contains_process GO:0007136 ! meiotic prophase II
 
 [Term]
 id: PLANA:0003256
 name: meiotic metaphase 2 spermatocyte
 def: "spermatocyte undergoing meiotic metaphase II" []
+is_a: PLANA:0003254 ! meiosis II stage spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007137 ! meiotic metaphase II
+relationship: contains_process GO:0007137 ! meiotic metaphase II
 
 [Term]
 id: PLANA:0003257
 name: meiotic anaphase II spermatocyte
 def: "spermatocyte undergoing meiotic anaphase II" []
+is_a: PLANA:0003254 ! meiosis II stage spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007138 ! meiotic anaphase II
+relationship: contains_process GO:0007138 ! meiotic anaphase II
 
 [Term]
 id: PLANA:0003258
 name: meiotic telophase II spermatocyte
 def: "spermatocyte undergoing meiotic telophase II" []
+is_a: PLANA:0003254 ! meiosis II stage spermatocyte
+intersection_of: PLANA:0000221 ! spermatocyte
+intersection_of: contains_process GO:0007139 ! meiotic telophase II
+relationship: contains_process GO:0007139 ! meiotic telophase II
 
 [Term]
 id: PLANA:0003300
 name: cephalic ganglia primordium
-def: "This primordium develops into cephalic ganglia" [PMID:16033796, PMID:17553481, PMID:17905225, PMID:19174194, PMID:21806978, PMID:22339734, PMID:23318635, PMID:25772472, PMID:26525673]
+def: "This primordium develops into cephalic ganglia" []
 synonym: "brain primordia" EXACT []
 synonym: "brain primordium" EXACT []
 synonym: "brain primoridia" EXACT []
 synonym: "brain rudiment" EXACT []
 synonym: "cephalic ganglia primordia" EXACT []
 synonym: "cephalic ganglia primordium" EXACT []
+xref: PMID:16033796
+xref: PMID:17553481
+xref: PMID:17905225
+xref: PMID:19174194
+xref: PMID:21806978
+xref: PMID:22339734
+xref: PMID:23318635
+xref: PMID:25772472
+xref: PMID:26525673
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000044 ! cephalic ganglia
+relationship: develops_into PLANA:0000044 ! cephalic ganglia
 
 [Term]
 id: PLANA:0003301
 name: eye primordium
-def: "This primordium develops into eye" [PMID:22884275]
+def: "This primordium develops into eye" []
 synonym: "eye aggregate" EXACT []
+xref: PMID:22884275
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000036 ! eye
+relationship: develops_into PLANA:0000036 ! eye
 
 [Term]
 id: PLANA:0003302
 name: pharynx primordium
-def: "This primordium develops into pharynx" [PMID:18202849, PMID:21282632, PMID:25254346, PMID:26556349, PMID:27074666]
+def: "This primordium develops into pharynx" []
+xref: PMID:18202849
+xref: PMID:21282632
+xref: PMID:25254346
+xref: PMID:26556349
+xref: PMID:27074666
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000016 ! pharynx
+relationship: develops_into PLANA:0000016 ! pharynx
 
 [Term]
 id: PLANA:0003303
 name: pigment cup primordium
-def: "This primordium develops into optic cup" [PMID:21852957]
+def: "This primordium develops into optic cup" []
 synonym: "optic cup primordium" EXACT []
+xref: PMID:21852957
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000075 ! optic cup
+relationship: develops_into PLANA:0000075 ! optic cup
 
 [Term]
 id: PLANA:0003304
 name: testis primordium
-def: "This primordium develops into testis" [PMID:23652002]
-is_a: CARO:0000000 ! anatomical entity
+def: "This primordium develops into testis" []
+xref: PMID:23652002
+is_a: PLANA:0003305 ! gonad primoridium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000208 ! testis
+relationship: develops_into PLANA:0000208 ! testis
 
 [Term]
 id: PLANA:0003305
 name: gonad primoridium
 def: "This primordium develops into gonad" []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000131 ! primordium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000217 ! gonad
+relationship: develops_into PLANA:0000217 ! gonad
 
 [Term]
 id: PLANA:0003306
 name: ovary primordium
 def: "This primordium develops into ovary" []
-is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0003305 ! gonad primoridium
+intersection_of: PLANA:0000131 ! primordium
+intersection_of: develops_into PLANA:0000204 ! ovary
+relationship: develops_into PLANA:0000204 ! ovary
 
 [Term]
 id: PLANA:0003400
 name: protonephridial lumen
 def: "lumen which is part of the protonephridia" [PMID:26057828]
+is_a: PLANA:0002053 ! lumen
+intersection_of: PLANA:0002053 ! lumen
+intersection_of: part_of PLANA:0000020 ! protonephridia
+relationship: part_of PLANA:0000020 ! protonephridia
 
 [Term]
 id: PLANA:0003401
 name: testis lumen
 def: "lumen which is part of the testis" [PMID:17390146]
 is_a: BFO:0000004 ! independent continuant
+is_a: PLANA:0002053 ! lumen
+intersection_of: PLANA:0002053 ! lumen
+intersection_of: part_of PLANA:0000208 ! testis
+relationship: part_of PLANA:0000208 ! testis
 
 [Term]
 id: PLANA:0003402
 name: ovary lumen
 def: "lumen which is part of the ovary" [PMID:19247960]
 is_a: BFO:0000004 ! independent continuant
+is_a: PLANA:0002053 ! lumen
+intersection_of: PLANA:0002053 ! lumen
+intersection_of: part_of PLANA:0000204 ! ovary
+relationship: part_of PLANA:0000204 ! ovary
 
 [Term]
 id: PLANA:0003403
 name: flame cell lumen
 def: "lumen which is part of the flame cell" [PMID:21828097]
 synonym: "flame cell barrel lumen" EXACT []
+is_a: PLANA:0003400 ! protonephridial lumen
+intersection_of: PLANA:0002053 ! lumen
+intersection_of: part_of PLANA:0000065 ! flame cell
+relationship: part_of PLANA:0000065 ! flame cell
 
 [Term]
 id: PLANA:0003500
@@ -10518,12 +10895,20 @@ def: "A progenitor cell that gives rise to one or more of the cell type(s) in th
 synonym: "brain progenitor" EXACT []
 synonym: "brain progentitor cell" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000044 ! cephalic ganglia
+relationship: develops_into PLANA:0000044 ! cephalic ganglia
 
 [Term]
 id: PLANA:0003501
 name: dorsal epidermis progenitor cell
 def: "A progenitor cell that gives rise to one or more of the cell type(s) in the dorsal epidermis." [PMID:28292427]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000054 ! dorsal region of the epidermis
+relationship: develops_into PLANA:0000054 ! dorsal region of the epidermis
 
 [Term]
 id: PLANA:0003502
@@ -10531,24 +10916,40 @@ name: optic cup progenitor cell
 def: "A progenitor cell that gives rise to optic cup cells of the eye." [PMID:21852957]
 synonym: "optic cup trail cell" EXACT []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000075 ! optic cup
+relationship: develops_into PLANA:0000075 ! optic cup
 
 [Term]
 id: PLANA:0003503
 name: ventral epidermis progenitor cell
 def: "A progenitor cell that gives rise to one or more of the cell type(s) in the epidermis." [PMID:28292427]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0000096 ! ventral epidermis
+relationship: develops_into PLANA:0000096 ! ventral epidermis
 
 [Term]
 id: PLANA:0003504
 name: testis somatic gonadal cell progenitor cell
 def: "This progenitor cell develops into testis somatic gonadal cell" [PMID: 23652002]
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000120 ! progenitor cell
+intersection_of: PLANA:0000120 ! progenitor cell
+intersection_of: develops_into PLANA:0004506 ! testis somatic gonadal cell
+relationship: develops_into PLANA:0004506 ! testis somatic gonadal cell
 
 [Term]
 id: PLANA:0003600
 name: head fragment
 def: "A fragment derived from a prepharyngeal amputation encompassing the head." []
 synonym: "head piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0000418 ! derives from head
+relationship: RO:0001000 PLANA:0000418 ! derives from head
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/headfragment.png {comment="A fragment derived from a prepharyngeal amputation encompassing the head."}
 
 [Term]
@@ -10556,6 +10957,10 @@ id: PLANA:0003601
 name: trunk fragment
 def: "A fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
 synonym: "trunk piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0000420 ! derives from parapharyngeal region
+relationship: RO:0001000 PLANA:0000420 ! derives from parapharyngeal region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/trunkfragment.png {comment="Illustration of a trunk fragment (in green)."}
 
 [Term]
@@ -10563,6 +10968,10 @@ id: PLANA:0003602
 name: tail fragment
 def: "A fragment derived from a postpharyngeal amputation encompassing the tail." []
 synonym: "tail piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0000421 ! derives from tail
+relationship: RO:0001000 PLANA:0000421 ! derives from tail
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/tailfragment.png {comment="A fragment derived from a postpharyngeal amputation encompassing the tail."}
 
 [Term]
@@ -10571,6 +10980,10 @@ name: prepharyngeal fragment
 def: "A fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
 synonym: "neck fragment" EXACT []
 synonym: "neck piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0000419 ! derives from prepharyngeal region
+relationship: RO:0001000 PLANA:0000419 ! derives from prepharyngeal region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/prepharyngealfragment.png {comment="Illustration of a prepharyngeal fragment (in green)."}
 
 [Term]
@@ -10580,18 +10993,30 @@ def: "A fragment derived from two postpharyngeal amputations, removing the anter
 synonym: "post-pharyngeal fragment" EXACT []
 synonym: "post-pharyngeal piece" EXACT []
 synonym: "postpharyngeal piece" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0002113 ! derives from post-pharyngeal region
+relationship: RO:0001000 PLANA:0002113 ! derives from post-pharyngeal region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/postpharyngealfragment.png {comment="Illustration of a postpharyngeal fragment (in green)."}
 
 [Term]
 id: PLANA:0003605
 name: anterior fragment
 def: "A fragment encompassing all or part of the anterior region of the animal." []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 BSPO:0000071 ! derives from anterior region
+relationship: RO:0001000 BSPO:0000071 ! derives from anterior region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/anteriorfragment.png {comment="A fragment encompassing all or part of the anterior region of the animal."}
 
 [Term]
 id: PLANA:0003606
 name: posterior fragment
 def: "A fragment encompassing all or part of the posterior region of the animal." []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 BSPO:0000072 ! derives from posterior region
+relationship: RO:0001000 BSPO:0000072 ! derives from posterior region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/posteriorfragment.png {comment="Illustration of an example of a posterior fragment (in green)."}
 
 [Term]
@@ -10602,24 +11027,40 @@ synonym: "edge fragment" EXACT []
 synonym: "longitudinal fragment" EXACT []
 synonym: "sagittal fragment" EXACT []
 synonym: "side fragment" EXACT []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 BSPO:0000066 ! derives from lateral side
+relationship: RO:0001000 BSPO:0000066 ! derives from lateral side
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/lateralfragment.png {comment="http://purl.obolibrary.org/obo/A fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region. [SMR_ a fragment that encompasses the side of the animal, not necessarily longituduinal, or parallel to the midline]"}
 
 [Term]
 id: PLANA:0003608
 name: longitudinal fragment
 def: "a fragment derived from an amputation parallel to the midline." []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PLANA:0002129 ! derives from longitudinal region
+relationship: RO:0001000 PLANA:0002129 ! derives from longitudinal region
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/longitudinalfragment.png {comment="a fragment derived from an amputation parallel to the midline."}
 
 [Term]
 id: PLANA:0003609
 name: plug fragment
 def: "A 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PATO:0040012 ! derives from plug shaped
+relationship: RO:0001000 PATO:0040012 ! derives from plug shaped
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/plugfragment.png {comment="Illustration of an example plug fragment in green."}
 
 [Term]
 id: PLANA:0003610
 name: wedge fragment
 def: "A piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
+is_a: PLANA:0002128 ! fragment
+intersection_of: PLANA:0002128 ! fragment
+intersection_of: RO:0001000 PATO:0001955 ! derives from cuneate
+relationship: RO:0001000 PATO:0001955 ! derives from cuneate
 property_value: http://purl.obolibrary.org/obo/foaf_depicted_by http://purl.obolibrary.org/obo/plana/images/wedgefragment.png {comment="Illustration of an example wedge fragment in green."}
 
 [Term]
@@ -10627,10 +11068,10 @@ id: PLANA:0003700
 name: dorsal region of head fragment
 def: "The dorsal region of a fragment derived from a prepharyngeal amputation encompassing the head." []
 synonym: "dorsal region of head fragment" EXACT []
-is_a: PLANA:0003701 ! ventral region of head fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003600 ! head fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003600 ! head fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionofheadfragment.png {comment="Illustration of the dorsal region of a head fragment (green)."}
 
 [Term]
@@ -10649,10 +11090,10 @@ id: PLANA:0003702
 name: anterior region of head fragment
 def: "The anterior region of a fragment derived from a prepharyngeal amputation encompassing the head." []
 synonym: "anterior region of head fragment" EXACT []
-is_a: PLANA:0003703 ! posterior region of head fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003600 ! head fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003600 ! head fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionofheadfragment.png {comment="Illustration of the anterior region of a head fragment (green)."}
 
 [Term]
@@ -10671,10 +11112,10 @@ id: PLANA:0003704
 name: dorsal region of trunk fragment
 def: "The dorsal region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
 synonym: "dorsal region of trunk fragment" EXACT []
-is_a: PLANA:0003705 ! ventral region of trunk fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003601 ! trunk fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003601 ! trunk fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionoftrunkfragment.png {comment="Illustration of the dorsal region of a trunk fragment (green)."}
 
 [Term]
@@ -10693,10 +11134,10 @@ id: PLANA:0003706
 name: anterior region of trunk fragment
 def: "The anterior region of a fragment derived from pre- and post-pharyngeal amputations, encompassing the pharynx and parapharyngeal region." []
 synonym: "anterior region of trunk fragment" EXACT []
-is_a: PLANA:0003707 ! posterior region of trunk fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003601 ! trunk fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003601 ! trunk fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionoftrunkfragment.png {comment="Illustration of the anterior region of a trunk fragment (green)."}
 
 [Term]
@@ -10715,10 +11156,10 @@ id: PLANA:0003708
 name: dorsal region of tail fragment
 def: "The dorsal region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
 synonym: "dorsal region of tail fragment" EXACT []
-is_a: PLANA:0003709 ! ventral region of tail fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003602 ! tail fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003602 ! tail fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionoftailfragment.png {comment="Illustration of the dorsal region of a tail fragment (green)."}
 
 [Term]
@@ -10737,10 +11178,10 @@ id: PLANA:0003710
 name: anterior region of tail fragment
 def: "The anterior region of a fragment derived from a postpharyngeal amputation encompassing the tail." []
 synonym: "anterior region of tail fragment" EXACT []
-is_a: PLANA:0003711 ! posterior region of tail fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003602 ! tail fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003602 ! tail fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionoftailfragment.png {comment="Illustration of the anterior region of a tail fragment (green)."}
 
 [Term]
@@ -10759,10 +11200,10 @@ id: PLANA:0003712
 name: dorsal region of prepharyngeal fragment
 def: "The dorsal region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
 synonym: "dorsal region of prepharyngeal fragment" EXACT []
-is_a: PLANA:0003713 ! ventral region of prepharyngeal fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003603 ! prepharyngeal fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003603 ! prepharyngeal fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionofprepharyngealfragment.png {comment="Illustration of the dorsal region of a prepharyngeal fragment (green)."}
 
 [Term]
@@ -10781,10 +11222,10 @@ id: PLANA:0003714
 name: anterior region of prepharyngeal fragment
 def: "The anterior region of a fragment derived from two prepharyngeal amputations, removing the head and posterior regions of the animal." []
 synonym: "anterior region of prepharyngeal fragment" EXACT []
-is_a: PLANA:0003715 ! posterior region of prepharyngeal fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003603 ! prepharyngeal fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003603 ! prepharyngeal fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionofprephayngealfragment.png {comment="Illustration of the anterior region of a prepharyngeal fragment (green)."}
 
 [Term]
@@ -10803,10 +11244,10 @@ id: PLANA:0003716
 name: dorsal region of postpharyngeal fragment
 def: "The dorsal region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
 synonym: "dorsal region of postpharyngeal fragment" EXACT []
-is_a: PLANA:0003717 ! ventral region of postpharyngeal fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003604 ! postpharyngeal fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003604 ! postpharyngeal fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionofpostpharyngealfragment.png {comment="Illustration of the dorsal region of a postpharyngeal fragment (green)."}
 
 [Term]
@@ -10825,10 +11266,10 @@ id: PLANA:0003718
 name: anterior region of postpharyngeal fragment
 def: "The anterior region of a fragment derived from two postpharyngeal amputations, removing the anterior region and the tail tip." []
 synonym: "anterior region of postpharyngeal fragment" EXACT []
-is_a: PLANA:0003719 ! posterior region of postpharyngeal fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003604 ! postpharyngeal fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003604 ! postpharyngeal fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionofpostpharyngealfragment.png {comment="Illustration of the anterior region of a postpharyngeal fragment (green)."}
 
 [Term]
@@ -10847,10 +11288,10 @@ id: PLANA:0003720
 name: dorsal region of anterior fragment
 def: "The dorsal region of a fragment encompassing all or part of the anterior region of the animal." []
 synonym: "dorsal region of anterior fragment" EXACT []
-is_a: PLANA:0003721 ! ventral region of anterior fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003605 ! anterior fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003605 ! anterior fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionofanteriorfragment.png {comment="Illustration of the dorsal region of an anterior fragment (green)."}
 
 [Term]
@@ -10869,10 +11310,10 @@ id: PLANA:0003722
 name: anterior region of anterior fragment
 def: "The anterior region of a fragment encompassing all or part of the anterior region of the animal." []
 synonym: "anterior region of anterior fragment" EXACT []
-is_a: PLANA:0003723 ! posterior region of anterior fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003605 ! anterior fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003605 ! anterior fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionofanteriorfragment.png {comment="Illustration of the anterior region of an anterior fragment (green)."}
 
 [Term]
@@ -10891,10 +11332,10 @@ id: PLANA:0003724
 name: dorsal region of posterior fragment
 def: "The dorsal region of a fragment encompassing all or part of the posterior region of the animal." []
 synonym: "dorsal region of posterior fragment" EXACT []
-is_a: PLANA:0003725 ! ventral region of posterior fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003606 ! posterior fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003606 ! posterior fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionofposteriorfragment.png {comment="Illustration of the dorsal region of a posterior fragment (green)."}
 
 [Term]
@@ -10913,10 +11354,10 @@ id: PLANA:0003726
 name: anterior region of posterior fragment
 def: "The anterior region of a fragment encompassing all or part of the posterior region of the animal." []
 synonym: "anterior region of posterior fragment" EXACT []
-is_a: PLANA:0003727 ! posterior region of posterior fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003606 ! posterior fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003606 ! posterior fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionofposteriorfragment.png {comment="Illustration of the anterior region of a posterior fragment (green)."}
 
 [Term]
@@ -10935,10 +11376,10 @@ id: PLANA:0003728
 name: dorsal region of lateral fragment
 def: "The dorsal region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
 synonym: "dorsal region of lateral fragment" EXACT []
-is_a: PLANA:0003729 ! ventral region of lateral fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003607 ! lateral fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003607 ! lateral fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionoflateralfragment.png {comment="Illustration of the dorsal region of a lateral fragment (green)."}
 
 [Term]
@@ -10957,10 +11398,10 @@ id: PLANA:0003730
 name: anterior region of lateral fragment
 def: "The anterior region of a fragment derived from an amputation parallel to or along any edge, which overlaps the lateral region, dorso-lateral region, ventro-lateral region, antero-lateral margin, lateral margin, ventro-lateral margin, postero-lateral margin, dorso-lateral margin, antero-lateral region, postero-lateral region." []
 synonym: "anterior region of lateral fragment" EXACT []
-is_a: PLANA:0003731 ! posterior region of lateral fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003607 ! lateral fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003607 ! lateral fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionoflateralfragment.png {comment="Illustration of the anterior region of a lateral fragment (green)."}
 
 [Term]
@@ -10979,10 +11420,10 @@ id: PLANA:0003732
 name: dorsal region of longitudinal fragment
 def: "The dorsal region of a fragment derived from an amputation parallel to the midline." []
 synonym: "dorsal region of longitudinal fragment" EXACT []
-is_a: PLANA:0003733 ! ventral region of longitudinal fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003608 ! longitudinal fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003608 ! longitudinal fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionoflongitudinalfragment.png {comment="Illustration of the dorsal region of a longitudinal fragment (green)."}
 
 [Term]
@@ -11001,10 +11442,10 @@ id: PLANA:0003734
 name: anterior region of longitudinal fragment
 def: "The anterior region of a fragment derived from an amputation parallel to the midline." []
 synonym: "anterior region of longitudinal fragment" EXACT []
-is_a: PLANA:0003735 ! posterior region of longitudinal fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003608 ! longitudinal fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003608 ! longitudinal fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionoflongitudinalfragment.png {comment="Illustration of the anterior region of a longitudinal fragment (green)."}
 
 [Term]
@@ -11023,10 +11464,10 @@ id: PLANA:0003736
 name: dorsal region of plug fragment
 def: "The dorsal region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
 synonym: "dorsal region of plug fragment" EXACT []
-is_a: PLANA:0003737 ! ventral region of plug fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003609 ! plug fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003609 ! plug fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionofplugfragment.png {comment="Illustration of the dorsal region of a plug fragment (green)."}
 
 [Term]
@@ -11045,10 +11486,10 @@ id: PLANA:0003738
 name: anterior region of plug fragment
 def: "The anterior region of a 3D piece of tissue, usually though the whole depth of the animal encompassing both dorsal and ventral sides, often made with a biopsy punch." []
 synonym: "anterior region of plug fragment" EXACT []
-is_a: PLANA:0003739 ! posterior region of plug fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003609 ! plug fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003609 ! plug fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionofplugfagment.png {comment="Illustration of the anterior region of a plug fragment (green)."}
 
 [Term]
@@ -11067,10 +11508,10 @@ id: PLANA:0003740
 name: dorsal region of plug fragment
 def: "The dorsal region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
 synonym: "dorsal region of wedge fragment" EXACT []
-is_a: PLANA:0003741 ! ventral region of plug fragment
 intersection_of: has_component BSPO:0000079 ! dorsal region
 intersection_of: part_of PLANA:0003610 ! wedge fragment
 relationship: has_component BSPO:0000079 ! dorsal region
+relationship: part_of PLANA:0003610 ! wedge fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/dorsalregionofplugfragment.png {comment="Illustration of the dorsal region of a plug fragment (green)."}
 
 [Term]
@@ -11089,10 +11530,10 @@ id: PLANA:0003742
 name: anterior region of wedge fragment
 def: "The anterior region of a piece of tissue removed from the lateral margin at any given point that extendes interiorly to more medial structures." []
 synonym: "anterior region of wedge fragment" EXACT []
-is_a: PLANA:0003743 ! posterior region of wedge fragment
 intersection_of: has_component BSPO:0000071 ! anterior region
 intersection_of: part_of PLANA:0003610 ! wedge fragment
 relationship: has_component BSPO:0000071 ! anterior region
+relationship: part_of PLANA:0003610 ! wedge fragment
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/anteriorregionofwedgefragment.png {comment="Illustration of the anterior region of a wedge fragment (green)."}
 
 [Term]
@@ -11109,22 +11550,23 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/poste
 [Term]
 id: PLANA:0003800
 name: anterior photoreceptor neuron
-def: "anterior region of photoreceptor neuron" [PMID: 20967238]
-synonym: "anterior region of photoreceptor neuron" EXACT []
-is_a: PLANA:0000140 ! anterior region of the whole animal
-is_a: PLANA:0003801 ! posterior photoreceptor neuron
-intersection_of: has_component BSPO:0000071 ! anterior region
+def: "anterior region of the eye of photoreceptor neuron" [PMID: 20967238]
+synonym: "anterior region of the eye of photoreceptor neuron" EXACT []
+is_a: BFO:0000004 ! independent continuant
+intersection_of: has_component PLANA:0003002 ! anterior region of the eye
 intersection_of: part_of PLANA:0000017 ! photoreceptor neuron
+relationship: has_component PLANA:0003002 ! anterior region of the eye
+relationship: part_of PLANA:0000017 ! photoreceptor neuron
 
 [Term]
 id: PLANA:0003801
 name: posterior photoreceptor neuron
-def: "posterior region of photoreceptor neuron" [PMID: 20967238]
-synonym: "posterior region of photoreceptor neuron" EXACT []
+def: "posterior region of the eye of photoreceptor neuron" [PMID: 20967238]
+synonym: "posterior region of the eye of photoreceptor neuron" EXACT []
 is_a: BFO:0000004 ! independent continuant
-intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: has_component PLANA:0003003 ! posterior region of the eye
 intersection_of: part_of PLANA:0000017 ! photoreceptor neuron
-relationship: has_component BSPO:0000072 ! posterior region
+relationship: has_component PLANA:0003003 ! posterior region of the eye
 relationship: part_of PLANA:0000017 ! photoreceptor neuron
 
 [Term]
@@ -11132,12 +11574,20 @@ id: PLANA:0003900
 name: head blastema
 def: "blastema which develops into head" []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000495 ! blastema
+intersection_of: PLANA:0000495 ! blastema
+intersection_of: develops_into PLANA:0000418 ! head
+relationship: develops_into PLANA:0000418 ! head
 
 [Term]
 id: PLANA:0003901
 name: tail blastema
 def: "blastema which develops into tail" []
 is_a: CARO:0000000 ! anatomical entity
+is_a: PLANA:0000495 ! blastema
+intersection_of: PLANA:0000495 ! blastema
+intersection_of: develops_into PLANA:0000421 ! tail
+relationship: develops_into PLANA:0000421 ! tail
 
 [Term]
 id: PLANA:0004503
@@ -11394,10 +11844,11 @@ id: PLANA:0004527
 name: copulatory region
 def: "Portion of the sexual biotype body plan immediately posterior to the parapharyngeal region, and immediately anterior to the tail. Encompasses the copulatory apparatus." [PMID:22074376]
 xref: PMID:22074376
-is_a: BFO:0000004 ! independent continuant
+is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000102 ! anatomical region
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
 relationship: posterior_to PLANA:0000420 ! parapharyngeal region
+relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/copulatoryregion.png {comment="Depicted by field contains diagram representation of body region."}
@@ -11464,6 +11915,7 @@ relationship: part_of PLANA:0000207 ! sperm duct
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail
@@ -11788,6 +12240,7 @@ xref: PMID:27074666
 xref: PMID:30485821
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000102 ! anatomical region
+relationship: RO:0001018 PLANA:0000030 ! contained in midline
 relationship: RO:0001018 PLANA:0002104 ! contained in tail tip
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -11816,6 +12269,7 @@ relationship: part_of PLANA:0000470 ! neuropil
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
+relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -13872,31 +14326,11 @@ is_a: adjacent_to ! adjacent_to
 is_a: superficial_to ! superficial to
 
 [Typedef]
-id: in_lateral_side_of
-name: in lateral side of
-namespace: spatial
-def: "X in lateral side of Y <=> if X is in left side of Y or X is in right side of Y. X is often, but not always a paired structure" [UBERON:cjm]
-xref: BSPO:0000126
-property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
-is_a: part_of ! part_of
-
-[Typedef]
-id: ipsilateral_to
-name: ipsilateral to
-namespace: spatial
-def: "On the same side as. For example, the left arm is ipsilateral to the left leg." [BSPO:cjm]
-xref: BSPO:0000105
-property_value: seeAlso FBql:00005850
-is_symmetric: true
-is_a: in_lateral_side_of ! in lateral side of
-
-[Typedef]
 id: opposite_to
 name: opposite to
 namespace: spatial
 def: "Direcly opposite to. i.e. on the opposite side through the axis." [BSPO:cjm]
 xref: BSPO:0000113
-is_a: ipsilateral_to ! ipsilateral to
 
 [Typedef]
 id: orthogonal_to

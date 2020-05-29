@@ -12,7 +12,7 @@ build:
 contact:
   email: smr@stowers.org 
   label: Sofia Robb
-description: planaria-ontology is an ontology for planarian anatomy and developmental stages of S.med
+description: PLANA, the PLAarian Anatomy Ontology, encompasses the anatomy of developmental stages and adult biotypes of Schmidtea mediterranea. 
 domain: stuff
 homepage: https://github.com/obophenotype/planaria-ontology
 products:

@@ -64,6 +64,7 @@ while (my $line = <TSV>){
   my @line = split /\t/, $line;
   my ($patterned,$term_id,$term_label) = @line;
   next if $patterned ne 'none';
+  next if !defined $term_id;
   $term_id =~s/^\s+//;
   $term_id =~s/\s+$//;
   $term_label =~s/^\s+//;
