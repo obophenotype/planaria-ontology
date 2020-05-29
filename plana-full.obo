@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2020-05-14/plana-full.owl
+data-version: plana/releases/2020-05-29/plana-full.owl
 subsetdef: attribute_slim ""
 subsetdef: cell_quality ""
 subsetdef: gocheck_do_not_annotate ""
@@ -10071,6 +10071,28 @@ relationship: has_component BSPO:0000082 ! lateral region
 relationship: part_of PLANA:0000136 ! whole organism
 
 [Term]
+id: PLANA:0003002
+name: anterior region of the eye
+def: "The anterior region of the eye." []
+synonym: "anterior region of eye" EXACT []
+is_a: BFO:0000004 ! independent continuant
+is_a: PLANA:0000140 ! anterior region of the whole animal
+intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: part_of PLANA:0000036 ! eye
+relationship: part_of PLANA:0000036 ! eye
+
+[Term]
+id: PLANA:0003003
+name: posterior region of the eye
+def: "The posterior region of the eye." []
+synonym: "posterior compartment of eye" EXACT []
+is_a: BFO:0000004 ! independent continuant
+is_a: PLANA:0000142 ! posterior region of the whole animal
+intersection_of: has_component BSPO:0000090 ! posterior compartment
+intersection_of: part_of PLANA:0000036 ! eye
+relationship: part_of PLANA:0000036 ! eye
+
+[Term]
 id: PLANA:0003100
 name: testis cell
 def: "cell which is part of the testis" [PMID:29674431]
@@ -11528,23 +11550,23 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/poste
 [Term]
 id: PLANA:0003800
 name: anterior photoreceptor neuron
-def: "anterior region of photoreceptor neuron" [PMID: 20967238]
-synonym: "anterior region of photoreceptor neuron" EXACT []
+def: "anterior region of the eye of photoreceptor neuron" [PMID: 20967238]
+synonym: "anterior region of the eye of photoreceptor neuron" EXACT []
 is_a: BFO:0000004 ! independent continuant
-is_a: PLANA:0000140 ! anterior region of the whole animal
-intersection_of: has_component BSPO:0000071 ! anterior region
+intersection_of: has_component PLANA:0003002 ! anterior region of the eye
 intersection_of: part_of PLANA:0000017 ! photoreceptor neuron
+relationship: has_component PLANA:0003002 ! anterior region of the eye
 relationship: part_of PLANA:0000017 ! photoreceptor neuron
 
 [Term]
 id: PLANA:0003801
 name: posterior photoreceptor neuron
-def: "posterior region of photoreceptor neuron" [PMID: 20967238]
-synonym: "posterior region of photoreceptor neuron" EXACT []
+def: "posterior region of the eye of photoreceptor neuron" [PMID: 20967238]
+synonym: "posterior region of the eye of photoreceptor neuron" EXACT []
 is_a: BFO:0000004 ! independent continuant
-intersection_of: has_component BSPO:0000072 ! posterior region
+intersection_of: has_component PLANA:0003003 ! posterior region of the eye
 intersection_of: part_of PLANA:0000017 ! photoreceptor neuron
-relationship: has_component BSPO:0000072 ! posterior region
+relationship: has_component PLANA:0003003 ! posterior region of the eye
 relationship: part_of PLANA:0000017 ! photoreceptor neuron
 
 [Term]

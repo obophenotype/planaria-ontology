@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2020-05-14/plana-base.owl
+data-version: plana/releases/2020-05-29/plana-base.owl
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: Planarian_Anatomy
@@ -7972,6 +7972,22 @@ intersection_of: BFO:0000050 PLANA:0000136 ! whole organism
 intersection_of: RO:0002180 BSPO:0000082
 
 [Term]
+id: PLANA:0003002
+name: anterior region of the eye
+def: "The anterior region of the eye." []
+synonym: "anterior region of eye" EXACT []
+intersection_of: BFO:0000050 PLANA:0000036 ! eye
+intersection_of: RO:0002180 BSPO:0000071
+
+[Term]
+id: PLANA:0003003
+name: posterior region of the eye
+def: "The posterior region of the eye." []
+synonym: "posterior compartment of eye" EXACT []
+intersection_of: BFO:0000050 PLANA:0000036 ! eye
+intersection_of: RO:0002180 BSPO:0000090
+
+[Term]
 id: PLANA:0003100
 name: testis cell
 def: "cell which is part of the testis" [PMID:29674431]
@@ -9146,18 +9162,18 @@ property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/poste
 [Term]
 id: PLANA:0003800
 name: anterior photoreceptor neuron
-def: "anterior region of photoreceptor neuron" [PMID: 20967238]
-synonym: "anterior region of photoreceptor neuron" EXACT []
+def: "anterior region of the eye of photoreceptor neuron" [PMID: 20967238]
+synonym: "anterior region of the eye of photoreceptor neuron" EXACT []
 intersection_of: BFO:0000050 PLANA:0000017 ! photoreceptor neuron
-intersection_of: RO:0002180 BSPO:0000071
+intersection_of: RO:0002180 PLANA:0003002 ! anterior region of the eye
 
 [Term]
 id: PLANA:0003801
 name: posterior photoreceptor neuron
-def: "posterior region of photoreceptor neuron" [PMID: 20967238]
-synonym: "posterior region of photoreceptor neuron" EXACT []
+def: "posterior region of the eye of photoreceptor neuron" [PMID: 20967238]
+synonym: "posterior region of the eye of photoreceptor neuron" EXACT []
 intersection_of: BFO:0000050 PLANA:0000017 ! photoreceptor neuron
-intersection_of: RO:0002180 BSPO:0000072
+intersection_of: RO:0002180 PLANA:0003003 ! posterior region of the eye
 
 [Term]
 id: PLANA:0003900
