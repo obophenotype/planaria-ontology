@@ -1,6 +1,10 @@
 # master term sheet. put it in term_management directory
 curl "https://docs.google.com/spreadsheets/d/1NzQznwebR_rvOejJzZax7UmZvvFk01bRksCdFtUl5rk/export?format=tsv&id=1NzQznwebR_rvOejJzZax7UmZvvFk01bRksCdFtUl5rk&gid=0" -o term_management/plana_terms.tsv
 
+
+## reform plana_terms
+perl term_management/format_plana_terms.pl term_management/plana_terms.tsv
+
 # download the rest
 # update googleSheets.txt if we have a new tab in the plana term management google sheet
 for i in `cat googleSheets.txt`; do curl "https://docs.google.com/spreadsheets/d/1NzQznwebR_rvOejJzZax7UmZvvFk01bRksCdFtUl5rk/export?format=tsv&id=1NzQznwebR_rvOejJzZax7UmZvvFk01bRksCdFtUl5rk&gid=$i" -o sheets.$i.tsv; done
@@ -11,5 +15,7 @@ for i in sheets*.tsv ; do FILE=`head -1 $i | perl -p -e 's/.+\t(\S+)\.yaml\t.+/$
 # remove the original downloaded tsv files
 rm sheets*.tsv
 
+# 
 
-
+# git status
+git status
