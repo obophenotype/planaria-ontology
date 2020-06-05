@@ -3,7 +3,8 @@
 
 # Planarian Anatomy And _Schmidtea mediterranean_ Developmental Stage Ontology
 
-This ontology is for planaria anatomy and developmental stages. The stages are specific for the planarian species _Schmidtea mediterranea_.
+PLANA, the PLANarian Anatomy Ontology, encompasses the anatomy of developmental stages and adult biotypes of _Schmidtea mediterranea_.
+
 
 ## Versions
 
