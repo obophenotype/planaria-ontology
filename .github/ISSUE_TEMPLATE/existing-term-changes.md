@@ -33,7 +33,7 @@ For term change requests, please provide the following information:
 
 (e.g., PMID:000000)
 
-## New Suggested Parent Term ?
+## New Suggested Parent Term or Other Relationship?
 
 Please look in the hierarchy in a browser such as [OLS](http://www.ebi.ac.uk/ols/ontologies/plana)
 
