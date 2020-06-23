@@ -1,0 +1,79 @@
+pattern_name: regeneratingFragment.yaml 
+pattern_iri: https://tobedetermined 
+description: "regenerating fragment + fragment entity type"
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+
+classes:
+  fragment_entity: PLANA:0002128
+  regenerating_fragment: PLANA:0002133
+
+relations:
+  derives from: RO:0001000
+
+  
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  depicted_by: foaf:depicted_by
+  image_comment: rdfs:comment
+  term_id: oboInOwl:id
+  has_obo_namespace: oboInOwl:hasOBONamespace
+
+vars:
+  regenerating_fragment: "'regenerating_fragment'"
+  fragment_entity: "'fragment_entity'"
+  depicted_by: "'depicted_by'"
+  image_comment: "'image_comment'"
+  has_obo_namespace: "'has_obo_namespace'"
+
+data_list_vars:
+  def_dbxref: xsd:string
+  exact_syn: xsd:string
+  dbxref: xsd:string
+
+data_vars:
+  term_id: "'term_id'" 
+
+name:
+  text: "regenerating %s"
+  vars:
+   - fragment_entity
+
+annotations:
+
+  - annotationProperty: depicted_by
+    var: depicted_by
+    annotations: 
+      - annotationProperty: image_comment
+        text: "%s"
+        vars:
+         - image_comment
+
+  - annotationProperty: term_id
+    text: "%s"
+    vars:
+     - term_id
+
+  - annotationProperty: has_obo_namespace
+    text: "%s"
+    vars:
+      - has_obo_namespace
+
+exact_synonym:
+    value: exact_syn
+
+xref:
+    value: dbxref
+ 
+def:
+  text: "a %s that is regenerating"
+  vars:
+    - fragment_entity
+  xrefs: def_dbxref
+
+equivalentTo:
+  text: "%s and %s"
+  vars:
+    - fragment_entity 
+    - regenerating_fragment

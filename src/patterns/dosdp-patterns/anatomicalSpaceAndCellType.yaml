@@ -1,6 +1,6 @@
-pattern_name: anatomicalSpacecAndCEllType.yaml 
+pattern_name: anatomicalSpaceAndCellType.yaml 
 pattern_iri: https://tobedetermined 
-description: "An anatomical space, region, axis, or surface of cell entity."
+description: "A cell type specifically located in an anatomical space, region, axis, or surface."
 
 contributors:
   - https://orcid.org/0000-0002-3528-5267
@@ -10,8 +10,7 @@ classes:
   cell_entity: PLANA:0000499
 
 relations: 
-  has component: RO:0002180
-  part of: BFO:0000050
+  contained in: RO:0001018
 
 annotationProperties:
   exact_synonym: oio:hasExactSynonym
@@ -32,17 +31,17 @@ data_list_vars:
 
 
 name:
-  text: "%s of %s"
+  text: "%s in %s"
   vars:
-   - anatomical_space
    - cell_entity
+   - anatomical_space
 
 annotations:
   - annotationProperty: exact_synonym
-    text: "%s of %s"
+    text: "%s contained in %s"
     vars:
-     - anatomical_space
      - cell_entity
+     - anatomical_space
 
   - annotationProperty: depicted_by
     var: depicted_by
@@ -60,14 +59,14 @@ exact_synonym:
     value: exact_syn
   
 def:
-  text: "%s of %s"
+  text: "%s is contained in the %s"
   vars:
-    - anatomical_space
     - cell_entity
+    - anatomical_space
   xrefs: def_dbxref
 
 equivalentTo:
-  text: "'part of' some %s and ('has component' some %s)"
+  text: "%s and ('contained in' some %s)"
   vars:
     - cell_entity
     - anatomical_space
