@@ -32,3 +32,10 @@ Please look in the hierarchy in a browser such as [OLS](http://www.ebi.ac.uk/ols
 ## Attribution
 
 If you would like a nanoattribution, please indicate your ORCID id
+
+## Additional Justification
+
+Is there anything else you want to say about this request.
+
+---
+Make sure to give this term request a title at very top of this page
