@@ -17,20 +17,23 @@ For term change requests, please provide the following information:
 
 (e.g., PLANA:0000044)
 
+## New Term label?
+[ does this term need a new name? ]
+
 ## New Synonyms?
 
-[ new synonyms here ] 
+[ list any new synonyms here ] 
 
 ## New or Edited Textual definition?
 
-[ new def here ]
+[ include new or edited definition here ]
 
 
 ## New Term or Definition Reference
 
 (e.g., PMID:000000)
 
-## New Suggested Parent Term ?
+## New Suggested Parent Term or Other Relationship?
 
 Please look in the hierarchy in a browser such as [OLS](http://www.ebi.ac.uk/ols/ontologies/plana)
 
