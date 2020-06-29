@@ -10,7 +10,7 @@
 ASSETS += $(ONT).csv
 
 $(ONT).csv:  
-	$(ROBOT) query -use-graphs true -f csv -i ../../$(ONT).owl --query ../sparql/plana_csv.sparql $@ && perl -pi -e 's/\r//' $@ && cp $@ ../..
+	$(ROBOT) query -use-graphs true -f csv -i ../../$(ONT).owl --query ../sparql/plana_csv.sparql $@ && perl -pi -e 's/\r//' $@ && mv $@ ../..
 
 
 imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
@@ -22,7 +22,10 @@ imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
 .PRECIOUS: imports/uberon_import.owl
 
 
-# Overriding plana.owl to get rid of ugly owl:Nothing
+##########################################
+#### Overriding plana.owl to get rid of ugly owl:Nothing
+##########################################
+
 $(ONT).owl: $(ONT)-full.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
 		remove --term owl:Nothing \
@@ -36,7 +39,7 @@ $(ONT).owl: $(ONT)-full.owl
 ASSETS += $(ONT).depictedby.csv
 
 $(ONT).depictedby.csv:
-	$(ROBOT) query -use-graphs true -f csv -i ../../$(ONT).owl --query ../sparql/plana_depictedby.sparql $@ && perl -pi -e 's/\r//' $@ && cp $@ ../..
+	$(ROBOT) query -use-graphs true -f csv -i ../../$(ONT).owl --query ../sparql/plana_depictedby.sparql $@ && perl -pi -e 's/\r//' $@ && mv $@ ../..
 
 
 

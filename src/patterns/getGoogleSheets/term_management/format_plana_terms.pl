@@ -38,14 +38,17 @@ subClassOf:
 =cut
 
 # perl ../split_tsv.pl plana_terms.tsv 14
+my $pattern_data_default_dir = '../data/default/';
 my $tsv = shift;
 open TSV, $tsv or die "Cant open $tsv\n";
 
+my $info_line = <TSV>;
 my $header = <TSV>;
 chomp $header;
 my $prop_start;
 my $parent_start;
 my %plana_terms;
+my $term_start;
 
 my @headers = split "\t" , $header;
 for (my $i=0; $i<@headers ; $i++){
@@ -53,6 +56,8 @@ for (my $i=0; $i<@headers ; $i++){
     $prop_start = $i;
   }elsif($headers[$i] eq 'parent_entity' ){
     $parent_start = $i;
+  }elsif($headers[$i] eq 'defined_class' ){
+    $term_start = $i;
   }
 }
 
@@ -62,8 +67,12 @@ while (my $line = <TSV>){
   next if $line =~/^\s*$/;
   chomp $line;
   my @line = split /\t/, $line;
-  my ($patterned,$term_id,$term_label) = @line;
-  next if $patterned ne 'none';
+  #my ($patterned,$term_id,$term_label) = @line;
+  my ($term_id,$term_label) = @line;
+  #next if $patterned ne 'none';
+  next if $term_label =~ /obsolete/i;
+  next if $term_label =~ /replaced/i;
+  next if $term_label =~ /removed/i;
   next if !defined $term_id;
   $term_id =~s/^\s+//;
   $term_id =~s/\s+$//;
@@ -74,7 +83,7 @@ while (my $line = <TSV>){
   my @parent_ids = split /\s*\|\s*/ , $line[$parent_start];
   my @parent_labels = split /\s*\|\s*/ , $line[$parent_start+1];
   for (my $i=0; $i<@parent_ids; $i++){
-    for (my $j=1 ; $j<$prop_start ; $j++){
+    for (my $j=0 ; $j<$prop_start ; $j++){
       if ($j == $parent_start){
         push @{$plana_terms{$term_id}{$parent_ids[$i]}},$parent_ids[$i];
       }
@@ -113,10 +122,10 @@ while (my $line = <TSV>){
   } 
 } 
 #print Dumper \%props;
-open PLANA_OUT, ">plana_terms.tsv" or die "Can't open plana_terms.tsv for writing\n";
+open PLANA_OUT, ">$pattern_data_default_dir/plana_terms.tsv" or die "Can't open $pattern_data_default_dir/plana_terms.tsv for writing\n";
 ## print header line
 my @out_headers;
-for (my $i = 1; $i<$prop_start; $i++){
+for (my $i = 0; $i<$prop_start; $i++){
   push @out_headers, $headers[$i];
 }
 print PLANA_OUT  join("\t",@out_headers),"\n";
@@ -129,8 +138,8 @@ foreach my $term_id (sort keys %plana_terms){
 }
 
 foreach my $prop (sort keys %props){
-  open OUT, ">plana_terms_$prop.tsv" or die "Can't open plana_terms_$prop.tsv for writing\n";
-  print OUT join("\t",$headers[1],$headers[2],$prop,$prop."_label"),"\n";
+  open OUT, ">$pattern_data_default_dir/plana_terms_$prop.tsv" or die "Can't open plana_terms_$prop.tsv for writing\n";
+  print OUT join("\t",$headers[0],$headers[1],$prop,$prop."_label"),"\n";
   foreach my $term_id(sort keys %{$props{$prop}}){
     next if !scalar keys %{$props{$prop}{$term_id}};
     foreach my $prop_id(keys %{$props{$prop}{$term_id}}){
