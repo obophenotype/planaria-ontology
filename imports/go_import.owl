@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/plana/imports/go_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2020-07-31/imports/go_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2020-10-20/imports/go_import.owl"/>
     </owl:Ontology>
     
 
@@ -31,6 +31,12 @@
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
         <rdfs:label>definition</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000233 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000233"/>
     
 
 
@@ -812,6 +818,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_drosophila"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_generic"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_yeast"/>
+        <rdfs:comment>Note that this term should not be confused with &apos;GO:0140014 ; mitotic nuclear division&apos;. &apos;GO:0000278 ; mitotic cell cycle represents the entire mitotic cell cycle, while &apos;GO:0140014 ; mitotic nuclear division&apos; specifically represents the actual nuclear division step of the mitotic cell cycle.</rdfs:comment>
         <rdfs:label>mitotic cell cycle</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -939,7 +946,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005575"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:pdt</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:pdt</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NIF_Subcellular:sao1337158144</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -1223,7 +1230,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:pdt</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:pdt</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1353,6 +1360,7 @@
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0022403</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate"/>
+        <rdfs:comment>Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is &apos;regulation of x/y phase transition&apos; or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).</rdfs:comment>
         <rdfs:label>cell cycle phase</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -1657,6 +1665,7 @@
         <oboInOwl:id>GO:0051321</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_drosophila"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_yeast"/>
+        <rdfs:comment>Note that this term should not be confused with &apos;GO:0140013 ; meiotic nuclear division&apos;. &apos;GO:0051321 ; meiotic cell cycle represents the entire mitotic cell cycle, while &apos;GO:0140013 meiotic nuclear division&apos; specifically represents the actual nuclear division step of the mitotic cell cycle.</rdfs:comment>
         <rdfs:label>meiotic cell cycle</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2100,7 +2109,7 @@
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0098764</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate"/>
-        <rdfs:comment>This term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation should be to &apos;regulation of x/y phase transition&apos; or to a process which occurs during the reported phase (e.g. mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).</rdfs:comment>
+        <rdfs:comment>Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is &apos;regulation of x/y phase transition&apos; or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).</rdfs:comment>
         <rdfs:label>meiosis I cell cycle phase</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2149,8 +2158,10 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0000280"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_1903046"/>
         <obo:IAO_0000115>One of the two nuclear divisions that occur as part of the meiotic cell cycle.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/19910</obo:IAO_0000233>
         <oboInOwl:created_by>pg</oboInOwl:created_by>
         <oboInOwl:creation_date>2017-03-23T09:40:00Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym>meiosis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0140013</oboInOwl:id>
         <rdfs:label>meiotic nuclear division</rdfs:label>
@@ -2181,8 +2192,10 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0000280"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_1903047"/>
         <obo:IAO_0000115>A mitotic cell cycle process comprising the steps by which the nucleus of a eukaryotic cell divides; the process involves condensation of chromosomal DNA into a highly compacted form. Canonically, mitosis produces two daughter nuclei whose chromosome complement is identical to that of the mother cell.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/19910</obo:IAO_0000233>
         <oboInOwl:created_by>pg</oboInOwl:created_by>
         <oboInOwl:creation_date>2017-03-23T14:44:23Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym>mitosis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0140014</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_chembl"/>
