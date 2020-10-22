@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2020-07-31
+data-version: releases/2020-10-20
 subsetdef: attribute_slim ""
 subsetdef: cell_quality ""
 subsetdef: gocheck_do_not_annotate ""
@@ -975,6 +975,7 @@ name: mitotic cell cycle
 namespace: biological_process
 alt_id: GO:0007067
 def: "Progression through the phases of the mitotic cell cycle, the most common eukaryotic cell cycle, which canonically comprises four successive phases called G1, S, G2, and M and includes replication of the genome and the subsequent segregation of chromosomes into daughter cells. In some variant cell cycles nuclear replication or nuclear division may not be followed by cell division, or G1 and G2 phases may be absent." [GOC:mah, ISBN:0815316194, Reactome:69278]
+comment: Note that this term should not be confused with 'GO:0140014 ; mitotic nuclear division'. 'GO:0000278 ; mitotic cell cycle represents the entire mitotic cell cycle, while 'GO:0140014 ; mitotic nuclear division' specifically represents the actual nuclear division step of the mitotic cell cycle.
 subset: goslim_chembl
 subset: goslim_drosophila
 subset: goslim_generic
@@ -1035,7 +1036,6 @@ name: cellular_component
 namespace: cellular_component
 alt_id: GO:0008372
 def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao1337158144]
-comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
 comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
@@ -1173,7 +1173,6 @@ alt_id: GO:0000004
 alt_id: GO:0007582
 alt_id: GO:0044699
 def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [GOC:pdt]
-comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
 comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
@@ -1190,7 +1189,6 @@ synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 xref: Wikipedia:Biological_process
 is_a: BFO:0000015 ! process
-created_by: janelomax
 created_by: jl
 creation_date: 2012-09-19T15:05:24Z
 
@@ -1262,6 +1260,7 @@ id: GO:0022403
 name: cell cycle phase
 namespace: biological_process
 def: "One of the distinct periods or stages into which the cell cycle is divided. Each phase is characterized by the occurrence of specific biochemical and morphological events." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
 subset: gocheck_do_not_annotate
 is_a: GO:0044848 ! biological phase
 
@@ -1392,6 +1391,7 @@ name: meiotic cell cycle
 namespace: biological_process
 alt_id: GO:0007126
 def: "Progression through the phases of the meiotic cell cycle, in which canonically a cell replicates to produce four offspring with half the chromosomal content of the progenitor cell via two nuclear divisions." [GOC:ai]
+comment: Note that this term should not be confused with 'GO:0140013 ; meiotic nuclear division'. 'GO:0051321 ; meiotic cell cycle represents the entire mitotic cell cycle, while 'GO:0140013 meiotic nuclear division' specifically represents the actual nuclear division step of the mitotic cell cycle.
 subset: goslim_drosophila
 subset: goslim_yeast
 synonym: "meiosis" RELATED []
@@ -1575,7 +1575,7 @@ id: GO:0098764
 name: meiosis I cell cycle phase
 namespace: biological_process
 def: "A meiotic cell cycle phase prior to a during which some part of meiosis I nuclear division or the proceeding cytokinesis occurs." [GOC:dos]
-comment: This term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation should be to 'regulation of x/y phase transition' or to a process which occurs during the reported phase (e.g. mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
 subset: gocheck_do_not_annotate
 is_a: GO:0098762 ! meiotic cell cycle phase
 
@@ -1593,10 +1593,12 @@ id: GO:0140013
 name: meiotic nuclear division
 namespace: biological_process
 def: "One of the two nuclear divisions that occur as part of the meiotic cell cycle." [PMID:9334324]
+synonym: "meiosis" EXACT []
 is_a: GO:0000280 ! nuclear division
 is_a: GO:1903046 ! meiotic cell cycle process
 intersection_of: GO:0000280 ! nuclear division
 intersection_of: part_of GO:0051321 ! meiotic cell cycle
+property_value: IAO:0000233 https://github.com/geneontology/go-ontology/issues/19910 xsd:anyURI
 created_by: pg
 creation_date: 2017-03-23T09:40:00Z
 
@@ -1607,10 +1609,12 @@ namespace: biological_process
 def: "A mitotic cell cycle process comprising the steps by which the nucleus of a eukaryotic cell divides; the process involves condensation of chromosomal DNA into a highly compacted form. Canonically, mitosis produces two daughter nuclei whose chromosome complement is identical to that of the mother cell." [ISBN:0198547684]
 subset: goslim_chembl
 subset: goslim_generic
+synonym: "mitosis" EXACT []
 is_a: GO:0000280 ! nuclear division
 is_a: GO:1903047 ! mitotic cell cycle process
 intersection_of: GO:0000280 ! nuclear division
 intersection_of: part_of GO:0000278 ! mitotic cell cycle
+property_value: IAO:0000233 https://github.com/geneontology/go-ontology/issues/19910 xsd:anyURI
 created_by: pg
 creation_date: 2017-03-23T14:44:23Z
 
@@ -2068,6 +2072,7 @@ id: PLANA:0000013
 name: visceral musculature
 def: "Musculature surrounding internal organs of the body." [PMID:26904543, PMID:30471994]
 synonym: "visceral muscle" EXACT []
+xref: FBbt:00005070
 xref: PMID:26904543
 xref: PMID:30471994
 is_a: PLANA:0000431 ! organ
@@ -2109,6 +2114,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000015
 name: non ciliated epithelial cell
 def: "An epithelial cell lacking cilia." []
+xref: XAO:0004225
 is_a: PLANA:0000100 ! epithelial cell
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/nonciliatedepithelialcell.png {comment="Image is an electron micrograph of the dorsal side of the animal where there is a transition from nonciliated epidermal cells to ciliated ones. On the left side of the image are the ciliated cells and on the right are the nonciliated. A few nonciliated have been marked with arrowheads. Scale bar is 10um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -2310,6 +2316,7 @@ xref: PMID:30143032
 xref: PMID:30399335
 xref: PMID:30471994
 xref: PMID:30485821
+xref: UBERON:0006562
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000099 ! neuron
 relationship: develops_from PLANA:0000095 ! trail cell
@@ -2412,6 +2419,7 @@ xref: PMID:29100657
 xref: PMID:29158443
 xref: PMID:29674431
 xref: PMID:29674432
+xref: UBERON:0006973
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: develops_from PLANA:0000011 ! protonephridial progenitor cell
@@ -2474,6 +2482,7 @@ id: PLANA:0000023
 name: embryonic pharynx
 def: "An innervated, muscular pump that ingests yolk cells into the gut cavity. The embryonic pharynx is an extraembryonic tissue that forms during Stage 2, functions during Stages 3-5, and degenerates during Stages 6-7." [PMID:28072387]
 synonym: "temporary embryonic pharynx" EXACT []
+xref: FBbt:00001866
 xref: ISBN:9780070316607
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
@@ -2660,6 +2669,7 @@ xref: PMID:30297872
 xref: PMID:30383829
 xref: PMID:30471994
 xref: PMID:30962434
+xref: UBERON:0000160
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: develops_from PLANA:0000039 ! gamma neoblast
@@ -2779,6 +2789,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000030
 name: midline
 def: "The median line/ plane of bilateral symmetry along the anteroposterior axis." []
+xref: NCIT:C81170
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000102 ! anatomical region
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -2931,6 +2942,7 @@ xref: PMID:29906446
 xref: PMID:30194301
 xref: PMID:30282036
 xref: PMID:30962434
+xref: UBERON:0001003
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: develops_from PLANA:0000033 ! epidermal progenitor cell
@@ -3150,6 +3162,7 @@ is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: develops_from PLANA:0000095 ! trail cell
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
+relationship: part_of PLANA:0000103 ! central nervous system
 relationship: part_of PLANA:0000124 ! visual system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -3215,6 +3228,7 @@ id: PLANA:0000041
 name: aboral hemisphere
 def: "Stage 3-5 embryo hemisphere centered around the pole opposite the embryonic pharynx." [PMID:28072387]
 xref: PMID:28072387
+xref: UBERON:0008259
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000423 ! embryonic subdivision
 relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
@@ -3352,6 +3366,7 @@ xref: PMID:29547123
 xref: PMID:29674431
 xref: PMID:30194301
 xref: PMID:30237141
+xref: UBERON:0000955
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
@@ -3453,6 +3468,7 @@ synonym: "collection duct" EXACT []
 xref: PMID:26057828
 xref: PMID:27068018
 xref: PMID:29674431
+xref: UBERON:0001232
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000113 ! tissue
 relationship: adjacent_to PLANA:0000053 ! distal tubule
@@ -3563,6 +3579,7 @@ name: distal tubule
 def: "Sinusoidal, non-ciliated tubules connected to proximal tubules within the parenchyma. Tubules are formed via intercellular junctions between two epithelial cells." [PMID:21828097]
 xref: PMID:21828097
 xref: PMID:27068018
+xref: UBERON:0004135
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000113 ! tissue
 relationship: adjacent_to PLANA:0000047 ! collecting duct
@@ -3639,6 +3656,7 @@ id: PLANA:0000058
 name: embryonic digestive system
 def: "A cryptic digestive system in Stage 3-6 embryos comprised of temporary embryonic cell types and organs, including the embryonic pharynx and primitive gut cells. Embryonic gut cells, likely produced from blastomeres, form a phagocytic tissue layer surrounding the inner gut cavity during Stages 4-6. It is not known whether the embryonic gut is temporary embryonic tissue or a definitive tissue. For convenience, the embryonic gut is currently designated as an extraembryonic structure because cell type specific markers for the embryonic gut do not stain the definitive gut in hatchlings or adult animals." [PMID:28072387]
 xref: PMID:28072387
+xref: UBERON:6001842
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000063 ! extraembryonic structure
 relationship: existence_ends_during_or_before PLANA:0000007 ! Stage 7
@@ -3698,6 +3716,7 @@ xref: PMID:23079596
 xref: PMID:26904543
 xref: PMID:30471994
 xref: PMID:30962434
+xref: UBERON:2001324
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000013 ! visceral musculature
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
@@ -3733,6 +3752,7 @@ xref: PMID:24737865
 xref: PMID:27063937
 xref: PMID:29674431
 xref: PMID:30485821
+xref: UBERON:0001043
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000113 ! tissue
 relationship: part_of PLANA:0000016 ! pharynx
@@ -3817,6 +3837,7 @@ def: "The single cell layer columnar epithelial lining of the intestine. The gas
 synonym: "gut epithelia" EXACT []
 synonym: "gut epithelium" EXACT []
 synonym: "intestinal epithelium" EXACT []
+xref: BTO:0000509
 xref: ISBN:9780070316607
 xref: PMID:21282632
 xref: PMID:21664348
@@ -3848,6 +3869,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000067
 name: goblet cell
 def: "Secretory cells that release digestive enzymes into the lumen of the intestine." [PMID:3490491]
+xref: BTO:0001540
 xref: PMID:20865784
 xref: PMID:21664348
 xref: PMID:23079596
@@ -4004,6 +4026,7 @@ xref: PMID:29674431
 xref: PMID:30399335
 xref: PMID:30471994
 xref: PMID:30485821
+xref: UBERON:0000165
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000431 ! organ
 relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
@@ -4081,6 +4104,7 @@ xref: PMID:28495872
 xref: PMID:29547123
 xref: PMID:30143032
 xref: PMID:30194301
+xref: UBERON:0003072
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000113 ! tissue
 relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
@@ -4255,6 +4279,7 @@ xref: PMID:21828097
 xref: PMID:21937596
 xref: PMID:26057828
 xref: PMID:27068018
+xref: UBERON:0004134
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000113 ! tissue
 relationship: adjacent_to PLANA:0000053 ! distal tubule
@@ -4539,6 +4564,7 @@ def: "Diploid cell resulting from the fusion of male and female gametes at ferti
 xref: BTO:0000854
 xref: CL:0000365
 xref: PMID:28812561
+xref: UBERON:0000106
 is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0000068 ! embryo stage
 relationship: existence_ends_during_or_before PLANA:0000001 ! Stage 1
@@ -4554,7 +4580,9 @@ synonym: "differentiated neuron" EXACT []
 synonym: "nerve cell" EXACT []
 synonym: "neural cell" EXACT []
 synonym: "neuronal cell" EXACT []
+xref: BTO:0000938
 xref: CL:0000540
+xref: NCIT:C12623
 xref: PMID:16033796
 xref: PMID:16890156
 xref: PMID:17553481
@@ -4607,6 +4635,7 @@ xref: PMID:29357350
 xref: PMID:29674432
 xref: PMID:30143032
 xref: PMID:30399335
+xref: WBbt:0003679
 is_a: PLANA:0000540 ! electrically signaling cell
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -4671,6 +4700,7 @@ id: PLANA:0000102
 name: anatomical region
 def: "A subdivision of an anatomical compartment." []
 synonym: "body region" EXACT []
+xref: BSPO:0000070
 xref: PMID:28292427
 xref: PMID:29547123
 is_a: UBERON:0000475 ! organism subdivision
@@ -4775,6 +4805,7 @@ id: PLANA:0000105
 name: secretory cell
 def: "A cell that specializes in controlled release of one or more substances." [CL:0000151]
 xref: CL:0000151
+xref: NCIT:C13055
 is_a: PLANA:0000119 ! terminally differentiated cell
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/secretorycell.png {comment="Image is an electron micrograph of a viscid gland cell (arrowheads) passing across the basal lamina (BL). This cell secretes a specialized type of mucus. The secretory duct transports mucus to the outside of the animal, through the secretory pore. Ventral is down and scale bar is 5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -4841,6 +4872,7 @@ id: PLANA:0000111
 name: proximal tubule epithelial cell
 def: "Ciliated epithelial cells that assemble into proximal tubules." [PMID:21828097]
 synonym: "proximal tubule cell" EXACT []
+xref: BTO:0006154
 xref: PMID:21828097
 xref: PMID:29674431
 is_a: BFO:0000040 ! material entity
@@ -4920,6 +4952,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000117
 name: embryonic structure
 def: "Anatomical structure that is part of an embryo." [UBERON:0002050]
+xref: BTO:0000174
 xref: UBERON:0002050
 is_a: UBERON:0005423 ! developing anatomical structure
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -5303,6 +5336,7 @@ def: "A gonad containing female germline stem cells which fuel oocyte production
 synonym: "female gonad" EXACT []
 xref: https://doi.org/10.1101/279364
 xref: ISBN:9780070316607
+xref: NCIT:C12404
 xref: PMID:16344473
 xref: PMID:17376870
 xref: PMID:17390146
@@ -5400,6 +5434,7 @@ xref: PMID:27149082
 xref: PMID:27304889
 xref: PMID:28072387
 xref: PMID:28434803
+xref: ZFA:0001268
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002089 ! reproductive organ
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
@@ -5439,6 +5474,7 @@ xref: PMID:28072387
 xref: PMID:28434803
 xref: PMID:28812561
 xref: PMID:29095551
+xref: UBERON:0000473
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000217 ! gonad
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
@@ -5491,6 +5527,7 @@ replaced_by: PLANA:0004517
 id: PLANA:0000214
 name: juvenile
 def: "A sexually immature member of the Schmidtea mediterranea sexuallly reproducing biotype." []
+xref: UBERON:0034919
 is_a: PLANA:0000136 ! whole organism
 is_a: UBERON:0000105 ! life cycle stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -5869,8 +5906,10 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000234
 name: seminal vesicle
 def: "Glandular pouches adjoining the sperm ducts which produce seminal fluid." [PMID:19022767, PMID:22074376]
+xref: NCIT:C12787
 xref: PMID:19022767
 xref: PMID:22074376
+xref: UBERON:0000998
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002089 ! reproductive organ
 relationship: part_of PLANA:0000232 ! copulatory apparatus
@@ -6325,6 +6364,7 @@ id: PLANA:0000421
 name: tail region
 def: "Caudal region, beginning at the mouth and ending at posterior pole." []
 synonym: "tail" EXACT []
+xref: UBERON:0002415
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000102 ! anatomical region
 relationship: posterior_to PLANA:0004527 ! copulatory region
@@ -6417,6 +6457,7 @@ synonym: "pASC" EXACT []
 synonym: "planarian adult stem cell" EXACT []
 synonym: "planarian stem cell" EXACT []
 synonym: "somatic stem cell" EXACT []
+xref: BTO:0006347
 xref: https://doi.org/10.1101/279364
 xref: https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000004.md
 xref: PMID:15866156
@@ -6653,6 +6694,7 @@ xref: http://www.snomedbrowser.com/Codes/Details/244453006
 xref: MA:0001098
 xref: MBA:117
 xref: MESH:D009897
+xref: NCIT:C90609
 xref: Optic:chiasm
 xref: PMID:15866156
 xref: PMID:16033796
@@ -6738,7 +6780,9 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000462
 name: sensory cell
 def: "A cell that performs a sensory function." []
+xref: BTO:0001037
 xref: ISBN:9780070316607
+xref: NCIT:C12628
 xref: PMID:17251262
 xref: PMID:17942485
 is_a: PLANA:0000119 ! terminally differentiated cell
@@ -6781,6 +6825,8 @@ synonym: "GABA neuron" EXACT []
 synonym: "GABAergic cell" EXACT []
 synonym: "gabanergic neuron" EXACT []
 synonym: "inhibitory neuron" EXACT []
+xref: CL:0000617
+xref: FBbt:00007228
 xref: PMID:18440152
 xref: PMID:23903188
 xref: PMID:24131630
@@ -6794,6 +6840,8 @@ xref: PMID:28216315
 xref: PMID:29291981
 xref: PMID:30194301
 xref: PMID:30485821
+xref: WBbt:0005190
+xref: ZFA:0009276
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000556 ! neurosecretory neuron
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -7092,6 +7140,8 @@ id: PLANA:0000481
 name: serotonergic neuron
 def: "Neurons that express the neurotransmitter serotonin." [PMID:17624455]
 synonym: "serotonergic cell" EXACT []
+xref: CL:0000850
+xref: FBbt:00005133
 xref: PMID:23903188
 xref: PMID:24131630
 xref: PMID:24173799
@@ -7103,6 +7153,8 @@ xref: PMID:27864883
 xref: PMID:28137894
 xref: PMID:29357350
 xref: PMID:30194301
+xref: WBbt:0006837
+xref: ZFA:0009361
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000556 ! neurosecretory neuron
 relationship: develops_from PLANA:0007550 ! serotonergic neural progenitor cell
@@ -7126,6 +7178,8 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000482
 name: dopaminergic neuron
 def: "A neuron that expresses the neurotransmitter dopamine." [PMID:17565705]
+xref: CL:0000700
+xref: FBbt:00005131
 xref: PMID:17565705
 xref: PMID:21458439
 xref: PMID:23250205
@@ -7136,6 +7190,8 @@ xref: PMID:24950970
 xref: PMID:25356635
 xref: PMID:27864883
 xref: PMID:30194301
+xref: WBbt:0006746
+xref: ZFA:0009301
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000556 ! neurosecretory neuron
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile
@@ -7147,6 +7203,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000483
 name: octopaminergic neuron
 def: "Neurons that express the biogenic amine octopamine." [PMID:18926867]
+xref: FBbt:00007364
 xref: PMID:18926867
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000556 ! neurosecretory neuron
@@ -7160,6 +7217,7 @@ id: PLANA:0000484
 name: secretory system
 def: "Anatomical system that has as its parts cells and glands devoted to the discharge of substances such as mucus." [PMID:20865784]
 xref: PMID:20865784
+xref: WBbt:0006850
 is_a: PLANA:0000114 ! anatomical system
 relationship: part_of PLANA:0007564 ! sexual organism
 relationship: part_of PLANA:0007565 ! asexual organism
@@ -7170,6 +7228,7 @@ id: PLANA:0000485
 name: gland cell
 def: "Specialized insunk epithelial cells located in the mesenchyme that participate in mucus secretion. They are characterized by elongated cell bodies with long cytoplasmic projections that terminate between, or penetrate directly throughepithelial cells and form a secretory pore at the surface." [PMID:20865784]
 synonym: "secretory gland cell" EXACT []
+xref: CLYH:1000090
 xref: ISBN:9780070316607
 xref: PMID:19247960
 xref: PMID:20865784
@@ -7178,6 +7237,7 @@ xref: PMID:24737865
 xref: PMID:28807897
 xref: PMID:29674431
 xref: PMID:30962434
+xref: WBbt:0003670
 is_a: PLANA:0000100 ! epithelial cell
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/glandcell.png {comment="Image is an electron micrograph depicting a portion of a gland cell (arrowheads). Note the nucleus surrounded by endoplasmic reticulum and the dark mucus granules that fill the long cytoplasmic projection. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -7809,6 +7869,7 @@ id: PLANA:0000543
 name: neuron projection bundle
 def: "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses." [CARO:0001001]
 xref: CARO:0001001
+xref: UBERON:0000122
 is_a: PLANA:0000538 ! axon tract
 relationship: part_of PLANA:0000080 ! peripheral nervous system
 relationship: part_of PLANA:0000103 ! central nervous system
@@ -8516,6 +8577,7 @@ id: PLANA:0002020
 name: chromatoid body
 def: "A membrane-less, cytoplasmic ribonucleoprotein granule present in neoblasts and germ cells implicated in post-transcriptional regulation. The RNA helicase DHH1/RCK, Tudor, SmB, methylated substrates of PRMT5, PIWI-3 and Germinal Histone H4 localize to chromatoid bodies in neoblasts." [PMID:22318224, PMID:24903754]
 synonym: "nuage" EXACT []
+xref: GO:0033391
 xref: PMID:19247960
 xref: PMID:20215344
 xref: PMID:21356107
@@ -8553,6 +8615,7 @@ name: chromosome arm
 def: "Under the microscope chromosomes appear as thin, thread-like structures. They all have a short arm and long arm separated by a primary constriction called the centromere. The short arm is designated as p and the long arm as q." [NCIT:C13355]
 xref: NCIT:C13355
 xref: PMID:25404302
+xref: SO:0000105
 is_a: PLANA:0002121 ! chromosome part
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/chromosomearm.png {comment="Image is an electron micrograph showing a mitotic cell. An arrowhead marks the long arm of a chromosome. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -8866,6 +8929,7 @@ def: "Stem cell that is the precursor of gametes." [FBbt:00004861]
 synonym: "germ cell" EXACT []
 synonym: "germ stem cell" EXACT []
 synonym: "germline cell" EXACT []
+xref: CL:0000014
 xref: FBbt:00004861
 xref: https://doi.org/10.1101/279364
 xref: PMID:16344473
@@ -9012,6 +9076,7 @@ synonym: "mechanosensory cell" EXACT []
 xref: FBbt:00005919
 xref: PMID:25725068
 xref: PMID:28216315
+xref: WBbt:0008431
 is_a: PLANA:0000552 ! sensory neuron
 relationship: part_of PLANA:0000125 ! sensory system
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -9072,6 +9137,7 @@ name: mucus
 def: "A secreted, mucin-rich extracellular substance coating the epidermal surface of the animal implicated in gliding locomotion, substrate adhesion, innate immunity and predator avoidance." [PMID:22653920]
 xref: PMID:21282632
 xref: PMID:22653920
+xref: UBERON:0000912
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: part_of PLANA:0000484 ! secretory system
@@ -9088,6 +9154,7 @@ name: nephridiopore
 def: "The external opening and terminus of a protonephridium made by a terminal cell." [ISBN:9780070316607]
 xref: ISBN:9780070316607
 xref: PMID:21828097
+xref: UBERON:0006972
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0002079 ! pore
 relationship: part_of PLANA:0000065 ! flame cell
@@ -9099,6 +9166,7 @@ id: PLANA:0002061
 name: neurite
 def: "Cell appendage of the neuron which includes the axon and the dendrite." [FMA:61814]
 synonym: "neuronal process" EXACT []
+xref: FBbt:00005113
 xref: FMA:61814
 xref: ISBN:9780070316607
 xref: PMID:27612382
@@ -9242,6 +9310,7 @@ id: PLANA:0002073
 name: phagocytic cell
 def: "A cell that engulfs large particles or cells via invagination of the plasma membrane and creation of a phagosome." [ISBN:9780070316607, PMID:30471994]
 synonym: "phagocyte" EXACT []
+xref: CL:0000234
 xref: ISBN:9780070316607
 xref: PMID:25956527
 xref: PMID:27501047
@@ -9481,6 +9550,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0002092
 name: rhabdomere
 def: "The dendritic process of a bipolar photoreceptor neuron that projects into the optic cup lumen and senses light." [PMID:15760337, PMID:16033796, PMID:21852957]
+xref: GO:0016028
 xref: PMID:15760337
 xref: PMID:16033796
 xref: PMID:18202849
@@ -9533,6 +9603,7 @@ id: PLANA:0002095
 name: somatic cell
 def: "One of the cells of the body that compose the tissues, organs, and parts of that individual other than the germ cells." [BTO:0001268]
 xref: BTO:0001268
+xref: CL:0002371
 xref: PMID:20599901
 xref: PMID:21852957
 xref: PMID:22074376
@@ -9553,6 +9624,7 @@ synonym: "somatic gonadal niche cell" EXACT []
 synonym: "somatic gonadal support cell" EXACT []
 xref: PMID:27163480
 xref: PMID:27330085
+xref: WBbt:0007815
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000119 ! terminally differentiated cell
 relationship: part_of PLANA:0000217 ! gonad
@@ -9835,10 +9907,17 @@ is_a: PLANA:0002128 ! fragment
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
+id: PLANA:0002117
+name: obsolete oblique
+comment: term is not needed.
+is_obsolete: true
+
+[Term]
 id: PLANA:0002118
 name: epithelium
 def: "The avascular cellular layers that cover body surfaces and cavities and may form glands." [NCIT:C12710]
 xref: NCIT:C12710
+xref: UBERON:0000483
 is_a: PLANA:0000113 ! tissue
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/epithelium.png {comment="Image is an electron micrograph of a transverse section of a planarian through the pharyngeal region depicting 3 different epithelial layers (arrowheads). At the top is the dorsal epidermis, in the middle is the epithelium of the pharyngeal pouch, and at the bottom of the image, the outer epithelium of the pharynx. Scale bar is 5um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -9971,6 +10050,7 @@ id: PLANA:0002136
 name: syncytium
 def: "An anatomical entity consisting of a single or a few multinucleated structures" [AEO:0000203]
 xref: AEO:0000203
+xref: BTO:0005784
 xref: PMID:27330085
 is_a: UBERON:0000061 ! anatomical structure
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -11627,6 +11707,39 @@ intersection_of: RO:0001018 PLANA:0003003 ! contained in posterior region of the
 relationship: RO:0001018 PLANA:0003003 ! contained in posterior region of the eye
 
 [Term]
+id: PLANA:0003802
+name: lateral muscle cell
+def: "muscle cell is contained in the lateral region" [PMID: 29674431]
+synonym: "muscle cell contained in lateral region" EXACT []
+is_a: BFO:0000040 ! material entity
+is_a: PLANA:0000101 ! muscle cell
+intersection_of: PLANA:0000101 ! muscle cell
+intersection_of: RO:0001018 BSPO:0000082 ! contained in lateral region
+relationship: RO:0001018 BSPO:0000082 ! contained in lateral region
+
+[Term]
+id: PLANA:0003803
+name: anterior muscle cell
+def: "muscle cell is contained in the anterior region" [PMID: 29674432]
+synonym: "muscle cell contained in anterior region" EXACT []
+is_a: BFO:0000040 ! material entity
+is_a: PLANA:0000101 ! muscle cell
+intersection_of: PLANA:0000101 ! muscle cell
+intersection_of: RO:0001018 BSPO:0000071 ! contained in anterior region
+relationship: RO:0001018 BSPO:0000071 ! contained in anterior region
+
+[Term]
+id: PLANA:0003804
+name: posterior muscle cell
+def: "muscle cell is contained in the posterior region" [PMID: 29674433]
+synonym: "muscle cell contained in posterior region" EXACT []
+is_a: BFO:0000040 ! material entity
+is_a: PLANA:0000101 ! muscle cell
+intersection_of: PLANA:0000101 ! muscle cell
+intersection_of: RO:0001018 BSPO:0000072 ! contained in posterior region
+relationship: RO:0001018 BSPO:0000072 ! contained in posterior region
+
+[Term]
 id: PLANA:0003900
 name: head blastema
 def: "blastema which develops into head region" []
@@ -11888,6 +12001,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0004517
 name: blastomere
 def: "An undifferentiated, cycling embryonic cell in Stage 1-5 embryos that expresses piwi-1, numerous adult asexual neoblast enriched genes, and early embryo enriched genes. Blastomeres give rise to temporary embryonic tissues during Stage 2, continue dividing asynchronously in the embryonic wall, and ultimately give rise to neoblasts and adult lineage progenitors beginning in Stage 5." [PMID:28072387]
+xref: CL:0000353
 xref: PMID:28072387
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0000123 ! embryonic cell
@@ -11909,6 +12023,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0004518
 name: extraembryonic cell
 def: "Post-mitotic, terminally differentiated cells which, give rise to temporary embryonic tissues." [PMID:28072387]
+xref: CL:0000349
 xref: PMID:28072387
 is_a: PLANA:0000119 ! terminally differentiated cell
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -12018,6 +12133,7 @@ def: "Epithelia associated with the pharynx organ." []
 synonym: "pharnyx epidermis" EXACT []
 synonym: "pharyngeal epidermis" EXACT []
 synonym: "pharyngeal epithelium" EXACT []
+xref: UBERON:0003351
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002118 ! epithelium
 relationship: part_of PLANA:0000016 ! pharynx
@@ -12044,6 +12160,7 @@ id: PLANA:0004530
 name: oviduct lumen
 def: "Anatomical space enclosed by the oviduct epithelium." [PMID:22074376]
 xref: PMID:22074376
+xref: TADS:0000435
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002053 ! lumen
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -12085,7 +12202,9 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0004532
 name: oviduct epithelium
 def: "Ciliated epithelium lining the oviduct." [PMID:22074376]
+xref: CL:2000064
 xref: PMID:22074376
+xref: UBERON:0004804
 is_a: BFO:0000040 ! material entity
 is_a: PLANA:0002023 ! ciliated epithelium
 relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile
@@ -12218,6 +12337,7 @@ id: PLANA:0007512
 name: mitochondrion
 def: "A spherical to rod shaped organelle that generates the majority of a cell's supply of ATP via cellular respiration. Mitochondria have their own genome and consist of outer and inner membranes, the latter folds inward to form cristae. This folding increases the surface area of the membrane and thus increases the space available to produce ATP. The inner and outer membranes are separated by an intermembrane space, and the inner membrane encloses the matrix." []
 synonym: "mitochondria" EXACT []
+xref: GO:0005739
 xref: PMID:21828097
 xref: PMID:22318224
 xref: PMID:26516985
@@ -12230,6 +12350,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0007513
 name: endoplasmic reticulum
 def: "Network of interconnected, flattened, and/or tubular membrane, known as cisternae. This membrane is contiguous with the outer nuclear membrane. The endoplasmic reticulum is involved in both protein and lipid synthesis." []
+xref: GO:0005783
 xref: PMID:30143032
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/endoplasmiceeticulum.png {comment="Image is an electron micrograph depicting endoplasmic reticulum (magenta) in multiple cells. Scale bar is 0.5um."}
@@ -12239,6 +12360,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0007514
 name: rough endoplasmic reticulum
 def: "Network of interconnected, flattened, and/or tubular membrane, known as cisternae. This membrane is contiguous with the outer nuclear membrane. The endoplasmic reticulum is involved in both protein and lipid synthesis." []
+xref: GO:0005791
 xref: PMID:30143032
 is_a: PLANA:0007513 ! endoplasmic reticulum
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/roughendoplasmicreticulum.png {comment="Image is an electron micrograph depicting the rough endoplasmic reticulum (arrowheads) of a cell. Ribosomes can be seen associating with the ER membrane creating a rough ER, as well as  free within the cytoplasm of the cell. Scale bar is 200 nm."}
@@ -12248,6 +12370,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0007515
 name: smooth endoplasmic reticulum
 def: "Endoplamic reticulum that does not contain ribosomes, which synthesizes lipids, phospholipids, and steroids." []
+xref: GO:0005790
 is_a: PLANA:0007513 ! endoplasmic reticulum
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/smoothendoplasmicreticulum.png {comment="Image is an electron micrograph depicting smooth ER (arrowheads) in a cell, next to the nucleus (N). Ribosomes can be seen within the cytoplasm, but not associating with the ER membrane. Scale bar is 200 nm."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
@@ -12266,6 +12389,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0007518
 name: lysosome
 def: "The digestive component of the cell. They are homogenous, dense, membrane bound organelles filled with acid hydrolases which break down polymers." []
+xref: GO:0005764
 xref: ISBN:0-71677033-4
 xref: PMID:4853064
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
@@ -12498,6 +12622,12 @@ relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
 property_value: foaf:depiction http://purl.obolibrary.org/obo/plana/images/pharynxcircularmusclecell.png {comment="Image is an electron micrograph of a transverse section through the pharynx. The pharynx lumen it to the left. The inner circular muscle (arrowheads) is immediately deep to the inner epithelial layer of the pharynx. Magenta = circular; green = longitudinal; red = radial. Scale bar is 2 um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
+
+[Term]
+id: PLANA:0007536
+name: obsolete specific_to
+comment: using part of instead
+is_obsolete: true
 
 [Term]
 id: PLANA:0007537
@@ -12828,6 +12958,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0007563
 name: glutamatergic neuron
 def: "Neurons that express the biogenic amine glutamate." [PMID:24131630]
+xref: CL:0000679
 xref: PMID:24131630
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000556 ! neurosecretory neuron
@@ -12849,9 +12980,27 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0007565
 name: asexual organism
 def: "An individual member of the asexual biotype of Schmidtea mediterranea." []
+xref: CARO:0000030
 is_a: BFO:0000004 ! independent continuant
 is_a: PLANA:0000136 ! whole organism
 relationship: develops_from PLANA:0007565 ! asexual organism
+created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
+
+[Term]
+id: PLANA:0007566
+name: non-ciliated neuron
+def: "A neuron cell that does not have cilia." [PMID:29674431]
+synonym: "non cilated neuron" EXACT []
+synonym: "uncilated neuon" EXACT []
+is_a: PLANA:0000099 ! neuron
+created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
+
+[Term]
+id: PLANA:0007567
+name: cilated neuron
+def: "A neuron that has cilia." [PMID:29674431]
+xref: WBbt:0006816
+is_a: PLANA:0000099 ! neuron
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -13283,7 +13432,7 @@ name: has component process
 def: "w 'has process component' p if p and w are processes,  w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
 domain: BFO:0000015 ! process
 range: BFO:0000015 ! process
-is_a: has_component ! has component
+is_a: RO:0002180 ! has component
 created_by: dos
 creation_date: 2017-05-24T09:49:21Z
 
@@ -13368,6 +13517,18 @@ property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
 property_value: RO:0001900 RO:0001901
 is_a: RO:0002323 ! mereotopologically related to
 expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
+
+[Typedef]
+id: RO:0002180
+name: has component
+def: "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
+subset: ro-eco
+property_value: curator_notes "For use in recording has_part with a cardinality constraint, because OWL does not permit cardinality constraints to be used in combination with transitive object properties. In situations where you would want to say something like 'has part exactly 5 digit, you would instead use has_component exactly 5 digit." xsd:string
+property_value: editor_note "The definition of 'has component' is still under discussion. The challenge is in providing a definition that does not imply transitivity." xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: RO:0001900 RO:0001901
+property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:Componency
+is_a: has_part ! has part
 
 [Typedef]
 id: RO:0002211
@@ -14406,20 +14567,6 @@ namespace: external
 xref: RO:0002092
 is_transitive: true
 is_a: ends_during ! ends_during
-
-[Typedef]
-id: has_component
-name: has component
-namespace: uberon
-def: "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
-subset: ro-eco
-xref: RO:0002180
-property_value: curator_notes "For use in recording has_part with a cardinality constraint, because OWL does not permit cardinality constraints to be used in combination with transitive object properties. In situations where you would want to say something like 'has part exactly 5 digit, you would instead use has_component exactly 5 digit." xsd:string
-property_value: editor_note "The definition of 'has component' is still under discussion. The challenge is in providing a definition that does not imply transitivity." xsd:string
-property_value: IAO:0000114 IAO:0000125
-property_value: RO:0001900 RO:0001901
-property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:Componency
-is_a: has_part ! has part
 
 [Typedef]
 id: has_part
