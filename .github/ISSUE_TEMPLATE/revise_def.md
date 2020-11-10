@@ -1,7 +1,7 @@
 ---
 name: Revise text definition
 about: Improve the text definition of a PLANA term
-assignees: srobb1, nnowotarski
+assignees: srobb1, snowotarski
 title: 'Request changes to def of [ term ] '
 labels: 'text definition'
 ---
