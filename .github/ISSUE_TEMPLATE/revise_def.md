@@ -1,14 +1,14 @@
 ---
-name: Revise logical definition
+name: Revise text definition
 about: Improve the OWL-DL statement of a CL term
 assignees: srobb1, nnowotarski
-title: "[Logical def]"
-labels: 'logical definition'
+title: 'Request changes to def of [ term ] '
+labels: 'text definition'
 ---
 
 **PLANA term**
 
 
-**Suggested revision of logical definition**
+**Suggested revision of text definition**
 
 
