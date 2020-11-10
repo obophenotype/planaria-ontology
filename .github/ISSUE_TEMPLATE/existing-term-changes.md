@@ -2,8 +2,8 @@
 name: Existing Term Changes
 about: Use this form to suggest changes or additions to existing terms
 title: 'Request changes to [ term ] '
-labels: ''
-assignees: ''
+labels: 'term change'
+assignees: 'srobb1, Snowotarski'
 
 ---
 
