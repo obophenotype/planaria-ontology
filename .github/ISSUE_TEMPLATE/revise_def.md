@@ -1,6 +1,6 @@
 ---
 name: Revise text definition
-about: Improve the OWL-DL statement of a CL term
+about: Improve the text definition of a PLANA term
 assignees: srobb1, nnowotarski
 title: 'Request changes to def of [ term ] '
 labels: 'text definition'
