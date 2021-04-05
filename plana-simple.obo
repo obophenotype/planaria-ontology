@@ -1,5 +1,9 @@
 format-version: 1.2
-data-version: plana/releases/2020-12-09/plana-simple.owl
+data-version: plana/releases/2021-04-05/plana-simple.owl
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_gp2term ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_gocam ""
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
 synonymtypedef: human "synonym typically used in the context of human anatomy" NARROW
@@ -7,7 +11,7 @@ synonymtypedef: vertebrate "synonym typically used in the context of vertebrate 
 default-namespace: Planarian_Anatomy
 treat-xrefs-as-genus-differentia: CARO part_of NCBITaxon:79327; CL part_of NCBITaxon:79327
 ontology: plana/plana-simple
-property_value: owl:versionInfo "2020-12-09" xsd:string
+property_value: owl:versionInfo "2021-04-05" xsd:string
 
 [Term]
 id: PLANA:0000001
@@ -10279,6 +10283,9 @@ namespace: spatial
 namespace: uberon
 def: "x adjacent to y if and only if x and y share a boundary." []
 def: "x adjacent_to y iff: x and y share a boundary" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002220
 property_value: editor_note "This relation acts as a join point with BSPO" xsd:string
 property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string {http://www.w3.org/2000/01/rdf-schema#seeAlso="issuecomment-218584934"}
@@ -10503,6 +10510,8 @@ def: "A overlaps B if they share some part in common." []
 def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
 def: "x overlaps y iff they have some part in common." [BSPO:cjm]
 comment: "(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))" CLIF []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 subset: ro-eco
 xref: RO:0002131
 property_value: IAO:0000114 IAO:0000125
@@ -10521,6 +10530,10 @@ namespace: quality
 namespace: spatial
 namespace: uberon
 def: "a core relation that holds between a part and its whole" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: BFO:0000050
 property_value: editor_note "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
 property_value: editor_note "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
