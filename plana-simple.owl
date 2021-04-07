@@ -15,11 +15,11 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/plana/plana-simple.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2020-12-09/plana-simple.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/plana/releases/2021-04-05/plana-simple.owl"/>
         <oboInOwl:default-namespace>Planarian_Anatomy</oboInOwl:default-namespace>
         <oboInOwl:hasOBOFormatVersion>1.2</oboInOwl:hasOBOFormatVersion>
         <oboInOwl:treat-xrefs-as-genus-differentia>CARO part_of NCBITaxon:79327; CL part_of NCBITaxon:79327</oboInOwl:treat-xrefs-as-genus-differentia>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-12-09</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-04-05</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -331,6 +331,38 @@ We also have the outstanding issue of how to aim different definitions to differ
     <!-- http://purl.obolibrary.org/obo/shorthand -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/shorthand"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/valid_for_go_annotation_extension -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/valid_for_go_gp2term -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/valid_for_go_gp2term">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/valid_for_go_ontology -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/valid_for_go_ontology">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/valid_for_gocam -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/valid_for_gocam">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -716,6 +748,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>part_of</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:shorthand>part_of</oboInOwl:shorthand>
         <rdfs:label>part of</rdfs:label>
         <rdfs:label xml:lang="en">part of</rdfs:label>
@@ -843,7 +879,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0001107"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>x immediately deep to y iff x deep_to y and x is contiguous with y.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>BSPO:curators</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:curators</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -865,7 +901,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0015014"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>x immediately superficial to y iff x superficial to y and x is contiguous with y.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>BSPO:curators</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:curators</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -926,6 +962,8 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>overlaps</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <oboInOwl:shorthand>overlaps</oboInOwl:shorthand>
         <rdfs:comment>&quot;(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))&quot; CLIF []</rdfs:comment>
@@ -1001,6 +1039,9 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>adjacent_to</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:shorthand>adjacent_to</oboInOwl:shorthand>
         <rdfs:label>adjacent to</rdfs:label>
         <rdfs:label xml:lang="en">adjacent to</rdfs:label>
@@ -5032,7 +5073,7 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22074376</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27149082</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000002.md</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000002.md</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>ectolecithal embryo</rdfs:label>
     </owl:Class>
@@ -5042,7 +5083,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedTarget>Turbellarian (freshwater flatworm) embryos that undergo a modified form of cleavage due to separation of oocyte and yolk. Yolk is not contained within oocytes, and is produced by somatic vitellogenic gland cells.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22074376</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27149082</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000002.md</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000002.md</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -5252,7 +5293,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000060"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/embryonicwall.png"/>
-        <rdfs:comment>Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo with anatomical feature noted with black indicators.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo with anatomical feature noted with black indicators.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -19402,7 +19443,7 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000115>A neuron projection bundle that connects the retina or its analog in the eye with the brain. This includes the vertebrate optic nerve (not truly a nerve) as well as analogous structures such as the Bolwig nerve in Drosophila.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
         <oboInOwl:hasDbXref>PMID:27800171</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UBERON:0004904</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0004904</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>optic nerve</rdfs:label>
     </owl:Class>
@@ -19410,7 +19451,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002070"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A neuron projection bundle that connects the retina or its analog in the eye with the brain. This includes the vertebrate optic nerve (not truly a nerve) as well as analogous structures such as the Bolwig nerve in Drosophila.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UBERON:0004904</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0004904</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19475,7 +19516,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002071"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxouterepidermalcell.png"/>
-        <rdfs:comment>Image is an electron micrograph of a transverse section through the pharynx. The pharynx pouch cavity is at the top. An epidermal cell, a part of the outer epithelium, has been labeled with arrowheads. Immediately deep to the outer epithelial layer of the pharynx is musculature that has been colored. Red = circular; blue = longitudinal. Scale bar is 2 um.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Image is an electron micrograph of a transverse section through the pharynx. The pharynx pouch cavity is at the top. An epidermal cell, a part of the outer epithelium, has been labeled with arrowheads. Immediately deep to the outer epithelial layer of the pharynx is musculature that has been colored. Red = circular; blue = longitudinal. Scale bar is 2 um.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -19543,7 +19584,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002074"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxtip.png"/>
-        <rdfs:comment>Image is an electron micrograph of the tip of the pharynx. Many gland cells can be seen inside, filled with mucus. Scale bar is 5um.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Image is an electron micrograph of the tip of the pharynx. Many gland cells can be seen inside, filled with mucus. Scale bar is 5um.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -19554,7 +19595,7 @@ range: spatial region or site (immaterial continuant)
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000119"/>
         <obo:IAO_0000115>A pigment cell is a cell that contains pigment granules.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>CL:0000147</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000147</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:26618653</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>pigment producing cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>pigmented cell</oboInOwl:hasExactSynonym>
@@ -19565,7 +19606,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002075"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pigment cell is a cell that contains pigment granules.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>CL:0000147</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000147</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19582,7 +19623,7 @@ range: spatial region or site (immaterial continuant)
         </rdfs:subClassOf>
         <obo:IAO_0000115>A small, subcellular membrane-bounded vesicle containing pigment and/or pigment precursor molecules. Pigment granule biogenesis is poorly understood, as pigment granules are derived from multiple sources including the endoplasmic reticulum, coated vesicles, lysosomes, and endosomes.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>GO:0048770</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0048770</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:9780070316607</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:27551436</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
@@ -19592,7 +19633,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002076"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A small, subcellular membrane-bounded vesicle containing pigment and/or pigment precursor molecules. Pigment granule biogenesis is poorly understood, as pigment granules are derived from multiple sources including the endoplasmic reticulum, coated vesicles, lysosomes, and endosomes.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0048770</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0048770</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19611,7 +19652,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002077"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/plugamputation.png"/>
-        <rdfs:comment>Illustration of an example of a plug amputation showing resultant fragment and donor wound.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illustration of an example of a plug amputation showing resultant fragment and donor wound.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -19634,7 +19675,7 @@ range: spatial region or site (immaterial continuant)
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0002079">
         <obo:IAO_0000115>An anatomical space that is an opening, usually at the end of a canal or duct, on the surface of the integument or the lining of an internal anatomical space.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>UBERON:0008915</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0008915</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>pore</rdfs:label>
     </owl:Class>
@@ -19642,7 +19683,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002079"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An anatomical space that is an opening, usually at the end of a canal or duct, on the surface of the integument or the lining of an internal anatomical space.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UBERON:0008915</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0008915</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19719,7 +19760,7 @@ range: spatial region or site (immaterial continuant)
         </rdfs:subClassOf>
         <obo:IAO_0000115>A specialized area of membrane facing the presynaptic membrane on the tip of the nerve ending and separated from it by a minute cleft (the synaptic cleft). Neurotransmitters cross the synaptic cleft and transmit the signal to the postsynaptic membrane.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>GO:0045211</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0045211</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:24950970</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>post-synaptic cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
@@ -19729,7 +19770,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002081"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A specialized area of membrane facing the presynaptic membrane on the tip of the nerve ending and separated from it by a minute cleft (the synaptic cleft). Neurotransmitters cross the synaptic cleft and transmit the signal to the postsynaptic membrane.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0045211</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0045211</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19794,7 +19835,7 @@ range: spatial region or site (immaterial continuant)
         </rdfs:subClassOf>
         <obo:IAO_0000115>The part of a synapse that is part of the presynaptic cell.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>GO:0098793</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0098793</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:24950970</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>pre-synaptic cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
@@ -19804,7 +19845,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002083"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The part of a synapse that is part of the presynaptic cell.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0098793</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0098793</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19826,7 +19867,7 @@ range: spatial region or site (immaterial continuant)
         </rdfs:subClassOf>
         <obo:IAO_0000115>Terminal inflated portion of the axon, containing the specialized apparatus necessary to release neurotransmitters. The axon terminus is considered to be the whole region of thickening and the terminal bouton is a specialized region of it.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>GO:0043195</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0043195</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:23903188</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>pre-synaptic terminal</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
@@ -19836,7 +19877,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002084"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Terminal inflated portion of the axon, containing the specialized apparatus necessary to release neurotransmitters. The axon terminus is considered to be the whole region of thickening and the terminal bouton is a specialized region of it.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0043195</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0043195</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20017,7 +20058,7 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:hasDbXref>PMID:22074376</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:25278423</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:27074666</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UBERON:0003133</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0003133</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://doi.org/10.1101/279364</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>reproductive organ</rdfs:label>
@@ -20026,7 +20067,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002089"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An organ involved in reproduction</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UBERON:0003133</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0003133</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20055,7 +20096,7 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000115>Any anatomical structure that is part of the reproductive system.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
         <oboInOwl:hasDbXref>PMID:17376870</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UBERON:0005156</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0005156</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>reproductive structure</rdfs:label>
     </owl:Class>
@@ -20063,7 +20104,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002090"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Any anatomical structure that is part of the reproductive system.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UBERON:0005156</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0005156</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20239,7 +20280,7 @@ range: spatial region or site (immaterial continuant)
         <obo:foaf_depiction rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/secretoryduct.png"/>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
         <oboInOwl:hasDbXref>PMID:30383829</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UBERON:0000058</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000058</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>secretory canal</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>secretory duct</rdfs:label>
@@ -20248,7 +20289,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002093"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A tubular structure that transports secreted or excreted substances.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UBERON:0000058</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000058</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002093"/>
@@ -20271,7 +20312,7 @@ range: spatial region or site (immaterial continuant)
         </rdfs:subClassOf>
         <obo:IAO_0000115>A small subcellular vesicle, surrounded by a membrane, that is formed from the Golgi apparatus and contains a highly concentrated protein destined for secretion. Secretory granules move towards the periphery of the cell and upon stimulation, their membranes fuse with the cell membrane, and their protein load is exteriorized. Processing of the contained protein may take place in secretory granules.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>GO:0030141</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0030141</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:29100657</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>secretory granule</rdfs:label>
@@ -20280,7 +20321,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002094"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A small subcellular vesicle, surrounded by a membrane, that is formed from the Golgi apparatus and contains a highly concentrated protein destined for secretion. Secretory granules move towards the periphery of the cell and upon stimulation, their membranes fuse with the cell membrane, and their protein load is exteriorized. Processing of the contained protein may take place in secretory granules.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0030141</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0030141</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20291,7 +20332,7 @@ range: spatial region or site (immaterial continuant)
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0000499"/>
         <obo:IAO_0000115>One of the cells of the body that compose the tissues, organs, and parts of that individual other than the germ cells.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>BTO:0001268</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0001268</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CL:0002371</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:20599901</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:21852957</oboInOwl:hasDbXref>
@@ -20308,7 +20349,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002095"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>One of the cells of the body that compose the tissues, organs, and parts of that individual other than the germ cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>BTO:0001268</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0001268</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20362,7 +20403,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002097"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A presumptive progenitor cell that expresses both pan-neoblast markers and pro-differentiation gene(s), frequently developmental transcription factors, implicated in lineage commitment and tissue-specific differentiation programs.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:23404104</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23404104</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20421,7 +20462,7 @@ range: spatial region or site (immaterial continuant)
         </rdfs:subClassOf>
         <obo:IAO_0000115>The junction between a nerve fiber of one neuron and another neuron, muscle fiber or glial cell. As the nerve fiber approaches the synapse it enlarges into a specialized structure, the presynaptic nerve ending, which contains mitochondria and synaptic vesicles. At the tip of the nerve ending is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic nerve ending secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>GO:0045202</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0045202</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:18202849</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:18287199</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:21282632</oboInOwl:hasDbXref>
@@ -20434,7 +20475,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002100"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The junction between a nerve fiber of one neuron and another neuron, muscle fiber or glial cell. As the nerve fiber approaches the synapse it enlarges into a specialized structure, the presynaptic nerve ending, which contains mitochondria and synaptic vesicles. At the tip of the nerve ending is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic nerve ending secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0045202</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0045202</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20457,7 +20498,7 @@ range: spatial region or site (immaterial continuant)
         </rdfs:subClassOf>
         <obo:IAO_0000115>The narrow gap that separates the presynaptic and postsynaptic membranes, into which neurotransmitter is released.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>GO:0043083</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0043083</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:23903188</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>synaptic cleft</rdfs:label>
@@ -20466,7 +20507,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002101"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The narrow gap that separates the presynaptic and postsynaptic membranes, into which neurotransmitter is released.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0043083</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0043083</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20503,7 +20544,7 @@ range: spatial region or site (immaterial continuant)
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002123"/>
         <obo:IAO_0000115>A proteinaceous scaffold found between homologous chromosomes during meiosis. It consists of 2 lateral elements and a central element, all running parallel to each other. Transverse filaments connect the lateral elements to the central element.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>GO:0000795</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0000795</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:25404302</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>synaptonemal complex</rdfs:label>
@@ -20512,7 +20553,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002103"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A proteinaceous scaffold found between homologous chromosomes during meiosis. It consists of 2 lateral elements and a central element, all running parallel to each other. Transverse filaments connect the lateral elements to the central element.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0000795</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0000795</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20555,7 +20596,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002104"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/tailtip.png"/>
-        <rdfs:comment>Illustration of the tail tip (in green).</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illustration of the tail tip (in green).</rdfs:comment>
     </owl:Axiom>
     
 
@@ -20601,7 +20642,7 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000115>A cell-cell junction  in invertebrates that seals cells together in an epithelium in a way that prevents even small molecules from leaking from one side of the sheet to the other.</obo:IAO_0000115>
         <obo:foaf_depiction rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/septatejunction.png"/>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref>GO:0070160</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0070160</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>septate junction</rdfs:label>
     </owl:Class>
@@ -20609,13 +20650,13 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002106"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell-cell junction  in invertebrates that seals cells together in an epithelium in a way that prevents even small molecules from leaking from one side of the sheet to the other.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0070160</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0070160</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002106"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/septatejunction.png"/>
-        <rdfs:comment>Image is an electron micrograph depicting the inner epithelium of the pharynx. Septate junctions (arrowheads) can be clearly seen between cells. Scale bar is 200 nm.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Image is an electron micrograph depicting the inner epithelium of the pharynx. Septate junctions (arrowheads) can be clearly seen between cells. Scale bar is 200 nm.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -20634,7 +20675,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002107"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/wedgeamputation.png"/>
-        <rdfs:comment>Illustration of a wedge amputation depicting the resultant donor wound and wedge fragment.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illustration of a wedge amputation depicting the resultant donor wound and wedge fragment.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -20869,7 +20910,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002114"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/post-blastemaregion.png"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illustration of the post-blastema region(in green) in the anterior region of a regenerating tail fragment.</rdfs:comment>
+        <rdfs:comment>Illustration of the post-blastema region(in green) in the anterior region of a regenerating tail fragment.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -20918,7 +20959,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002118"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/epithelium.png"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Image is an electron micrograph of a transverse section of a planarian through the pharyngeal region depicting 3 different epithelial layers (arrowheads). At the top is the dorsal epidermis, in the middle is the epithelium of the pharyngeal pouch, and at the bottom of the image, the outer epithelium of the pharynx. Scale bar is 5um.</rdfs:comment>
+        <rdfs:comment>Image is an electron micrograph of a transverse section of a planarian through the pharyngeal region depicting 3 different epithelial layers (arrowheads). At the top is the dorsal epidermis, in the middle is the epithelium of the pharyngeal pouch, and at the bottom of the image, the outer epithelium of the pharynx. Scale bar is 5um.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -21020,7 +21061,7 @@ range: spatial region or site (immaterial continuant)
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002121"/>
         <obo:IAO_0000115>structural element of a chromosome, for example, a telomere and a centromere</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000628</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SO:0000628</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>chromosomal structural element</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>chromosomal_structural_element</rdfs:label>
@@ -21029,7 +21070,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002123"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>structural element of a chromosome, for example, a telomere and a centromere</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000628</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SO:0000628</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -21048,7 +21089,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002125"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/thickfragment.png"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illustration of a thick fragment (in green).</rdfs:comment>
+        <rdfs:comment>Illustration of a thick fragment (in green).</rdfs:comment>
     </owl:Axiom>
     
 
@@ -21097,7 +21138,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002129"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/longitudinalregion.png"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illustration of a longitudinal region (green).</rdfs:comment>
+        <rdfs:comment>Illustration of a longitudinal region (green).</rdfs:comment>
     </owl:Axiom>
     
 
@@ -21128,7 +21169,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002131"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/plugwound.png"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illustration of a wound left in a donor animal resulting from a plug amputation.</rdfs:comment>
+        <rdfs:comment>Illustration of a wound left in a donor animal resulting from a plug amputation.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -21147,7 +21188,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002132"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/wedgewound.png"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illustration of a wedge wound.</rdfs:comment>
+        <rdfs:comment>Illustration of a wedge wound.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -21182,7 +21223,7 @@ range: spatial region or site (immaterial continuant)
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002134"/>
         <obo:IAO_0000115>An orientation quality inhering in a bearer by virtue of the bearer having a position that is in the parasagittal plane, which runs longitudinally, and is never medial.</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PATO:0005023</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PATO:0005023</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
         <rdfs:label>parasagittal orientation</rdfs:label>
     </owl:Class>
@@ -21190,7 +21231,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002135"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An orientation quality inhering in a bearer by virtue of the bearer having a position that is in the parasagittal plane, which runs longitudinally, and is never medial.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PATO:0005023</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PATO:0005023</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -21200,7 +21241,7 @@ range: spatial region or site (immaterial continuant)
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PLANA_0002136">
         <obo:IAO_0000115>An anatomical entity consisting of a single or a few multinucleated structures</obo:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407</oboInOwl:created_by>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AEO:0000203</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>AEO:0000203</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BTO:0005784</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:27330085</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>Planarian_Anatomy</oboInOwl:hasOBONamespace>
@@ -21210,7 +21251,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002136"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An anatomical entity consisting of a single or a few multinucleated structures</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AEO:0000203</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>AEO:0000203</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -21236,7 +21277,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002137"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/intracellulargranule.png"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Image is an electron micrograph depicting a cell with many intracellular granules (arrowheads) visible in the cytoplasm. The scale bar is 1um.</rdfs:comment>
+        <rdfs:comment>Image is an electron micrograph depicting a cell with many intracellular granules (arrowheads) visible in the cytoplasm. The scale bar is 1um.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -21333,7 +21374,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0002140"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxpouchepithelium.png"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Image is an electron micrograph of a transverse slice through the parapharyngeal region. It includes the dorsal epidermis, pharynx pouch epithelium (arrowheads), and a portion of the pharynx. Dorsal is up and the lumen of the pouch is visible as the white stripe in the middle of the micrograph. Scale bar is 5um.</rdfs:comment>
+        <rdfs:comment>Image is an electron micrograph of a transverse slice through the parapharyngeal region. It includes the dorsal epidermis, pharynx pouch epithelium (arrowheads), and a portion of the pharynx. Dorsal is up and the lumen of the pouch is visible as the white stripe in the middle of the micrograph. Scale bar is 5um.</rdfs:comment>
     </owl:Axiom>
     
 
@@ -21500,7 +21541,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PLANA_0003000"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/foaf_depiction"/>
         <owl:annotatedTarget rdf:resource="https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionoftail.png"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Illustration of the dorsal region of the tail (in green).</rdfs:comment>
+        <rdfs:comment>Illustration of the dorsal region of the tail (in green).</rdfs:comment>
     </owl:Axiom>
     
 
@@ -21669,7 +21710,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>cell which is part of the visual system</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17905225</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24922054</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:24922054</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -21788,7 +21829,7 @@ range: spatial region or site (immaterial continuant)
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>cell which is part of the adhesion gland</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:16890156</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28976975</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:28976975</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -21821,7 +21862,7 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23954785</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24992682</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:25254346</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:25725068</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:25725068</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26525673</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -26714,7 +26755,7 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26525673</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27523733</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28287248</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:29291981</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:29291981</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:29547123</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30471994</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30962434</oboInOwl:hasDbXref>

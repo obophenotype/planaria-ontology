@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2020-12-09/plana-full.owl
+data-version: plana/releases/2021-04-05/plana-full.owl
 subsetdef: attribute_slim ""
 subsetdef: cell_quality ""
 subsetdef: gocheck_do_not_annotate ""
@@ -17,6 +17,10 @@ subsetdef: goslim_pir ""
 subsetdef: goslim_plant ""
 subsetdef: goslim_pombe ""
 subsetdef: goslim_yeast ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_gp2term ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_gocam ""
 subsetdef: relational_slim ""
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
@@ -26,7 +30,7 @@ synonymtypedef: vertebrate "synonym typically used in the context of vertebrate 
 default-namespace: Planarian_Anatomy
 treat-xrefs-as-genus-differentia: CARO part_of NCBITaxon:79327; CL part_of NCBITaxon:79327
 ontology: plana/plana-full
-property_value: owl:versionInfo "2020-12-09" xsd:string
+property_value: owl:versionInfo "2021-04-05" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1771,10 +1775,10 @@ property_value: IAO:0000119 "Original proposal from Bjoern, discussions at IAO c
 id: IAO:0000578
 name: centrally registered identifier
 def: "An information content entity that consists of a CRID symbol and additional information about the CRID registry to which it belongs." []
-is_a: IAO:0000030 ! information content entity
+is_a: IAO:0020000 ! identifier
 relationship: has_part IAO:0000577 ! centrally registered identifier symbol
 property_value: editor_note "2014-05-05: In defining this term we take no position on what the CRID denotes. In particular do not assume it denotes a *record* in the CRID registry (since the registry might not have 'records')." xsd:string
-property_value: editor_note "Alan, IAO call 20101124: potentially the CRID denotes the instance it was associated with during creation. \n" xsd:string
+property_value: editor_note "Alan, IAO call 20101124: potentially the CRID denotes the instance it was associated with during creation." xsd:string
 property_value: editor_note "Note, IAO call 20101124: URIs are not always CRID, as not centrally registered. We acknowledge that CRID is a subset of a larger identifier class, but this subset fulfills our current needs. OBI PURLs are CRID as they are registered with OCLC. UPCs (Universal Product Codes from AC Nielsen)are not CRID as they are not centrally registered." xsd:string
 property_value: IAO:0000112 "The sentence \"The article has Pubmed ID 12345.\" contains a CRID that has two parts: one part is the CRID symbol, which is '12345'; the other part denotes the CRID registry, which is Pubmed." xsd:string
 property_value: IAO:0000114 IAO:0000120
@@ -1798,6 +1802,14 @@ property_value: IAO:0000117 "PERSON: Bjoern Peters" xsd:string
 property_value: IAO:0000117 "PERSON: Melanie Courtot" xsd:string
 property_value: IAO:0000118 "CRID registry" xsd:string
 property_value: IAO:0000119 "Original proposal from Bjoern, discussions at IAO calls" xsd:string
+
+[Term]
+id: IAO:0020000
+name: identifier
+def: "An identifier is an information content entity that is the outcome of a dubbing process and is used to refer to one instance of entity shared by a group of people to refer to that individual entity." []
+is_a: IAO:0000030 ! information content entity
+property_value: IAO:0000111 "identifier" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/iao/pno.owl
 
 [Term]
 id: PATO:0000001
@@ -13273,6 +13285,9 @@ id: BFO:0000066
 name: occurs in
 def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
 comment: Paraphrase of definition: a relation between a process and an independent continuant, in which the process takes place entirely within the independent continuant
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: IAO:0000111 "occurs in" xsd:string
 property_value: IAO:0000118 "occurs_in" xsd:string
 property_value: IAO:0000118 "unfolds in" xsd:string
@@ -13535,6 +13550,9 @@ is_a: has_part ! has part
 id: RO:0002211
 name: regulates
 def: "process(P1) regulates process(P2) iff: P1 results in the initiation or termination of P2 OR affects the frequency of its initiation or termination OR affects the magnitude or rate of output of P2." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: curator_notes "Regulation precludes parthood; the regulatory process may not be within the regulated process." xsd:string
 property_value: editor_note "We use 'regulates' here to specifically imply control. However, many colloquial usages of the term correctly correspond to the weaker relation of 'causally upstream of or within' (aka influences). Consider relabeling to make things more explicit" xsd:string
 property_value: IAO:0000114 IAO:0000125
@@ -13557,6 +13575,9 @@ transitive_over: RO:0002025 ! has effector activity
 id: RO:0002212
 name: negatively regulates
 def: "Process(P1) negatively regulates process(P2) iff: P1 terminates P2, or P1 descreases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "negatively regulates (process to process)" xsd:string
@@ -13569,6 +13590,9 @@ inverse_of: RO:0002335 ! negatively regulated by
 id: RO:0002213
 name: positively regulates
 def: "Process(P1) postively regulates process(P2) iff: P1 initiates P2, or P1 increases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "positively regulates (process to process)" xsd:string
@@ -13625,6 +13649,9 @@ range: BFO:0000003 ! occurrent
 id: RO:0002233
 name: has input
 def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 subset: ro-eco
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -13676,6 +13703,7 @@ inverse_of: RO:0002286 ! developmentally succeeded by
 id: RO:0002263
 name: acts upstream of
 def: "c acts upstream of p if and only if c enables some f that is involved in p' and p' occurs chronologically before p, is not part of p, and affects the execution of p. c is a material entity and f, p, p' are processes." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: IAO:0000112 "A faulty traffic light (material entity) whose malfunctioning (a process) is causally upstream of a traffic collision (a process): the traffic light acts upstream of the collision." xsd:string
 property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of
 holds_over_chain: RO:0002327 RO:0002411
@@ -13685,6 +13713,7 @@ is_a: RO:0002264 ! acts upstream of or within
 id: RO:0002264
 name: acts upstream of or within
 def: "c acts upstream of or within p if c is enables f, and f is causally upstream of or within p. c is a material entity and p is an process." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 synonym: "affects" RELATED []
 property_value: IAO:0000112 "A gene product that has some activity, where that activity may be a part of a pathway or upstream of the pathway." xsd:string
 property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of_or_within
@@ -13703,6 +13732,8 @@ is_a: RO:0002384 ! has developmental potential involving
 id: RO:0002304
 name: causally upstream of, positive effect
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x increases the frequency, rate or extent of y
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
 property_value: RO:0004049 RO:0002411
 is_a: RO:0002411 ! causally upstream of
@@ -13735,6 +13766,7 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 [Typedef]
 id: RO:0002327
 name: enables
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: curator_notes "This relation differs from the parent relation 'capable of' in that the parent is weaker and only expresses a capability that may not be actually realized, whereas this relation is always realized." xsd:string
 property_value: curator_notes "This relation is currently used experimentally by the Gene Ontology Consortium. It may not be stable and may be obsoleted at some future time." xsd:string
 property_value: IAO:0000112 "a particular instances of akt-2 enables some instance of protein kinase activity" xsd:string
@@ -13782,6 +13814,7 @@ transitive_over: part_of ! part_of
 id: RO:0002333
 name: enabled by
 def: "inverse of enables" []
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0000057 ! has participant
 is_a: RO:0002328 ! functionally related to
@@ -13890,6 +13923,8 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 id: RO:0002411
 name: causally upstream of
 def: "p is causally upstream of q if and only if p precedes q and p and q are linked in a causal chain" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_transitive: true
@@ -14160,6 +14195,9 @@ is_a: RO:0002506 ! causal relation between entities
 id: RO:0002578
 name: directly regulates
 def: "Process(P1) directly regulates process(P2) iff: P1 regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  regulates the kinase activity (P2) of protein B then P1 directly regulates P2." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "directly regulates (processual)" xsd:string
@@ -14225,6 +14263,9 @@ is_a: RO:0002410 ! causally related to
 id: RO:0002629
 name: directly positively regulates
 def: "Process(P1) directly postively regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "directly positively regulates (process to process)" xsd:string
 property_value: RO:0004049 RO:0002578
@@ -14235,6 +14276,9 @@ is_a: RO:0002578 ! directly regulates
 id: RO:0002630
 name: directly negatively regulates
 def: "Process(P1) directly negatively regulates process(P2) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P1 directly negatively regulates P2." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "directly negatively regulates (process to process)" xsd:string
 property_value: RO:0004050 RO:0002578
@@ -14253,6 +14297,7 @@ creation_date: 2018-01-25T23:20:13Z
 [Typedef]
 id: RO:0004032
 name: acts upstream of or within, positive effect
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: RO:0004049 RO:0002264
 property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of_or_within,_positive_effect
 holds_over_chain: RO:0002327 RO:0004047
@@ -14263,6 +14308,7 @@ creation_date: 2018-01-26T23:49:30Z
 [Typedef]
 id: RO:0004033
 name: acts upstream of or within, negative effect
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: RO:0004050 RO:0002264
 holds_over_chain: RO:0002327 RO:0004046
 is_a: RO:0002264 ! acts upstream of or within
@@ -14273,6 +14319,7 @@ creation_date: 2018-01-26T23:49:51Z
 id: RO:0004034
 name: acts upstream of, positive effect
 def: "c 'acts upstream of, positive effect' p if c is enables f, and f is causally upstream of p, and the direction of f is positive" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: RO:0004049 RO:0002263
 property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of,_positive_effect
 holds_over_chain: RO:0002327 RO:0002304
@@ -14285,6 +14332,7 @@ creation_date: 2018-01-26T23:53:14Z
 id: RO:0004035
 name: acts upstream of, negative effect
 def: "c 'acts upstream of, negative effect' p if c is enables f, and f is causally upstream of p, and the direction of f is negative" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: RO:0004050 RO:0002263
 property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of,_negative_effect
 holds_over_chain: RO:0002327 RO:0002305
@@ -14326,6 +14374,9 @@ namespace: spatial
 namespace: uberon
 def: "x adjacent to y if and only if x and y share a boundary." []
 def: "x adjacent_to y iff: x and y share a boundary" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002220
 property_value: editor_note "This relation acts as a join point with BSPO" xsd:string
 property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string {http://www.w3.org/2000/01/rdf-schema#seeAlso="issuecomment-218584934"}
@@ -14579,6 +14630,9 @@ namespace: spatial
 def: "a core relation that holds between a whole and its part" []
 def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
 comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: BFO:0000051
 property_value: editor_note "Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part." xsd:string
 property_value: editor_note "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
@@ -14658,6 +14712,8 @@ def: "A overlaps B if they share some part in common." []
 def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
 def: "x overlaps y iff they have some part in common." [BSPO:cjm]
 comment: "(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))" CLIF []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 subset: ro-eco
 xref: RO:0002131
 property_value: IAO:0000114 IAO:0000125
@@ -14685,6 +14741,10 @@ namespace: quality
 namespace: spatial
 namespace: uberon
 def: "a core relation that holds between a part and its whole" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: BFO:0000050
 property_value: editor_note "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
 property_value: editor_note "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
