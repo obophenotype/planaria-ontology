@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2021-09-29/plana-full.owl
+data-version: plana/releases/2021-10-05/plana-full.owl
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
 subsetdef: cell_quality ""
@@ -56,7 +56,7 @@ ontology: plana/plana-full
 property_value: dc-description "PLANA, the PLANarian Anatomy Ontology, encompasses the anatomy of developmental stages and adult biotypes of Schmidtea mediterranea." xsd:string
 property_value: dc-title "Planarian Anatomy Ontology (PLANA)" xsd:string
 property_value: dcterms-license https://creativecommons.org/licenses/by/3.0/
-property_value: owl:versionInfo "2021-09-29" xsd:string
+property_value: owl:versionInfo "2021-10-05" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -47408,7 +47408,7 @@ property_value: IAO:0000118 "actively involved in" xsd:string
 property_value: IAO:0000118 "enables part of" xsd:string
 property_value: seeAlso Involved:in
 holds_over_chain: RO:0002327 part_of
-is_a: participates_in ! participates in
+is_a: participates_in ! participates_in
 is_a: RO:0002431 ! involved in or involved in regulation of
 transitive_over: part_of ! part_of
 
@@ -47976,6 +47976,7 @@ namespace: spatial
 namespace: uberon
 def: "x adjacent to y if and only if x and y share a boundary." []
 def: "x adjacent_to y iff: x and y share a boundary" []
+def: "x adjacent_to y iff: x and y share a boundary." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -48001,6 +48002,7 @@ namespace: spatial
 namespace: uberon
 def: "x anterior to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that extends through an organism from head end to opposite end of body or tail." [BSPO:cjm]
 def: "x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer" [http://orcid.org/0000-0002-6601-2165]
+def: "x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer." [http://orcid.org/0000-0002-6601-2165]
 synonym: "rostral_to" EXACT []
 xref: BSPO:0000096
 property_value: seeAlso FBcv:0000039
@@ -49031,7 +49033,7 @@ subset: RO:0002259
 xref: RO:0002352
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: functionally_related_to ! functionally related to
-is_a: participates_in ! participates in
+is_a: participates_in ! participates_in
 
 [Typedef]
 id: located_in
@@ -49157,7 +49159,7 @@ namespace: uberon
 def: "inverse of has output" []
 xref: RO:0002353
 is_a: functionally_related_to ! functionally related to
-is_a: participates_in ! participates in
+is_a: participates_in ! participates_in
 
 [Typedef]
 id: overlaps
