@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: plana/releases/2021-10-05/plana-simple.owl
+data-version: plana/releases/2021-10-06/plana-simple.owl
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_gp2term ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
@@ -11,10 +11,10 @@ synonymtypedef: vertebrate "synonym typically used in the context of vertebrate 
 default-namespace: Planarian_Anatomy
 treat-xrefs-as-genus-differentia: CARO part_of NCBITaxon:79327; CL part_of NCBITaxon:79327
 ontology: plana/plana-simple
-property_value: dc-description "PLANA, the PLANarian Anatomy Ontology, encompasses the anatomy of developmental stages and adult biotypes of Schmidtea mediterranea." xsd:string
-property_value: dc-title "Planarian Anatomy Ontology (PLANA)" xsd:string
-property_value: dcterms-license https://creativecommons.org/licenses/by/3.0/
-property_value: owl:versionInfo "2021-10-05" xsd:string
+property_value: http://purl.org/dc/elements/1.1/description "PLANA, the PLANarian Anatomy Ontology, encompasses the anatomy of developmental stages and adult biotypes of Schmidtea mediterranea." xsd:string
+property_value: http://purl.org/dc/elements/1.1/title "Planarian Anatomy Ontology (PLANA)" xsd:string
+property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by/3.0/
+property_value: owl:versionInfo "2021-10-06" xsd:string
 
 [Term]
 id: PLANA:0000001
@@ -119,7 +119,7 @@ id: PLANA:0000011
 name: protonephridial progenitor cell
 def: "Neoblasts and post-mitotic, differentiating daughters coexpressing POU2-3, six1/2-2, Sal1, Eya and Osr,required for maintenance and regeneration of protonephridial cell types." [PMID:24523458, PMID:28072387]
 is_a: PLANA:0000120 ! progenitor cell
-relationship: develops_into PLANA:0000020 ! protonephridia
+relationship: RO:0002203 PLANA:0000020 ! develops into protonephridia
 
 [Term]
 id: PLANA:0000012
@@ -130,7 +130,7 @@ synonym: "neural precursor cell" EXACT []
 synonym: "neural progenitor cell" EXACT []
 synonym: "neuronal progenitor" EXACT []
 is_a: PLANA:0000120 ! progenitor cell
-relationship: develops_into PLANA:0000025 ! nervous system
+relationship: RO:0002203 PLANA:0000025 ! develops into nervous system
 
 [Term]
 id: PLANA:0000013
@@ -171,8 +171,8 @@ xref: PMID:29674432
 xref: PMID:29906446
 is_a: PLANA:0000033 ! epidermal progenitor cell
 is_a: PLANA:0000429 ! neoblast
-relationship: develops_from PLANA:0000009 ! sigma neoblast
 relationship: part_of PLANA:0004529 ! integumental system
+relationship: RO:0002202 PLANA:0000009 ! develops from sigma neoblast
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -312,7 +312,6 @@ xref: PMID:30485821
 xref: PMID:30729158
 xref: PMID:30962434
 is_a: PLANA:0000431 ! organ
-relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000049 ! digestive system
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
@@ -323,6 +322,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000005 ! existence starts during or after Stage 5
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -382,17 +382,17 @@ xref: PMID:30471994
 xref: PMID:30485821
 xref: UBERON:0006562
 is_a: PLANA:0000099 ! neuron
-relationship: develops_from PLANA:0000095 ! trail cell
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000036 ! eye
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head region
+relationship: RO:0002202 PLANA:0000095 ! develops from trail cell
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -407,8 +407,6 @@ xref: PMID:28072387
 is_a: PLANA:0000015 ! non ciliated epithelial cell
 is_a: PLANA:0000033 ! epidermal progenitor cell
 is_a: PLANA:0002032 ! epidermal cell
-relationship: develops_from PLANA:0000035 ! Category 3 cell
-relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000054 ! dorsal region of the epidermis
 relationship: part_of PLANA:0000096 ! ventral epidermis
 relationship: part_of PLANA:0002063 ! non-ciliated epidermis
@@ -421,6 +419,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000035 ! develops from Category 3 cell
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -428,6 +427,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000005 ! existence starts during or after Stage 5
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -483,7 +483,6 @@ xref: PMID:29674431
 xref: PMID:29674432
 xref: UBERON:0006973
 is_a: PLANA:0000431 ! organ
-relationship: develops_from PLANA:0000011 ! protonephridial progenitor cell
 relationship: part_of PLANA:0000088 ! renal system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -493,6 +492,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000011 ! develops from protonephridial progenitor cell
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
@@ -516,8 +516,6 @@ xref: PMID:25017721
 xref: PMID:28072387
 is_a: PLANA:0000106 ! ciliated epithelial cell
 is_a: PLANA:0002032 ! epidermal cell
-relationship: develops_from PLANA:0000018 ! Category 4 cell
-relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000054 ! dorsal region of the epidermis
 relationship: part_of PLANA:0000096 ! ventral epidermis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
@@ -529,12 +527,14 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000018 ! develops from Category 4 cell
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000006 ! existence starts during or after Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -546,16 +546,16 @@ xref: FBbt:00001866
 xref: ISBN:9780070316607
 xref: PMID:28072387
 is_a: PLANA:0002120 ! extraembryonic organ
-relationship: develops_from PLANA:0004517 ! blastomere
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: part_of PLANA:0000058 ! embryonic digestive system
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0004517 ! develops from blastomere
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/temporaryembryonicpharynx.gif {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo that zooms in on the embryonic pharynx."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -730,8 +730,6 @@ xref: PMID:30471994
 xref: PMID:30962434
 xref: UBERON:0000160
 is_a: PLANA:0000431 ! organ
-relationship: develops_from PLANA:0000039 ! gamma neoblast
-relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0000049 ! digestive system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -742,6 +740,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000039 ! develops from gamma neoblast
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -749,6 +748,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000005 ! existence starts during or after Stage 5
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -800,8 +800,6 @@ xref: PMID:28072387
 xref: PMID:29674431
 is_a: PLANA:0000033 ! epidermal progenitor cell
 is_a: PLANA:0002095 ! somatic cell
-relationship: develops_from PLANA:0000014 ! zeta neoblast
-relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -812,6 +810,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000014 ! develops from zeta neoblast
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -819,6 +818,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000005 ! existence starts during or after Stage 5
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -831,14 +831,14 @@ xref: OCLC:464776945
 xref: OCLC:82522822
 xref: PMID:28072387
 is_a: PLANA:0002120 ! extraembryonic organ
-relationship: develops_from PLANA:0004517 ! blastomere
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: RO:0001018 PLANA:0000041 ! contained in aboral hemisphere
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0004517 ! develops from blastomere
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -896,17 +896,17 @@ xref: PMID:29674431
 xref: PMID:29674432
 xref: PMID:30471994
 is_a: PLANA:0000561 ! neuron associated cell (sensu Nematoda and Protostomia)
-relationship: develops_from PLANA:0000095 ! trail cell
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000075 ! optic cup
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head region
+relationship: RO:0002202 PLANA:0000095 ! develops from trail cell
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -923,7 +923,7 @@ name: epidermal progenitor cell
 def: "Mitotically active zeta neoblasts and their post-mitotic descendants which undergo progressive differentiation and outward directed movement through the mesenchyme prior to incorporation into the epidermis, where terminal differentiation occurs." [PMID:27150006, PMID:27606067, PMID:29674432, PMID:30282036]
 synonym: "epithelial progenitor" EXACT []
 is_a: PLANA:0000120 ! progenitor cell
-relationship: develops_into PLANA:0000032 ! dorsal midline
+relationship: RO:0002203 PLANA:0000032 ! develops into dorsal midline
 
 [Term]
 id: PLANA:0000034
@@ -991,8 +991,6 @@ xref: PMID:30282036
 xref: PMID:30962434
 xref: UBERON:0001003
 is_a: PLANA:0000431 ! organ
-relationship: develops_from PLANA:0000033 ! epidermal progenitor cell
-relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -1003,6 +1001,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000033 ! develops from epidermal progenitor cell
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -1010,6 +1009,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000005 ! existence starts during or after Stage 5
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -1047,8 +1047,6 @@ xref: PMID:27068018
 xref: PMID:28072387
 is_a: PLANA:0000033 ! epidermal progenitor cell
 is_a: PLANA:0002095 ! somatic cell
-relationship: develops_from PLANA:0000028 ! Category 2 cell
-relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: part_of PLANA:0004529 ! integumental system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -1059,6 +1057,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000028 ! develops from Category 2 cell
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
@@ -1066,6 +1065,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000005 ! existence starts during or after Stage 5
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/epidermis.png
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -1204,18 +1204,18 @@ xref: PMID:30485821
 xref: PMID:30962434
 xref: UBERON:0000970
 is_a: PLANA:0000431 ! organ
-relationship: develops_from PLANA:0000095 ! trail cell
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000103 ! central nervous system
 relationship: part_of PLANA:0000124 ! visual system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head region
+relationship: RO:0002202 PLANA:0000095 ! develops from trail cell
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/eye.png
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -1270,12 +1270,12 @@ def: "Stage 3-5 embryo hemisphere centered around the pole opposite the embryoni
 xref: PMID:28072387
 xref: UBERON:0008259
 is_a: PLANA:0000423 ! embryonic subdivision
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000003 ! existence starts during or after Stage 3
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -1285,7 +1285,6 @@ def: "The single, central gut branch of the triclad gut anterior to the pharynx.
 xref: PMID:21664348
 xref: PMID:3490491
 is_a: PLANA:0002086 ! primary gut branch
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
@@ -1293,6 +1292,7 @@ relationship: RO:0001018 PLANA:0000418 ! contained in head region
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorprimarygutbranch.png {comment="Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. Anterior primary gut branch indicated by arrows. Scale bar = 250um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -1402,7 +1402,6 @@ xref: PMID:30194301
 xref: PMID:30237141
 xref: UBERON:0000955
 is_a: PLANA:0000431 ! organ
-relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000103 ! central nervous system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -1414,6 +1413,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000006 ! existence starts during or after Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -1424,7 +1424,6 @@ synonym: "circular muscle fiber" EXACT []
 xref: https://github.com/obophenotype/planaria-ontology/blob/master/metadata/planarefs/planaref-0000005.md
 xref: PMID:26904543
 is_a: PLANA:0000101 ! muscle cell
-relationship: develops_from PLANA:0000130 ! circular muscle progenitor cell
 relationship: part_of PLANA:0000240 ! body wall musculature
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -1435,6 +1434,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000130 ! develops from circular muscle progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -1489,7 +1489,7 @@ xref: PMID:29906446
 xref: PMID:30962434
 is_a: PLANA:0000429 ! neoblast
 is_a: PLANA:0002095 ! somatic cell
-relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
+relationship: RO:0002496 PLANA:0000006 ! existence starts during or after Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -1612,7 +1612,6 @@ xref: PMID:27068018
 xref: UBERON:0004135
 is_a: PLANA:0000113 ! tissue
 relationship: adjacent_to PLANA:0000047 ! collecting duct
-relationship: develops_from PLANA:0000011 ! protonephridial progenitor cell
 relationship: part_of PLANA:0000020 ! protonephridia
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -1622,6 +1621,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000011 ! develops from protonephridial progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -1682,14 +1682,14 @@ def: "A cryptic digestive system in Stage 3-6 embryos comprised of temporary emb
 xref: PMID:28072387
 xref: UBERON:6001842
 is_a: PLANA:0000063 ! extraembryonic structure
-relationship: existence_ends_during_or_before PLANA:0000007 ! Stage 7
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
+relationship: RO:0002497 PLANA:0000007 ! existence ends during or before Stage 7
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -1698,15 +1698,15 @@ name: embryonic gut cell
 def: "Dispersed, phagocytic gut cells that appear during Stage 4 and ultimately generate a honeycomb-like lattice surrounding the central gut cavity in Stage 5 embryos. Early embryonic gut cell specific transcripts are expressed from Stage 4-6, and are downregulated during Stage 7." [PMID:28072387]
 xref: PMID:28072387
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: develops_from PLANA:0004517 ! blastomere
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000004 ! Stage 4
 relationship: part_of PLANA:0002031 ! embryonic gut
 relationship: RO:0001018 PLANA:0000041 ! contained in aboral hemisphere
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0004517 ! develops from blastomere
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000004 ! existence starts during or after Stage 4
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -1717,11 +1717,11 @@ xref: OCLC:16809160
 xref: PMID:12888018
 xref: PMID:28072387
 is_a: PLANA:0000423 ! embryonic subdivision
-relationship: existence_ends_during_or_before PLANA:0000005 ! Stage 5
-relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
+relationship: RO:0002496 PLANA:0000003 ! existence starts during or after Stage 3
+relationship: RO:0002497 PLANA:0000005 ! existence ends during or before Stage 5
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/embryonicwall.png {comment="Depicted by field contains hematoxylin and eosin staining section of a stage 5 embryo with anatomical feature noted with black indicators."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -1739,7 +1739,6 @@ xref: PMID:30471994
 xref: PMID:30962434
 xref: UBERON:2001324
 is_a: PLANA:0000013 ! visceral musculature
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000049 ! digestive system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -1753,6 +1752,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/entericmusculature.png {comment="Image is an electron micrograph depicting the enteric musculature (arrowheads) surrounding the gut, which extends across the top of the image. These cells are very small compared to the layer of medial muscle underneath them. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -1796,7 +1796,6 @@ def: "Terminal structure of protonephridia unit; consists of flame cells." []
 xref: PMID:21828097
 xref: PMID:26057828
 is_a: PLANA:0000113 ! tissue
-relationship: develops_from PLANA:0000011 ! protonephridial progenitor cell
 relationship: part_of PLANA:0000020 ! protonephridia
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -1805,6 +1804,7 @@ relationship: RO:0001018 PLANA:0000418 ! contained in head region
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000011 ! develops from protonephridial progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -1864,7 +1864,6 @@ xref: PMID:27501047
 xref: PMID:28287248
 xref: PMID:30608231
 is_a: PLANA:0002118 ! epithelium
-relationship: develops_from PLANA:0000039 ! gamma neoblast
 relationship: part_of PLANA:0000026 ! gut
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -1875,6 +1874,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000039 ! develops from gamma neoblast
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -1915,14 +1915,14 @@ id: PLANA:0000068
 name: embryonic gut cavity
 def: "Cavity encompassed by the embryonic digestive tract, prior to formation of the branched defintive gut." [PMID:28072387]
 xref: PMID:28072387
-relationship: existence_ends_during_or_before PLANA:0000007 ! Stage 7
-relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0002031 ! embryonic gut
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
+relationship: RO:0002496 PLANA:0000003 ! existence starts during or after Stage 3
+relationship: RO:0002497 PLANA:0000007 ! existence ends during or before Stage 7
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -1936,7 +1936,6 @@ xref: ISBN:9780070316607
 xref: PMID:26904543
 xref: PMID:30962434
 is_a: PLANA:0000071 ! longitudinal muscle cell
-relationship: develops_from PLANA:0000134 ! longitudinal muscle progenitor cell
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -1946,6 +1945,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000134 ! develops from longitudinal muscle progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -2036,7 +2036,6 @@ xref: PMID:30471994
 xref: PMID:30485821
 xref: UBERON:0000165
 is_a: PLANA:0000431 ! organ
-relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000049 ! digestive system
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
@@ -2047,6 +2046,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000006 ! existence starts during or after Stage 6
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/mouth.png {comment="Image is an electron micrograph of the mouth (arrowheads), which is located on the ventral side of the animal. Note the heavily ciliated pharynx that is peeking out. Scale bar is 10um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -2069,12 +2069,12 @@ xref: PMID:28434803
 xref: PMID:28812561
 is_a: PLANA:0000122 ! gamete
 is_a: PLANA:0000229 ! female germ cell
-relationship: develops_from PLANA:0000239 ! oogonial cell
 relationship: part_of PLANA:0000204 ! ovary
-relationship: produced_by PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
+relationship: RO:0002202 PLANA:0000239 ! develops from oogonial cell
+relationship: RO:0003001 PLANA:0000204 ! produced by ovary
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -2113,7 +2113,6 @@ xref: PMID:30143032
 xref: PMID:30194301
 xref: UBERON:0003072
 is_a: PLANA:0000113 ! tissue
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000036 ! eye
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -2123,6 +2122,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -2131,12 +2131,12 @@ name: oral hemisphere
 def: "Stage 3-5 embryo hemisphere centered around the embryonic pharynx." [PMID:28072387]
 xref: PMID:28072387
 is_a: PLANA:0000423 ! embryonic subdivision
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000003 ! existence starts during or after Stage 3
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/oralhemisphere.png {comment="Illustration of the oral hemispshere (in green)."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -2149,7 +2149,6 @@ xref: https://github.com/obophenotype/planaria-ontology/blob/master/metadata/pla
 xref: ISBN:9780070316607
 xref: PMID:26904543
 is_a: PLANA:0000071 ! longitudinal muscle cell
-relationship: develops_from PLANA:0000134 ! longitudinal muscle progenitor cell
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -2159,6 +2158,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000134 ! develops from longitudinal muscle progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -2238,14 +2238,14 @@ xref: PMID:21664348
 xref: PMID:23318641
 xref: PMID:24063805
 is_a: PLANA:0002086 ! primary gut branch
-relationship: develops_from PLANA:0000039 ! gamma neoblast
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000039 ! develops from gamma neoblast
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorprimarygutbranch.png {comment="Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. The posterior primary gut branch is indicated by arrows. Scale bar = 250um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -2255,14 +2255,14 @@ name: primitive gut cell
 def: "A phagocytic cell closely associated with the embryonic pharynx." [PMID:28072387]
 xref: PMID:28072387
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: develops_from PLANA:0004517 ! blastomere
-relationship: existence_ends_during_or_before PLANA:0000005 ! Stage 5
-relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0002087 ! primitive gut
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0004517 ! develops from blastomere
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
+relationship: RO:0002496 PLANA:0000003 ! existence starts during or after Stage 3
+relationship: RO:0002497 PLANA:0000005 ! existence ends during or before Stage 5
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -2283,8 +2283,6 @@ xref: UBERON:0004134
 is_a: PLANA:0000113 ! tissue
 relationship: adjacent_to PLANA:0000053 ! distal tubule
 relationship: adjacent_to PLANA:0000065 ! flame cell
-relationship: develops_from PLANA:0000011 ! protonephridial progenitor cell
-relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000020 ! protonephridia
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -2294,12 +2292,14 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000011 ! develops from protonephridial progenitor cell
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000006 ! existence starts during or after Stage 6
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/proximaltubule.png {comment="Image is an electron micrograph depicting a proximal tubule (arrowheads) of the protonephridia structure. Note the cilia and the characteristic way the cell membrane connects with other proximal tubule epithelial cells. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -2369,9 +2369,7 @@ xref: PMID:28072387
 xref: PMID:29095551
 is_a: PLANA:0000122 ! gamete
 is_a: PLANA:0000228 ! male germ cell
-relationship: develops_from PLANA:0000238 ! elongate spermatid
 relationship: part_of PLANA:0000208 ! testis
-relationship: produced_by PLANA:0000208 ! testis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -2379,6 +2377,8 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000238 ! develops from elongate spermatid
+relationship: RO:0003001 PLANA:0000208 ! produced by testis
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -2394,11 +2394,11 @@ def: "Fused yolk cells surrounding blastomeres undergoing dispersed cleavage dur
 synonym: "syncytial yolk cell" EXACT []
 xref: PMID:15599763
 is_a: PLANA:0002136 ! syncytium
-relationship: existence_ends_during_or_before PLANA:0000002 ! Stage 2
-relationship: existence_starts_during_or_after PLANA:0000001 ! Stage 1
-relationship: produced_by PLANA:0000107 ! yolk cell
 relationship: RO:0002490 PLANA:0000001 ! existence overlaps Stage 1
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
+relationship: RO:0002496 PLANA:0000001 ! existence starts during or after Stage 1
+relationship: RO:0002497 PLANA:0000002 ! existence ends during or before Stage 2
+relationship: RO:0003001 PLANA:0000107 ! produced by yolk cell
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -2441,8 +2441,8 @@ xref: PMID:28245923
 xref: PMID:29674431
 xref: PMID:30485821
 is_a: PLANA:0000429 ! neoblast
-relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000124 ! visual system
+relationship: RO:0002496 PLANA:0000006 ! existence starts during or after Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -2559,9 +2559,9 @@ xref: CL:0000365
 xref: PMID:28812561
 xref: UBERON:0000106
 is_a: PLANA:0000136 ! whole organism
-relationship: existence_ends_during_or_before PLANA:0000001 ! Stage 1
-relationship: existence_starts_during_or_after PLANA:0000001 ! Stage 1
 relationship: RO:0002490 PLANA:0000001 ! existence overlaps Stage 1
+relationship: RO:0002496 PLANA:0000001 ! existence starts during or after Stage 1
+relationship: RO:0002497 PLANA:0000001 ! existence ends during or before Stage 1
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -2827,9 +2827,7 @@ xref: PMID:28434803
 xref: PMID:29674431
 is_a: PLANA:0000119 ! terminally differentiated cell
 is_a: PLANA:0000215 ! reproductive system product
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000060 ! embryonic wall
-relationship: produced_by PLANA:0000231 ! vitelline gland
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -2840,6 +2838,8 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
+relationship: RO:0003001 PLANA:0000231 ! produced by vitelline gland
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -2853,7 +2853,7 @@ id: PLANA:0000110
 name: pharynx progenitor cell
 def: "foxA1+ neoblasts and their post-mitotic, differentiating daughters required for maintenance and regeneration of the pharynx." [PMID:24737865, PMID:25254346]
 is_a: PLANA:0000120 ! progenitor cell
-relationship: develops_into PLANA:0000016 ! pharynx
+relationship: RO:0002203 PLANA:0000016 ! develops into pharynx
 
 [Term]
 id: PLANA:0000111
@@ -2980,7 +2980,7 @@ xref: https://doi.org/10.1101/279364
 xref: PMID:21852957
 xref: PMID:29674432
 is_a: PLANA:0000499 ! cell
-relationship: develops_from PLANA:0000429 ! neoblast
+relationship: RO:0002202 PLANA:0000429 ! develops from neoblast
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3022,10 +3022,10 @@ xref: PMID:27304889
 xref: PMID:28434803
 is_a: PLANA:0000215 ! reproductive system product
 is_a: PLANA:0000227 ! germ cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
-relationship: produced_by PLANA:0000217 ! gonad
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
+relationship: RO:0003001 PLANA:0000217 ! produced by gonad
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3071,7 +3071,6 @@ name: oviduct epithelial cell
 def: "Ciliated epithelial cells that assemble into the oviduct." [PMID:22074376]
 xref: PMID:22074376
 is_a: PLANA:0000106 ! ciliated epithelial cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0004532 ! oviduct epithelium
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -3081,6 +3080,7 @@ relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3090,7 +3090,6 @@ def: "Ciliated epithelial cells comprising the sperm ducts." [PMID:19022767, PMI
 xref: PMID:19022767
 xref: PMID:22074376
 is_a: PLANA:0000106 ! ciliated epithelial cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0004533 ! sperm duct epithelium
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -3101,6 +3100,7 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3250,13 +3250,13 @@ xref: PMID:22074376
 xref: PMID:25278423
 xref: PMID:27149082
 is_a: PLANA:0000113 ! tissue
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3278,10 +3278,10 @@ xref: PMID:27149082
 xref: PMID:28072387
 xref: PMID:28434803
 is_a: PLANA:0002079 ! pore
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3454,15 +3454,15 @@ xref: OCLC:82522822
 xref: PMID:28072387
 is_a: PLANA:0000106 ! ciliated epithelial cell
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: develops_from PLANA:0004517 ! blastomere
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: part_of PLANA:0000029 ! primitive ectoderm
 relationship: RO:0001018 PLANA:0000041 ! contained in aboral hemisphere
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0004517 ! develops from blastomere
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3483,7 +3483,7 @@ created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-
 id: PLANA:0000215
 name: reproductive system product
 def: "Products of the reproductive system include gametes, zygotes, yolk cells and egg capsules." []
-relationship: produced_by PLANA:0000126 ! reproductive system
+relationship: RO:0003001 PLANA:0000126 ! produced by reproductive system
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3506,7 +3506,7 @@ xref: PMID:28072387
 xref: PMID:28434803
 xref: PMID:28812561
 is_a: PLANA:0000215 ! reproductive system product
-relationship: produced_by PLANA:0007564 ! sexual organism
+relationship: RO:0003001 PLANA:0007564 ! produced by sexual organism
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3563,8 +3563,6 @@ xref: PMID:27163480
 xref: PMID:27330085
 is_a: PLANA:0000121 ! stem cell
 is_a: PLANA:0000228 ! male germ cell
-relationship: develops_from PLANA:0000429 ! neoblast
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000208 ! testis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -3573,8 +3571,10 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000429 ! develops from neoblast
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3589,8 +3589,6 @@ xref: PMID:27163480
 xref: PMID:27330085
 is_a: PLANA:0000120 ! progenitor cell
 is_a: PLANA:0000228 ! male germ cell
-relationship: develops_from PLANA:0000219 ! spermatogonial stem cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000208 ! testis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -3599,8 +3597,10 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000219 ! develops from spermatogonial stem cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3619,7 +3619,6 @@ xref: PMID:27304889
 xref: PMID:27330085
 xref: PMID:29095551
 is_a: PLANA:0000228 ! male germ cell
-relationship: develops_from PLANA:0000220 ! spermatogonium
 relationship: part_of PLANA:0000208 ! testis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -3628,6 +3627,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0000220 ! develops from spermatogonium
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -3672,14 +3672,14 @@ xref: PMID:27163480
 xref: PMID:27330085
 is_a: PLANA:0000121 ! stem cell
 is_a: PLANA:0000229 ! female germ cell
-relationship: develops_from PLANA:0000429 ! neoblast
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
+relationship: RO:0002202 PLANA:0000429 ! develops from neoblast
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3696,7 +3696,6 @@ xref: PMID:23652002
 xref: PMID:25278423
 xref: PMID:27149082
 is_a: PLANA:0000113 ! tissue
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000232 ! copulatory apparatus
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -3704,6 +3703,7 @@ relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whol
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3785,14 +3785,14 @@ xref: PMID:27501047
 xref: PMID:28072387
 xref: PMID:28434803
 is_a: PLANA:0000113 ! tissue
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000126 ! reproductive system
-relationship: produces PLANA:0000107 ! yolk cell
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
+relationship: RO:0003000 PLANA:0000107 ! produces yolk cell
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3861,7 +3861,7 @@ xref: PMID:27304889
 xref: PMID:27330085
 xref: PMID:29095551
 is_a: PLANA:0000222 ! spermatid
-relationship: develops_from PLANA:0000221 ! spermatocyte
+relationship: RO:0002202 PLANA:0000221 ! develops from spermatocyte
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3875,7 +3875,7 @@ xref: PMID:27304889
 xref: PMID:27330085
 xref: PMID:29095551
 is_a: PLANA:0000222 ! spermatid
-relationship: develops_from PLANA:0000237 ! round spermatid
+relationship: RO:0002202 PLANA:0000237 ! develops from round spermatid
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -3885,14 +3885,14 @@ def: "An undifferentiated germ cell that proliferates rapidly and gives rise to 
 xref: FMA:83673
 is_a: PLANA:0000120 ! progenitor cell
 is_a: PLANA:0000229 ! female germ cell
-relationship: develops_from PLANA:0000223 ! oogonial stem cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
+relationship: RO:0002202 PLANA:0000223 ! develops from oogonial stem cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -4011,11 +4011,11 @@ xref: PMID:29906446
 xref: UBERON:0000468
 is_a: PLANA:0002053 ! lumen
 relationship: immediately_deep_to PLANA:0000412 ! pharynx inner epithelium surface
-relationship: luminal_space_of PLANA:0000016 ! pharynx
 relationship: part_of PLANA:0000016 ! pharynx
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002572 PLANA:0000016 ! luminal space of pharynx
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/cavityofpharynx.png {comment="Depicted by field contains hematoxylin and eosin staining section of a asexual adult animal. Cavity of pharynx is indicated by arrows. Scale bar = 250um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -4032,14 +4032,14 @@ xref: PMID:21828097
 xref: PMID:28072387
 xref: UBERON:0006909
 is_a: PLANA:0002053 ! lumen
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
-relationship: luminal_space_of PLANA:0000026 ! gut
 relationship: part_of PLANA:0000026 ! gut
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
+relationship: RO:0002572 PLANA:0000026 ! luminal space of gut
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/lumenofdigestivetract.png {comment="Depicted by field contains hematoxylin and eosin staining on a coronal section of a asexual adult animal. The lumen of the digestive tract is indicated by arrows. Scale bar = 250um"}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -4053,7 +4053,6 @@ xref: PMID:17670787
 xref: PMID:29674431
 xref: PMID:30399335
 xref: UBERON:0000166
-relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0000023 ! embryonic pharynx
 relationship: part_of PLANA:0000072 ! mouth
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
@@ -4065,6 +4064,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000003 ! existence starts during or after Stage 3
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -4496,7 +4496,6 @@ xref: PMID:30729158
 xref: PMID:30962434
 is_a: PLANA:0000120 ! progenitor cell
 is_a: PLANA:0000121 ! stem cell
-relationship: existence_starts_during_or_after PLANA:0000005 ! Stage 5
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -4513,6 +4512,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000005 ! existence starts during or after Stage 5
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/neoblast.png {comment="Image is an electron micrograph showing a neoblast undergoing mitotic telophase (outlined). The condensed chromatin is visible toward the left side of the cell and has been outlined by the nuclear envelope. Scale bar is 1um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -5030,7 +5030,6 @@ xref: PMID:30194301
 xref: WBbt:0006837
 xref: ZFA:0009361
 is_a: PLANA:0000556 ! neurosecretory neuron
-relationship: develops_from PLANA:0007550 ! serotonergic neural progenitor cell
 relationship: part_of PLANA:0000044 ! cephalic ganglia
 relationship: part_of PLANA:0000097 ! ventral nerve cord
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
@@ -5042,6 +5041,7 @@ relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
+relationship: RO:0002202 PLANA:0007550 ! develops from serotonergic neural progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -6056,7 +6056,6 @@ xref: PMID:24063805
 xref: PMID:28287248
 xref: PMID:30194301
 is_a: PLANA:0002119 ! gut branch
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
@@ -6064,6 +6063,7 @@ relationship: RO:0001018 PLANA:0000418 ! contained in head region
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -6351,7 +6351,6 @@ xref: PMID:30399335
 xref: PMID:30485821
 xref: PMID:30729158
 is_a: PLANA:0000113 ! tissue
-relationship: existence_starts_during_or_after PLANA:0000006 ! Stage 6
 relationship: part_of PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -6363,6 +6362,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000006 ! existence starts during or after Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -6552,13 +6552,13 @@ id: PLANA:0002029
 name: early female germ cell
 def: "A premeiotic female germ cell (i.e., a diploid female germline stem cell or transit amplifying oogonial cell)." []
 is_a: PLANA:0000229 ! female germ cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -6567,7 +6567,6 @@ name: early male germ cell
 def: "A premeiotic male germ cell (i.e., a spermatogonial stem cell or transit amplifying spermatogonial cell)." [PMID:27330085]
 xref: PMID:27330085
 is_a: PLANA:0000228 ! male germ cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000208 ! testis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -6578,6 +6577,7 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -6586,14 +6586,14 @@ name: embryonic gut
 def: "A cryptic digestive cavity comprised of phagocytic embryonic gut cells." [PMID:28072387]
 xref: PMID:28072387
 is_a: PLANA:0002120 ! extraembryonic organ
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000004 ! Stage 4
 relationship: part_of PLANA:0000058 ! embryonic digestive system
 relationship: RO:0001018 PLANA:0000041 ! contained in aboral hemisphere
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000004 ! existence starts during or after Stage 4
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -6650,13 +6650,13 @@ xref: CHEBI:24009
 xref: PMID:25356635
 xref: PMID:26017970
 xref: PMID:27240733
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0002058 ! melanosome
 relationship: RO:0002490 PLANA:0000007 ! existence overlaps Stage 7
 relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -6730,10 +6730,10 @@ def: "A chamber where egg capsules are formed. One or more zygotes and yolk cell
 synonym: "atrium" EXACT []
 synonym: "female antrum" EXACT []
 xref: PMID: 22074376
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000126 ! reproductive system
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -6779,8 +6779,8 @@ xref: PMID:27013241
 xref: PMID:28434803
 xref: PMID:28812561
 is_a: PLANA:0000121 ! stem cell
-relationship: develops_from PLANA:0000429 ! neoblast
 relationship: part_of PLANA:0000217 ! gonad
+relationship: RO:0002202 PLANA:0000429 ! develops from neoblast
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -6927,9 +6927,9 @@ name: meiotic germ cell
 def: "A germ cell undergoing meiosis." [PMID:27330085]
 xref: PMID:27330085
 is_a: PLANA:0000227 ! germ cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -6938,7 +6938,6 @@ name: melanosome
 def: "A tissue-specific, membrane-bounded cytoplasmic organelle within which melanin pigments are synthesized and stored. Melanosomes are synthesized in melanocyte cells." [GO:0042470]
 xref: GO:0042470
 is_a: PLANA:0000527 ! intracellular membrane-bounded organelle
-relationship: existence_starts_during_or_after PLANA:0000007 ! Stage 7
 relationship: part_of PLANA:0000031 ! pigment cup cell
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -6948,6 +6947,7 @@ relationship: RO:0002490 PLANA:0000008 ! existence overlaps Stage 8
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0002496 PLANA:0000007 ! existence starts during or after Stage 7
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -6958,10 +6958,10 @@ xref: PMID:21282632
 xref: PMID:22653920
 xref: UBERON:0000912
 relationship: part_of PLANA:0000484 ! secretory system
-relationship: produced_by PLANA:0000105 ! secretory cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
+relationship: RO:0003001 PLANA:0000105 ! produced by secretory cell
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/mucus.png {comment="Image is an electron micrograph of the outside of an animal at the marginal adhesive zone. The adhesive papilla are colored in blue and surround each secretory pore (yellow). Mucus (arrowheads) and cilia are both green. Scale bar is 2um."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -7193,9 +7193,9 @@ id: PLANA:0002080
 name: post-meiotic germ cell
 def: "A haploid gamete undergoing terminal differentiation." []
 is_a: PLANA:0000227 ! germ cell
-relationship: develops_from PLANA:0002082 ! premeiotic germ cell
 relationship: part_of PLANA:0000204 ! ovary
 relationship: part_of PLANA:0000208 ! testis
+relationship: RO:0002202 PLANA:0002082 ! develops from premeiotic germ cell
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -7282,14 +7282,14 @@ def: "Four large phagocytic cells associated with the embryonic pharynx." [PMID:
 synonym: "primitive endoderm" EXACT []
 xref: PMID:28072387
 is_a: PLANA:0002120 ! extraembryonic organ
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0000058 ! embryonic digestive system
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000003 ! existence starts during or after Stage 3
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -7313,10 +7313,10 @@ xref: PMID:25278423
 xref: PMID:27074666
 xref: UBERON:0003133
 is_a: PLANA:0000431 ! organ
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000126 ! reproductive system
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -7325,9 +7325,9 @@ name: reproductive structure
 def: "Any anatomical structure that is part of the reproductive system." [UBERON:0005156]
 xref: PMID:17376870
 xref: UBERON:0005156
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -7447,7 +7447,7 @@ name: stalk
 def: "A thin, flexible rod that anchors an egg capsule to a solid substrate." [ISBN:9780070316607]
 xref: ISBN:9780070316607
 relationship: part_of PLANA:0000216 ! egg capsule
-relationship: produced_by PLANA:0000224 ! cement gland
+relationship: RO:0003001 PLANA:0000224 ! produced by cement gland
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -7889,10 +7889,10 @@ name: sperm duct epithelial surface
 def: "Epithelial surface lining the sperm duct." [PMID:19022767, PMID:22074376]
 xref: PMID:19022767
 xref: PMID:22074376
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0004533 ! sperm duct epithelium
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -8449,7 +8449,7 @@ xref: PMID:23318635
 xref: PMID:25772472
 xref: PMID:26525673
 is_a: PLANA:0000131 ! primordium
-relationship: develops_into PLANA:0000044 ! cephalic ganglia
+relationship: RO:0002203 PLANA:0000044 ! develops into cephalic ganglia
 
 [Term]
 id: PLANA:0003301
@@ -8458,7 +8458,7 @@ def: "This primordium develops into eye" []
 synonym: "eye aggregate" EXACT []
 xref: PMID:22884275
 is_a: PLANA:0000131 ! primordium
-relationship: develops_into PLANA:0000036 ! eye
+relationship: RO:0002203 PLANA:0000036 ! develops into eye
 
 [Term]
 id: PLANA:0003302
@@ -8470,7 +8470,7 @@ xref: PMID:25254346
 xref: PMID:26556349
 xref: PMID:27074666
 is_a: PLANA:0000131 ! primordium
-relationship: develops_into PLANA:0000016 ! pharynx
+relationship: RO:0002203 PLANA:0000016 ! develops into pharynx
 
 [Term]
 id: PLANA:0003303
@@ -8479,7 +8479,7 @@ def: "This primordium develops into optic cup" []
 synonym: "optic cup primordium" EXACT []
 xref: PMID:21852957
 is_a: PLANA:0000131 ! primordium
-relationship: develops_into PLANA:0000075 ! optic cup
+relationship: RO:0002203 PLANA:0000075 ! develops into optic cup
 
 [Term]
 id: PLANA:0003304
@@ -8487,21 +8487,21 @@ name: testis primordium
 def: "This primordium develops into testis" []
 xref: PMID:23652002
 is_a: PLANA:0003305 ! gonad primoridium
-relationship: develops_into PLANA:0000208 ! testis
+relationship: RO:0002203 PLANA:0000208 ! develops into testis
 
 [Term]
 id: PLANA:0003305
 name: gonad primoridium
 def: "This primordium develops into gonad" []
 is_a: PLANA:0000131 ! primordium
-relationship: develops_into PLANA:0000217 ! gonad
+relationship: RO:0002203 PLANA:0000217 ! develops into gonad
 
 [Term]
 id: PLANA:0003306
 name: ovary primordium
 def: "This primordium develops into ovary" []
 is_a: PLANA:0003305 ! gonad primoridium
-relationship: develops_into PLANA:0000204 ! ovary
+relationship: RO:0002203 PLANA:0000204 ! develops into ovary
 
 [Term]
 id: PLANA:0003400
@@ -8539,14 +8539,14 @@ def: "A progenitor cell that gives rise to one or more of the cell type(s) in th
 synonym: "brain progenitor" EXACT []
 synonym: "brain progentitor cell" EXACT []
 is_a: PLANA:0000120 ! progenitor cell
-relationship: develops_into PLANA:0000044 ! cephalic ganglia
+relationship: RO:0002203 PLANA:0000044 ! develops into cephalic ganglia
 
 [Term]
 id: PLANA:0003501
 name: dorsal epidermis progenitor cell
 def: "A progenitor cell that gives rise to one or more of the cell type(s) in the dorsal epidermis." [PMID:28292427]
 is_a: PLANA:0000120 ! progenitor cell
-relationship: develops_into PLANA:0000054 ! dorsal region of the epidermis
+relationship: RO:0002203 PLANA:0000054 ! develops into dorsal region of the epidermis
 
 [Term]
 id: PLANA:0003502
@@ -8554,21 +8554,21 @@ name: optic cup progenitor cell
 def: "A progenitor cell that gives rise to optic cup cells of the eye." [PMID:21852957]
 synonym: "optic cup trail cell" EXACT []
 is_a: PLANA:0000120 ! progenitor cell
-relationship: develops_into PLANA:0000075 ! optic cup
+relationship: RO:0002203 PLANA:0000075 ! develops into optic cup
 
 [Term]
 id: PLANA:0003503
 name: ventral epidermis progenitor cell
 def: "A progenitor cell that gives rise to one or more of the cell type(s) in the epidermis." [PMID:28292427]
 is_a: PLANA:0000120 ! progenitor cell
-relationship: develops_into PLANA:0000096 ! ventral epidermis
+relationship: RO:0002203 PLANA:0000096 ! develops into ventral epidermis
 
 [Term]
 id: PLANA:0003504
 name: testis somatic gonadal cell progenitor cell
 def: "This progenitor cell develops into testis somatic gonadal cell" [PMID: 23652002]
 is_a: PLANA:0000120 ! progenitor cell
-relationship: develops_into PLANA:0004506 ! testis somatic gonadal cell
+relationship: RO:0002203 PLANA:0004506 ! develops into testis somatic gonadal cell
 
 [Term]
 id: PLANA:0003600
@@ -9059,14 +9059,14 @@ id: PLANA:0003900
 name: head blastema
 def: "blastema which develops into head region" []
 is_a: PLANA:0000495 ! blastema
-relationship: develops_into PLANA:0000418 ! head region
+relationship: RO:0002203 PLANA:0000418 ! develops into head region
 
 [Term]
 id: PLANA:0003901
 name: tail blastema
 def: "blastema which develops into tail region" []
 is_a: PLANA:0000495 ! blastema
-relationship: develops_into PLANA:0000421 ! tail region
+relationship: RO:0002203 PLANA:0000421 ! develops into tail region
 
 [Term]
 id: PLANA:0004000
@@ -9175,7 +9175,6 @@ synonym: "somatic testis cell" EXACT []
 xref: PMID:23652002
 xref: PMID:27163480
 is_a: PLANA:0002096 ! somatic gonadal cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000208 ! testis
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -9186,6 +9185,7 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9196,13 +9196,13 @@ synonym: "somatic follicular cell of the ovary" EXACT []
 synonym: "somatic ovarian cell" EXACT []
 xref: PMID:27163480
 is_a: PLANA:0000119 ! terminally differentiated cell
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000204 ! ovary
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9222,12 +9222,12 @@ xref: OCLC:20423827
 xref: OCLC:464776945
 xref: OCLC:82522822
 xref: PMID:28072387
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: part_of PLANA:0000029 ! primitive ectoderm
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9235,12 +9235,12 @@ id: PLANA:0004513
 name: primtive gut cell surface
 def: "The surface of the primitive gut cells in contact with the embryonic wall." [PMID:28072387]
 xref: PMID:28072387
-relationship: existence_ends_during_or_before PLANA:0000005 ! Stage 5
-relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
 relationship: part_of PLANA:0000085 ! primitive gut cell
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
+relationship: RO:0002496 PLANA:0000003 ! existence starts during or after Stage 3
+relationship: RO:0002497 PLANA:0000005 ! existence ends during or before Stage 5
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9248,12 +9248,12 @@ id: PLANA:0004514
 name: embryonic gut cell surface
 def: "The surface of phagocytic embryonic gut cells in contact with ingested yolk cells." [PMID:28072387]
 xref: PMID:28072387
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000004 ! Stage 4
 relationship: part_of PLANA:0000059 ! embryonic gut cell
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000004 ! existence starts during or after Stage 4
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9262,14 +9262,14 @@ name: embryonic pharynx lumen epithelial surface
 def: "The epithelial cell surface lining the embryonic pharynx lumen." [PMID:28072387]
 xref: PMID:20100474
 xref: PMID:28072387
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: part_of PLANA:0000023 ! embryonic pharynx
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9279,18 +9279,18 @@ def: "An undifferentiated, cycling embryonic cell in Stage 1-5 embryos that expr
 xref: CL:0000353
 xref: PMID:28072387
 is_a: PLANA:0000123 ! embryonic cell
-relationship: develops_from PLANA:0000098 ! zygote
-relationship: existence_ends_during_or_before PLANA:0000005 ! Stage 5
-relationship: existence_starts_during_or_after PLANA:0000001 ! Stage 1
 relationship: part_of PLANA:0000056 ! ectolecithal embryo
 relationship: RO:0001018 PLANA:0000041 ! contained in aboral hemisphere
 relationship: RO:0001018 PLANA:0000060 ! contained in embryonic wall
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0000098 ! develops from zygote
 relationship: RO:0002490 PLANA:0000001 ! existence overlaps Stage 1
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
+relationship: RO:0002496 PLANA:0000001 ! existence starts during or after Stage 1
+relationship: RO:0002497 PLANA:0000005 ! existence ends during or before Stage 5
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9309,16 +9309,16 @@ def: "A neuronal cell innervating the embryonic pharynx. Four neurons innervate 
 xref: PMID:28072387
 is_a: PLANA:0000099 ! neuron
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: develops_from PLANA:0004517 ! blastomere
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: part_of PLANA:0000023 ! embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0004517 ! develops from blastomere
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9329,16 +9329,16 @@ synonym: "embryonic pharynx radial muscle fiber" EXACT []
 xref: PMID:16932928
 is_a: PLANA:0000101 ! muscle cell
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: develops_from PLANA:0004517 ! blastomere
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: part_of PLANA:0000023 ! embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0004517 ! develops from blastomere
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9349,16 +9349,16 @@ xref: PMID:20100474
 xref: PMID:28072387
 is_a: PLANA:0000100 ! epithelial cell
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: develops_from PLANA:0004517 ! blastomere
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: part_of PLANA:0000023 ! embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0004517 ! develops from blastomere
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9369,16 +9369,16 @@ synonym: "embryonic pharynx circular muscle fiber" EXACT []
 xref: PMID:16932928
 is_a: PLANA:0000101 ! muscle cell
 is_a: PLANA:0004518 ! extraembryonic cell
-relationship: develops_from PLANA:0004517 ! blastomere
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000002 ! Stage 2
 relationship: part_of PLANA:0000023 ! embryonic pharynx
 relationship: RO:0001018 PLANA:0000076 ! contained in oral hemisphere
+relationship: RO:0002202 PLANA:0004517 ! develops from blastomere
 relationship: RO:0002490 PLANA:0000002 ! existence overlaps Stage 2
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000002 ! existence starts during or after Stage 2
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9387,11 +9387,11 @@ name: copulatory region
 def: "Portion of the sexual biotype body plan immediately posterior to the parapharyngeal region, and immediately anterior to the tail. Encompasses the copulatory apparatus." [PMID:22074376]
 xref: PMID:22074376
 is_a: PLANA:0000102 ! anatomical region
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: posterior_to PLANA:0000420 ! parapharyngeal region
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 property_value: foaf:depiction https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/copulatoryregion.png {comment="Depicted by field contains diagram representation of body region."}
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
@@ -9430,11 +9430,11 @@ def: "Anatomical space enclosed by the oviduct epithelium." [PMID:22074376]
 xref: PMID:22074376
 xref: TADS:0000435
 is_a: PLANA:0002053 ! lumen
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
-relationship: luminal_space_of PLANA:0000205 ! oviduct
 relationship: part_of PLANA:0000205 ! oviduct
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
+relationship: RO:0002572 PLANA:0000205 ! luminal space of oviduct
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9444,11 +9444,11 @@ def: "Anatomical space enclosed by the sperm duct epithelium." [PMID:19022767, P
 xref: PMID:19022767
 xref: PMID:22074376
 is_a: PLANA:0002053 ! lumen
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
-relationship: luminal_space_of PLANA:0000207 ! sperm duct
 relationship: part_of PLANA:0000207 ! sperm duct
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
+relationship: RO:0002572 PLANA:0000207 ! luminal space of sperm duct
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9459,7 +9459,6 @@ xref: CL:2000064
 xref: PMID:22074376
 xref: UBERON:0004804
 is_a: PLANA:0002023 ! ciliated epithelium
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000205 ! oviduct
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -9469,6 +9468,7 @@ relationship: RO:0001018 PLANA:0000420 ! contained in parapharyngeal region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9478,7 +9478,6 @@ def: "Ciliated epithelium lining the sperm duct." [PMID:19022767, PMID:22074376]
 xref: PMID:19022767
 xref: PMID:22074376
 is_a: PLANA:0002023 ! ciliated epithelium
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000207 ! sperm duct
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000142 ! contained in posterior region of the whole animal
@@ -9488,6 +9487,7 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9499,11 +9499,11 @@ xref: PMID:20844018
 xref: PMID:22074376
 xref: PMID:27149082
 is_a: PLANA:0002053 ! lumen
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
-relationship: luminal_space_of PLANA:0000230 ! tuba
 relationship: part_of PLANA:0000230 ! tuba
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
+relationship: RO:0002572 PLANA:0000230 ! luminal space of tuba
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -9952,11 +9952,11 @@ def: "A subset of TrpA+ neurons, located medially in the cephalic ganglia, whose
 synonym: "TrpA+ neuron" EXACT []
 xref: PMID:25254346
 is_a: PLANA:0000562 ! central nervous system neuron
-relationship: develops_from PLANA:0007546 ! TrpA+ neural progenitor cell
 relationship: part_of PLANA:0000044 ! cephalic ganglia
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000418 ! contained in head region
+relationship: RO:0002202 PLANA:0007546 ! develops from TrpA+ neural progenitor cell
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
 relationship: RO:0002490 PLANA:0004504 ! existence overlaps asexual adult
@@ -10092,14 +10092,14 @@ name: embryonic pharynx lumen
 def: "A lumen enclosed by the embryonic pharynx epithelial cells through which yolk cells are transported into the embryonic gut cavity." [PMID:28072387]
 xref: PMID:28072387
 is_a: PLANA:0002053 ! lumen
-relationship: existence_ends_during_or_before PLANA:0000006 ! Stage 6
-relationship: existence_starts_during_or_after PLANA:0000003 ! Stage 3
-relationship: luminal_space_of PLANA:0000023 ! embryonic pharynx
 relationship: part_of PLANA:0000023 ! embryonic pharynx
 relationship: RO:0002490 PLANA:0000003 ! existence overlaps Stage 3
 relationship: RO:0002490 PLANA:0000004 ! existence overlaps Stage 4
 relationship: RO:0002490 PLANA:0000005 ! existence overlaps Stage 5
 relationship: RO:0002490 PLANA:0000006 ! existence overlaps Stage 6
+relationship: RO:0002496 PLANA:0000003 ! existence starts during or after Stage 3
+relationship: RO:0002497 PLANA:0000006 ! existence ends during or before Stage 6
+relationship: RO:0002572 PLANA:0000023 ! luminal space of embryonic pharynx
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -10109,7 +10109,6 @@ def: "Nerve plexus surrounding the testis." [PMID:17999079, PMID:7833618]
 xref: PMID:17999079
 xref: PMID:7833618
 is_a: PLANA:0000492 ! nerve plexus
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000141 ! contained in dorsal region of the whole animal
@@ -10120,6 +10119,7 @@ relationship: RO:0001018 PLANA:0000421 ! contained in tail region
 relationship: RO:0001018 PLANA:0004527 ! contained in copulatory region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -10137,13 +10137,13 @@ def: "Nerve plexus surrounding the ovary." [PMID:17999079, PMID:7833618]
 xref: PMID:17999079
 xref: PMID:7833618
 is_a: PLANA:0000492 ! nerve plexus
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: part_of PLANA:0000126 ! reproductive system
 relationship: RO:0001018 PLANA:0000140 ! contained in anterior region of the whole animal
 relationship: RO:0001018 PLANA:0000143 ! contained in ventral region of the whole animal
 relationship: RO:0001018 PLANA:0000419 ! contained in prepharyngeal region
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
 relationship: RO:0002490 PLANA:0004503 ! existence overlaps adult hermaphrodite
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -10177,7 +10177,7 @@ id: PLANA:0007564
 name: sexual organism
 def: "An individual member of the sexual biotype of Schmidtea mediterranea." []
 is_a: PLANA:0000136 ! whole organism
-relationship: develops_from PLANA:0000116 ! embryo
+relationship: RO:0002202 PLANA:0000116 ! develops from embryo
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -10186,7 +10186,7 @@ name: asexual organism
 def: "An individual member of the asexual biotype of Schmidtea mediterranea." []
 xref: CARO:0000030
 is_a: PLANA:0000136 ! whole organism
-relationship: develops_from PLANA:0007565 ! asexual organism
+relationship: RO:0002202 PLANA:0007565 ! develops from asexual organism
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
 
 [Term]
@@ -10242,33 +10242,65 @@ name: juvenile organism
 def: "A sexually immature member of the Schmidtea mediterranea sexuallly reproducing biotype" []
 synonym: "juvenile" EXACT []
 is_a: PLANA:0000136 ! whole organism
-relationship: existence_ends_during_or_before PLANA:0000214 ! juvenile stage
-relationship: existence_starts_during_or_after PLANA:0000214 ! juvenile stage
 relationship: RO:0002490 PLANA:0000214 ! existence overlaps juvenile stage
+relationship: RO:0002496 PLANA:0000214 ! existence starts during or after juvenile stage
+relationship: RO:0002497 PLANA:0000214 ! existence ends during or before juvenile stage
 created_by: https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407
+
+[Typedef]
+id: BFO:0000067
+name: contains process
+def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
+comment: Paraphrase of definition: a relation between an independent continuant and a process, in which the process takes place entirely within the independent continuant
+property_value: IAO:0000111 "site of" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Typedef]
 id: RO:0001000
 name: derives from
 def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
 subset: ro-eco
-property_value: curator_notes "This relation is taken from the RO2005 version of RO. It may be obsoleted and replaced by relations with different definitions. See also the 'develops from' family of relations." xsd:string
-property_value: editor_note "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops from'." xsd:string
 property_value: IAO:0000112 "this cell derives from this parent cell (cell division)" xsd:string
 property_value: IAO:0000112 "this nucleus derives from this parent nucleus (nuclear division)" xsd:string
 property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops from'." xsd:string
 property_value: IAO:0000118 "derives_from" xsd:string
+property_value: IAO:0000232 "This relation is taken from the RO2005 version of RO. It may be obsoleted and replaced by relations with different definitions. See also the 'develops from' family of relations." xsd:string
 
 [Typedef]
 id: RO:0001018
 name: contained in
 subset: ro-eco
-property_value: editor_note "Containment is location not involving parthood, and arises only where some immaterial continuant is involved." xsd:string
-property_value: editor_note "Containment obtains in each case between material and immaterial continuants, for instance: lung contained_in thoracic cavity; bladder contained_in pelvic cavity. Hence containment is not a transitive relation.    If c part_of c1 at t then we have also, by our definition and by the axioms of mereology applied to spatial regions, c located_in c1 at t. Thus, many examples of instance-level location relations for continuants are in fact cases of instance-level parthood. For material continuants location and parthood coincide. Containment is location not involving parthood, and arises only where some immaterial continuant is involved. To understand this relation, we first define overlap for continuants as follows:    c1 overlap c2 at t =def for some c, c part_of c1 at t and c part_of c2 at t. The containment relation on the instance level can then be defined (see definition):" xsd:string
-property_value: editor_note "Intended meaning:\ndomain: material entity\nrange: spatial region or site (immaterial continuant)\n        " xsd:string
 property_value: IAO:0000111 "contained in" xsd:string
+property_value: IAO:0000116 "Containment is location not involving parthood, and arises only where some immaterial continuant is involved." xsd:string
+property_value: IAO:0000116 "Containment obtains in each case between material and immaterial continuants, for instance: lung contained_in thoracic cavity; bladder contained_in pelvic cavity. Hence containment is not a transitive relation.    If c part_of c1 at t then we have also, by our definition and by the axioms of mereology applied to spatial regions, c located_in c1 at t. Thus, many examples of instance-level location relations for continuants are in fact cases of instance-level parthood. For material continuants location and parthood coincide. Containment is location not involving parthood, and arises only where some immaterial continuant is involved. To understand this relation, we first define overlap for continuants as follows:    c1 overlap c2 at t =def for some c, c part_of c1 at t and c part_of c2 at t. The containment relation on the instance level can then be defined (see definition):" xsd:string
+property_value: IAO:0000116 "Intended meaning:\ndomain: material entity\nrange: spatial region or site (immaterial continuant)\n        " xsd:string
 property_value: IAO:0000118 "contained_in" xsd:string
 property_value: RO:0001900 RO:0001901
+
+[Typedef]
+id: RO:0002202
+name: develops from
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+comment: This is the transitive form of the develops from relation
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+is_transitive: true
+inverse_of: RO:0002203 ! develops into
+
+[Typedef]
+id: RO:0002203
+name: develops into
+def: "inverse of develops from" []
+subset: RO:0002259
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+is_transitive: true
 
 [Typedef]
 id: RO:0002490
@@ -10278,24 +10310,64 @@ comment: The relations here were created based on work originally by Fabian Neuh
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 
 [Typedef]
+id: RO:0002496
+name: existence starts during or after
+def: "x existence starts during or after y if and only if the time point at which x starts is after or equivalent to the time point at which y starts. Formally: x existence starts during or after y iff α (x) >= α (y)." []
+comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+holds_over_chain: part_of RO:0002496
+transitive_over: part_of ! part_of
+
+[Typedef]
+id: RO:0002497
+name: existence ends during or before
+def: "x existence ends during or before y if and only if the time point at which x ends is before or equivalent to the time point at which y ends." []
+comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+holds_over_chain: part_of RO:0002497
+transitive_over: part_of ! part_of
+
+[Typedef]
+id: RO:0002572
+name: luminal space of
+def: "s is luminal space of x iff s is lumen_of x and s is an immaterial entity" []
+subset: ro-eco
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: part_of ! part_of
+
+[Typedef]
+id: RO:0003000
+name: produces
+def: "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix." []
+comment: Note that this definition doesn't quite distinguish the output of a transformation process from a production process, which is related to the identity/granularity issue.
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+inverse_of: RO:0003001 ! produced by
+
+[Typedef]
+id: RO:0003001
+name: produced by
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+
+[Typedef]
 id: adjacent_to
 name: adjacent to
-name: adjacent_to
 namespace: spatial
-namespace: uberon
 def: "x adjacent to y if and only if x and y share a boundary." []
-def: "x adjacent_to y iff: x and y share a boundary" []
-def: "x adjacent_to y iff: x and y share a boundary." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002220
-property_value: editor_note "This relation acts as a join point with BSPO" xsd:string
 property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string {http://www.w3.org/2000/01/rdf-schema#seeAlso="issuecomment-218584934"}
 property_value: IAO:0000112 "The epidermis layer of a vertebrate is adjacent to the dermis." xsd:string
 property_value: IAO:0000112 "The plasma membrane of a cell is adjacent to the cytoplasm, and also to the cell lumen which the cytoplasm occupies." xsd:string
 property_value: IAO:0000112 "The skin of the forelimb is adjacent to the skin of the torso if these are considered anatomical subdivisions with a defined border. Otherwise a relation such as continuous_with would be used." xsd:string
 property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This relation acts as a join point with BSPO" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: RO:0001900 RO:0001901
 is_symmetric: true
@@ -10303,43 +10375,14 @@ is_symmetric: true
 [Typedef]
 id: anterior_to
 name: anterior to
-name: anterior_to
 namespace: spatial
-namespace: uberon
 def: "x anterior to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that extends through an organism from head end to opposite end of body or tail." [BSPO:cjm]
-def: "x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer" [http://orcid.org/0000-0002-6601-2165]
-def: "x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer." [http://orcid.org/0000-0002-6601-2165]
 synonym: "rostral_to" EXACT []
 xref: BSPO:0000096
 property_value: seeAlso FBcv:0000039
 property_value: seeAlso FBql:00005863
 is_transitive: true
 inverse_of: posterior_to ! posterior to
-created_by: cjm
-creation_date: 2009-07-31T02:15:46Z
-
-[Typedef]
-id: contains_process
-name: contains process
-namespace: uberon
-def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
-comment: Paraphrase of definition: a relation between an independent continuant and a process, in which the process takes place entirely within the independent continuant
-xref: BFO:0000067
-property_value: IAO:0000111 "site of" xsd:string
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
-
-[Typedef]
-id: curator_notes
-name: curator note
-name: curator notes
-namespace: uberon
-def: "An administrative note of use for a curator but of no use for a user" []
-xref: IAO:0000232
-property_value: IAO:0000111 "curator note" xsd:string
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "PERSON:Alan Ruttenberg" xsd:string
-property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
-is_metadata_tag: true
 
 [Typedef]
 id: dc-contributor
@@ -10356,190 +10399,24 @@ xref: http://purl.org/dc/elements/1.1/creator
 is_metadata_tag: true
 
 [Typedef]
-id: dc-description
-name: description
-namespace: uberon
-xref: http://purl.org/dc/elements/1.1/description
-is_metadata_tag: true
-
-[Typedef]
-id: dc-source
-name: derived from resource
-namespace: uberon
-xref: http://purl.org/dc/elements/1.1/source
-is_metadata_tag: true
-
-[Typedef]
-id: dc-title
-name: title
-namespace: uberon
-xref: http://purl.org/dc/elements/1.1/title
-is_metadata_tag: true
-
-[Typedef]
-id: dcterms-license
-name: license
-namespace: uberon
-xref: http://purl.org/dc/terms/license
-is_metadata_tag: true
-
-[Typedef]
-id: depicted_by
-name: depicted by
-namespace: uberon
-xref: http://xmlns.com/foaf/0.1/depicted_by
-is_metadata_tag: true
-
-[Typedef]
-id: develops_from
-name: develops from
-name: develops_from
-namespace: uberon
-def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
-comment: This is the transitive form of the develops from relation
-xref: RO:0002202
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: IAO:0000117 "Melissa Haendel" xsd:string
-property_value: IAO:0000117 "Terry Meehan" xsd:string
-property_value: IAO:0000117 "Terry Meehan" xsd:string
-holds_over_chain: part_of develops_from
-is_transitive: true
-inverse_of: develops_into ! develops_into
-transitive_over: part_of ! part_of
-
-[Typedef]
-id: develops_into
-name: develops into
-name: develops_into
-namespace: uberon
-def: "inverse of develops from" []
-subset: RO:0002259
-xref: RO:0002203
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: IAO:0000117 "Terry Meehan" xsd:string
-is_transitive: true
-
-[Typedef]
-id: editor_note
-name: editor note
-namespace: uberon
-def: "An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology." []
-xref: IAO:0000116
-property_value: IAO:0000111 "editor note" xsd:string
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "PERSON:Daniel Schober" xsd:string
-property_value: IAO:0000119 GROUP:OBI:<http://purl.obofoundry.org/obo/obi> xsd:string
-property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
-is_metadata_tag: true
-
-[Typedef]
-id: existence_ends_during_or_before
-name: existence ends during or before
-namespace: uberon
-def: "x existence ends during or before y if and only if the time point at which x ends is before or equivalent to the time point at which y ends." []
-comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
-xref: RO:0002497
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-holds_over_chain: part_of existence_ends_during_or_before
-transitive_over: part_of ! part_of
-
-[Typedef]
-id: existence_starts_during_or_after
-name: existence starts during or after
-namespace: uberon
-def: "x existence starts during or after y if and only if the time point at which x starts is after or equivalent to the time point at which y starts. Formally: x existence starts during or after y iff α (x) >= α (y)." []
-comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
-xref: RO:0002496
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-holds_over_chain: part_of existence_starts_during_or_after
-transitive_over: part_of ! part_of
-
-[Typedef]
-id: external_definition
-name: external_definition
-namespace: uberon
-def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [https://orcid.org/0000-0002-6601-2165]
-comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
-xref: UBPROP:0000001
-is_metadata_tag: true
-
-[Typedef]
-id: external_ontology_notes
-name: external_ontology_notes
-namespace: uberon
-def: "Notes on how similar or equivalent classes are represented in other ontologies." [https://orcid.org/0000-0002-6601-2165]
-xref: UBPROP:0000012
-property_value: editor_note "This annotation property may be replaced with an annotation property from an external ontology such as IAO" xsd:string
-is_metadata_tag: true
-
-[Typedef]
-id: foaf-page
-name: page
-namespace: uberon
-xref: http://xmlns.com/foaf/0.1/page
-is_metadata_tag: true
-
-[Typedef]
-id: has_relational_adjective
-name: has_relational_adjective
-namespace: uberon
-xref: UBPROP:0000007
-property_value: curator_notes "Used to connect a class to an adjectival form of its label. For example, a class with label 'intestine' may have a relational adjective 'intestinal'." xsd:string
-is_metadata_tag: true
-
-[Typedef]
-id: homology_notes
-name: homology_notes
-namespace: uberon
-def: "Notes on the homology status of this class." [https://orcid.org/0000-0002-6601-2165]
-comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
-xref: UBPROP:0000003
-is_metadata_tag: true
-
-[Typedef]
 id: immediately_deep_to
 name: immediately deep to
-name: immediately_deep_to
 namespace: spatial
-namespace: uberon
-def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
 def: "x immediately deep to y iff x deep_to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0001107
-is_a: adjacent_to ! adjacent_to
 inverse_of: immediately_superficial_to ! immediately superficial to
 
 [Typedef]
 id: immediately_superficial_to
 name: immediately superficial to
-name: immediately_superficial_to
 namespace: spatial
-namespace: uberon
 def: "x immediately superficial to y iff x superficial to y and x is contiguous with y." [BSPO:curators]
 xref: BSPO:0015014
-is_a: adjacent_to ! adjacent_to
-
-[Typedef]
-id: luminal_space_of
-name: luminal space of
-namespace: uberon
-def: "s is luminal space of x iff s is lumen_of x and s is an immaterial entity" []
-subset: ro-eco
-xref: RO:0002572
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-is_a: part_of ! part_of
 
 [Typedef]
 id: overlaps
 name: overlaps
 namespace: spatial
-namespace: uberon
-def: "A overlaps B if they share some part in common." []
 def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
 def: "x overlaps y iff they have some part in common." [BSPO:cjm]
 comment: "(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))" CLIF []
@@ -10551,7 +10428,6 @@ property_value: IAO:0000114 IAO:0000125
 property_value: RO:0001900 RO:0001901
 holds_over_chain: part_of part_of
 transitive_over: part_of ! part_of
-expand_expression_to: "BFO_0000051 some (BFO_0000050 some ?Y)" []
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 
 [Typedef]
@@ -10569,14 +10445,6 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: BFO:0000050
-property_value: editor_note "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
-property_value: editor_note "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
-property_value: editor_note "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
-property_value: editor_note "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
-property_value: editor_note "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
-property_value: editor_note "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
-property_value: editor_note "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
-property_value: editor_note "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000111 "is part of" xsd:string
 property_value: IAO:0000111 "is part of" xsd:string
 property_value: IAO:0000112 "my brain is part of my body (continuant parthood, two material entities)" xsd:string
@@ -10585,6 +10453,14 @@ property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant
 property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
 property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
 property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
+property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
+property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
+property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000118 "part_of" xsd:string
 property_value: IAO:0000118 "part_of" xsd:string
 property_value: RO:0001900 RO:0001901
@@ -10604,52 +10480,11 @@ is_a: overlaps ! overlaps
 [Typedef]
 id: posterior_to
 name: posterior to
-name: posterior_to
 namespace: spatial
-namespace: uberon
 def: "x posterior to y iff x is further along the antero-posterior axis than y, towards the body/tail. An antero-posterior axis is an axis that extends through an organism from head end to opposite end of body or tail." [BSPO:cjm]
-def: "x posterior_to y iff x is further along the antero-posterior axis than y, towards the body/tail. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail." [http://orcid.org/0000-0002-6601-2165]
 synonym: "caudal to" NARROW vertebrate []
-synonym: "caudal_to" NARROW []
 xref: BSPO:0000099
 property_value: seeAlso FBcv:0000045
 property_value: seeAlso FBql:00005864
 is_transitive: true
-
-[Typedef]
-id: produced_by
-name: produced by
-name: produced_by
-namespace: uberon
-def: "a produced_by b iff some process that occurs_in b has_output a." []
-subset: ro-eco
-xref: RO:0003001
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Melissa Haendel" xsd:string
-
-[Typedef]
-id: produces
-name: produces
-namespace: uberon
-def: "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix." []
-comment: Note that this definition doesn't quite distinguish the output of a transformation process from a production process, which is related to the identity/granularity issue.
-subset: ro-eco
-xref: RO:0003000
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Melissa Haendel" xsd:string
-inverse_of: produced_by ! produced_by
-
-[Typedef]
-id: subdivision_of
-name: subdivision of
-namespace: uberon
-comment: placeholder relation. X = 'subdivision of A' and subdivision_of some B means that X is the mereological sum of A and B
-
-[Typedef]
-id: taxon_notes
-name: taxon_notes
-namespace: uberon
-def: "Notes on the how instances of this class vary across species." [https://orcid.org/0000-0002-6601-2165]
-xref: UBPROP:0000008
-is_metadata_tag: true
 
