@@ -21,16 +21,6 @@ $(ONT).csv:
 
 #.PRECIOUS: imports/uberon_import.owl
 
-
-
-
-#imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
-#	$(ROBOT) extract -i $< -T imports/pato_terms_combined.txt --method BOT \
-	reason \
-	filter --term-file imports/pato_terms_combined.txt --axioms "subclass equivalent" --select "self annotations" --trim true \
-	annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
-
-#.PRECIOUS: imports/pato_import.owl
 ##########################################
 #### Overriding plana.owl to get rid of ugly owl:Nothing
 ##########################################
