@@ -11814,16 +11814,6 @@
           "sub": "http://purl.obolibrary.org/obo/RO_0002202"
         },
         {
-          "obj": "http://purl.obolibrary.org/obo/RO_0002220",
-          "pred": "subPropertyOf",
-          "sub": "http://purl.obolibrary.org/obo/BSPO_0001107"
-        },
-        {
-          "obj": "http://purl.obolibrary.org/obo/RO_0002220",
-          "pred": "subPropertyOf",
-          "sub": "http://purl.obolibrary.org/obo/BSPO_0015014"
-        },
-        {
           "obj": "http://purl.obolibrary.org/obo/RO_0003001",
           "pred": "inverseOf",
           "sub": "http://purl.obolibrary.org/obo/RO_0003000"
@@ -11860,11 +11850,11 @@
           },
           {
             "pred": "http://www.w3.org/2002/07/owl#versionInfo",
-            "val": "2021-09-29"
+            "val": "2021-10-06"
           }
         ],
         "subsets": [],
-        "version": "http://purl.obolibrary.org/obo/plana/releases/2021-09-29/plana-simple.json",
+        "version": "http://purl.obolibrary.org/obo/plana/releases/2021-10-06/plana-simple.json",
         "xrefs": []
       },
       "nodes": [
@@ -12042,14 +12032,6 @@
                 "val": "site of"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "contains_process"
-              },
-              {
                 "pred": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
                 "val": "http://purl.obolibrary.org/obo/bfo.owl"
               }
@@ -12060,35 +12042,18 @@
             "definition": {
               "val": "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t",
               "xrefs": []
-            },
-            "xrefs": [
-              {
-                "val": "BFO:0000067"
-              }
-            ]
+            }
           },
           "type": "PROPERTY"
         },
         {
           "id": "http://purl.obolibrary.org/obo/BSPO_0000096",
-          "lbl": "anterior_to",
+          "lbl": "anterior to",
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "cjm"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#creation_date",
-                "val": "2009-07-31T02:15:46Z"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "spatial"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
@@ -12104,9 +12069,9 @@
               }
             ],
             "definition": {
-              "val": "x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer",
+              "val": "x anterior to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that extends through an organism from head end to opposite end of body or tail.",
               "xrefs": [
-                "http://orcid.org/0000-0002-6601-2165"
+                "BSPO:cjm"
               ]
             },
             "synonyms": [
@@ -12126,16 +12091,12 @@
         },
         {
           "id": "http://purl.obolibrary.org/obo/BSPO_0000099",
-          "lbl": "posterior_to",
+          "lbl": "posterior to",
           "meta": {
             "basicPropertyValues": [
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "spatial"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
@@ -12151,9 +12112,9 @@
               }
             ],
             "definition": {
-              "val": "x posterior_to y iff x is further along the antero-posterior axis than y, towards the body/tail. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail.",
+              "val": "x posterior to y iff x is further along the antero-posterior axis than y, towards the body/tail. An antero-posterior axis is an axis that extends through an organism from head end to opposite end of body or tail.",
               "xrefs": [
-                "http://orcid.org/0000-0002-6601-2165"
+                "BSPO:cjm"
               ]
             },
             "synonyms": [
@@ -12161,11 +12122,6 @@
                 "pred": "hasNarrowSynonym",
                 "synonymType": "http://purl.obolibrary.org/obo/bspo#vertebrate",
                 "val": "caudal to",
-                "xrefs": []
-              },
-              {
-                "pred": "hasNarrowSynonym",
-                "val": "caudal_to",
                 "xrefs": []
               }
             ],
@@ -12187,18 +12143,14 @@
                 "val": "spatial"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
                 "val": "immediately_deep_to"
               }
             ],
             "definition": {
-              "val": "This relation holds when both the deep_to and ajdacent_to relationship similarly hold.",
+              "val": "x immediately deep to y iff x deep_to y and x is contiguous with y.",
               "xrefs": [
-                "http://orcid.org/0000-0002-6601-2165"
+                "BSPO:curators"
               ]
             },
             "xrefs": [
@@ -12211,16 +12163,12 @@
         },
         {
           "id": "http://purl.obolibrary.org/obo/BSPO_0015014",
-          "lbl": "immediately_superficial_to",
+          "lbl": "immediately superficial to",
           "meta": {
             "basicPropertyValues": [
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "spatial"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
@@ -12300,18 +12248,6 @@
                 "val": "GROUP:OBI:<http://purl.obofoundry.org/obo/obi>"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "editor_note"
-              },
-              {
                 "pred": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
                 "val": "http://purl.obolibrary.org/obo/iao.owl"
               }
@@ -12319,18 +12255,13 @@
             "definition": {
               "val": "An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology.",
               "xrefs": []
-            },
-            "xrefs": [
-              {
-                "val": "IAO:0000116"
-              }
-            ]
+            }
           },
           "type": "PROPERTY"
         },
         {
           "id": "http://purl.obolibrary.org/obo/IAO_0000232",
-          "lbl": "curator notes",
+          "lbl": "curator note",
           "meta": {
             "basicPropertyValues": [
               {
@@ -12346,18 +12277,6 @@
                 "val": "PERSON:Alan Ruttenberg"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "curator_notes"
-              },
-              {
                 "pred": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
                 "val": "http://purl.obolibrary.org/obo/iao.owl"
               }
@@ -12365,12 +12284,7 @@
             "definition": {
               "val": "An administrative note of use for a curator but of no use for a user",
               "xrefs": []
-            },
-            "xrefs": [
-              {
-                "val": "IAO:0000232"
-              }
-            ]
+            }
           },
           "type": "PROPERTY"
         },
@@ -41597,10 +41511,6 @@
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000424",
-                "val": "BFO_0000051 some (BFO_0000050 some ?Y)"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000424",
                 "val": "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)"
               },
               {
@@ -41612,10 +41522,6 @@
                 "val": "spatial"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
                 "val": "overlaps"
               }
@@ -41624,8 +41530,10 @@
               "\"(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))\" CLIF []"
             ],
             "definition": {
-              "val": "A overlaps B if they share some part in common.",
-              "xrefs": []
+              "val": "x overlaps y iff they have some part in common.",
+              "xrefs": [
+                "BSPO:cjm"
+              ]
             },
             "subsets": [
               "http://purl.obolibrary.org/obo/ro/subsets#ro-eco",
@@ -41642,7 +41550,7 @@
         },
         {
           "id": "http://purl.obolibrary.org/obo/RO_0002202",
-          "lbl": "develops_from",
+          "lbl": "develops from",
           "meta": {
             "basicPropertyValues": [
               {
@@ -41652,14 +41560,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
                 "val": "Chris Mungall"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
-                "val": "Chris Mungall"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
-                "val": "David Osumi-Sutherland"
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
@@ -41672,18 +41572,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
                 "val": "Terry Meehan"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
-                "val": "Terry Meehan"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "develops_from"
               }
             ],
             "comments": [
@@ -41692,18 +41580,13 @@
             "definition": {
               "val": "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y",
               "xrefs": []
-            },
-            "xrefs": [
-              {
-                "val": "RO:0002202"
-              }
-            ]
+            }
           },
           "type": "PROPERTY"
         },
         {
           "id": "http://purl.obolibrary.org/obo/RO_0002203",
-          "lbl": "develops_into",
+          "lbl": "develops into",
           "meta": {
             "basicPropertyValues": [
               {
@@ -41721,14 +41604,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
                 "val": "Terry Meehan"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "develops_into"
               }
             ],
             "definition": {
@@ -41737,18 +41612,13 @@
             },
             "subsets": [
               "http://purl.obolibrary.org/obo/RO_0002259"
-            ],
-            "xrefs": [
-              {
-                "val": "RO:0002203"
-              }
             ]
           },
           "type": "PROPERTY"
         },
         {
           "id": "http://purl.obolibrary.org/obo/RO_0002220",
-          "lbl": "adjacent_to",
+          "lbl": "adjacent to",
           "meta": {
             "basicPropertyValues": [
               {
@@ -41786,10 +41656,6 @@
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "spatial"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
@@ -41841,14 +41707,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
                 "val": "Chris Mungall"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "existence_starts_during_or_after"
               }
             ],
             "comments": [
@@ -41857,12 +41715,7 @@
             "definition": {
               "val": "x existence starts during or after y if and only if the time point at which x starts is after or equivalent to the time point at which y starts. Formally: x existence starts during or after y iff α (x) >= α (y).",
               "xrefs": []
-            },
-            "xrefs": [
-              {
-                "val": "RO:0002496"
-              }
-            ]
+            }
           },
           "type": "PROPERTY"
         },
@@ -41874,14 +41727,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
                 "val": "Chris Mungall"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "existence_ends_during_or_before"
               }
             ],
             "comments": [
@@ -41890,12 +41735,7 @@
             "definition": {
               "val": "x existence ends during or before y if and only if the time point at which x ends is before or equivalent to the time point at which y ends.",
               "xrefs": []
-            },
-            "xrefs": [
-              {
-                "val": "RO:0002497"
-              }
-            ]
+            }
           },
           "type": "PROPERTY"
         },
@@ -41907,14 +41747,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
                 "val": "Chris Mungall"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "luminal_space_of"
               }
             ],
             "definition": {
@@ -41923,11 +41755,6 @@
             },
             "subsets": [
               "http://purl.obolibrary.org/obo/ro/subsets#ro-eco"
-            ],
-            "xrefs": [
-              {
-                "val": "RO:0002572"
-              }
             ]
           },
           "type": "PROPERTY"
@@ -41944,14 +41771,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
                 "val": "Melissa Haendel"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "produces"
               }
             ],
             "comments": [
@@ -41963,18 +41782,13 @@
             },
             "subsets": [
               "http://purl.obolibrary.org/obo/ro/subsets#ro-eco"
-            ],
-            "xrefs": [
-              {
-                "val": "RO:0003000"
-              }
             ]
           },
           "type": "PROPERTY"
         },
         {
           "id": "http://purl.obolibrary.org/obo/RO_0003001",
-          "lbl": "produced_by",
+          "lbl": "produced by",
           "meta": {
             "basicPropertyValues": [
               {
@@ -41984,14 +41798,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
                 "val": "Melissa Haendel"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "produced_by"
               }
             ],
             "definition": {
@@ -42000,11 +41806,6 @@
             },
             "subsets": [
               "http://purl.obolibrary.org/obo/ro/subsets#ro-eco"
-            ],
-            "xrefs": [
-              {
-                "val": "RO:0003001"
-              }
             ]
           },
           "type": "PROPERTY"
@@ -42013,34 +41814,10 @@
           "id": "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "lbl": "external_definition",
           "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "external_definition"
-              }
-            ],
-            "comments": [
-              "This annotation property may be replaced with an annotation property from an external ontology such as IAO"
-            ],
             "definition": {
               "val": "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class.",
-              "xrefs": [
-                "https://orcid.org/0000-0002-6601-2165"
-              ]
-            },
-            "xrefs": [
-              {
-                "val": "UBPROP:0000001"
-              }
-            ]
+              "xrefs": []
+            }
           },
           "type": "PROPERTY"
         },
@@ -42048,64 +41825,10 @@
           "id": "http://purl.obolibrary.org/obo/UBPROP_0000003",
           "lbl": "homology_notes",
           "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "homology_notes"
-              }
-            ],
-            "comments": [
-              "This annotation property may be replaced with an annotation property from an external ontology such as IAO"
-            ],
             "definition": {
               "val": "Notes on the homology status of this class.",
-              "xrefs": [
-                "https://orcid.org/0000-0002-6601-2165"
-              ]
-            },
-            "xrefs": [
-              {
-                "val": "UBPROP:0000003"
-              }
-            ]
-          },
-          "type": "PROPERTY"
-        },
-        {
-          "id": "http://purl.obolibrary.org/obo/UBPROP_0000007",
-          "lbl": "has_relational_adjective",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000232",
-                "val": "Used to connect a class to an adjectival form of its label. For example, a class with label 'intestine' may have a relational adjective 'intestinal'."
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "has_relational_adjective"
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "UBPROP:0000007"
-              }
-            ]
+              "xrefs": []
+            }
           },
           "type": "PROPERTY"
         },
@@ -42113,31 +41836,10 @@
           "id": "http://purl.obolibrary.org/obo/UBPROP_0000008",
           "lbl": "taxon_notes",
           "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "taxon_notes"
-              }
-            ],
             "definition": {
               "val": "Notes on the how instances of this class vary across species.",
-              "xrefs": [
-                "https://orcid.org/0000-0002-6601-2165"
-              ]
-            },
-            "xrefs": [
-              {
-                "val": "UBPROP:0000008"
-              }
-            ]
+              "xrefs": []
+            }
           },
           "type": "PROPERTY"
         },
@@ -42145,35 +41847,10 @@
           "id": "http://purl.obolibrary.org/obo/UBPROP_0000012",
           "lbl": "external_ontology_notes",
           "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
-                "val": "This annotation property may be replaced with an annotation property from an external ontology such as IAO"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "external_ontology_notes"
-              }
-            ],
             "definition": {
               "val": "Notes on how similar or equivalent classes are represented in other ontologies.",
-              "xrefs": [
-                "https://orcid.org/0000-0002-6601-2165"
-              ]
-            },
-            "xrefs": [
-              {
-                "val": "UBPROP:0000012"
-              }
-            ]
+              "xrefs": []
+            }
           },
           "type": "PROPERTY"
         },
@@ -42209,22 +41886,6 @@
               {
                 "val": "IAO:0100001"
               }
-            ]
-          },
-          "type": "PROPERTY"
-        },
-        {
-          "id": "http://purl.obolibrary.org/obo/uberon/core#subdivision_of",
-          "lbl": "subdivision of",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              }
-            ],
-            "comments": [
-              "placeholder relation. X = 'subdivision of A' and subdivision_of some B means that X is the mereological sum of A and B"
             ]
           },
           "type": "PROPERTY"
@@ -42276,110 +41937,6 @@
             "xrefs": [
               {
                 "val": "http://purl.org/dc/elements/1.1/creator"
-              }
-            ]
-          },
-          "type": "PROPERTY"
-        },
-        {
-          "id": "http://purl.org/dc/elements/1.1/description",
-          "lbl": "description",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "dc-description"
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "http://purl.org/dc/elements/1.1/description"
-              }
-            ]
-          },
-          "type": "PROPERTY"
-        },
-        {
-          "id": "http://purl.org/dc/elements/1.1/source",
-          "lbl": "derived from resource",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "dc-source"
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "http://purl.org/dc/elements/1.1/source"
-              }
-            ]
-          },
-          "type": "PROPERTY"
-        },
-        {
-          "id": "http://purl.org/dc/elements/1.1/title",
-          "lbl": "title",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "dc-title"
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "http://purl.org/dc/elements/1.1/title"
-              }
-            ]
-          },
-          "type": "PROPERTY"
-        },
-        {
-          "id": "http://purl.org/dc/terms/license",
-          "lbl": "license",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "dcterms-license"
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "http://purl.org/dc/terms/license"
               }
             ]
           },
@@ -42535,55 +42092,8 @@
           "type": "PROPERTY"
         },
         {
-          "id": "http://xmlns.com/foaf/0.1/depicted_by",
-          "lbl": "depicted by",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "depicted_by"
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "http://xmlns.com/foaf/0.1/depicted_by"
-              }
-            ]
-          },
-          "type": "PROPERTY"
-        },
-        {
-          "id": "http://xmlns.com/foaf/0.1/page",
-          "lbl": "page",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "foaf-page"
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "http://xmlns.com/foaf/0.1/page"
-              }
-            ]
-          },
+          "id": "http://purl.obolibrary.org/obo/UBPROP_0000007",
+          "lbl": "has_relational_adjective",
           "type": "PROPERTY"
         },
         {
@@ -42616,20 +42126,6 @@
             "http://purl.obolibrary.org/obo/RO_0002131"
           ],
           "predicateId": "http://purl.obolibrary.org/obo/RO_0002131"
-        },
-        {
-          "chainPredicateIds": [
-            "http://purl.obolibrary.org/obo/BFO_0000050",
-            "http://purl.obolibrary.org/obo/RO_0002202"
-          ],
-          "predicateId": "http://purl.obolibrary.org/obo/RO_0002202"
-        },
-        {
-          "chainPredicateIds": [
-            "http://purl.obolibrary.org/obo/BFO_0000050",
-            "http://purl.obolibrary.org/obo/RO_0002202"
-          ],
-          "predicateId": "http://purl.obolibrary.org/obo/RO_0002202"
         },
         {
           "chainPredicateIds": [
