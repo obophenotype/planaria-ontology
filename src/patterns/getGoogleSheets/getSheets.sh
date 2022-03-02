@@ -5,11 +5,11 @@ curl "https://docs.google.com/spreadsheets/d/1NzQznwebR_rvOejJzZax7UmZvvFk01bRks
 
 ## reform plana_terms
 ## nervous to do this without checking the above download
+## this now gets done last in the README
 #perl term_management/format_plana_terms.pl term_management/plana_terms.tsv
 
 # download the rest
 # update googleSheets.txt if we have a new tab in the plana term management google sheet
-#for i in `cat googleSheets.txt`; do curl "https://docs.google.com/spreadsheets/d/1NzQznwebR_rvOejJzZax7UmZvvFk01bRksCdFtUl5rk/export?format=tsv&id=1NzQznwebR_rvOejJzZax7UmZvvFk01bRksCdFtUl5rk&gid=$i" -o sheets.$i.tsv; done
 
 for i in `cat googleSheets.txt`; do curl "https://docs.google.com/spreadsheets/d/1NzQznwebR_rvOejJzZax7UmZvvFk01bRksCdFtUl5rk/gviz/tq?tqx=out:csv&gid=$i" -o sheets.$i.csv; ./csv2tab.py < sheets.$i.csv > sheets.$i.tsv ;  perl -pi -e 's/\r//' sheets.$i.tsv ; done
 
