@@ -273,6 +273,15 @@
         },
         {
           "domainClassIds": [
+            "http://purl.obolibrary.org/obo/BFO_0000015"
+          ],
+          "predicateId": "http://purl.obolibrary.org/obo/RO_0019000",
+          "rangeClassIds": [
+            "http://purl.obolibrary.org/obo/PATO_0000001"
+          ]
+        },
+        {
+          "domainClassIds": [
             "http://purl.obolibrary.org/obo/BFO_0000040"
           ],
           "predicateId": "http://purl.obolibrary.org/obo/RO_0001018",
@@ -819,6 +828,11 @@
           "obj": "http://purl.obolibrary.org/obo/BFO_0000020",
           "pred": "is_a",
           "sub": "http://purl.obolibrary.org/obo/BFO_0000019"
+        },
+        {
+          "obj": "http://purl.obolibrary.org/obo/BFO_0000020",
+          "pred": "is_a",
+          "sub": "http://purl.obolibrary.org/obo/PATO_0000001"
         },
         {
           "obj": "http://purl.obolibrary.org/obo/BFO_0000031",
@@ -16396,6 +16410,11 @@
           "sub": "http://purl.obolibrary.org/obo/RO_0002608"
         },
         {
+          "obj": "http://purl.obolibrary.org/obo/RO_0002410",
+          "pred": "subPropertyOf",
+          "sub": "http://purl.obolibrary.org/obo/RO_0019000"
+        },
+        {
           "obj": "http://purl.obolibrary.org/obo/RO_0002411",
           "pred": "inverseOf",
           "sub": "http://purl.obolibrary.org/obo/RO_0002404"
@@ -16674,6 +16693,16 @@
           "obj": "http://purl.obolibrary.org/obo/RO_0011002",
           "pred": "subPropertyOf",
           "sub": "http://purl.obolibrary.org/obo/RO_0002448"
+        },
+        {
+          "obj": "http://purl.obolibrary.org/obo/RO_0019000",
+          "pred": "subPropertyOf",
+          "sub": "http://purl.obolibrary.org/obo/RO_0019001"
+        },
+        {
+          "obj": "http://purl.obolibrary.org/obo/RO_0019000",
+          "pred": "subPropertyOf",
+          "sub": "http://purl.obolibrary.org/obo/RO_0019002"
         },
         {
           "obj": "http://purl.obolibrary.org/obo/UBERON_0000061",
@@ -19675,11 +19704,11 @@
           },
           {
             "pred": "http://www.w3.org/2002/07/owl#versionInfo",
-            "val": "2021-10-21"
+            "val": "2022-03-02"
           }
         ],
         "subsets": [],
-        "version": "http://purl.obolibrary.org/obo/plana/releases/2021-10-21/plana-full.json",
+        "version": "http://purl.obolibrary.org/obo/plana/releases/2022-03-02/plana-full.json",
         "xrefs": []
       },
       "nodes": [
@@ -20147,28 +20176,12 @@
                 "val": "is part of"
               },
               {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000111",
-                "val": "is part of"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
-                "val": "my brain is part of my body (continuant parthood, two material entities)"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
                 "val": "my brain is part of my body (continuant parthood, two material entities)"
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
                 "val": "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
-                "val": "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
-                "val": "this day is part of this year (occurrent parthood)"
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
@@ -20180,14 +20193,6 @@
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
-                "val": "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other."
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
-                "val": "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
                 "val": "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/"
               },
               {
@@ -20196,19 +20201,7 @@
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
-                "val": "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
                 "val": "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'."
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
-                "val": "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'."
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000118",
-                "val": "part_of"
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000118",
@@ -20249,10 +20242,6 @@
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "external"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "protein"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20311,28 +20300,12 @@
                 "val": "has part"
               },
               {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000111",
-                "val": "has part"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
-                "val": "my body has part my brain (continuant parthood, two material entities)"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
                 "val": "my body has part my brain (continuant parthood, two material entities)"
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
                 "val": "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
-                "val": "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
-                "val": "this year has part this day (occurrent parthood)"
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
@@ -20344,14 +20317,6 @@
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
-                "val": "Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part."
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
-                "val": "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
                 "val": "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/"
               },
               {
@@ -20360,19 +20325,7 @@
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
-                "val": "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
                 "val": "Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)\n\nA continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'."
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
-                "val": "Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)\n\nA continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'."
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/IAO_0000118",
-                "val": "has_part"
               },
               {
                 "pred": "http://purl.obolibrary.org/obo/IAO_0000118",
@@ -20384,15 +20337,7 @@
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "chebi_ontology"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "external"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "protein"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20407,16 +20352,9 @@
                 "val": "uberon"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_cyclic",
-                "val": "false"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
                 "val": "has_part"
               }
-            ],
-            "comments": [
-              "We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'."
             ],
             "definition": {
               "val": "a core relation that holds between a whole and its part",
@@ -22850,7 +22788,6 @@
               "http://purl.obolibrary.org/obo/go#goslim_agr",
               "http://purl.obolibrary.org/obo/go#goslim_chembl",
               "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon",
-              "http://purl.obolibrary.org/obo/go#goslim_generic",
               "http://purl.obolibrary.org/obo/go#goslim_pir",
               "http://purl.obolibrary.org/obo/go#goslim_plant"
             ],
@@ -23462,7 +23399,6 @@
               "http://purl.obolibrary.org/obo/go#goslim_aspergillus",
               "http://purl.obolibrary.org/obo/go#goslim_candida",
               "http://purl.obolibrary.org/obo/go#goslim_chembl",
-              "http://purl.obolibrary.org/obo/go#goslim_generic",
               "http://purl.obolibrary.org/obo/go#goslim_metagenomics",
               "http://purl.obolibrary.org/obo/go#goslim_pir",
               "http://purl.obolibrary.org/obo/go#goslim_plant",
@@ -23583,7 +23519,6 @@
               "http://purl.obolibrary.org/obo/go#goslim_candida",
               "http://purl.obolibrary.org/obo/go#goslim_chembl",
               "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon",
-              "http://purl.obolibrary.org/obo/go#goslim_generic",
               "http://purl.obolibrary.org/obo/go#goslim_pir",
               "http://purl.obolibrary.org/obo/go#goslim_plant"
             ],
@@ -23845,7 +23780,6 @@
               "http://purl.obolibrary.org/obo/go#goslim_aspergillus",
               "http://purl.obolibrary.org/obo/go#goslim_candida",
               "http://purl.obolibrary.org/obo/go#goslim_chembl",
-              "http://purl.obolibrary.org/obo/go#goslim_generic",
               "http://purl.obolibrary.org/obo/go#goslim_metagenomics",
               "http://purl.obolibrary.org/obo/go#goslim_pir",
               "http://purl.obolibrary.org/obo/go#goslim_plant",
@@ -23920,6 +23854,7 @@
               ]
             },
             "subsets": [
+              "http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate",
               "http://purl.obolibrary.org/obo/go#goslim_plant"
             ],
             "synonyms": [
@@ -24097,6 +24032,9 @@
                 "GOC:isa_complete"
               ]
             },
+            "subsets": [
+              "http://purl.obolibrary.org/obo/go#goslim_generic"
+            ],
             "synonyms": [
               {
                 "pred": "hasRelatedSynonym",
@@ -24174,7 +24112,6 @@
             },
             "subsets": [
               "http://purl.obolibrary.org/obo/go#goslim_chembl",
-              "http://purl.obolibrary.org/obo/go#goslim_generic",
               "http://purl.obolibrary.org/obo/go#goslim_pir"
             ]
           },
@@ -24291,7 +24228,6 @@
             "subsets": [
               "http://purl.obolibrary.org/obo/go#goslim_chembl",
               "http://purl.obolibrary.org/obo/go#goslim_drosophila",
-              "http://purl.obolibrary.org/obo/go#goslim_generic",
               "http://purl.obolibrary.org/obo/go#goslim_pir"
             ],
             "xrefs": [
@@ -24795,6 +24731,11 @@
                 "pred": "hasExactSynonym",
                 "val": "S-phase of meiotic cell cycle",
                 "xrefs": []
+              },
+              {
+                "pred": "hasExactSynonym",
+                "val": "premeiotic S-phase",
+                "xrefs": []
               }
             ]
           },
@@ -24984,6 +24925,9 @@
                 "PMID:9334324"
               ]
             },
+            "subsets": [
+              "http://purl.obolibrary.org/obo/go#goslim_generic"
+            ],
             "synonyms": [
               {
                 "pred": "hasExactSynonym",
@@ -26587,8 +26531,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "wasila.dahdul"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0003-3162-7490"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#creation_date",
@@ -26621,8 +26565,8 @@
                 "val": "2018-11-12T18:24:41Z"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0001-5208-3432"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0001-5208-3432"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -26679,10 +26623,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/Stage2.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -26718,10 +26658,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/Stage3.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -26749,10 +26685,6 @@
           "lbl": "Stage 4",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/stage4.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -26782,10 +26714,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/stage5.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -26814,10 +26742,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/stage6.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -26845,10 +26769,6 @@
           "lbl": "Stage 7",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/stage7.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -26880,10 +26800,6 @@
           "lbl": "Stage 8",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/stage8.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -27071,10 +26987,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/visceralmusculature.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -27213,10 +27125,6 @@
           "lbl": "non ciliated epithelial cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/nonciliatedepithelialcell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -27915,10 +27823,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/protonephridia.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -28119,10 +28023,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/temporaryembryonicpharynx.gif"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -28163,10 +28063,6 @@
           "lbl": "Smed asexual biotype",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/asexualadult.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -28728,10 +28624,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/smedsexualbiotype.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -28963,10 +28855,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/midline.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -29142,10 +29030,6 @@
           "lbl": "dorsal midline",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalmidline.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -29422,10 +29306,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/epidermis.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -29560,10 +29440,6 @@
           "lbl": "eye",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/eye.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -30011,10 +29887,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralmidline.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -30161,10 +30033,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorprimarygutbranch.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -30195,10 +30063,6 @@
           "lbl": "dorsal ventral margin of the whole animal",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalventralmarginofthewholeanimal.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -30578,10 +30442,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/circularmusclecell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -30782,10 +30642,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/collectingduct.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -30829,10 +30685,6 @@
           "lbl": "diagonal muscle cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/diagonalmusclecell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -31049,10 +30901,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/distaltubule.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -31086,10 +30934,6 @@
           "lbl": "dorsal region of the epidermis",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalepidermis.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -31131,10 +30975,6 @@
           "lbl": "dorsal stripe",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalstripe.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -31277,10 +31117,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/embryonicwall.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -31315,10 +31151,6 @@
           "lbl": "enteric musculature",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/entericmusculature.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -31474,10 +31306,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/flamebulb.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -31506,10 +31334,6 @@
           "lbl": "flame cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/flamecell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -31651,10 +31475,6 @@
           "lbl": "goblet cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/gobletcell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -31854,10 +31674,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/longitudinalmusclecell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -31939,10 +31755,6 @@
           "lbl": "mouth",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/mouth.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -32258,10 +32070,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/oralhemisphere.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -32331,10 +32139,6 @@
           "lbl": "parenchymal musculature",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/parenchymalmusculature.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -32485,10 +32289,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorprimarygutbranch.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -32573,10 +32373,6 @@
           "lbl": "proximal tubule",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/proximaltubule.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -32726,10 +32522,6 @@
           "lbl": "secondary gut branch",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/secondarygutbranch.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -32883,10 +32675,6 @@
           "lbl": "tertiary gut branch",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/tertiarygutbranch.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -33653,10 +33441,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/musclecell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -34082,10 +33866,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/rhabdite.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -34113,10 +33893,6 @@
           "lbl": "secretory cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/secretorycell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -34277,10 +34053,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/proximaltubuleepithelialcell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -34392,10 +34164,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/distaltubuleepithelialcell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -34492,10 +34260,6 @@
           "lbl": "collecting duct epithelial cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/collectingduct.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -35188,10 +34952,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/hymanvesicle.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -35219,10 +34979,6 @@
           "lbl": "anterior region of the whole animal",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionofthewholeanimal.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -35326,10 +35082,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionofthewholeanimal.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -35353,10 +35105,6 @@
           "lbl": "posterior region of the whole animal",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorcompartmentofthewholeanimal.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -35386,10 +35134,6 @@
           "lbl": "ventral region of the whole animal",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionofthewholeanimal.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -37130,10 +36874,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/bodywallmusculature.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -37252,10 +36992,6 @@
           "lbl": "pharynx longitudinal muscle cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxlongitudinalmusclecell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -37387,10 +37123,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/cavityofpharynx.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -37450,10 +37182,6 @@
           "lbl": "digestive tract lumen",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/lumenofdigestivetract.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -37561,10 +37289,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/parapharyngealpouchcavity.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -37605,10 +37329,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/apicalepidermissurface.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -37633,10 +37353,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/basalepidermissurface.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -37660,10 +37376,6 @@
           "lbl": "gastrodermis surface",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/lumengutsurface.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -37699,10 +37411,6 @@
           "lbl": "pharynx inner epithelium surface",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxinnerepitheliumsurface.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -37756,10 +37464,6 @@
           "lbl": "pharynx outer epithelium surface",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxouterepithelium.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -37817,10 +37521,6 @@
           "lbl": "pharynx pouch epithelial surface",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/parapharyngealpouchsurface.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -37900,10 +37600,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/head.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -37936,10 +37632,6 @@
           "lbl": "prepharyngeal region",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/neck.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -38043,10 +37735,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/parapharyngealregion.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -38118,10 +37806,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/tail.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -38165,7 +37849,9 @@
             ],
             "definition": {
               "val": "Medial region of the tail; the parenchymal space between the posterior primary gut branches.",
-              "xrefs": []
+              "xrefs": [
+                "PMID:29906446"
+              ]
             }
           },
           "type": "CLASS"
@@ -38330,10 +38016,6 @@
           "lbl": "neoblast",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/neoblast.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -39834,10 +39516,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxoutercircularmusclecell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -39891,10 +39569,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxinnercircularmusclecell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -39944,10 +39618,6 @@
           "lbl": "pharynx inner longitudinal muscle cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxinnerlongitudinalmusclecell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -40002,10 +39672,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxouterlongitudinalmusclecell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -40050,10 +39716,6 @@
           "lbl": "pharynx radial muscle cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxradialmusclecell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -40146,13 +39808,13 @@
             ],
             "xrefs": [
               {
+                "val": "ISBN:9780070316607"
+              },
+              {
                 "val": "PMID:26904543"
               },
               {
                 "val": "PMID:29674432"
-              },
-              {
-                "val": "SBN:9780070316607"
               },
               {
                 "val": "UBERON:0004467"
@@ -40166,10 +39828,6 @@
           "lbl": "pharynx inner nerve plexus",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxinnernerveplexus.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -40215,10 +39873,6 @@
           "lbl": "pharynx outer nerve plexus",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxouternerveplexus.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -40477,10 +40131,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/glandcell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -40542,10 +40192,6 @@
           "lbl": "secretory pore",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/secretorypore.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -41408,10 +41054,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/microvillus.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -41468,10 +41110,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/celljunction.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -41506,10 +41144,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/cell-celljunction.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -41537,10 +41171,6 @@
           "lbl": "cell-cell adhesion",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/cell-celladhesion.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -41597,10 +41227,6 @@
           "lbl": "cytoplasm",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/cytoplasm.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -42033,10 +41659,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/golgiapparatus.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -42064,10 +41686,6 @@
           "lbl": "nucleus",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/nucleus.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -42117,10 +41735,6 @@
           "lbl": "secretory vesicle",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/secretoryvesicle.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -42206,10 +41820,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/nucleolus.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -42237,10 +41847,6 @@
           "lbl": "chromatin",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/chromatin.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -42325,10 +41931,6 @@
           "lbl": "ribosome",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ribosome.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -43208,10 +42810,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/basallamina.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -43356,10 +42954,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/adenalrhabdite.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -43391,10 +42985,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/adherensjunction.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -43425,10 +43015,6 @@
           "lbl": "adhesive papilla",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/adhesivepapilla.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -43562,10 +43148,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriortip.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -43659,10 +43241,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/auricles.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -43702,10 +43280,6 @@
           "lbl": "axon",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/axon.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -43787,10 +43361,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/axoneme.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -43827,10 +43397,6 @@
           "lbl": "basal body",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/basalbody.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -44547,10 +44113,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/chromatoidbody.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -44623,10 +44185,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/chromosome.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -44670,10 +44228,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/chromosomearm.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -44707,10 +44261,6 @@
           "lbl": "ciliated epithelium",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ciliatedepithelialcell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -44751,10 +44301,6 @@
           "lbl": "cilium",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/cilium.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -44900,10 +44446,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsal-ventralmusclecell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -45039,10 +44581,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/epidermalcell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -45101,10 +44639,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/epidermalrhabdite.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -45135,10 +44669,6 @@
           "lbl": "ER membrane",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ermembrane.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -45219,10 +44749,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/excretorycell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -45256,10 +44782,6 @@
           "lbl": "extracellular matrix",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/extracellularmatrix.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -45614,10 +45136,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/glycogengranule.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -45670,10 +45188,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxinnerepidermalcell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -45711,10 +45225,6 @@
           "lbl": "inner zone of gland cells",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/innerzoneofglandcells.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -45821,10 +45331,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/lipiddroplet.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -45886,10 +45392,6 @@
           "lbl": "marginal adhesive zone",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/marginaladhesivezone.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -45965,10 +45467,6 @@
           "lbl": "medial muscle cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/medialmusclecell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -46057,10 +45555,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/mucus.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -46094,10 +45588,6 @@
           "lbl": "nephridiopore",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/nephridiopore.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -46257,10 +45747,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/nuclearenvelope.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -46291,10 +45777,6 @@
           "lbl": "nuclear inner membrane",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/nuclearinnermembrane.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -46358,10 +45840,6 @@
           "lbl": "nuclear outer membrane",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/nuclearoutermembrane.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -46495,10 +45973,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxouterepidermalcell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -46584,10 +46058,6 @@
           "lbl": "pharynx tip",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxtip.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -46686,10 +46156,6 @@
           "lbl": "plug amputation",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/plugamputation.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -47259,10 +46725,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/secretoryduct.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -47649,9 +47111,7 @@
             ],
             "definition": {
               "val": "A proteinaceous scaffold found between homologous chromosomes during meiosis. It consists of 2 lateral elements and a central element, all running parallel to each other. Transverse filaments connect the lateral elements to the central element.",
-              "xrefs": [
-                "GO:0000795"
-              ]
+              "xrefs": []
             },
             "xrefs": [
               {
@@ -47669,10 +47129,6 @@
           "lbl": "tail tip",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/tailtip.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -47732,10 +47188,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/septatejunction.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -47763,10 +47215,6 @@
           "lbl": "wedge amputation",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/wedgeamputation.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -48187,10 +47635,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/postpharyngealregion.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -48233,10 +47677,6 @@
           "lbl": "post-blastema region",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/post-blastemaregion.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -48307,10 +47747,6 @@
           "lbl": "epithelium",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/epithelium.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -48476,10 +47912,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/thickfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -48500,10 +47932,6 @@
           "lbl": "thin fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/thinfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -48554,10 +47982,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/longitudinalregion.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -48600,10 +48024,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/plugwound.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -48624,10 +48044,6 @@
           "lbl": "wedge wound",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/wedgewound.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -48761,10 +48177,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/intracellulargranule.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -48834,10 +48246,6 @@
           "lbl": "pharynx pouch epithelium",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxpouchepithelium.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -48933,10 +48341,6 @@
           "lbl": "dorsal region of tail",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionoftail.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -49613,10 +49017,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/mitoticprophase.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -49633,10 +49033,6 @@
           "lbl": "metaphase neoblast",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/metaphaseneoblast.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -49662,10 +49058,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anaphaseneoblast.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -49682,10 +49074,6 @@
           "lbl": "telophase neoblast",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/mitotictelophase.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51015,10 +50403,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/headfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51042,10 +50426,6 @@
           "lbl": "trunk fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/trunkfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51071,10 +50451,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/tailfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51098,10 +50474,6 @@
           "lbl": "prepharyngeal fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/prepharyngealfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51131,10 +50503,6 @@
           "lbl": "postpharyngeal fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/postpharyngealfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51170,10 +50538,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51191,10 +50555,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51211,10 +50571,6 @@
           "lbl": "lateral fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/lateralfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51255,10 +50611,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/longitudinalfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51275,10 +50627,6 @@
           "lbl": "plug fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/plugfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51297,10 +50645,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depicted_by",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/wedgefragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51317,10 +50661,6 @@
           "lbl": "dorsal region of head fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionofheadfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51346,10 +50686,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionofheadfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51373,10 +50709,6 @@
           "lbl": "anterior region of head fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionofheadfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51402,10 +50734,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionofheadfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51429,10 +50757,6 @@
           "lbl": "dorsal region of trunk fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionoftrunkfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51458,10 +50782,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionoftrunkfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51485,10 +50805,6 @@
           "lbl": "anterior region of trunk fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionoftrunkfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51514,10 +50830,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionoftrunkfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51541,10 +50853,6 @@
           "lbl": "dorsal region of tail fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionoftailfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51570,10 +50878,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionoftailfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51597,10 +50901,6 @@
           "lbl": "anterior region of tail fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionoftailfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51626,10 +50926,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionoftailfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51653,10 +50949,6 @@
           "lbl": "dorsal region of prepharyngeal fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionofprepharyngealfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51682,10 +50974,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionofprepharyngealfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51709,10 +50997,6 @@
           "lbl": "anterior region of prepharyngeal fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionofprephayngealfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51738,10 +51022,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionofprepharyngealfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51765,10 +51045,6 @@
           "lbl": "dorsal region of postpharyngeal fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionofpostpharyngealfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51794,10 +51070,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionofpostpharyngealfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51821,10 +51093,6 @@
           "lbl": "anterior region of postpharyngeal fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionofpostpharyngealfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51850,10 +51118,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionofpostpharyngealfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51877,10 +51141,6 @@
           "lbl": "dorsal region of anterior fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionofanteriorfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51906,10 +51166,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionofanteriorfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51933,10 +51189,6 @@
           "lbl": "anterior region of anterior fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionofanteriorfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -51962,10 +51214,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionofanteriorfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -51989,10 +51237,6 @@
           "lbl": "dorsal region of posterior fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionofposteriorfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52018,10 +51262,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionofposteriorfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52045,10 +51285,6 @@
           "lbl": "anterior region of posterior fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionofposteriorfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52074,10 +51310,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionofposteriorfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52101,10 +51333,6 @@
           "lbl": "dorsal region of lateral fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionoflateralfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52130,10 +51358,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionoflateralfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52157,10 +51381,6 @@
           "lbl": "anterior region of lateral fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionoflateralfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52186,10 +51406,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionoflateralfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52213,10 +51429,6 @@
           "lbl": "dorsal region of longitudinal fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionoflongitudinalfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52242,10 +51454,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionoflongitudinalfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52269,10 +51477,6 @@
           "lbl": "anterior region of longitudinal fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionoflongitudinalfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52298,10 +51502,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionoflongitudinalfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52325,10 +51525,6 @@
           "lbl": "dorsal region of plug fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionofplugfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52354,10 +51550,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionofplugfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52381,10 +51573,6 @@
           "lbl": "anterior region of plug fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionofplugfagment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52410,10 +51598,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionofplugfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52437,10 +51621,6 @@
           "lbl": "dorsal region of wedge fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsalregionofplugfragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52466,10 +51646,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/ventralregionofplugfragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52494,10 +51670,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorregionofwedgefragment.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -52521,10 +51693,6 @@
           "lbl": "posterior region of wedge fragment",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorregionofwedgefragment.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -52901,10 +52069,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/sexuallymatureadult.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -52948,10 +52112,6 @@
           "lbl": "asexual adult",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/asexualadult.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -53073,10 +52233,6 @@
           "lbl": "oral-aboral axis of the embryo",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/oralaboralaxis.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -53426,10 +52582,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/copulatoryregion.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -53457,10 +52609,6 @@
           "lbl": "pharynx epithelium",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxepithelium.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -53713,10 +52861,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/sagittalplaneofthewholeanimal.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -53821,10 +52965,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/plasmamembrane.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -53899,10 +53039,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/mitochondrion.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -53948,10 +53084,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/endoplasmiceeticulum.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -53980,10 +53112,6 @@
           "lbl": "rough endoplasmic reticulum",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/roughendoplasmicreticulum.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -54014,10 +53142,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/smoothendoplasmicreticulum.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -54043,10 +53167,6 @@
           "lbl": "nuclear pore",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/nuclearpore.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -54075,10 +53195,6 @@
           "lbl": "lysosome",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/lysosome.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -54111,10 +53227,6 @@
           "lbl": "anterior-posterior axis of the whole animal",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteroposterioraxis.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -54159,10 +53271,6 @@
           "lbl": "dorsal-ventral axis of the whole animal",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dorsal-ventralaxisofthewholeanimal.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -54227,10 +53335,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/dextro-sinisteraxis.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -54264,10 +53368,6 @@
           "lbl": "medial-lateral axis of the whole animal",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/mediolateralaxis.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
@@ -54327,10 +53427,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/proximodistalaxis.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "Planarian_Anatomy"
               }
@@ -54361,10 +53457,6 @@
           "lbl": "anterior pole",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anteriorpole.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -54472,10 +53564,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/posteriorpole.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -54538,10 +53626,6 @@
           "lbl": "glial cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/glialcell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -54636,10 +53720,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxinnerepithelium.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -54711,10 +53791,6 @@
           "lbl": "pharynx circular muscle cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/pharynxcircularmusclecell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -54789,10 +53865,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/adhesiongland.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -54835,10 +53907,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/anchorcell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -54871,10 +53939,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/viscidglandcell.png"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
               },
@@ -54906,10 +53970,6 @@
           "lbl": "releasing gland cell",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/releasingglandcell.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -55427,10 +54487,6 @@
           "lbl": "head margin",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/foaf_depiction",
-                "val": "https://raw.githubusercontent.com/obophenotype/planaria-ontology/master/metadata/images/headmargin.png"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "https://orcid.org/0000-0003-2569-1939 | https://orcid.org/0000-0002-7535-4407"
@@ -58954,6 +58010,94 @@
           "type": "PROPERTY"
         },
         {
+          "id": "http://purl.obolibrary.org/obo/RO_0017001",
+          "lbl": "utilizes",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "A diagnostic testing device utilizes a specimen."
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
+                "val": "Asiyah Lin"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000117",
+                "val": "https://orcid.org/0000-0001-9625-1899 Bill Duncan"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000232",
+                "val": "A diagnostic testing device utilizes a specimen means that the diagnostic testing device is capable of an assay, and this assay a specimen as its input."
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000232",
+                "val": "See github ticket https://github.com/oborel/obo-relations/issues/497"
+              },
+              {
+                "pred": "http://www.geneontology.org/formats/oboInOwl#creation_date",
+                "val": "2021-11-08"
+              }
+            ],
+            "definition": {
+              "val": "X utilizes Y means X and Y are material entities, and X is capable of some process P that has input Y.",
+              "xrefs": []
+            }
+          },
+          "type": "PROPERTY"
+        },
+        {
+          "id": "http://purl.obolibrary.org/obo/RO_0019000",
+          "lbl": "regulates characteristic",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-8688-6599"
+              }
+            ],
+            "definition": {
+              "val": "A relationship that holds between a process and a characteristic in which process (P) regulates characteristic (C) iff: P results in the existence of C OR affects the intensity or magnitude of C.",
+              "xrefs": []
+            }
+          },
+          "type": "PROPERTY"
+        },
+        {
+          "id": "http://purl.obolibrary.org/obo/RO_0019001",
+          "lbl": "positively regulates characteristic",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-8688-6599"
+              }
+            ],
+            "definition": {
+              "val": "A relationship that holds between a process and a characteristic in which process (P) positively regulates characteristic (C) iff: P results in an increase in the intensity or magnitude of C.",
+              "xrefs": []
+            }
+          },
+          "type": "PROPERTY"
+        },
+        {
+          "id": "http://purl.obolibrary.org/obo/RO_0019002",
+          "lbl": "negatively regulates characteristic",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-8688-6599"
+              }
+            ],
+            "definition": {
+              "val": "A relationship that holds between a process and a characteristic in which process (P) negatively regulates characteristic (C) iff: P results in a decrease in the intensity or magnitude of C.",
+              "xrefs": []
+            }
+          },
+          "type": "PROPERTY"
+        },
+        {
           "id": "http://purl.obolibrary.org/obo/UBERON_0000061",
           "lbl": "anatomical structure",
           "meta": {
@@ -59517,9 +58661,6 @@
                 "val": "FBbt:10000000"
               },
               {
-                "val": "FBbt_root:00000000"
-              },
-              {
                 "val": "FMA:62955"
               },
               {
@@ -59808,32 +58949,6 @@
             "xrefs": [
               {
                 "val": "IAO:0100001"
-              }
-            ]
-          },
-          "type": "PROPERTY"
-        },
-        {
-          "id": "http://purl.org/dc/elements/1.1/contributor",
-          "lbl": "contributor",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
-                "val": "true"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#shorthand",
-                "val": "dc-contributor"
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "http://purl.org/dc/elements/1.1/contributor"
               }
             ]
           },
@@ -60322,6 +59437,13 @@
         },
         {
           "chainPredicateIds": [
+            "http://purl.obolibrary.org/obo/RO_0002211",
+            "http://purl.obolibrary.org/obo/RO_0019000"
+          ],
+          "predicateId": "http://purl.obolibrary.org/obo/RO_0019000"
+        },
+        {
+          "chainPredicateIds": [
             "http://purl.obolibrary.org/obo/RO_0002212",
             "http://purl.obolibrary.org/obo/RO_0002212"
           ],
@@ -60350,6 +59472,13 @@
         },
         {
           "chainPredicateIds": [
+            "http://purl.obolibrary.org/obo/RO_0002212",
+            "http://purl.obolibrary.org/obo/RO_0019001"
+          ],
+          "predicateId": "http://purl.obolibrary.org/obo/RO_0019002"
+        },
+        {
+          "chainPredicateIds": [
             "http://purl.obolibrary.org/obo/RO_0002213",
             "http://purl.obolibrary.org/obo/RO_0002215"
           ],
@@ -60368,6 +59497,27 @@
             "http://purl.obolibrary.org/obo/RO_0002331"
           ],
           "predicateId": "http://purl.obolibrary.org/obo/RO_0002429"
+        },
+        {
+          "chainPredicateIds": [
+            "http://purl.obolibrary.org/obo/RO_0002213",
+            "http://purl.obolibrary.org/obo/RO_0019001"
+          ],
+          "predicateId": "http://purl.obolibrary.org/obo/RO_0019001"
+        },
+        {
+          "chainPredicateIds": [
+            "http://purl.obolibrary.org/obo/RO_0002213",
+            "http://purl.obolibrary.org/obo/RO_0019002"
+          ],
+          "predicateId": "http://purl.obolibrary.org/obo/RO_0019002"
+        },
+        {
+          "chainPredicateIds": [
+            "http://purl.obolibrary.org/obo/RO_0002215",
+            "http://purl.obolibrary.org/obo/RO_0002233"
+          ],
+          "predicateId": "http://purl.obolibrary.org/obo/RO_0017001"
         },
         {
           "chainPredicateIds": [
